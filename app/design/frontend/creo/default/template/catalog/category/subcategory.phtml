@@ -1,0 +1,20 @@
+<?php
+//$category_id = $this->getData('category_id');
+$category_id = 5;
+$_helper = Mage::helper('catalog/category');
+$categpry = Mage::getModel('catalog/category')->load($category_id);
+$categories = $categpry->getChildrenCategories(); ?>
+        
+<ul class="subcategories">
+    <?php foreach ($categories as $_category):
+    //echo 
+    	
+     ?>
+        <li>
+           <a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
+        <img src="<?php echo Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl(); ?>" width="100" height = "100" alt="<?php echo $_category->getName()?>"/>
+     <?php echo $_category->getName() ?>
+     </a>
+        </li>
+    <?php endforeach; ?>
+</ul>
