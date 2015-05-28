@@ -2,5 +2,9 @@
 
 <layout version="0.1.0">
 
-
+ <reference name="content">
+   <block type="core/template" name="category_subcategory"  template="catalog/category/subcategory.phtml" >
+             	<action method="setData"><name>category_id</name><value>5</value></action>
+ </block>
+        </reference>
 </layout>
