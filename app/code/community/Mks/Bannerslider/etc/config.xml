@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Mks_Bannerslider>
+      <version>8.1.1</version>
+    </Mks_Bannerslider>
+  </modules>
+  <frontend>
+    <routers>
+      <bannerslider>
+        <use>standard</use>
+          <args>
+            <module>Mks_Bannerslider</module>
+            <frontName>bannerslider</frontName>
+          </args>
+      </bannerslider>
+    </routers>
+		<layout>
+		  <updates>
+			<bannerslider>
+			  <file>bannerslider.xml</file>
+			</bannerslider>
+		  </updates>
+		</layout>
+  </frontend>
+  <global>
+    <helpers>
+      <bannerslider>
+        <class>Mks_Bannerslider_Helper</class>
+      </bannerslider>
+    </helpers>
+	<blocks>
+	  <bannerslider>
+		<class>Mks_Bannerslider_Block</class>
+	  </bannerslider>
+	</blocks>
+	<models>
+	  <bannerslider>
+		<class>Mks_Bannerslider_Model</class>
+		<resourceModel>bannerslider_mysql4</resourceModel>
+	  </bannerslider>
+	  <bannerslider_mysql4>
+		<class>Mks_Bannerslider_Model_Mysql4</class>
+		<entities>		  
+			  <imagegallery>
+				<table>popupgalleryslider</table>
+			  </imagegallery>
+        </entities>
+	  </bannerslider_mysql4>
+	</models>
+	<resources>
+	  <bannerslider_setup>
+		<setup>
+		  <module>Mks_Bannerslider</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </bannerslider_setup>
+	  <bannerslider_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </bannerslider_write>
+	  <bannerslider_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </bannerslider_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <bannerslider>
+	    <use>admin</use>
+		<args>
+		  <module>Mks_Bannerslider</module>
+		  <frontName>bannerslider</frontName>
+		</args>
+	  </bannerslider>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <bannerslider module="bannerslider">
+		<title>Bannerslider</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <bannersliderbackend module="bannerslider">
+			<title>About us</title>
+			<sort_order>0</sort_order>
+			<action>bannerslider/adminhtml_bannersliderbackend</action>
+		  </bannersliderbackend>
+		  <imagegallery module="bannerslider">
+		    <title>Manage Imagegallery</title>
+			<sort_order>0</sort_order>
+			<action>bannerslider/adminhtml_imagegallery</action>
+		  </imagegallery>
+		</children>
+	  </bannerslider>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<bannerslider translate="title" module="bannerslider">
+			  <title>Bannerslider</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <bannersliderbackend translate="title">
+			<title>About us</title>
+		  </bannersliderbackend>
+		  <imagegallery translate="title">
+			<title>Manage Imagegallery</title>
+			<sort_order>0</sort_order>
+		  </imagegallery>
+			  </children>
+			</bannerslider>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<bannerslider>
+		  <file>bannerslider.xml</file>
+		</bannerslider>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

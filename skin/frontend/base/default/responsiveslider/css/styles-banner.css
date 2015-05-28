@@ -1,0 +1,72 @@
+ 
+    /* Prevent the slideshow from flashing on load */
+    #slides {
+      display: none
+    }
+
+    /* Center the slideshow */
+    .container {
+      margin: 0 auto
+    }
+
+    /* Show active item in the pagination */
+    .slidesjs-pagination .active {
+      color:red;
+    }
+
+    /* Media quires for a responsive layout */
+
+    /* For tablets & smart phones */
+    @media (max-width: 767px) {
+      body {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smartphones */
+    @media (max-width: 480px) {
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smaller displays like laptops */
+    @media (min-width: 768px) and (max-width: 979px) {
+      .container {
+        width: 724px
+      }
+    }
+
+    /* For larger displays */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px
+      }
+    }
+#slides {
+    display: none;
+    position: relative;
+}
+
+#slides .slidesjs-next {  position: absolute;     top: 50%;     z-index: 10; right:10px; color:#000;  }
+#slides .slidesjs-previous {  position: absolute;     top: 50%;     z-index: 10; left:10px; color:#000; }
+.slidesjs-pagination { float:right;   bottom: 30px;
+    float: right;
+    position: absolute;
+    right: 30px;
+    z-index: 10;}
+.slidesjs-pagination li {float: left; list-style: none outside none; }
+.slidesjs-pagination li a {
+    display: block;
+    float: left;
+    height: 20px;
+    overflow: hidden;
+    padding-top: 13px;
+    width: 13px;
+color:#000;
+ }
+   

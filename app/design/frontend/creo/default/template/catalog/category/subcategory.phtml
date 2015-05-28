@@ -1,6 +1,7 @@
 <?php
-//$category_id = $this->getData('category_id');
-$category_id = 5;
+
+print_r($this->getData());exit;
+//$category_id = 5;
 $_helper = Mage::helper('catalog/category');
 $categpry = Mage::getModel('catalog/category')->load($category_id);
 $categories = $categpry->getChildrenCategories(); ?>

@@ -48,7 +48,8 @@ foreach ($children as $child) {
 
     $outermostClassCode = 'level'. $childLevel;
     $_hasChildren = ($child->hasChildren()) ? 'has-children' : '';
-
+		
+	$html .= '<li class="level0 nav-1"> <a href="' . Mage::helper('core/url')->getHomeUrl() .  '"> Home </a></li>';
     $html .= '<li '. $this->_getRenderedMenuItemAttributes($child) .'>';
 
     $html .= '<a href="'. $child->getUrl() .'" class="'. $outermostClassCode .' '. $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) .'</a>';

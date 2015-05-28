@@ -78,6 +78,7 @@ Category default layout
             </block>
         </reference>
         <reference name="content">
+             
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
                 <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
                     <block type="core/text_list" name="product_list.name.after" as="name.after" />

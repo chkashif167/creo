@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Mks_Responsivebannerslider>
+      <version>1.9.1</version>
+    </Mks_Responsivebannerslider>
+  </modules>
+  <frontend>
+    <routers>
+      <responsivebannerslider>
+        <use>standard</use>
+          <args>
+            <module>Mks_Responsivebannerslider</module>
+            <frontName>responsivebannerslider</frontName>
+          </args>
+      </responsivebannerslider>
+    </routers>
+		<layout>
+		  <updates>
+			<responsivebannerslider>
+			  <file>responsivebannerslider.xml</file>
+			</responsivebannerslider>
+		  </updates>
+		</layout>
+  </frontend>
+  <global>
+    <helpers>
+      <responsivebannerslider>
+        <class>Mks_Responsivebannerslider_Helper</class>
+      </responsivebannerslider>
+    </helpers>
+	<blocks>
+	  <responsivebannerslider>
+		<class>Mks_Responsivebannerslider_Block</class>
+	  </responsivebannerslider>
+	</blocks>
+	<models>
+	  <responsivebannerslider>
+		<class>Mks_Responsivebannerslider_Model</class>
+		<resourceModel>responsivebannerslider_mysql4</resourceModel>
+	  </responsivebannerslider>
+	  <responsivebannerslider_mysql4>
+		<class>Mks_Responsivebannerslider_Model_Mysql4</class>
+		<entities>		  
+			  <responsivebannerslider>
+				<table>mksresponsivebannerslider</table>
+			  </responsivebannerslider>
+        </entities>
+	  </responsivebannerslider_mysql4>
+	</models>
+	<resources>
+	  <responsivebannerslider_setup>
+		<setup>
+		  <module>Mks_Responsivebannerslider</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </responsivebannerslider_setup>
+	  <responsivebannerslider_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </responsivebannerslider_write>
+	  <responsivebannerslider_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </responsivebannerslider_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <responsivebannerslider>
+	    <use>admin</use>
+		<args>
+		  <module>Mks_Responsivebannerslider</module>
+		  <frontName>responsivebannerslider</frontName>
+		</args>
+	  </responsivebannerslider>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <responsivebannerslider module="responsivebannerslider">
+		<title>Responsivebannerslider</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <responsivebannersliderbackend module="responsivebannerslider">
+			<title>About Us</title>
+			<sort_order>0</sort_order>
+			<action>responsivebannerslider/adminhtml_responsivebannersliderbackend</action>
+		  </responsivebannersliderbackend>
+		  <responsivebannerslider module="responsivebannerslider">
+		    <title>Manage Responsivebannerslider</title>
+			<sort_order>0</sort_order>
+			<action>responsivebannerslider/adminhtml_responsivebannerslider</action>
+		  </responsivebannerslider>
+		</children>
+	  </responsivebannerslider>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<responsivebannerslider translate="title" module="responsivebannerslider">
+			  <title>Responsivebannerslider</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <responsivebannersliderbackend translate="title">
+			<title>About Us</title>
+		  </responsivebannersliderbackend>
+		  <responsivebannerslider translate="title">
+			<title>Manage Responsivebannerslider</title>
+			<sort_order>0</sort_order>
+		  </responsivebannerslider>
+			  </children>
+			</responsivebannerslider>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<responsivebannerslider>
+		  <file>responsivebannerslider.xml</file>
+		</responsivebannerslider>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

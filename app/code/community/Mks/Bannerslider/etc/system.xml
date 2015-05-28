@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<imagegallerytab translate="label" module="bannerslider">
+            <label>Mks Image Gallery</label>
+            <sort_order>0</sort_order>
+        </imagegallerytab>
+	  </tabs>
+	  <sections>
+		<imagegallerysection  translate="label" module="bannerslider">                    
+		<label>General Setting</label>
+		<tab>imagegallerytab</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>0</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <imagegallerygroup translate="label"> 
+					  <label>Gallery Setting</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>0</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </enable>
+
+                           <imageheight translate="label">
+                            <label>Image Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                             <comment>Example :- 100,150,200</comment>
+                          </imageheight>
+
+                           <imagewidth translate="label">
+                            <label>Image Width</label>
+                            <frontend_type>text</frontend_type>
+                             <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Example :- 100,150,200</comment>
+                          </imagewidth>
+
+                           <videohight translate="label">
+                            <label>Popup Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                             <comment>Example :- 500,550,600</comment>
+                          </videohight>
+
+                            <videowidth translate="label">
+                            <label>Popup Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Example :- 500,550,600</comment>
+                          </videowidth>
+                       
+                          <type translate="label">
+                            <label>Gallery Type </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Example :- 1,2,3</comment>
+                          </type>
+
+
+
+
+
+
+                          <paggingstart translate="label">
+                            <label>After Pagging Start</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>5,10,15,20,25,30.....Default (12)</comment>
+                          </paggingstart>
+                          <rowitem translate="label">
+                            <label>Number Of Row item</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>3,4,5,6,7.......Default (4)</comment>
+                          </rowitem>
+                          
+
+                          
+
+                          <popupspeed translate="label">
+                            <label>Popup speed </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Example :- 1000,1500,2000</comment>
+                          </popupspeed>
+
+                          
+
+
+
+
+					   </fields>
+					   </imagegallerygroup>
+					</groups>
+		</imagegallerysection>
+	  </sections>
+</config>
