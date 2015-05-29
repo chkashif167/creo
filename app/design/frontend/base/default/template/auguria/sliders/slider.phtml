@@ -1,0 +1,126 @@
+<?php
+/**
+ * @category   Auguria
+ * @package    Auguria_Sliders
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+?>
+<?php
+$slides = $this->getSlides();
+$imageWidth = $this->getImageWidth();
+$imageHeight = $this->getImageHeight();
+$captionHeight = $this->getCaptionHeight();
+
+if ($slides && $slides->count()>0):
+?>
+<div id="auguria-slider" class="clearer">
+	<div class="auguria-slider-container">
+		<?php
+		foreach ($slides as $slide):
+		?>
+		<div class="slide">
+			<?php
+			$displayLink = $this->displayLink($slide);
+			$displayImage = $this->displayImage($slide);
+			$displayCmsContent = $this->displayCmsContent($slide);
+			if ($displayLink):
+			?>
+			<a class="auguria-slider-link"
+				href="<?php echo $slide->getLink(); ?>"
+				title="<?php echo $slide->getName(); ?>"> <?php
+				endif;
+				if ($displayImage):
+				?> <img class="auguria-slider-image"
+				alt="<?php echo $slide->getName(); ?>"
+				src="<?php echo $this->getResizedImage($slide, $imageWidth, $imageHeight); ?>" />
+				<?php
+				endif;
+				if ($displayLink):
+				?>
+			</a>
+			<?php
+			endif;
+			if ($displayCmsContent):
+			?>
+			<div class="caption" style="height: <?php echo $captionHeight; ?>px;">
+				<?php echo $slide->getCmsContent(); ?>
+			</div>
+			<?php
+			endif;
+			?>
+		</div>
+		<?php
+		endforeach;
+		?>
+	</div>
+	<?php
+	if (Mage::getStoreConfig('auguria_sliders/general/generate_next_prev')=='true' && $slides->count()>1):
+	?>
+	<a href="#" class="prev"><span><?php echo $this->__('Previous'); ?> </span>
+	</a> <a href="#" class="next"><span><?php echo $this->__('Next'); ?> </span>
+	</a>
+	<?php
+	endif;
+	?>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+	jQuery(function(){
+
+		var slide = jQuery("#auguria-slider").slides({
+			height : <?php echo $imageHeight; ?>,
+			width : <?php echo $imageWidth; ?>,
+    		container: 'auguria-slider-container',
+<?php
+		if (Mage::getStoreConfig('auguria_sliders/general/preload')=='true'):
+?>
+			preload: true,
+			preloadImage: '<?php echo $this->getSkinUrl('images/auguria/sliders/loading.gif'); ?>',
+<?php
+		endif;
+?>
+    		generateNextPrev: false,
+            generatePagination: <?php if($slides->count()>1): echo Mage::getStoreConfig('auguria_sliders/general/generate_pagination'); else: echo 'false'; endif; ?>,
+            fadeSpeed: <?php echo Mage::getStoreConfig('auguria_sliders/general/fade_speed'); ?>,
+            slideSpeed: <?php echo Mage::getStoreConfig('auguria_sliders/general/slide_speed'); ?>,
+            effect: "<?php echo Mage::getStoreConfig('auguria_sliders/general/effect_next_prev'); ?>,<?php echo Mage::getStoreConfig('auguria_sliders/general/effect_pagination'); ?>",
+            crossfade: <?php echo Mage::getStoreConfig('auguria_sliders/general/crossfade'); ?>,
+            randomize: <?php echo Mage::getStoreConfig('auguria_sliders/general/randomize'); ?>,
+            play: <?php echo Mage::getStoreConfig('auguria_sliders/general/play'); ?>,
+            pause: <?php echo Mage::getStoreConfig('auguria_sliders/general/pause'); ?>,
+            hoverPause: <?php echo Mage::getStoreConfig('auguria_sliders/general/hover_pause'); ?>,
+            autoHeight: <?php echo Mage::getStoreConfig('auguria_sliders/general/auto_height'); ?>,
+            autoHeightSpeed: <?php echo Mage::getStoreConfig('auguria_sliders/general/auto_height_speed'); ?>,
+            captionHeight: <?php echo $this->getCaptionHeight(); ?>,
+            captionSize: 16,
+<?php
+		if ((int)Mage::getStoreConfig('auguria_sliders/general/animate_caption')>0):
+?>
+            animationStart: function(current){
+            	jQuery('.caption').animate({
+					bottom:-<?php echo $this->getCaptionHeight(); ?>
+				},<?php echo Mage::getStoreConfig('auguria_sliders/general/animate_caption'); ?>);
+			},
+			animationComplete: function(current){
+				jQuery('.caption').animate({
+					bottom:0
+				},<?php echo Mage::getStoreConfig('auguria_sliders/general/animate_caption'); ?>);
+			},
+			slidesLoaded: function() {
+				jQuery('.caption').animate({
+					bottom:0
+				},<?php echo Mage::getStoreConfig('auguria_sliders/general/animate_caption'); ?>);
+			}
+<?php
+		endif;
+?>
+    	});
+	});
+
+//]]>
+</script>
+<?php
+endif;
+?>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Auguria
+ * @package    Auguria_Sliders
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+ -->
+<layout>
+    <adminhtml_sliders_index>
+        <reference name="content">
+            <block type="auguria_sliders/adminhtml_sliders" name="auguria_sliders"/>
+        </reference>
+    </adminhtml_sliders_index>
+<!--     <adminhtml_sliders_edit> -->
+<!--         <reference name="content"> -->
+<!--             <block type="auguria_sliders/adminhtml_sliders_edit" name="auguria_sliders_edit"/> -->
+<!--         </reference> -->
+<!--     </adminhtml_sliders_edit> -->
+<!--     <adminhtml_sliders_new> -->
+<!--         <update handle="adminhtml_sliders_edit" /> -->
+<!--     </adminhtml_sliders_new> -->
+</layout>

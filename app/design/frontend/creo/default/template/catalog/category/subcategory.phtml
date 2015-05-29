@@ -1,7 +1,10 @@
+
+<?php if($this->getData('title')){?>
+<h2><?php echo $this->getData('title');?></h2>
+<?php }?>
 <?php
 
-print_r($this->getData());exit;
-//$category_id = 5;
+$category_id =  $this->getData('category_id');
 $_helper = Mage::helper('catalog/category');
 $categpry = Mage::getModel('catalog/category')->load($category_id);
 $categories = $categpry->getChildrenCategories(); ?>
@@ -12,8 +15,8 @@ $categories = $categpry->getChildrenCategories(); ?>
     	
      ?>
         <li>
-           <a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
-        <img src="<?php echo Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl(); ?>" width="100" height = "100" alt="<?php echo $_category->getName()?>"/>
+          <!-- <a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
+        <img src="<?php echo Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl(); ?>" width="100" height = "100" alt="<?php echo $_category->getName()?>"/> -->
      <?php echo $_category->getName() ?>
      </a>
         </li>

@@ -1,13 +1,17 @@
 <?xml version="1.0"?>
 
 <layout version="0.1.0">
-
+<default>
  <reference name="content">
-            <!-- <block type="core/template" name="category_subcategory" category_id="5" template="catalog/category/subcategory.phtml" /> -->
+     		<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
+     			
+     			<action method="setData"><name>category_id</name><value>7</value></action>
+     		</block>
 
-              <block type="core/template" name="left.permanent.callout" template="catalog/category/subcategory.phtml">
-                <action method="setData"><name>category_id</name><value>5</value></action>
-               
-            </block>
+     		<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
+     			<action method="setData"><name>title</name><value>Styles</value></action>
+     			<action method="setData"><name>category_id</name><value>12</value></action>
+     		</block>
         </reference>
+</default>
 </layout>

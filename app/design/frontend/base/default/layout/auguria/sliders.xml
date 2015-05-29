@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Auguria
+ * @package    Auguria_Sliders
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+-->
+<layout version="0.1.0">
+    <cms_page>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
+            <action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+        </reference>
+    </cms_page>
+    <catalog_category_default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
+            <action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="auguria_sliders/catalog_category_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+        </reference>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
+            <action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="auguria_sliders/catalog_category_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+        </reference>
+    </catalog_category_layered>
+    <page_empty>
+        <reference name="auguria_sliders">
+            <action method="setPageType"><type>empty</type></action>
+        </reference>
+    </page_empty>
+    <page_one_column>
+        <reference name="auguria_sliders">
+            <action method="setPageType"><type>one</type></action>
+        </reference>
+    </page_one_column>
+    <page_two_columns_left>
+        <reference name="auguria_sliders">
+            <action method="setPageType"><type>two</type></action>
+        </reference>
+    </page_two_columns_left>
+    <page_two_columns_right>
+        <reference name="auguria_sliders">
+            <action method="setPageType"><type>two</type></action>
+        </reference>
+    </page_two_columns_right>
+    <page_three_columns>
+        <reference name="auguria_sliders">
+            <action method="setPageType"><type>three</type></action>
+        </reference>
+    </page_three_columns>
+</layout>
