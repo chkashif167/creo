@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+ * @category   Auguria
+ * @package    Auguria_Sliders
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+ -->
+<config>
+	<modules>
+		<Auguria_Sliders>
+			<active>true</active>
+            <codePool>community</codePool>
+		</Auguria_Sliders>
+	</modules>
+</config>
