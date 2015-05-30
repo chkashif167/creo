@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 
 <layout version="0.1.0">
-<default>
+<cms_index_index>
  <reference name="content">
      		<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
-     			
      			<action method="setData"><name>category_id</name><value>7</value></action>
      		</block>
 
@@ -13,5 +12,5 @@
      			<action method="setData"><name>category_id</name><value>12</value></action>
      		</block>
         </reference>
-</default>
+</cms_index_index>
 </layout>
