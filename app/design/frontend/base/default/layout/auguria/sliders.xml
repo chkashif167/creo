@@ -7,7 +7,7 @@
  * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
  */
 -->
-<layout version="0.1.0">
+<!--<layout version="0.1.0">
     <cms_page>
         <reference name="head">
             <action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
@@ -63,4 +63,4 @@
             <action method="setPageType"><type>three</type></action>
         </reference>
     </page_three_columns>
-</layout>
+</layout>-->
