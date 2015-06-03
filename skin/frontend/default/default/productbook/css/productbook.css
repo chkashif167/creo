@@ -1,0 +1,22 @@
+#dialog{margin:3px;}
+/* Z-index of #mask must lower than #boxes .pb_window */
+#mask {z-index:9000;display:none;background-color:rgba(0,0,0,.5);position: absolute;left: 0;top: 0;}
+#boxes .pb_window {position:absolute;width:0px;height:0px;display:none;z-index:9999;padding:5px;} 
+#boxes #dialog {border:5px solid #D2B9D3;background-color:#EBDDE2;width:550px;height:400px;overflow-x: hidden;overflow-y: auto;position: fixed;}
+#boxes #dialog .product-name a {text-decoration: none;color: inherit;}
+#boxes #dialog .product-name a:hover{text-decoration: underline;}
+div.pb_wrapper{overflow:hidden; position:relative;}
+div.pb_caption {background-color:rgba(0,0,0,.5);position:relative;text-align:center;height: 35px;width: 100%;font-weight: bold;font-size: 12px;line-height: 35px;}
+div.pb_caption a {color: #fff;text-decoration: none;}
+.hd{background-color:#D2B9D3; padding:3px; color:#FFFFFF; font-size:14px; font-weight:bold;}
+.pb_close{text-decoration:none; color:#FFFFFF; font-weight:none; font-size:10px; vertical-align:middle;}
+td.share {padding-top: 2px; width: 100%;}
+td.share a{border:0; text-decoration:none; padding:3px; height:30px; width:30px;	float: left;}
+a.sp-Google-plus-icon{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 0; width: 48px; height: 48px; }
+a.sp-delicious{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -38px; width: 48px; height: 48px; }
+a.sp-digg{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -79px; width: 48px; height: 48px; }
+a.sp-facebook{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -119px; width: 48px; height: 48px; }
+a.sp-reddit{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -159px; width: 48px; height: 48px; }
+a.sp-stumbleupon{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -198px; width: 48px; height: 48px; }
+a.sp-twitter{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -239px; width: 48px; height: 48px; }
+a.sp-yahoo{ background: url("../images/sprite-icons.png") no-repeat top left; background-position: 0 -279px; width: 48px; height: 48px; }

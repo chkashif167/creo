@@ -1,0 +1,133 @@
+<?php if ($this->getPBConfigByName('pb_enabled')): ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	var pbBaseUrl = '<?php echo $this->getUrl('productbook/index') ?>';
+	var pbClass = '<?php echo $this->getPBConfigByName('pb_class') ?>';
+	var pb_caption = '<?php echo $this->getPBConfigByName('pb_caption') ?>';
+	if (jQuery.trim(pb_caption) == '') {
+		pb_caption = 'Quickshop';
+	}
+	var prod_image = jQuery(pbClass);
+	/*Create the wrapper*/
+	prod_image.each(function() {
+		jQuery(this).find('img').wrap('<div class="pb_wrapper" />').after('<div class="pb_caption"><a href="#" class="pb_btn">'+pb_caption+'</a></div>');
+	});
+	/*Set the wrapper height/width*/
+	var wrap_h = prod_image.height();
+	var wrap_w = prod_image.width();
+	jQuery(".pb_wrapper").css({'height': wrap_h, 'width': wrap_w});
+
+	/*Hover effect*/
+	jQuery('.pb_wrapper').hover(
+		function(){
+			jQuery(this).find('img').animate({opacity: ".6"}, 300);		
+			jQuery(this).find('.pb_caption').animate({top:"-85px"}, 300);			
+		}, function(){
+			jQuery(this).find('img').animate({opacity: "1.0"}, 300);					
+			jQuery(this).find('.pb_caption').animate({top:"85px"}, 100);
+		}		
+	);
+
+    jQuery(document).on("click", ".pb_wrapper", function(e) {
+        e.preventDefault();
+        var ID = jQuery(this).closest(".product-image").attr('id').split("pb_item_");
+		if (!ID[1] || ID[1] == "" || ID[1] == "undefined") {
+			return false;
+		}
+		var _this = jQuery(this);
+		var org_caption = _this.find(".pb_btn").text();
+			
+		jQuery.ajax({
+			type: "POST",
+			url: pbBaseUrl+"index",
+			data: "id="+ID[1],
+			beforeSend: function() {
+				_this.find(".pb_btn").text("Loading...");
+			}
+		}).done(function(msg){
+			_this.find(".pb_btn").text(org_caption);
+			jQuery('#product_data').empty().append(msg);
+			
+			//Get the A tag
+			var id = "#dialog";//jQuery(this).attr('href');
+		 
+			//Get the screen height and width
+			var maskHeight = jQuery(document).height();
+			var maskWidth = jQuery(window).width();
+		 
+			//Set height and width to mask to fill up the whole screen
+			jQuery('#mask').css({'width':maskWidth,'height':maskHeight});
+			 
+			//transition effect    
+			jQuery('#mask').fadeIn('fast');
+			jQuery('#mask').fadeTo("slow",1.0); 
+		 
+			//Get the window height and width
+			var winH = jQuery(window).height();
+			var winW = jQuery(window).width();
+				   
+			//Set the popup window to center
+			jQuery(id).css('top',  winH/2-jQuery(id).height()/2);
+			jQuery(id).css('left', winW/2-jQuery(id).width()/2);
+		 
+			//transition effect
+			jQuery(id).fadeIn('fast');
+		});
+     
+    });
+
+	jQuery(document).on("click", ".btn-cart", function() {
+		var _this = jQuery(this);
+		var ID = _this.attr("ID").split("pb_cart_");
+		var pid = ID[1];
+		var qty = jQuery('#qty_'+pid).val();
+	
+		_this.find("span span").html('Adding...');
+		jQuery.ajax({
+			type: "POST",
+			url: pbBaseUrl+"addtocart",
+			dataType: "json",
+			data: 'product='+pid+'&qty='+qty,
+		}).done(function(data) {
+			try {
+				if (data.status == "success") {
+					_this.find("span span").html('In cart');
+					jQuery(".pb_crt_cnt").html(data.cart_qty);
+					jQuery(".pb_crt_total").html(data.cart_total);
+				} else if (data.status == "redirect") {
+					window.location.href = data.url;
+				} else {
+					alert(data.msg);
+				}
+			} catch(e) {
+				//
+			}
+		});
+	});
+
+    //if close button is clicked
+    jQuery(document).on("click", '.pb_close', function(e) {
+        //Cancel the link behavior
+        e.preventDefault();
+		closePB();
+    });    
+
+    //if mask is clicked
+    jQuery(document).on("click", '#mask', function(e) {
+		e.preventDefault();
+		closePB();
+    });
+
+	jQuery(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			closePB();
+		}
+	});
+
+	function closePB() {
+		jQuery('#product_data').empty();
+        jQuery('#mask, .pb_window').hide();
+	}
+});
+</script>
+<?php endif; ?>

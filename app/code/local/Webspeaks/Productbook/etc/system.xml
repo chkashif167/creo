@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <pb_tab module="productbook" translate="label">
+            <label>Quickview Config</label>
+            <sort_order>100</sort_order>
+        </pb_tab>
+    </tabs>
+    <sections>
+        <pbconfig module="productbook" translate="label">
+            <label>Quickview Configuration</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>pb_tab</tab>
+            <groups>
+                <pb_group translate="label">
+                    <label>Quickview Config</label>
+                    <!--<comment>This is example of custom configuration.</comment>-->
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<pb_enabled translate="label comment">
+							<label>Is Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Enable/disable Quickview on frontend.</comment>
+						</pb_enabled>
+						<pb_load_jq translate="label comment">
+							<label>Load External jQuery</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Set to No if external jQuery file should not be loaded (in case you already have jQuery added in your site).</comment>
+						</pb_load_jq>
+						<pb_caption translate="label comment">
+							<label>Quickview Caption</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Caption to be displayed oon frontend.</comment>
+						</pb_caption>
+						<pb_class translate="label comment">
+							<label>Product URL class</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The CSS class name of the product anchor tag ('a') on the product listing page. You can add the fully qualified class name for more accuracy. Eg. "#grid .list .link" or ".category-products .product-image".</comment>
+						</pb_class>
+						<pb_height translate="label comment">
+							<label>Popup Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Height (in pixels) of the popup window.</comment>
+						</pb_height>
+						<pb_width translate="label comment">
+							<label>Popup Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Width (in pixels) of the popup window.</comment>
+						</pb_width>
+						<pb_bg>
+							<label>Popup Background Color</label>
+							<frontend_type>text</frontend_type>
+							<validate>color</validate>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Background color of the popup window.</comment>
+						</pb_bg>
+						<pb_hd_bg>
+							<label>Popup Headings Background Color</label>
+							<frontend_type>text</frontend_type>
+							<validate>color</validate>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Background color of the headings in popup window.</comment>
+						</pb_hd_bg>
+					</fields>
+                </pb_group>
+            </groups>
+        </pbconfig>
+    </sections>
+</config>

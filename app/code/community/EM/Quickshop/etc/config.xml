@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   EM
+ * @package    EM_Quickshop
+ * @author     ModuleCreator
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <EM_Quickshop>
+            <version>0.1.0</version>
+        </EM_Quickshop>
+    </modules>
+    <frontend>
+        <routers>
+            <quickshop>
+                <use>standard</use>
+                <args>
+                    <module>EM_Quickshop</module>
+                    <frontName>quickshop</frontName>
+                </args>
+            </quickshop>
+        </routers>
+        <layout>
+            <updates>
+                <quickshop>
+                    <file>em_quickshop.xml</file>
+                </quickshop>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<quickshop>
+				<use>admin</use>
+				<args>
+					<module>EM_Quickshop</module>
+					<frontName>quickshop</frontName>
+				</args>
+			</quickshop>
+        </routers>
+    </admin>
+    <adminhtml>
+		<!--<menu>
+			<quickshop module="quickshop">
+				<title>Quickshop</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="quickshop">
+						<title>Manage Items</title>
+						<sort_order>0</sort_order>
+						<action>quickshop/adminhtml_quickshop</action>
+					</items>
+				</children>
+			</quickshop>
+		</menu>-->
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<EM_Quickshop>
+							<title>Quickshop Module</title>
+							<sort_order>10</sort_order>
+						</EM_Quickshop>
+						<system>
+                            <children>
+                                <config>
+                                    <children>
+                                       <quickshop translate="title" module="quickshop">
+                                            <title>EM quickshop Pro</title>
+                                        </quickshop>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<quickshop>
+					<file>quickshop.xml</file>
+				</quickshop>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <quickshop>
+                <class>EM_Quickshop_Model</class>
+                <resourceModel>quickshop_mysql4</resourceModel>
+            </quickshop>
+            <quickshop_mysql4>
+                <class>EM_Quickshop_Model_Mysql4</class>
+                <entities>
+                    <quickshop>
+                        <table>quickshop</table>
+                    </quickshop>
+                </entities>
+            </quickshop_mysql4>
+        </models>
+        <resources>
+            <quickshop_setup>
+                <setup>
+                    <module>EM_Quickshop</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </quickshop_setup>
+            <quickshop_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </quickshop_write>
+            <quickshop_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </quickshop_read>
+        </resources>
+        <blocks>
+            <quickshop>
+                <class>EM_Quickshop_Block</class>
+            </quickshop>
+			<!--<catalog>
+				<rewrite>
+					<category_view>EM_Quickshop_Block_Category_View</category_view>
+				</rewrite>
+			</catalog>-->
+        </blocks>
+        <helpers>
+            <quickshop>
+                <class>EM_Quickshop_Helper</class>
+            </quickshop>
+        </helpers>
+    </global>
+	<default>
+        <quickshop>
+            <general>
+                <size_type>0</size_type>
+				<frame_width>75</frame_width>
+				<frame_height>90</frame_height>
+            </general>
+        </quickshop>
+	</default>
+</config>

@@ -2,6 +2,9 @@
 
 <layout version="0.1.0">
 <default>
+	<reference name="header">
+            <block type="directory/currency" name="custom_currency_selector" template="currency/currency.phtml"/>
+        </reference>
  <reference name="content">
      		<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
      			

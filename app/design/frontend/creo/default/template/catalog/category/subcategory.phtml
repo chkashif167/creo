@@ -15,8 +15,8 @@ $categories = $categpry->getChildrenCategories(); ?>
     	
      ?>
         <li>
-          <!-- <a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
-        <img src="<?php echo Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl(); ?>" width="100" height = "100" alt="<?php echo $_category->getName()?>"/> -->
+          <a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
+        <img src="<?php echo Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl(); ?>" width="100" height = "100" alt="<?php echo $_category->getName()?>"/> 
      <?php echo $_category->getName() ?>
      </a>
         </li>
