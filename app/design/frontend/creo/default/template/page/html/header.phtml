@@ -28,7 +28,60 @@
  */
 ?>
 
-<div class="header-language-background">
+	    <header id="header" class="row">
+			        <div class="col col-lg-6 col-md-6 col-sm-6">
+			            <strong class="logo">
+                     <a class="logo" href="<?php echo $this->getUrl('') ?>">
+            <?php /*?><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+<?php */?>            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+        </a>
+
+                     </strong>
+			            <nav id="nav">
+			                <ol class="nav-primary">
+			                    <li class="active"><a href="#">Home</a></li>
+			                    <li><a href="#">CLOTHING</a></li>
+			                    <li><a href="#">ACCESSORIES</a></li>
+			                    <li><a href="#">CATEGORIES</a></li>
+			                    <li><a href="#">CREATE</a></li>
+			                </ol>
+			            </nav>
+			        </div>
+			        <div class="col right-area col-lg-6 col-md-6 col-sm-6">
+			            <div class="cart"><a href="#">my cart</a></div>
+			            <div class="bottom-area">
+			                <div class="open-close basic-open-close">
+			                    <a class="opener" href="#">Aed</a>
+			                    <ul class="slide">
+			                        <li><a href="#">Aed</a></li>
+			                        <li><a href="#">US Doller</a></li>
+			                    </ul>
+			                </div>
+			                <div class="open-close basic-open-close">
+			                    <a class="opener" href="#">Eng</a>
+			                    <ul class="slide">
+			                        <li><a href="#">English</a></li>
+			                        <li><a href="#">Arabic</a></li>
+			                    </ul>
+			                </div>
+			                <div class="open-close login-area">
+			                    <a class="opener" href="#">Dexter Waspov</a>
+			                    <ul class="slide">
+			                        <li><a href="#">My account</a></li>
+			                        <li><a href="#">Wishlist</a></li>
+			                        <li><a href="#">Checkout</a></li>
+			                        <li><a href="#">Logout</a></li>
+			                    </ul>
+			                </div>
+			                <form action="#" class="search-form">
+			                    <input type="text" placeholder="">
+			                    <input type="submit" value="submit">
+			                </form>
+			            </div>
+			        </div>
+			    </header>
+
+<?php /*?><div class="header-language-background">
     <div class="header-language-container">
         <div class="store-language-container">
             <?php echo $this->getChildHtml('store_language') ?>
@@ -101,4 +154,4 @@
 </header>
 
 
-<?php echo $this->getChildHtml('topContainer'); ?>
+<?php echo $this->getChildHtml('topContainer'); ?><?php */?>

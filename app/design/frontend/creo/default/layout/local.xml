@@ -1,25 +1,39 @@
 <?xml version="1.0"?>
-
 <layout version="0.1.0">
-<cms_index_index>
+
+<default>
 <reference name="head">
+ <action method="addCss"><stylesheet>style.css</stylesheet></action> 
+  <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
+  <action method="setText"><text><![CDATA[<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed">]]></text></action>
+  <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
+  <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action><!--Remove CSS from skin Folder-->
+</reference>
+</default>
+
+
+<cms_index_index>
+		<reference name="head">
             <action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
             <action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>
             <action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
         </reference>
+		  
         <reference name="content">
             <block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
         </reference>
- <reference name="content">
-     		<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
-     			<action method="setData"><name>category_id</name><value>7</value></action>
-     		</block>
-
-     		<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
-     			<action method="setData"><name>title</name><value>Styles</value></action>
-     			<action method="setData"><name>category_id</name><value>12</value></action>
-     		</block>
-        </reference>
+		  
+		<reference name="content">
+		<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
+		<action method="setData"><name>category_id</name><value>7</value></action>
+		</block>
+		
+		<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
+		<action method="setData"><name>title</name><value>Styles</value></action>
+		<action method="setData"><name>category_id</name><value>12</value></action>
+		</block>
+		</reference>
+		
 </cms_index_index>
 
  <catalog_category_default>

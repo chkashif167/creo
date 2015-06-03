@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Czettner_Ajax>
+            <version>1.0</version>
+        </Czettner_Ajax>
+    </modules>
+    
+    <global>
+        <blocks>
+            <ajax>
+                <class>Czettner_Ajax_Block</class>
+            </ajax>
+        </blocks>
+    </global>
+    
+    <frontend>
+        <routers>
+            <ajax>
+                <use>standard</use>
+                <args>
+                    <module>Czettner_Ajax</module>
+                    <frontName>ajax</frontName>
+                </args>
+            </ajax>
+        </routers>
+        <layout>
+            <updates>
+                <ajax>
+                    <file>czettner_ajax.xml</file>
+                </ajax>
+            </updates>
+        </layout>
+    </frontend>
+
+
+</config>

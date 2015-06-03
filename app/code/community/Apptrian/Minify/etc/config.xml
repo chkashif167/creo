@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Apptrian
+ * @package    Apptrian_Minify
+ * @author     Apptrian
+ * @copyright  Copyright (c) 2015 Apptrian (http://www.apptrian.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Apptrian_Minify>
+            <version>1.2.0</version>
+        </Apptrian_Minify>
+    </modules>
+    <global>
+        <helpers>
+            <apptrian_minify>
+                <class>Apptrian_Minify_Helper</class>
+            </apptrian_minify>
+        </helpers>
+		<models>		
+			<apptrian_minify>
+				<class>Apptrian_Minify_Model</class>
+			</apptrian_minify>  		
+		</models>
+		<blocks>
+			<apptrian_minify>
+				<class>Apptrian_Minify_Block</class>
+			</apptrian_minify>
+			<page>
+                <rewrite>
+                    <html_head>Apptrian_Minify_Block_Page_Html_Head</html_head>
+                </rewrite>
+            </page>
+		</blocks>
+        <resources>
+            <apptrian_minify_setup>
+                <setup>
+                    <module>Apptrian_Minify</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </apptrian_minify_setup>
+        </resources>
+    </global>
+	<default>
+        <apptrian_minify>
+            <general>
+                <minify_html>0</minify_html>
+                <max_minification>0</max_minification>
+                <compatibility>0</compatibility>
+                <minify_css>0</minify_css>
+                <css_version></css_version>
+                <minify_js>0</minify_js>
+                <js_version></js_version>
+            </general>
+        </apptrian_minify>
+    </default>
+    <frontend>
+        <events>
+            <core_block_abstract_to_html_after>
+	            <observers>
+	                <apptrian_minify_core_block_abstract_to_html_after>
+	                    <class>apptrian_minify/observer</class>
+	                    <method>minifyBlockHtml</method>
+	                </apptrian_minify_core_block_abstract_to_html_after>
+	            </observers>
+            </core_block_abstract_to_html_after>
+            <controller_action_postdispatch>
+                <observers>
+                    <apptrian_minify_controller_action_postdispatch>
+                        <class>apptrian_minify/observer</class>
+                        <method>minifyPageHtml</method>
+                    </apptrian_minify_controller_action_postdispatch>
+                </observers>
+            </controller_action_postdispatch>
+        </events>
+    </frontend>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <apptrian_info>
+                                            <title>Info</title>
+                                        </apptrian_info>
+                                        <apptrian_minify>
+                                            <title>Minify HTML CSS JS</title>
+                                        </apptrian_minify>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <Apptrian_Minify>
+                    <files>
+                        <default>Apptrian_Minify.csv</default>
+                    </files>
+                </Apptrian_Minify>
+            </modules>
+        </translate>
+    </adminhtml>
+    <crontab>
+        <jobs>
+            <apptrian_minify_check>
+                <schedule>
+                   <cron_expr>55 5 */15 * *</cron_expr>
+                </schedule>
+                <run>
+                   <model>apptrian_minify/cron::check</model>
+                </run>
+            </apptrian_minify_check>
+        </jobs>
+    </crontab>
+</config>

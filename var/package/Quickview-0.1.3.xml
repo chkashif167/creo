@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Quickview</name>
+    <version>0.1.3</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Quickview allows you to quickly view and add a product to cart (without opening the product view page).</summary>
+    <description>Quickview allows you to quickly view and add a product to cart (without opening the product view page).</description>
+    <notes>Advanced version released</notes>
+    <authors><author><name>Arvind Bhardwaj</name><user>Arvind07</user><email>bhardwajsonheight@gmail.com</email></author></authors>
+    <date>2013-05-14</date>
+    <time>06:08:58</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Webspeaks_Productbook.xml" hash="24796a06a0b6f0e1bda107617ba14a45"/></dir></target><target name="magelocal"><dir name="Webspeaks"><dir name="Productbook"><dir name="Block"><dir name="Product"><file name="List.php" hash="af5b2a1d9a77375116dacbda3f846a7b"/></dir><file name="Productbook.php" hash="1e31dbbebce698ecc1dc96b9f8d6daec"/></dir><dir name="Helper"><file name="Data.php" hash="88f044abc77bc0e13d5f39bb0db24ead"/></dir><dir name="controllers"><file name="IndexController.php" hash="a5532888a99fb29e5cb51c438a5c9f03"/></dir><dir name="etc"><file name="adminhtml.xml" hash="56f021ff90b6f52d591d7a29d816fbda"/><file name="config.xml" hash="cdd934d5fdba7bd9a5b250f3e3799cad"/><file name="system.xml" hash="5d57a20c737eac17a4f6ff2f101d7802"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="productbook.xml" hash="97f114e64cc5c29ca3da21210f5dea89"/></dir></dir></dir></dir><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="productbook.xml" hash="4bf570c4b395d5d7e31d4b08de41fcd3"/></dir><dir name="template"><dir name="productbook"><file name="pb_footer.phtml" hash="8d18dd874878957b6465c13bb0ea8520"/><dir name="product"><file name="list.phtml" hash="c363ed297c088d097f47e2e886036b29"/></dir><file name="productbook.phtml" hash="470b7c5882e7604f08fb346ab4179e62"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="productbook"><dir name="css"><file name="productbook.css" hash="97b7e6d6b43cdd58fb16654b886d1cd6"/></dir><dir name="images"><file name="sprite-icons.png" hash="e9dda3122075b9123fbad09314d73771"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
