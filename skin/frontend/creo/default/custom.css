@@ -1,0 +1,58 @@
+#auguria-slider .btn-prev,
+#auguria-slider .btn-next{
+	width: 56px;
+	height: 56px;
+	background: #000;
+	position: absolute;
+	margin-top: -28px;
+	top: 50%;
+	left: 0;
+	font-size: 0;
+	line-height: 0;
+}
+#auguria-slider .btn-prev:hover,
+#auguria-slider .btn-next:hover{
+	text-decoration: none;
+	opacity: 0.8;
+}
+#auguria-slider .btn-next{
+	left: auto;
+	right: 0;
+}
+#auguria-slider .btn-prev:before,
+#auguria-slider .btn-next:before{
+	position: absolute;
+	left: 100%;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 56px 20px 0 0;
+	border-color: #000 transparent transparent;
+	content: '';
+}
+#auguria-slider .btn-next:before{
+	left: auto;
+	right: 100%;
+	border-width: 0 0 56px 20px;
+	border-color: transparent transparent #000 transparent;
+}
+#auguria-slider .btn-prev:after,
+#auguria-slider .btn-next:after{
+	position: absolute;
+	top: 52%;
+	left: 25px;
+	background: url('images/sprite.png') no-repeat -83px 0;
+	width: 14px;
+	height: 20px;
+	margin-top: -10px;
+	content: '';
+}
+#auguria-slider .btn-next:after{
+	left: auto;
+	right: 25px;
+	background-position: -105px 0;
+}
+#auguria-slider .pagination { display: none;}
+#auguria-slider .caption { display: none;}
+.auguria-slider-container { z-index: -999;}

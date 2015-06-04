@@ -1,24 +1,36 @@
-
-<?php if($this->getData('title')){?>
-<h2><?php echo $this->getData('title');?></h2>
-<?php }?>
 <?php
 
 $category_id =  $this->getData('category_id');
 $_helper = Mage::helper('catalog/category');
 $categpry = Mage::getModel('catalog/category')->load($category_id);
 $categories = $categpry->getChildrenCategories(); ?>
-        
-<ul class="subcategories">
-    <?php foreach ($categories as $_category):
-    //echo 
-    	
-     ?>
-        <li>
-          <a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
-        <img src="<?php echo Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl(); ?>" width="100" height = "100" alt="<?php echo $_category->getName()?>"/> 
-     <?php echo $_category->getName() ?>
-     </a>
-        </li>
-    <?php endforeach; ?>
-</ul>
+<?php if($this->getData('category_title') == 'featured_category'){?>
+
+<div class="row shirts-category">
+  <?php foreach ($categories as $_category):    ?>
+  <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-6"> 
+     <a href="<?php echo $_helper->getCategoryUrl($_category) ?>"> <img alt="<?php echo $_category->getName()?>" 
+          src="<?php echo Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl(); ?>" 
+           class="styles">
+       <h2> <span class="border"></span> <strong><?php echo $_category->getName() ?></strong> <span class="border"></span> <span class="border"></span> </h2>
+       </a> 
+    </div>
+  <?php endforeach; ?>
+  <?php }else if($this->getData('category_title') == 'style_category' ){ ?>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="heading-holder">
+      <?php if($this->getData('title')){?>
+      <h2><?php echo $this->getData('title');?></h2>
+      <?php }?>
+    </div>
+  </div>
+</div>
+
+<div class="row dark-box">
+  <?php foreach ($categories as $_category):  ?>
+  <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a href="<?php echo $_helper->getCategoryUrl($_category) ?>" class="box"><span><?php echo $_category->getName() ?></span></a> </div>
+  <?php endforeach; ?>
+</div>
+<?php }?>

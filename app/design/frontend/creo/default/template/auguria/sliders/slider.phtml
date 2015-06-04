@@ -14,9 +14,6 @@ $captionHeight = $this->getCaptionHeight();
 
 if ($slides && $slides->count()>0):
 ?>
-
-
-<section class="carousel home ">
 <div id="auguria-slider" class="clearer">
 	<div class="auguria-slider-container">
 		<?php
@@ -60,14 +57,14 @@ if ($slides && $slides->count()>0):
 	<?php
 	if (Mage::getStoreConfig('auguria_sliders/general/generate_next_prev')=='true' && $slides->count()>1):
 	?>
-	<a href="#" class="btn-prev"><span><?php echo $this->__('Previous'); ?> </span>
-	</a> <a href="#" class="btn-next"><span><?php echo $this->__('Next'); ?> </span>
+	<a href="#" class="prev btn-prev"><span><?php echo $this->__('Previous'); ?> </span>
+	</a> <a href="#" class="next btn-next"><span><?php echo $this->__('Next'); ?> </span>
 	</a>
 	<?php
 	endif;
 	?>
 </div>
-</section>
+
 <script type="text/javascript">
 //<![CDATA[
 	jQuery(function(){
