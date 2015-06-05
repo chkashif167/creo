@@ -10,6 +10,13 @@
   <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
   <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action><!--Remove CSS from skin Folder-->
 </reference>
+
+
+<reference name="footer">
+        <remove name="footer_currency" />
+    </reference>
+	 
+	 
 </default>
 
 

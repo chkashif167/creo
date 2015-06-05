@@ -19,7 +19,7 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -31,15 +31,40 @@
  * @see Mage_Directory_Block_Currency
  */
 ?>
-<?php if($this->getCurrencyCount()>1): ?>
 
-  <div class="open-close basic-open-close "> <a class="opener" href="#">AED</a>
-    <ul class="slide currencies">
-      <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
-      <li> <a href="<?php echo $this->getSwitchCurrencyUrl($_code) ?>" onclick="setLocation(this.value);"> <?php echo $_code ?> </a> </li>
-      <?php endforeach; ?>
-    </ul>
-  </div>
+<?php foreach ($this->getCurrencies() as $_code => $_name):
+if($_code==$this->getCurrentCurrencyCode()){
+$currentCurrency = $_code;
+$topoption = '<li><a href="'.$this->getSwitchCurrencyUrl($_code).'">'.$_code.'</a></li>'."\n";
+}
+else{
+$otheroptions .= '<li><a href="'.$this->getSwitchCurrencyUrl($_code).'">'.$_code.'</a></li>'."\n";
+}
+endforeach;
 
-<?php endif; ?>
- 
+?>
+<div class="open-close basic-open-close">
+<a href="#" class="opener"><?php echo $currentCurrency; ?></a>
+<ul class="slide js-slide-hidden">
+<?php echo $topoption.$otheroptions; ?>
+</ul>
+</div>
+
+
+
+<?php /*?><?php if($this->getCurrencyCount()>1): ?>
+<div class="block block-currency">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Select Your Currency') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <select name="currency" title="<?php echo $this->__('Select Your Currency') ?>" onchange="setLocation(this.value)">
+        <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+            <option value="<?php echo $this->getSwitchCurrencyUrl($_code) ?>"<?php if($_code==$this->getCurrentCurrencyCode()): ?> selected="selected"<?php endif; ?>>
+                <?php echo $_name ?> - <?php echo $_code ?>
+            </option>
+        <?php endforeach; ?>
+        </select>
+    </div>
+</div>
+<?php endif; ?><?php */?>
