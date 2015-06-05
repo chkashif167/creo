@@ -13,10 +13,21 @@
 </reference>
 
 
-<reference name="footer">
-        <remove name="footer_currency" />
-    </reference>
-	 
+	<reference name="footer">
+			 <remove name="footer_currency" /> 
+			 <remove name="footer_links" />
+			 <remove name="footer_links2" /> 
+			 <remove name="store_switcher" /> 
+			 <remove name="cms_footer_links" />
+			 <remove name="footer.newsletter" />
+			  		 
+			<!--<block type="cms/block" name="help_footer" as="help_footer">
+			<action method="setBlockId"><block_id>help_footer</block_id></action>
+			</block>
+			<block type="core/template" name="loginpopup" as="loginpopup" template="page/template/loginpopup.phtml"/> -->
+			 
+	 </reference>
+
 	 
 </default>
 
