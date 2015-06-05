@@ -2,6 +2,7 @@
 <layout version="0.1.0">
 
 <default>
+
 <reference name="head">
  <action method="addCss"><stylesheet>style.css</stylesheet></action> 
  <action method="addCss"><stylesheet>custom.css</stylesheet></action>
@@ -46,7 +47,6 @@
 	</reference>
 		
 </cms_index_index>
-
  <catalog_category_default>
   <reference name="root">
     <action method="setTemplate"><template>page/1column.phtml</template></action>

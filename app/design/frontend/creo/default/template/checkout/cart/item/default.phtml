@@ -72,15 +72,55 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
         <?php if ($_options = $this->getOptionList()):?>
         <dl class="item-options">
-            <?php foreach ($_options as $_option) : ?>
-            <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-                <dt><?php echo $this->escapeHtml($_option['label']) ?></dt>
-                <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
+            <?php foreach ($_options as $_option) : 
+                 if($this->escapeHtml($_option['label']) == "size")
+                 {
+                      $select_array[$_item->getSku()] =  $_option['value'];
+                 }
+            ?>
+            <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option); ?>
+             
+            <?php 
+          if($_option['value'] == "nextday")
+                 {?>
+                <dt>Delivery Date</dt>
+                <dd><?php  echo date('d/m/y',strtotime('+1 day')); ?></dd>
+             <?php   }?>
+
+              <?php 
+             if($_option['value'] == "2 days")
+                 {?>
+                <dt>Delivery Date</dt>
+                <dd><?php  echo date('d/m/y',strtotime('+2 days')); ?></dd>
+             <?php  }?>
+              <?php 
+             if($_option['value'] == "3 days")
+                 {?>
+                 <dt>Delivery Date</dt>
+                <dd><?php  echo date('d/m/y',strtotime('+3 days')); ?></dd>
+             <?php  }?>
+              <?php 
+             if($_option['value'] == "4 days")
+                 {?>
+                 <dt>Delivery Date</dt>
+                <dd><?php  echo date('d/m/y',strtotime('+4 days')); ?></dd>
+             <?php  }
+
+             if($this->escapeHtml($_option['label']) == "shipping_options")
+             {
+                 $header_block = "style='display:none;'";
+                   unset($_option['value']);
+                   unset($_formatedOptionValue['value']);
+                
+             } //print_r($_option);?>
+            
+                <dt <?php if($header_block){ echo $header_block;}?>><?php echo $this->escapeHtml($_option['label']) ?></dt>
+                <dd<?php if (isset($_formatedOptionValue['full_view'])): ?>   <?php if($text_block){ echo $text_block;}?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
                 <?php if (isset($_formatedOptionValue['full_view'])): ?>
                 <div class="truncated_full_value">
                     <dl class="item-options">
-                        <dt><?php echo $this->escapeHtml($_option['label']) ?></dt>
-                        <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
+                        <dt  <?php if($header_block){ echo $header_block;}?>><?php echo $this->escapeHtml($_option['label']) ?></dt>
+                        <dd  <?php if($text_block){ echo $text_block;}?>   ><?php echo $_formatedOptionValue['full_view'] ?></dd>
                     </dl>
                 </div>
                 <?php endif; ?>
@@ -204,6 +244,30 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         </td>
         <?php endif; ?>
     <?php endif; ?>
+
+    <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Size'); ?>">&nbsp;</td>
+     <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Size'); ?>"><?php 
+       $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'size');
+        if ($attribute->usesSource()) {
+            //echo $select_array[$_item->getSku()];
+            $options = $attribute->getSource()->getAllOptions(false);
+            $txt = "";
+            foreach($options as $option)
+            {
+                if($select_array[$_item->getSku()] == $option['label'])
+                    {
+
+                        $txt [] = '<span style="color:red;">'.$option['label'].'</span>';
+                    }else{
+                         $txt [] = $option['label'];
+                    }
+               // echo $option['label'].",";
+            }
+
+        }
+        echo implode(',',$txt);
+     ?></td>
+      <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Size'); ?>">&nbsp;</td>
     <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Qty'); ?>">
         <input type="text" pattern="\d*" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
 
