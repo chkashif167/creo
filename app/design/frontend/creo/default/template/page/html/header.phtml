@@ -28,7 +28,90 @@
  */
 ?>
 
-<div class="header-language-background">
+	    <header id="header" class="row">
+			        <div class="col col-lg-6 col-md-6 col-sm-6">
+			            <strong class="logo">
+                     <a class="logo" href="<?php echo $this->getUrl('') ?>">
+            <?php /*?><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+<?php */?>            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+        </a>
+
+                     </strong>
+			            <nav id="nav">
+			                <ol class="nav-primary">
+			                    <li class="active"><a href="#">Home</a></li>
+			                    <li><a href="#">CLOTHING</a></li>
+			                    <li><a href="#">ACCESSORIES</a></li>
+			                    <li><a href="#">CATEGORIES</a></li>
+			                    <li><a href="#">CREATE</a></li>
+			                </ol>
+			            </nav>
+			        </div>
+			     <div class="col right-area col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			            <div class="open-close cart">
+							<a href="#" class="opener">My Cart</a>
+							<div class="slide js-slide-hidden">
+								<div class="product">
+									<a href="#" class="alignleft"><img alt="" src="images/img02.jpg"></a>
+									<div class="text-area">
+										<h2><a href="#">Velour Blazer With Faux Leather</a></h2>
+										<span class="price">$149.00</span>
+										<a class="cancel" href="#"><i class="icon-cancel"></i></a>
+										<a class="edit" href="#"><i class="icon-edit"></i></a>
+									</div>
+								</div>
+								<div class="product">
+									<a href="#" class="alignleft"><img alt="" src="images/img03.jpg"></a>
+									<div class="text-area">
+										<h2><a href="#">Velour Blazer With Faux Leather</a></h2>
+										<span class="price">$149.00</span>
+										<a class="cancel" href="#"><i class="icon-cancel"></i></a>
+										<a class="edit" href="#"><i class="icon-edit"></i></a>
+									</div>
+								</div>
+								<strong class="total">Total: 149.00 AED</strong>
+								<div class="btn-holder">
+									<a href="#"><span class="span1"><span class="span2">View Cart</span></span></a>
+									<a href="#">Checkout</a>
+								</div>
+							</div>
+						</div>
+
+
+
+			            <div class="bottom-area">
+			                <div class="open-close basic-open-close">
+			                    <a href="#" class="opener">Aed</a>
+			                    <ul class="slide js-slide-hidden">
+			                        <li><a href="#">Aed</a></li>
+			                        <li><a href="#">US Doller</a></li>
+			                    </ul>
+			                </div>
+			                <div class="open-close basic-open-close">
+			                    <a href="#" class="opener">Eng</a>
+			                    <ul class="slide js-slide-hidden">
+			                        <li><a href="#">English</a></li>
+			                        <li><a href="#">Arabic</a></li>
+			                    </ul>
+			                </div>
+			                <div class="open-close login-area">
+			                    <a href="#" class="opener">Dexter Waspov</a>
+			                    <ul class="slide js-slide-hidden">
+			                        <li><a href="#">My account</a></li>
+			                        <li><a href="#">Wishlist</a></li>
+			                        <li><a href="#">Checkout</a></li>
+			                        <li><a href="#">Logout</a></li>
+			                    </ul>
+			                </div>
+			                <form class="search-form" action="#">
+			                    <input type="text" placeholder="">
+			                    <input type="submit" value="submit">
+			                </form>
+			            </div>
+			        </div>
+			    </header>
+
+<?php /*?><div class="header-language-background">
     <div class="header-language-container">
         <div class="store-language-container">
             <?php echo $this->getChildHtml('store_language') ?>
@@ -101,4 +184,4 @@
 </header>
 
 
-<?php echo $this->getChildHtml('topContainer'); ?>
+<?php echo $this->getChildHtml('topContainer'); ?><?php */?>

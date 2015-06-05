@@ -24,6 +24,49 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
+<footer id="footer">
+					<div class="row top-area">
+						<div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+               <strong class="logo">
+               <a class="logo" href="<?php echo $this->getUrl('') ?>">
+                <img src="<?php echo $this->getSkinUrl() ?>/images/logo.png" border="0" />
+               </a>
+               </strong>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-9 col-xs-9 links">
+                  <?php $help = Mage::getModel('cms/block')->load('help_footer'); ?>
+							<div class="column">
+								<h3> <?php  echo $help->getTitle(); ?></h3>
+								<?php echo $help->getContent(); ?>
+							</div>
+							<div class="column">
+							 <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
+								<h3> <?php  echo $acount->getTitle(); ?></h3>
+                        <?php echo $acount->getContent(); ?>
+							</div>
+							<div class="column">
+                     <?php $information_footer = Mage::getModel('cms/block')->load('information_footer'); ?>
+								<h3> <?php  echo $information_footer->getTitle(); ?></h3>
+                        <?php echo $information_footer->getContent(); ?>
+							
+							</div>
+						</div>
+					</div>
+					<div class="row bottom-area">
+						<span class="copyright col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                  <?php echo $this->getCopyright() ?>
+                  </span>
+						<nav class="footer-nav col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footerLinks')->toHtml() ?>
+							
+						</nav>
+						<div class="social col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social')->toHtml() ?>
+						</div>
+					</div>
+				</footer>
+
 <div class="footer-container">
     <div class="footer">
         <?php echo $this->getChildHtml() ?>
