@@ -31,13 +31,9 @@
     -->
 
     <default translate="label" module="page">
-<<<<<<< HEAD
 
         <label>All Pages</label>
-        <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
-=======
-        <label>All Pages</label>
->>>>>>> 2d0320e477b62e6c8f324ebecf4290501cc8928a
+
         <block type="page/html" name="root" output="toHtml" template="page/3columns.phtml">
 
             <block type="page/html_head" name="head" as="head">

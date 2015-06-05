@@ -37,6 +37,7 @@ Whoops, it looks like you have an invalid PHP version.</h3></div><p>Magento supp
 /**
  * Error reporting
  */
+ini_set('display_errors', 1);
 error_reporting(E_ALL | E_STRICT);
 
 /**
@@ -48,6 +49,7 @@ $compilerConfig = MAGENTO_ROOT . '/includes/config.php';
 if (file_exists($compilerConfig)) {
     include $compilerConfig;
 }
+
 
 $mageFilename = MAGENTO_ROOT . '/app/Mage.php';
 $maintenanceFile = 'maintenance.flag';

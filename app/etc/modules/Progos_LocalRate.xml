@@ -1,0 +1,13 @@
+<config>
+<!-- ... -->
+  <modules>
+<!-- ... -->
+<!-- declare YourCompany_NewModule module -->
+    <Progos_LocalRate>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Progos_LocalRate>
+<!-- ... -->
+  </modules>
+<!-- ... -->
+</config>
