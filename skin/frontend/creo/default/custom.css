@@ -56,3 +56,19 @@
 #auguria-slider .pagination { display: none;}
 #auguria-slider .caption { display: none;}
 .auguria-slider-container { z-index: -999;}
+
+.newslettersubscribe {
+	margin: 0 auto 20px;
+	padding: 5px;
+	display: block;
+	border: 1px solid #565656;
+	background: #222;
+	width: 168px;
+	height: 52px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	color: #fff;
+	font: 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
+}
+.youama-register-window, .youama-login-window { display: block !important;}

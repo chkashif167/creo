@@ -1,3 +1,47 @@
- <?php $block = Mage::getModel('cms/block')->load('help_footer');
-      echo $block->getTitle();
-  ?>
+<div class="youama-login-window">
+        <div class="youama-window-outside">
+            <span class="close">×</span>
+
+            <div class="youama-window-inside">
+                <div class="youama-window-title">
+                    <h3>
+                        <?php echo $this->__('Login') ?>
+                    </h3>
+                </div>
+                
+                <div class="youama-window-box first">
+                    <div class="youama-window-content">
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-email"><?php echo $this->__('E-mail address') ?> <span>*</span></label>
+                            <input type="text" placeholder="<?php echo $this->__('E-mail address') ?>" id="youama-email" name="youama-email" value="" />
+                            <div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-wronglogin"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-password"><?php echo $this->__('Password') ?> <span>*</span></label>
+                            <input type="password" placeholder="<?php echo $this->__('Password') ?>" id="youama-password" name="youama-password" value="" />
+                            <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-longpassword"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="youama-window-box last">
+                    <div class="youama-window-content box-contents box-contents-button youama-showhideme">
+                        <span class="youama-forgot-password">
+                            <a href="<?php echo Mage::getBaseUrl() ?>customer/account/forgotpassword/"><?php echo $this->__('Forgot Password') ?></a>
+                        </span>
+                        <button type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
+                            <span>
+                                <span>
+                                    <?php echo $this->__('Login') ?>
+                                </span>
+                            </span>
+                        </button>
+                        <p id="y-to-register" class="yoauam-switch-window">
+                            <?php echo $this->__('or registration') ?>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>

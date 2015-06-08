@@ -29,23 +29,19 @@
 ?>
 
 	    <header id="header" class="row">
-			        <div class="col col-lg-6 col-md-6 col-sm-6">
+			        <div class="col col-static col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                 
+                 <div class="sticky-holder">
 			            <strong class="logo">
-                     <a class="logo" href="<?php echo $this->getUrl('') ?>">
+                     <a data-target=".bs-example-modal-md" data-toggle="modal" href="#">
             <?php /*?><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
 <?php */?>            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
         </a>
 
                      </strong>
-			            <nav id="nav">
-			                <ol class="nav-primary">
-			                    <li class="active"><a href="#">Home</a></li>
-			                    <li><a href="#">CLOTHING</a></li>
-			                    <li><a href="#">ACCESSORIES</a></li>
-			                    <li><a href="#">CATEGORIES</a></li>
-			                    <li><a href="#">CREATE</a></li>
-			                </ol>
-			            </nav>
+                      <?php echo $this->getChildHtml('topMenu') ?>
+                                            
+	                     </div>
 			        </div>
 			     <div class="col right-area col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			            <div class="open-close cart">
@@ -92,6 +88,7 @@
 			                <div class="open-close login-area">
 			                    <a href="#" class="opener">Dexter Waspov</a>
 			                    <ul class="slide js-slide-hidden">
+                             <li><a data-target=".bs-example-modal-sm" data-toggle="modal" href="#">Login</a></li>
 			                        <li><a href="#">My account</a></li>
 			                        <li><a href="#">Wishlist</a></li>
 			                        <li><a href="#">Checkout</a></li>
