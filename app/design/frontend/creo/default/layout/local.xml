@@ -4,13 +4,42 @@
 <default>
 
 <reference name="head">
- <action method="addCss"><stylesheet>style.css</stylesheet></action> 
  <action method="addCss"><stylesheet>custom.css</stylesheet></action>
-  <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
+ <action method="addCss"><stylesheet>jquery.mCustomScrollbar.css</stylesheet></action>
   <action method="setText"><text><![CDATA[<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed">]]></text></action>
   <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
-  <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action><!--Remove CSS from skin Folder-->
+  <action method="addItem"><type>skin_js</type><script>js/jquery.mCustomScrollbar.js</script></action>
+	<action method="addItem"><type>skin_js</type><script>bootstrap/js/bootstrap.min.js</script></action>
+   <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
+ <action method="addCss"><stylesheet>style.css</stylesheet></action>
+  <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+
 </reference>
+
+
+	<reference name="footer">
+			 <remove name="footer_currency" /> 
+			 <remove name="footer_links" />
+			 <remove name="footer_links2" /> 
+			 <remove name="store_switcher" /> 
+			 <remove name="cms_footer_links" />
+			<!-- <remove name="footer.newsletter" />-->
+			<!--<block type="cms/block" name="help_footer" as="help_footer">
+			<action method="setBlockId"><block_id>help_footer</block_id></action>
+			</block>
+			 -->
+	  
+	  <block type="newsletter/subscribe" name="footer.newsletter" as="newsletter" before="footer_store_language" template="newsletter/subscribe.phtml"/>
+	 
+	 <block ifconfig="youamaajaxlogin/settings/power" type="youama_ajaxlogin/ajaxlogin"   name="youamaajaxlogin"   as="youamaajaxlogin">
+                <action ifconfig="youamaajaxlogin/settings/power"
+                        method="setTemplate">
+                    <template>youama/ajaxlogin/ajaxlogin.phtml</template>
+                </action>
+            </block>
+	 </reference>
+
+	 
 </default>
 
 
@@ -18,12 +47,13 @@
 	
 	<reference name="head">
 	<action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
-	<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>
+	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
 	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
 	</reference>
 	
 	<reference name="content">
 	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	
 	</reference>
 	
 	<reference name="content">
