@@ -32,7 +32,7 @@
 <config>
     <modules>
         <Youama_Ajaxlogin>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
         </Youama_Ajaxlogin>
     </modules>

@@ -741,7 +741,7 @@ function centerModals(){
   });
 }
 $j('.modal').on('show.bs.modal', centerModals);
-$j(window).on('resize, load', centerModals);
+$j(window).on('resize, load ready', centerModals);
 
  /*
  * custom scrollbar

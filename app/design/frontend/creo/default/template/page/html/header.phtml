@@ -33,7 +33,7 @@
                  
                  <div class="sticky-holder">
 			            <strong class="logo">
-                     <a data-target=".bs-example-modal-md" data-toggle="modal" href="#">
+                     <a href="<?php echo  Mage::getBaseUrl(); ?>">
             <?php /*?><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
 <?php */?>            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
         </a>
@@ -45,8 +45,9 @@
 			        </div>
 			     <div class="col right-area col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			            <div class="open-close cart">
-							<a href="#" class="opener">My Cart</a>
-							<div class="slide js-slide-hidden">
+							<a href="javascript:void(0)" class="opener">My Cart</a>
+                     <?php echo $this->getChildHtml('minicart_head'); ?>
+							<!--<div class="slide js-slide-hidden">
 								<div class="product">
 									<a href="#" class="alignleft"><img alt="" src="images/img02.jpg"></a>
 									<div class="text-area">
@@ -70,35 +71,47 @@
 									<a href="#"><span class="span1"><span class="span2">View Cart</span></span></a>
 									<a href="#">Checkout</a>
 								</div>
-							</div>
+							</div>-->
 						</div>
 
 
 
 			            <div class="bottom-area">
-			             
-                          <?php echo $this->getChildHtml('currency_switcher') ?>
-			                <div class="open-close basic-open-close">
-			                    <a href="#" class="opener">Eng</a>
-			                    <ul class="slide js-slide-hidden">
-			                        <li><a href="#">English</a></li>
-			                        <li><a href="#">Arabic</a></li>
-			                    </ul>
-			                </div>
+			             <a class="headerLogin" data-target=".bs-example-modal-md" data-toggle="modal" href="#">sub</a>
+                        <?php echo $this->getChildHtml('currency_switcher') ?>
+           					<?php $islogedin = Mage::getSingleton('customer/session')->isLoggedIn() ?>
+                        <?php if(!$islogedin): ?>
+                        <a class="headerLogin" data-target=".bs-example-modal-sm" data-toggle="modal" href="#">LOGIN</a>
+                        <?php else: ?>
 			                <div class="open-close login-area">
-			                    <a href="#" class="opener">Dexter Waspov</a>
-			                    <ul class="slide js-slide-hidden">
-                             <li><a data-target=".bs-example-modal-sm" data-toggle="modal" href="#">Login</a></li>
+                         <!--<a href="#" class="opener"  data-target=".bs-example-modal-md" data-toggle="modal"> NL </a>-->
+                         
+			                 <a href="#" class="opener">
+									<?php
+                           $session = Mage::getSingleton('customer/session');
+                           if($session->isLoggedIn()) {
+                           $customer = $session->getCustomer();
+                           echo $customer->getName();
+                           
+                           }
+								  ?>
+                          </a>
+                           <?php echo $this->getChildHtml('topLinks') ?>
+                
+			                    <!--<ul class="slide js-slide-hidden">
+                             
 			                        <li><a href="#">My account</a></li>
 			                        <li><a href="#">Wishlist</a></li>
 			                        <li><a href="#">Checkout</a></li>
 			                        <li><a href="#">Logout</a></li>
-			                    </ul>
+			                    </ul>-->
 			                </div>
-			                <form class="search-form" action="#">
+                         <?php endif ?>
+			              <!--  <form class="search-form" action="#">
 			                    <input type="text" placeholder="">
 			                    <input type="submit" value="submit">
-			                </form>
+			                </form>-->
+                        <?php echo $this->getChildHtml('topSearch') ?>
 			            </div>
 			        </div>
 			    </header>

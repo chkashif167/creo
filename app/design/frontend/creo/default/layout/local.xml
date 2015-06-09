@@ -28,17 +28,20 @@
 			<action method="setBlockId"><block_id>help_footer</block_id></action>
 			</block>
 			 -->
-	  
-	  <block type="newsletter/subscribe" name="footer.newsletter" as="newsletter" before="footer_store_language" template="newsletter/subscribe.phtml"/>
+<!--	  <block type="core/template" name="loginpopup" as="loginpopup" template="page/template/loginpopup.phtml"/>
+-->	  <block type="newsletter/subscribe" name="footer.newsletter" as="newsletter" before="footer_store_language" template="newsletter/subscribe.phtml"/>
 	 
-	 <block ifconfig="youamaajaxlogin/settings/power" type="youama_ajaxlogin/ajaxlogin"   name="youamaajaxlogin"   as="youamaajaxlogin">
-                <action ifconfig="youamaajaxlogin/settings/power"
-                        method="setTemplate">
-                    <template>youama/ajaxlogin/ajaxlogin.phtml</template>
-                </action>
-            </block>
+		<!--<block ifconfig="youamaajaxlogin/settings/power" type="youama_ajaxlogin/ajaxlogin"   name="youamaajaxlogin"   as="youamaajaxlogin">
+		<action ifconfig="youamaajaxlogin/settings/power"
+		method="setTemplate">
+		<template>youama/ajaxlogin/ajaxlogin.phtml</template>
+		</action>
+		</block>-->
+		<block type="customer/form_login" name="customer_form_login" template="customer/form/loginpopup.phtml" />
 	 </reference>
 
+
+	
 	 
 </default>
 

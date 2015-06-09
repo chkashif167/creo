@@ -31,7 +31,7 @@
 ?>
 <?php $_links = $this->getLinks(); ?>
 <?php if(count($_links)>0): ?>
-<ul class="links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
+<ul class=" slide js-slide-hidden links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
     <?php foreach($_links as $_link): ?>
         <?php if ($_link instanceof Mage_Core_Block_Abstract):?>
             <?php echo $_link->toHtml() ?>
