@@ -1,55 +1,29 @@
 <?xml version="1.0"?>
 <config>
   <modules>
-<!-- declare module's version information -->
     <Progos_LocalRate>
-<!-- this version number will be used for database upgrades -->
       <version>0.1.0</version>
     </Progos_LocalRate>
   </modules>
  
   <global>
-<!-- declare model group for new module -->
     <models>
-<!-- model group alias to be used in Mage::getModel() -->
-      <localrate>
-<!-- base class name for the model group -->
+      <progos_localrate>
         <class>Progos_LocalRate_Model</class>
-      </localrate>
+      </progos_localrate>
     </models>
- 
-<!-- declare resource setup for new module -->
-    <resources>
-<!-- resource identifier -->
-      <localrate_setup>
-<!-- specify that this resource is a setup resource and used for upgrades -->
-        <setup>
-<!-- which module to look for install/upgrade files in -->
-          <module>Progos_Shipping</module>
-        </setup>
-<!-- specify database connection for this resource -->
-        <connection>
-<!-- do not create new connection, use predefined core setup connection -->
-          <use>core_setup</use>
-        </connection>
-      </localrate_setup>
-    </resources>
+    
   </global>
-</config>
- <default>
+   <default>
         <carriers>
-            <mage_localrate>
-                    <active>1</active>
-                    <sallowspecific>0</sallowspecific>
-<model>localrate/carrier_localrate</model>
-                    <name>UAE Local Rate</name>
-                    <title>UAE Local Rate</title>
-                    <specificerrmsg>
-                        This shipping method is currently unavailable.
-                        If you would like to ship using this shipping
-                        method, please contact us.
-                    </specificerrmsg>
-                    <handling_type>F</handling_type>
-            </mage_localrate>
+            <progos_localrate>
+                <active>1</active>
+                <sort_order>10</sort_order>
+                <model>progos_localrate/carrier</model>
+                <title>Local Rate</title>
+                <sort_order>10</sort_order>
+                <sallowspecific>1</sallowspecific>
+            </progos_localrate>
         </carriers>
     </default>
+</config>

@@ -6,6 +6,9 @@
     <Progos_LocalRate>
       <active>true</active>
       <codePool>local</codePool>
+       <depends>
+                <Mage_Shipping />
+            </depends>
     </Progos_LocalRate>
 <!-- ... -->
   </modules>

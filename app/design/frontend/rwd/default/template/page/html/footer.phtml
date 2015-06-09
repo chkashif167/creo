@@ -24,6 +24,9 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<?php 
+						echo $this->getLayout()->createBlock('core/template')->setTemplate('ajaxnewsletter/index.phtml')->toHtml();
+					?>
 <div class="footer-container">
     <div class="footer">
         <?php echo $this->getChildHtml() ?>

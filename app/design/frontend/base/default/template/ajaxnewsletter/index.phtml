@@ -1,0 +1,138 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="block block-subscribe">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Newsletter') ?></span></strong>
+    </div>
+    <form action="javascript:void(0)<?php //echo $this->getUrl('ajaxnewsletter/index/new');?>" method="post" id="newsletter-validate-detail" onsubmit="myfunc();">
+        <div class="block-content">
+            <div class="form-subscribe-header">
+                <div class="output" id="output"></div>
+                <label for="newsletter"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
+            </div>
+            <div class="input-box">
+               <input type="text" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email" />
+           <div class="error-news-msg" id="error-news-msg" style="display:none;">Please insert a valid email address.</div>
+           
+            </div>
+            <div class="actions">
+                <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
+            </div>
+        </div>
+    </form>
+   <script type="text/javascript">
+    
+        
+		function myfunc()
+		{	
+			var newsletterSubscriberFormDetail = new VarienForm('newsletter-form');
+        
+                        
+			var form_email = $('newsletter').getValue();
+			var params_form = $('newsletter-validate-detail');
+			
+			new Validation('newsletter');
+                        
+			if(echeck(form_email))
+                            
+                            {  
+                              new Ajax.Request( "<?php echo Mage::getBaseUrl();?>ajaxnewsletter/index/new", {
+    method: "post",
+    parameters: {
+        email : form_email
+    },
+    onSuccess: function( transport ) {
+       Element.hide('error-news-msg');
+       
+       var da = transport.responseText;
+       var dat = da.split("&&");
+       $('output').innerHTML = dat[0];
+       if(dat[1]==1){ Element.show('output');
+       $('output').setAttribute("class", "success-msg");} else { Element.show('output'); $('output').setAttribute("class", "error-msg"); }
+    }
+}); 
+                                
+                                
+                            } else {  return true;}}
+                    
+                        
+                        
+                        function echeck(str) {
+
+        var at="@"
+        var dot="."
+        var lat=str.indexOf(at)
+        var lstr=str.length
+        var ldot=str.indexOf(dot)
+        if (str.indexOf(at)==-1){
+          goProcedural();
+           return false;
+        }
+
+        if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+         goProcedural();
+           return false;
+        }
+
+        if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+            goProcedural();
+            return false;
+        }
+
+         if (str.indexOf(at,(lat+1))!=-1){
+           goProcedural();
+            return false;
+         }
+
+         if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+            goProcedural();
+            return false;
+         }
+
+         if (str.indexOf(dot,(lat+2))==-1){
+           goProcedural();
+            return false;
+         }
+        
+         if (str.indexOf(" ")!=-1){
+            goProcedural();
+            return false;
+         }
+
+          return true;                    
+    }
+    function goProcedural()
+{
+     Element.hide('output');
+     $('error-news-msg').setAttribute("class", "validation-advice");
+  Element.show('error-news-msg');
+  
+  Element.hide.delay(10, 'error-news-msg');
+}
+                            
+                            </script>
+</div>

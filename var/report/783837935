@@ -1,0 +1,8 @@
+a:4:{i:0;s:58:"Module "Progos_LocalRate" requires module "mage_shipping".";i:1;s:716:"#0 D:\wamp\www\creo\creo\app\code\core\Mage\Core\Model\Config.php(849): Mage::throwException('Module "Progos_...')
+#1 D:\wamp\www\creo\creo\app\code\core\Mage\Core\Model\Config.php(812): Mage_Core_Model_Config->_sortModuleDepends(Array)
+#2 D:\wamp\www\creo\creo\app\code\core\Mage\Core\Model\Config.php(315): Mage_Core_Model_Config->_loadDeclaredModules()
+#3 D:\wamp\www\creo\creo\app\code\core\Mage\Core\Model\App.php(414): Mage_Core_Model_Config->loadModules()
+#4 D:\wamp\www\creo\creo\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
+#5 D:\wamp\www\creo\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 D:\wamp\www\creo\creo\index.php(89): Mage::run('', 'store')
+#7 {main}";s:3:"url";s:30:"/checkout/onepage/saveBilling/";s:11:"script_name";s:10:"/index.php";}
