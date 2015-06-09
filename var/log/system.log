@@ -217,6 +217,458 @@
 2015-06-05T06:19:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
 2015-06-05T06:19:53+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
 2015-06-05T06:19:53+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+<<<<<<< HEAD
+2015-06-05T06:28:13+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:28:13+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:28:13+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:37:23+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:37:23+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:37:23+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:37:31+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:37:31+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:37:31+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:41:25+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:41:25+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:41:25+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:42:37+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:42:37+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:42:37+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:42:45+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:42:45+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:42:45+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:44:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:44:42+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T06:44:42+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:37:38+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:37:38+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:37:38+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:37:38+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:37:38+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:37:38+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:38:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:38:28+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:38:28+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:41:01+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:41:01+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:41:01+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:53+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:53+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:55+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:55+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:55+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:57+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:57+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:57+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:59+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:59+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:47:59+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:48:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:48:09+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:48:09+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:31+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:31+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:31+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:47+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:47+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:47+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:47+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:47+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:50:47+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:51:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:51:17+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:51:18+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:51:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:51:18+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:51:18+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:22+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:22+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:22+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:28+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:28+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:31+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:31+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:31+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:31+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:31+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:31+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:46+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:52:46+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:09+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:09+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:15+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:15+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:15+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:52+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:52+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:53:52+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:15+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:15+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:15+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:43+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:43+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:59+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:59+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:54:59+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:55:12+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:55:12+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:55:12+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:55:25+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:55:25+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:55:25+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:36+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:36+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:36+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:38+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:38+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:38+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:51+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:51+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:51+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:53+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:53+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:57+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:57+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:56:57+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:37+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:37+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:37+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:46+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:46+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:58+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:58+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:57:58+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:02+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:02+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:02+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:05+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:05+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:05+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:06+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:06+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:06+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:14+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:14+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:14+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:15+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:15+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:15+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:16+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:16+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:23+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:23+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:23+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:25+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:25+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:25+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:26+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:26+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:26+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:36+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:36+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:36+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:42+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:42+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:46+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:46+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:56+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:56+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:58:56+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:03+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:03+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:03+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:06+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:06+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:06+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:07+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:07+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:07+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:40+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:40+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:40+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:42+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:42+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:43+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:43+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:44+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:44+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T07:59:44+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:00:00+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:00:00+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:00:00+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:00:08+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:00:08+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:00:08+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:09:45+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:09:45+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:09:45+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:03+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:03+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:03+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:10+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:10+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:10+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:13+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:13+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:13+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:13+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:13+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T08:10:13+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:20+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:20+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:21+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:21+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:21+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:21+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:24+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:24+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:24+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:50+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:50+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:06:50+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:07:55+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:07:55+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:07:55+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:03+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:03+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:03+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:08+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:08+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:08+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:10+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:10+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:08:10+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:10:27+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:10:27+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:10:27+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:10:41+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:10:41+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:10:41+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:09+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:09+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:13+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:13+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:13+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:16+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:16+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:39+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:39+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:39+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:44+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:44+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:44+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:49+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:49+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:49+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:57+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:57+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:40:57+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:09+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:09+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:17+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:17+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:30+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:30+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:30+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:54+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:54+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:44:54+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:00+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:00+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:00+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:11+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:11+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:11+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:28+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:28+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:31+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:31+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:31+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:41+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:41+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:41+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:49+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:49+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:45:49+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:38+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:38+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:38+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:43+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:43+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:46+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:46+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:46+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T10:52:46+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:13+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:13+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:13+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:18+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:18+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:32+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:32+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:36+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:36+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:36+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:39+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:39+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:39+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:40+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:40+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:07:40+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:08:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:08:53+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:08:53+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:06+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:06+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:06+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:11+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:11+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:11+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:14+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:14+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:14+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:14+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:14+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:09:14+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:44+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:44+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:44+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:46+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:46+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:49+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:49+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:49+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:49+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:49+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:17:49+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:18:19+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:18:19+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:18:19+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:18:58+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:18:58+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:18:58+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:19:06+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:19:06+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:19:06+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:19:58+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:19:58+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:19:58+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:21+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:21+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:26+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:26+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:26+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:29+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:29+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:29+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:29+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:29+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:20:29+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:29+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:29+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:29+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:42+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:42+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:55+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:55+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:26:55+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:01+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:01+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:01+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:04+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:04+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:04+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:04+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:04+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:27:04+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:30:31+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:30:31+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:30:31+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:30:49+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:30:49+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:30:49+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:31:13+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:31:13+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:31:13+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:33+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:33+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:33+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:43+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:43+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:45+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:45+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:36:45+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:03+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:03+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:03+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:08+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:08+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:08+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:33+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:33+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:33+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:39+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:39+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:39+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:55+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:55+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:37:55+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:04+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:04+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:04+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:10+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:10+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:10+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:25+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:25+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:25+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:35+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:35+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:38:35+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:19+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:19+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:19+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:21+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:21+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:27+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:27+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:27+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:40+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:40+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:40+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:43+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:43+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:55+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:55+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+2015-06-05T11:44:55+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\wamp\www\creo\creo\lib\Varien\Simplexml\Config.php on line 510
+=======
 2015-06-05T06:45:14+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-05T06:45:14+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-05T06:45:14+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
@@ -8409,6 +8861,7 @@
 2015-06-08T13:11:56+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-08T13:11:56+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-08T13:11:56+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
+<<<<<<< HEAD
 2015-06-08T13:17:15+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-08T13:17:15+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-08T13:17:15+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
@@ -13197,3 +13650,6 @@
 2015-06-09T11:29:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 39: parser error : Extra content at the end of the document  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-09T11:29:18+00:00 ERR (3): Warning: simplexml_load_string():  &lt;default&gt;  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
 2015-06-09T11:29:18+00:00 ERR (3): Warning: simplexml_load_string():  ^  in D:\xampp\htdocs\projects\creo\project\lib\Varien\Simplexml\Config.php on line 510
+=======
+>>>>>>> 6e5e21e0d81f2cf0d83b1b60f8441d43e57075fb
+>>>>>>> 07648eac5a795a56ce54776f7c7f08d640f28c18
