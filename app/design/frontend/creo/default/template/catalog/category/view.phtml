@@ -31,20 +31,58 @@
  * @see Mage_Catalog_Block_Category_View
  */
 ?>
+
 <?php
     $_helper    = $this->helper('catalog/output');
     $_category  = $this->getCurrentCategory();
-    $_imgHtml   = '';
-    if ($_imgUrl = $_category->getImageUrl()) {
-        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
-        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
-    }
+    //$_imgHtml   = '';
+    //if ($_imgUrl = $_category->getImageUrl()) {
+       // $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+       // $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+   // }
 ?>
+
+<div class="row">
+						<div class="col cate-links col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<nav class="cate1">
+								<ul>
+									<li class="active"><a href="*"><span>TSHIRT</span></a></li>
+									<li><a href="#"><span>POLOS</span></a></li>
+									<li><a href="#"><span>TANK TOPS</span></a></li>
+									<li><a href="#"><span>HOODIES</span></a></li>
+									<li><a href="#"><span>JACKETS</span></a></li>
+								</ul>
+							</nav>
+							<nav class="cate2">
+								<ul>
+									<li class="active"><a href="*"><span>MEN</span></a></li>
+									<li><a href="#"><span>WOMEN</span></a></li>
+									<li><a href="#"><span>CHILDREN</span></a></li>
+								</ul>
+							</nav>
+							<nav class="cate3">
+								<strong class="title">STYLES:</strong>
+								<ul>
+									<li class="active"><a href="#"></a></li>
+									<li><a href="#"></a></li>
+									<li><a href="#"></a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+
 <div class="page-title category-title">
+
+</div>
+
+<div class="row">
+<div class="col heading-area col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
         <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
     <?php endif; ?>
-    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+    <h2><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h2>
+<span class="results-description">Showing 1–12 of 100 results</span>
+</div>
 </div>
 
 <?php echo $this->getMessagesBlock()->toHtml() ?>

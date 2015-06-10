@@ -97,8 +97,8 @@
 
 .popuplogin_button:hover, .newslettersubscribe:hover { 	
 	color: #000;
-	background: #ffdb00;
-	border-color: #ffdb00;}
+	background: #f16167 ;
+	border-color: #f16167 ;}
 
 .search-form .searchBtn {
     background: rgba(0, 0, 0, 0) url("images/productpage/search.png") no-repeat scroll 0 0;
@@ -119,4 +119,59 @@
 	 font-weight: bold !important;
 	 font-size: 32px !important;
 	 }
-.youama-login-window {/* display: block !important;*/}
+.view-mode strong {
+    background: #f16167 none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    width: 44px;
+}
+
+.view-mode, .view-mode a, .view-mode strong { float: left;}
+.view-mode strong  { font-weight: normal;}
+.view-mode > a, .view-mode > strong { margin-right:3px;} 
+
+.view-mode .grid:before {
+   content: '\e80b';
+	font-family: fontello;
+}
+.view-mode .list:before {
+   content: '\e80a';
+	font-family: fontello;
+}
+
+.view-mode a {
+    background: #eee none repeat scroll 0 0;
+    color: #aaa;
+    display: block;
+    font-size: 24px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    width: 44px;
+	 text-decoration: none;
+}
+.view-mode a:hover {
+    background: #f16167 none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    width: 44px;
+	  text-decoration: none;
+}
+.sort-by-switcher--asc:before {
+	 content: '\e80c';
+	font-family: fontello;
+	} 
+.sort-by-switcher--desc:before {
+	 content: '\e811';
+	font-family: fontello;
+	} 
+.sort-by-switcher { text-decoration: none;}
+.sort-by-switcher:hover { text-decoration: none;}

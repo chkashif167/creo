@@ -193,13 +193,13 @@ function initOpenClose() {
 
 // scroll gallery init
 function initCarousel() {
-	jQuery('.carousel').scrollGallery({
+	jQuery('.carousel-creo').scrollGallery({
 		mask: '.mask',
 		slider: '.slideset',
 		slides: '.slide',
 		btnPrev: 'a.btn-prev',
 		btnNext: 'a.btn-next',
-		pagerLinks: '.pagination li',
+		pagerLinks: '.slide-pagination li',
 		stretchSlideToMask: true,
 		maskAutoSize: true,
 		autoRotation: false,
@@ -226,7 +226,7 @@ function initCarousel() {
 			pagerList: '<ul>',
 			pagerListItem: '<li><a href="#"></a></li>',
 			pagerListItemText: 'a',
-			pagerLinks: '.pagination li',
+			pagerLinks: '.slide-pagination li',
 			currentNumber: 'span.current-num',
 			totalNumber: 'span.total-num',
 			btnPlay: '.btn-play',
@@ -731,8 +731,9 @@ if(Object.create){!function(a,b,c,d){"use strict";function e(a,b,c){return setTi
  /*
  * jQuery Bootstrap Vertically Centered Modals
  */
+
 function centerModals(){
-  $j ('.modal').each(function(i){
+  $j('.modal').each(function(i){
     var $jclone = $j(this).clone().css('display', 'block').appendTo('body');
     var top = Math.round(($jclone.height() - $jclone.find('.modal-content').height()) / 2);
     top = top > 0 ? top : 0;
@@ -741,7 +742,8 @@ function centerModals(){
   });
 }
 $j('.modal').on('show.bs.modal', centerModals);
-$j(window).on('resize, load ready', centerModals);
+$j(window).on('resize, load, ready', centerModals);
+
 
  /*
  * custom scrollbar

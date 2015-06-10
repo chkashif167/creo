@@ -11,7 +11,7 @@
   <action method="addItem"><type>skin_js</type><script>js/jquery.mCustomScrollbar.js</script></action>
 	<action method="addItem"><type>skin_js</type><script>bootstrap/js/bootstrap.min.js</script></action>
    <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
- <action method="addCss"><stylesheet>style.css</stylesheet></action>
+   <action method="addCss"><stylesheet>style.css</stylesheet></action>
   <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
 
 </reference>
@@ -86,6 +86,12 @@
   
 </catalog_category_default>
 
+
+ <catalog_product_view translate="label">
+ <reference name="head">
+  <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+ </reference>
+  </catalog_product_view>
 
 
 

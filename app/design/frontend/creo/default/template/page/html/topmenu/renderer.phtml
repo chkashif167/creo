@@ -88,7 +88,7 @@
 
 
 
-    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
     
     <li class="drop-parent"> <a href="#">CLOTHING</a>
       <div class="drop">
@@ -101,23 +101,7 @@
             echo '<li><a href="' . $_category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl().'"> <strong class="title">' . $_category->getName() . '</strong></a></li>';
         endforeach;
         ?>
-        <!-- <li> <a href="#"> <img alt="" src="
-			 <?php echo Mage::getDesign()->getSkinUrl('images/img04.jpg');?>"> <strong class="title">TShirtttt</strong> </a> 
-          </li>
-          <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img05.jpg');?>"> <strong class="title">Tankkk Tops</strong> </a> </li>
-			 <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img06.jpg');?>"> <strong class="title">Jackets</strong> </a> </li>
-			 <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img07.jpg');?>"> <strong class="title">Hoodies</strong> </a> </li> 
-			 <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img08.jpg');?>"> <strong class="title">Hoodies</strong> </a> </li> -->
-			<?php /*?>
-			<?php
-         $children = Mage::getModel('catalog/category')->getCategories(3);
-         foreach ($children as $category) {
-         ?>
-          <li> <a href="#"> <img alt="" src="images/img07.jpg"> <strong class="title">Hoodies</strong> </a> </li>          
-		  <?php
-        }
-        ?><?php 
-		  */?>
+   
         </ul>
       </div>
     </li>
@@ -133,13 +117,7 @@
             echo '<li><a href="' . $_category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl().'"> <strong class="title">' . $_category->getName() . '</strong></a></li>';
         endforeach;
         ?>
-         <!-- <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img04.jpg');?>"> <strong class="title">CASES</strong> </a> </li>
-          <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img05.jpg');?>"> <strong class="title">USB’s</strong> </a> </li>
-          <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img06.jpg');?>"> <strong class="title">NOTE BOOKS</strong> </a> </li>
-          <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img07.jpg');?>"> <strong class="title">ZIPPOS</strong> </a> </li>
-          <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img08.jpg');?>"> <strong class="title">TOTE BAGS</strong> </a> </li>
-          <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img09.jpg');?>"> <strong class="title">THROW PILLOW</strong> </a> </li>
-          <li> <a href="#"> <img alt="" src=" <?php echo Mage::getDesign()->getSkinUrl('images/img010.jpg');?>"> <strong class="title">BADGES &amp; BUTTONS</strong> </a> </li>-->
+        
         </ul>
       </div>
     </li>
@@ -186,32 +164,8 @@ $count = 0;?>
                 $text .="</ul>";
                  echo $text;
             ?>
-           
-            <!--<li><a href="#">LOCALIZED</a></li>
-            <li><a href="#">COMICS</a></li>
-            <li><a href="#">FUNNY</a></li>
-            <li><a href="#">CREO</a></li>
-            <li><a href="#">MUSIC</a></li>
-            <li><a href="#">SPORTS</a></li>-->
-          </ul>
-          <!--<ul class="cat-links">
-            <li><a href="#">TV &amp; MOVIES</a></li>
-            <li><a href="#">NERDY</a></li>
-            <li><a href="#">CITY LOVE</a></li>
-            <li><a href="#">BEACH</a></li>
-            <li><a href="#">CAUSES</a></li>
-          </ul>
-          <ul class="cat-links">
-            <li><a href="#">TYPOGRAPHY</a></li>
-            <li><a href="#">PHOTOGRAPHY</a></li>
-            <li><a href="#">BIKERS</a></li>
-            <li><a href="#">PET LOVERS</a></li>
-          </ul>
-          <ul class="cat-links">
-            <li><a href="#">GAMING</a></li>
-            <li><a href="#">FEEL GOOD</a></li>
-            <li><a href="#">ARTs</a></li>
-          </ul>-->
+         </ul>
+         
         </div>
       </div>
     </li>
