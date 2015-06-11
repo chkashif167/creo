@@ -1,0 +1,55 @@
+/**
+ * MagPassion_Quickview extension
+ * 
+ * @category   	MagPassion
+ * @package		MagPassion_Quickview
+ * @copyright  	Copyright (c) 2014 by MagPassion (http://magpassion.com)
+ * @license	http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ 
+.products-grid .item, .products-list .item { position: relative; }
+.products-grid .item .mp_quickview_icon, .products-list .item .mp_quickview_icon { display: none; }
+.products-grid .item:hover .mp_quickview_icon, .products-list .item:hover .mp_quickview_icon { display: block; }
+.mp_quickview_icon {
+    position: absolute;
+    top: 60px;
+    left: 55px;
+    z-index: 10;
+    background: #f2f2f2;
+    color: #555;
+    padding: 5px 10px;
+    -moz-box-shadow:    0 0 6px #888888;
+    -webkit-box-shadow: 0 0 6px #888888;
+    box-shadow:         0 0 6px #888888;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.mp_quickview_icon:hover { opacity: 1; }
+
+.mp_quickview_product_page .product-view { border: none; }
+.mp_quickview_product_page .product-view .product-essential { background: none; padding: 0px; }
+.mp_quickview_product_page .product-view .product-shop { width: 59%; }
+.mp_quickview_product_page .product-view .product-img-box { width: 39%; }
+.mp_quickview_product_page .product-view .product-img-box .product-image { margin: 0 auto 9px; }
+.mp_quickview_product_page .product-view .product-img-box .product-image img { width: 100%; height: auto; }
+
+@media (max-width: 768px) {
+    .mp_quickview_product_page .product-view .product-shop { width: 46%; }
+    .mp_quickview_product_page .product-view .product-img-box { width: 52%; }
+    .products-grid .item .mp_quickview_icon, .products-list .item .mp_quickview_icon { display: block; }
+}
+
+@media (max-width: 600px) {
+    .mp_quickview_product_page .product-view .product-shop { width: 40%; }
+    .mp_quickview_product_page .product-view .product-img-box { width: 58%; }
+}
+
+@media (max-width: 550px) {
+    .mp_quickview_product_page .product-view .product-shop { width: 100%; }
+    .mp_quickview_product_page .product-view .product-img-box { width: 100%; }
+}

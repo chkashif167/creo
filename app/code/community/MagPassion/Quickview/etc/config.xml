@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * MagPassion_Quickview extension
+ * 
+ * @category   	MagPassion
+ * @package		MagPassion_Quickview
+ * @copyright  	Copyright (c) 2014 by MagPassion (http://magpassion.com)
+ * @license	http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <MagPassion_Quickview>
+            <version>1.0.0</version>
+        </MagPassion_Quickview>
+    </modules>
+
+    <global>
+        <blocks>
+            <quickview>
+                <class>MagPassion_Quickview_Block</class>
+            </quickview>
+        </blocks>
+        <helpers>
+            <quickview>
+                <class>MagPassion_Quickview_Helper</class>
+            </quickview>
+        </helpers>
+
+        <models>
+            <quickview>
+                <class>MagPassion_Quickview_Model</class>
+            </quickview>
+        </models>
+    </global>
+    <adminhtml> 	
+		<layout>
+			<updates>
+				<quickview>
+					<file>magpassion_quickview.xml</file>
+				</quickview>
+			</updates>
+		</layout>
+    </adminhtml> 
+    <frontend>
+        <routers>
+            <quickview>
+                <use>standard</use>
+                <args>
+                    <module>MagPassion_Quickview</module>
+                    <frontName>quickview</frontName>
+                </args>
+            </quickview>
+        </routers>
+        <layout>
+            <updates>
+                <quickview>
+                    <file>magpassion_quickview.xml</file>
+                </quickview>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <quickview>
+			<setting>
+				<loadjquery>1</loadjquery>
+                <title>View</title>
+            </setting>
+        </quickview>
+    </default>
+</config>

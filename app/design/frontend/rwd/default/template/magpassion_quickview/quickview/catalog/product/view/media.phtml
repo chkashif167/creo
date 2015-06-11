@@ -1,0 +1,32 @@
+<?php
+/**
+ * MagPassion_Quickview extension
+ * 
+ * @category   	MagPassion
+ * @package		MagPassion_Quickview
+ * @copyright  	Copyright (c) 2014 by MagPassion (http://magpassion.com)
+ * @license	http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+
+<p class="product-image">
+    <?php
+        $_img = '<img id="mpqvimg'. $_product->getId().'" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(500).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+    ?>
+</p>
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <h2><?php echo $this->__('More Views') ?></h2>
+    <ul>
+    <?php $imgIndex = 0; ?>
+    <?php foreach ($this->getGalleryImages() as $_image): ?>
+        <li><a class="mpquickviewproductmoreimg" id="<?php echo 'mpqvimg'.$_product->getId().'_'.($imgIndex++);?>" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" title="<?php echo $this->getName();?>"><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a></li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
