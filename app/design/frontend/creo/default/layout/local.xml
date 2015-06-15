@@ -90,6 +90,17 @@
   <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
  </reference>
   </catalog_product_view>
+
+
+<catalog_category_layered>
+        <reference name="left">
+            <action method="unsetChild"><alias>catalog.leftnav</alias></action>
+        </reference>
+        <reference name="product_list">
+            <action method="insert"><blockName>catalog.leftnav</blockName></action>
+        </reference>
+    </catalog_category_layered>
+
   
    <catalog_product_view> 
   <reference name="product.info.options.wrapper.bottom"> 
@@ -105,6 +116,7 @@
 	</reference>
 		
   </catalog_product_view>
+
 
 
 </layout>
