@@ -24,7 +24,6 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-
 <?php
 $_product    = $this->getProduct();
 $_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
@@ -32,11 +31,13 @@ $_jsonConfig = $this->getJsonConfig();
 $_renderers = $this->getChild('attr_renderers')->getSortedChildren();
 ?>
 <?php if ($_product->isSaleable() && count($_attributes)):?>
-    <dl>
-    <?php foreach($_attributes as $_attribute): ?>
-        <?php
+<?php foreach($_attributes as $_attribute): ?>
+<?php
         $_rendered = false;
-        foreach ($_renderers as $_rendererName):
+        foreach ($_renderers as $_rendererName):?>
+
+<div class="column color-area">
+  <?php
             $_renderer = $this->getChild('attr_renderers')->getChild($_rendererName);
             if (method_exists($_renderer, 'shouldRender') && $_renderer->shouldRender($_attribute, $_jsonConfig)):
                 $_renderer->setProduct($_product);
@@ -46,22 +47,53 @@ $_renderers = $this->getChild('attr_renderers')->getSortedChildren();
                 break;
             endif;
         endforeach;
-
+			?>
+</div>
+<?php
         if (!$_rendered):
         ?>
-        <dt><label class="required"><em>*</em><?php echo $_attribute->getLabel() ?></label></dt>
-        <dd<?php if ($_attribute->decoratedIsLast){?> class="last"<?php }?>>
-            <div class="input-box">
-                <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="required-entry super-attribute-select">
-                    <option><?php echo $this->__('Choose an Option...') ?></option>
-                  </select>
-              </div>
-        </dd>
-        <?php endif; ?>
-    <?php endforeach; ?>
-    </dl>
-    <script type="text/javascript">
+<dt style=" display:none;">
+  <label class="required"><em></em><?php echo $_attribute->getLabel() ?></label>
+</dt>
+<dd<?php if ($_attribute->decoratedIsLast){?> class="last"<?php }?> style=" display: none;">
+  <div class="input-box">
+    <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="required-entry super-attribute-select">
+      <option><?php echo $this->__('Choose an Option...') ?></option>
+    </select>
+  </div>
+</dd>
+<?php endif; ?>
+<?php endforeach; ?>
+<div class="column color-area">
+  <?php $_product = $this->getProduct(); ?>
+  <?php if($_product->isSaleable()): ?>
+  <?php if(!$_product->isGrouped()): ?>
+  <label for="qty"><?php echo $this->__('Quantity:') ?></label>
+  <span class="up">up</span>   
+  <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+  <span class="down">down</span>  
+  <?php endif; ?>
+  <?php endif; ?>
+</div>
+
+
+<script type="text/javascript">
         var spConfig = new Product.Config(<?php echo $_jsonConfig ?>);
-    </script>
-    <?php echo $this->getChildHtml('after') ?>
+		  
+		  jQuery('.up').on('click',function(){
+    jQuery('#qty').val(parseInt(jQuery('#qty').val())+1);
+});
+
+			
+			jQuery('.down').on('click',function(){
+				if(jQuery('#qty').val() > 1) {
+				 jQuery('#qty').val(parseInt(jQuery('#qty').val())-1);
+				}
+	
+}); 
+		  
+</script> 
+    
+    
+<?php echo $this->getChildHtml('after') ?>
 <?php endif;?>

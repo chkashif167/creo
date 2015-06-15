@@ -39,9 +39,6 @@
 		</block>-->
 		<block type="customer/form_login" name="customer_form_login" template="customer/form/loginpopup.phtml" />
 	 </reference>
-
-
-	
 	 
 </default>
 
@@ -92,6 +89,7 @@
   <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
  </reference>
   </catalog_product_view>
+<<<<<<< HEAD
 
 <catalog_category_layered>
         <reference name="left">
@@ -101,5 +99,18 @@
             <action method="insert"><blockName>catalog.leftnav</blockName></action>
         </reference>
     </catalog_category_layered>
+=======
+  
+   <catalog_product_view> 
+  <reference name="product.info.options.wrapper.bottom"> 
+   <action method="unsetChild"><name>product.info.sharing</name></action>
+	<action method="unsetChild"><name>product.info.addto</name></action>
+	<remove name="product.clone_prices" />
+	<remove name="product.info.options.wrapper.bottom" />
+	</reference>
+		
+  </catalog_product_view>
+
+>>>>>>> 67a23c5bc7a547910f374a6716d35d590fbb8955
 
 </layout>
