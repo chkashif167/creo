@@ -8,8 +8,8 @@
  */
  
 .products-grid .item, .products-list .item { position: relative; }
-.products-grid .item .mp_quickview_icon, .products-list .item .mp_quickview_icon { display: none; }
-.products-grid .item:hover .mp_quickview_icon, .products-list .item:hover .mp_quickview_icon { display: block; }
+.products-grid .item .mp_quickview_icon, .products-list .item .mp_quickview_icon { display: block; }
+/*.products-grid .item:hover .mp_quickview_icon, .products-list .item:hover .mp_quickview_icon { display: block; }*/
 .mp_quickview_icon {
     position: absolute;
     top: 60px;

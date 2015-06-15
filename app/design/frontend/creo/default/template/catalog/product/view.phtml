@@ -58,6 +58,19 @@
                     <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
                 </div>
 
+                   <?php 
+                        $attribute = $_product->getResource()->getAttribute('shipping_options');
+                        if ($attribute)
+                        {
+                            print_r($attribute_value = $attribute ->getFrontend()->getValue($_product));
+                        }
+
+                   ?>
+
+            <?php if ($this->canEmailToFriend()): ?>
+                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
+            <?php endif; ?>
+
                 <div class="price-info">
                     <?php echo $this->getPriceHtml($_product); ?>
                     <?php echo $this->getChildHtml('bundle_prices') ?>
