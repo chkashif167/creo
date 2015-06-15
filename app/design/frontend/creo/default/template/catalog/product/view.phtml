@@ -60,21 +60,23 @@
        <?php echo $this->getChildHtml('product_type_availability'); ?>
       </span> 
       </div>
+    
+    
       <!-- tabs structure example -->
       <ul class="tabset">
-        <li class="active"><a href="#tab1"><span>Description</span></a></li>
-        <li class=""><a href="#tab2"><span>ADDITIONAL INFORMATION</span></a></li>
-        <li class=""><a href="#tab3"><span>DESIGN</span></a></li>
+        <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
+        <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
+        <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
       </ul>
       <div class="tab-content">
         <div id="tab1" style="display: block;" class="">
-          <p>Vivamus sit amet placerat ligula. Mauris ut gravida ligula. Praesent dictum sed ipsum vitae hendrerit. In at leo a sem imperdiet convallis. Fusce facilisis dui lectus, in tempor urna tincidunt ut. Vivamus rutrum, eros et scelerisque blandit, neque purus egestas neque, sed eleifend libero dui nec arcu. </p>
+          <p><?php print $_product->getDescription(); ?> </p>
         </div>
         <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-          <p>Vivamus sit amet placerat ligula. Mauris ut gravida ligula. Praesent dictum sed ipsum vitae hendrerit. In at leo a sem imperdiet convallis. Fusce facilisis dui lectus, in tempor urna tincidunt ut. Vivamus rutrum, eros et scelerisque blandit, neque purus egestas neque, sed eleifend libero dui nec arcu. </p>
+          <p><?php print $_product->getShortDescription(); ?> </p>
         </div>
         <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
-          <p>Vivamus sit amet placerat ligula. Mauris ut gravida ligula. Praesent dictum sed ipsum vitae hendrerit. In at leo a sem imperdiet convallis. Fusce facilisis dui lectus, in tempor urna tincidunt ut. Vivamus rutrum, eros et scelerisque blandit, neque purus egestas neque, sed eleifend libero dui nec arcu. </p>
+          <p><?php print $_product->getDesign(); ?> </p>
         </div>
       </div>
       <div class="options-area">
@@ -167,7 +169,7 @@
         //]]>
         </script>
 
-<div class="product-collateral toggle-content tabs">
+<?php /*?><div class="product-collateral toggle-content tabs">
   <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
   <dl id="collateral-tabs" class="collateral-tabs">
     <?php foreach ($detailedInfoGroup as $alias => $html):?>
@@ -178,7 +180,7 @@
     <?php endforeach;?>
   </dl>
   <?php endif; ?>
-</div>
+</div><?php */?>
 <?php echo $this->getChildHtml('upsell_products') ?> <?php echo $this->getChildHtml('product_additional_data') ?>
 </div>
 </div>

@@ -24,71 +24,36 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
 <?php if($this->getItems()->getSize()): ?>
-<div class="block block-related">
-    <div class="block-title">
-        <h2><?php echo $this->__('Related Products') ?></h2>
-    </div>
-    <div class="block-content">
-        <p class="block-subtitle"><?php echo $this->__('Check items to add to the cart or') ?>&nbsp;<a href="#" onclick="selectAllRelated(this); return false;"><?php echo $this->__('select all') ?></a></p>
-        <ol class="mini-products-list" id="block-related">
-        <?php foreach($this->getItems() as $_item): ?>
-            <li class="item">
-                <?php if(!$_item->isComposite() && $_item->isSaleable()): ?>
-                    <?php if (!$_item->getRequiredOptions()): ?>
-                        <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox<?php echo $_item->getId() ?>" name="related_products[]" value="<?php echo $_item->getId() ?>" />
-                    <?php endif; ?>
-                <?php endif; ?>
-                <div class="product">
-                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(75) ?>" width="75" height="75" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" /></a>
-                    <div class="product-details">
-                        <p class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></p>
-                        <?php echo $this->getPriceHtml($_item, true, '-related') ?>
-                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </li>
-        <?php endforeach ?>
-        </ol>
-        <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
-    </div>
-    <script type="text/javascript">
-    //<![CDATA[
-    $$('.related-checkbox').each(function(elem){
-        Event.observe(elem, 'click', addRelatedToProduct)
-    });
+<div class="row">
+<div class="col-md-12">
+<div class="heading-holder">
+<h2><?php echo $this->__('Related Products') ?></h2>
+</div>
+</div>
+</div>
 
-    var relatedProductsCheckFlag = false;
-    function selectAllRelated(txt){
-        if (relatedProductsCheckFlag == false) {
-            $$('.related-checkbox').each(function(elem){
-                elem.checked = true;
-            });
-            relatedProductsCheckFlag = true;
-            txt.innerHTML="<?php echo $this->__('unselect all') ?>";
-        } else {
-            $$('.related-checkbox').each(function(elem){
-                elem.checked = false;
-            });
-            relatedProductsCheckFlag = false;
-            txt.innerHTML="<?php echo $this->__('select all') ?>";
-        }
-        addRelatedToProduct();
-    }
-
-    function addRelatedToProduct(){
-        var checkboxes = $$('.related-checkbox');
-        var values = [];
-        for(var i=0;i<checkboxes.length;i++){
-            if(checkboxes[i].checked) values.push(checkboxes[i].value);
-        }
-        if($('related-products-field')){
-            $('related-products-field').value = values.join(',');
-        }
-    }
-    //]]>
-    </script>
+<div class="row">
+<div class="carousel4-area col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="carousel-creo carousel4">
+<div class="mask">
+<div class="slideset">
+<?php foreach($this->getItems() as $_item): ?>
+<div class="slide">
+<a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(275) ?>" width="" height="" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" /></a>
+<div class="product-descr">
+<h4><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h4>
+<span class="price"> <?php echo $this->getPriceHtml($_item, true, '-related') ?></span>
+</div>
+</div>
+ <?php endforeach ?>
+</div>
+</div>
+<a class="btn-prev" href="#"><i class="icon-angle-left"></i></a>
+<a class="btn-next" href="#"><i class="icon-angle-right"></i></a>
+</div>
+</div>
 </div>
 <?php endif ?>
+

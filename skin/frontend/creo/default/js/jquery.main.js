@@ -192,6 +192,8 @@ function initOpenClose() {
 }(jQuery));
 
 
+
+
 // scroll gallery init
 function initCarousel() {
 	jQuery('.carousel-creo').scrollGallery({
@@ -206,6 +208,20 @@ function initCarousel() {
 		autoRotation: false,
 		switchTime: 3000,
 		animSpeed: 500,
+		step: 1
+	});
+	jQuery('.carousel2').scrollGallery({
+		mask: '.mask',
+		slider: '.slideset',
+		slides: '.slide',
+		btnPrev: 'a.btn-prev',
+		btnNext: 'a.btn-next',
+		pagerLinks: '.slide-pagination li',
+		stretchSlideToMask: true,
+		maskAutoSize: true,
+		autoRotation: false,
+		switchTime: 0,
+		animSpeed: 0,
 		step: 1
 	});
 }
@@ -974,7 +990,7 @@ function initTabs() {
 	$('header#header').removeClass('small-header');
 	$(window).scroll(function(e){
 		var scrollPos = $(this).scrollTop();
-		if (scrollPos > 260) {
+		if (scrollPos > 163) {
 			$('header#header').addClass('small-header');
 		}else{
 			$('header#header').removeClass('small-header');

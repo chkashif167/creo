@@ -22,6 +22,8 @@ body {
 	min-width: 320px;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 article, aside, details, figcaption, figure, footer, header, main, nav, section, summary { display: block; }
 img { border-style: none; }
@@ -121,6 +123,7 @@ p { margin: 0 0 1.2em; }
 .icon-angle-left:before { content: '\e80f'; } /* '' */
 .icon-angle-right:before { content: '\e810'; } /* '' */
 .icon-sort-alt-up:before { content: '\e811'; } /* '' */
+.icon-down-open:before { content: '\e812'; } /* '' */
 .nav li,
 form li {
 	float: left;
@@ -382,9 +385,10 @@ p.style1 {
 #wrapper > .container {
 	background: #fff;
 	box-shadow: 0 5px 17px rgba(0,0,0,.2);
-	margin-top: 46px;
-	margin-bottom: 46px;
+	margin-top: 28px;
+	margin-bottom: 28px;
 	overflow: hidden;
+	padding: 0 30px;
 }
 #header {
 	margin-bottom: 18px;
@@ -408,8 +412,8 @@ p.style1 {
 }
 .logo {
 	display: block;
-	width: 222px;
-	margin: 45px 0 22px;
+	width: 137px;
+	margin: 28px 0 22px;
 }
 .logo img {
 	display: block;
@@ -427,7 +431,7 @@ p.style1 {
 	list-style: none;
 	letter-spacing: -1px;
 	text-transform: uppercase;
-	font: 18px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 14px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #nav ol > li {
 	float: left;
@@ -435,7 +439,7 @@ p.style1 {
 }
 #nav ol > li > a {
 	display: block;
-	padding: 15px 18px;
+	padding: 0 18px 5px;
 	position: relative;
 }
 #nav ol > li a:hover { text-decoration: none; }
@@ -445,7 +449,7 @@ p.style1 {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 8px;
+	height: 5px;
 	background: #000;
 	transform: skewX(-30deg);
 	-moz-transform: skewX(-30deg);
@@ -471,8 +475,8 @@ p.style1 {
 	display: inline-block;
 	vertical-align: top;
 	background: #000;
-	width: 130px;
-	padding: 35px 0 17px;
+	width: 82px;
+	padding: 22px 0 10px;
 	position: relative;
 	z-index: 33;
 }
@@ -489,12 +493,12 @@ p.style1 {
 	content: '';
 }
 #header .cart .opener {
-	font: bold 19px/27px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: bold 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	color: #222;
 	text-transform: uppercase;
 	position: relative;
 	display: block;
-	padding: 19px 0;
+	padding: 12px 0;
 	z-index: 22;
 }
 #header .cart .opener:hover {
@@ -502,13 +506,15 @@ p.style1 {
 	opacity: 0.9;
 }
 #header .cart .opener:before {
-	background: url('images/sprite.png') no-repeat 0 0;
-	width: 21px;
-	height: 18px;
+	font-family: 'fontello';
+	line-height: 16px;
+	font-size: 15px;
+	width: 14px;
+	height: 16px;
 	display: inline-block;
 	vertical-align: middle;
 	margin: 0 6px 0 0;
-	content: '';
+	content: '\e80d';
 }
 #header .cart .opener:after {
 	background: #f16167;
@@ -667,13 +673,13 @@ p.style1 {
 }
 #header .bottom-area {
 	text-align: right;
-	padding: 103px 0 10px;
+	padding: 60px 0 10px;
 }
 .search-form {
 	margin: 0 0 0 5px;
-	padding: 3px 8px;
-	border: 2px solid #000;
-	width: 224px;
+	padding: 2px 5px;
+	border: 1px solid #000;
+	width: 140px;
 	overflow: hidden;
 	display: inline-block;
 	vertical-align: top;
@@ -685,9 +691,10 @@ p.style1 {
 	padding: 0;
 	background: none;
 	border: none;
-	width: 180px;
-	height: 19px;
-	line-height: 19px;
+	width: 115px;
+	height: 11px;
+	font-size: 9px;
+	line-height: 11px;
 	float: right;
 }
 .search-form input[type="submit"] {
@@ -698,8 +705,8 @@ p.style1 {
 	padding: 0;
 	font-size: 0;
 	line-height: 0;
-	width: 19px;
-	height: 18px;
+	width: 11px;
+	height: 11px;
 }
 .search-form input[type="submit"]:hover { background: url(images/productpage/search.png) no-repeat; }
 #header .login-area {
@@ -710,10 +717,10 @@ p.style1 {
 #header .login-area .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 6px 42px 0;
+	padding: 0 25px;
 	position: relative;
 	color: #222;
-	font: 15px/22px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 10px/19px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .login-area.active .opener,
 #header .login-area .opener:hover {
@@ -722,24 +729,24 @@ p.style1 {
 }
 #header .login-area .opener:before {
 	position: absolute;
-	top: 5px;
-	left: 16px;
+	top: 0;
+	left: 9px;
 	content: '\e808';
 	color: #f16167;
-	font-size: 16px;
+	font-size: 12px;
 	font-family: 'fontello';
-	line-height: 19px;
-	width: 18px;
+	line-height: 17px;
+	width: 12px;
 	height: 19px;
 }
 #header .login-area .opener:after {
 	position: absolute;
-	top: 13px;
-	right: 24px;
+	top: 7px;
+	right: 14px;
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 8px 5px 0;
+	border-width: 6px 3px 0;
 	border-color: #222 transparent transparent;
 	content: '';
 }
@@ -748,11 +755,11 @@ p.style1 {
 	padding: 0;
 	list-style: none;
 	background: #fff;
-	min-width: 172px;
+	width: 100%;
 	text-align: center;
 	position: absolute;
 	box-shadow: 0 1px 2px #ccc;
-	font: 16px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .login-area li a {
 	display: block;
@@ -773,11 +780,11 @@ p.style1 {
 #header .basic-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0 20px 0 4px;
+	padding: 0 13px 0 7px;
 	position: relative;
 	color: #222;
 	text-transform: uppercase;
-	font: 15px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 10px/19px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .basic-open-close.active .opener,
 #header .basic-open-close .opener:hover {
@@ -785,14 +792,15 @@ p.style1 {
 	background: #f5f5f5;
 }
 #header .basic-open-close .opener:before {
-	background: url('images/sprite.png') no-repeat -59px 0;
-	width: 13px;
-	height: 8px;
+	font-family: 'fontello';
+	font-size: 8px;
+	line-height: 19px;
+	width: 9px;
+	height: 19px;
 	position: absolute;
-	top: 50%;
-	right: 4px;
-	margin-top: -4px;
-	content: '';
+	top: 0;
+	right: 3px;
+	content: '\e812';
 }
 #header .basic-open-close ul {
 	margin: 0;
@@ -802,8 +810,9 @@ p.style1 {
 	min-width: 99px;
 	text-align: center;
 	position: absolute;
+	text-transform: uppercase;
 	box-shadow: 0 1px 2px #ccc;
-	font: 16px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .basic-open-close li a {
 	display: block;
@@ -836,8 +845,8 @@ p.style1 {
 }
 .carousel-creo.home .btn-prev,
 .carousel-creo.home .btn-next {
-	width: 56px;
-	height: 56px;
+	width: 35px;
+	height: 35px;
 	background: #000;
 	position: absolute;
 	margin-top: -28px;
@@ -863,31 +872,31 @@ p.style1 {
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 56px 20px 0 0;
+	border-width: 35px 14px 0 0;
 	border-color: #000 transparent transparent;
 	content: '';
 }
 .carousel-creo.home .btn-next:before {
 	left: auto;
 	right: 100%;
-	border-width: 0 0 56px 20px;
+	border-width: 0 0 35px 14px;
 	border-color: transparent transparent #000 transparent;
 }
 .carousel-creo.home .btn-prev:after,
 .carousel-creo.home .btn-next:after {
 	position: absolute;
-	top: 52%;
-	left: 25px;
-	background: url('images/sprite.png') no-repeat -83px 0;
+	top: 0;
+	left: 13px;
 	width: 14px;
-	height: 20px;
-	margin-top: -10px;
-	content: '';
+	height: 35px;
+	content: '\e80f';
+	color: #fff;
+	font: bold 20px/35px fontello;
 }
 .carousel-creo.home .btn-next:after {
+	content: '\e810';
 	left: auto;
-	right: 25px;
-	background-position: -105px 0;
+	right: 13px;
 }
 .shirts-category .col { margin-bottom: 30px; }
 .shirts-category h2 {
@@ -953,7 +962,7 @@ p.style1 {
 	margin: 0 0 30px;
 }
 .heading-holder h2 {
-	font: 40px/42px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 26px/30px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	color: #222;
 	margin: 0;
 	position: relative;
@@ -966,7 +975,7 @@ p.style1 {
 .heading-holder h2:after {
 	content: "";
 	position: absolute;
-	height: 4px;
+	height: 3px;
 	background: #eee;
 	left: 100%;
 	width: 9999px;
@@ -1118,7 +1127,7 @@ p.style1 {
 	text-decoration: none;
 }
 #header.small-header .bottom-area { display: none; }
-#header.small-header { height: 259px; }
+#header.small-header { height: 163px; }
 #header.small-header .right-area { float: right; }
 #header.small-header .sticky-holder {
 	margin: 0 auto;
@@ -1322,7 +1331,7 @@ input.email {
 	position: absolute;
 	top: 100%;
 	left: auto;
-	margin: 0 15px 0 0;
+	margin: 0;
 	padding: 48px 30px 0;
 	background: #fff;
 	display: none;
@@ -1445,7 +1454,7 @@ input.email {
 	overflow: hidden;
 	text-transform: uppercase;
 	color: #000;
-	font: 14px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 12px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .breadcrumb1 li {
 	float: left;
@@ -1486,7 +1495,7 @@ input.email {
 	margin:0;
 	padding:0;
 	list-style:none;
-	font: 16px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 12px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .cate-links li{
 	display:inline-block;
@@ -1599,12 +1608,12 @@ input.email {
 	margin: 0;
 	color: #222;
 	text-transform: uppercase;
-	font: 60px/60px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 40px/42px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .heading-area .results-description{
 	display: block;
 	color: #888;
-	font:italic 15px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:italic 10px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .sort-area{
 	padding-bottom: 30px;
@@ -2088,8 +2097,8 @@ input.email {
 .carousel-creo.carousel3 {
 	position: relative;
 	float: left;
-	width: 400px;
-	margin: 0 40px 0 0;
+	width: 390px;
+	margin: 0 30px 0 0;
 }
 .carousel-creo.carousel3 .mask {
 	position: relative;
@@ -2427,6 +2436,7 @@ input.email {
 	background: #000;
 	color: #fff;
 }
+.small-header #nav ol{padding: 25px 0 0;}
 
 
 
@@ -2437,11 +2447,7 @@ input.email {
 
 
 @media only screen and (max-width: 1199px) {
-	#nav ol { font: 16px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; }
-	#nav ol > li > a { padding: 15px 13px; }
-	.search-form { width: 160px; }
-	.search-form input[type="text"] { width: 80%; }
-	#header .bottom-area { padding: 102px 0 0; }
+	#nav ol > li > a{padding: 0 15px 5px;}
 	#wrapper > .container {
 		margin-bottom: 20px;
 		margin-top: 20px;
@@ -2470,6 +2476,7 @@ input.email {
 		-ms-transform: skewX(0deg);
 		-webkit-transform: skewX(0deg);
 	}
+	.small-header #nav ol{padding: 23px 0 0;}
 	#header.small-header .sticky-holder {
 		max-width: 992px;
 		transform: skewX(0deg);
@@ -2478,22 +2485,16 @@ input.email {
 		-webkit-transform: skewX(0deg);
 	}
 	.cate-links nav{margin: 0 14px 0 0;}
+	#footer .column:first-child {margin: 0 8px;}
+	#footer .column{margin: 0 8px 0 0;}
+	#footer .footer-nav li{margin: 0 0 0 15px;}
+	#footer .footer-nav li:before{left: -9px;}
 }
 @media only screen and (max-width: 991px) {
-	.logo {
-		margin: 20px 0 35px;
-		width: 150px;
-	}
-	#header .cart a {
-		font: bold 16px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
-		padding: 15px 0;
-	}
-	#header .cart {
-		padding: 25px 0 15px;
-		width: 105px;
-	}
+	#wrapper > .container{padding: 0 15px;}
+	.small-header #nav ol{padding: 2px 0 0;}
 	#header .cart:before { border-width: 0 0 15px 105px; }
-	#nav ol { font: 14px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; }
+	#nav ol { font: 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 	#nav ol > li { margin: 0 2px 0 0; }
 	#nav ol > li > a { padding: 5px 8px; }
 	#nav ol > li.active a::before,
@@ -2505,10 +2506,6 @@ input.email {
 		top: 10px;
 	}
 	#header .bottom-area { position: relative; }
-	#header .bottom-area { padding: 45px 0 0; }
-	#header .login-area .opener { padding: 2px 42px 0; }
-	#header .login-area .opener:after { top: 9px; }
-	#header .login-area .opener:before { top: 2px; }
 	#wrapper > .container {
 		margin-bottom: 10px;
 		margin-top: 10px;
