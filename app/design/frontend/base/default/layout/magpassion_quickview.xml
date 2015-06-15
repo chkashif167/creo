@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MagPassion_Quickview extension
+ * 
+ * @category   	MagPassion
+ * @package		MagPassion_Quickview
+ * @copyright  	Copyright (c) 2014 by MagPassion (http://magpassion.com)
+ * @license	http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout version="0.1.0">
+	<default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>magpassion_quickview/css/mp_quickview.css</stylesheet></action>
+            <action method="addCss"><stylesheet>magpassion_quickview/css/jquery.fancybox.css</stylesheet></action>
+            <action method="addJs" ifconfig="quickview/setting/loadjquery"><script>magpassion/quickview/jquery-1.10.1.min.js</script></action>
+            <action method="addJs"><script>magpassion/quickview/jquery.fancybox.pack.js</script></action>
+            <action method="addJs"><script>magpassion/quickview/mp_quickview.js</script></action>
+        </reference>
+        <!--reference name="content">
+            <block type="quickview/page" name="quickview_page_view" template="magpassion_quickview/quickview/page/view.phtml" />
+        </reference-->
+	</default>		
+	<quickview_index_view>
+        <reference name="head">
+            <action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/configurable.js</script></action>
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+        </reference>
+		<update handle="catalog_product_view"/>
+        
+        <reference name="root">
+            <action method="setTemplate"><template>magpassion_quickview/quickview/page/product.phtml</template></action>
+        </reference>
+		<reference name="product.info">
+			<action method="setTemplate"><template>magpassion_quickview/quickview/catalog/product/view.phtml</template></action>
+		</reference>
+        <reference name="product.info.media">
+            <action method="setTemplate">
+                <template>magpassion_quickview/quickview/catalog/product/view/media.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+			<remove name="product.info.upsell"/>
+        </reference>		
+        <remove name="footer"/>
+    </quickview_index_view>
+    <catalog_category_default>
+	    <reference name="product_list">
+	   		<action method="setTemplate" ifconfig="quickview/setting/ecategory"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
+		</reference> 
+	</catalog_category_default>
+	<catalog_category_layered>
+		<reference name="product_list">
+	   		<action method="setTemplate" ifconfig="quickview/setting/ecategory"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
+		</reference>
+	</catalog_category_layered>
+    <tag_product_list>
+    	<reference name="search_result_list">
+	   		<action method="setTemplate" ifconfig="quickview/setting/etag"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
+		</reference>
+    </tag_product_list>
+    <catalogsearch_result_index>
+    	<reference name="search_result_list">
+	   		<action method="setTemplate" ifconfig="quickview/setting/esearch"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
+		</reference>
+    </catalogsearch_result_index>
+    <catalogsearch_advanced_result>
+    	<reference name="search_result_list">
+	   		<action method="setTemplate" ifconfig="quickview/setting/esearch"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
+		</reference>
+    </catalogsearch_advanced_result>
+    <catalog_product_view>
+    	<reference name="product.info.upsell">
+	   		<action method="setTemplate" ifconfig="quickview/setting/eupsell"><template>magpassion_quickview/quickview/catalog/product/upsell.phtml</template></action>
+		</reference>
+    </catalog_product_view>
+</layout>

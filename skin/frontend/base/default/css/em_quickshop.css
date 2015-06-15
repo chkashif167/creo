@@ -1,3 +1,10 @@
+/**
+ * EM QuickShop
+ *
+ * @license commercial software
+ * @copyright (c) 2012 Codespot Software JSC - EMThemes.com. (http://www.emthemes.com)
+ */
+
 .quickshop_img{ }
 
 #id_qs_load{width: 621px;position: absolute;top: 30px; left: 50%;display: none;z-index: 1001;background: #fff;min-height: 300px;}
