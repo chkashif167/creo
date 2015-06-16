@@ -11,12 +11,10 @@
 jQuery.noConflict();
 jQuery(document).ready(function(){
     jQuery(".mp_quickview_icon").fancybox({
-        maxWidth	: 900,
+        maxWidth	: 630,
         maxHeight	: 700,
         fitToView	: false,
-        width		: '80%',
-        height		: '75%',
-        autoSize	: false,
+        autoSize	: true,
         closeClick	: false,
         openEffect	: 'none',
         closeEffect	: 'none'
@@ -29,4 +27,20 @@ jQuery(document).ready(function(){
         jQuery('#'+imgid).attr('src', jQuery(this).attr('href'));
         return false;
       });
+		
+		
+		 jQuery(".fancybox-iframe").fancybox({
+            'titleShow'  : false,
+            'autoscale' : true,
+            'width'  : '630',
+            'height'  : '800',
+            'transitionIn'  : 'elastic',
+            'transitionOut' : 'elastic',
+				'type'        : 'iframe',
+				'scrolling'   : 'no',
+				 'overflow' : 'hidden', 
+				'iframe': {'scrolling': 'no'}
+            }); 
+        
+		
  });

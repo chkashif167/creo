@@ -90,7 +90,7 @@
     width: 99px;
 }
 
-.headerLogin { display: inline-block; padding: 6px 18px;}
+.headerLogin { display: inline-block; padding: 0px 18px; font-size: 10px; text-transform: uppercase;}
 .login-form .validation-advice { position: relative; font-size:10px; top: -14px; text-align: left; color: red;}
 .subscribe-form .validation-advice { position: relative; font-size:10px; top: -14px; text-align: left; color: red;}
 
@@ -105,11 +105,13 @@
     border: medium none;
     float: left;
     font-size: 0;
-    height: 18px;
+    height: 11px;
     line-height: 0;
     margin: 0;
     padding: 0;
     width: 19px;
+	 position: absolute;
+	 left: 5px;
 }
 .subtotal .price {
     color: #000 !important;
@@ -281,10 +283,50 @@
 #configurable_swatch_color .swatch-link { border: none;} 
 
 
+.fancybox-wrap.fancybox-desktop.fancybox-type-iframe.fancybox-opened {
+    transform: skewY(-5deg);
+	  backface-visibility: hidden;
+    border-radius: 0;
+    border-top: 17px solid #000;
 
+}
 
+.mp_quickview_product_page {
+    transform: skewY(5deg);
 
+}
+.mp_quickview_product_page .modal-holder  {
+    transform: skewY(0deg);
+	 width: 600px;
 
+}
+.fancybox-wrap.fancybox-desktop.fancybox-type-iframe.fancybox-opened {
+
+}
+.fancybox-image, .fancybox-iframe { }
+
+.fancybox-inner {
+   overflow: hidden !important;
+}
+
+.quickview-index-view .relatedProductsList, .quickview-index-view .relatedProductsHeading { display: none;}
+.quickview-index-view { background: #fff !important; overflow: hidden; padding: 25px 0;}
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span { background: none;}
+/*#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span:before { content: 'X'; }
+*/
+.fancybox-close:before { content: 'X';}
+.fancybox-close {
+    cursor: pointer;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    width: 36px;
+    z-index: 8040;
+	 color: #000;
+	 font-family:verdana;
+}
 
 
 

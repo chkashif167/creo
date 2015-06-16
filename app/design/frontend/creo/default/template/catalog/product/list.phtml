@@ -35,12 +35,17 @@
 <?php
     $_productCollection=$this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');
+	  //echo $_product->getAttributeText('gender');
+	 
 ?>
+
 
 <?php if(!$_productCollection->count()): ?>
 
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
+
+
 <div class="category-products"> <?php echo $this->getToolbarHtml() ?>
   <?php // List mode ?>
   <?php if($this->getMode()!='grid'): ?>

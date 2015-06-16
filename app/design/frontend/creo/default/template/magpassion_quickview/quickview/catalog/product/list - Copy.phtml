@@ -35,7 +35,6 @@
 
     $_productCollection=$this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');
-	
 ?>
 
 <?php if(!$_productCollection->count()): ?>
@@ -55,7 +54,7 @@
             <?php // Product description ?>
             <div class="product-shop">
                 <div class="f-fix">
-          
+               
 
                       <div class="product-primary">
             <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
@@ -78,7 +77,7 @@
           </div>
 
                     
-                    <div class="product-secondary"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></div>
+                    <div class="product-secondary">sdfdsfds<?php echo $this->getPriceHtml($_product, true) ?></div>
                      <div class="product-secondary">
                     <?php if($_product->isSaleable()): ?>
                         <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
@@ -122,7 +121,7 @@
                 </a>
                 <div class="text-area">
         <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
-        <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span>
+        <span class="price"><?php echo $this->getPriceHtml($_product, true) ?></span>
         <div class="btn-holder"> 
         <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="btn-cart"><span class="span1"><span class="span2"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </span></span></a> 
         <?php if ($this->helper('wishlist')->isAllow()) : ?>

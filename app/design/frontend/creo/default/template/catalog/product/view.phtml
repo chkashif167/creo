@@ -39,8 +39,7 @@
 
 
 
-<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-<div class="row">
+<div id=<div class="row">
 <div class="product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
     <?php echo $this->getBlockHtml('formkey') ?>
@@ -66,6 +65,7 @@
     
       <!-- tabs structure example -->
       <ul class="tabset">
+
         <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
         <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
         <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
@@ -185,4 +185,5 @@
 </div><?php */?>
 <?php echo $this->getChildHtml('upsell_products') ?> <?php echo $this->getChildHtml('product_additional_data') ?>
 </div>
-</div>
+</div>"messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+
