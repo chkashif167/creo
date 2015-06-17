@@ -31,25 +31,62 @@
  * @see Mage_Catalog_Block_Layer_Filter
  */
 ?>
-
+<?php $style_array = array('largevshape','round','vshape')?>
+<?php $gender_array = array('men','children','women');?>
 <ol>
 <?php foreach ($this->getItems() as $_item): ?>
     <li>
         <?php if ($_item->getCount() > 0): ?>
-            <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
+
+            <?php 
+               // echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');
+            /***check styles attribute******/
+                if(in_array(strtolower($_item->getLabel()), $style_array)){?>
+                <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" onmouseover="change_image('<?php echo strtolower($_item->getLabel()); ?>')" onmouseout="remove_image('<?php echo strtolower($_item->getLabel()); ?>')" >
+                
+                 <img id="<?php echo strtolower($_item->getLabel()); ?>" src="<?php echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');?>"> </a>
+                <?php }else if(in_array(strtolower($_item->getLabel()), $gender_array)) { ?>
+
+                    <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"  >
+                    <div style="border:1px solid red;"><?php echo $_item->getLabel() ?></div>
+                  </a>
+               <?php  }else
+
+                {?>
+                 <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" >
                 <?php echo $_item->getLabel() ?>
-                <?php if ($this->shouldDisplayProductCount()): ?>
+</a>
+                <?php /*if ($this->shouldDisplayProductCount()): ?>
                 <span class="count">(<?php echo $_item->getCount() ?>)</span>
-                <?php endif; ?>
-            </a>
+                <?php endif;*/ ?>
+                <?php }?> 
+            
         <?php else: ?>
             <span>
+                <?php
+                if(in_array(strtolower($_item->getLabel()), $style_array)){?>
+                 <img id="<?php echo strtolower($_item->getLabel()); ?>" src="<?php echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');?>">
+                <?php }else{?>
                 <?php echo $_item->getLabel(); ?>
-                <?php if ($this->shouldDisplayProductCount()): ?>
+                <?php /*if ($this->shouldDisplayProductCount()): ?>
                     <span class="count">(<?php echo $_item->getCount() ?>)</span>
-                <?php endif; ?>
+                <?php endif;*/ ?>
+                <?php }?> 
             </span>
         <?php endif; ?>
     </li>
 <?php endforeach ?>
 </ol>
+<script type="text/javascript">
+function change_image(imagename)
+{
+    
+     image = document.getElementById(imagename);
+     image.src = '<?php echo $this->getSkinUrl("images/"); ?>'+imagename+"-hover.png";
+}
+function remove_image(imagename)
+{
+     image = document.getElementById(imagename);
+     image.src = '<?php echo $this->getSkinUrl("images/"); ?>'+imagename+".png";
+}
+</script>
