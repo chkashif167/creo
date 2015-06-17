@@ -37,68 +37,94 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 
-
-
-
-
-
-<div class="modal-holder">
-						<div class="heading-holder">
-							<h3>Quickview</h3>
-						</div>
-						<div class="quickview-holder">
-							<div class="carousel-creo carousel2 gallery-js-ready autorotation-disabled">
-								<div class="mask" style="height: 304px;">
-									<?php echo $this->getChildHtml('media') ?>
-								</div>
-								<ul class="slide-pagination">
-									<li class="active"><a href="#"><img alt="" src="images/productpage/img10.jpg"></a></li>
-									<li><a href="#"><img alt="" src="images/productpage/img11.jpg"></a></li>
-									<li><a href="#"><img alt="" src="images/productpage/img12.jpg"></a></li>
-									<li><a href="#"><img alt="" src="images/productpage/img13.jpg"></a></li>
-								</ul>
-							</div>
-							<div class="text-area">
-								<h4>COMIC TSHIRT</h4>
-								<p>Cras a commodo dolor. Sed congue, ante non adipiscing sodales, arcu velit volutpat lorem, id commodo nisl lectus ut nibh. In tristique nibh in nulla molestie, ut eleifend nibh euismod. Praesent pharetra massa eu sem gravida, id vulputate eros ullamcorper. Morbi in iaculis nulla, eu porttitor nunc. Aenean id tortor vel est gravida scelerisque sed sed leo. Cras aliquet porttitor diam sit amet ullamcorper. Maecenas vel arcu et ante pellentesque fermentum laoreet nec magna. Praesent elementum enim sed egestas rutrum. Fusce hendrerit vitae quam et auctor. Ut ultrices fringilla sodales. Nulla diam urna, pulvinar vitae nulla id, aliquet pulvinar sem. Sed tortor dolor, varius vel tristique ut, ornare eu est. Donec interdum sagittis lectus et placerat.</p>
-								<div class="options-area">
-									<div class="column color-area">
-										<h5>Color:</h5>
-										<ul>
-											<li><a href="#"></a></li>
-											<li class="active orange"><a href="#"></a></li>
-											<li class="yellow"><a href="#"></a></li>
-											<li class="green"><a href="#"></a></li>
-											<li class="blue"><a href="#"></a></li>
-										</ul>
-									</div>
-									<div class="column size-area">
-										<h5>Size:</h5>
-										<ul>
-											<li class="active"><a href="#">S</a></li>
-											<li><a href="#">M</a></li>
-											<li><a href="#">L</a></li>
-											<li><a href="#">XL</a></li>
-										</ul>
-									</div>
-									<div class="column quantity-area">
-										<h5>Quantity:</h5>
-									</div>
-								</div>
-								<span class="price">76.00 AED</span>
-								<div class="btn-holder">
-									<a href="#" class="btn-cart"><span class="span1"><span class="span2"><i class="icon-basket"></i> Add to cart</span></span></a>
-									<a href="#" class="link-wishlist"><i class="icon-heart-empty"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-
-
-
-
-
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 
+ <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+    <?php echo $this->getBlockHtml('formkey') ?>
+    <div class="no-display">
+      <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+      <input type="hidden" name="related_product" id="related-products-field" value="" />
+    </div>
+
+<div class="modal-holder">
+  <div class="heading-holder">
+    <h3>Quickview</h3>
+  </div>
+  <div class="quickview-holder">
+    <div class="carousel-creo carousel2 gallery-js-ready autorotation-disabled"> 
+	 <?php echo $this->getChildHtml('media') ?> </div>
+    <div class="text-area">
+      <h4><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h4>
+      <p><?php print $_product->getDescription(); ?> </p>
+      <div class="options-area">
+   
+      <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+      <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+      <?php endif;?>
+      </div>
+      <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span>
+        <div class="btn-holder"> 
+  
+		<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
+		<span class="span1"><span class="span2"><?php echo $buttonTitle ?> Add To Cart</span></span>
+      </button>
+      <a class="link-wishlist" href="<?php echo $this->getUrl('wishlist') ?>"><i class="icon-heart-empty"></i></a> 
+      </div>
+    </div>
+  </div>
+ </form> 
+  
+</div>
+
+
+<script type="text/javascript">
+        //<![CDATA[
+            var productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        this.form.submit();
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+
+                    if (this.validator.validate()) {
+                        if (url) {
+                            this.form.action = url;
+                        }
+                        this.form.submit();
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+        //]]>
+        </script>

@@ -46,61 +46,30 @@
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
     <?php $_iterator = 0; ?>
-    <ol class="products-list" id="products-list">
+    <ol class="products-list products-grid" id="products-list">
     <?php foreach ($_productCollection as $_product): ?>
-        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
-            <a  rel="nofollow" href="<?php echo Mage::getBaseUrl().'quickview/index/view?pid='.$_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId()?>"><span><?php echo Mage::helper('quickview/quickview')->getTitle(); ?></span></a>
-            <?php // Product Image ?>
-            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
-            <?php // Product description ?>
-            <div class="product-shop">
-                <div class="f-fix">
-          
-
-                      <div class="product-primary">
-            <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
-            <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
-            <?php if($_product->getRatingSummary()): ?>
-            <?php echo $this->getReviewsSummaryHtml($_product) ?>
-            <?php endif; ?>
-            <?php
-                        // Provides extra blocks on which to hang some features for products in the list
-                        // Features providing UI elements targeting this block will display directly below the product name
-                        if ($this->getChild('name.after')) {
-                            $_nameAfterChildren = $this->getChild('name.after')->getSortedChildren();
-                            foreach ($_nameAfterChildren as $_nameAfterChildName) {
-                                $_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
-                                $_nameAfterChild->setProduct($_product);
-                                echo $_nameAfterChild->toHtml();
-                            }
-                        }
-                        ?>
-          </div>
-
-                    
-                    <div class="product-secondary"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></div>
-                     <div class="product-secondary">
-                    <?php if($_product->isSaleable()): ?>
-                        <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
-                    <?php else: ?>
-                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-                    <?php endif; ?>
-                    </div>
-                    <div class="desc std">
-                        <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
-                    </div>
-                    <ul class="add-to-links">
-                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
-                        <?php endif; ?>
-                        <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                            <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
-                        <?php endif; ?>
-                    </ul>
+          <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+               <div class="list_product_img">
+                <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(420, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
+                     <a  rel="nofollow" href="<?php echo Mage::getBaseUrl().'quickview/index/view?pid='.$_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId()?>"> <span class="quick-view"><i class="icon-search"></i> quick view</span></a>
+                </a>
                 </div>
-            </div>
-        </li>
+        <div class="text-area">
+        <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
+        <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span>
+        <div class="btn-holder"> 
+        <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="btn-cart"><span class="span1"><span class="span2"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </span></span></a> 
+        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+        <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><i class="icon-heart-empty"></i></a> 
+         <?php endif; ?>
+        </div>
+        <div class="description">
+        <p><?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+        </p>
+        </div>
+        
+      </div>
+            </li>
     <?php endforeach; ?>
     </ol>
     <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
@@ -117,7 +86,7 @@
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
                
-                <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+                <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(420, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
                      <a  rel="nofollow" href="<?php echo Mage::getBaseUrl().'quickview/index/view?pid='.$_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId()?>"> <span class="quick-view"><i class="icon-search"></i> quick view</span></a>
                 </a>
                 <div class="text-area">
@@ -139,7 +108,7 @@
     <?php endif; ?>
 
     <div class="toolbar-bottom">
-        <?php echo $this->getToolbarHtml() ?>
+        <?php //echo $this->getToolbarHtml() ?>
     </div>
 </div>
 <?php endif; ?>

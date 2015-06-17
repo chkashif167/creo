@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Category_Filters>
+      <version>0.1.0</version>
+    </Category_Filters>
+  </modules>
+  <global>
+    <page>
+      <layouts>
+        <Category_filter translate="label">
+          <label>Category Filtes</label>
+          <template>page/filters.phtml</template>
+          <layout_handle>Cateogory_Filters</layout_handle>
+        </Category_filter>
+        <!-- add more layouts here -->
+      </layouts>
+    </page>
+  </global>
+</config>
