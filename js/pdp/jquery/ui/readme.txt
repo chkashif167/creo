@@ -1,0 +1,1 @@
+This jQuery UI version without tooltip

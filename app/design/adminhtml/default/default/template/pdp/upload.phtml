@@ -1,0 +1,59 @@
+<form name="demoFiler" id="demoFiler" enctype="multipart/form-data" action="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'adminhtml/default/default/pdp/upload.php' //echo Mage::helper("adminhtml")->getUrl("pdp/adminhtml_pdp/save/"); ?>">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="control-group">
+					<label class="control-label" for="file_type">Select File Type</label>
+					<div class="controls">
+						<select name='file_type' id="file_type">
+							<option value=''>--Please select--</option>
+							<option value='image'>Image</option>
+							<option value='font'>Font</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group" style="display: none;">
+					<label class="control-label" for="image_type">Select Image Type</label>
+					<div class="controls">
+						<select name='image_type' id="image_type">
+							<option value=''>--Please select--</option>
+							<!--
+                            <option value='design'>Design image</option>
+                            -->
+							<option value='wood'>Wood image</option>
+							<option value='custom'>Custom image</option>
+						</select>
+					</div>
+					
+				</div>
+				<!--
+				<div class="control-group">
+					<label class="control-label" for="name">Product Type Name</label>
+					<div class="controls"><input type="text" placeholder="iPhone 5 Wood Skin" name="name" id="name" /></div>
+				</div>
+				-->
+			</div>
+			<div class="span9">
+				<div class="multiupload">
+					<center>
+						<h3 class="title">Upload images or fonts for design</h3>
+					</center>
+					<div id="dragAndDropFiles" class="uploadArea">
+						<h1>Drop Files Here</h1>
+					</div>
+					<?php //$adminobj= new Mage_Adminhtml_Block_Template(); ?>
+					<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+					<input type="hidden" id="base_dir" name="base_dir" value="<?php echo Mage::getBaseDir(); ?>" />
+					<input type="hidden" id="skin_url" name="skin_url" value="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>" />
+					<div class='browse-submit'>
+						<input type="file" name="multiUpload" id="multiUpload" multiple="" /> 
+						<input type="submit" name="submitHandler" id="submitHandler" value="Upload" class="buttonUpload" />
+					</div>
+					<div class="progressBar">
+						<div class="status"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

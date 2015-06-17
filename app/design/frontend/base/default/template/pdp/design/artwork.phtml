@@ -1,0 +1,61 @@
+<?php 
+	$helper = Mage::helper('pdp');
+    $imagePath = $helper->getImagePath();
+	$limit = $this->_default_page_size;
+    $shapeCategoryOptions = Mage::getModel('pdp/shapecate')->getCategoryOptions();
+?>
+<div class="select-photo-category">
+<?php $categoryOptions = Mage::getModel('pdp/artworkcate')->getCategoryOptions(); ?>
+	<select id='image_category_list' pdc-action="change-clipart-category" class="selectPhotoCategory">
+		<?php 
+		$options = $categoryOptions;
+		$check_first = 0;
+		if (!empty($options)) {
+			foreach ($options as $key => $value) {
+				if($check_first++==0){$act='class="active cat_loaded" cr_act="2"';}else{$act='';}
+				echo "<option value='". $key ."' ".$act."> <span id='". $key ."'>{$value}</span></option>";
+			}
+		}			
+		?>
+	</select>
+	 
+</div>
+<div class="selected_category_photo">
+	<ul id="icon_list" pdc-data="clipart-list" class="item-color-list">
+		<?php $defaultArtCate = Mage::getModel('pdp/artworkcate')->getDefaultArtCate() ?>
+		<?php $clipartCollection = $this->pagingCollection(1, $defaultArtCate, $limit);?>
+		<?php if ($clipartCollection) : ?>
+			<?php foreach ($clipartCollection as $image) : ?>
+			<li cat="<?php echo $image->getCategory(); ?>">
+				<a rel="clover" class="selection_img">
+					<?php $colorImg = Mage::getModel('pdp/pdp')->getColorImageFrontend($image->getId()); ?>
+					<?php 
+					//Add root info if has color image
+					if ($colorImg != "") {
+						$colorImg = 'fff__' . $image->getFilename() . ',' . $colorImg;
+					}
+					?>
+					<img src="<?php echo $imagePath . 'artworks/'. $image->getFilename()  ?>" id="img<?php echo $image->getId(); ?>" color_type="<?php echo $image->getColorType() ?>" color="<?php echo $colorImg ?>" width="50" height="50" price="<?php echo $image->getPrice() ?>" image_name="<?php echo $image->getImageName() ?>" />
+				</a>
+			</li>
+			<?php endforeach;   ?>
+		<?php endif;?>
+	</ul>
+</div>
+<div class="add-more">
+	<input type="hidden" value='<?php echo $limit;?>' name='default_page_size' id="default_page_size" />
+	<button class="btn btn-xs " id="load_more_image" pdc-action="load-more-clipart" type="button" <?php echo ($clipartCollection && $clipartCollection->count() >= $limit) ? "" : "style='display: none;'"?>><i class="pdc-autorenew"></i> <?php echo $this->__("More artwork")?></button>
+</div>
+<div class="get_photo_upload">
+	 
+	<button class="upload_photo_btn" type="button" data-toggle="modal" data-target="#uploadPhotos"><i class="pdc-laptop"></i> <?php echo $this->__('Upload Image');?></button>
+    <?php if($shapeCategoryOptions && count($shapeCategoryOptions)) : ?>
+    <button class="upload_photo_btn" type="button" data-toggle="modal" data-target="#shapeLibrary"><i class="pdc-favorite"></i> <?php echo $this->__('Shapes Plugin');?></button>
+    <?php endif; ?>
+	<?php if(Mage::getStoreConfig('pdp/customer_action/is_facebook')){ ?>
+	<button class=" upload_photo_btn fb_photo_btn " data-toggle="modal" data-target="#facebookPhotos" type="button"><i class="pdc-facebook-square"></i> <?php echo $this->__('My Facebook Photo');?></button>
+	<?php } ?>
+	<?php if(Mage::getStoreConfig('pdp/customer_action/is_instagram')){ ?>
+	<button class=" upload_photo_btn fb_photo_btn instagram_btn" data-toggle="modal" data-target="#instagramPhotos" type="button"><i class="pdc-instagram"></i> <?php echo $this->__('My Instagram Photo');?></button>
+	<?php } ?>
+</div>

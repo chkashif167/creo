@@ -1,0 +1,64 @@
+<?php
+if (Mage::getStoreConfig('pdp/setting/enable') == 0) {
+    echo "<h3>[Products Designer Canvas] is disabled!</h3>";
+}
+$baseUrl = Mage::helper("pdp")->getPdpBaseUrl();
+$productId = Mage::app()->getRequest()->getParam('id');
+$productStatus = Mage::getModel('pdp/productstatus')->getProductStatus($productId);
+?>
+<input type="hidden" id="current_product_id" value="<?php echo $productId ?>" />
+<input type="hidden" id="base_url" value="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK) ?>" />
+
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">Products Designer Canvas</h4>
+    </div>
+    <div id="group_fields17" class="fieldset fieldset-wide">
+        <div class="hor-scroll">
+            <div>
+                <label>Enable PDC for this product</label>
+                <select name="enable_pdp_design">
+                    <option value=''><?php echo $this->__("--Please select--") ?></option>
+                    <option <?php echo ($productStatus == "1") ? "selected" : ''; ?> value="1"><?php echo $this->__("Yes") ?></option>
+                    <option <?php echo ($productStatus == "2") ? "selected" : ''; ?> value="2"><?php echo $this->__("No") ?></option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">Create sample design</h4>
+    </div>
+    <div id="group_fields17" class="fieldset fieldset-wide">
+        <div class="hor-scroll">
+            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('pdp/product/t-shirt.phtml')->toHtml() ?>
+        </div>
+    </div>
+</div>
+
+<?php $enablePdpDesign = Mage::helper("adminhtml")->getUrl("pdp/adminhtml_pdp/updateStatus"); ?>
+<script>
+    var mstPdpDesign = jQuery.noConflict();
+    mstPdpDesign(function($){
+        $("select[name='enable_pdp_design']").change(function() {
+            if ($(this).val() != "") {
+                $.ajax({
+                    type:"GET",
+                    url: "<?php echo $enablePdpDesign . "product_id/$productId/status/" ?>" + $(this).val() + "?isAjax=true",
+                    beforeSend:function(){
+                        $("#loading-mask").attr("style","left: -2px; top: 0px; width: 1034px; height: 833px; z-index: 10000;");
+                        $("#loading-mask").show();
+                    },
+                    success:function(data){
+                        if(data == ""){
+                            $("#loading-mask").hide();
+                        }else{
+                            console.log("Something went wrong");
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

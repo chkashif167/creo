@@ -1,0 +1,74 @@
+<?php
+	$productId = $this->getProductId();
+	$iW = $iH = $iL = $iT = $imgPath = $id = $designAreaLabel = "";
+	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+    $noImagePath = $mediaUrl . 'pdp/images/no_image.jpg';
+	$designArea = $this->getDesignArea();
+	$key = "side_" . $designArea['id'];
+    $designAreaLabel = $designArea['label'];
+    $required = $this->getIsRequired();
+	if ($productId) {
+		$areaInfo = Mage::helper('pdp')->getPrintAreaInfo($productId, $designArea['id']);
+		if ($areaInfo != NULL) {
+			$id = $areaInfo['id'];
+			$iW = $areaInfo['canvas_w'];
+			$iH = $areaInfo['canvas_h'];
+			$iT = $areaInfo['canvas_t'];
+			$iL = $areaInfo['canvas_l'];
+			$imgPath = $mediaUrl . 'pdp/images/' . $areaInfo['filename']; 
+		}
+	}
+	//Final goloble message
+	//Zend_Debug::dump(get_class_methods($this));
+	echo $this->getMessagesBlock()->toHtml();
+?>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('boxes.css') ?>"/>
+<link type="text/css" rel="stylesheet" href="<?php echo $this->getJsUrl('pdp/css/jquery.ui.resizable.css') ?>"/>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/js/jquery.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/js/ui/jquery.ui.core.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/js/ui/jquery.ui.widget.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/js/ui/jquery.ui.mouse.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/js/ui/jquery.ui.resizable.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/js/ui/jquery.ui.draggable.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/js/backend/designarea.js') ?>"></script>
+<link type="text/css" rel="stylesheet" href="<?php echo $this->getJsUrl('pdp/css/printarea.css') ?>" />
+<div class="tab-pane" id="<?php echo $key ?>">
+	<div id="design-info-form-<?php echo $key ?>" class="pdp-form-container">
+		<button onclick="Tshirt.submit()" class="scalable save save-design-item" type="button"><span><span><span>Save</span></span></span></button>
+		<button onclick="" class="scalable delete delete-design-item" type="button"><span><span><span>Delete</span></span></span></button>
+		<div id="design_form_<?php echo $key ?>" class="design-side">
+			<div class="modal-body"> 
+				<div id="print_area_<?php echo $key ?>">
+					<div class="img_area_<?php echo $key ?> pdp-img-area">
+						<div class="inlay_area_<?php echo $key ?> pdp-inlay-area"></div>
+						<img rel="printarea_<?php echo $id ?>" id="design_image_<?php echo $key ?>" src="<?php echo $imgPath == ''? $noImagePath : $imgPath ?>" alt="Main image" />
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<form id="pdp_add_inlay_form" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("pdp/adminhtml_designarea/savedesigninlay/"); ?>" enctype="multipart/form-data">
+					<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+					<input type="hidden" name="current_product_id" value="<?php echo Mage::app()->getRequest()->getParam('productid') ?>" />
+					<input type="hidden" name="area_id" value="<?php echo Mage::app()->getRequest()->getParam('areaid') ?>" />
+					<input type="hidden" name="inlay_id" value="<?php echo $id ?>" />
+					<div class="browse-image">
+						<input type="file" <?php echo ($required == 1 && $imgPath == "") ? "class='required-entry'" : ''; ?> name="filename" onchange="Tshirt.previewImageDesignArea(this, '<?php echo $key ?>')" />
+					</div>
+					<div class="inlay-info">
+						<!-- <div><a href="#" target="_blank" class="btn btn-info" title="What is '<?php //echo $ucKey ?> Preview'?">Help(s)</a></div> -->
+						<div class='design-area-input'><span>Width:</span> <input id="iwidth_<?php echo $key ?>" name="iwidth" type="text" class="input-text" value="<?php echo $iW==''?'170':$iW; ?>" /></div>
+						<div class='design-area-input'><span>Height:</span> <input id="iheight_<?php echo $key ?>" name="iheight" type="text" class="input-text" value="<?php echo $iH==''?'270':$iH; ?>"/></div>
+						<div class='design-area-input'><span>Top:</span> <input id="itop_<?php echo $key ?>" name="itop" type="text" class="input-text" value="<?php echo $iT==''?'50':$iT; ?>"/></div>
+						<div class='design-area-input'><span>Left:</span> <input id="ileft_<?php echo $key ?>" name="ileft" type="text" class="input-text" value="<?php echo $iL==''?'20':$iL; ?>"/></div>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var <?php echo $key . 'DesignArea'?> = jQuery.noConflict();
+	<?php echo $key . 'DesignArea' ?>(function($) {
+		Tshirt.initializeBoxDesignArea('<?php echo $key?>');
+	});
+</script>

@@ -1,0 +1,117 @@
+#pdc_block_layer {
+  border: 1px solid #00a0c6;
+  margin-left: 5px;
+  width: 240px;
+  z-index: 99;
+}
+#pdc-his-block > label, #pdc_block_layer > label {
+  background: none repeat scroll 0 0 #00a0c6;
+  box-sizing: padding-box;
+  color: #ffffff;
+  float: left;
+  font-family: "Proxima_Nova_Regular";
+  letter-spacing: 1px;
+  line-height: 35px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  width: 100%;
+}
+#pdc_block_layer > ul {
+  clear: both;
+  display: table;
+}
+#pdc-his-block li, #pdc_block_layer li {
+  border-bottom: 1px dashed;
+  box-sizing: padding-box;
+  color: #c2c2c2;
+  cursor: pointer;
+  display: table-cell;
+  float: left;
+  line-height: 20px;
+  padding: 5px;
+  vertical-align: middle;
+  width: 100%;
+}
+#pdc-his-block li:last-child, #pdc_block_layer li:last-child {
+    
+}
+#pdc-his-block li.active, #pdc_block_layer li.active {
+  color: #111;
+}
+#pdc-his-block li.current, #pdc_block_layer li.current {
+    background: none repeat scroll 0 0 rgb(97, 184, 60);
+}
+#pdc_block_layer img {
+  width: 50px;
+}
+#pdc_block_layer span {
+    float: left;
+    text-align: center;
+    color: #111;
+}
+#pdc_block_layer span:nth-child(1) {
+  margin: 0 10px 0 0;
+  max-height: 100px;
+  overflow: auto;
+  width: 60px;
+}
+#pdc_block_layer span:nth-child(2) {
+  width: 40px;
+}
+#pdc_block_layer span:nth-child(3) {
+  text-align: center;
+  width: 70px;
+}
+#pdc_block_layer span:nth-child(4) {
+  text-align: center;
+  width: 40px;
+}
+#pdc_block_layer span:nth-child(5) {
+  float: right;
+  width: 30px;
+}
+#pdc_block_layer span:nth-child(6) {
+    width: 40px;
+}
+#pdc_block_layer span:nth-child(7) {
+    
+}
+#pdc_block_layer span {
+  color: #111111;
+  float: left;
+  text-align: center;
+}
+#pdc_block_layer li.active{
+    
+}
+#pdc_block_layer li.active span {
+  color: #00a0c6;
+}
+#pdc_block_layer li span i.pdc-lock {
+    display: none;
+}
+#pdc_block_layer li span.lock i.pdc-unlock-alt {
+  display: none;
+}
+#pdc_block_layer li span.lock i.pdc-lock {
+  display: block;
+}
+#pdc_block_layer li.active span {
+  color: #00a0c6;
+}
+#pdc_block_layer li:first-child span i {
+    display: none;
+}
+#pdc_block_layer li:first-child span span {
+  display: block;
+}
+#pdc_block_layer li span span {
+  display: none;
+}
+#pdc_block_layer > div {
+  padding: 5px;
+}
+#pdc_block_layer span.price_layer {
+  float: right;
+  font-weight: bold;
+}

@@ -1,0 +1,144 @@
+<?php 
+	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'pdp/images/';
+    $fontUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'pdp/fonts/';
+	$baseUrl = Mage::helper("pdp")->getPdpBaseUrl();
+	$fonts = Mage::getModel('pdp/pdp')->getFontCollection();
+?>
+<style>
+<?php foreach ($fonts as $font) { ?>
+@font-face {
+    font-family: '<?php echo $font->getName(); ?>';
+    src: url('<?php echo $fontUrl . $font->getName().'.'.$font->getExt(); ?>');
+}
+p.<?php echo str_replace(' ', '_', $font->getName()); ?> {
+    font-family: <?php echo $font->getName(); ?>;
+    font-size: 25px;
+}
+<?php }?>
+</style>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-8"> 
+                    <h3 class="panel-title">Manage Font</h3>
+                </div>
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#upload-files-form">Add New Font</a>
+                            <a class="btn btn-success">Action</a>
+                            <a data-toggle="dropdown" class="btn btn-success dropdown-toggle">
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a id="select_all_item" href="#">Select All Items</a></li>
+                                <li><a id="uncheck_all_item" href="#">Unchecked All Items</a></li>
+                                <li class="divider"></li>
+                                <li><a id="delete_selected_item" href="#">Delete Selected Item(s)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--Font manage-->
+                    <div id="font-manage">
+                        <div class="alert alert-info">
+                            <span class="title">Manage Fonts Library</span><strong> **Tips:</strong> If font display on Font Preview does not like as your font in design, it will not working on frontend too.
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="font">
+                                <table id="font-table" class='table'>
+                                    <thead>
+                                        <th style="width: 8%;"></th>
+                                        <th style="width: 30%;">Font Title</th>
+                                        <th style="width: 50%;">Font Preview</th>
+                                        <!--<th>Action</th>-->
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($fonts as $font) { ?>
+                                        <tr>
+                                            <td><input type="checkbox" class='font-checkbox' id='font_<?php echo $font->getFontId() ?>' /></td>
+                                            <td><?php echo $font->getName() ?></td>
+                                            <td><p class="<?php echo str_replace(' ', '_', $font->getName()); ?>">Sample Text</p></td>
+                                            <?php //$deleteUrl = Mage::helper("adminhtml")->getUrl("pdp/adminhtml_pdp/deletefont/",array("font_id"=> $font->getFontId())) . 'isAjax=true'; ?>
+                                            <!--<td><button id="<?php //echo "delete_" . $font->getFontId() ?>" class="btn" onclick="MST.deleteImage('<?php //echo $deleteUrl ?>')">Delete</button></td>-->
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <input type="hidden" value="<?php echo $baseUrl ?>" name="base_url" id="base_url"/>
+                        <!-- New font modal-->
+                        <div class="modal fade" id="upload-files-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                                        <h4 class="modal-title" id="myModalLabel">Add New Font(s)</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="alert alert-info">
+                                                <p><span class='support-files'><em>- Single or Multi upload font files</em></span></p>
+                                                <p><span class='support-files'><em>- Allows font type: <b>.ttf, .otf, .fnt, .fon, .woff, .dfont</b>. For other font type, please contact support.</em></span></p>
+                                        </div>
+                                        <form class="form-horizontal"  name="demoFiler" id="demoFiler" enctype="multipart/form-data" action="<?php echo Mage::helper("pdp")->getPdpBaseUrl() ?>pdp/index/uploadfont/">
+                                            <input type="hidden" name="upload_file_type" value="custom" id="upload_file_type"/>
+                                            <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+                                            <input type="hidden" id="base_dir" name="base_dir" value="<?php echo Mage::getBaseDir(); ?>" />
+                                            <input type="hidden" id="skin_url" name="skin_url" value="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>" />
+                                            <div class="multiupload">
+                                                <div id="dragAndDropFiles" class="uploadArea">
+                                                </div>
+                                                <?php //$adminobj= new Mage_Adminhtml_Block_Template(); ?>
+                                                <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+                                                <input type="hidden" id="base_dir" name="base_dir" value="<?php echo Mage::getBaseDir(); ?>" />
+                                                <input type="hidden" id="skin_url" name="skin_url" value="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>" />
+                                                <div>
+                                                    <input type="file" name="multiUpload" id="multiUpload" multiple="" /> 
+                                                </div>
+                                                <div class="progressBar">
+                                                    <div class="status"></div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a id="upload_font" class="buttonUpload btn btn-success" >Upload</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End font modal -->
+                    </div>
+                    <!--End Font manage-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+//Fix conflict Prototype vs Bootstrap + jQuery
+if (Prototype.BrowserFeatures.ElementExtensions) {
+    var disablePrototypeJS = function (method, pluginsToDisable) {
+            var handler = function (event) {
+                event.target[method] = undefined;
+                setTimeout(function () {
+                    delete event.target[method];
+                }, 0);
+            };
+            pluginsToDisable.each(function (plugin) { 
+                jQuery(window).on(method + '.bs.' + plugin, handler);
+            });
+        },
+        pluginsToDisable = ['collapse', 'dropdown', 'modal', 'tooltip', 'popover'];
+    disablePrototypeJS('show', pluginsToDisable);
+    disablePrototypeJS('hide', pluginsToDisable);
+}
+</script>

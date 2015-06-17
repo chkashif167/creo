@@ -1,0 +1,73 @@
+<?php
+$productId = $this->getData('product_id');
+$sides = Mage::getModel('pdp/pdpside')->getDesignSides($productId);
+$deleteSideUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/deleteside/");
+$editUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/addNewSide/", array("productid" => $productId));
+$inlineUpdateUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/inlineUpdate/");
+?>
+<script src="<?php echo $this->getJsUrl('pdp/backend/js/pdpdesign.js') ?>"></script>
+<input type="hidden" name="inline_input_url" id="inline_input_url" value="<?php echo $inlineUpdateUrl ?>" />
+<?php if ($sides->count()) : ?>
+	<style type="text/css">
+		.design-area-table {width: 100%;border-collapse: collapse;}
+		.design-area-table td, .design-area-table th {
+            border: 1px solid #CCCCCC;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .design-area-table .delete_th{
+            width: 50px;
+        }
+	</style>
+	<table class="design-area-table">
+		<tr>
+			<th><?php echo $this->__('Side Name') ?></th>
+			<th><?php echo $this->__('Action') ?></th>
+			<!--<th>Design Colors</th>-->
+			<th><?php echo $this->__('Status') ?></th>
+			<th><?php echo $this->__('Position') ?></th>
+			<th class="delete_th">&nbsp;</th>
+			<th><?php echo $this->__('Design Colors') ?></th>
+			<th><?php echo $this->__('Default Pattern Style') ?></th>
+            <!--<th><?php echo $this->__('View All Samples') ?></th>-->
+		</tr>
+        <?php $rowCounter = 0; ?>
+		<?php foreach ($sides as $side) : ?>
+        <?php $rowCounter++; ?>
+		<tr>
+			<td><?php echo $this->__($side->getLabel()) ?></td>
+			<td><button class="edit_side" title="<?php echo $this->__("Edit '" .$side->getLabel() . "'" ) ?>" rel="<?php echo $editUrl . "side_id/" . $side->getId() ?>" type="button"><?php echo $this->__('Edit') ?></button></td>
+			<td>
+				<div class='design-area-input'>
+					<select class="select pdp-inline-input" name="status" id="pdp_status_<?php echo $side->getId() ?>">
+						<option <?php echo ($side->getStatus() == 1) ? "selected" : ""; ?> value="1"><?php echo $this->__('Enabled') ?></option>
+						<option <?php echo ($side->getStatus() == 2) ? "selected" : ""; ?> value="2"><?php echo $this->__('Disabled') ?></option>
+					</select>
+				</div>
+			</td>
+            <td><input type="text" class="input-text validate-number pdp-inline-input" value="<?php echo $side->getPosition() ?>" id="pdp_position_<?php echo $side->getId() ?>"></td>
+            <td><button type="button" rel="<?php echo $deleteSideUrl . "side_id/" . $side->getId() ?>" class="side_delete_button"><?php echo $this->__('Delete') ?></button></td>
+            <?php if ($rowCounter == 1) : ?>
+			<td rowspan="<?php echo $sides->count() ?>">
+				<button id="addcolor_btn_<?php echo $side->getId() ?>" type="button" class="addcolor-btn"><?php echo $this->__('Add Design Color') ?></button><br/><br/>
+				<button id="viewcolor_btn_<?php echo $side->getId() ?>" type="button" class="viewcolor-btn"><?php echo $this->__('View Design Colors') ?></button>
+			</td>
+            <?php endif; ?>
+			<?php if ($rowCounter == 1) : ?>
+			<td rowspan="<?php echo $sides->count() ?>">
+				<button id="sample_btn_<?php echo $side->getId() ?>" type="button" class="create-sample-btn"><?php echo $this->__('Create Pattern') ?></button>
+			</td>
+            <?php endif; ?>
+            <?php if ($rowCounter == 1) : ?>
+                <!--<td rowspan="<?php echo $sides->count() ?>">
+                    <button type="button" class="view-design-btn"><?php echo $this->__('View Samples') ?></button>
+                </td>-->
+            <?php endif; ?>
+			<!--<td><button class="preview-item" id="preview_btn_<?php //echo $area->getId() ?>" type="button" class="">Preview</button></td>-->
+		</tr>
+		<?php endforeach; ?>
+	</table>
+<?php else : ?>
+	<p><?php echo $this->__("No side found. Let start by adding new side :)") ?></p>
+<?php endif; ?>

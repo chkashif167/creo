@@ -1,0 +1,68 @@
+<?php 
+$colorId = Mage::app()->getRequest()->getParam('id');
+$colorName = $hexcode = $position = $status = "";
+if ($colorId !== "" && $colorId !== null) {
+	$colorInfo = Mage::getModel('pdp/color')->load($colorId);
+	$colorName = $colorInfo->getColorName();
+	$hexcode = $colorInfo->getColorCode();
+	$position = $colorInfo->getPosition();
+	$status = $colorInfo->getStatus();
+}
+?>
+<div style="" id="group_tabs_form_section_content">
+	<div class="entry-edit">
+		<div class="entry-edit-head">
+			<h4 class="icon-head head-edit-form fieldset-legend">Color Information</h4>
+			<div class="form-buttons"></div>
+		</div>
+		<div id="pdpgroup_pdp_form" class="fieldset ">
+			<div class="hor-scroll">
+				<table cellspacing="0" class="form-list">
+					<tbody>
+						<tr>
+							<td class="label"><label for="color_name">Color Name</label></td>
+							<td class="value"><input type="text"
+								class="input-text" value="<?php echo $colorName ?>"
+								name="color_name" id="color_name">
+								<small>See more colors schemes: <a target='_blank' href="http://www.colorpicker.com/color-chart/">Color chart (Hexa Codes, Color Names)</a></small>	
+								</td>
+						</tr>
+						<tr>
+							<td class="label"><label for="color_code">Color Hexcode <span
+									class="required">*</span></label>
+									
+</td>
+							<td class="value">
+							<input style="background: <?php echo "#" . $hexcode ?>; display: table; padding: 0px; height: 40px; width: 100px; position: relative; border: 0px solid rgb(255, 255, 255); border-radius: 100% 0px; text-align: center;" type="text"
+								class="required-entry input-text required-entry" value="<?php echo $hexcode?>"
+								name="color_code" id="color_code">
+								<small>Click the leaf to enter hex code :)</small>
+							</td>
+						</tr>
+						<tr>
+							<td class="label"><label for="position">Position</label></td>
+							<td class="value"><input type="text" class=" input-text"
+								value="<?php echo $position ?>" name="position" id="position"></td>
+						</tr>
+
+						<tr>
+							<td class="label"><label for="pdpstatus">Status</label></td>
+							<td class="value"><select class=" select" name="status"
+								id="pdpstatus">
+									<option <?php echo ($status == '1') ? "selected='selected'" : '';?> value="1">Enabled</option>
+									<option <?php echo ($status == '2') ? "selected='selected'" : '';?> value="2">Disabled</option>
+							</select></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script type='text/javascript'>
+	var pdpColor = jQuery.noConflict();
+	pdpColor(function($){
+		//Active default option after page loaded
+		Multicolor.activeColorPicker('#color_code');
+	});
+</script>

@@ -1,0 +1,23 @@
+<?php 
+$inlayInfo = $this->getData('inlay_info');
+//Zend_Debug::dump($inlayInfo);
+$_mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "pdp/images/";
+$baseImage = $_mediaUrl . $inlayInfo['filename'];
+$_w = $inlayInfo['canvas_w'];
+$_h = $inlayInfo['canvas_h'];
+$_l = $inlayInfo['canvas_l'];
+$_t = $inlayInfo['canvas_t'];
+?>
+<div class="main-info" style="position: relative;">
+	<div class="inlay-info" style="border: 2px dotted; position: absolute; <?php echo "width: $_w; height: $_h; top: $_t; left: $_l;" ?>"></div>
+	<img src="<?php echo $baseImage ?>" alt="Base Image"/>
+</div>
+<div>
+	<?php 
+	$designColorImages = Mage::getModel('pdp/designcolor')->getCollection();
+	$designColorImages->addFieldToFilter('inlay_id', $inlayInfo['id']);
+	foreach ($designColorImages as $design) {
+		Zend_Debug::dump($design->getData());
+	}
+	?>
+</div>

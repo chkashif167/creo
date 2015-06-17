@@ -1,0 +1,86 @@
+<?php 
+	$imageId = Mage::app()->getRequest()->getParam('image_id');
+	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'pdp/images/artworks/';
+	$filename = "";
+	if ($imageId != "") {
+		$model = Mage::getModel('pdp/images')->load($imageId);
+		$filename = $model->getFilename();
+	} 
+?>
+<style>
+.add-artwork-color a {
+    text-decoration: none;
+}
+</style>
+<div class="container add-artwork-color">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-8"> 
+                    <h3 class="panel-title">Add Clipart Colors</h3>
+                </div>
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <a class="btn btn-success" onclick="history.back();" class="btn"><span>Back</span></a>
+                        <a class="btn btn-success" onclick="artworkForm.submit();"><span>Save Color</span></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <div style="padding: 10px;text-align: center;">
+                        <img class="img-thumbnail" width="100px" src="<?php echo $mediaUrl . $filename ?>" />
+                        <h3><span class="label label-primary"><?php echo $this->__("Base Clipart") ?></span></h3>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <form class="form-horizontal" id="artwork_color_form" name="artwork_color_form" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_pdp/saveartworkcolor/"); ?>" enctype="multipart/form-data">
+                        <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+                        <input type="hidden" id="media_url" value="<?php echo $mediaUrl ?>" />
+                        <input type='hidden' value='<?php echo $imageId; ?>' name='image_id'/>
+                        <div id='tshirt'>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span8">
+                                        <?php $counter = 1; ?>
+                                        <input type='hidden' name='counter' id='counter' value='<?php echo $counter ?>' />
+                                        <table class="table" id='artwork_color_option'>
+                                            <tr>
+                                                <th>Color <span class="required">*</span></th>
+                                                <th>Corresponding Clipart <span class="required">*</span></th>
+                                                <th>Position</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type='text' class='form-control required-entry' id='colorpicker_1' name='color-image[1]' value='' />
+                                                </td>
+                                                <td><input type='file' class="required-entry" name='artworkimage_1' /></td>
+                                                <td>
+                                                    <input type='text' class='form-control validate-digits' name='sort[1]' value=''/>
+                                                </td>
+                                                <td><a type='button' class="colorimage-option btn btn-danger" id='removeimg_1'>Remove</a></td>
+                                            </tr>
+                                        </table>
+                                        <a id='add_more_color_image' class="btn btn-success">Add More +</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type='text/javascript'>
+	var artworkForm = new varienForm('artwork_color_form', '');
+	var artworkColor = jQuery.noConflict();
+	artworkColor(function($){
+		//Active default option after page loaded
+		Multicolor.activeColorPicker('#colorpicker_1');
+	});
+</script>

@@ -1,0 +1,505 @@
+/**Reset bootstrap**/
+body {
+	font: 12px/1.5em Arial,Helvetica,sans-serif;
+}
+.badge {
+	color: #EB5E00;
+    font-size: 11px;
+    font-weight: normal;
+	line-height: 16px;
+	background: none;
+}
+a {
+    text-decoration: none !important;
+}
+ul, ol {
+	margin: 0px;
+	padding: 0px;
+}
+/**Reset bootstrap**/
+#image-manage button.btn:hover {
+	background-color: #51A351;
+}
+#anchor-content.middle {
+    padding: 2px 27px 0;
+}
+.container-fluid {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+#print_area {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+#tshirt #design-info-form {
+  left: 0;
+  position: relative;
+}
+#tinfo .control-group {
+    width: 100%;
+}
+.design-area {
+  float: right;
+  margin: 0;
+  width: 47%;
+}
+.upload_tab {
+    float: left;
+    width: 100%;
+}
+#design-manage table {
+  float: left;
+  margin: 20px 0 0;
+}
+#design-manage table table tr td.key {
+  border-right: 1px solid #DDDDDD;
+  float: left;
+  padding: 8px 3%;
+  width: 30%;
+}
+#design-manage table table tr td.value {
+  border-radius: 0 0 0 0;
+  float: left;
+  padding: 8px 3%;
+  text-transform: uppercase;
+  width: 56%;
+}
+#design-manage table table tr {
+    border-bottom: 1px solid #ddd;
+}
+#design-manage .action-panel .btn-group {
+  float: right;
+  margin: 0 0 0 10px;
+}
+#design-manage .action-panel .nav {
+    float: left;
+    margin: 0;
+}
+#design-manage .action-panel .nav li {
+    cursor: pointer;
+}
+#design-manage .action-panel {
+  float: right;
+}
+.upload_tip {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+}
+#image-manage {
+    float: left;
+    width: 100%;
+}
+.upload_tab ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.upload_tab li a {}
+.upload_tab li {
+  float: left;
+}
+.inlay_area {
+    border: 1px dashed #CCCCCC;
+    float: left;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    cursor: all-scroll;
+}
+.design-area .canvas-area {
+	width: 65%;
+	float: left;
+}
+.design-area .group-controls {
+	float: left;
+    margin-bottom: 20px;
+    width: 70%;
+}
+.item_group label {
+  float: left;
+  line-height: 30px;
+  width: 50px;
+}
+.item_group {
+    float: left;
+    width: 100%;
+}
+#designForm.modal {
+  background-clip: padding-box;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  left: 0;
+  margin-left: 0;
+  outline: medium none;
+  position: absolute;
+  top: 5%;
+  width: 90%;
+  z-index: 1050;
+}
+#design-info-form {
+  float: left;
+  left: 10%;
+  margin: 0 auto;
+  position: absolute;
+  top: 5%;
+  width: 80%;
+}
+#upload-files-forms.modal {
+    background-clip: padding-box;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    left: 43%;
+    margin-left: -280px;
+    outline: medium none;
+    position: fixed;
+    top: 15%;
+    width: 734px;
+    z-index: 1050;
+}
+
+#image-manage tr
+{
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-property: all;
+     -moz-transition-property: all;
+      -ms-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+#designForm .tab-content {
+  overflow: visible;
+}
+#designForm .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    position: relative;
+}
+#designForm .modal-header {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 3px 15px;
+}
+/*----------------Image manage table---------------*/
+#image-manage table tr th, #design-manage table tr th {
+    /*background: none repeat scroll 0 0 #90CEC8;
+    color: #FFFFFF;
+    font-family: tahoma,serif;
+    text-transform: uppercase;*/
+	/*color: #919191;*/
+    font-family: Times New Roman,tahoma,serif;
+}
+#image-manage .container-fluid .row-fluid {
+	margin-top: 10px;
+}
+#image-manage .container-fluid .row-fluid .span8 .title{
+	color: #7587AA;
+    font-family: Times New Roman;
+    font-size: 24.5px;
+    font-weight: bold;
+}
+#image-manage .container-fluid .row-fluid .span4{
+	float: right;
+}
+#image-manage .container-fluid .row-fluid .span4 .btn-group{
+	float: right;
+	padding-left: 10px;
+}
+#image-manage .container-fluid .row-fluid .span4 .btn-group ul.dropdown-menu{
+	margin-left: -105px;
+}
+#image-manage table img {
+	width: 50px;
+}
+
+/*----------------Design manage table---------------*/
+
+#designForm .modal-footer .browse-image {
+    float : left;
+    text-align: left;
+}
+
+#design-manage h3, #image-manage h3 {
+	text-align: left;
+    float: left;
+	font-size: 25px;
+}
+.btn-group-top .btn {
+    float: right;
+    margin: 10px 0;
+}
+#design-manage h3 span.title, #image-manage  h3 span.title {
+	/*border-bottom: 2px solid #7587AA;*/
+	font-family: Times New Roman;
+    color: #7587AA;
+}
+/**Custom bootstrap**/
+#design-manage .icon-remove
+ {
+    background-image: url("../image/glyphicons-halflings.png");
+	background-position: -312px 0;
+}
+#design-manage .icon-ok
+ {
+    background-image: url("../image/glyphicons-halflings.png");
+	background-position: -288px 0;
+}
+#print_area .img_area, .td_img_area .img_area_list {
+  float: left;
+  position: relative;
+  /*width: 50%;*/
+}
+.input_position {
+    width: 86px;
+}
+.control-group {float: left;}
+#print_area .design-area .control-group .radio-item {
+    float: left;
+    width: 52%;
+    padding: 2px 0;
+}
+
+#print_area .design-area .control-group .radio-item label {
+    float: left;
+    padding-right: 10px;
+}
+
+#print_area .design-area .control-group .radio-item input {
+    float: right;
+}
+
+#print_area .img_area .add-new-design {
+    border: 1px solid #CECECE;
+    min-height: 400px;
+    padding: 11px 0;
+    text-align: center;
+}
+#print_area .img_area .add-new-design span{
+    color: #CECCCC;
+    left: 33px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 170px;
+}
+#print_area .img_area .add-new-design input {
+    margin-top: 3px;
+}
+.bt_disable{
+    background: repeat-x scroll 0 0 #F77C16;
+}
+#design-manage table table {
+	border: 1px solid #DDDDDD;
+	color: #1E8FCC;
+	width: 100%;
+}
+#design-manage table table tr td {
+	text-align: left;
+    border: none;
+}
+#design-manage .table-bordered th {
+	/*background: none repeat scroll 0 0 #E6EDA1;*/
+    color: #1E1D1C;
+    text-shadow: 1px 1px gainsboro;
+    text-transform: uppercase;
+}
+#design-manage table span.price {
+	color: #EF6C34;
+    font-weight: bold;
+}
+#design-manage td a {
+	text-decoration: underline;
+}
+#design-manage tr.disable-item {
+	opacity: 0.4;
+}
+#design-manage .table-bordered th, .table-bordered td,
+#image-manage .table-bordered th, .table-bordered td
+{
+    text-align: center;
+	vertical-align: middle;
+}
+#myTab {
+    clear: both;
+}
+/**Action panel**/
+.action-panel {
+	display: block;
+    float: right;
+    margin-top: 16px;
+}
+.action-panel span, .action-panel .btn {
+	font-weight: normal;
+}
+.action-panel .btn-group ul.dropdown-menu {
+	margin-left: -105px;
+}
+.action-panel select {
+	margin-bottom: 0px;
+}
+/**Isotope filter**/
+.image-contianer {
+	margin: auto;
+    overflow: auto;
+}
+#container .img-item:hover {
+    border: 1px solid #51A351;
+}
+#container .img-item {
+  background: none repeat scroll 0 0 rgba(128, 210, 153, 0.6);
+  cursor: pointer;
+  float: left;
+  height: 110px;
+  margin: 9px;
+  position: relative;
+  text-align: center;
+  width: 165px;
+}
+#container .img-item:hover img {transform: scale(0.8);}
+#container .img-item img {
+    height: 110px;
+    max-width: 100%;
+	transition: all 0.2s ease;
+}
+#container .checkbox-item {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 0px;
+}
+/* #image_container .img-item img {
+	height: 150px;
+	width: auto;
+} */
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**Image Modal**/
+#image-form .container-fluid .row-fluid .span9 {
+	border: none;
+}
+#container .delete-image {
+	padding: 0 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#image-form .main-image {
+	text-align: center;
+	padding: 5px;
+}
+/*#image-form .category-name {
+	background: #3A59AD;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}*/
+
+#image-form .image-info .image-info-img {
+	float: left;
+	width: 35%;
+	text-align: center;
+}
+#image-form .image-info .image-details {
+	float: left;
+	width: 65%;
+}
+#image-form .category-image-btn .btn.selected {
+	background: none repeat scroll 0 0 #3E79E8;
+    color: #FFFFFF;
+}
+#image-form .image-info-tab .image-info-img img {
+	border: 1px solid #CCCCCC;
+}
+/**Color Picker**/
+#colorSelector {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	background: url(../images/select.png);
+	cursor: pointer;
+}
+#colorSelector div {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	background: url(../images/select.png) center;
+}
+#previewColor {
+	margin-left: 65px;
+    margin-top: 6px;
+}
+.colorpicker {
+    z-index: 20000;
+}
+select#category-image {
+    width: 300px;
+}
+/**Pagination**/
+.mst_pagination {
+	margin: 5px 10px;
+}
+.paging-area div#next_div, .paging-area div#previous_div {
+	display: inline;
+}
+#container .no-item {
+	border: medium none;
+    color: #E03A3A;
+    font-family: times new roman;
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 30px;
+    text-align: center;
+    text-shadow: 1px 1px #EAE42A;
+}
+#edit_color_image .color-img-item {
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+/** Font **/
+#font {
+	margin-top: 10px;
+}
+#font table th {
+	/*background: none repeat scroll 0 0 #E6EDA1;*/
+    color: #1E1D1C;
+    text-shadow: 1px 1px gainsboro;
+    text-transform: uppercase;
+}
+/**Image Option Model**/
+#colorlist_table tr th {
+	font-weight: normal;
+	text-align: center;
+}
+#colorlist_table .color-img-option {
+	padding: 10px 10px;
+}
+#colorlist_modal {
+	margin-left: -430px;
+    width: 860px;
+}

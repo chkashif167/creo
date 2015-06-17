@@ -1,0 +1,162 @@
+<?php
+	$params = $this->getRequest()->getParams();
+	$productId = $params['productid'];
+	$addSideUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/addNewSide/", array('productid' => $productId));
+	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+    $noImagePath = "";//$mediaUrl . 'pdp/images/no_image.jpg';
+	if ($productId) {
+		$iW = $iH = $iL = $iT = $imgPath = $overlayPath = $id = "";
+		$sideLabel = $sidePosition = $sideStatus = $backgroundType = $colorCode = $colorName = $backgroundFilename = $sidePrice = "";
+		if (isset($params['side_id'])) {
+			$sideInfo = Mage::getModel('pdp/pdpside')->load($params['side_id']);
+			$id = $sideInfo['id'];
+			$sideLabel = $sideInfo['label'];
+			$sideHexcode = $sideInfo['hexcode'];
+			$sidePosition = $sideInfo['position'];
+			$sideStatus = $sideInfo['status'];
+            $sidePrice = $sideInfo['price'];
+			$iW = $sideInfo['inlay_w'];
+			$iH = $sideInfo['inlay_h'];
+			$iT = $sideInfo['inlay_t'];
+			$iL = $sideInfo['inlay_l'];
+			$backgroundType = $sideInfo['background_type'];
+			$colorCode = $sideInfo['color_code'];
+            $colorName = $sideInfo['color_name'];
+			$imgPath = $mediaUrl . 'pdp/images/' . $sideInfo['filename']; 
+			$overlayPath = $mediaUrl . 'pdp/images/' . $sideInfo['overlay'];
+            $backgroundFilename = $sideInfo['filename'];
+		}
+	}
+?>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('boxes.css') ?>"/>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('prototype/prototype.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('prototype/validation.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('scriptaculous/effects.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('varien/form.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/jquery/jquery-1.10.2.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/designarea.js') ?>"></script>
+<link type="text/css" rel="stylesheet" href="<?php echo $this->getJsUrl('pdp/backend/css/printarea.css') ?>" />
+<!--Color Picker-->
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/colorpicker.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/eye.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/layout.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/utils.js') ?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getJsUrl('pdp/backend/css/colorpicker.css') ?>"/>
+<!-- Color Picker -->
+
+<?php 
+	$formAction = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/save/");
+	if (isset($params['side_id'])) {
+		$formAction = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/save/", array('id' => $params['side_id']));
+	}
+?>
+<div class="pdp_message">
+	<?php echo $this->getMessagesBlock()->toHtml(); ?>
+</div>
+<form id="add_new_side_form" method="POST" action="<?php echo $formAction; ?>" enctype="multipart/form-data">
+	<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+	<input type="hidden" name="product_id" value="<?php echo $productId ?>" />
+	<input type="hidden" name="side_id" value="<?php echo $id ?>" />
+	<div style="" id="designarea_tabs_form_section_content">
+		<div class="entry-edit">
+			<div class="entry-edit-head">
+				<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Design Area Information') ?></h4>
+				<div class="form-buttons">
+					<button title="Add New Side" onclick="addNewSide()" type="button" class="scalable add"><span><span><span>Add New Side</span></span></span></button>
+                    <button class="scalable delete" onclick="location.reload(); return false;" title="Reset"><span><span><span><?php echo $this->__('Reset') ?></span></span></span></button>
+					<?php $btnSaveLable = (isset($params['side_id'])) ? "Update" : "Save"; ?>
+                    <button class="scalable save" type="submit" title="Save"><span><span><span><?php echo $this->__($btnSaveLable) ?></span></span></span></button>
+				</div>
+			</div>
+			<div id="pdpdesignarea_pdp_form" class="fieldset ">
+				<div class="hor-scroll">
+        			<div class="modal-footer">
+    					<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+    					<input type="hidden" name="current_product_id" value="<?php echo Mage::app()->getRequest()->getParam('productid') ?>" />
+    					<input type="hidden" name="area_id" value="<?php echo Mage::app()->getRequest()->getParam('areaid') ?>" />
+    					<input type="hidden" name="inlay_id" value="<?php echo $id ?>" />
+    					<div class="inlay-info">
+    						<!-- <div><a href="#" target="_blank" class="btn btn-info" title="What is '<?php //echo $ucKey ?> Preview'?">Help(s)</a></div> -->
+                            <div class='design-area-input'>
+                                <label for="pdplabel"><?php echo $this->__('Label') ?> <span class="required">*</span></label> 
+                                <input type="text" class="required-entry input-text" value="<?php echo $sideLabel ?>" name="label" id="pdplabel" />
+                            </div>
+                            <div class='design-area-input'>
+                                <label for="overlay_image"><?php echo $this->__('Overlay image') ?> <span class="required">*</span></label> 
+                                <input id="overlay_image_input" type="file" <?php echo (isset($sideInfo['overlay'])) ? '' : 'class="required-entry"'; ?> name="overlay" onchange="Tshirt.previewOverImage(this)" />
+                            </div>
+                            <div class='design-area-input'>
+                                <label for="background_type"><?php echo $this->__('Background Type') ?></label> 
+                                <select class=" select" name="background_type" id="background_type">
+                                    <option <?php echo ($backgroundType == "image") ? "selected" : ""; ?> value="image"><?php echo $this->__('Using Image') ?></option>
+									<option <?php echo ($backgroundType == "color") ? "selected" : ""; ?> value="color"><?php echo $this->__('Using Color') ?></option>
+								</select>
+                            </div>
+                            <div class='design-area-input'>
+                                <label for="color_code"><?php echo $this->__('Color Hexcode') ?> <span class="required">*</span></label> 
+                                <input type="text" class="required-entry input-text" value="<?php echo $colorCode ?>" name="color_code" id="color_code" />
+                            </div>
+                            <div class='design-area-input'>
+                                <label for="color_code"><?php echo $this->__('Color Name') ?></label> 
+                                <input type="text" class="input-text" value="<?php echo $colorName ?>" name="color_name" id="color_name" />
+                            </div>
+							<div class='design-area-input'>
+                                <label for="background_image"><?php echo $this->__('Background image') ?> <span class="required">*</span></label> 
+                                <input id="background_image" type="file" <?php echo ($backgroundFilename != "") ? '' : 'class="required-entry"'; ?> name="filename" onchange="Tshirt.previewImageDesignArea(this)" rel="<?php echo $backgroundFilename ?>" />
+                            </div>
+							<div class="inlay-info" style="display: none;">
+								<div class='design-area-input'>
+									<label for="inlay_w"><?php echo $this->__('Width') ?> <span class="required">*</span></label> 
+									<input id="inlay_w" name="inlay_w" type="text" class="input-text required-entry validate-number" value="<?php echo $iW==''?'170':$iW; ?>" />
+								</div>
+								<div class='design-area-input'>
+									<label for="inlay_h"><?php echo $this->__('Height') ?> <span class="required">*</span></label> 
+									<input id="inlay_h" name="inlay_h" type="text" class="input-text required-entry validate-number" value="<?php echo $iH==''?'270':$iH; ?>"/>
+								</div>
+								<div class='design-area-input'>
+									<label for="inlay_t"><?php echo $this->__('Top') ?> <span class="required">*</span></label> 
+									<input id="inlay_t" name="inlay_t" type="text" class="input-text required-entry validate-number" value="<?php echo $iT==''?'0':$iT; ?>"/>
+								</div>
+								<div class='design-area-input'>
+									<label for="inlay_l"><?php echo $this->__('Left') ?> <span class="required">*</span></label> 
+									<input id="inlay_l" name="inlay_l" type="text" class="input-text required-entry validate-number" value="<?php echo $iL==''?'0':$iL; ?>"/>
+								</div>
+							</div>
+                            <div class='design-area-input'>
+                                <label for="pdpposition"><?php echo $this->__('Price') ?></label> 
+                                <input type="text" class=" input-text validate-number" value="<?php echo $sidePrice ?>" name="price" id="pdpprice"/>
+                            </div>
+                            <div class='design-area-input'>
+                                <label for="pdpposition"><?php echo $this->__('Position') ?></label> 
+                                <input type="text" class=" input-text validate-number" value="<?php echo $sidePosition ?>" name="position" id="pdpposition"/>
+                            </div>
+							<div class='design-area-input'>
+                                <label for="pdpstatus"><?php echo $this->__('Status') ?></label> 
+                                <select class=" select" name="status" id="pdpstatus">
+									<option <?php echo ($sideStatus == 1) ? "selected" : ""; ?> value="1"><?php echo $this->__('Enabled') ?></option>
+									<option <?php echo ($sideStatus == 2) ? "selected" : ""; ?> value="2"><?php echo $this->__('Disabled') ?></option>
+								</select>
+                            </div>
+    					</div>
+        			</div>
+                    <div id="design_form_image" class="design-side">
+            			<div class="modal-body"> 
+            				<div id="print_area">
+            					<div class="img_area pdp-img-area" style="background: #<?php echo $colorCode ?>">
+            						<img rel="printarea" id="design_image" src="<?php echo $imgPath == ''? $noImagePath : $imgPath ?>" alt="" />
+									<img id="overlay_image" src="<?php echo $overlayPath ?>" alt="" />
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>	
+<script type="text/javascript">
+	function addNewSide() {
+		window.location.href = '<?php echo $addSideUrl ?>';
+	}
+	var addSideForm = new VarienForm('add_new_side_form', true);
+</script>

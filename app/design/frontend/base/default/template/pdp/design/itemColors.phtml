@@ -1,0 +1,57 @@
+<?php 
+$defaultSides = $this->getDefaultSideColor();
+$firstSide = $defaultSides[0]; 
+$productColors = $this->getProductColorCollection();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "pdp/images/";
+$colorThumbnailUrl = $mediaUrl . "color-thumbnail/";
+if(count($productColors)){
+?>
+<div class="itemStyles">
+    <ul class="pdc_design_color item-color-list">
+        <!--Default Color From Side. Note, if add side using image as background option, then there is no color for default side-->
+        <li class="default-item first"
+            color="<?php echo $firstSide['color_code']  ?>"
+            pdc-color="<?php echo $firstSide['product_id']  ?>"
+            <?php foreach ($defaultSides as $side) : ?>
+            <?php echo "side_" .$side['id'] . "='" . $side['filename'] . "'"; ?>
+            <?php echo "overlay_" .$side['id'] . "='" . $side['overlay'] . "'"; ?>
+            <?php echo "inlay_w" . "='" . $side['inlay_w'] . "'"; ?>
+            <?php echo "inlay_h" . "='" . $side['inlay_h'] . "'"; ?>
+            <?php echo "color_code" . "='" . $side['color_code'] . "'"; ?>
+            <?php endforeach; ?>
+            style="background: #<?php echo $firstSide['color_code']  ?>"
+            name="<?php echo $this->__("Default")  ?>"
+            data-toggle="tooltip" data-placement="top" data-original-title="<?php echo $this->__("Default")  ?>" >
+            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+        </li>
+        <!---->
+        <?php foreach ($productColors as $productColor) :  ?>
+        <?php
+            //Zend_Debug::dump($productColor);
+            $colorCode = $productColor['color_code'];
+            $colorName = $productColor['color_name'];
+            $colorThumbnail = $productColor['color_thumbnail'];
+            $productColorId = $productColor['id'];
+            $sideImages = $productColor['images'];
+        ?>
+        <li
+            color="<?php echo $colorCode  ?>"
+            pdc-color="<?php echo $productColorId  ?>"
+            <?php foreach ($sideImages as $side) : ?>
+            <?php echo "side_" .$side['side_id'] . "='" . $side['filename'] . "'"; ?>
+            <?php echo "overlay_" .$side['side_id'] . "='" . $side['overlay'] . "'"; ?>
+            <?php echo "inlay_w" . "='" . $side['inlay_w'] . "'"; ?>
+            <?php echo "inlay_h" . "='" . $side['inlay_h'] . "'"; ?>
+            <?php echo "color_code" . "='" . $side['color_code'] . "'"; ?>
+            <?php endforeach; ?>
+            style="background: #<?php echo $colorCode  ?>"
+            name="<?php echo $colorName  ?>"
+            data-toggle="tooltip" data-placement="top" data-original-title="<?php echo $colorName  ?>" >
+            <?php if($colorThumbnail) : ?>
+            <img clas="color-thumbnail" width="20px" src="<?php echo $colorThumbnailUrl . $colorThumbnail ?>" />
+            <?php endif; ?>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php } ?>

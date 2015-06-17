@@ -77,6 +77,9 @@
   </reference>
   
   <reference name="content">
+  	<reference name="catalog.leftnav">
+            <action method="unsetChild"><name>category_filter</name></action>
+        </reference>
     <block type="cms/block" name="footer_contents">
       <action method="setBlockId"><block_id>footer_contents</block_id></action>
     </block>
@@ -92,14 +95,14 @@
   </catalog_product_view>
 
 
-<catalog_category_layered>
+<!--<catalog_category_layered>
         <reference name="left">
             <action method="unsetChild"><alias>catalog.leftnav</alias></action>
         </reference>
         <reference name="product_list">
             <action method="insert"><blockName>catalog.leftnav</blockName></action>
         </reference>
-    </catalog_category_layered>
+    </catalog_category_layered> -->
 
   
    <catalog_product_view> 
@@ -116,6 +119,11 @@
 	</reference>
 		
   </catalog_product_view>
+  <catalog_category_layered>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </catalog_category_layered>
 
 
 

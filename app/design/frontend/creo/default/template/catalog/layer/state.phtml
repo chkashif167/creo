@@ -31,6 +31,8 @@
  * @see Mage_Catalog_Block_Layer_State
  */
 ?>
+<?php $style_array = array('largevshape','round','vshape')?>
+<?php $gender_array = array('men','children','women');?>
 <?php
 $_filters = $this->getActiveFilters();
 $_renderers = $this->getParentBlock()->getChild('state_renderers')->getSortedChildren();
@@ -64,7 +66,16 @@ $_renderers = $this->getParentBlock()->getChild('state_renderers')->getSortedChi
             <?php else: ?>
                 <a  class="btn-remove" href="<?php echo $_filter->getRemoveUrl() ?>" title="<?php echo $this->__('Remove This Item') ?>"><?php echo $this->__('Remove This Item') ?></a>
             <?php endif; ?>
-            <span class="label"><?php echo $this->__($_filter->getName()) ?>:</span> <span class="value"><?php echo $this->stripTags($_filter->getLabel()) ?></span>
+            <span class="label"><?php echo $this->__($_filter->getName()) ?>:</span>
+            <?php if(in_array(strtolower($_filter->getLabel()), $style_array)){?>
+             <img id="<?php echo strtolower($_filter->getLabel()); ?>" src="<?php echo $this->getSkinUrl('images/'.strtolower($_filter->getLabel()).'-hover.png');?>"> 
+
+          <?php }else if(in_array(strtolower($_filter->getLabel()), $gender_array)){?>
+           <span class="value"><?php echo $this->stripTags($_filter->getLabel()) ?></span>
+        <?php }else{?>
+
+             <span class="value"><?php echo $this->stripTags($_filter->getLabel()) ?></span>
+             <?php }?>
         </li>
         <?php endif; ?>
     <?php endforeach; ?>
