@@ -1,0 +1,48 @@
+<?php
+if (!$this->isDesignAble()) {
+    return false;
+}
+$productId = $this->getProductId();
+$pdpDesignInfo = $this->getPdpDesignInfo();
+//$sampleImages = Mage::helper("pdp")->getAdminSampleImage($this->getProductId());
+$currentDesignImages = $this->getCurrentDesignResultImage($pdpDesignInfo['extra_options_value']);
+$area = "";
+$params = Mage::app()->getRequest()->getParams();
+if (isset($params['area']) && $params['area'] != "") {
+	$area = $params['area'];
+	if ($area == "customize") {
+		$area = "backend";
+	}
+}
+$productConfig = $this->helper("pdp")->getProductConfig($productId);
+$baseUrl = Mage::helper("pdp")->getPdpBaseUrl();
+?>
+<div style="display: none">
+    <input type="hidden" name="extra_options" value="<?php echo $pdpDesignInfo['extra_options'] ?>"/>
+	<input type="hidden" id="extra_options_value" value="<?php echo htmlentities($pdpDesignInfo['extra_options_value']) ?>"/>
+	<a id="pdp_design_button" class="not_load nodisplay" href="#pdp_design_popup">View</a>
+	<input type="hidden" id="url_site" value="<?php echo $baseUrl ?>" />
+    <input type="hidden" id="base_url" value="<?php echo $baseUrl ?>" />
+	<input type="hidden" id="current_product_id" value="<?php echo $this->getProductId() ?>" />
+    <input type="hidden" id="image_quality" value="<?php echo Mage::helper("pdp")->getImageQuality(); ?>" />
+	<input type="hidden" id="pdp_design_action" value="<?php echo $pdpDesignInfo['action'] ?>" />
+	<input type="hidden" id="product_url" value="<?php echo $this->getProductUrl(); ?>" />
+	<input type="hidden" id="pdp_design_share" value="<?php echo $pdpDesignInfo['share_id'] ?>" />
+	<input type="hidden" id="pdp_btn_action" value=""/>
+    <input type="hidden" id="final_price" value=""/>
+	<input type="hidden" id="cart_item_id" value="<?php echo $pdpDesignInfo['cart_item_id'] ?>" />
+	<input type="hidden" id="wishlist_item_id" value="<?php echo $pdpDesignInfo['wishlist_item_id'] ?>" />
+	<input type="hidden" id="sample_images" value="<?php echo ($currentDesignImages) ? htmlentities(json_encode($currentDesignImages)) : ""; ?>"/>
+	<input type="hidden" id="currency_symbol" value="<?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();?>"/>
+	<?php if (isset($productConfig['show_price']) && $productConfig['show_price']) : ?>
+	<input type="hidden" id="pdc_product_config" value="<?php echo htmlentities(json_encode($productConfig)) ?>" />
+	<?php endif; ?>
+	<!-- Reload Price -->
+	<?php if ($area != "backend") : ?>
+	<?php $productViewObj = new Mage_Catalog_Block_Product_View(); ?>
+	<input type="hidden" id="product_price_config" value="<?php echo htmlentities($productViewObj->getJsonConfig()); ?>" />
+	<?php endif; ?>
+</div>
+<div class="design-btn">
+    <span class="button create-sample-btn design-product" id="design_product_<?php echo $this->getProductId() ?>"><?php echo $this->__($this->getButtonLabel()); ?></span>
+</div>

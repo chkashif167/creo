@@ -1,0 +1,103 @@
+.design-side .modal-body {
+  float: left;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0;
+  position: relative;
+  width: 65%;
+}
+.pdp-inlay-area {
+  border: 1px dashed #FF0000;
+  cursor: all-scroll;
+  float: left;
+  height: 230px;
+  left: 40px;
+  position: absolute;
+  top: 100px;
+  width: 140px;
+}
+.pdp-img-area {
+	border: 1px solid #BA660D;
+	float: left;
+	position: relative;
+}
+.modal-body .browse-image {
+  float: left;
+  margin: 0 0 10px;
+  width: 100%;
+}
+.inlay-info .save {
+  float: left;
+  margin: 20px 0 0 30%;
+}
+.inlay-info .delete {
+  float: left;
+  margin: 20px 0 0 10px;
+}
+.inlay-info {
+  float: left;
+  width: 35%;
+}
+.inlay-info label {
+  float: left;
+  line-height: 30px;
+  width: 30%;
+}
+.inlay-info .select {
+  margin: 7px 0 0;
+  width: 200px;
+}
+.inlay-info input {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  width: 200px;
+}
+.inlay-info .design-area-input {
+  float: left;
+  margin-top: 10px;
+  width: 100%;
+}
+.delete-design-item {
+	position: absolute;
+	right: 0;
+	z-index: 10000;
+}
+.save-design-item {
+	position: absolute;
+	right: 80px;
+	z-index: 10000;
+}
+.pdp_message ul {
+	margin: 0;
+	padding: 0;
+}
+.pdp_message li {
+	list-style: none;
+}
+.color-image-table {
+	border-collapse: collapse;
+    text-align: center;
+	width: 100%;
+}
+.color-image-table th, .color-image-table td {
+	border: 1px solid #CCCCCC;
+}
+.color-image-table div.images-container {
+    margin: auto;
+    width: 170px;
+}
+.color-image-table div.side-images {
+	float: left;
+}
+.color-image-table div.side-images label {
+	width: 100%;
+	float: left;
+}
+.color-image-table div.side-images img {
+	width: 100px;
+}
+.form-buttons {
+	margin-bottom: 8px;
+    text-align: right;
+}

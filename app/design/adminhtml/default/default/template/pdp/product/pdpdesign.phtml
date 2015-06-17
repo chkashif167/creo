@@ -1,0 +1,244 @@
+<?php
+if (Mage::getStoreConfig('pdp/setting/enable') == 0) {	
+	echo "<h3>PDP module is disabled. Please enable PDP to use it's features!</h3>";
+}
+$baseUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
+$productId = Mage::app()->getRequest()->getParam('id');
+$currentProduct = Mage::registry('current_product');
+//Check if has duplicate request
+Mage::getModel("pdp/pdp")->checkDuplicateRequest($currentProduct);
+$productStatus = Mage::getModel('pdp/productstatus')->getProductStatus($productId);
+$isHidePricePanel = Mage::helper("pdp")->isShowPricePanel($productId);
+$request = Mage::app()->getRequest()->getParams();
+$pdpTabActive = false;
+if(isset($request['tab'])) {
+    if ($request['tab'] == "product_info_tabs_pdpdesign") {
+        $pdpTabActive = true;
+    }
+}
+$sideTableUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/getsidetable");
+$enablePdpDesign = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/updateStatus");
+$updateProductConfigUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/updateProductConfig");
+$addNewSide = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/addNewSide") . "productid/" . $productId;
+$productConfigs = Mage::helper("pdp")->getProductConfig($productId);
+//Zend_Debug::dump($productConfigs);
+?>
+<input type="hidden" id="current_product_id" value="<?php echo $productId ?>" />
+<input type="hidden" id="base_url" value="<?php echo Mage::helper("pdp")->getPdpBaseUrl(); ?>" />
+<input type="hidden" id="request_url" value="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/setuparea") ?>" />
+<input type="hidden" id="add_design_color_url" value="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/adddesigncolor") ?>" />
+<input type="hidden" id="view_design_color_url" value="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/viewdesigncolor") ?>" />
+<input type="hidden" id="preview_design_color_url" value="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/previewdesigncolor") ?>" />
+<style>
+.pdc-product-config {border-collapse: collapse;}
+.pdc-product-config td, .pdc-product-config th {
+	padding: 10px;
+	vertical-align: middle;
+}
+.pdc-product-config select {width: 100%;}
+</style>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend">Products Designer Canvas</h4>
+	</div>
+    <div id="group_enable_pdp" class="fieldset fieldset-wide">
+		<form id="pdc-product-config-form" method="POST" action="<?php echo $updateProductConfigUrl ?>">
+			<?php $formKey = Mage::getSingleton('core/session')->getFormKey(); ?>
+			<input type="hidden" name="form_key" value="<?php echo $formKey; ?>" />
+			<table class="pdc-product-config">
+				<tr>
+					<td><label>Enable PDC for this product</label></td>
+					<td>
+						<select name="enable_pdp_design">
+							<option value=''><?php echo $this->__("--Please select--") ?></option>
+							<option <?php echo ($productConfigs['status'] == "1") ? "selected" : ''; ?> value="1"><?php echo $this->__("Yes") ?></option>
+							<option <?php echo ($productConfigs['status'] == "2") ? "selected" : ''; ?> value="2"><?php echo $this->__("No") ?></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Enable Pricing of Layers</label></td>
+					<td>
+						<select name="hide_price_panel">
+							<option <?php echo ($productConfigs['show_price'] == 2) ? "selected" : ''; ?> value="2"><?php echo $this->__("No") ?></option>
+							<option <?php echo ($productConfigs['show_price'] == 1) ? "selected" : ''; ?> value="1"><?php echo $this->__("Yes") ?></option>
+						</select>
+					</td>
+				</tr>
+				<tr style="<?php echo ($productConfigs['show_price'] !== '1') ? "display: none;" : ''; ?>">
+					<td><label>Price of text</label></td>
+					<td>
+						<input type="text" name="text_price" class="input-text" value="<?php echo ($productConfigs['text_price'] != "") ? $productConfigs['text_price'] : '0'; ?>" />
+						<!--
+						Per 
+						<select name="text_price_type" style="width: 130px;">
+							<option <?php //echo ($productConfigs['text_price_type'] == "per_item") ? "selected" : ''; ?> value="per_item">Item</option>
+							<option <?php //echo ($productConfigs['text_price_type'] == "per_total_item") ? "selected" : ''; ?> value="per_total_item">Total Items</option>
+						</select>
+						-->
+					</td>
+				</tr>
+				<tr style="<?php echo ($productConfigs['show_price'] !== '1') ? "display: none;" : ''; ?>">
+					<td><label>Price of custom upload cliparts or facebook pictures</label></td>
+					<td>
+						<input type="text" name="clipart_price" class="input-text" value="<?php echo ($productConfigs['clipart_price'] != "") ? $productConfigs['clipart_price'] : '0'; ?>" />
+						<!--
+						Per 
+						<select name="clipart_price_type" style="width: 130px;">
+							<option <?php //echo ($productConfigs['clipart_price_type'] == "per_item") ? "selected" : ''; ?> value="per_item">Item</option>
+							<option <?php //echo ($productConfigs['clipart_price_type'] == "per_total_item") ? "selected" : ''; ?> value="per_total_item">Total Items</option>
+						</select>
+						-->
+					</td>
+				</tr>
+			</table>
+		</form>
+    </div>
+</div>
+<!--<div class="entry-edit">
+	<div class="entry-edit-head">
+		<h4>Design Sides</h4>
+		<div class="right"><button style="" onclick="" class="scalable add" type="button" title="Add New Side" id="add_new_side"><span><span><span>Add New Side</span></span></span></button></div>
+	</div>
+	<div id="add_new_side_group" class="fieldset fieldset-wide">
+		<div class="hor-scroll">
+			Sides
+		</div>
+    </div>
+</div>-->
+<div class="entry-edit">
+    <div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend">Setting up the customization design area and create sample design</h4>
+		<div class="right">
+			<button style="" onclick="" class="scalable add" type="button" title="Add Product Side" id="add_new_side">
+				<span><span><span>Add Product Side</span></span></span>
+			</button>
+		</div>
+	</div>
+    <div id="group_pdp_sample" class="fieldset fieldset-wide">
+		<div class="hor-scroll">
+			<div class="side-table-container"></div>
+		</div>
+    </div>
+</div>
+<script>
+var mstPdpDesign = jQuery.noConflict();
+mstPdpDesign(function($){
+	PdpSide = {
+		clickPdpTab : function() {
+			$("#product_info_tabs_pdpdesign").click(function() {
+				PdpSide.sendRequest("<?php echo $sideTableUrl . "productid/$productId/isAjax=true" ?>", PdpSide.showSideTable);
+			});
+		}(),
+		showSideTable : function(data) {
+			if (data !== "") {
+				$(".side-table-container").html(data);
+				$("#loading-mask").hide();
+			} else {
+				alert("Something went wrong! Can not get side table conent.");
+			}
+		},
+		allowDesign : function () {
+			$("select[name='enable_pdp_design']").change(function() {
+				PdpSide.updateProductConfig();
+			});
+		}(),
+		hidePricePanel : function () {
+			$("select[name='hide_price_panel']").change(function() {
+				PdpSide.updateProductConfig();
+			});
+		}(),
+		editTextPrice: function() {
+			$("input[name='text_price'], select[name='text_price_type']").change(function() {
+				PdpSide.updateProductConfig();
+			});
+		}(),
+		editClipartPrice: function() {
+			$("input[name='clipart_price'], select[name='clipart_price_type']").change(function() {
+				PdpSide.updateProductConfig();
+			});
+		}(),
+		sendRequest : function(url, callback) {
+			$.ajax({
+				type:"GET",
+				url: url,
+				beforeSend:function(){
+					$("#loading-mask").attr("style","left: -2px; top: 0px; width: 1034px; height: 833px; z-index: 10000;");
+					$("#loading-mask").show();
+				},
+				success:function(response){
+					callback(response);
+					$("#loading-mask").hide();
+				}
+			});
+		},
+		updateProductConfig : function() {
+			var status = $("select[name='enable_pdp_design']").val(),
+				showPrice = $("select[name='hide_price_panel']").val(),
+				textPrice = $("input[name='text_price']").val(),
+				clipartPrice = $("input[name='clipart_price']").val(),
+				productId = '<?php echo $productId ?>';
+			if (textPrice != "") {
+				if(isNaN(textPrice)) {
+					alert("Please enter a valid number!");
+					$("input[name='text_price']").val('');
+					$("input[name='text_price']").focus();
+					return false;
+				}
+			}
+			if (clipartPrice != "") {
+				if(isNaN(clipartPrice)) {
+					alert("Please enter a valid number!");
+					$("input[name='clipart_price']").val('');
+					$("input[name='clipart_price']").focus();
+					return false;
+				}
+			}
+			var note = {
+				show_price: showPrice,
+				text_price: textPrice,
+				clipart_price: clipartPrice,
+				//text_price_type: $("select[name='text_price_type']").val(),
+				//clipart_price_type: $("select[name='clipart_price_type']").val(),
+			}
+			$.ajax({
+				type:"POST",
+				data: {
+					product_id: productId,
+					status: status,
+					note: JSON.stringify(note),
+					form_key: '<?php echo $formKey ?>'
+				},
+				url: $("#pdc-product-config-form").attr("action") + '?isAjax=true',
+				beforeSend:function(){
+					$("#loading-mask").attr("style","left: -2px; top: 0px; width: 1034px; height: 833px; z-index: 10000;");
+					$("#loading-mask").show();
+				},
+				success:function(response){
+					if (response != "") {
+						alert("Something went wrong. Can not update product config!");
+					}
+                    //Hide and show clipart price, and text price follow show_price
+                    if(showPrice === "1") {
+                        $("input[name='text_price']").closest("tr").show();
+                        $("input[name='clipart_price']").closest("tr").show();
+                    } else {
+                        $("input[name='text_price']").closest("tr").hide();
+                        $("input[name='clipart_price']").closest("tr").hide();
+                    }
+					$("#loading-mask").hide();
+				}
+			});
+		},
+		addNewSide : function() {
+			$("#add_new_side").on("click", function() {
+				PDPPopup.openPopup("<?php echo $addNewSide ?>", "Add Product Side", PDPPopup.setupAreaHandler );
+			});
+		}()
+	}
+	<?php if($pdpTabActive) : ?>
+    $("#product_info_tabs_pdpdesign").click();
+    <?php endif; ?>
+});
+
+</script>

@@ -1,0 +1,24 @@
+<?php 
+$productConfigs = $this->getProductConfig();
+?>
+<?php if(isset($productConfigs['show_price']) && $productConfigs['show_price'] === "1"): ?>
+<div id="pdc_block_layer" pdc-block="layer">
+    <label><?php echo $this->__('Layers') ?></label>
+    <!-- Example of layer. You can change html + css, but pls keep all block pdc-layer and pdc-layer-info. -->
+    <ul>
+        <li pdc-layer="0">
+            <span pdc-layer-info="type"><?php echo $this->__('Layer') ?></span>
+            <span pdc-layer-info="price"><?php echo $this->__('Price') ?></span>
+            <!--span pdc-layer-info="size"><?php echo $this->__('Size') ?></span-->
+			<span pdc-layer-info="lock" data-original-title ="<?php echo $this->__('Lock|Delete layer') ?>"><i class="pdc-lock"></i><i class="pdc-unlock-alt"></i> <span><?php echo $this->__('Action') ?></span></span>
+            <span pdc-layer-info="del"><i class="pdc-clear"></i> <span><?php echo $this->__('Delete') ?></span></span>
+			</span>
+			
+        </li>
+    </ul>
+    <div pdc-block="layer-final">
+        <label><i class="pdc-add-shopping-cart"></i> <?php echo $this->__('Total Layers Price') ?> :</label>
+        <span class="price_layer">0.00</span>
+    </div>
+</div>
+<?php endif; ?>

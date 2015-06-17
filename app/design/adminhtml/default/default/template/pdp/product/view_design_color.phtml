@@ -1,0 +1,140 @@
+<?php
+$params = Mage::app()->getRequest()->getParams(); 
+$productId = $params['productid'];
+//$productColors = Mage::getModel('pdp/color')->getColors();
+$productColors = Mage::getModel('pdp/pdpcolor')->getProductColorCollection($productId);
+$productColors->count();
+if (!$productColors->count()) {
+	echo $this->__("No item found. Please add color.");
+	return;
+}
+$productColorImageModel = Mage::getModel('pdp/pdpcolorimage');
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "pdp/images/";
+$colorThumbnailUrl = $mediaUrl . "color-thumbnail/";
+?>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('boxes.css') ?>" />
+<link type="text/css" rel="stylesheet" href="<?php echo $this->getJsUrl('pdp/backend/css/printarea.css') ?>" />
+<script type="text/javascript" src="<?php echo $this->getJsUrl('prototype/prototype.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('prototype/validation.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('varien/form.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/jquery/jquery-1.10.2.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/pdpdesign.js') ?>"></script>
+<style>
+    .images-container .side-images label:after { clear: both; content: "."; display: block; font-size: 0; line-height: 0;  overflow: hidden;}
+</style>
+<div class="pdp_message"><?php echo $this->getMessagesBlock()->toHtml(); ?></div>
+<input type="hidden" id="delete_product_color_url" value="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/deleteproductcolor") ?>" />
+<form id="view_design_color_form" method="POST"
+	action="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/updatedesigncolor/"); ?>"
+	enctype="multipart/form-data">
+	<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+	<input type="hidden" id="current_product_id" name="product_id" value="<?php echo $productId ?>" />
+	<div class='form-buttons'>
+		<?php $addUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/adddesigncolor/"); ?>
+		<input type='hidden' value="<?php echo $addUrl ?>" id="add_design_color_url"/>
+		<button class="scalable add add-new-design-color" type="button" title="Add Color">
+			<span><span><span><?php echo $this->__('Add Color') ?></span></span></span>
+		</button>
+		<button class="scalable save" type="submit" title="Save">
+			<span><span><span><?php echo $this->__('Save') ?></span></span></span>
+		</button>
+		<button class="scalable delete"
+			onclick="location.reload(); return false;" title="Reset">
+			<span><span><span><?php echo $this->__('Reset') ?></span></span></span>
+		</button>
+	</div>
+	<table class="table color-image-table">
+		<tr>
+            <th>Color Name</th>
+			<th>Color Hexcode</th>
+            <th>Color Thumbnail</th>
+			<th>Image of color</th>
+			<!-- <th>Thumbnail Style</th> -->
+			<!-- <th>Base Image</th>  -->
+			<th>Position</th>
+			<th>Status</th>
+			<th>Action</th>
+		</tr>
+		<?php $counter = 1; ?>
+		<?php foreach ($productColors as $productColor) :?>
+		<tr>
+            <td><input type='text' name="color_name[<?php echo $productColor->getId() ?>]" class='input-text' value='<?php echo $productColor->getColorName() ?>'/></td>
+			<td>
+                <span style='padding: 2px 8px; background: <?php echo "#" . $productColor->getColorCode() ?>'><?php echo $productColor->getColorCode() ?></span>
+            </td>
+            <td>
+                <?php if($productColor->getColorThumbnail() !== "") : ?>
+                <p>
+                    <img src="<?php echo $colorThumbnailUrl . $productColor->getColorThumbnail() ?>" width="50px" style="border: 1px solid #ccc;"/>
+                </p>
+                <p>
+                    <input type='hidden' name="color_thumbnail[<?php echo $productColor->getId() ?>]" class='input-text' value='<?php echo $productColor->getColorThumbnail() ?>'/>
+                    <input type="checkbox" name="remove_thumbnail[<?php echo $productColor->getId() ?>]"/> <span><?php echo $this->__("Delete") ?></span>
+                </p>
+                <?php endif; ?>
+                <p>
+                    <input type="file" name="color_thumbnail_<?php echo $productColor->getId() ?>"/>
+                </p>
+                
+            </td>
+			<td>
+                
+				<?php 
+                //Side using image as background
+                $images = $productColorImageModel->getProductColorImage($productId, $productColor->getId()); 
+                //Side using color as background
+                $colors = Mage::getModel("pdp/pdpside")->getDesignSideColors($productId);
+                ?>
+				<div class='images-container'>
+					<div class='side-images'>
+					<?php foreach ($images as $image) : ?>
+						<label style="display: block; float: none; width: 100%;"><?php echo $this->__($image->getLabel())?></label>
+                        <div class="color-img-item" style="position: relative;">
+                            <img alt='<?php $image->getLabel() ?> Image' src='<?php echo $mediaUrl . $image->getFilename() ?>' />
+                            <img style="position: absolute; top: 0; left: 0;" alt='<?php $image->getLabel() ?> Image' src='<?php echo $mediaUrl . $image->getOverlay() ?>' />
+                        </div>
+					<?php endforeach; ?>
+                    <?php foreach ($colors as $sideColor) : ?>
+						<label style="display: block; float: none; width: 100%;"><?php echo $this->__($sideColor->getLabel())?></label>
+                        <div class="color-img-item" style="position: relative; background: #<?php echo $productColor->getColorCode() ?>">
+                            <img style="" alt='<?php $sideColor->getLabel() ?> Image' src='<?php echo $mediaUrl . $sideColor->getOverlay() ?>' />
+                        </div>
+					<?php endforeach; ?>
+					</div>
+				</div>
+			</td>
+			<!-- 
+			<?php if ($counter == 1) :?>
+			<td rowspan=<?php echo $productColors->count()?>>
+				<select>
+					<option value='image'><?php echo $this->__('Show Image')?></option>
+					<option value='hexcode'><?php echo $this->__('Show Hexcode')?></option>
+				</select>
+			</td>
+			 -->
+			<?php endif; ?>
+			<!-- <td><input type="radio" name="is_base" /></td>  -->
+			<td><input type='text' name="position[<?php echo $productColor->getId() ?>]" class='input-text validate-number' value='<?php echo $productColor->getPosition() ?>'/></td>
+			<td>
+				<select name="status[<?php echo $productColor->getId()?>]">
+					<option <?php echo ($productColor->getStatus() == 1) ? "selected" : ""; ?> value='1'><?php echo $this->__('Enable') ?> </option>
+					<option <?php echo ($productColor->getStatus() == 2) ? "selected" : ""; ?> value='2'><?php echo $this->__('Disable') ?> </option>
+				</select>
+			</td>
+			<td>
+				<button id='delete_<?php echo $productColor->getId() ?>' class="delete delete-product-color"
+					onclick="return false;" title="Delete">
+					<span><span><span><?php echo $this->__('Delete') ?></span></span></span>
+				</button>
+			</td>
+		</tr>
+		<?php $counter++; ?>
+		<?php endforeach; ?>
+	</table>
+</form>
+<script type="text/javascript">
+	var addSideColorForm = new VarienForm('view_design_color_form', true);
+</script>
+<div style="display: none" id="loading-mask">
+    <p id="loading_mask_loader" class="loader"><img alt="Loading..." src="<?php echo $this->getSkinUrl('images/ajax-loader-tr.gif')?>"><br><?php echo $this->__('Please wait...')?></p>
+</div>

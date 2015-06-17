@@ -1,0 +1,49 @@
+*{margin:0;padding:0;}
+ul {
+    list-style: none;
+}
+
+.loader {
+	background: none no-repeat scroll center center rgba(0, 0, 0, 0);
+	text-align: center;
+	margin-top: 26px;
+	padding: 15px;
+}
+/* Update CSS for Iframe */
+.pdc_design_panel {
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+}
+.iframe-container #close_iframe {
+  background: none repeat scroll 0 0 #ffffff;
+  border-radius: 100%;
+  color: #000000;
+  cursor: pointer;
+  font-size: 35px;
+  left: auto;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1000;
+}
+.iframe-container {
+  
+}
+body {
+  display: block;
+  margin: 0;
+  border:0px;
+  padding: 0;
+  position: relative;
+  background:transparent;
+}
+.no-display {
+    display: none;
+}
+
+
+
+
+
+

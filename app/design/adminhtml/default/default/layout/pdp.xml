@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="content">
+        	<block type="core/template" name="set_base_url" template="pdp/baseurl.phtml" />
+        </reference>
+    </default>
+	<adminhtml_sales_order_view>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/pdpdesign.js</name></action>
+			<action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addCss"><name>lib/prototype/windows/themes/magento.css</name></action>
+        </reference>
+		<reference name="order_item_extra_info">
+			 <block type="pdp/adminhtml_additional_product_info" name="pdp_adminhtml_additional_product_info"/>
+		</reference>
+	</adminhtml_sales_order_view>
+	<adminhtml_sales_order_invoice_view>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/pdpdesign.js</name></action>
+			<action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addCss"><name>lib/prototype/windows/themes/magento.css</name></action>
+        </reference>
+	</adminhtml_sales_order_invoice_view>
+    <adminhtml_catalog_product_edit>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+        </reference>
+	</adminhtml_catalog_product_edit>
+	<pdp_adminhtml_group_edit>
+		<update handle="editor"/>
+	</pdp_adminhtml_group_edit>
+	<pdpadmin_adminhtml_pdp_image>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/bootstrap/3.3.4/js/bootstrap.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/action.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/image.js</name></action>
+            <!--<action method="addItem"><type>js</type><name>pdp/backend/js/upload.js</name></action>-->
+			<action method="addItem"><type>js</type><name>pdp/fabricjs/fabric-1.5.0.min.js</name></action>
+			<!-- Color Picker -->
+			<!--<action method="addItem"><type>js</type><name>pdp/js/colorpicker.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/js/ui/eye.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/js/layout.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/js/ui/utils.js</name></action>-->
+			<!-- Color Picker -->
+			<action method="addItem"><type>js_css</type><name>pdp/bootstrap/3.3.4/css/bootstrap.min.css</name></action>
+			<!--<action method="addItem"><type>js_css</type><name>pdp/bootstrap/3.3.4/css/bootstrap.css</name></action>-->
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/idesign.css</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/multiupload.css</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/colorpicker.css</name></action>
+		</reference>
+		<reference name="content">
+            <block type="pdp/adminhtml_pdp" name="pdp_image_form" template="pdp/image.phtml"/>
+        </reference>
+	</pdpadmin_adminhtml_pdp_image>
+    <pdpadmin_adminhtml_shape_index>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/bootstrap/3.3.4/js/bootstrap.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/action.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/shape.js</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/bootstrap/3.3.4/css/bootstrap.min.css</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/idesign.css</name></action>
+		</reference>
+		<reference name="content">
+            <block type="pdp/adminhtml_shape" name="pdp_shape_manage" template="pdp/shape.phtml"/>
+        </reference>
+	</pdpadmin_adminhtml_shape_index>
+	<pdpadmin_adminhtml_pdp_font>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/bootstrap/3.3.4/js/bootstrap.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/action.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/font.js</name></action>
+            <action method="addItem"><type>js</type><name>pdp/backend/js/upload_font.js</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/bootstrap/3.3.4/css/bootstrap.min.css</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/idesign.css</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/multiupload.css</name></action>
+		</reference>
+		<reference name="content">
+            <block type="pdp/adminhtml_pdp" name="pdp_image_form" template="pdp/font.phtml"/>
+        </reference>
+	</pdpadmin_adminhtml_pdp_font>
+	<pdpadmin_adminhtml_pdp_artworkcolor>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/bootstrap/3.3.4/js/bootstrap.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/multicolor.js</name></action>
+			<!-- Color Picker -->
+			<action method="addItem"><type>js</type><name>pdp/backend/js/colorpicker.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/eye.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/layout.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/utils.js</name></action>
+			<!-- Color Picker -->
+			<action method="addItem"><type>js_css</type><name>pdp/bootstrap/3.3.4/css/bootstrap.min.css</name></action>
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/colorpicker.css</name></action>
+		</reference>
+		<reference name="content">
+            <block type="pdp/adminhtml_artworkcolor" name="artworkcolor" template="pdp/artworkcolor.phtml"/>
+        </reference>
+	</pdpadmin_adminhtml_pdp_artworkcolor>
+	<pdpadmin_adminhtml_artworkcate_image>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="pdp/adminhtml_artworkcate_edit_tab_artwork" name="artwork_grid"/>
+			<block type="adminhtml/widget_grid_serializer" name="artwork_serializer">
+				<reference name="artwork_serializer">
+					<action method="initSerializerBlock">
+						<grid_block_name>artwork_grid</grid_block_name>
+						<data_callback>getSelectedImages</data_callback>
+						<hidden_input_name>links[images]</hidden_input_name>
+						<reload_param_name>images</reload_param_name>
+					</action>
+					<action method="addColumnInputName">
+                       <input_name>position</input_name>
+					</action>
+				</reference>
+			</block>
+		</block>
+   </pdpadmin_adminhtml_artworkcate_image>
+   <pdpadmin_adminhtml_artworkcate_imagegrid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="pdp/adminhtml_artworkcate_edit_tab_artwork" name="artwork_grid"/>
+		</block>
+    </pdpadmin_adminhtml_artworkcate_imagegrid>
+    <pdpadmin_adminhtml_shapecate_image>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="pdp/adminhtml_shapecate_edit_tab_artwork" name="artwork_grid"/>
+			<block type="adminhtml/widget_grid_serializer" name="artwork_serializer">
+				<reference name="artwork_serializer">
+					<action method="initSerializerBlock">
+						<grid_block_name>artwork_grid</grid_block_name>
+						<data_callback>getSelectedImages</data_callback>
+						<hidden_input_name>links[images]</hidden_input_name>
+						<reload_param_name>images</reload_param_name>
+					</action>
+					<action method="addColumnInputName">
+                       <input_name>position</input_name>
+					</action>
+				</reference>
+			</block>
+		</block>
+   </pdpadmin_adminhtml_shapecate_image>
+   <pdpadmin_adminhtml_shapecate_imagegrid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="pdp/adminhtml_shapecate_edit_tab_artwork" name="artwork_grid"/>
+		</block>
+    </pdpadmin_adminhtml_shapecate_imagegrid>
+   <pdp_adminhtml_group_pdpgrid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="pdp/adminhtml_group_edit_tab_pdp" name="pdp_grid"/>
+		</block>
+	</pdp_adminhtml_group_pdpgrid>
+	<pdpadmin_adminhtml_color_new>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/multicolor.js</name></action>
+			<!-- Color Picker -->
+			<action method="addItem"><type>js</type><name>pdp/backend/js/colorpicker.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/eye.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/layout.js</name></action>
+			<action method="addItem"><type>js</type><name>pdp/backend/js/utils.js</name></action>
+			<!-- Color Picker -->
+			<action method="addItem"><type>js_css</type><name>pdp/backend/css/colorpicker.css</name></action>
+		</reference>
+	</pdpadmin_adminhtml_color_new>
+</layout> 

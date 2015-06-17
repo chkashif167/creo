@@ -1,0 +1,248 @@
+<?php 
+	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'pdp/images/artworks/';
+	$baseUrl = Mage::helper("pdp")->getPdpBaseUrl();
+	$categoryOptions = Mage::getModel('pdp/artworkcate')->getCategoryOptions();
+?>
+<div class="container">
+    <div class="alert alert-info">
+        <strong>Note</strong>: Click to Clipart to update price and color for each item. To delete Clipart(s), choice Action menu on top right.
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-8"> 
+                    <h3 class="panel-title">Manage Cliparts</h3>
+                </div>
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#upload-files-form">Add New Clipart</a>
+                            <a class="btn btn-success">Action</a>
+                            <a data-toggle="dropdown" class="btn btn-success dropdown-toggle">
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a id="select_item" href="#">Select Item(s)</a></li>
+                                <li><a id="select_all_item" href="#">Select All Items</a></li>
+                                <li><a id="uncheck_all_item" href="#">Unchecked All Items</a></li>
+                                <li class="divider"></li>
+                                <li><a id="delete_selected_item" href="#">Delete Selected Item(s)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="image-manage">
+                <div class="mst_pagination">
+                    <?php
+                    # Paging a collection
+                    echo "<input type='hidden' name='current_page' value='1'>";
+                    echo "<input type='hidden' name='page_size' value='". $this->_default_page_size ."'>";
+                    $paging_collection = $this->getImageCollectionPaging(1, $this->_default_page_size, 'pdp/index/getImagePaging', '0');
+                    $imageList = $paging_collection['collection'];
+                    echo $paging_collection['paging_text'];
+                    # End paging a collection
+                    ?>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="image">
+                        <div class='image-contianer'>
+                            <input type='hidden' name='secret_key' id='secret_key' value='<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_pdp/artworkcolorinfo/"); ?>'/>
+                            <div id='container' class="clickable clearfix">
+                                <?php foreach ($imageList as $image) {?>
+                                    <div class='img-item'>
+                                        <?php $addColorUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_pdp/artworkcolorinfo/",array("image_id"=> $image->getImageId())); ?>
+                                        <img rel="<?php echo $addColorUrl ?>" src='<?php echo $mediaUrl . $image->getFilename() ?>' alt='' />
+                                        <input type="checkbox" class="checkbox-item" id="img_<?php echo $image->getId() ?>" style="display:none;" />
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" value="<?php echo $baseUrl ?>" name="base_url" id="base_url"/>
+                <!--Upload clipart modal-->
+                <div class="modal fade" id="upload-files-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <a class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                                <h4 class="modal-title" id="myModalLabel">Upload Clipart</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-info">
+                                    <p class='support-files'>Supported Image Formats : <b>.jpg, .jpeg, .png, .gif, .bmp, .svg</b></p>
+                                    <p><strong><em>Tip</em></strong>: - The clipart should be in transparent format (PNG or SVG) with the best quality of image. Don't upload a heavy size file. </p>
+                                </div>
+                                <form class="form-horizontal" id="upload_clipart_form" name="upload_clipart_form" enctype="multipart/form-data" action="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'adminhtml/default/default/pdp/upload.php'; ?>">
+                                    <input type="hidden" name="upload_file_type" value="custom" id="upload_file_type"/>
+                                    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+                                    <input type="hidden" id="base_dir" name="base_dir" value="<?php echo Mage::getBaseDir(); ?>" />
+                                    <input type="hidden" id="skin_url" name="skin_url" value="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>" />
+                                    <div class="form-group">
+                                        <label for='image_name' class="col-sm-3 control-label">Clipart Label</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="image_name" id="image_name" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for='image_price' class="col-sm-3 control-label">Price</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="price" id="image_price" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for='image_category' class="col-sm-3 control-label">Choose Clipart Category</label>
+                                        <div class="col-sm-9">
+                                            <select id='image_category' name='category' class="form-control">
+                                                <?php 
+                                                $options = $categoryOptions;
+                                                foreach ($options as $key => $value) {
+                                                    echo "<option value='". $key ."'>{$value}</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for='filename' class="col-sm-3 control-label"></label>
+                                        <div class="col-sm-9">
+                                            <input type="file" name="artwork" id="artwork"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <a name="upload_clipart" id="upload_clipart" class="btn btn-success">Upload</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Image Model-->
+                <div class="modal fade" id="image-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <a class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                                <h4 class="modal-title" id="myModalLabel">Edit Clipart</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal" id="upload_clipart_form" name="upload_clipart_form" enctype="multipart/form-data" action="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'adminhtml/default/default/pdp/upload.php'; ?>">
+                                    <div class="form-group">
+                                        <label for='edit_image_name' class="col-sm-3 control-label">Clipart Label</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="image_name" id="edit_image_name" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for='edit_image_price' class="col-sm-3 control-label">Price</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="price" id="edit_image_price" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for='color_type' class="col-sm-3 control-label">Allow Filling Color</label>
+                                        <div class="col-sm-9">
+                                            <input type="checkbox" class="control-label" name="color_type" id="color_type" />
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div class="span3">
+                                            <div class='main-image'>
+                                                <img id='edit_image' class="img-thumbnail" width="100px" src=""/>
+                                                <div class='category-name'>
+                                                    <span class="label label-primary" style="font-size: 13px;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span9">
+                                            <div class="tab-pane" id="image-color-tab" style='text-align: center;'>
+                                                <input type="hidden" value="<?php echo $mediaUrl ?>" name="media_url" id="media_url"/>
+                                                <table id="edit_color_image" class="table table-bordered">
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="hidden" value="" name="image_id" id="image_id" />
+                                <a id="update_image_info" onclick="ImgItem.updateImageInfo()" class="btn btn-success" >Update</a>
+                                <a name="add_new_color" id="add_new_color" onclick="" class="btn btn-success">Add Color</a>
+                                <p class="pull-left color-msg">Allow Filling Color: this option will allow user to change color of clipart. It will disabled Add Color.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Add Color Modal-->
+                <div class="add-color-form">
+                    <form class="form-horizontal" id="design-form" name="design-form" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_pdp/savecolor/"); ?>" enctype="multipart/form-data">
+                        <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+                        <div id="colorModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                <h4 id="myModalLabel">Add New Image - Color</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" value="" name="image_id_color" id="image_id_color"/>
+                                <div class="control-group">
+                                    <label class="control-label" for="color_image">Image</label>
+                                    <div class="controls">
+                                        <input type="file" name="color_image" onchange="ImgItem.previewColorImage(this)"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Preview Image</label>
+                                    <div class="controls">
+                                        <img id="designImage" src="" alt="Image will show here" width="150px" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Color</label>
+                                    <div class="controls">
+
+                                        <div class="row-fluid show-grid">
+                                            <div class="span1">
+                                                <div id="colorSelector">
+                                                    <div style="background: #ccc"></div>
+                                                </div>
+                                            </div>
+                                            <div id="previewColor" style=""><input type="text" class="span12" value="" name="color" id="color" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                <button type="submit" class="btn">Save Color</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+//Fix conflict Prototype vs Bootstrap + jQuery
+if (Prototype.BrowserFeatures.ElementExtensions) {
+    var disablePrototypeJS = function (method, pluginsToDisable) {
+            var handler = function (event) {
+                event.target[method] = undefined;
+                setTimeout(function () {
+                    delete event.target[method];
+                }, 0);
+            };
+            pluginsToDisable.each(function (plugin) { 
+                jQuery(window).on(method + '.bs.' + plugin, handler);
+            });
+        },
+        pluginsToDisable = ['collapse', 'dropdown', 'modal', 'tooltip', 'popover'];
+    disablePrototypeJS('show', pluginsToDisable);
+    disablePrototypeJS('hide', pluginsToDisable);
+}
+</script>

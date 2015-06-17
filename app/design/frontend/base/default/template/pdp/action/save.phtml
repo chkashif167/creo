@@ -1,0 +1,32 @@
+<!-- Modal Save Popup -->
+<div class="modal fade" id="savePopup" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title"><?php echo $this->__('Preview Your Design'); ?></h4>
+	  </div>
+	  <div class="modal-body">
+		
+		<div class="row" style="text-align: center;">
+			<input type="hidden" value="filename.json" name="filename" id="customer_design_json"/>
+            <div class="col-xs-12">
+                <ul class="preview-image-before-save">
+                    
+                </ul>
+            </div>
+		</div>
+	  </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-xs-8">
+                    <span style="font-style:12px;"><?php echo $this->__('Review your design and click DONE');?>.</span>
+                </div>
+                <div class="col-xs-4">
+                    <a class="btn btn-md btn-primary" pdc-action="SAVE_AND_CONTINUE" pdc-data="pdc-save-continue"><?php echo $this->__('Done');?>.</a>
+                </div>
+            </div>
+        </div>
+	</div>
+  </div>
+</div>

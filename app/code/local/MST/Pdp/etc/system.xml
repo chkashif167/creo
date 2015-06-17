@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <mst translate="label" module="pdp">
+            <label>Products Designer Canvas</label>
+            <sort_order>201</sort_order>
+        </mst>
+    </tabs>
+	<sections>
+		<pdp translate="label" module="pdp">
+			<label>PDC - Configuration</label>
+			<tab>mst</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>777</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<info>
+                    <frontend_model>pdp/system_config_info</frontend_model>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                </info>
+				<act translate="label">
+                    <label>Active License Key</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>
+						<key translate='label'>
+                    		<label>License Key </label>
+                    		<frontend_type>text</frontend_type>
+                    		<comment>Please check your license key in order details. Contact to provider when you would like to reset the license key to apply PDC for new domain.</comment>
+                    		<sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+							<backend_model>pdp/saveconfig</backend_model>
+                    	</key>
+						<actinfo translate='label'>
+                    		<label>Active Status</label>
+                    		<frontend_type>label</frontend_type>
+                    		<sort_order>91</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+							<frontend_model>pdp/system_config_form_field_notification</frontend_model> 
+                    	</actinfo>
+                    </fields>
+                </act>
+                <setting translate="label">
+					<label>Enable Products Designer Canvas - PDC</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>50</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<fields>
+						<enable translate='label'>
+							<label>Enable PDC </label>
+							<frontend_type>select</frontend_type>
+							<sort_order>95</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+						</enable>
+						<design_button_label translate='label'>
+							<label>Design Button Label</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+						</design_button_label>
+                        <image_quality translate='label'>
+							<label>Image Quality</label>
+                            <comment><![CDATA[<p><b> 0 < number < 1</b>. If you prefer the image <b>QUALITY</b> than the <b>SPEED</b> creating image, then set "Image Quality" to a bigger number and vice versa.  </p>]]></comment>
+							<frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+							<sort_order>200</sort_order>
+							<show_in_default>1</show_in_default>
+						</image_quality>
+                        <!--
+						<button_cat translate="label">
+							<label>Show Button on other page</label>
+							<comment><![CDATA[<p><b>YES</b> to display the design button on category and search result page</p>]]></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</button_cat>-->
+					</fields>
+				</setting>
+				<design translate="label">
+					<label>CUSTOM DESIGN AREA - User Interface Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>70</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<fields>
+						<is_notify translate="label">
+							<label>Show warning popup </label>
+							<comment><![CDATA[<p>Enable to show warning popup message when user use PDC on small devices.</p>]]></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</is_notify>
+						<hide_thumbnail translate="label">
+							<label>Hide Side Thumbnail </label>
+							<frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</hide_thumbnail>
+						
+						<quick_tools_option translate="label">
+							<label><![CDATA[<h3>Quick Tools</h3><hr/>]]></label>
+							<frontend_type>label</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+						</quick_tools_option>
+						<is_quick_tool transla="label">
+							<label>Enable Quick Tool</label>
+							<comment><![CDATA[<p>Enable quick transforms panel(it is draggable)</p>]]></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>31</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+						</is_quick_tool>
+						<is_frame_alignment translate="label">
+							<label>Enable Frame Alignment</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>35</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends><is_quick_tool>1</is_quick_tool></depends>
+						</is_frame_alignment>
+						<is_swap translate="label">
+							<label>Enable Swap Position Opject</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>38</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends><is_quick_tool>1</is_quick_tool></depends>
+						</is_swap>
+						<is_duplicate translate="label">
+							<label>Enable Duplicate Opject</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends><is_quick_tool>1</is_quick_tool></depends>
+						</is_duplicate>
+						
+						<is_flip translate="label">
+							<label>Enable Flip Object</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>45</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends><is_quick_tool>1</is_quick_tool></depends>
+						</is_flip>
+						<is_opacity translate="label">
+							<label>Enable Opacity Object</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends><is_quick_tool>1</is_quick_tool></depends>
+						</is_opacity>
+						<is_filling translate="label">
+							<label>Enable Filling Color Object</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>55</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends><is_quick_tool>1</is_quick_tool></depends>
+						</is_filling>
+						<is_delete translate="label">
+							<label>Enable Delete Object</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends><is_quick_tool>1</is_quick_tool></depends>
+						</is_delete>
+						 
+						<text_tab translate="label">
+							<label><![CDATA[<h3>Text Tab</h3><hr/>]]></label>
+							<frontend_type>label</frontend_type>
+							<sort_order>115</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+						</text_tab>
+						<is_quote_lib translate="label">
+							<label>Enable Quotes Library</label>
+							<comment><![CDATA[<p>Allow user select sample text from Quote library.</p>]]></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+						</is_quote_lib>
+						<curved translate="label">
+							<label>Enable Curved Text Plugin</label>
+							<comment><![CDATA[<p>Curved Text plugin is only for PDC Pro and Enterprise.</p>]]></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>125</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+						</curved>
+						
+					</fields>
+				</design>
+				<customer_action translate="label">
+					<label>Customer Actions Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>120</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+					<fields>
+						<sharing translate="label">
+							<label>Enable Social Sharing</label>
+							<comment>Allow customer sharing their customized design to social network.</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+						</sharing>
+						<!--<addthis_id translate="label">
+							<label>AddThis Profile id</label>
+							<comment><![CDATA[<p>Sign up free account on https://www.addthis.com and get your profile id to enable sharing option.<a href="https://www.addthis.com/settings/publisher" target="_blank">Check here</a></p>]]></comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+							<depends><sharing>1</sharing></depends>
+						</addthis_id>-->
+						
+						<is_facebook translate="label">
+							<label>Allow Get Facebook Photo</label>
+							<comment><![CDATA[<p><strong>YES</strong> to allow user get photos from their Facebook account. (Available on <b>STANDARD</b>, <b>PRO</b> and <b>ENTERPRISE</b> version)</p>]]></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>85</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</is_facebook>
+						<facebook_api translate="label">
+							<label>Facebook API</label>
+							<frontend_type>text</frontend_type>
+							<comment><![CDATA[<p>Enter facebook api. <a href="#" target="_blank">How to get Facebook API and Secret key</a></p>]]></comment>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<depends><is_facebook>1</is_facebook></depends>
+						</facebook_api>
+						<facebook_key translate="label">
+							<label>Facebook Secret Key</label>
+							<frontend_type>text</frontend_type>
+							<comment>Enter Secret Key.</comment>
+							<sort_order>95</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<depends><is_facebook>1</is_facebook></depends>
+						</facebook_key>
+						
+						<is_instagram translate="label">
+							<label>Allow Get Instagram Photo</label>
+							<comment><![CDATA[<p><strong>YES</strong> to allow user get photos from their Instagram account. (Available on <b>Pro</b> and <b>ENTERPRISE</b> version)</p>]]></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</is_instagram>
+						<instagram_api translate="label">
+							<label>Instagram API</label>
+							<frontend_type>text</frontend_type>
+							<comment><![CDATA[<p>Enter Instagram API. <a href="#" target="_blank">How to get Instagram API and Secret key</a></p>]]></comment>
+							<sort_order>105</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<depends><is_instagram>1</is_instagram></depends>
+						</instagram_api>
+						<instagram_key translate="label">
+							<label>Instagram Secret Key</label>
+							<frontend_type>text</frontend_type>
+							<comment>Enter Instagram Secret Key.</comment>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<depends><is_instagram>1</is_instagram></depends>
+						</instagram_key>
+					</fields>
+				</customer_action>
+                <custom_upload translate="label">
+					<label>Upload Image Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>320</sort_order>
+					<show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+					<fields>
+						<size_unit translate="label">
+							<label>Default Size Unit</label>
+							<comment>Use this unit size to show alert message to user while upload processing</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<source_model>pdp/config_sizeunit</source_model>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</size_unit>
+                        <upload_max_size translate='label'>
+                    		<label>Max size allowed</label>
+                    		<frontend_type>text</frontend_type>
+                    		<comment><![CDATA[Limit user upload large file.This size should equal or less than the <b>upload_max_fiesize</b> ini php.ini. Set to 0 to not restrict]]></comment>
+                    		<sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+							<backend_model>pdp/config_maxsize</backend_model>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    	</upload_max_size>
+                        <upload_min_size translate='label'>
+                    		<label>Min size required</label>
+                    		<frontend_type>text</frontend_type>
+                    		<comment>Request user upload high quality image. Set to 0 to not restrict</comment>
+                    		<sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    	</upload_min_size>
+                        <upload_note translate='label'>
+                    		<label><![CDATA[Upload Note]]></label>
+                    		<frontend_type>textarea</frontend_type>
+                    		<comment>Leave emty if you don't want to show note.</comment>
+                    		<sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    	</upload_note>
+                        <!--
+                        <upload_max_width translate='label'>
+                    		<label>Max image width allowed</label>
+                    		<frontend_type>text</frontend_type>
+                    		<comment>Limit width of image (px). Set to 0 to not restrict</comment>
+                    		<sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                    	</upload_max_width>
+                        <upload_max_height translate='label'>
+                    		<label>Max image height allowed</label>
+                    		<frontend_type>text</frontend_type>
+                    		<comment>Limit height of image (px). Set to 0 to not restrict</comment>
+                    		<sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                    	</upload_max_height>
+                        <upload_min_width translate='label'>
+                    		<label>Min image width required</label>
+                    		<frontend_type>text</frontend_type>
+                    		<comment>Set to 0 to not restrict</comment>
+                    		<sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                    	</upload_min_width>
+                        <upload_min_height translate='label'>
+                    		<label>Min image height required</label>
+                    		<frontend_type>text</frontend_type>
+                    		<comment>Set to 0 to not restrict</comment>
+                    		<sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                    	</upload_min_height>-->
+					</fields>
+				</custom_upload>
+                <watermark translate="label">
+					<label>Watermark</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>420</sort_order>
+					<show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+					<fields>
+                        <active translate="label">
+							<label>Enable Watermark</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+						</active>
+                        <image translate='label'>
+                    		<label>Watermark Image</label>
+                    		<frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <comment><![CDATA[Please upload a .<b>PNG</b> image]]></comment>
+                            <upload_dir config="system/filesystem/media" scope_info="1">pdp/images</upload_dir>
+                            <base_url type="media" scope_info="1">pdp/images</base_url>
+                    		<sort_order>3000</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    	</image>
+                        <position translate='label'>
+                    		<label>Watermark Position</label>
+                    		<frontend_type>select</frontend_type>
+                            <source_model>pdp/config_watermarkposition</source_model>
+                    		<sort_order>4000</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    	</position>
+					</fields>
+				</watermark>
+			</groups>
+		</pdp>
+	</sections>
+</config>

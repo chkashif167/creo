@@ -1,0 +1,184 @@
+<?php
+$params = Mage::app()->getRequest()->getParams(); 
+$productId = $params['productid'];
+$sides = Mage::getModel('pdp/pdpside')->getDesignSides($productId);
+$sidePosition = $sideStatus = "";
+$colors = Mage::getModel('pdp/color')->getColors();
+?>
+
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->getSkinUrl('boxes.css') ?>" />
+<link type="text/css" rel="stylesheet"
+	href="<?php echo $this->getJsUrl('pdp/backend/css/printarea.css') ?>" />
+<script type="text/javascript" src="<?php echo $this->getJsUrl('prototype/prototype.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('prototype/validation.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('scriptaculous/effects.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('varien/form.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/jquery/jquery-1.10.2.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/pdpdesign.js') ?>"></script>
+<!--Color Picker-->
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/colorpicker.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/eye.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/layout.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/backend/js/utils.js') ?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getJsUrl('pdp/backend/css/colorpicker.css') ?>"/>
+<!-- Color Picker -->
+<style>
+    .add-side-color-table {border-collapse: collapse;width: 100%;}
+    .add-side-color-table th {
+        border: 1px solid #cccccc;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+    }
+    .add-side-color-table td {
+        border: 1px solid #cccccc;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    div.preview-color {
+        width: 100px; 
+        height: 100px; 
+        background: none repeat scroll 0% 0% rgb(255, 255, 255); 
+        margin: auto;
+    }
+</style>
+<div class="pdp_message">
+	<?php echo $this->getMessagesBlock()->toHtml(); ?>
+</div>
+<form id="add_design_color_form" method="POST"
+	action="<?php echo Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/savedesigncolor/"); ?>"
+	enctype="multipart/form-data">
+	<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+	<div style="" id="designarea_tabs_form_section_content">
+		<div class="entry-edit">
+			<div class="entry-edit-head">
+				<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('General Information') ?></h4>
+				<div class="form-buttons">
+					<button class="scalable delete"
+						onclick="location.reload(); return false;" title="Reset">
+						<span><span><span><?php echo $this->__('Reset') ?></span></span></span>
+					</button>
+					<button class="scalable save" type="submit" title="Save">
+						<span><span><span><?php echo $this->__('Save') ?></span></span></span>
+					</button>
+				</div>
+			</div>
+			<div id="pdpdesignarea_pdp_form" class="fieldset ">
+				<div class="hor-scroll">
+					<div class="modal-footer">
+						<div class="inlay-info">
+							<input type="hidden" name="pdpcolor[product_id]" value="<?php echo $productId ?>" />
+							<div class='design-area-input'>
+								<label for="color_code"><?php echo $this->__('Color Hex') ?> <span	class="required">*</span></label> 			
+                                <input type="text" name="pdpcolor[color_code]" id="color_code" value="" class="required-entry" />
+							</div>
+                            <div class='design-area-input'>
+								<label for="color_name"><?php echo $this->__('Color Name') ?></label> 			
+                                <input type="text" name="pdpcolor[color_name]" id="color_name" value="" class="input-text" />
+							</div>
+                            <div class='design-area-input'>
+								<label for="thumbnail_image"><?php echo $this->__('Color Thumbnail') ?></label> 			
+                                <input type="file" name="color_thumbnail" id="color_thumbnail" onchange="PDPPopup.previewThumbnailImage(this)"/>
+                                <img id="preview-color-thumbnail" width="50px"/>
+							</div>
+							<div class='design-area-input' style="display: none;">
+								<label for="pdpposition"><?php echo $this->__('Position') ?></label>
+								<input type="text" class=" input-text validate-number"
+									value="<?php echo $sidePosition ?>" name="pdpcolor[position]"
+									id="pdpposition" />
+							</div>
+							<div class='design-area-input' style="display: none;">
+								<label for="pdpstatus"><?php echo $this->__('Status') ?></label>
+								<select class=" select" name="pdpcolor[status]" id="pdpstatus">
+									<option <?php echo ($sideStatus == 1) ? "selected" : ""; ?>
+										value="1"><?php echo $this->__('Enabled') ?></option>
+									<option <?php echo ($sideStatus == 2) ? "selected" : ""; ?>
+										value="2"><?php echo $this->__('Disabled') ?></option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="entry-edit-head">
+				<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Image of current color for each side') ?></h4>
+			</div>
+			<div id="pdpdesignarea_pdp_form" class="fieldset ">
+				<div class="hor-scroll">
+					<table class="add-side-color-table">
+                        <tr>
+                            <th>Side Label</th>
+                            <th>Background Image <span class="required">*</span></th>
+                            <th>Background Preview</th>
+                            <th>Overlay Image <span class="required">*</span></th>
+                            <th>Overlay Image Preview</th>
+                        </tr>
+						<?php foreach ($sides as $side) :?>
+						<tr>
+							<td>
+								<input type="hidden" name="design_sides[]" value="<?php echo $side->getId() ?>"/>
+								<label for="color_name"><?php echo $this->__( $side->getLabel()) ?></label>
+							</td>
+							<td>
+                                <?php if($side->getBackgroundType() == "image") : ?>
+								    <input type="file" onchange="PDPPopup.previewImage(this)" class="required-entry" name="color_image_<?php echo $side->getId() ?>" />
+                                <?php else : ?>
+                                <input type="text"  class="preview-color" disabled="disabled" />
+
+                                <?php endif; ?>
+							</td>
+							<td>
+                                <?php if($side->getBackgroundType() == "image") : ?>
+                                <img class='preview-image' id='preview-img-<?php echo $side->getId() ?>' src='' alt='Preview Image' width='100' height='100' />
+                                <?php else : ?>
+                                <div style="width: 100px; height: 100px;" class="preview-color"></div>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if($side->getBackgroundType() == "image") : ?>
+								<input type="file" onchange="PDPPopup.previewOverlayImage(this)" class="required-entry" name="overlay_image_<?php echo $side->getId() ?>" />
+                                <?php else : ?>
+                                <input type="text"  class="preview-color" disabled="disabled" />
+                                <?php endif; ?>
+							</td>
+							<td>
+                                <?php if($side->getBackgroundType() == "image") : ?>
+                                <img class='preview-image' id='preview-overlay-img-<?php echo $side->getId() ?>' src='' alt='Preview Image' width='100' height='100' />
+                                <?php else : ?>
+                                    <?php $sideOverlay = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "pdp/images/" . $side->getOverlay() ?>
+                                <img class='preview-color' src='<?php echo $sideOverlay ?>' width='100' height='100' />
+                                <?php endif; ?>
+                            </td>
+						</tr>
+						<?php endforeach; ?>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<script type="text/javascript">
+	var addSideColorForm = new VarienForm('add_design_color_form', true);
+    jQuery(function($) {
+        var selector = "#color_code";
+        $(selector).ColorPicker({
+            //color: '#c4b5c4',
+            onShow: function (colpkr) {
+                $(colpkr).fadeIn(300);
+                return false;
+            },
+            onHide: function (colpkr) {
+                $(colpkr).fadeOut(300);
+                return false;
+            },
+            onChange: function (hsb, hex, rgb) {
+                $(selector).css('backgroundColor', '#' + hex);
+                $(".preview-color").css('backgroundColor', '#' + hex);
+                $(selector).val(hex);
+            }
+        });
+    });
+</script>
