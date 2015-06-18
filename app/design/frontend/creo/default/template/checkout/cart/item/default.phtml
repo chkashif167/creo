@@ -32,14 +32,14 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 <tr>
     <td class="product-cart-image">
         <?php if ($this->hasProductUrl()):?>
-            <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image">
+            <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft">
         <?php endif;?>
-            <img src="<?php echo $this->getProductThumbnail()->resize(180); ?>" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" />
+            <img src="<?php echo $this->getProductThumbnail()->resize(100); ?>" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" />
         <?php if ($this->hasProductUrl()):?>
             </a>
         <?php endif;?>
-
-        <ul class="cart-links">
+<div class="text-area">
+      <?php /*?>  <ul class="cart-links">
             <?php if ($isVisibleProduct): ?>
                 <li>
                     <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
@@ -51,76 +51,36 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
                     <a href="<?php echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax"><?php echo $this->__('Move to wishlist'); ?></a>
                 </li>
             <?php endif ?>
-        </ul>
-    </td>
-
-    <td class="product-cart-info">
-
-        <a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('Remove Item') ?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove Item') ?></a>
-
-        <h2 class="product-name">
+        </ul><?php */?>
+        
+        
+<?php /*?>        <a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('Remove Item') ?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove Item') ?></a>
+<?php */?>
+        <h3 class="product-name">
         <?php if ($this->hasProductUrl()):?>
             <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->escapeHtml($this->getProductName()) ?></a>
         <?php else: ?>
             <?php echo $this->escapeHtml($this->getProductName()) ?>
         <?php endif; ?>
-        </h2>
+        </h3>
+        
+  <?php /*?>      
 
         <div class="product-cart-sku">
             <span class="label"><?php echo $this->__('SKU'); ?>:</span> <?php echo $this->escapeHtml($_item->getSku()); ?>
-        </div>
+        </div><?php */?>
 
-        <?php if ($_options = $this->getOptionList()):?>
+           <?php if ($_options = $this->getOptionList()):?>
         <dl class="item-options">
-            <?php foreach ($_options as $_option) : 
-                 if($this->escapeHtml($_option['label']) == "size")
-                 {
-                      $select_array[$_item->getSku()] =  $_option['value'];
-                 }
-            ?>
-            <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option); ?>
-             
-            <?php 
-          if($_option['value'] == "nextday")
-                 {?>
-                <dt>Delivery Date</dt>
-                <dd><?php  echo date('d/m/y',strtotime('+1 day')); ?></dd>
-             <?php   }?>
-
-              <?php 
-             if($_option['value'] == "2 days")
-                 {?>
-                <dt>Delivery Date</dt>
-                <dd><?php  echo date('d/m/y',strtotime('+2 days')); ?></dd>
-             <?php  }?>
-              <?php 
-             if($_option['value'] == "3 days")
-                 {?>
-                 <dt>Delivery Date</dt>
-                <dd><?php  echo date('d/m/y',strtotime('+3 days')); ?></dd>
-             <?php  }?>
-              <?php 
-             if($_option['value'] == "4 days")
-                 {?>
-                 <dt>Delivery Date</dt>
-                <dd><?php  echo date('d/m/y',strtotime('+4 days')); ?></dd>
-             <?php  }
-
-             if($this->escapeHtml($_option['label']) == "shipping_options")
-             {
-                 $header_block = "style='display:none;'";
-                   unset($_option['value']);
-                   unset($_formatedOptionValue['value']);
-                
-             } //print_r($_option);?>
-            
-                <dt <?php if($header_block){ echo $header_block;}?>><?php echo $this->escapeHtml($_option['label']) ?></dt>
-                <dd<?php if (isset($_formatedOptionValue['full_view'])): ?>   <?php if($text_block){ echo $text_block;}?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
+            <?php foreach ($_options as $_option) : ?>
+            <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
+            <dt><?php echo $this->escapeHtml($_option['label']) ?></dt>
+            <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
                 <?php if (isset($_formatedOptionValue['full_view'])): ?>
                 <div class="truncated_full_value">
                     <dl class="item-options">
-                        <dt  <?php if($header_block){ echo $header_block;}?>><?php echo $this->escapeHtml($_option['label']) ?></dt>
-                        <dd  <?php if($text_block){ echo $text_block;}?>   ><?php echo $_formatedOptionValue['full_view'] ?></dd>
+                        <dt><?php echo $this->escapeHtml($_option['label']) ?></dt>
+                        <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
                     </dl>
                 </div>
                 <?php endif; ?>
@@ -142,7 +102,12 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <?php echo $addInfoBlock->setItem($_item)->toHtml() ?>
         <?php endif;?>
 
+        	</div>
     </td>
+
+    <!--<td class="product-cart-info">
+
+    </td>-->
 
     <?php if ($canApplyMsrp): ?>
         <td class="a-center product-cart-price"<?php if ($this->helper('tax')->displayCartBothPrices()): ?> colspan="2"<?php endif; ?>>
@@ -245,8 +210,12 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php endif; ?>
     <?php endif; ?>
 
-    <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Size'); ?>">&nbsp;</td>
-     <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Size'); ?>"><?php 
+
+     <td class="product-cart-actions " data-rwd-label="<?php echo $this->__('Size'); ?>">
+     <div class="size-area_outer">
+	  <ul class="size-area">
+							
+	  <?php 
        $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'size');
         if ($attribute->usesSource()) {
             //echo $select_array[$_item->getSku()];
@@ -257,24 +226,33 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
                 if($select_array[$_item->getSku()] == $option['label'])
                     {
 
-                        $txt [] = '<span style="color:red;">'.$option['label'].'</span>';
+                        //$txt [] = '<span style="color:red;">'.$option['label'].'</span>';
+								$txt [] = '<li><a href="#">' .$option['label']. '</a></li>';
                     }else{
-                         $txt [] = $option['label'];
+                        // $txt [] = $option['label'];
+								$txt [] = '<li><a href="#">' .$option['label']. '</a></li>';
                     }
                // echo $option['label'].",";
             }
 
         }
-        echo implode(',',$txt);
-     ?></td>
-      <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Size'); ?>">&nbsp;</td>
+        echo implode(' ',$txt);
+     ?>	</ul>
+     </div>
+     </td>
+ 
     <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Qty'); ?>">
-        <input type="text" pattern="\d*" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
+    <div class="qty-area">
+<span class="up">up</span>   
+<input id="qty" type="text" pattern="\d*" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
+<span class="down">down</span>
+</div>
+    
 
-        <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update'); ?>" class="button btn-update"><span><span><?php echo $this->__('Update'); ?></span></span>
-        </button>
+        <?php /*?><button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update'); ?>" class="button btn-update"><span><span><?php echo $this->__('Update'); ?></span></span>
+        </button><?php */?>
 
-        <ul class="cart-links">
+<?php /*?>        <ul class="cart-links">
             <?php if ($isVisibleProduct): ?>
                 <li>
                     <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
@@ -289,7 +267,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             </li>
             <?php endif ?>
         </ul>
-
+<?php */?>
     </td>
 
     <!--Sub total starts here -->
@@ -387,7 +365,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     </td>
     <?php endif; ?>
     <td class="a-center product-cart-remove">
-        <a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('Remove Item') ?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove Item') ?></a>
+        <a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('') ?>" class="btn-remove btn-remove2 cancel"><?php echo $this->__('x') ?></a>
     </td>
 </tr>
 
