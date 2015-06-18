@@ -75,11 +75,9 @@
   <reference name="root">
     <action method="setTemplate"><template>page/1column.phtml</template></action>
   </reference>
-  
+ 
   <reference name="content">
-  	<reference name="catalog.leftnav">
-            <action method="unsetChild"><name>category_filter</name></action>
-        </reference>
+  	
     <block type="cms/block" name="footer_contents">
       <action method="setBlockId"><block_id>footer_contents</block_id></action>
     </block>
@@ -123,6 +121,11 @@
         <reference name="root">
             <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
         </reference>
+        <reference name="left_first">
+        	<block type="core/template" name="leftnav" before="catalog.leftnav" template="catalog/navigation/left_nav.phtml" />
+            
+        </reference>
+        
     </catalog_category_layered>
 
 
