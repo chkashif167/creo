@@ -64,7 +64,7 @@ $_renderers = $this->getChild('attr_renderers')->getSortedChildren();
 </dd>
 <?php endif; ?>
 <?php endforeach; ?>
-<div class="column color-area">
+<div class="column color-area qty-area ">
   <?php $_product = $this->getProduct(); ?>
   <?php if($_product->isSaleable()): ?>
   <?php if(!$_product->isGrouped()): ?>
@@ -78,20 +78,11 @@ $_renderers = $this->getChild('attr_renderers')->getSortedChildren();
 
 
 <script type="text/javascript">
-        var spConfig = new Product.Config(<?php echo $_jsonConfig ?>);
-		  
-		  jQuery('.up').on('click',function(){
-    jQuery('#qty').val(parseInt(jQuery('#qty').val())+1);
-});
+var spConfig = new Product.Config(<?php echo $_jsonConfig ?>);
 
-			
-			jQuery('.down').on('click',function(){
-				if(jQuery('#qty').val() > 1) {
-				 jQuery('#qty').val(parseInt(jQuery('#qty').val())-1);
-				}
-	
-}); 
-		  
+
+ 
+
 </script> 
     
     
