@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <FacileCheckout_OnestepCheckout>
+            <active>true</active>
+            <codePool>local</codePool>
+        </FacileCheckout_OnestepCheckout>
+    </modules>
+</config>

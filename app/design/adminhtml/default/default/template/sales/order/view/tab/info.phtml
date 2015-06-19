@@ -10,17 +10,17 @@
  * http://opensource.org/licenses/afl-3.0.php
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
- * to license@magento.com so we can send you a copy immediately.
+ * to license@magentocommerce.com so we can send you a copy immediately.
  *
  * DISCLAIMER
  *
  * Do not edit or add to this file if you wish to upgrade Magento to newer
  * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magento.com for more information.
+ * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
  * @package     default_default
- * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
@@ -82,6 +82,63 @@
     </div>
     <?php endif; ?>
     <div class="clear"></div>
+    
+    
+    <!-- Gift Wrap -->
+       <div class="box-left">
+       	<div class="entry-edit">
+        	<div class="entry-edit-head">
+            	<h4 class="icon-head head-heared4us"><?php echo "Gift Wrapper"; ?></h4>
+        	</div>
+        	 <fieldset>
+					<?php 
+						$read = Mage::getSingleton('core/resource')->getConnection('core_read');
+						$order_id_giftwrap = $_order->getId();
+						$result=$read->query("SELECT `giftwrap`,`giftwrap_price` FROM `sales_flat_order` WHERE `entity_id` ='$order_id_giftwrap'"); 
+						$row = $result->fetch();
+						if($row['giftwrap'] == 1)
+						{
+							echo "Gift Wrap : Yes";
+							$_SESSION['gift_price']=$row['giftwrap_price'];
+							$_SESSION['gift_cond']=$row['giftwrap'];
+							
+						}
+						else
+						{
+							echo "Gift Wrap : No";
+						}
+					
+				?>
+			</fieldset>
+	    </div>
+	</div>   
+    
+    <!-- Gift Wrap -->
+    
+    
+  <?php /*?>  <!-- Heard Us -->
+    <form id="co-heardus-form" action="" method="post">
+    <div class="box-right">
+       <div class="entry-edit">
+        	<div class="entry-edit-head">
+            	<h4 class="icon-head head-heared4us"><?php echo "How did you hear about us?"; ?></h4>
+        	</div>
+        	 <fieldset>
+             
+				<?php 
+					$read = Mage::getSingleton('core/resource')->getConnection('core_read');
+					$order_id_herad_us = $_order->getId();
+					$result=$read->query("SELECT `heardus` FROM `sales_flat_order` WHERE `entity_id` ='$order_id_herad_us'"); 
+					$row = $result->fetch();
+					echo $row['heardus'];
+					
+				?>
+			</fieldset>
+    	</div>
+	</div>
+    </form>
+<!-- Heard Us -->
+<?php */?>
     <?php echo $this->getGiftOptionsHtml() ?>
     <div class="clear"></div>
     <div class="entry-edit">
@@ -102,10 +159,33 @@
     </div>
     <div class="box-right entry-edit">
         <div class="entry-edit-head"><h4><?php echo Mage::helper('sales')->__('Order Totals') ?></h4></div>
-        <div class="order-totals"><?php echo $this->getChildHtml('order_totals') ?></div>
+         
+        <div class="order-totals">
+	
+    <?php if($row['giftwrap'] == 1)
+	{ ?>
+    	<table>
+    		<tr>
+				<td class="label"> <?php  echo "Gift Wrap Price "; ?></td>
+                <td>
+					<?php	echo $this->helper('checkout')->formatPrice($_SESSION['gift_price']);  } ?>
+		</td>
+        </tr>
+        </table>
+        
+			<?php  echo $this->getChildHtml('order_totals') ?>
+        
+       
+        
+        </div>
     </div>
     <div class="clear"></div>
 </div>
+
+
+
+
+
 
 <?php echo $this->getChildHtml('popup_window');?>
 <script type="text/javascript">

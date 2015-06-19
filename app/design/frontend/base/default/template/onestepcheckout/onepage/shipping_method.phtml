@@ -1,0 +1,67 @@
+<?php if ($this->getQuote()->isVirtual()) : return; endif; ?>
+<div id="shipping-method" class="onestepcheckout_block">
+    <div class="op_block_title" id="shipping"><?php echo $this->__('Shipping Method') ?><sup>*</sup></div>
+    <div id="checkout-shipping-method-load">
+        <?php echo $this->getChildHtml('available') ?>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        var shippingMethod = new ShippingMethod('shipping-method');
+    //]]>
+    </script>
+    <div id="onestep-checkout-shipping-method-additional-load">
+        <?php echo $this->getChildHtml('additional') ?>
+    </div>
+</div>
+
+
+<?php 
+	   $giftwrap_conditions =(Mage::getStoreConfig('onestepcheckout/giftwrap/enabled'));
+	   $giftwrap_admin_price=(Mage::getStoreConfig('onestepcheckout/giftwrap/giftwrapoutput'));
+	   $giftwrap_desc=(Mage::getStoreConfig('onestepcheckout/giftwrap/giftwrapdescription'));
+?>
+<?php if ($giftwrap_conditions == 1) : ?>
+
+<?php 
+
+$_SESSION['giftwrap_conditions_enabled']=$giftwrap_conditions;
+$_SESSION['price_gift_warp']=$giftwrap_admin_price;
+$_SESSION['desc_gift_warp']=$giftwrap_desc;
+
+
+
+ ?>
+
+	<div class="gift_wraps">
+
+		<div class="giftwrap-header"> 
+ 
+       		<h4><?php echo "Gift Wrapper";?></h4>
+       			<p>       
+                   	 <input type="checkbox" id="giftwrap-signup" name="giftwrap" title="<?php echo "giftwrap"; ?>" onchange="chck()" value="Yes"/>
+               		 <label for="giftwrap-signup">
+                    		<?php  echo $this->__('Gift Wrap : ');	echo $this->helper('checkout')->formatPrice($giftwrap_admin_price);	?>
+                      </label>
+   				</p>         
+        
+ 		</div>
+        <div> <?php echo $giftwrap_desc; ?></div>
+      </div>
+<?php endif; ?>
+
+<script type="text/javascript">
+function chck() 
+	{
+		if(document.getElementById('giftwrap-signup').checked) 
+		{
+			//alert(document.getElementById('giftwrap-signup').value); 
+			//alert(document.getElementById('giftwrap-signup').name);
+			checkout.update({'review': 1})
+		}
+		else
+		{
+			checkout.update({'review': 1})
+		}
+
+	}
+</script>

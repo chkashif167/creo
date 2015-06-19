@@ -1,0 +1,16 @@
+<config>
+<!-- ... -->
+  <modules>
+<!-- ... -->
+<!-- declare YourCompany_NewModule module -->
+    <Progos_InternationalRate>
+      <active>true</active>
+      <codePool>local</codePool>
+       <depends>
+                <Mage_Shipping />
+            </depends>
+    </Progos_InternationalRate>
+<!-- ... -->
+  </modules>
+<!-- ... -->
+</config>
