@@ -84,6 +84,11 @@
                         <sort_order>36</sort_order>
                         <action>pdpadmin/adminhtml_color/index</action>
                     </color>
+					<text module="pdp">
+                        <title>Quote Library</title>
+                        <sort_order>37</sort_order>
+                        <action>pdpadmin/adminhtml_text/index</action>
+                    </text>
                     <setting module="pdp">
                         <title>PDC Configuration</title>
                         <sort_order>40</sort_order>
@@ -130,6 +135,11 @@
 									<sort_order>36</sort_order>
 									<action>pdpadmin/adminhtml_color/index</action>
 								</color>
+								<text module="pdp">
+									<title>Quote Library</title>
+									<sort_order>37</sort_order>
+									<action>pdpadmin/adminhtml_text/index</action>
+								</text>
 								<setting module="pdp">
 									<title>PDC Configuration</title>
 									<sort_order>40</sort_order>

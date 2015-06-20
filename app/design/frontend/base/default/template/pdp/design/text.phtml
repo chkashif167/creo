@@ -23,3 +23,8 @@
 		<?php endforeach; ?>
 	</ul>
 </div>
+<?php if(Mage::getStoreConfig('pdp/design/is_quote_lib')){ ?>
+<div class="txt-library">
+	<button type="button" data-toggle="modal" data-target="#textLibrary"><?php echo $this->__('Choose Text from library'); ?> <span class="pdc-playlist-add"></span></button>
+</div>
+<?php } ?>

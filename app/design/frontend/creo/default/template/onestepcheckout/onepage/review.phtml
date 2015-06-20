@@ -1,0 +1,48 @@
+<div id="checkout-review" class="onestepcheckout_block">
+    <div class="op_block_title" id="review"><?php echo $this->__('Review Your Order') ?></div>
+    <div id="checkout-review-load">
+        <?php echo $this->getChildHtml('info') ?>
+    </div>
+    <div id="checkout-review-submit">    
+        <?php echo $this->getChildHtml('agreements') ?>
+        <div class="buttons-set" id="review-buttons-container">
+        
+<!-- Heard Us -->
+        
+	<?php 
+ 
+ 		/*$hearus_conditions =(Mage::getStoreConfig('onestepcheckout/heardus/enabled'));
+ 		$hearus_values_admin = (Mage::getStoreConfig('onestepcheckout/heardus/output'));
+ 
+	if ($hearus_conditions == 1) : ?> 
+    
+   	<div class="hearedus">
+
+        	<?php 
+					echo $this->__('How did you hear about us?'); 
+					
+			?>
+       <p>      
+           <?php $hearus_values_users =  explode(',',$hearus_values_admin) ?>
+         	  <select>
+				 	 <?php  for($i=0;$i<sizeof($hearus_values_users);$i++){ ?>
+						
+                          <option value="<?php echo $hearus_values_users[$i]; ?>"><?php echo $hearus_values_users[$i]; ?></option>
+					  
+					<?php }?>
+		  </select>
+   	  </p>
+   	  
+    </div>
+       
+    <?php endif; */ ?>   
+     
+<!-- Heard Us -->
+       
+        <button type="submit" title="<?php echo $this->__('Place Order Now') ?>" class="button btn-checkout" onclick="checkout.save(); return false;"><?php echo $this->__('Place Order Now') ?></button>
+            <span id="review-please-wait" style="display:none;float:right;">
+                <img src="<?php echo $this->getSkinUrl('images/onestepcheckout/opc-ajax-loader_onestepcheckout.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
+            </span>
+        </div>
+    </div>
+</div>

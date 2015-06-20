@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Progos_InternationalRate>
+      <version>0.1.0</version>
+    </Progos_InternationalRate>
+  </modules>
+ 
+  <global>
+    <models>
+      <progos_internationalrate>
+        <class>Progos_InternationalRate_Model</class>
+      </progos_internationalrate>
+    </models>
+    
+  </global>
+   <default>
+        <carriers>
+            <progos_internationalrate>
+                <active>1</active>
+                <sort_order>10</sort_order>
+                <model>progos_internationalrate/carrier</model>
+                <title>International Rate</title>
+                <sort_order>10</sort_order>
+                <sallowspecific>1</sallowspecific>
+            </progos_internationalrate>
+        </carriers>
+    </default>
+</config>
