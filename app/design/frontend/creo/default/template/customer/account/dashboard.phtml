@@ -54,56 +54,17 @@
 									</div>
 								</div>
 								<div id="tab2" style="display: none; width: 422px;" class="js-tab-hidden">
-									<h2>MY WISHLIST</h2>
+									
                             <?php echo $this->getChildHtml('wishlist'); ?> 
-									<div class="product-area">
-										<img class="alignleft" alt="" src="images/img17.jpg">
-										<div class="cart-area">
-											<h3>ADD TO CART</h3>
-											<span class="price">145 AED</span>
-											<div class="bottom-area">
-												<div class="qty-area">
-													<span class="up">up</span>   
-													<input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
-													<span class="down">down</span>
-												</div>
-												<a href="#" class="btn-cart">ADD TO CART</a>
-											</div>
-										</div>
-										<div class="product-details">
-											<h3>PRODUCT DETAILS</h3>
-											<strong class="title"><a href="#">CMYK T-shirt with Astronouts</a></strong>
-											<div class="options-area">
-												<div class="column color-area">
-													<h4>Color:</h4>
-													<ul>
-														<li><a href="#"></a></li>
-														<li class="active orange"><a href="#"></a></li>
-														<li class="yellow"><a href="#"></a></li>
-														<li class="green"><a href="#"></a></li>
-														<li class="blue"><a href="#"></a></li>
-													</ul>
-												</div>
-												<div class="column size-area">
-													<h4>Size:</h4>
-													<ul>
-														<li class="active"><a href="#">S</a></li>
-														<li><a href="#">M</a></li>
-														<li><a href="#">L</a></li>
-														<li><a href="#">XL</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
+									
 									<div class="btn-holder">
 										<a href="#"><span class="span1"><span class="span2">UPDATE WISHLIST</span></span></a>
 										<a href="#">ADD ALL TO CART</a>
 									</div>
 								</div>
 								<div id="tab3" style="display: none; width: 128px;" class="js-tab-hidden">
-									<h2>MY ORDERS</h2>
-									<p>You have placed no orders.</p>
+								<?php echo $this->getChildHtml('top') ?>
+                           
 								</div>
 							</div>
 						</div>

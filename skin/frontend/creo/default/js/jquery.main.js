@@ -996,9 +996,7 @@ function initTabs() {
 			$('header#header').removeClass('small-header');
 		}
 	});
-	
-	
-jQuery('.up').on('click',function(){
+	jQuery('.up').on('click',function(){
 jQuery(this).next('#qty').val(parseInt(jQuery(this).next('#qty').val())+1);
 });
 
@@ -1008,7 +1006,7 @@ if(jQuery(this).prev('#qty').val() > 1) {
 jQuery(this).prev('#qty').val(parseInt(jQuery(this).prev('#qty').val())-1);
 }
 });
-	
+
 });
 
 
@@ -1036,16 +1034,6 @@ $j(window).on('resize, load, ready', centerModals);
  */
 
 
-jQuery('.up').on('click',function(){
-jQuery(this).next('#qty').val(parseInt(jQuery(this).next('#qty').val())+1);
-});
-
-
-jQuery('.down').on('click',function(){
-if(jQuery(this).prev('#qty').val() > 1) {
-jQuery(this).prev('#qty').val(parseInt(jQuery(this).prev('#qty').val())-1);
-}
-});
 
 
  /*

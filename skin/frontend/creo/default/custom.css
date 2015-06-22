@@ -360,7 +360,10 @@
 .product-options p.required {
 	display: none;
 }
-.options-area .column.color-area a {
+.catalog-product-view .options-area .column.color-area a  {
+	background: none !important;
+}
+.quickview-index-view .options-area .column.color-area a  {
 	background: none !important;
 }
 #configurable_swatch_size .swatch-label {
@@ -513,6 +516,10 @@
 .catalog-product-view .text-area .qty-area {
 	width: 80px;
 }
+.quickview-index-view .column.color-area.qty-area {
+    width: 80px;
+}
+.quickview-index-view .options-area { min-height: 68px;}
 .checkout-cart-index .size-area_outer {
 	text-align: center;
 	width: 100%;

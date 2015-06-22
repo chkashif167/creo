@@ -4,7 +4,7 @@
 <default>
 
 <reference name="head">
- <action method="addCss"><stylesheet>custom.css</stylesheet></action>
+
  <action method="addCss"><stylesheet>jquery.mCustomScrollbar.css</stylesheet></action>
   <action method="setText"><text><![CDATA[<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed">]]></text></action>
   <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
@@ -13,7 +13,9 @@
    <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
    <action method="addCss"><stylesheet>style.css</stylesheet></action>
   <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+   <action method="addCss"><stylesheet>custom.css</stylesheet></action>
   <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
+   <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
   
 
 </reference>
@@ -140,7 +142,7 @@
             <action method="setTemplate"><template>page/1column.phtml</template></action>
  </reference>
  <reference name="head">
- <action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>
+
  </reference>
  
   
@@ -183,6 +185,15 @@
  
  </customer_account_index>
 
-
+  <customer_account translate="label">
+        <label>Customer My Account (All Pages)</label>
+        <!--remove name="catalog.compare.sidebar"/>
+        <remove name="sale.reorder.sidebar"/-->
+        <!-- Mage_Customer -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="addBodyClass"><class>customer-account</class></action>
+        </reference>
+		  </customer_account>
 
 </layout>

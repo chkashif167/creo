@@ -32,7 +32,7 @@
  */
 ?>
 <?php $_priceDisplay = ($this->helper('tax')->displayCartBothPrices()) ? 'display-both-prices' : 'display-single-price'; ?>
-
+ <?php echo $this->getMessagesBlock()->toHtml() ?> <?php echo $this->getChildHtml('form_before') ?>
 <div class="cart <?php echo $_priceDisplay; ?>">
   <div class="row">
     <div class="cart-top-area col col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -51,7 +51,7 @@
       <?php endif; ?>
     </div>
   </div>
-  <?php echo $this->getMessagesBlock()->toHtml() ?> <?php echo $this->getChildHtml('form_before') ?>
+ 
   <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
     <?php echo $this->getBlockHtml('formkey'); ?>
     <div class="row">
