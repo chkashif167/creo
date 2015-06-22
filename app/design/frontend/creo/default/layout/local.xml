@@ -106,9 +106,9 @@
    <catalog_product_view> 
   <reference name="product.info.options.wrapper.bottom"> 
    <action method="unsetChild"><name>product.info.sharing</name></action>
-	<action method="unsetChild"><name>product.info.addto</name></action>
+	<!-- <action method="unsetChild"><name>product.info.addto</name></action> -->
 	<remove name="product.clone_prices" />
-	<remove name="product.info.options.wrapper.bottom" /> 
+	<!-- <remove name="product.info.options.wrapper.bottom" />--> 
 	<remove name="product.info.additional" />
 	</reference>
 	

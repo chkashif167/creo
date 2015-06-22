@@ -1,9 +1,0 @@
-a:5:{i:0;s:203:"Error in file: "D:\wamp\www\creo\app\code\local\MST\Pdp\sql\pdp_setup\mysql4-upgrade-2.0.0-2.0.1.php" - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicata du champ '1' pour la clef 'PRIMARY'";i:1;s:898:"#0 D:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
-#1 D:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(437): Mage_Core_Model_Resource_Setup->_modifyResourceDb('upgrade', '2.0.0', '3.0.2')
-#2 D:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(320): Mage_Core_Model_Resource_Setup->_upgradeResourceDb('2.0.0', '3.0.2')
-#3 D:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
-#4 D:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
-#5 D:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
-#6 D:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
-#7 D:\wamp\www\creo\index.php(89): Mage::run('', 'store')
-#8 {main}";s:3:"url";s:70:"/index.php/admin/dashboard/index/key/f3ae290ff488a4bee81609a23e85e2f9/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

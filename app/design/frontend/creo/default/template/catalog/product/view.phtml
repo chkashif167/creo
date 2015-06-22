@@ -86,10 +86,13 @@
       <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
       <?php endif;?>
       </div>
+
+
+
       
      <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__(' Add to Cart'); ?>
-<?php if($_product->isSaleable()): ?>
+<?php /*if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
         <?php endif; ?>
@@ -104,7 +107,7 @@
 
       
     </div>
-<?php endif; ?>
+<?php endif;*/ ?>
 
      
       <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>

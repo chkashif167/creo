@@ -74,9 +74,22 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <dl class="item-options">
             <?php foreach ($_options as $_option) : ?>
             <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-            <dt><?php echo $this->escapeHtml($_option['label']) ?></dt>
+            <dt><?php echo $this->escapeHtml($_option['label']);
+
+                   if($this->escapeHtml($_option['label']) == "Size")
+                   {
+                  //echo $_item->getSku();exit;
+                     $select_array[$_item->getSku()] = $_option['value'];
+                     //echo $select_array[$_item->getSku()];exit;
+                   }
+                   
+
+            ?></dt>
             <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
-                <?php if (isset($_formatedOptionValue['full_view'])): ?>
+                <?php if (isset($_formatedOptionValue['full_view'])): 
+               
+                ?>
+
                 <div class="truncated_full_value">
                     <dl class="item-options">
                         <dt><?php echo $this->escapeHtml($_option['label']) ?></dt>
@@ -88,7 +101,6 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <?php endforeach; ?>
         </dl>
         <?php endif;?>
-
         <?php if ($messages = $this->getMessages()): ?>
         <?php foreach ($messages as $message): ?>
             <p class="item-msg <?php echo $message['type'] ?>">
@@ -218,16 +230,16 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 	  <?php 
        $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'size');
         if ($attribute->usesSource()) {
-            //echo $select_array[$_item->getSku()];
+           // echo $select_array[$_item->getSku()];
             $options = $attribute->getSource()->getAllOptions(false);
             $txt = "";
             foreach($options as $option)
             {
-                if($select_array[$_item->getSku()] == $option['label'])
+                if(strtolower($select_array[$_item->getSku()]) == strtolower($option['label']))
                     {
 
                         //$txt [] = '<span style="color:red;">'.$option['label'].'</span>';
-								$txt [] = '<li><a href="#">' .$option['label']. '</a></li>';
+								$txt [] = '<li class="active"><a href="#" >' .$option['label']. '</a></li>';
                     }else{
                         // $txt [] = $option['label'];
 								$txt [] = '<li><a href="#">' .$option['label']. '</a></li>';
