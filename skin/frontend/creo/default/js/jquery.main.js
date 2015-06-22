@@ -997,6 +997,7 @@ function initTabs() {
 		}
 	});
 	
+	
 jQuery('.up').on('click',function(){
 jQuery(this).next('#qty').val(parseInt(jQuery(this).next('#qty').val())+1);
 });
@@ -1007,8 +1008,7 @@ if(jQuery(this).prev('#qty').val() > 1) {
 jQuery(this).prev('#qty').val(parseInt(jQuery(this).prev('#qty').val())-1);
 }
 });
-
-
+	
 });
 
 
@@ -1016,6 +1016,7 @@ jQuery(this).prev('#qty').val(parseInt(jQuery(this).prev('#qty').val())-1);
  /*
  * jQuery Bootstrap Vertically Centered Modals
  */
+ 
 $j=jQuery.noConflict();
 function centerModals(){
   $j('.modal').each(function(i){
@@ -1028,6 +1029,23 @@ function centerModals(){
 }
 $j('.modal').on('show.bs.modal', centerModals);
 $j(window).on('resize, load, ready', centerModals);
+
+
+/*
+ * qty plugin
+ */
+
+
+jQuery('.up').on('click',function(){
+jQuery(this).next('#qty').val(parseInt(jQuery(this).next('#qty').val())+1);
+});
+
+
+jQuery('.down').on('click',function(){
+if(jQuery(this).prev('#qty').val() > 1) {
+jQuery(this).prev('#qty').val(parseInt(jQuery(this).prev('#qty').val())-1);
+}
+});
 
 
  /*
