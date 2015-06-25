@@ -27,14 +27,23 @@
 /* @var Mage_Wishlist_Model_Item $item */
 $item = $this->getItem();
 $product = $item->getProduct();
-?>
-<h3 class="product-name">
-    <a href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a>
-</h3>
 
-<div class="wishlist-sku">
+
+?>
+<div class="product-details">
+    <h3>PRODUCT DETAILS</h3>
+ <strong class="title">
+    <a href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a>
+ </strong>
+
+
+
+
+<!--<div class="wishlist-sku">
     <span><?php echo $this->__('SKU'); ?> <?php echo $this->escapeHtml($product->getSku()) ?></span>
-</div>
+</div> -->
+
+
 
 <!-- <div class="description std">
     <div class="inner"> -->
@@ -42,12 +51,16 @@ $product = $item->getProduct();
 <!--     </div>
 </div> -->
 
-<textarea name="description[<?php echo $item->getWishlistItemId() ?>]" rows="3" cols="5" title="<?php echo $this->__('Comment') ?>" placeholder="<?php echo $this->helper('wishlist')->defaultCommentString(); ?>"><?php echo ($this->escapeHtml($item->getDescription() ? $item->getDescription() : '')) ?></textarea>
+<!--<textarea name="description[<?php echo $item->getWishlistItemId() ?>]" rows="3" cols="5" title="<?php echo $this->__('Comment') ?>" placeholder="<?php echo $this->helper('wishlist')->defaultCommentString(); ?>"><?php echo ($this->escapeHtml($item->getDescription() ? $item->getDescription() : '')) ?></textarea> -->
+<?php ?>
 
 <?php if($this->getSortedChildren()): ?>
     <div class="item-manage">
-    <?php foreach($this->getSortedChildren() as $childName):?>
+    <?php foreach($this->getSortedChildren() as $childName):
+     //print_r($childName);
+    ?>
         <?php echo $this->getChildHtml($childName, false);?>
     <?php endforeach;?>
     </div>
 <?php endif; ?>
+</div>

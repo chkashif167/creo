@@ -2066,6 +2066,15 @@ input.email {
 	-webkit-transform: skewX(-15deg);
 }
 .options-area .column.color-area li.orange a{background: #ef8d0d;}
+.options-area .column.color-area li.red a{background: #FF0000;}
+.options-area .column.color-area li.ripe_lemon a{background: #F4D81C;}
+.options-area .column.color-area li.gamboge a{background: #E49B0F;}
+.options-area .column.color-area li.pistachio a{background: #93c572;}
+.options-area .column.color-area li.robins_egg_blue a{background: #00CCCC;}
+.options-area .column.color-area li.denim a{background: #1560BD;}
+.options-area .column.color-area li.blue_gem a{background: #2C0E8C;}
+.options-area .column.color-area li.purple a{background: #660099;}
+.options-area .column.color-area li.shockingpink a{background: #FC0FC0;}
 .options-area .column.color-area li.yellow a{background: #f2df09;}
 .options-area .column.color-area li.green a{background: #42e317;}
 .options-area .column.color-area li.blue a{background: #19cad0;}
@@ -2938,6 +2947,8 @@ input.email {
 .tab-content2 .product-details{
 	overflow: hidden;
 	margin: 0 0 10px;
+	width: 67%;
+	float: left;
 	border-width: 0 1px 2px;
 	border-style: solid;
 	border-color: #d7d7d7 #eee;
@@ -2969,8 +2980,8 @@ input.email {
 }
 .tab-content2 .cart-area{
 	float: right;
-	width: 312px;
-	margin: 0 0 0 16px;
+	width: 23%;
+	margin: 0 0 7px 16px;
 	border-width: 0 1px 2px;
 	border-style: solid;
 	border-color: #d7d7d7 #eee;
@@ -3190,6 +3201,217 @@ input.email {
 }
 .tab-content2 .column-content p{margin: 0 0 5px;}
 .tab-content2 p{margin: 0 0 10px;}
+#main h2{
+	margin: 0 0 10px;
+	text-transform: uppercase;
+	color: #222;
+	font:34px/36px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.form-holder{
+	overflow: hidden;
+	border-top: 5px solid #eee;
+	padding: 35px 16px;
+	color: #000;
+	font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.form-holder .form-frame{
+	float: left;
+	width: 49%;
+	margin: 0 2% 0 0;
+}
+.form-holder .login-form{
+	width: 100%;
+	display: block;
+}
+.form-holder h3{
+	padding: 0 0 5px;
+	margin: 0 0 5px;
+	border-bottom: 2px solid #eee;
+	text-transform: uppercase;
+	color: #000;
+	font:17px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.form-holder p{margin: 0 0 12px;}
+.form-holder label{
+	display: block;
+	padding: 0;
+	margin: 0 0 3px;
+	text-transform: capitalize;
+	color: #000;
+	font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.form-holder .checkbox-holder{
+	overflow: hidden;
+	margin: 0 0 5px;
+}
+.form-holder .checkbox-holder input[type="checkbox"]{
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+	height: 10px;
+	width: 10px;
+	background: #ddd;
+}
+.form-holder .checkbox-holder label{
+	float: left;
+	margin: 0;
+	font:10px/12px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.form-holder .red{color: #ff0000;}
+.email-form input.email + .red,
+.checkbox-holder + .red{font-size: 9px;}
+.email-form input[type="text"],
+.email-form input.email{margin: 0;}
+.form-holder .btn-holder {
+	overflow: hidden;
+	text-align: center;
+}
+.form-holder .login-form .btn-holder{margin: 40px 0 25px;}
+.form-holder .btn-holder button {
+	display: inline-block;
+	vertical-align: top;
+	padding: 3px;
+	border: 2px solid #000;
+	background: #000;
+	text-transform: uppercase;
+	color: #fff;
+	position: relative;
+	font:bold 12px/16px Arial, Helvetica, sans-serif;
+	white-space: nowrap;
+	width: 30%;
+}
+.form-holder .btn-holder button:before {
+	position: absolute;
+	top: -4px;
+	left: -22px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 42px 20px;
+	border-color: transparent transparent #000;
+	content: '';
+}
+.form-holder .btn-holder button:first-child:before { display: none; }
+.form-holder .btn-holder button:hover:before { border-color: transparent transparent #f16167; }
+.form-holder .btn-holder button:hover {
+	opacity: 0.8;
+	background: #f16167;
+	color: #000;
+	border-color: #f16167;
+	text-decoration: none;
+}
+.form-holder .btn-holder button:first-child {
+	margin: 0 2px 0 0;
+	color: #000;
+	background: #fff;
+	border-width: 0 0 0 2px;
+	border-style: solid;
+	border-color: #959595;
+	overflow: hidden;
+	padding: 0;
+	width: 68%;
+}
+.form-holder .btn-holder button:first-child .span1 {
+	transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg);
+	-ms-transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
+	border: 2px solid #959595;
+	padding: 3px;
+	display: block;
+	width: 100%;
+	margin-left: -12px;
+}
+.form-holder .btn-holder button:first-child .span2 {
+	display: inline-block;
+	transform: skewX(25deg);
+	-moz-transform: skewX(25deg);
+	-webkit-transform: skewX(25deg);
+	-ms-transform: skewX(25deg);
+	padding: 0 15px;
+}
+.form-holder .btn-holder button:first-child:hover .span1 {
+	background: #f16167;
+	border-color: #f16167;
+}
+.form-holder .btn-holder button:first-child:hover {
+	background: none;
+	color: #000;
+	opacity: 1;
+	border-color: #f16167;
+}
+.form-holder .submit-holder{
+	overflow: hidden;
+}
+.form-holder .submit-holder button {
+	float: right;
+	padding: 3px;
+	border: 2px solid #000;
+	background: #000;
+	text-transform: uppercase;
+	color: #fff;
+	position: relative;
+	font:bold 12px/16px Arial, Helvetica, sans-serif;
+	white-space: nowrap;
+	width: 30%;
+}
+.form-holder .submit-holder button:before {
+	position: absolute;
+	top: -4px;
+	left: -22px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 42px 20px;
+	border-color: transparent transparent #000;
+	content: '';
+}
+.form-holder .submit-holder button:hover:before { border-color: transparent transparent #f16167; }
+.form-holder .submit-holder button:hover {
+	opacity: 0.8;
+	background: #f16167;
+	color: #000;
+	border-color: #f16167;
+	text-decoration: none;
+}
+.signup-form{
+	/*float: right;*/
+	width: 91%;
+	margin: 0;
+}
+.signup-form .row{
+	overflow: hidden;
+	margin: 0 0 10px;
+}
+.signup-form .row .col{
+	float: left;
+	width: 49%;
+}
+.signup-form .row .col:first-child{margin: 0 2% 0 0;}
+.signup-form .row input{margin: 0;}
+.signup-form input[type="submit"]{
+	margin: 10px 0;
+	padding: 2px 5px;
+	display: block;
+	width: 100%;
+	height: 26px;
+	border: 1px solid #959595;
+	color: #000;
+	background: none;
+	cursor: pointer;
+	font:bold 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.signup-form input[type="submit"]:hover{
+	background: #f16167;
+	border-color: #f16167;
+}
+.tab-content2 .cart-table-area td:first-child{
+	padding: 0;
+	text-align: center;
+}
+.tab-content2 .cart-table-area table{border: none;}
+.tab-content2 .cart-table-area a{text-decoration: underline;}
+.tab-content2 .cart-table-area a:hover{text-decoration: none;}
 
 
 
@@ -3306,4 +3528,23 @@ input.email {
 		margin-bottom: 0;
 		margin-top: 0;
 	}
+}
+/********* Add Custom Css**********************/
+.validation-advice
+{
+	color:red;
+}
+em{ color:red;}
+.input-box select
+{
+	 border-color: #e6e6e6;
+    bottom: 37px;
+    color: #222222;
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 12px;
+    height: 25px;
+    left: 68px;
+    position: relative;
+    top: -25px;
+    width: 232px;
 }

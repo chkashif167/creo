@@ -26,20 +26,23 @@
 ?>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 <?php $_orders = $this->getOrders(); ?>
-<div class="page-title">
-    <h1><?php echo $this->__('My Orders') ?></h1>
-</div>
+<div class="row">
+<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div id="tab3">
+    <h2><?php echo $this->__('My Orders') ?></h2>
+
 <?php echo $this->getChildHtml('info');?>
-<?php echo $this->getPagerHtml(); ?>
+<?php //echo $this->getPagerHtml(); ?>
 <?php if($_orders->getSize()): ?>
+    <div class="cart-table-area">
 <table class="data-table orders" id="my-orders-table">
-    <col width="1" />
+   <!-- <col width="1" />
     <col width="1" />
     <col />
     <col width="1" />
     <col width="1" />
-    <col width="1" />
-    <thead>
+    <col width="1" /> -->
+    
         <tr>
             <th class="number"><?php echo $this->__('Order #') ?></th>
             <th class="date"><?php echo $this->__('Date') ?></th>
@@ -48,8 +51,7 @@
             <th class="status"><span class="nobr"><?php echo $this->__('Order Status') ?></span></th>
             <th class="view">&nbsp;</th>
         </tr>
-    </thead>
-    <tbody>
+   
         <?php $_odd = ''; ?>
         <?php foreach ($_orders as $_order): ?>
         <tr>
@@ -68,10 +70,14 @@
             </td>
         </tr>
         <?php endforeach; ?>
-    </tbody>
+   
 </table>
+</div>
 <script type="text/javascript">decorateTable('my-orders-table');</script>
 <?php echo $this->getPagerHtml(); ?>
 <?php else: ?>
     <p><?php echo $this->__('You have placed no orders.'); ?></p>
 <?php endif ?>
+</div>
+</div>
+</div>

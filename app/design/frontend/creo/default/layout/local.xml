@@ -149,20 +149,21 @@
 	 <reference name="my.account.wrapper">
 	 </reference>
 	 <reference name="customer_account_dashboard">
-  <block type="wishlist/customer_wishlist" name="customer.wishlist" as="wishlist" template="wishlist/view.phtml">
+  <!--<block type="wishlist/customer_wishlist" name="customer.wishlist" as="wishlist" template="wishlist/view.phtml">
                 <action method="setTitle" translate="title">
                     <title>My Wishlist</title>
                 </action>
                 <block type="wishlist/customer_wishlist_items" name="customer.wishlist.items" as="items" template="wishlist/item/list.phtml">
                     <block type="wishlist/customer_wishlist_item_column_image" name="customer.wishlist.item.image" template="wishlist/item/column/image.phtml" />
                     <block type="wishlist/customer_wishlist_item_column_comment" name="customer.wishlist.item.info" template="wishlist/item/column/info.phtml">
-                        <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
+                       <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                        <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" /> 
                     </block>
                     <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.quantity" template="wishlist/item/column/quantity.phtml">
                         <action method="setTitle" translate="title">
                             <title>Qty</title>
                         </action>
-                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" /> 
                     </block>
                     <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.price" template="wishlist/item/column/price.phtml">
                         <action method="setTitle" translate="title">
@@ -180,7 +181,7 @@
                     <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.toCart" template="wishlist/button/tocart.phtml" />
                     <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
                 </block>
-            </block>
+            </block>-->
     </reference>
  
  </customer_account_index>

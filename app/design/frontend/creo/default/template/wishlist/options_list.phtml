@@ -26,13 +26,84 @@
 /* @var $this Mage_Wishlist_Block_Customer_Wishlist_Item_Options */
 ?>
 
+
+
+ <div class="options-area">
 <?php $options = $this->getOptionList(); ?>
 <?php if ($options): ?>
-<div class="truncated">
+<!--<div class="truncated">
   <div class="truncated_full_value">
-      <div class="item-options">
-          <p><?php echo $this->__('Options Details'); ?></p>
-          <dl>
+      <div class="item-options"> -->
+          <?php foreach ($options as $option): 
+
+          //print_r($option['value']);
+          if($option['label'] == "Color")
+          {  
+                $color = $option['value'];
+
+          }else  if($option['label'] == "Size")
+          { 
+            $size = $option['value'];
+          }
+      ?>
+        <?php endforeach?>
+
+        <div class="column color-area">
+        <h4>Color:</h4>
+        <ul>
+         <?php 
+       $attribute_color = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'color');
+        if ($attribute_color->usesSource()) {
+           // echo $select_array[$_item->getSku()];
+            $options_color = $attribute_color->getSource()->getAllOptions(false);
+            $txt = "";
+            foreach($options_color as $option_row)
+            {
+                
+                if(strtolower($color) == strtolower($option_row['label']))
+                    {
+                $txt [] = '<li class="active '.strtolower($option_row['label']).'"><a href="#" >' .$option_row['label']. '</a></li>';
+                    }else{
+                $txt [] = '<li class="'.str_replace(" ","_",strtolower($option_row['label'])).'"><a href="#">' .$option_row['label']. '</a></li>';
+                    }
+            }
+        }
+        echo implode(' ',$txt);
+     ?> 
+        </ul>
+      </div>
+
+       <div class="column size-area">
+        <h4>Size:</h4>
+        <ul>
+      <?php 
+      //echo $size;
+
+       $attribute_size = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'size');
+        if ($attribute_size->usesSource()) {
+           // echo $select_array[$_item->getSku()];
+            $options_size = $attribute_size->getSource()->getAllOptions(false);
+            $txt = "";
+            foreach($options_size as $option_size_row)
+            {
+
+                if(strtolower($size) == strtolower($option_size_row['label']))
+                    {
+                $txt [] = '<li class="active"><a href="#" >' .$option_size_row['label']. '</a></li>';
+                    }else{
+                $txt [] = '<li><a href="#">' .$option_size_row['label']. '</a></li>';
+                    }
+            }
+        }
+        echo implode(' ',$txt);
+     ?> 
+   </ul>
+   </div>
+            
+
+      
+        <!--  <p><?php echo $this->__('Options Details'); ?></p>-- >
+         <!-- <dl>
               <?php foreach ($options as $option): ?>
               <dt><?php echo $this->escapeHtml($option['label']) ?></dt>
               <dd>
@@ -43,9 +114,29 @@
                   <?php endif; ?>
               </dd>
               <?php endforeach; ?>
-          </dl>
-      </div>
+          </dl>-->
+      <!--</div> 
   </div>
-  <a href="#" onclick="return false;" class="details"><?php echo $this->__('View Details') ?></a>
-</div>
+  <a href="#" onclick="return false;" class="details"><?php echo $this->__('View Details') ?></a> 
+</div>-->
 <?php endif ?>
+</div>
+ <!--<div class="column color-area">
+        <h4>Color:</h4>
+        <ul>
+          <li><a href="#"></a></li>
+          <li class="active orange"><a href="#"></a></li>
+          <li class="yellow"><a href="#"></a></li>
+          <li class="green"><a href="#"></a></li>
+          <li class="blue"><a href="#"></a></li>
+        </ul>
+      </div>
+     
+        <ul>
+          <li class="active"><a href="#">S</a></li>
+          <li><a href="#">M</a></li>
+          <li><a href="#">L</a></li>
+          <li><a href="#">XL</a></li>
+        </ul>
+      </div>
+</div> -->
