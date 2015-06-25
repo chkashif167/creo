@@ -1216,12 +1216,12 @@ input[type="password"],
 input.email {
 	display: block;
 	background: none;
-	border: 1px solid #ededed;
+	border: 1px solid #ddd;
 	width: 100%;
-	height: 50px;
-	line-height: 40px;
-	margin: 0 0 12px;
-	padding: 5px 10px;
+	height: 28px;
+	line-height: 20px;
+	margin: 0 0 10px;
+	padding: 4px 10px;
 	text-align: left;
 }
 input[type="submit"] {
@@ -1258,12 +1258,12 @@ input[type="submit"]:hover {
 	margin: 0;
 	padding: 0;
 }
-.login-form {
+.modal-holder .login-form {
 	display: block;
 	margin: 0;
 	padding: 0;
 }
-.login-form label {
+.modal-holder .login-form label {
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -1271,26 +1271,19 @@ input[type="submit"]:hover {
 	color: #888;
 	font: 16px/26px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
-.login-form .error {
+.modal-holder .login-form .error {
 	margin: 0 0 20px;
 	display: block;
 	color: #f71616;
 	font: 15px/26px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
-.login-form .submit-holder { overflow: hidden; }
-.login-form .submit-holder a {
+.modal-holder .login-form .submit-holder { overflow: hidden; }
+.modal-holder .login-form .submit-holder a {
 	float: left;
 	color: #888;
 	line-height: 40px;
 }
-input[type="text"],
-input[type="password"],
-input.email {
-	height: 40px;
-	line-height: 30px;
-	margin: 0 0 12px;
-}
-.login-form .submit-holder input[type="submit"] {
+.modal-holder .login-form .submit-holder input[type="submit"] {
 	float: right;
 	width: 99px;
 	height: 40px;
@@ -3377,6 +3370,7 @@ input.email {
 .signup-form{
 	/*float: right;*/
 	width: 91%;
+
 	margin: 0;
 }
 .signup-form .row{
@@ -3412,6 +3406,12 @@ input.email {
 .tab-content2 .cart-table-area table{border: none;}
 .tab-content2 .cart-table-area a{text-decoration: underline;}
 .tab-content2 .cart-table-area a:hover{text-decoration: none;}
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> 1ef8bfc6ed1735b45310e636c6494dffa654b437
 
 
 

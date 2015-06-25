@@ -1,10 +1,14 @@
 <div id="payment-method" class="onestepcheckout_block">
-    <div class="op_block_title" id="payment"><?php echo $this->__('Payment Method') ?><sup>*</sup></div>
-    <div class="tool-tip" id="payment-tool-tip" style="display:none;">
-        <div class="btn-close"><a href="#" id="payment-tool-tip-close" title="<?php echo $this->__('Close') ?>"><?php echo $this->__('Close') ?></a></div>
-        <div class="tool-tip-content"><img src="<?php echo $this->getSkinUrl('images/cvv.gif') ?>" alt="<?php echo $this->__('Card Verification Number Visual Reference') ?>" title="<?php echo $this->__('Card Verification Number Visual Reference') ?>" /></div>
-    </div>
-    <script type="text/javascript">
+  <div class="page-header checkout-form-headings paymentmethod-heading">
+    <h1>
+      <div class="skewed"><span class="re-skewed"><?php echo $this->__('3. payment') ?></span></div>
+    </h1>
+  </div>
+  <div class="tool-tip" id="payment-tool-tip" style="display:none;">
+    <div class="btn-close"><a href="#" id="payment-tool-tip-close" title="<?php echo $this->__('Close') ?>"><?php echo $this->__('Close') ?></a></div>
+    <div class="tool-tip-content"><img src="<?php echo $this->getSkinUrl('images/cvv.gif') ?>" alt="<?php echo $this->__('Card Verification Number Visual Reference') ?>" title="<?php echo $this->__('Card Verification Number Visual Reference') ?>" /></div>
+  </div>
+  <script type="text/javascript">
     //<![CDATA[
         function toggleToolTip(event){
             if($('payment-tool-tip')){
@@ -22,12 +26,10 @@
         var payment = new Payment('payment-method');
     //]]>
     </script>
-    <div id="checkout-payment-method-load">
-    <?php echo $this->getChildHtml('methods') ?>
-    </div>
-    <script type="text/javascript">
+  <div id="checkout-payment-method-load"> <?php echo $this->getChildHtml('methods') ?> </div>
+  <script type="text/javascript">
     //<![CDATA[
         payment.currentMethod = "<?php echo $this->getChild('methods')->getSelectedMethodCode() ?>";
     //]]>
-    </script>
+    </script> 
 </div>

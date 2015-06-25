@@ -59,3 +59,5 @@
 <div class="total"> <strong class="title"><?php echo $this->getTotal()->getTitle() ?></strong> 
 <span class="price"><?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?></span> </div>
 <?php endif;?>
+</div>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('onestepcheckout/onepage/coupon.phtml')->toHtml(); ?>

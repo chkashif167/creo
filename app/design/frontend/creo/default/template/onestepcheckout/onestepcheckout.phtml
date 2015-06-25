@@ -1,30 +1,28 @@
-<div class="page-title">
-    <h1 class='h1_opc'><?php echo Mage::getStoreConfig('onestepcheckout/general/title') ?></h1>
-    <!-- Fill in the fields below to complete your purchase! -->
-  
-  <!-- Title description-->
-  <p class="title-description"> <?php echo Mage::getStoreConfig('onestepcheckout/general/description') ?> </p>
-  <!-- Title description-->
-  
-    <?php if (!Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
-    <p class="onestepcheckout_loginarea">
-        <a href="javascript:void(0)" class="onestepcheckout_loginlink" onclick='open_login();'>
+
+<div class="checkout-heading clearfix">
+  <div class="cart-top-area">
+    <h2>CHECKOUT</h2>
+  </div>
+</div>
+<?php //echo Mage::getStoreConfig('onestepcheckout/general/title') ?>
+<!-- Fill in the fields below to complete your purchase! --> 
+
+<!-- Title description--> <?php echo Mage::getStoreConfig('onestepcheckout/general/description') ?> 
+<!-- Title description-->
+
+<?php if (!Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
+<?php /*?> <a href="javascript:void(0)" class="onestepcheckout_loginlink" onclick='open_login();'>
             <?php echo $this->__('Already registered? Click here to login') ?>
-        </a>
-    </p>
-    
-	<?php 
+        </a><?php */?>
+<?php 
 	
-		echo $this->getChildHtml('customer.login');
-		echo $this->getChildHtml('customer.forgot');
+		//echo $this->getChildHtml('customer.login');
+		//echo $this->getChildHtml('customer.forgot');
 	
     }    
     ?>
-</div>
 <div class='ptdivline'></div>
-
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-
 <?php
 $seq_http	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on');
 
@@ -37,55 +35,26 @@ $mod_version	= Mage::helper('onestepcheckout')->getOPCVersion();
 	
 	var mag_ver	= '<?php echo $mag_version;?>';
 	var mod_ver	= '<?php echo $mod_version;?>';
-</script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/onestepcheckout.js') ?>"></script>
-
+</script> 
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/onestepcheckout.js') ?>"></script> 
 <script type="text/javascript">countryRegions = <?php echo $this->helper('directory')->getRegionJson() ?></script>
-
-<form action="" id="onestepcheckout_orderform">
-<div class="col3-set onestepcheckout_datafields">
-    <div class="one_step1">
-        <?php echo $this->getChildHtml('billing.address') ?>
-        <?php echo $this->getChildHtml('shipping.address') ?>
-    </div>
-
-    <div class="one_step1">
-        <?php echo $this->getChildHtml('shipping.method') ?>
-        <?php echo $this->getChildHtml('payment.method') ?>
-         <div id="checkout-coupon-discount-load">
-            <?php echo $this->getChildHtml('coupon') ?>
-        </div>
-
-        <?php if (Mage::getStoreConfig('onestepcheckout/general/comment')) : ?>
-		<div class="op_block_title">
-	    	<?php echo $this->helper('sales')->__('Comment') ?>
-	    </div>        
-        <div class="form_fields">
-            <div class="full">
-                <div class="data_area" id='comment-block'>
-                    <textarea name="order-comment" id="order-comment"><?php echo trim(Mage::getSingleton('customer/session')->getOrderCustomerComment()) ?></textarea>
-                </div>
-            </div>
-        </div>
-        <?php endif; ?>
-		<?php if (Mage::helper('onestepcheckout')->isSubscribeNewAllowed()) : ?>
-            <p class="newsletter">
-                <input type="checkbox" id="newsletter-signup" name="newsletter" value="1" title="<?php echo Mage::helper('newsletter')->__('Sign up for our newsletter') ?>" class="checkbox" />
-                <label for="newsletter-signup">
-                    <?php echo Mage::helper('newsletter')->__('Sign up for our newsletter') ?>
-                </label>
-            </p>
-        <?php endif; ?>
-    </div>
-
-    <div class="one_step1">
-        <?php echo $this->getChildHtml('review') ?>
-    </div>
-</div>
- 
+<form action="" id="onestepcheckout_orderform" class="form-inline checkout-form">
+  <?php echo $this->getChildHtml('billing.address') ?> <?php echo $this->getChildHtml('shipping.address') ?> <?php echo $this->getChildHtml('shipping.method') ?> <?php echo $this->getChildHtml('payment.method') ?>
+  <?php if (Mage::getStoreConfig('onestepcheckout/general/comment')) : ?>
+  <?php echo $this->helper('sales')->__('Comment') ?>
+  <textarea name="order-comment" id="order-comment"><?php echo trim(Mage::getSingleton('customer/session')->getOrderCustomerComment()) ?></textarea>
+  <?php endif; ?>
+  <div class="textfix">
+  <?php if (Mage::helper('onestepcheckout')->isSubscribeNewAllowed()) : ?>
+  <input type="checkbox" id="newsletter-signup" name="newsletter" value="1" title="<?php echo Mage::helper('newsletter')->__('Sign up for our newsletter') ?>" class="checkbox" />
+  <label for="newsletter-signup"> 
+  <?php echo Mage::helper('newsletter')->__('Sign up for our newsletter') ?> </label>
+  <?php endif; ?>
+  </div>
+  
+  <?php echo $this->getChildHtml('review') ?> 
+  <?php //echo $this->getChildHtml('coupon') ?>
 </form>
-
-
 <script type="text/javascript">
 //<![CDATA[
     var checkout = new COGOPC('onestepcheckout_orderform', {

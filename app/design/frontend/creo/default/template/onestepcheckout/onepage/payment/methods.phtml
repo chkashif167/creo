@@ -1,23 +1,22 @@
+<h1 class="select-paymt-methd">please select a payment method</h1>
 <?php if (!$methods = $this->getMethods()) : ?>
 <p><?php echo $this->helper('checkout')->__('Sorry, no quotes are available for this order at this time.') ?></p>
 <?php else : ?>
-<dl class="sp-methods">
 <?php foreach ($this->getMethods() as $_method): $_code = $_method->getCode() ?>
-    <dt>
-    <?php if( sizeof($this->getMethods()) > 1 ): ?>
-        <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" onclick="payment.switchMethod('<?php echo $_code ?>')"<?php if($this->getSelectedMethodCode()==$_code): ?> checked="checked"<?php endif; ?> class="radio" />
-    <?php else: ?>
-        <span class="no-display"><input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" class="radio" /></span>
-    <?php endif; ?>
-        <label for="p_method_<?php echo $_code ?>"><?php echo $this->htmlEscape($_method->getTitle()) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
-    </dt>
-    <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
-    <dd>
-        <?php echo $html; ?>
-    </dd>
-    <?php endif; ?>
+<?php if( sizeof($this->getMethods()) > 1 ): ?>
+<input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" onclick="payment.switchMethod('<?php echo $_code ?>')"<?php if($this->getSelectedMethodCode()==$_code): ?> checked="checked"<?php endif; ?> class=" paymentradiobutton  radio" />
+<?php else: ?>
+<span class="no-display paymentradiobutton">
+<input class="paymentradiobutton" id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" class="radio" />
+</span>
+<?php endif; ?>
+<label class="paymentradiobuttonlabel" for="p_method_<?php echo $_code ?>"><?php echo $this->htmlEscape($_method->getTitle()) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
+<div class="clearfix"> </div>
+<?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
+<?php echo $html; ?>
+<?php endif; ?>
+<div class="option-alternate"><strong>OR</strong></div>
 <?php endforeach; ?>
-</dl>
 <script type="text/javascript">
 //<![CDATA[
 <?php echo $this->getChildChildHtml('scripts'); ?>
