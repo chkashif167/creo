@@ -137,6 +137,12 @@ $product = $item->getProduct();
  <?php echo $this->__('This Wishlist has no Items');?>
       <?php endif; ?>
 
+      <div class="btn-holder">
+                 
+                    <a href="javascript:void()" ><span class="span1"><span class="span2">UPDATE WISHLIST</span></span></a>
+                    <a href="javascipt:void(0)" onclick="addAllWItemsToCart()">ADD ALL TO CART</a>
+                  </div>
+
 <?php foreach ($columns as $column): ?>
 <?php echo $column->getAdditionalHtml();?>
 <?php endforeach; ?>
