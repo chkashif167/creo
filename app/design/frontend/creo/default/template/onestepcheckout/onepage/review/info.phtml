@@ -1,7 +1,7 @@
 <?php echo $this->getChildHtml('items_before'); ?>
-<div id="checkout-review-table-wrapper">
-    <table class="order-products-table" id="checkout-review-table">
-        <col />
+<div class="cart-table-area checkout-table">
+    <table class="order-products-table" id="checkout-review-table" cellpadding="10" cellspacing="10">
+        <?php /*?><col />
         <col width="1" />
         <col width="1" />
         <?php
@@ -10,8 +10,8 @@
         	$colspan	= 2; 
         ?>
         <col width="1" />
-        <?php endif; ?>        
-        <thead>
+        <?php endif; ?>      <?php */?>  
+       <?php /*?> <thead>
             <tr>
             
                 <th><?php echo $this->__('Product Name') ?></th>
@@ -19,14 +19,26 @@
                 <th class="a-center"><?php echo $this->__('Qty') ?></th>
                 <th class="a-right" colspan="<?php echo $colspan ?>"><?php echo $this->__('Subtotal') ?></th>
             </tr>
-        </thead>
-        <?php echo $this->getChildHtml('totals'); ?>
+        </thead><?php */?>
+       
         <tbody>
         <?php foreach($this->getItems() as $_item): ?>
             <?php echo $this->getItemHtml($_item)?>
         <?php endforeach ?>
         </tbody>
     </table>
+    
+    
+    
+      <div class="cart-btn-area checkout-payment-total clearfix">
+        <div class="btn-holder"> 
+         <?php echo $this->getChildHtml('totals'); ?>
+        
+        </div>
+      </div>
+    
+    
+    
 </div>
 <script type="text/javascript">
 //<![CDATA[
