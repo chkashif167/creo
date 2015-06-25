@@ -31,12 +31,13 @@
  * @see Mage_Customer_Block_Form_Login
  */
 ?>
-<div class="account-login">
-    <div class="page-title">
-        <h1><?php echo $this->__('Login or Create an Account') ?></h1>
-    </div>
+<div class="row">
+<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <h2><?php echo $this->__('Login or Create an Account') ?></h2>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php /* Extensions placeholder */ ?>
+ <div class="form-holder">
+    <div class="form-frame">   
     <?php echo $this->getChildHtml('customer.form.login.extra')?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
         <?php echo $this->getBlockHtml('formkey'); ?>
@@ -84,9 +85,12 @@
             </div>
         </div>
     </form>
+</div>
+</div>
     <script type="text/javascript">
     //<![CDATA[
         var dataForm = new VarienForm('login-form', true);
     //]]>
     </script>
 </div>
+ </div>

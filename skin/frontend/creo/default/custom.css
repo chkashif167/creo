@@ -752,3 +752,109 @@
     height: auto;
     padding: 10px 100px;
     width: auto; float: right;}
+.cate2.cate:nth-child(2) { }
+.cate2.cate:nth-child(2) a { border: none; background: none; }
+.cate2.cate:nth-child(2) a:hover { background: none; }
+.cate2.cate:nth-child(3) { text-transform: uppercase;}
+.cate1, .currently, .actions, .cate { float: left !important;}
+.filtersol { padding: 0; margin: 0;}
+.cate-links .actions { margin: 0 20px;}
+
+
+
+
+
+/* -------------------------------------------- *
+ * Messages
+ */
+.success {
+  color: #11b400;
+}
+
+.error {
+  color: #df280a;
+  font-weight: bold;
+}
+
+.notice {
+  color: #e26703;
+  font-weight: bold;
+}
+
+/* -------------------------------------------- *
+ * Messages
+ */
+.messages {
+  margin-bottom: 10px;
+  padding: 0;
+  margin: 0;}
+.messages ul { padding: 0; margin: 0;}
+
+.messages li li {
+  position: relative;
+  margin-bottom: 5px;
+  padding: 7px 10px 7px 20px;
+  background: #f4f4f4;
+  font-size: 15px;
+}
+
+.messages li li:before {
+  top: 50%;
+  left: 0;
+  margin-top: -6px;
+}
+
+.messages .error-msg li {
+  color: black;
+  border-left: 5px solid #df280a;
+  background-color: #faebe7;
+}
+
+.messages .error-msg li:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #df280a;
+  border-right: none;
+}
+
+.messages .notice-msg li {
+  color: black;
+  border-left: 5px solid #e26703;
+  background-color: #f9ebe6;
+}
+
+.messages .notice-msg li:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #e26703;
+  border-right: none;
+}
+
+.messages .success-msg li {
+  color: black;
+  border-left: 5px solid #11b400;
+  background-color: #eff5ea;
+}
+
+.messages .success-msg li:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #11b400;
+  border-right: none;
+}
+

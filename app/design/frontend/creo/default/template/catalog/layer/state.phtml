@@ -39,8 +39,8 @@ $_renderers = $this->getParentBlock()->getChild('state_renderers')->getSortedChi
 ?>
 <?php if(!empty($_filters)): ?>
 <div class="currently">
-    <p class="block-subtitle"><?php echo $this->__('Currently Shopping by:') ?></p>
-    <ol>
+    <?php /*?><p class="block-subtitle"><?php echo $this->__('Currently Shopping by:') ?></p><?php */?>
+    <ol class="filtersol">
     <?php foreach ($_filters as $_filter): ?>
         <?php
         $_rendered = false;
@@ -74,7 +74,7 @@ $_renderers = $this->getParentBlock()->getChild('state_renderers')->getSortedChi
            <span class="value"><?php echo $this->stripTags($_filter->getLabel()) ?></span>
         <?php }else{?>
 
-             <span class="value"><?php echo $this->stripTags($_filter->getLabel()) ?></span>
+             <?php /*?><span class="value"><?php echo $this->stripTags($_filter->getLabel()) ?></span><?php */?>
              <?php }?>
         </li>
         <?php endif; ?>

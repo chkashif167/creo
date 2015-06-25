@@ -2059,6 +2059,15 @@ input[type="submit"]:hover {
 	-webkit-transform: skewX(-15deg);
 }
 .options-area .column.color-area li.orange a{background: #ef8d0d;}
+.options-area .column.color-area li.red a{background: #FF0000;}
+.options-area .column.color-area li.ripe_lemon a{background: #F4D81C;}
+.options-area .column.color-area li.gamboge a{background: #E49B0F;}
+.options-area .column.color-area li.pistachio a{background: #93c572;}
+.options-area .column.color-area li.robins_egg_blue a{background: #00CCCC;}
+.options-area .column.color-area li.denim a{background: #1560BD;}
+.options-area .column.color-area li.blue_gem a{background: #2C0E8C;}
+.options-area .column.color-area li.purple a{background: #660099;}
+.options-area .column.color-area li.shockingpink a{background: #FC0FC0;}
 .options-area .column.color-area li.yellow a{background: #f2df09;}
 .options-area .column.color-area li.green a{background: #42e317;}
 .options-area .column.color-area li.blue a{background: #19cad0;}
@@ -2931,6 +2940,8 @@ input[type="submit"]:hover {
 .tab-content2 .product-details{
 	overflow: hidden;
 	margin: 0 0 10px;
+	width: 67%;
+	float: left;
 	border-width: 0 1px 2px;
 	border-style: solid;
 	border-color: #d7d7d7 #eee;
@@ -2962,8 +2973,8 @@ input[type="submit"]:hover {
 }
 .tab-content2 .cart-area{
 	float: right;
-	width: 312px;
-	margin: 0 0 0 16px;
+	width: 23%;
+	margin: 0 0 7px 16px;
 	border-width: 0 1px 2px;
 	border-style: solid;
 	border-color: #d7d7d7 #eee;
@@ -3357,8 +3368,9 @@ input[type="submit"]:hover {
 	text-decoration: none;
 }
 .signup-form{
-	float: right;
-	width: 49%;
+	/*float: right;*/
+	width: 91%;
+
 	margin: 0;
 }
 .signup-form .row{
@@ -3394,9 +3406,12 @@ input[type="submit"]:hover {
 .tab-content2 .cart-table-area table{border: none;}
 .tab-content2 .cart-table-area a{text-decoration: underline;}
 .tab-content2 .cart-table-area a:hover{text-decoration: none;}
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 1ef8bfc6ed1735b45310e636c6494dffa654b437
 
 
 
@@ -3513,4 +3528,23 @@ input[type="submit"]:hover {
 		margin-bottom: 0;
 		margin-top: 0;
 	}
+}
+/********* Add Custom Css**********************/
+.validation-advice
+{
+	color:red;
+}
+em{ color:red;}
+.input-box select
+{
+	 border-color: #e6e6e6;
+    bottom: 37px;
+    color: #222222;
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 12px;
+    height: 25px;
+    left: 68px;
+    position: relative;
+    top: -25px;
+    width: 232px;
 }

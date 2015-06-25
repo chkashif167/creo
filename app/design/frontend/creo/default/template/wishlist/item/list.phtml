@@ -31,7 +31,7 @@
 <?php
     $columns = $this->getColumns();
 ?>
-<?php if (count($this->getItems())): ?>
+<?php /*if (count($this->getItems())): ?>
     <?php foreach ($this->getItems() as $item): 
 	// echo "<pre>";
 	 //print_r($item);
@@ -45,31 +45,7 @@ $product = $item->getProduct();
 
     <img class="alignleft" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(100, 120); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
 
-  <div class="cart-area">
-    <h3>ADD TO CART</h3>
-    <span class="price">145 AED</span>
-    <div class="bottom-area">
-      <div class="qty-area"> <span class="up">up</span>
-    <?php if ($item->canHaveQty() && $item->getProduct()->isVisibleInSiteVisibility()): ?>
-        <input id="qty" type="text" pattern="\d*" class="input-text qty validate-not-negative-number" name="qty[<?php echo $item->getId() ?>]" value="<?php echo $this->getAddToCartQty($item) * 1 ?>" />
-    <?php endif; ?>
-        <span class="down">down</span> </div>
-      <?php if ($product->isSaleable()): ?>
-    <button type="button" title="<?php echo $this->__('ADD TO CART') ?>" onclick="addWItemToCart(<?php echo $item->getId()?>);" class="button btn-cart"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
-<?php else: ?>
-    <?php if ($product->getIsSalable()): ?>
-        <p class="availability in-stock">
-            <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
-            <span class="value"><?php echo $this->helper('catalog')->__('In stock') ?></span>
-        </p>
-    <?php else: ?>
-        <p class="availability out-of-stock">
-            <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
-            <span class="value"><?php echo $this->helper('catalog')->__('Out of stock') ?></span>
-        </p>
-    <?php endif; ?>
-<?php endif; ?></div>
-  </div>
+  
   <div class="product-details">
     <h3>PRODUCT DETAILS</h3>
     <strong class="title">
@@ -97,33 +73,47 @@ $product = $item->getProduct();
       </div>
     </div>
   </div>
+  <div class="cart-area" style="border:1px solid red;">
+    <h3>ADD TO CART</h3>
+    <span class="price">145 AED</span>
+    <div class="bottom-area">
+      <div class="qty-area"> <span class="up">up</span>
+    <?php if ($item->canHaveQty() && $item->getProduct()->isVisibleInSiteVisibility()): ?>
+        <input id="qty" type="text" pattern="\d*" class="input-text qty validate-not-negative-number" name="qty[<?php echo $item->getId() ?>]" value="<?php echo $this->getAddToCartQty($item) * 1 ?>" />
+    <?php endif; ?>
+        <span class="down">down</span> </div>
+      <?php if ($product->isSaleable()): ?>
+    <button type="button" title="<?php echo $this->__('ADD TO CART') ?>" onclick="addWItemToCart(<?php echo $item->getId()?>);" class="button btn-cart"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+<?php else: ?>
+    <?php if ($product->getIsSalable()): ?>
+        <p class="availability in-stock">
+            <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
+            <span class="value"><?php echo $this->helper('catalog')->__('In stock') ?></span>
+        </p>
+    <?php else: ?>
+        <p class="availability out-of-stock">
+            <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
+            <span class="value"><?php echo $this->helper('catalog')->__('Out of stock') ?></span>
+        </p>
+    <?php endif; ?>
+<?php endif; ?></div>
+  </div>
 </div>
 
 <?php endforeach ?>
-<?php endif ?>
+<?php endif*/ ?>
 
-
-
-
+<div class="tab-content2">
+<div  >
+ 
 <?php
     $columns = $this->getColumns();
 ?>
-<table class="clean-table linearize-table" id="wishlist-table">
-  <thead>
-    <tr>
-      <?php
-                /* @var $column Mage_Wishlist_Block_Customer_Wishlist_Item_Column */
-                foreach ($columns as $column):
-                    $_blockName = str_replace('.','-',strtolower($column->getNameInLayout()));
-            ?>
-      <th class="<?php echo $_blockName; ?>"><?php echo $column->getTitle();?></th>
-      <?php endforeach; ?>
-    </tr>
-  </thead>
-  <tbody>
+
     <?php if (count($this->getItems())): ?>
+    
     <?php foreach ($this->getItems() as $item): ?>
-    <tr id="item_<?php echo $item->getId();?>">
+    <div class="product-area">
       <?php
                         foreach ($columns as $key => $column):
                             $_blockName = str_replace('.','-',strtolower($column->getNameInLayout()));
@@ -135,19 +125,18 @@ $product = $item->getProduct();
                                 $_rwdLabel = ($column->getTitle()) ? $column->getTitle() : false;
                             }
                     ?>
-      <td class="<?php echo 'wishlist-cell'.$key; ?> <?php echo $_blockName; ?>"<?php if($_rwdLabel): ?> data-rwd-label="<?php echo $_rwdLabel; ?>"<?php endif; ?>>
+ 
 		<?php $column->setItem($item);
 		echo $column->toHtml($item);
 		?>
-      </td>
+    
       <?php endforeach; ?>
-    </tr>
+       </div>
     <?php endforeach ?>
     <?php else: ?>
-  <td colspan="<?php echo count($columns);?>" class="wishlist-empty"><?php echo $this->__('This Wishlist has no Items');?></td>
-    <?php endif; ?>
-      </tbody>
-</table>
+ <?php echo $this->__('This Wishlist has no Items');?>
+      <?php endif; ?>
+
 <?php foreach ($columns as $column): ?>
 <?php echo $column->getAdditionalHtml();?>
 <?php endforeach; ?>
@@ -160,3 +149,5 @@ $product = $item->getProduct();
 <?php endforeach; ?>
 //]]>
 </script> 
+</div>
+</div>
