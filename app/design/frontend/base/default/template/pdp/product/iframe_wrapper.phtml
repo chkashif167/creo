@@ -13,6 +13,9 @@ if(isset($this->_params["share"]) && $this->_params["share"]) {
     $shareParam = "share/" . $this->_params["share"] . "/";
 }
 $iframeUrl = $baseUrl . "pdp/view/getIframe/product-id/" . $productId . "/json/" . $pdpDesignInfo['extra_options'] . "/" . $redesign . $shareParam;
+
+
+
 ?>
 <style type="text/css">
 #pdc_iframe {
@@ -25,8 +28,10 @@ $iframeUrl = $baseUrl . "pdp/view/getIframe/product-id/" . $productId . "/json/"
 }
 </style>
 <iframe id="pdc_iframe" src="<?php echo $iframeUrl ?>"></iframe>
-<script type="text/javascript">		
+<script type="text/javascript">	
+
 	var pdcIframe = document.getElementById("pdc_iframe");
+	//pdcIframe.contentDocument.getElementById('get_design_content').click();
 	document.getElementById("design_product_<?php echo $this->getProductId() ?>").addEventListener("click", function(){
 		pdcIframe.contentDocument.getElementById('get_design_content').click();
 	});
