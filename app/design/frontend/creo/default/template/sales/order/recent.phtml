@@ -24,22 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="box-account box-recent">
+<div id="tab3">
 <?php $_orders = $this->getOrders(); ?>
-    <div class="box-head">
+  
         <h2><?php echo $this->__('Recent Orders') ?></h2>
         <?php if( sizeof($_orders->getItems()) > 0 ): ?><a href="<?php echo $this->getUrl('sales/order/history') ?>"><?php echo $this->__('View All') ?></a><?php endif; ?>
-    </div>
+  
 <?php if( sizeof($_orders->getItems()) > 0 ): ?>
-    <table class="data-table orders" id="my-orders-table">
-    <col width="1" />
-    <col width="1" />
-    <col />
-    <col width="1" />
-    <col width="1" />
-    <col width="1" />
-        <thead>
-            <tr>
+ <div class="cart-table-area" style="margin-bottom:35px;">
+                                        <table>
+                                            <tr>
+   
                 <th class="number"><?php echo $this->__('Order #') ?></th>
                 <th class="date"><?php echo $this->__('Date') ?></th>
                 <th class="ship"><?php echo $this->__('Ship To') ?></th>
@@ -47,8 +42,7 @@
                 <th class="status"><?php echo $this->__('Status') ?></th>
                 <th class="view">&nbsp;</th>
             </tr>
-        </thead>
-        <tbody>
+        
             <?php foreach ($_orders as $_order): ?>
                 <tr>
                     <td class="number"><?php echo $_order->getRealOrderId() ?></td>
@@ -66,8 +60,9 @@
                     </td>
                 </tr>
             <?php endforeach; ?>
-        </tbody>
+       
     </table>
+</div>
     <script type="text/javascript">decorateTable('my-orders-table')</script>
 <?php else: ?>
     <p><?php echo $this->__('You have placed no orders.'); ?></p>
