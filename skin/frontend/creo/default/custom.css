@@ -857,4 +857,40 @@
   border-left: 6px solid #11b400;
   border-right: none;
 }
+.add-to-cart-buttons { float: left; width: 100%;}
 
+
+
+
+
+
+.product-detail .btn-holder span.design-product{
+    background: #000 none repeat scroll 0 0;
+    border: 4px solid #000;
+    color: #fff;
+    display: inline-block;
+    font: bold 16px/36px "Roboto Condensed",Helvetica,Arial,sans-serif;
+   /* position: relative;*/
+    text-transform: uppercase;
+    vertical-align: top;
+    width: 100%;
+	 margin: 10px 0;
+	 cursor: pointer;
+}
+
+
+/*.product-detail .btn-holder span.design-product::after {
+    border-color: transparent transparent #000;
+    border-style: solid;
+    border-width: 0 0 44px 20px;
+    content: "";
+    height: 0;
+    left: -24px;
+    position: absolute;
+    top: -4px;
+    width: 0;
+}
+*/
+
+.quickview-index-view .create-sample-btn { display: none;}
+.pdc-wrapper { background: rgba(143,3,5, 0.6)}

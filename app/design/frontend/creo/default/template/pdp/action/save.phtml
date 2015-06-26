@@ -1,0 +1,72 @@
+<!-- Modal Save Popup -->
+<div class="modal fade" id="savePopup" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title"><?php echo $this->__('Save Your Design'); ?></h4>
+	  </div>
+	  <div class="modal-body">
+		<?php 
+        $customer = Mage::getSingleton("customer/session")->getCustomer();
+        $designTitle = $designNote = "";
+        $reDesignId = $this->getRequest()->getParam("redesign");
+        if($customer->getId() && $reDesignId) {
+            $customerDesign = Mage::getModel("pdp/customerdesign")->load($reDesignId);
+            //Zend_Debug::dump($customerDesign->getData());
+            $designTitle = $customerDesign->getDesignTitle();
+            $designNote = $customerDesign->getDesignNote();
+        }
+        ?>
+		<div class="row">
+			<div class="col-xs-8">
+				<form class="form-horizontal" method="GET" id="save_design_form" action="<?php echo Mage::helper("pdp")->getPdpBaseUrl() . "pdp/customerdesign/save/" ?>">
+                    <input type="hidden" value="filename.json" name="filename" id="customer_design_json"/>
+                    <input type="hidden" value="<?php echo $this->getRequest()->getParam("product-id") ?>" name="product_id" id="customer_design_product_id"/>
+					<fieldset>
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="design_title"><?php echo $this->__('Name Your Design');?>:</label>  
+					  <div class="col-md-6">
+					  <input id="design_title" name="design_title" type="text" value="<?php echo $designTitle ?>" placeholder="<?php echo $this->__("Enter your design name") ?>" class="form-control input-md" required="">
+					  <span class="help-block"><?php echo $this->__('30 characters max');?>.</span>  
+					  </div>
+					</div>
+
+					<!-- Textarea -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="design_note"><?php echo $this->__('Note');?>:</label>
+					  <div class="col-md-4">                     
+						<textarea style="width: 268px; height: 74px;" class="form-control" id="design_note" name="design_note" placeholder="<?php echo $this->__('Your comment notes');?>"><?php echo $designNote; ?></textarea>
+					  </div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="pdc_save_btn"></label>
+					  <div class="col-md-8">
+						<p>
+                            <a id="pdc_save_btn" pdc-action="SAVE_DESIGN_TO_ACCOUNT" pdc-data="pdc-saveto-account" class="btn btn-success"><?php echo $this->__('Save Design');?></a><br/>
+                            <span id="save-for-later-label" style="font-style:12px;"><?php echo $this->__('Save for later use');?>.</span></p>
+                            <div class="for-guest" style="display: none;">
+                                <div class="alert alert-warning"><?php echo $this->__("Please login to save your design to your account page. Just press SAVE DESIGN button after logged in.") ?></div>
+                                <a id="login-link" href="<?php echo $this->helper('pdp')->getPdpBaseUrl() ?>customer/account/login/" target='_blank'><?php echo $this->__("Click here to login or Create an account") ?></a>
+                            </div>  
+                        </p>
+                        <p><a class="btn btn-md btn-primary" pdc-action="SAVE_AND_CONTINUE" pdc-data="pdc-save-continue"><?php echo $this->__('No, Thanks. I will do it later');?>.</a><br/><span style="font-style:12px;"><?php echo $this->__('Review your design and continue');?>.</span></p>
+					  </div>
+					</div>
+					
+					</fieldset>
+				</form>
+			</div>
+            <div class="col-xs-4">
+                <ul class="preview-image-before-save">
+                    
+                </ul>
+            </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>

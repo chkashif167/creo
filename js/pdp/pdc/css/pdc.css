@@ -31,7 +31,8 @@
   top: 0;
   width: 100%;
   z-index: 999;
-  background:url("../images/tiny_grid.png") repeat fixed center top #ffffff;
+  /*background:url("../images/tiny_grid.png") repeat fixed center top #ffffff;*/
+  background: rgba(255,255,255, 0.9);
 }
 .pdc-container {
   display: table;
@@ -46,7 +47,7 @@
 }
 /* == PDC TOPBAR == */
 .pdc-topbar {
-  background: rgba(0, 0, 0,0.7);
+  background: rgba(241, 97, 103, 1);
   border-radius: 5px;
   display: block;
   padding: 10px;
@@ -455,7 +456,7 @@ border-color:#D02A2A;
 }
 
 .tools-list li button {
-  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #ffffff 0px, #e0e0e0 100%) repeat scroll 0 0;
+ /* background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #ffffff 0px, #e0e0e0 100%) repeat scroll 0 0;*/
   border: 1px solid #cccccc;
   border-radius: 0;
   color: rgba(102, 102, 102, 0.9);
@@ -471,6 +472,7 @@ border-color:#D02A2A;
   transition: all 300ms ease 0s;
   vertical-align: middle;
   white-space: nowrap;
+  color: #f16167;
 }
 .tools-list li.first button {
   border-radius: 3px 0 0 3px;
@@ -711,7 +713,8 @@ color:#333;
   height: 50px;
 }
 .upload_photo_btn {
-  background: none repeat scroll 0 0 #fea520;
+ /* background: none repeat scroll 0 0 #fea520;*/
+ background: #f16167;
   border: medium none;
   color: #ffffff;
   font-family: arial;
