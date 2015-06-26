@@ -41,7 +41,7 @@
             <?php endif; ?></h2>
   <div class="form-holder">
    <div class="form-frame">
-    <?php echo $this->getMessagesBlock()->toHtml() ?>
+    
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="scaffold-form">
         <?php echo $this->getBlockHtml('formkey'); ?>
         
@@ -93,7 +93,10 @@
             <input name="context" type="hidden" value="checkout" />
         <?php endif; ?>
     </form>
+
+    <?php echo $this->getChildHtml('form_register');?>
 </div>
+<?php //echo $this->getMessagesBlock()->toHtml() ?>
 </div>
     <script type="text/javascript">
     //<![CDATA[

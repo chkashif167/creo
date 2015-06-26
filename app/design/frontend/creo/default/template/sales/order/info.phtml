@@ -26,7 +26,9 @@
 ?>
 <?php /** @var $this Mage_Sales_Block_Order_Info */ ?>
 <div class="row">
-                        <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+   <div class="form-holder">
+      <div class="form-frame">
 <?php $_order = $this->getOrder() ?>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 
@@ -100,6 +102,8 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 </div>
 </div>

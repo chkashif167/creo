@@ -97,6 +97,7 @@ Layout for customer login page
         </reference>
         <reference name="content">
             <block type="customer/form_login" name="customer_form_login" template="customer/form/login.phtml" />
+           
         </reference>
     </customer_account_login>
 

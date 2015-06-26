@@ -38,10 +38,7 @@
         <strong><span><?php echo $this->__('Shop By') ?></span></strong>
     </div><?php */?>
    <?php /*?> <div class="block-content toggle-content"><?php */?>
-        <?php echo $this->getStateHtml() ?>
-        <?php if ($this->getLayer()->getState()->getFilters()): ?>
-            <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
-        <?php endif; ?>
+       
         <?php if($this->canShowOptions()): ?>
            <?php /*?> <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p><?php */?>
            
@@ -54,6 +51,10 @@
                 <?php endforeach; ?>
            
             <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+        <?php endif; ?>
+         <?php echo $this->getStateHtml() ?>
+        <?php if ($this->getLayer()->getState()->getFilters()): ?>
+            <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
         <?php endif; ?>
    <?php /*?> </div><?php */?>
 <?php /*?></div><?php */?>
