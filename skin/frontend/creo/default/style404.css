@@ -1,0 +1,116 @@
+html {
+	box-sizing: border-box;
+	height: 100%;
+}
+*,
+*:before,
+*:after { box-sizing: inherit; }
+* { max-height: 100000000px; }
+body {
+	margin: 0;
+	color: #333;
+	font: 12px/14px 'Open Sans', Arial, Helvetica, sans-serif;
+	background: #dddbdc url("images/bg-page.jpg") no-repeat 0 0 / 100% 100%;
+	overflow-y: scroll;
+	min-width: 320px;
+	height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary { display: block; }
+img { border-style: none; }
+a {
+	text-decoration: none;
+	color: #000;
+	outline: none;
+}
+a:hover { text-decoration: underline; }
+p { margin: 0 0 1.2em; }
+#wrapper {
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+.w1{display: table-row;}
+.w2{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 88px 0 0;
+}
+.logo-holder{
+	position: absolute;
+	top: 15%;
+	left: 0;
+	right: 0;
+}
+
+.logo{
+	float: right;
+	width: 137px;
+}
+.logo img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.text-area{
+	max-width: 810px;
+	margin: 0 auto;
+	text-align: left;
+	padding: 20px 0 108px;
+	color: #222;
+	font: 24px/37px 'Open Sans', Arial, Helvetica, sans-serif;
+	transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+}
+.text-area h1{
+	font:bold 64px/59px 'Open Sans', Arial, Helvetica, sans-serif;
+	color: #222;
+	margin: 0 0 10px;
+}
+.text-area h1 span{
+	border-bottom: 5px solid #fdda00;
+	display: inline-block;
+}
+.text-area p{
+	margin: 0 0 20px;
+	padding: 25px 0;
+	border-width: 5px 0;
+	border-color: #eee;
+	border-style: solid;
+}
+.text-area p .home{
+	font-weight: bold;
+	border-bottom: 5px solid #fdda00;
+}
+.text-area p .home:hover{
+	text-decoration: none;
+	color: #000;
+}
+.link-holder{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font:bold 18px/22px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.link-holder li{margin: 0 0 8px;}
+.link-holder a{color: #222;}
+.link-holder a:hover{
+	text-decoration: none;
+	color: #000;
+}
+@media only screen and (max-width: 991px) {
+	.text-area{
+		padding: 20px 140px 108px;
+		font:16px/24px "Open Sans",Arial,Helvetica,sans-serif;
+	}
+	.text-area h1{font: bold 50px/50px "Open Sans",Arial,Helvetica,sans-serif;}
+	.text-area p{padding: 12px 0;}
+	.link-holder{font: bold 14px/18px "Open Sans",Arial,Helvetica,sans-serif;}
+	.link-holder li {margin: 0 0 5px;}
+}
