@@ -47,7 +47,7 @@
 }
 /* == PDC TOPBAR == */
 .pdc-topbar {
-  background: rgba(241, 97, 103, 1);
+  background: /*rgba(241, 97, 103, 1)*/ #000;
   border-radius: 5px;
   display: block;
   padding: 10px;
@@ -714,7 +714,8 @@ color:#333;
 }
 .upload_photo_btn {
  /* background: none repeat scroll 0 0 #fea520;*/
- background: #f16167;
+ /*background: #f16167;*/
+ background: #000;
   border: medium none;
   color: #ffffff;
   font-family: arial;

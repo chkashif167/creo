@@ -203,7 +203,7 @@
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
         <reference name="content">
-            <block type="checkout/onepage_success" name="checkout.success" template="checkout/success.phtml"/>
+            <!--<block type="checkout/onepage_success" name="checkout.success" template="checkout/success.phtml"/>-->
         </reference>
     </onestepcheckout_index_success>
 

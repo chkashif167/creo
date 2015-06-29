@@ -119,7 +119,7 @@
 	background: #9c9c9c;
 	border-radius: 7px;
 	position: relative;
-	height: 160px;
+	min-height: 160px;
 }
 
 .card-sctn-black {
@@ -289,8 +289,13 @@ a.alignleft.checkout-items {
 	width: 99%
 }
 
-
-
+.validation-advice { color: red; font-size: 10px;}
+.onestepcheckout-index-success .button {
+    background: black none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    padding: 10px 20px;
+}
 
 
 

@@ -31,6 +31,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 ?>
 <tr>
     <td class="product-cart-image">
+    <div class="text-area">
         <?php if ($this->hasProductUrl()):?>
             <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft">
         <?php endif;?>
@@ -38,7 +39,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php if ($this->hasProductUrl()):?>
             </a>
         <?php endif;?>
-<div class="text-area">
+
       <?php /*?>  <ul class="cart-links">
             <?php if ($isVisibleProduct): ?>
                 <li>
