@@ -43,7 +43,11 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
                     <password><![CDATA[]]></password>
+<<<<<<< HEAD
                     <dbname><![CDATA[creo_db8]]></dbname>
+=======
+                    <dbname><![CDATA[creo_db1]]></dbname>
+>>>>>>> f2512cbccf03139d3172fb1231bf209e9665a681
 
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>

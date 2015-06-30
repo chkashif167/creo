@@ -7,10 +7,12 @@ if(empty($images)) {
 	return;
 }
 ?>
+<div class="custome_product">
 <dt><span style="font-weight: bold"><?php echo $this->__('Customize Design') ?></span></dt>
 <dl class="item-options pdp_cart_item">
 <?php foreach ($images as $image) : ?>
 	<dt><?php echo $this->__($image['name']) ?></dt>
-	<dd><a href="<?php echo $image['image'] ?>" target="_blank"><img src="<?php echo $image['image'] ?>" width="300px" alt="<?php echo $this->__('Customized Image');?>"/></a></dd>
+	<dd><a href="<?php echo $image['image'] ?>" target="_blank"><img src="<?php echo $image['image'] ?>" width="90px" alt="<?php echo $this->__('Customized Image');?>"/></a></dd>
 <?php endforeach; ?>
 </dl>
+</div>

@@ -676,7 +676,7 @@
 .checkoutShippingMethod ul { float: left; width:100%; padding: 0; margin:0;}
 .checkoutShippingMethod ul li { float: left; width:100%;}
 .checkoutShippingMethod ul li input, .checkoutShippingMethod ul li label { float: left;}
-.checkoutShippingMethod ul li input { margin: 6px 8px 0 0; } 
+.checkoutShippingMethod ul li input { margin: 6px 8px 0 0 !important; } 
 .checkoutShippingMethod ul li label { margin: 5px 0 0 0; font-weight: normal;}
 .checkoutShippingMethod .shippingtitle { font-weight: bold; margin: 12px 0 0 0; float: left; width:100%;}
 .onestepcheckout-index-index {}
@@ -698,7 +698,7 @@
     float: left;
     width: 100%;
 }
-.paymentradiobutton { float: left;}
+.paymentradiobutton { float: left; margin: 3px 0 0 0 !important;}
 .paymentradiobuttonlabel { margin: 3px 0 0 6px;}
 .paymenntForm { margin: 14px 0 0 0;}
 .op_block_title { margin:0 !important;}
@@ -897,3 +897,19 @@
 
 .quickview-index-view .create-sample-btn { display: none;}
 .pdc-wrapper { background: rgba(143,3,5, 0.6)}
+.swatch-attr .select-label {
+ display:inline-block !important;
+ }
+ .quickview-index-view .swatch-attr .select-label { display: none !important;}
+ .onestepcheckout-index-index footer{ float: left; width:100%; }
+ .shipping-area { border-top: 0;}
+  .shipping-area > ul li { width: 20%;}
+  .shipping-area > ul li strong { width: 20%; font-size: 14px;}
+  .shipping-area > ul li ul li { width: 100%; float: left; margin: 0 0 1px 0 !important; font-size:13px !important;}
+  .shippingheading { text-align: left; width:32% !important;}
+  .shipping-area .shipping-info { float: left !important;  font-size: 13px;}
+  .shipping-area li a { padding: 8px !important; }
+  .shipping-area li a::before { position: relative; float: left;  background: none !important; width: auto !important; height: auto !important;}
+  .shipping-area li a:hover::before { background-position: 0 -28px !important;}
+  .shipping-area li a:hover { background: none !important; color: #000 !important; background-position:inherit !important; border: 2px solid #ddd !important; cursor:default;}
+  .old-price {text-decoration: line-through;}
