@@ -441,6 +441,14 @@ p.style1 {
 	position: relative;
 }
 #nav ol > li a:hover { text-decoration: none; }
+#nav ol > li > a:after {
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
 #nav ol > li.active > a:before,
 #nav ol > li:hover > a:before {
 	position: absolute;
@@ -534,8 +542,8 @@ p.style1 {
 	right: 0;
 	padding: 10px 0 20px;
 	margin: 20px 0 0;
-	width: 470px;
-	box-shadow: 1px 2px 5px rgba(0,0,0,.23);
+	width: 326px;
+	box-shadow: 5px 5px 5px -2px rgba(0,0,0,.23);
 }
 .mCustomScrollBox { max-height: 500px !important; }
 .mCSB_inside > .mCSB_container { margin: 0 0px 0 0 !important; }
@@ -549,8 +557,8 @@ p.style1 {
 }
 #header .cart .alignleft {
 	float: left;
-	width: 120px;
-	margin: 0 28px 0 0;
+	width: 76px;
+	margin: 0 16px 0 0;
 }
 #header .cart .alignleft img {
 	display: block;
@@ -566,11 +574,11 @@ p.style1 {
 	margin: 0 0 10px;
 	text-transform: uppercase;
 	color: #222;
-	font: 19px/22px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 12px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .cart .price {
 	color: #f16167;
-	font: 25px/30px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 15px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .cart .cancel {
 	color: #ddd;
@@ -596,9 +604,9 @@ p.style1 {
 }
 #header .cart .total {
 	display: block;
-	padding: 28px 20px 28px;
+	padding: 20px;
 	color: #000;
-	font: bold 33px/35px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: bold 20px/22px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .cart .btn-holder {
 	overflow: hidden;
@@ -608,7 +616,7 @@ p.style1 {
 	display: inline-block;
 	vertical-align: top;
 	width: 42%;
-	padding: 10px;
+	padding: 5px 10px;
 	border: 4px solid #000;
 	background: #000;
 	text-transform: uppercase;
@@ -619,11 +627,11 @@ p.style1 {
 #header .cart .btn-holder a:before {
 	position: absolute;
 	top: -4px;
-	left: -24px;
+	left: -20px;
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0 0 44px 20px;
+	border-width: 0 0 34px 16px;
 	border-color: transparent transparent #000;
 	content: '';
 }
@@ -637,7 +645,7 @@ p.style1 {
 	text-decoration: none;
 }
 #header .cart .btn-holder a:first-child {
-	margin: 0 14px 0 0;
+	margin: 0 4px 0 0;
 	color: #aaa;
 	background: #fff;
 	border-width: 0 0 0 4px;
@@ -650,7 +658,7 @@ p.style1 {
 #header .cart .btn-holder a:first-child .span1 {
 	transform: skewX(-25deg);
 	border: 4px solid #eee;
-	padding: 10px;
+	padding: 5px 10px;
 	display: block;
 	width: 100%;
 	margin-left: -12px;
@@ -671,7 +679,7 @@ p.style1 {
 }
 #header .bottom-area {
 	text-align: right;
-	padding: 60px 0 10px;
+	padding: 67px 0 10px;
 }
 .search-form {
 	margin: 0 0 0 5px;
@@ -1733,9 +1741,11 @@ input[type="submit"]:hover {
 	width: 100%;
 	height: auto;
 }
+.products-grid .image-area:hover .quick-view{display: block;}
 .products-grid .quick-view{
+	display: none;
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	right: 0;
 	padding: 3px 5px;
@@ -1751,7 +1761,9 @@ input[type="submit"]:hover {
 	overflow: hidden;
 }
 .products-grid .text-area h3{
-	margin: 0 0 15px;
+	float: left;
+	width: 60%;
+	margin: 0;
 	text-transform: capitalize;
 	color: #222;
 	font:18px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
@@ -1761,18 +1773,20 @@ input[type="submit"]:hover {
 	display: block;
 	margin: 0 0 10px;
 	color: #000;
-	font:30px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	float: right;
+	text-align: right;
+	width: 40%;
+	font:28px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .products-grid .btn-holder {
 	overflow: hidden;
 	text-align: center;
-	border-top: 2px solid #dedede;
-	padding: 12px 0 0;
+	padding: 10px 0 0;
+	clear: both;
 }
 .products-grid .btn-holder a {
-	display: inline-block;
-	vertical-align: top;
-	width: 18%;
+	float: left;
+	width: 77%;
 	border: 4px solid #000;
 	background: #000;
 	text-transform: uppercase;
@@ -1783,16 +1797,16 @@ input[type="submit"]:hover {
 .products-grid .btn-holder a:before {
 	position: absolute;
 	top: -4px;
-	left: -24px;
+	right: -24px;
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0 0 44px 20px;
-	border-color: transparent transparent #000;
+	border-width: 44px 20px 0 0;
+	border-color:  #000 transparent transparent;
 	content: '';
 }
 .products-grid .btn-holder a:first-child:before { display: none; }
-.products-grid .btn-holder a:hover:before { border-color: transparent transparent #f16167; }
+.products-grid .btn-holder a:hover:before { border-color: #f16167 transparent transparent; }
 .products-grid .btn-holder a:hover {
 	opacity: 0.8;
 	background: #f16167;
@@ -1801,15 +1815,16 @@ input[type="submit"]:hover {
 	text-decoration: none;
 }
 .products-grid .btn-holder a:first-child {
-	margin: 0 6px 0 0;
+	margin: 0;
 	color: #aaa;
 	background: #fff;
-	border-width: 0 0 0 4px;
+	border-width: 0 4px 0 0;
 	border-style: solid;
 	border-color: #eee;
 	overflow: hidden;
 	padding: 0;
-	width: 77%;
+	width: 21%;
+	float: right;
 }
 .products-grid .btn-holder a:first-child .span1 {
 	transform: skewX(-25deg);
@@ -1819,7 +1834,7 @@ input[type="submit"]:hover {
 	border: 4px solid #eee;
 	display: block;
 	width: 100%;
-	margin-left: -12px;
+	margin-left: 11px;
 }
 .products-grid .btn-holder a:first-child .span2 {
 	display: inline-block;
@@ -1829,14 +1844,14 @@ input[type="submit"]:hover {
 	-webkit-transform: skewX(25deg);
 }
 .products-grid .btn-holder a:first-child:hover .span1 {
-	background: #000;
-	border-color: #000;
+	background: #f16167;
+	border-color: #f16167;
 }
 .products-grid .btn-holder a:first-child:hover {
 	background: none;
 	color: #fff;
 	opacity: 1;
-	border-color: #000;
+	border-color: #f16167;
 }
 .pagination{
 	padding: 10px 0;
@@ -3682,7 +3697,7 @@ input[type="submit"]:hover {
 	color: #000;
     font: 11px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
 }
-.faq-area .faq-frame .open-close{
+.faq-area .faq-frame .open-close2{
 	letter-spacing: normal;
 	display: inline-block;
 	vertical-align: top;
@@ -3831,6 +3846,10 @@ input[type="submit"]:hover {
 	#footer .footer-nav li:before{left: -9px;}
 	.cart-table-area td:first-child{padding-left: 30px;}
 	.faq-area .openeer-holder .question{width: 93%;}
+	.products-grid .text-area .price{font: 22px/30px "Roboto Condensed",Helvetica,Arial,sans-serif;}
+	.products-grid .btn-holder a:first-child .span1{padding: 0 5px 0 0;}
+	.products-grid .btn-holder a:first-child{width: 24%;}
+	.products-grid .btn-holder a{width: 74%;}
 }
 @media only screen and (max-width: 991px) {
 	#wrapper > .container{padding: 0 15px;}
@@ -3874,7 +3893,6 @@ input[type="submit"]:hover {
 	.cate-links .cate3 ul,
 	.cate-links .cate3 .title{font-size: 12px;}
 	.heading-area h2{font-size: 40px;}
-	.products-grid .btn-holder a:first-child{width: 76%;}
 	.products-grid .btn-holder a{
 		font-size: 12px;
 		line-height: 20px;
@@ -3889,6 +3907,7 @@ input[type="submit"]:hover {
 	.tab-content2 .column-content{padding: 8px 10px;}
 	.faq-area .openeer-holder .question span:before{margin: 0 4px 0 0;}
 	.faq-area .openeer-holder .question{width: 91%;}
+	.products-grid .btn-holder a{width: 72%;}
 }
 @media only screen and (max-width: 767px) {
 	body { min-width: 768px; }

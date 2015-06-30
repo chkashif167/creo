@@ -453,7 +453,7 @@
 .select-label {
 	display: none;
 }
-.mp_quickview_icon {
+.products-grid .mp_quickview_icon {
 	background: #eee !important;
 	border-radius: 0px;
 	box-shadow: none;
@@ -462,14 +462,20 @@
 	left: 0px;
 	opacity: 1;
 	padding: 0;
-	position: relative;
+/*	position: relative;*/
 	text-decoration: none;
 	top: -14px;
 	z-index: 10;
+	 width:100%;
 }
+#products-list .mp_quickview_icon { width:22%;}  
 .products-grid .quick-view {
 	background: #eee !important;
+	top: 0px;
+	
 }
+.mp_quickview_icon { top: 0;}
+.products-grid li:hover .quick-view { display: block !important;}
 .products-list {
 	padding: 0;
 	margin: 0;
