@@ -127,7 +127,6 @@
         </reference>
         <reference name="left_first">
         	<block type="core/template" name="leftnav" before="catalog.leftnav" template="catalog/navigation/left_nav.phtml" />
-            
         </reference>
         
     </catalog_category_layered>

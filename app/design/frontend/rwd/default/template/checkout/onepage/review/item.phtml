@@ -46,7 +46,7 @@
         </dl>
         <?php endif;?>
         <?php if ($addtInfoBlock = $this->getProductAdditionalInformationBlock()):?>
-            <?php echo $addtInfoBlock->setItem($_item)->toHtml() ?>
+            <?php //echo $addtInfoBlock->setItem($_item)->toHtml() ?>
         <?php endif;?>
     </td>
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>

@@ -36,6 +36,7 @@
                 <block type="checkout/onepage_review" name="checkout.onepage.review" as="review" template="onestepcheckout/onepage/review.phtml">
                     <block type="onestepcheckout/agreements" name="checkout.onepage.agreements" as="agreements" template="onestepcheckout/onepage/agreements.phtml"/>
                     <block type="checkout/onepage_review_info" name="info" template="onestepcheckout/onepage/review/info.phtml">
+                        
                         <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>onestepcheckout/onepage/review/item.phtml</template></action>
                         <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>onestepcheckout/onepage/review/item.phtml</template></action>
                         <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>onestepcheckout/onepage/review/item.phtml</template></action>
