@@ -453,6 +453,10 @@
 .select-label {
 	display: none;
 }
+
+.swatch-attr .select-label {
+	display:inline-block !important;
+	}
 .products-grid .mp_quickview_icon {
 	background: #eee !important;
 	border-radius: 0px;

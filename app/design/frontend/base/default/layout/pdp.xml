@@ -92,11 +92,12 @@
             <block type="pdp/email_additional_product_info" name="pdp_additional_product_info"/>
         </reference>
 	</sales_email_order_items>
-	<checkout_onepage_review>
+	<onestepcheckout_onepage_review>
 		<reference name="additional.product.info">
 			<block type="pdp/checkout_onepage_review_info" name="pdp_review_item"/>
 		</reference>
-	</checkout_onepage_review>
+	</onestepcheckout_onepage_review>
+
     <pdp_customerdesign_index>
 		<reference name="head">
             <action method="setTitle"><title>Customized Products!</title></action>
