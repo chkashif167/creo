@@ -920,6 +920,47 @@
   .shipping-area li a:hover::before { background-position: 0 -28px !important;}
   .shipping-area li a:hover { background: none !important; color: #000 !important; background-position:inherit !important; border: 2px solid #ddd !important; cursor:default;}
   .old-price {text-decoration: line-through;}
+ 
+ 
+ 
+ 
+ .sort-items { display: none;}
+ .sortbyCustom { float: right !important; width: 350px; }
+ .sortbycontainer { float: left; width: 222px; position: relative; }
+ .sortbycontainer a { float: left; width: 222px; border: 1px solid #e2e2e2;
+    color: #222;
+    float: left;
+    font: 18px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+   padding: 11px;
+    margin: 0;
+    text-transform: uppercase;
+	 position: relative;
+	 }
+
+.sortbycontainer >  a:after 	
+	{ width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 10px 5px 0;
+		border-color: #000000 transparent transparent;
+		position: absolute;
+		right: 10px;
+		top: 18px;
+		content: "";
+		}
+.sortbycontainer a:hover { text-decoration: none;}
+ .sortbyUl { padding: 0; position: absolute; top: 43px;}
+ .sortbyUl li a { border-top: none !important;}
+ div.fme-filter a.fme_layered_attribute { background: none !important; padding: 0 !important;}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  #fme_filters_list dd  { float: left;}
  .fme_layered_category { display: none !important;}
  #fme_layered_cat { display: none;}

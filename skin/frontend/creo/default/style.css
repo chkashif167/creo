@@ -163,13 +163,7 @@ ul.drop {
 	float: left;
 }
 .down { padding-top: 50px; }
-.drop li {
-	font-family: arial;
-	font-size: 16.67px;
-	font-weight: normal;
-	font-stretch: condensed;
-	margin-left: 30px;
-}
+
 h3.list {
 	font-size: 25px;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -617,8 +611,8 @@ p.style1 {
 	vertical-align: top;
 	width: 42%;
 	padding: 5px 10px;
-	border: 4px solid #000;
-	background: #000;
+	border: 4px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
 	color: #fff;
 	position: relative;
@@ -632,16 +626,15 @@ p.style1 {
 	height: 0;
 	border-style: solid;
 	border-width: 0 0 34px 16px;
-	border-color: transparent transparent #000;
+	border-color: transparent transparent #f16167;
 	content: '';
 }
 #header .cart .btn-holder a:first-child:before { display: none; }
-#header .cart .btn-holder a:hover:before { border-color: transparent transparent #f16167; }
+#header .cart .btn-holder a:hover:before { border-color: transparent transparent #000; }
 #header .cart .btn-holder a:hover {
-	opacity: 0.8;
-	background: #f16167;
-	color: #000;
-	border-color: #f16167;
+	background: #000;
+	color: #fff;
+	border-color: #000;
 	text-decoration: none;
 }
 #header .cart .btn-holder a:first-child {
@@ -1003,7 +996,7 @@ p.style1 {
 }
 #footer .links:before {
 	background: #000;
-	height: 35px;
+	height: 24px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1030,26 +1023,26 @@ p.style1 {
 }
 #footer .column h3 {
 	color: #fff;
-	margin: 0 0 20px;
+	margin: 0 0 12px;
 	padding: 0 0 0 8px;
-	font: 25px/35px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 16px/24px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #footer .list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	font: 16px/20px Arial, Helvetica, sans-serif;
+	font: 12px/16px Arial, Helvetica, sans-serif;
 }
 #footer .list li {
-	padding: 0 0 10px 15px;
+	padding: 0 0 5px 15px;
 	position: relative;
 }
 #footer .list li:before {
 	position: absolute;
 	left: 0;
-	top: 8px;
-	width: 4px;
-	height: 4px;
+	top: 6px;
+	width: 3px;
+	height: 3px;
 	border-radius: 50%;
 	background: #000;
 	content: '';
@@ -1397,7 +1390,7 @@ input[type="submit"]:hover {
 	text-transform: uppercase;
 	text-align: center;
 	color: #222;
-	font: 22px/26px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 14px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .col-static { position: static; }
 #nav .links-holder {
@@ -1418,12 +1411,12 @@ input[type="submit"]:hover {
 	text-transform: uppercase;
 	text-align: center;
 	color: #222;
-	font: bold 22px/26px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 14px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #nav .cat-links:first-child { margin-left: 0; }
-#nav .cat-links:nth-child(2) { margin-top: 23px; }
-#nav .cat-links:nth-child(3) { margin-top: 47px; }
-#nav .cat-links:nth-child(4) { margin-top: 70px; }
+#nav .cat-links:nth-child(2) { margin-top: 14px; }
+#nav .cat-links:nth-child(3) { margin-top: 28px; }
+#nav .cat-links:nth-child(4) { margin-top: 42px; }
 #nav .cat-links li { margin: 0 0 8px; }
 #nav .cat-links a {
 	display: block;
@@ -1787,10 +1780,10 @@ input[type="submit"]:hover {
 .products-grid .btn-holder a {
 	float: left;
 	width: 77%;
-	border: 4px solid #000;
-	background: #000;
+	border: 4px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
-	color: #fff;
+	color: #000;
 	position: relative;
 	font: bold 16px/36px Arial, Helvetica, sans-serif;
 }
@@ -1802,16 +1795,15 @@ input[type="submit"]:hover {
 	height: 0;
 	border-style: solid;
 	border-width: 44px 20px 0 0;
-	border-color:  #000 transparent transparent;
+	border-color:  #f16167 transparent transparent;
 	content: '';
 }
 .products-grid .btn-holder a:first-child:before { display: none; }
-.products-grid .btn-holder a:hover:before { border-color: #f16167 transparent transparent; }
+.products-grid .btn-holder a:hover:before { border-color: #000 transparent transparent; }
 .products-grid .btn-holder a:hover {
-	opacity: 0.8;
-	background: #f16167;
+	background: #000;
 	color: #fff;
-	border-color: #f16167;
+	border-color: #000;
 	text-decoration: none;
 }
 .products-grid .btn-holder a:first-child {
@@ -2271,10 +2263,10 @@ input[type="submit"]:hover {
 	display: inline-block;
 	vertical-align: top;
 	width: 18%;
-	border: 4px solid #000;
-	background: #000;
+	border: 4px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
-	color: #fff;
+	color: #000;
 	position: relative;
 	font: bold 16px/36px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
@@ -2286,16 +2278,16 @@ input[type="submit"]:hover {
 	height: 0;
 	border-style: solid;
 	border-width: 0 0 44px 20px;
-	border-color: transparent transparent #000;
+	border-color: transparent transparent #f16167;
 	content: '';
 }
 .product-detail .btn-holder a:first-child:before { display: none; }
-.product-detail .btn-holder a:hover:before { border-color: transparent transparent #f16167; }
+.product-detail .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .product-detail .btn-holder a:hover {
 	opacity: 0.8;
-	background: #f16167;
+	background: #000;
 	color: #fff;
-	border-color: #f16167;
+	border-color: #000;
 	text-decoration: none;
 }
 .product-detail .btn-holder a:first-child {
@@ -2374,8 +2366,8 @@ input[type="submit"]:hover {
 }
 .tabset.tabset1 li.active a,
 .tabset.tabset1 a:hover{
-	color: #fff;
-	background: #000;
+	color: #000;
+	background: #f16167;
 	text-decoration: none;
 }
 .tab-content1{
@@ -2459,10 +2451,10 @@ input[type="submit"]:hover {
 	display: inline-block;
 	vertical-align: top;
 	padding: 6px;
-	border: 2px solid #000;
-	background: #000;
+	border: 2px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
-	color: #fff;
+	color: #000;
 	position: relative;
 	font:bold 12px/16px Arial, Helvetica, sans-serif;
 	white-space: nowrap;
@@ -2475,16 +2467,16 @@ input[type="submit"]:hover {
 	height: 0;
 	border-style: solid;
 	border-width: 0 0 42px 20px;
-	border-color: transparent transparent #000;
+	border-color: transparent transparent #f16167;
 	content: '';
 }
 .cart-top-area .btn-holder a:first-child:before { display: none; }
-.cart-top-area .btn-holder a:hover:before { border-color: transparent transparent #f16167; }
+.cart-top-area .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .cart-top-area .btn-holder a:hover {
 	opacity: 0.8;
-	background: #f16167;
-	color: #000;
-	border-color: #f16167;
+	background: #000;
+	color: #fff;
+	border-color: #000;
 	text-decoration: none;
 }
 .cart-top-area .btn-holder a:first-child {
@@ -2807,11 +2799,11 @@ input[type="submit"]:hover {
 	display: inline-block;
 	vertical-align: top;
 	padding: 6px;
-	border: 2px solid #000;
-	background: #000;
+	border: 2px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
 	text-align: center;
-	color: #fff;
+	color: #000;
 	position: relative;
 	font:bold 12px/16px Arial, Helvetica, sans-serif;
 	white-space: nowrap;
@@ -2824,16 +2816,16 @@ input[type="submit"]:hover {
 	height: 0;
 	border-style: solid;
 	border-width: 0 0 42px 20px;
-	border-color: transparent transparent #000;
+	border-color: transparent transparent #f16167;
 	content: '';
 }
 .cart-bottom-area .btn-holder a:first-child:before { display: none; }
-.cart-bottom-area .btn-holder a:hover:before { border-color: transparent transparent #f16167; }
+.cart-bottom-area .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .cart-bottom-area .btn-holder a:hover {
 	opacity: 0.8;
-	background: #f16167;
-	color: #000;
-	border-color: #f16167;
+	background: #000;
+	color: #fff;
+	border-color: #000;
 	text-decoration: none;
 }
 .cart-bottom-area .btn-holder a:first-child {
@@ -3021,11 +3013,11 @@ input[type="submit"]:hover {
 	display: inline-block;
 	vertical-align: top;
 	padding: 6px;
-	border: 2px solid #000;
-	background: #000;
+	border: 2px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
 	text-align: center;
-	color: #fff;
+	color: #000;
 	position: relative;
 	font:bold 12px/16px Arial, Helvetica, sans-serif;
 	white-space: nowrap;
@@ -3039,16 +3031,15 @@ input[type="submit"]:hover {
 	height: 0;
 	border-style: solid;
 	border-width: 0 0 42px 20px;
-	border-color: transparent transparent #000;
+	border-color: transparent transparent #f16167;
 	content: '';
 }
 .tab-content2 .btn-holder a:first-child:before { display: none; }
-.tab-content2 .btn-holder a:hover:before { border-color: transparent transparent #f16167; }
+.tab-content2 .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .tab-content2 .btn-holder a:hover {
-	opacity: 0.8;
-	background: #f16167;
-	color: #000;
-	border-color: #f16167;
+	background: #000;
+	color: #fff;
+	border-color: #000;
 	text-decoration: none;
 }
 .tab-content2 .btn-holder a:first-child {
@@ -3268,10 +3259,10 @@ input[type="submit"]:hover {
 	display: inline-block;
 	vertical-align: top;
 	padding: 3px;
-	border: 2px solid #000;
-	background: #000;
+	border: 2px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
-	color: #fff;
+	color: #000;
 	position: relative;
 	font:bold 12px/16px Arial, Helvetica, sans-serif;
 	white-space: nowrap;
@@ -3285,16 +3276,16 @@ input[type="submit"]:hover {
 	height: 0;
 	border-style: solid;
 	border-width: 0 0 42px 20px;
-	border-color: transparent transparent #000;
+	border-color: transparent transparent #f16167;
 	content: '';
 }
 .form-holder .btn-holder button:first-child:before { display: none; }
-.form-holder .btn-holder button:hover:before { border-color: transparent transparent #f16167; }
+.form-holder .btn-holder button:hover:before { border-color: transparent transparent #000; }
 .form-holder .btn-holder button:hover {
 	opacity: 0.8;
-	background: #f16167;
-	color: #000;
-	border-color: #f16167;
+	background: #000;
+	color: #fff;
+	border-color: #000;
 	text-decoration: none;
 }
 .form-holder .btn-holder button:first-child {
@@ -3343,10 +3334,10 @@ input[type="submit"]:hover {
 .form-holder .submit-holder button {
 	float: right;
 	padding: 3px;
-	border: 2px solid #000;
-	background: #000;
+	border: 2px solid #f16167;
+	background: #f16167;
 	text-transform: uppercase;
-	color: #fff;
+	color: #000;
 	position: relative;
 	font:bold 12px/16px Arial, Helvetica, sans-serif;
 	white-space: nowrap;
@@ -3360,15 +3351,15 @@ input[type="submit"]:hover {
 	height: 0;
 	border-style: solid;
 	border-width: 0 0 42px 20px;
-	border-color: transparent transparent #000;
+	border-color: transparent transparent #f16167;
 	content: '';
 }
-.form-holder .submit-holder button:hover:before { border-color: transparent transparent #f16167; }
+.form-holder .submit-holder button:hover:before { border-color: transparent transparent #000; }
 .form-holder .submit-holder button:hover {
 	opacity: 0.8;
-	background: #f16167;
-	color: #000;
-	border-color: #f16167;
+	background: #000;
+	color: #fff;
+	border-color: #000;
 	text-decoration: none;
 }
 .signup-form{
@@ -3496,7 +3487,9 @@ input[type="submit"]:hover {
 }
 .three-column .btn-area a:hover{
 	text-decoration: none;
-	background: #eee;
+	background: #f16167;
+	border-color: #f16167;
+	color:#000;
 }
 .three-column .btn-frame {
 	border-top: 1px solid #d7d7d7;
@@ -3793,9 +3786,11 @@ input[type="submit"]:hover {
 }
 .faq-area .openeer-holder .question:hover{
 	text-decoration: none;
-	background: #eee;
+	background: #f16167;
+	border-color: #f16167;
+	color: #000;
 }
-
+.faq-area .openeer-holder .question:hover span:before{background: #f16167;}
 
 
 
