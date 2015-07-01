@@ -73,7 +73,7 @@ class FME_Layerednav_Block_Layer_Filter_Attribute extends Mage_Catalog_Block_Lay
             $_htmlFilters .= 'href="' . $var_href . '" ';
 
             $_htmlFilters .= 'class="fme_layered_attribute '
-                    . ($this->Selectedfilter($_item) ? 'fme_layered_attribute_selected' : '') . '" ';
+                    . ($this->Selectedfilter($_item) ? 'fme_layered_attribute_selected_'.$_item->getLabel() : '') . '" ';
 
             //Check the number of products against filter
             $qty = '';
