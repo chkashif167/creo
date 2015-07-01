@@ -581,6 +581,10 @@ p.style1 {
 	right: 0;
 	font-size: 20px;
 }
+#header .cart .total .price {
+	font-size: 20px !important;
+	line-height: 22px !important;
+}
 #header .cart .cancel:hover {
 	text-decoration: none;
 	color: #222;
@@ -1785,7 +1789,7 @@ input[type="submit"]:hover {
 	text-transform: uppercase;
 	color: #000;
 	position: relative;
-	font: bold 16px/36px Arial, Helvetica, sans-serif;
+	font: bold 14px/32px Arial, Helvetica, sans-serif;
 }
 .products-grid .btn-holder a:before {
 	position: absolute;
@@ -1969,7 +1973,7 @@ input[type="submit"]:hover {
 	text-transform: uppercase;
 	color: #fff;
 	position: relative;
-	font: bold 16px/36px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: bold 14px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .quickview-holder .btn-holder a:before {
 	position: absolute;
