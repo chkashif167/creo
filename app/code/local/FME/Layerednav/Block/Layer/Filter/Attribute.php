@@ -55,6 +55,9 @@ class FME_Layerednav_Block_Layer_Filter_Attribute extends Mage_Catalog_Block_Lay
 
     public function getFiltersArray() {
 
+        $style_array = array('largevshape','round','vshape');
+        $gender_array = array('men','children','women');
+
         $_filtersArray = array();
         //$hideLinks = Mage::getStoreConfig('layerednav/layerednav/remove_links');
         //Get all filter items  ( use getItems method of Mage_Catalog_Model_Layer_Filter_Abstract )
@@ -76,6 +79,8 @@ class FME_Layerednav_Block_Layer_Filter_Attribute extends Mage_Catalog_Block_Lay
             $qty = '';
             if (!$this->getHideQty())
                 $qty = ''; //'(' .  $_item->getCount() .')';
+
+
 
 
             if ($this->getName() == "Color") {
@@ -107,7 +112,13 @@ class FME_Layerednav_Block_Layer_Filter_Attribute extends Mage_Catalog_Block_Lay
 
             if ($this->getName() == "Color") {
                 $_filtersArray[] = $_html;
-            } else {
+            } else if(in_array(strtolower($_item->getLabel()), $gender_array)) {
+                $_filtersArray[] = '<a ' . $_htmlFilters . '><span>' . $_item->getLabel() . '</span></a>' . $qty;
+            }else if(in_array(strtolower($_item->getLabel()), $style_array)) {
+                 $_filtersArray[] = '<a  href="'.$this->urlEscape($_item->getUrl()).'" ' . $_htmlFilters . '><span> <img id="'.strtolower($_item->getLabel()).'"" src="'.$this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png').'"> </span></a>' . $qty;
+            }
+            else
+            {
                 $_filtersArray[] = '<a ' . $_htmlFilters . '>' . $_item->getLabel() . '</a>' . $qty;
             }
         }

@@ -1,7 +1,10 @@
+<?php $style_array = array('largevshape','round','vshape')?>
+<?php $gender_array = array('men','children','women');?>
 <?php
 /*
  * Adding javascript include
  */
+
 if ('front' != Mage::app()->getRequest()->getControllerName()) {
     ?>
     <script type="text/javascript" src="<?php echo $this->getSkinUrl(); ?>js/FME/fme_layered_nav.js"></script> 
