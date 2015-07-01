@@ -72,8 +72,8 @@ class FME_Layerednav_Block_Layer_Filter_Attribute extends Mage_Catalog_Block_Lay
             $var_href = html_entity_decode($currentUrl = Mage::app()->getRequest()->getBaseUrl() . Mage::getSingleton('core/session')->getRequestPath());
             $_htmlFilters .= 'href="' . $var_href . '" ';
 
-            $_htmlFilters .= 'class="fme_layered_attribute '
-                    . ($this->Selectedfilter($_item) ? 'fme_layered_attribute_selected_'.$_item->getLabel() : '') . '" ';
+            $_htmlFilters .= 'class="fme_layered_attribute '.$_item->getLabel()
+                    . ($this->Selectedfilter($_item) ? ' fme_layered_attribute_selected_'.$_item->getLabel() : '') . '" ';
 
             //Check the number of products against filter
             $qty = '';
@@ -115,7 +115,7 @@ class FME_Layerednav_Block_Layer_Filter_Attribute extends Mage_Catalog_Block_Lay
             } else if(in_array(strtolower($_item->getLabel()), $gender_array)) {
                 $_filtersArray[] = '<a ' . $_htmlFilters . '><span>' . $_item->getLabel() . '</span></a>' . $qty;
             }else if(in_array(strtolower($_item->getLabel()), $style_array)) {
-                 $_filtersArray[] = '<a class="'.$_item->getLabel().'"  href="'.$this->urlEscape($_item->getUrl()).'" ' . $_htmlFilters . '><span> <img id="'.strtolower($_item->getLabel()).'"" src="'.$this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png').'"> </span></a>' . $qty;
+                 $_filtersArray[] = '<a   href="'.$this->urlEscape($_item->getUrl()).'" ' . $_htmlFilters . '><span> <img id="'.strtolower($_item->getLabel()).'"" src="'.$this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png').'"> </span></a>' . $qty;
             }
             else
             {
