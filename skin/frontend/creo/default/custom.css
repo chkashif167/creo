@@ -951,7 +951,7 @@
 .sortbycontainer a:hover { text-decoration: none;}
  .sortbyUl { padding: 0; position: absolute; top: 43px;}
  .sortbyUl li a { border-top: none !important;}
- div.fme-filter a.fme_layered_attribute { background: none !important; padding: 0 !important;}
+/* div.fme-filter a.fme_layered_attribute { background: none !important; padding: 0 !important;}*/
  
  
  
