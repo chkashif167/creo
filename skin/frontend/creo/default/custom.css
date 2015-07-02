@@ -967,3 +967,9 @@
  #fme_layered_cat ol { padding: 0;}
  
  #fme_layered_styles  ol li a { font-size: 0px; height: 20px; width:32px;}
+ 
+ 
+ .minicartInnerUl { padding: 0; margin: 0; width: 100%; text-transform: uppercase; float: left; font-size:12px; text-align:center; margin: 10px 0 0 0;}
+ .minicartInnerUl li { float: left; width: 33%;}
+ .minicartInnerUl li label { float: left; width:100%;}
+ .minicartInnerUl li span { float: left; width:100%;}

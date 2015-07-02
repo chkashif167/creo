@@ -283,4 +283,34 @@
     </a> 
     <?php endif ?>
   </div>
+  
+       
+		 
+		 <?php if ($_options = $this->getOptionList()):?>
+
+
+          <ul class="minicartInnerUl">
+                <?php foreach ($_options as $_option) : ?>
+                
+                <li>
+                <label> <?php echo $this->escapeHtml($_option['label']) ?> </label>
+                <span>
+                    <?php if (is_array($_option['value'])): ?>
+                    <?php echo nl2br(implode("\n", $_option['value'])) ?>
+                    <?php else: ?>
+                    <?php echo $_option['value'] ?>
+                    <?php endif; ?>
+                    </span>
+                </li>
+                <?php endforeach; ?>
+         
+        
+       
+       
+        <?php endif; ?>
+        <li>
+        <label> Qty </label>
+        <span> <?php echo $this->getQty()?> </span>
+        </li>
+        </ul>
 </li>
