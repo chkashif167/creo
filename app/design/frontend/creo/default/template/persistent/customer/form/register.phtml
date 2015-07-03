@@ -33,19 +33,17 @@
 /** @var $this Mage_Customer_Block_Form_Register */
 ?>
 
-<div class="row">
-       <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h2><?php echo $this->__('Create an Account') ?></h2>
-  <div class="form-holder">
-          <div class="form-frame">
+       <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12 form-holder login-sec no-padding-right">
+        <h3><?php echo $this->__('Create an Account') ?></h3>
+  <div>
+          <div class="form-frame reg-form">
     <?php echo $this->getChildHtml('form_fields_before')?>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
-    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="signup-form" enctype="multipart/form-data" class="">
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="signup-form" enctype="multipart/form-data">
         
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
-            <p class="form-instructions"><?php echo $this->__('Please enter the following information to create your account.') ?></p>
-            <p class="required red"><?php echo $this->__('* Required Fields') ?></p>
+            <?php /*?><p class="form-instructions"><?php echo $this->__('Please enter the following information to create your account.') ?></p><?php */?>
             
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
                     <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
@@ -161,10 +159,10 @@
                 <?php //echo $this->getChildHtml('persistent.remember.me'); ?>
             
             <?php //echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
-       
+        <p class="required red no-margin"><?php echo $this->__('* Required Fields') ?></p>
         <div class="submit-holder">
-            <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-            <button type="submit" title="<?php echo $this->__('Register') ?>" class="button"><span><span><?php echo $this->__('Register') ?></span></span></button>
+            <?php /*?><p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p><?php */?>
+            <button type="submit" title="<?php echo $this->__('Register') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
         </div>
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
             <input name="context" type="hidden" value="checkout" />
