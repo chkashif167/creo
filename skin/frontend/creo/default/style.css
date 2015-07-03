@@ -494,7 +494,7 @@ p.style1 {
 }
 #header .cart .opener {
 	font: bold 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
-	color: #222;
+	color: #fff;
 	text-transform: uppercase;
 	position: relative;
 	display: block;
@@ -508,8 +508,7 @@ p.style1 {
 #header .cart .opener:before {
 	font-family: 'fontello';
 	line-height: 16px;
-	font-size: 15px;
-	width: 14px;
+	font-size: 22px;
 	height: 16px;
 	display: inline-block;
 	vertical-align: middle;
@@ -529,6 +528,19 @@ p.style1 {
 	-moz-transform: skewY(-8deg);
 	-webkit-transform: skewY(-8deg);
 	-ms-transform: skewY(-8deg);
+}
+#header .cart .opener .count {
+    background: #fff;
+    border-radius: 50%;
+    height: 13px;
+    left: 11px;
+    position: absolute;
+    top: 8px;
+    width: 13px;
+    border: 1px solid #f16167;
+    text-align: center;
+    color: #222;
+	font: 8px/10px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .cart .slide {
 	background: #fff;
