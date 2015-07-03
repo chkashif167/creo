@@ -14,6 +14,9 @@
    <action method="addCss"><stylesheet>style.css</stylesheet></action>
   <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
    <action method="addCss"><stylesheet>custom.css</stylesheet></action>
+	
+	
+	
 	 <action method="addCss"><stylesheet>css/custom.sami.css</stylesheet></action>
   <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
    <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
@@ -214,5 +217,13 @@
 	  <update handle="customer_account_create"/> 
 	  <update handle="customer_account_forgotpassword"/>   
  </customer_account_login>
+
+	 
+	 <cms_index_noroute>
+	  <reference name="head">
+     <action method="addCss"><stylesheet>style404.css</stylesheet></action>
+ </reference>
+	 </cms_index_noroute>
+
 
 </layout>

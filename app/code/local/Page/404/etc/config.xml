@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Page_404>
+      <version>0.1.0</version>
+    </Page_404>
+  </modules>
+  <global>
+    <page>
+      <layouts>
+        <Page_404_Page translate="label">
+          <label> 404 Page</label>
+          <template>page/404.phtml</template>
+          <layout_handle>Page_404</layout_handle>
+        </Page_404_Page>
+        <!-- add more layouts here -->
+      </layouts>
+    </page>
+  </global>
+</config>

@@ -534,9 +534,9 @@ p.style1 {
 	background: #fff;
 	position: absolute;
 	right: 0;
-	padding: 10px 0 20px;
+	padding: 10px 0 16px;
 	margin: 20px 0 0;
-	width: 326px;
+	width: 300px;
 	box-shadow: 5px 5px 5px -2px rgba(0,0,0,.23);
 }
 .mCustomScrollBox { max-height: 500px !important; }
@@ -544,15 +544,39 @@ p.style1 {
 .mCSB_dragger { background: #fff; }
 .mCSB_scrollTools { opacity: 1 !important; }
 #header .cart .product {
-	padding: 20px;
+	padding: 16px;
 	border-bottom: 2px solid #e4e4e4;
 	overflow: hidden;
 	text-align: left;
 }
 #header .cart .alignleft {
 	float: left;
-	width: 76px;
+	width: 67px;
 	margin: 0 16px 0 0;
+}
+#header label,
+#header .cart .price label {
+    color: #222;
+    display: inline-block;
+    font: 12px/14px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0 7px 3px 0;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+#header .cart .price label{
+	margin: 0 7px 0 0;
+	line-height: 20px;
+}
+.minicartInnerUl {
+	font: 12px/14px "Roboto Condensed",Helvetica,Arial,sans-serif;
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+	color: #222;
+}
+.mini-products-list {
+    padding: 0;
+    margin: 0;
 }
 #header .cart .alignleft img {
 	display: block;
@@ -579,7 +603,7 @@ p.style1 {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 20px;
+	font-size: 16px;
 }
 #header .cart .total .price {
 	font-size: 20px !important;
@@ -592,9 +616,9 @@ p.style1 {
 #header .cart .edit {
 	color: #ddd;
 	position: absolute;
-	top: 28px;
+	top: 22px;
 	right: 0;
-	font-size: 16px;
+	font-size: 14px;
 }
 #header .cart .edit:hover {
 	color: #222;
@@ -611,68 +635,19 @@ p.style1 {
 	text-align: center;
 }
 #header .cart .btn-holder a {
-	display: inline-block;
-	vertical-align: top;
-	width: 42%;
+	display: block;
 	padding: 5px 10px;
-	border: 4px solid #f16167;
-	background: #f16167;
+	margin: 0 16px;
+	background: #ef4f61;
 	text-transform: uppercase;
 	color: #fff;
 	position: relative;
-	font: bold 12px/16px Arial, Helvetica, sans-serif;
+	border: 3px solid #ef4f61;
+	font: bold 14px/18px Arial, Helvetica, sans-serif;
 }
-#header .cart .btn-holder a:before {
-	position: absolute;
-	top: -4px;
-	left: -20px;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0 0 34px 16px;
-	border-color: transparent transparent #f16167;
-	content: '';
-}
-#header .cart .btn-holder a:first-child:before { display: none; }
-#header .cart .btn-holder a:hover:before { border-color: transparent transparent #000; }
-#header .cart .btn-holder a:hover {
-	background: #000;
-	color: #fff;
-	border-color: #000;
+#header .cart .btn-holder a:hover{
 	text-decoration: none;
-}
-#header .cart .btn-holder a:first-child {
-	margin: 0 4px 0 0;
-	color: #aaa;
-	background: #fff;
-	border-width: 0 0 0 4px;
-	border-style: solid;
-	border-color: #eee;
-	overflow: hidden;
-	padding: 0;
-	width: 45%;
-}
-#header .cart .btn-holder a:first-child .span1 {
-	transform: skewX(-25deg);
-	border: 4px solid #eee;
-	padding: 5px 10px;
-	display: block;
-	width: 100%;
-	margin-left: -12px;
-}
-#header .cart .btn-holder a:first-child .span2 {
-	display: inline-block;
-	transform: skewX(25deg);
-}
-#header .cart .btn-holder a:first-child:hover .span1 {
-	background: #f16167;
-	border-color: #f16167;
-}
-#header .cart .btn-holder a:first-child:hover {
-	background: none;
-	color: #000;
-	opacity: 1;
-	border-color: #f16167;
+	border-color: #000;
 }
 #header .bottom-area {
 	text-align: right;
