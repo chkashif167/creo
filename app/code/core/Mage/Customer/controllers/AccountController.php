@@ -714,7 +714,19 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                     $newResetPasswordLinkToken =  $this->_getHelper('customer')->generateResetPasswordLinkToken();
                     $customer->changeResetPasswordLinkToken($newResetPasswordLinkToken);
                     $customer->sendPasswordResetConfirmationEmail();
-                } catch (Exception $exception) {
+                } 
+                catch (Mage_Core_Exception $e) {
+                $session->setCustomerFormData($this->getRequest()->getPost());
+                if ($e->getCode() === Mage_Customer_Model_Customer::EXCEPTION_EMAIL_EXISTS) {
+                $url = $this->_getUrl('customer/account/forgotpassword');
+                $message = $this->__('There is already an account with this email address. If you are sure that it is your email address, <a href="%s">click here</a> to get your password and access your account.', $url);
+                $session->setEscapeMessages(false);
+                } else {
+                $message = $e->getMessage();
+                }
+                $session->addError($message);
+                } 
+                catch (Exception $exception) {
                     $this->_getSession()->addError($exception->getMessage());
                     $this->_redirect('*/*/forgotpassword');
                     return;
