@@ -14,9 +14,6 @@
    <action method="addCss"><stylesheet>style.css</stylesheet></action>
   <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
    <action method="addCss"><stylesheet>custom.css</stylesheet></action>
-	
-	
-	
 	 <action method="addCss"><stylesheet>css/custom.sami.css</stylesheet></action>
   <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
    <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
@@ -209,13 +206,13 @@
         </reference>
     </onestepcheckout_index_success>
 	
- 
-	 <cms_index_noroute>
-	  <reference name="head">
-     <action method="addCss"><stylesheet>style404.css</stylesheet></action>
- </reference>
-	 </cms_index_noroute>
-	 
-
+ <customer_account_login translate="label">
+	  <label>Customer Account Registration Form</label>
+	  <!-- Mage_Customer 
+	  <remove name="right"/>
+	  <remove name="left"/>-->
+	  <update handle="customer_account_create"/> 
+	  <update handle="customer_account_forgotpassword"/>   
+ </customer_account_login>
 
 </layout>

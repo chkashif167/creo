@@ -1313,35 +1313,13 @@ input[type="submit"]:hover {
 #nav .drop {
 	position: absolute;
 	top: 100%;
-	left: auto;
+	left: 15px;
+	right: 15px;
+	border-bottom: 8px solid #f16a79;
 	margin: 0;
-	padding: 48px 30px 0;
+	padding: 30px 30px 25px;
 	background: #fff;
 	display: none;
-}
-#nav .drop:before {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	right: 0;
-	margin: -70px 0 0;
-	height: 150px;
-	background: #fff;
-	border-bottom: 8px solid #000;
-	transform: skewY(-7deg);
-	-moz-transform: skewY(-7deg);
-	-webkit-transform: skewY(-7deg);
-	-ms-transform: skewY(-7deg);
-	z-index: -1;
-	content: '';
-}
-#nav .drop:after {
-	position: absolute;
-	bottom: 100%;
-	left: 0;
-	width: 122px;
-	height: 8px;
-	background: #000;
 }
 #nav ol > li:hover .drop { display: block; }
 #nav .product-list {
@@ -3782,6 +3760,100 @@ input[type="submit"]:hover {
 	color: #000;
 }
 .faq-area .openeer-holder .question:hover span:before{background: #f16167;}
+#nav .drop{
+	text-align: center;
+	text-transform: uppercase;
+}
+#nav .links-area{
+	display: inline-block;
+	vertical-align: top;
+	width: 35%;
+	text-align: left;
+}
+#nav .links-area h2{
+	margin: 0 0 18px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: #222;
+    font:bold 18px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+}
+#nav .links-area .links-frame{overflow: hidden;}
+#nav .links-area .sorting-items{
+	margin: 0 10px 0 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	width: 80px;
+    font:bold 16px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
+}
+#nav .links-area .sorting-items li{
+	margin: 0 0 5px;
+}
+#nav .links-area .sorting-items a{color: #f16a79;}
+#nav .links-area .sorting-items a:hover{color: #000;}
+#nav .links-area .links{
+	margin: 0 8px 0 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	width: 75px;
+    font:13px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
+}
+#nav .links-area .links li{margin: 0 0 3px;}
+#nav .links-area .links a{color: #000;}
+#nav .links-area .links a:hover{color: #f16a79;}
+#nav .featured-items{
+	display: inline-block;
+	vertical-align: top;
+	width: 40%;
+}
+#nav .featured-items .heading-holder {margin: 0;}
+#nav .featured-items .heading-holder h2 {
+	font: 13px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	color: #000;
+}
+#nav .featured-items .heading-holder h2:before,
+#nav .featured-items .heading-holder h2:after {
+	height: 1px;
+	background: #d7d7d7;
+	top: auto;
+	bottom: 5px;
+}
+#nav .featured-items .featured-products{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 102%;
+}
+#nav .featured-items .featured-products li{
+	float: left;
+	width: 32%;
+	margin: 0 1% 0 0;
+	position: relative;
+}
+#nav .featured-items .featured-products img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+#nav .featured-items .featured-products .title{
+	background: rgba(255, 255, 255, 0.8);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 10px;
+	color: #000;
+	font: 12px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+#nav .featured-items .featured-products a:hover .title{
+	background: #f16a79;
+	text-decoration: none;
+	color: #fff;
+}
+
+
 
 
 
@@ -3792,7 +3864,9 @@ input[type="submit"]:hover {
 
 
 @media only screen and (max-width: 1199px) {
-	#nav ol > li > a{padding: 0 15px 5px;}
+	#nav ol > li > a{padding: 0 12px 5px;}
+	.search-form{width: 130px;}
+	.search-form input[type="text"]{width: 99px;}
 	.dark-box .box { height: 280px; }
 	#footer .copyright {
 		padding-bottom: 7px;
@@ -3836,6 +3910,7 @@ input[type="submit"]:hover {
 	.products-grid .btn-holder a:first-child .span1{padding: 0 5px 0 0;}
 	.products-grid .btn-holder a:first-child{width: 24%;}
 	.products-grid .btn-holder a{width: 74%;}
+	#nav .links-area{width: 40%;}
 }
 @media only screen and (max-width: 991px) {
 	#wrapper > .container{padding: 0 15px;}
@@ -3894,6 +3969,9 @@ input[type="submit"]:hover {
 	.faq-area .openeer-holder .question span:before{margin: 0 4px 0 0;}
 	.faq-area .openeer-holder .question{width: 91%;}
 	.products-grid .btn-holder a{width: 72%;}
+	#nav .links-area {width: 50%;}
+	#nav .drop{padding: 20px 10px 15px;}
+	#nav .featured-items{width: 48%;}
 }
 @media only screen and (max-width: 767px) {
 	body { min-width: 768px; }
