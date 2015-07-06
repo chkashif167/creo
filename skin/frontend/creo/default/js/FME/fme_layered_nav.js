@@ -60,7 +60,7 @@ function fme_layered_show_products(transport)
 
         var el = $('fme_layered_container');
         el.update(resp.products.gsub(ajaxUrl, $('fme_layered_url').value));
-        catalog_toolbar_init();
+        //catalog_toolbar_init();
 
         $('catalog-filters').update(
                 resp.layer.gsub(
@@ -232,6 +232,7 @@ function catalog_toolbar_listener(evt) {
 
 function catalog_toolbar_make_request(href)
 {
+
     var pos = href.indexOf('?');
     if (pos > -1) {
         $('fme_layered_params').value = href.substring(pos + 1, href.length);
@@ -291,6 +292,7 @@ function price_input_listener(evt) {
 
 function fme_layered_init()
 {
+
     var items, i, j, n,
             classes = ['category', 'attribute', 'icon', 'price', 'clear', 'dt', 'clearall'];
 
