@@ -297,7 +297,67 @@ a.alignleft.checkout-items {
     padding: 10px 20px;
 }
 
+/*....... Integration-Starts.........*/
 
+.form-header {
+	border-bottom: 5px solid #eee;
+	padding-bottom:12px;
+	 color: #222;
+    font: 34px/36px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.login-sec {
+	border-top:none;
+}
+
+.login-sec.form-holder .form-frame, .reg-form.form-frame,.reg-form.form-frame .signup-form  {
+	width:100%;
+}
+
+.right-panel.form-holder {
+	padding-left:0;
+	padding-right:0;
+}
+
+.no-padding-left {
+	padding-left:0 !important;
+}
+
+.no-padding-right {
+	padding-right:0 !important;
+}
+
+.no-margin {
+	margin:0 !important;
+}
+
+.form-holder.login-sec.forgot-sec {
+	padding-top:0;
+} 
+
+.signup-form button[type="submit"] {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #959595;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font: bold 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    height: 26px;
+    margin: 10px 0;
+    padding: 2px 5px;
+    width: 100%;
+}
+
+#login-form .submit-holder.btn-holder {
+	margin-top:58px;
+}
+
+.form-holder.login-sec {
+	padding-bottom:20px;
+	padding-top:20px;
+}
 
 
 

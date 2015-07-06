@@ -208,11 +208,34 @@
             <!--<block type="checkout/onepage_success" name="checkout.success" template="checkout/success.phtml"/>-->
         </reference>
     </onestepcheckout_index_success>
+	
+ <customer_account_login translate="label">
+	  <label>Customer Account Registration Form</label>
+	  <!-- Mage_Customer 
+	  <remove name="right"/>
+	  <remove name="left"/>-->
+	  <update handle="customer_account_create"/> 
+	  <update handle="customer_account_forgotpassword"/>   
+ </customer_account_login>
+
 	 
 	 <cms_index_noroute>
 	  <reference name="head">
      <action method="addCss"><stylesheet>style404.css</stylesheet></action>
  </reference>
 	 </cms_index_noroute>
+	 
+	 
+  <customer_account_login translate="label">
+  <label>Customer Account Registration Form</label>
+  <!-- Mage_Customer 
+  <remove name="right"/>
+  <remove name="left"/>-->
+  <update handle="customer_account_create"/> 
+  <update handle="customer_account_forgotpassword"/>   
+ </customer_account_login>
+	 
+	 
+
 
 </layout>
