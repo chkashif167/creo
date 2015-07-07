@@ -1,0 +1,14 @@
+.featured-category-list{}
+.featured-category-list ul{float:left; width:100%; margin:0 0 15px;}
+.featured-category-list ul li{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0 0 0 #F0F0F0 inset, 0 0 5px #E8E6E6;
+    float: left;
+    margin-right: 15px;
+    padding: 12px;
+    text-align: left;
+}
+.featured-category-list .featuredcategory-image{border:1px solid #efefef;}
+.featured-category-list .featuredcategory-name h5{text-align:left; float:left; margin:6px 0 0;}
+.featured-category-list .featuredcategory-name h5 a{text-decoration:none; color:#333333; font-size:12px; font-weight:bold; text-transform:uppercase;}

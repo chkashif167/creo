@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<magebuzz translate="label">
+			<label>MageBuzz Add-ons</label>
+			<sort_order>400</sort_order>
+		</magebuzz>
+	</tabs>
+	<sections>
+		<info translate="label" module="info">
+			<class>separator-top</class>
+			<label>Info</label>
+			<tab>magebuzz</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>999</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>0</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>Info</label>
+					<frontend_type>text</frontend_type>
+					<frontend_model>info/system_config_general</frontend_model>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+				</general>
+				<installed_extensions translate="label">
+					<label>Installed Magebuzz Extensions</label>
+					<frontend_type>text</frontend_type>
+					<frontend_model>info/system_config_extensions</frontend_model>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+				</installed_extensions>
+				<notification translate="label">
+					<label>Notification</label>
+					<frontend_type>text</frontend_type>
+					<comment><![CDATA[<p style="color:#EA7601">Select Yes to receive notification about new extensions, templates, updates or promotions and discounts from Magebuzz Store.</p>]]></comment>
+					<sort_order>3</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+						<enable>
+							<label>Receive Notification about new product, update and promotions</label>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</enable>
+					</fields>
+				</notification>
+			</groups>
+		</info>
+	</sections>
+</config>
