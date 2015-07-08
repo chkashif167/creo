@@ -359,8 +359,29 @@ a.alignleft.checkout-items {
 	padding-top:20px;
 }
 
+#footer .list li {
+	padding-left:0;
+}
 
+#footer .list li:before {
+	display:none;
+}
 
+.fme_layered_attribute.children, .col.heading-area.col-lg-12.col-md-12.col-sm-12.col-xs-12 {
+	display:none;
+}
+
+.subscribe-form.footer-form #advice-required-entry-newsletter {
+	float:left;
+	top:2px;
+	color:#ef4f61;
+} 
+
+.subscribe-form.footer-form .button.newslettersubscribe {
+	position:absolute;
+	right:0;
+	width:5%;
+}
 
 
 
