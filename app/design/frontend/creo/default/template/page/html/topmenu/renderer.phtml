@@ -85,9 +85,6 @@
 //
 //return $html;
 ?>
-
-
-
 <?php /*?>    <li class="active"><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
     
     <li class="drop-parent"> <a href="#">CLOTHING</a>
@@ -171,43 +168,39 @@ $count = 0;?>
     </li>
     <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */?>
 
-
-				                     <li class="active"><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
-				                    <li>
-				                    	<a href="#">CLOTHING</a>
-				                    	<div class="drop">
-				                    		<div class="links-area">
-				                    			<h2>MEN &amp; WOMEN</h2>
-				                    			<div class="links-frame">
-					                    			<ul class="sorting-items">
-					                    				<li><a href="#">Trending</a></li>
-					                    				<li><a href="#">Best Seller</a></li>
-					                    				<li><a href="#">NEW</a></li>
-                                             <?php $children_category = Mage::getModel('catalog/category')->load('3')->getChildrenCategories();?>
-   
-					                    			</ul>
-					                    			<ul class="links">
-					                    				<!--<li><a href="#">T-Shirt</a></li>
-					                    				<li><a href="#">Tank Top</a></li>
-					                    				<li><a href="#">Polo</a></li>-->
-                                                    <?php 
-        $children_category = Mage::getModel('catalog/category')->load('3')->getChildrenCategories();?>
-        <?php 
-        foreach ($children_category as $category):
-            $_category = Mage::getModel('catalog/category')->load($category->getId());
-            echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() .'</a></li>';
-        endforeach;
-        ?>
-                                             
-					                    			</ul>
-				                    			</div>
-				                    		</div>
-				                    		<div class="featured-items">
-				                    			<div class="heading-holder">
-				                    				<h2>Featured</h2>
-				                    			</div>
-				                    			<ul class="featured-products">
-				                    				<li>
+<li class="active"><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
+<li> <a href="#">CLOTHING</a>
+  <div class="drop">
+    <div class="links-area">
+      <h2>MEN &amp; WOMEN</h2>
+      <div class="links-frame">
+        <ul class="sorting-items">
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Best Seller</a></li>
+          <li><a href="#">NEW</a></li>
+         
+        </ul>
+        <ul class="links">
+      <!--<li><a href="#">T-Shirt</a></li>
+      <li><a href="#">Tank Top</a></li>
+      <li><a href="#">Polo</a></li>-->
+         
+	<?php 
+	$children_category = Mage::getModel('catalog/category')->load('3')->getChildrenCategories();
+   foreach ($children_category as $category):
+   $_category = Mage::getModel('catalog/category')->load($category->getId());
+   echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() .'</a></li>';
+   endforeach;        
+   ?>
+        </ul>
+      </div>
+    </div>
+    <div class="featured-items">
+      <div class="heading-holder">
+        <h2>Featured</h2>
+      </div>
+      <ul class="featured-products">
+        <!--		<li>
 				                    					<a href="#">
 					                    					<img alt="" src="images/img18.jpg">
 					                    					<span class="title">CLasSIC POLO</span>
@@ -224,82 +217,158 @@ $count = 0;?>
 					                    					<img alt="" src="images/img20.jpg">
 					                    					<span class="title">TANK TOPS</span>
 				                    					</a>
-				                    				</li>
-				                    			</ul>
-				                    		</div>
-				                    	</div>
-				                    </li>
-				                    <li>
-				                    	<a href="#">ACCESSORIES</a>
-				                    	<div class="drop">
-				                    		...
-				                    	</div>
-				                    </li>
-				                    <li><a href="#">CAPS</a></li>
-				                    <li>
-				                    	<a href="#">CATEGORIES</a>
-				                    	<div class="drop">
-				                    		<div class="links-area">
-				                    			<h2>Categories</h2>
-				                    			<div class="links-frame">
-					                    			<ul class="sorting-items">
-					                    				<li><a href="#">Trending</a></li>
-					                    				<li><a href="#">Best Seller</a></li>
-					                    				<li><a href="#">NEW</a></li>
-					                    			</ul>
-					                    			<ul class="links">
-					                    				<li><a href="#">LOCALIZED</a></li>
-					                    				<li><a href="#">COMICS</a></li>
-					                    				<li><a href="#">FUNNY</a></li>
-					                    				<li><a href="#">CREO</a></li>
-					                    				<li><a href="#">MUSIC</a></li>
-					                    				<li><a href="#">SPORT</a></li>
-					                    			</ul>
-					                    			<ul class="links">
-					                    				<li><a href="#">TV&amp;MOVIES</a></li>
-					                    				<li><a href="#">NERDY</a></li>
-					                    				<li><a href="#">CITY LOVE</a></li>
-					                    				<li><a href="#">BEACH</a></li>
-					                    				<li><a href="#">CAUSES</a></li>
-					                    				<li><a href="#">TYPOGRAPHY</a></li>
-					                    			</ul>
-					                    			<ul class="links">
-					                    				<li><a href="#">PHOTOGRAPHY</a></li>
-					                    				<li><a href="#">BIKES</a></li>
-					                    				<li><a href="#">PET LOVERS</a></li>
-					                    				<li><a href="#">GAMING</a></li>
-					                    				<li><a href="#">FELLING GOOD</a></li>
-					                    				<li><a href="#">ARTS</a></li>
-					                    			</ul>
-				                    			</div>
-				                    		</div>
-				                    		<div class="featured-items">
-				                    			<div class="heading-holder">
-				                    				<h2>Featured</h2>
-				                    			</div>
-				                    			<ul class="featured-products">
-				                    				<li>
-				                    					<a href="#">
-					                    					<img alt="" src="images/img18.jpg">
-					                    					<span class="title">LOCALIZED</span>
-				                    					</a>
-				                    				</li>
-				                    				<li>
-				                    					<a href="#">
-					                    					<img alt="" src="images/img19.jpg">
-					                    					<span class="title">Music</span>
-				                    					</a>
-				                    				</li>
-				                    				<li>
-				                    					<a href="#">
-					                    					<img alt="" src="images/img20.jpg">
-					                    					<span class="title">Beach</span>
-				                    					</a>
-				                    				</li>
-				                    			</ul>
-				                    		</div>
-				                    	</div>
-				                    </li>
-				                    <li><a href="#">DESIGN YOUR OWN</a></li>
-				            
-				       
+				                    				</li>-->
+        <?php 
+		$Featured_category = Mage::getModel('catalog/category')->load('3')->getChildrenCategories();
+		foreach ($Featured_category as $category):
+		$_category = Mage::getModel('catalog/category')->load($category->getId());
+		if($_category->featured_category == 1) {
+		echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($category->getId())->getImageUrl().'"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+		}
+		endforeach;
+		?>
+      </ul>
+    </div>
+  </div>
+</li>
+<li> <a href="#">ACCESSORIES</a>
+  <div class="drop"> 
+     <div class="links-area">
+      <h2>MEN &amp; WOMEN</h2>
+      <div class="links-frame">
+        <ul class="sorting-items">
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Best Seller</a></li>
+          <li><a href="#">NEW</a></li>
+         
+        </ul>
+        <ul class="links">
+      <!--<li><a href="#">T-Shirt</a></li>
+      <li><a href="#">Tank Top</a></li>
+      <li><a href="#">Polo</a></li>-->
+         
+	<?php 
+	$children_category = Mage::getModel('catalog/category')->load('5')->getChildrenCategories();
+   foreach ($children_category as $category):
+   $_category = Mage::getModel('catalog/category')->load($category->getId());
+   echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() .'</a></li>';
+   endforeach;        
+   ?>
+        </ul>
+      </div>
+    </div>
+    <div class="featured-items">
+      <div class="heading-holder">
+        <h2>Featured</h2>
+      </div>
+      <ul class="featured-products">
+        <?php 
+		$Featured_category = Mage::getModel('catalog/category')->load('5')->getChildrenCategories();
+		foreach ($Featured_category as $category):
+		$_category = Mage::getModel('catalog/category')->load($category->getId());
+		if($_category->featured_category == 1) {
+		echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($category->getId())->getImageUrl().'"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+		}
+		endforeach;
+		?>
+      </ul>
+    </div>
+  
+  </div>
+</li>
+<li><a href="#">CAPS</a>
+<div class="drop">
+    <div class="links-area">
+      <h2>MEN &amp; WOMEN</h2>
+      <div class="links-frame">
+        <ul class="sorting-items">
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Best Seller</a></li>
+          <li><a href="#">NEW</a></li>
+         
+        </ul>
+        <ul class="links">
+      <!--<li><a href="#">T-Shirt</a></li>
+      <li><a href="#">Tank Top</a></li>
+      <li><a href="#">Polo</a></li>-->
+         
+	<?php 
+	$children_category = Mage::getModel('catalog/category')->load('48')->getChildrenCategories();
+   foreach ($children_category as $category):
+   $_category = Mage::getModel('catalog/category')->load($category->getId());
+   echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() .'</a></li>';
+   endforeach;        
+   ?>
+        </ul>
+      </div>
+    </div>
+    <div class="featured-items">
+      <div class="heading-holder">
+        <h2>Featured</h2>
+      </div>
+      <ul class="featured-products">
+        <?php 
+		$Featured_category = Mage::getModel('catalog/category')->load('48')->getChildrenCategories();
+		foreach ($Featured_category as $category):
+		$_category = Mage::getModel('catalog/category')->load($category->getId());
+		if($_category->featured_category == 1) {
+		echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($category->getId())->getImageUrl().'"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+		}
+		endforeach;
+		?>
+      </ul>
+    </div>
+  </div>
+</li>
+<li> <a href="#">CATEGORIES</a>
+
+
+<div class="drop">
+    <div class="links-area">
+      <h2>MEN &amp; WOMEN</h2>
+      <div class="links-frame">
+        <ul class="sorting-items">
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Best Seller</a></li>
+          <li><a href="#">NEW</a></li>
+         
+        </ul>
+        <ul class="links">
+         
+	<?php 
+	$children_category = Mage::getModel('catalog/category')->load('6')->getChildrenCategories();
+	$i = 0;
+   foreach ($children_category as $category):
+	if($i%6==0) {
+			echo "</ul> <ul class=\"links\">";
+			}
+		$i++;
+   	$_category = Mage::getModel('catalog/category')->load($category->getId());
+   echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() .'</a></li>';
+   endforeach;        
+   ?>
+        </ul>
+      </div>
+    </div>
+    <div class="featured-items">
+      <div class="heading-holder">
+        <h2>Featured</h2>
+      </div>
+      <ul class="featured-products">
+        <?php 
+		$Featured_category = Mage::getModel('catalog/category')->load('6')->getChildrenCategories();
+		foreach ($Featured_category as $category):
+		$_category = Mage::getModel('catalog/category')->load($category->getId());
+		if($_category->featured_category == 1) {
+		echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($category->getId())->getImageUrl().'"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+		}
+		endforeach;
+		?>
+      </ul>
+    </div>
+  </div>
+
+
+  
+</li>
+<li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
