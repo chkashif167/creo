@@ -1043,9 +1043,7 @@ $j('.modal').on('show.bs.modal', centerModals);
 $j(window).on('resize, load, ready', centerModals);
 $j(window).load(function(){
         $j('.modal_newsletter').modal('show');
-});
-
-
+    });
  /*
  * custom scrollbar
  */

@@ -40,10 +40,10 @@ if(empty($_cartQty)) {
 <div id="minicart-error-message" class="minicart-message"></div>
 <div id="minicart-success-message" class="minicart-message"></div>
 <div class="minicart-wrapper">
-  <p class="block-subtitle">
+ <!-- <p class="block-subtitle">
     <?php //echo $this->__('Recently added item(s)') ?>
     <?php /*?><a class="close skip-link-close" href="#" title="<?php echo $this->__('Close'); ?>">&times;</a><?php */?>
-  </p>
+  </p>-->
   <?php $_items = $this->getRecentItems() ?>
   <?php $countItems = count($_items); ?>
   <?php if($countItems): ?>
