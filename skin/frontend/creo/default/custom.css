@@ -956,11 +956,6 @@
  
  
  
- 
- 
- 
- 
- 
  #fme_filters_list dd  { float: left;}
  .fme_layered_category { display: none !important;}
  #fme_layered_cat { display: none;}
@@ -971,3 +966,4 @@
  
 .minicartInnerUl li:first-child{display:none;}
 #nav .drop { left: 12px;}
+.featured-products img  { height: 165px !important; width: 100% !important;}

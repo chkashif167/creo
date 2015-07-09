@@ -42,7 +42,7 @@
 		<template>youama/ajaxlogin/ajaxlogin.phtml</template>
 		</action>
 		</block>-->
-		<block type="customer/form_login" name="customer_form_login" template="customer/form/loginpopup.phtml" />
+		<block type="customer/form_login" name="customer_form_login"  before="footer_store_language" template="customer/form/loginpopup.phtml" />
 	 </reference>
 	 
 </default>
