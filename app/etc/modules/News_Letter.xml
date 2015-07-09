@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+      <modules>
+            <News_Letter>
+                  <active>true</active>
+                  <codePool>local</codePool>
+            </News_Letter>
+      </modules>
+</config>
