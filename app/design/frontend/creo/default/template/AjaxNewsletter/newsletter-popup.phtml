@@ -1,0 +1,74 @@
+<script type="text/javascript">
+ 
+    jQuery(document).ready(function() {
+ 
+        var check_cookie = "<?php echo Mage::getModel('core/cookie')->get('popup-shown'); ?>";
+ 
+        if(!check_cookie) {
+            beginNewsletterForm();
+        }
+
+       jQuery(".popup").click(function(){
+         jQuery(".fancybox-overlay-fixed").fadeOut().removeClass("active");
+         <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 5); ?>
+
+       });
+     
+    });
+ 
+    function beginNewsletterForm () {
+        jQuery.fancybox({
+            'width': '910px',
+            'height': '450px',
+            'padding': '0px',
+            'autoScale': true,
+            'transitionIn': 'fade',
+            'transitionOut': 'fade',
+            'showCloseButton': true,
+            'type': 'inline',
+            'href': '#newsletter-popup'
+        });
+        jQuery("#newsletter-popup").trigger('click');
+    }
+</script>
+ 
+<div style="display:none;">
+      <div id="newsletter-popup" class="container">
+            <div class="sub-container">
+                  <div class="content">
+                        <div class="register-form">
+                        <div class="modal-dialog modal-sm">
+                          <div class="row">
+                            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h2 class="form-header">
+                               <?php echo $this->__('Newsletter subscription') ?></h2>  
+                              <?php echo $this->getChildHtml('global_notices') ?>
+                               <form id="newsletter-registration-form" action="<?php echo $this->getUrl('newsletter/subscriber/new/') ?>" method="post" id="newsletter-validate-detail">
+                                    <?php echo
+                                      Mage::app()->getLayout()->getMessagesBlock()->
+                                      setMessages(Mage::getSingleton('customer/session')->getMessages(true))->getGroupedHtml() 
+                                    ?>
+                                    <div class="form-fields-middle">
+                                          <div class="input-wrapper">
+                                                <label for="email" class="required"><?php echo $this->__('Email Address') ?> <em> *</em></label>
+                                                <input name="email" id="cm_email" onfocus="if(this.value=='Enter Your Email') this.value=''" onblur="if(this.value=='') this.value='Enter Your Email'" class="input-text required-entry validate-email field-left" type="text" value="Enter Your Email" />
+                                                <input type="checkbox" class="popup"><label for="checkbox"><?php echo $this->__('do not show this popup again') ?></label>
+                                          </div>
+                                    </div>
+                                    <div class="btn-sign-up-now">
+                                          <input type="submit" class="button" value="Sign Up" />
+                                    </div>
+ 
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+ 
+<script type="text/javascript">
+      var newsletterSubscriberFormDetail = new VarienForm('newsletter-refistration-form', true);
+</script>

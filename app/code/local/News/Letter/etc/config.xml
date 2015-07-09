@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+ 
+<config>
+       
+      <modules>
+            <News_Letter>
+                  <version>0.0.1</version>
+            </News_Letter>
+      <modules>
+ 
+      <frontend>
+            <layout>
+                  <updates>
+                        <letter>
+                              <file>letter.xml</file>
+                        </letter>
+                  </updates>
+            </layout>
+      </frontend>
+ 
+</config>

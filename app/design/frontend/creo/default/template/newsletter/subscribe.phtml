@@ -24,7 +24,8 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-
+<?php $check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
+if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
     <div class="modal-content block-subscribe">
@@ -55,3 +56,4 @@
     </div>
   </div>
 </div>
+<?php } ?>

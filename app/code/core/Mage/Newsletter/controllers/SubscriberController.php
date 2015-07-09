@@ -67,6 +67,7 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                 }
                 else {
                     $session->addSuccess($this->__('Thank you for your subscription.'));
+                    Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/'); 
                 }
             }
             catch (Mage_Core_Exception $e) {
