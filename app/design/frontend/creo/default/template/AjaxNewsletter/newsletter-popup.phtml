@@ -6,11 +6,12 @@
  
         if(!check_cookie) {
             beginNewsletterForm();
+            
+         <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 5); ?>
         }
 
        jQuery(".popup").click(function(){
          jQuery(".fancybox-overlay-fixed").fadeOut().removeClass("active");
-         <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 5); ?>
 
        });
      

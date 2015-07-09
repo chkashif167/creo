@@ -1042,12 +1042,17 @@ function centerModals(){
 $j('.modal').on('show.bs.modal', centerModals);
 $j(window).on('resize, load, ready', centerModals);
 $j(window).load(function(){
+<<<<<<< HEAD
       $j('.modal_newsletter').modal('show');
     });
 
 
 
 
+=======
+        $j('.modal_newsletter').modal('show');
+    });
+>>>>>>> bca13a9a8a68ba1957a5ff9cf84af1f58d914b1a
  /*
  * custom scrollbar
  */

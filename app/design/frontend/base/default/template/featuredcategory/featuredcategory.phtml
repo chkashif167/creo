@@ -1,0 +1,63 @@
+<?php
+    $enabledFeaturedCategories          = Mage::helper('featuredcategory')->isEnabledFeaturedCategories();
+    $imageCategoriesWidth       = Mage::helper('featuredcategory')->getImageCategoriesWidth();
+    $imageCategoriesHeight      = Mage::helper('featuredcategory')->getImageCategoriesHeight();
+    $showCategoriesAlphabet     = Mage::helper('featuredcategory')->isShowCategoriesAlphabet();
+    $numberCategoriesPerRow     = Mage::helper('featuredcategory')->getNumberCategoriesPerRow();
+?>
+<?php
+    $categories = Mage::getModel('catalog/category')->getCollection()
+        ->addAttributeToSelect('*')
+        ->addAttributeToSelect('url_key')
+        ->addAttributeToSelect('featured_category', 1);
+
+    if($showCategoriesAlphabet){
+        $categories = Mage::getModel('catalog/category')->getCollection()
+            ->addAttributeToSelect('*')
+            ->addAttributeToSelect('url_key')
+            ->addAttributeToSelect('featured_category', 1)
+            ->addAttributeToSort('name', 'ASC');
+    }
+
+    $count = count($categories);
+?>
+<?php if($enabledFeaturedCategories): ?>
+	<div class="page-title">
+		<h1>Featured Categories</h1>
+	</div>
+    <div class="featured-category-list">
+        <?php if ($count > 0):?>
+                <?php $i = 0; ?>
+                <?php foreach($categories as $category):?>
+                    <?php
+                        $categoryID = $category->getId();//id
+                        $imageUrl =  Mage::getModel('catalog/category')->load($categoryID)->getImageUrl();// base path
+                        $category = Mage::getModel('catalog/category')->load($categoryID);
+                        $categoryImage = $category->getImage(); // image name
+                        $basePath = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/category/'.$category->getImage();
+                        $newImageCategoriesResized = Mage::helper('featuredcategory')->resizeImgCategories($categoryImage, $basePath, $imageCategoriesWidth, $imageCategoriesHeight );
+                    ?>
+                        <?php if($category->featured_category):?>
+                            <?php if (($i % ($numberCategoriesPerRow)) == 0): ?>
+                                <ul class="row-item">
+                            <?php endif?>
+                                <li class="item<?php if(($i-1)%$numberCategoriesPerRow==0): ?> first<?php elseif($i%$numberCategoriesPerRow==0): ?> last<?php endif; ?>">
+                                    <div class="featuredcategory-image">
+										<a title="<?php echo $category->getName() ?>" alt="<?php echo $category->getName() ?>" href="<?php echo $category->getUrl() ?>" target="_blank">
+                                        <img src="<?php if($category->getImage()) echo $newImageCategoriesResized?>" alt="<?php echo $category->getName() ?>"/>
+										</a>
+									</div>
+									<div class="featuredcategory-name" style="width:<?php echo $imageCategoriesWidth?>px"><h5><a title="<?php echo $category->getName() ?>" alt="<?php echo $category->getName() ?>" href="<?php echo $category->getUrl() ?>" target="_blank"><?php echo $category->getName() ?></a></h5></div>
+                                </li>
+                            <?php $i++?>
+                            <?php if ((($i % ($numberCategoriesPerRow)) == 0)): ?>
+                                </ul>
+                            <?php endif?>
+                        <?php endif ?>
+
+                <?php endforeach ?>
+				<script type="text/javascript">decorateGeneric($$('ul.row-item'), ['odd','even','first','last'])</script>
+        <?php endif ?>
+    </div>
+<?php endif ?>
+

@@ -32,6 +32,13 @@ function fme_layered_show_products(transport)
     var resp = {};
     if (transport && transport.responseText) {
         try {
+            jQuery('.open-close').openClose({
+        activeClass: 'active',
+        opener: '.opener',
+        slider: '.slide',
+        animSpeed: 400,
+        effect: 'slide'
+    });
             resp = eval('(' + transport.responseText + ')');
         }
         catch (e) {

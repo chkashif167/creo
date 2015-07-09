@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <featuredcategory_adminhtml_featuredcategory_edit>
+		<update handle="editor"/>
+    </featuredcategory_adminhtml_featuredcategory_edit>
+    <featuredcategory_adminhtml_featuredcategory_index>
+		<update handle="editor"/>
+        <reference name="content">
+            <block type="featuredcategory/adminhtml_featuredcategory" name="featuredcategory" />
+        </reference>
+    </featuredcategory_adminhtml_featuredcategory_index>
+</layout>

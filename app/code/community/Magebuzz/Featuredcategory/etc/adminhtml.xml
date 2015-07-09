@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+	<!--<menu>-->
+		<!--<featuredcategory module="featuredcategory">-->
+			<!--<title>Featured Categories</title>-->
+			<!--<sort_order>71</sort_order>-->
+			<!--<children>-->
+				<!--<items module="featuredcategory">-->
+					<!--<title>Configution</title>-->
+					<!--<sort_order>0</sort_order>-->
+					<!--<action>adminhtml/system_config/edit/section/featuredcategory</action>-->
+				<!--</items>-->
+			<!--</children>-->
+		<!--</featuredcategory>-->
+	<!--</menu>-->
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<featuredcategory translate="title">
+										<title>Featuredcategory Permission Setting</title>
+										<sort_order>50</sort_order>
+									</featuredcategory>								
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>	
+</config>
