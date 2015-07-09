@@ -383,7 +383,46 @@ a.alignleft.checkout-items {
 	width:5%;
 }
 
+ul.form-list.newsltr-manage {
+	padding-left:0;
+	padding-top:50px;
+}
 
+.form-list.newsltr-manage input {
+	margin-right:7px;
+}
+
+.form-list.newsltr-manage label {
+	padding-top:2px;
+}
+
+.newsletter-sbmt button {
+	background: #ef4f61;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Roboto Condensed",Helvetica,Arial,sans-serif;
+    height: 32px;
+	font-weight:bold;
+	font-size:20px;
+    margin: 0;
+    padding: 10px 55px;
+	line-height:0;
+}
+
+.newsletter-sbmt {
+	padding-bottom:300px;
+}
+
+.marg-right {
+	margin-right:4px;
+}
+
+form select#country {
+	bottom:15px;
+	height:auto;
+	border:1px solid #ddd;
+}
 
 
 

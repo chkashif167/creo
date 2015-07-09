@@ -39,7 +39,8 @@ $options = $this->getChild('customer.wishlist.item.options')
 <div class="bottom-area">
       <div class="qty-area"> <span class="up">up</span>
     <?php if ($item->canHaveQty() && $item->getProduct()->isVisibleInSiteVisibility()): ?>
-        <input id="qty" type="text" pattern="\d*" class="input-text qty validate-not-negative-number" name="qty[<?php echo $item->getId() ?>]" value="<?php echo $this->getAddToCartQty($item) * 1 ?>" />
+        <input id="qty" type="text" pattern="\d*" class="input-text qty validate-not-negative-number" 
+        name="qty[<?php echo $item->getId() ?>]" value="<?php echo $this->getAddToCartQty($item) * 1 ?>" />
     <?php endif; ?>
         <span class="down">down</span> 
     </div>
