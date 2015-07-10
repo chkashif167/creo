@@ -74,7 +74,7 @@
 	height: 32px;
 	position: absolute;
 	right: 15px;
-    top: 21px;
+    bottom: 1px !important;
     z-index: 0;
     pointer-events: none;
 }
@@ -351,7 +351,7 @@ a.alignleft.checkout-items {
 }
 
 #login-form .submit-holder.btn-holder {
-	margin-top:58px;
+	margin-top:40px;
 }
 
 .form-holder.login-sec {
@@ -424,5 +424,27 @@ form select#country {
 	border:1px solid #ddd;
 }
 
+.scaffold-form .customer-name .row {
+	margin-left:0;
+	margin-right:0;
+}
+
+#advice-validate-cc-type-ccsave_cc_number, #advice-required-entry-ccsave_cc_cid, #advice-required-entry-ccsave_expiration_yr, #advice-required-entry-ccsave_expiration {
+	position: absolute;
+	bottom:-17px;
+}
+
+#advice-required-entry-ccsave_cc_cid {
+	right:3px;
+}
+
+#advice-required-entry-ccsave_expiration_yr {
+	right:-28px;
+}
+
+.validation-advice {
+    color: #d01901 !important;
+    font-size: 11px !important;
+}
 
 

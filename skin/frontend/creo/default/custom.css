@@ -687,7 +687,7 @@
 .checkoutShippingMethod ul li label { margin: 5px 0 0 0; font-weight: normal;}
 .checkoutShippingMethod .shippingtitle { font-weight: bold; margin: 12px 0 0 0; float: left; width:100%;}
 .onestepcheckout-index-index {}
-.BillingStateSelectBoxArrows, .BillingCountrySelectBoxArrows, .shippingStateSelectBoxArrows, .shippingCountrySelectBoxArrows { top: 79px !important;}
+/*.BillingStateSelectBoxArrows, .BillingCountrySelectBoxArrows, .shippingStateSelectBoxArrows, .shippingCountrySelectBoxArrows { top: 79px !important;}*/
 .checkoutcreatNewAccount { padding: 0; margin: 0;}
 .checkoutcreatNewAccount input { float: left; margin: 0 10px  0 0;}
 .showShippingAddressCheckbox { padding: 0; margin: 0;}
@@ -925,7 +925,7 @@
  
  
  .sort-items { display: none;}
- .sortbyCustom { float: right !important; width: 350px; }
+ .sortbyCustom { float: right !important; width: 355px; }
  .sortbycontainer { float: left; width: 222px; position: relative; }
  .sortbycontainer a { float: left; width: 222px; border: 1px solid #e2e2e2;
     color: #222;
