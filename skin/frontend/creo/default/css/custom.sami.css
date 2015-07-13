@@ -447,4 +447,40 @@ form select#country {
     font-size: 11px !important;
 }
 
+#checkout-review-table tr {
+	width:32%;
+	display:inline-block;
+}
 
+#checkout-review-table tr td.last:after {
+	border-right: 2px solid #f3f3f3;
+    bottom: 12px;
+    content: "";
+    right: 0;
+    position: absolute;
+    top: 12px;
+}
+
+#checkout-review-table tr td.a-center {
+	padding:0 10px !important;
+}
+
+.click2print {
+	text-decoration:underline;
+}
+
+.success-continue {
+	margin-bottom:200px;
+}
+
+.footer-form input[type="text"], .footer-form input.email {
+	width:76% !important;
+}
+
+.subscribe-form.footer-form .button.newslettersubscribe {
+	right:16px !important;
+}
+
+#footer .right-area {
+	width:240px !important;
+}

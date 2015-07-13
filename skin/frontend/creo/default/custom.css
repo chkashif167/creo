@@ -115,7 +115,7 @@
 	border-color: #f16167;
 }
 .search-form .searchBtn {
-	background: rgba(0, 0, 0, 0) url("images/productpage/search.png") no-repeat scroll 0 0;
+	background: rgba(0, 0, 0, 0) url("images/productpage/search.png") no-repeat scroll 0 0 !important;
 	border: medium none;
 	float: left;
 	font-size: 0;
