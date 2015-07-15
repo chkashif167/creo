@@ -32,6 +32,7 @@ $options = $this->getChild('customer.wishlist.item.options')
     ->setItem($item)
     ->getConfiguredOptions();
 ?>
+<div class="col-xs-4">
   <div class="cart-area">
     <h3>ADD TO CART</h3>
     <span class="price"><?php echo $this->getPriceHtml($product, empty($options));?></span>
@@ -64,6 +65,7 @@ $options = $this->getChild('customer.wishlist.item.options')
     <?php foreach($this->getSortedChildren() as $childName):?>
     <?php //echo $this->getChildHtml($childName, false);?>
 <?php endforeach;?>
+</div>
 </div>
 <?php /*if ($product->isVisibleInSiteVisibility()): ?>
     <p><a class="link-edit button button-secondary" href="<?php echo $this->getItemConfigureUrl($item) ?>"><?php echo $this->__('Edit') ?></a></p>

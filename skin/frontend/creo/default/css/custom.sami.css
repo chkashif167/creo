@@ -484,3 +484,27 @@ form select#country {
 #footer .right-area {
 	width:240px !important;
 }
+
+.product-details.col-xs-7 {
+	padding:0
+}
+
+.my-wishlist .product-area {
+	margin-bottom:20px;
+}
+
+img.alignleft.img-responsive {
+	margin-top:0;
+	margin-right:0;
+}
+
+.tab-content2 .col-xs-4 .cart-area {
+	float: none;
+    margin: 0;
+    width: auto;
+}
+
+.tab-content2 .product-area .col-xs-4 {
+	margin-right:0;
+	padding-right:0;
+}
