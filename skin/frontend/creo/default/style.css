@@ -1703,7 +1703,7 @@ input[type="submit"]:hover {
 	float: right;
 	text-align: right;
 	width: 40%;
-	font:28px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:18px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .products-grid .btn-holder {
 	overflow: hidden;
@@ -1719,7 +1719,7 @@ input[type="submit"]:hover {
 	text-transform: uppercase;
 	color: #000;
 	position: relative;
-	font: bold 14px/32px Arial, Helvetica, sans-serif;
+	font: bold 14px/24px Arial, Helvetica, sans-serif;
 }
 .products-grid .btn-holder a:before {
 	position: absolute;
@@ -2160,10 +2160,10 @@ input[type="submit"]:hover {
 	margin: 0 0 25px;
 	text-transform: uppercase;
 	color: #222;
-	font: 48px/50px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 38px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .price-area{
-	padding: 25px 50px 25px 0;
+	padding: 20px 50px 5px 0;
 	overflow: hidden;
 	border-width: 2px 0;
 	border-style: dotted;
@@ -2172,7 +2172,7 @@ input[type="submit"]:hover {
 .product-detail .price-area .price{
 	float: left;
 	color: #000;
-	font: 30px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 25px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .price-area .old-price{
 	display: inline-block;
@@ -2202,7 +2202,7 @@ input[type="submit"]:hover {
 	text-transform: uppercase;
 	color: #000;
 	position: relative;
-	font: bold 16px/36px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .btn-holder a:before {
 	position: absolute;
@@ -2211,7 +2211,7 @@ input[type="submit"]:hover {
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0 0 44px 20px;
+	border-width: 0 0 36px 20px;
 	border-color: transparent transparent #f16167;
 	content: '';
 }
@@ -2274,7 +2274,7 @@ input[type="submit"]:hover {
 	padding: 0;
 	list-style: none ;
 	text-transform: uppercase;
-	font: 18px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 15px/15px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .tabset.tabset1 li{
 	float: left;
@@ -2372,7 +2372,7 @@ input[type="submit"]:hover {
 .cart-top-area h2{
 	margin: 0;
 	color: #222;
-	font:34px/36px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:28px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	float: left;
 	max-width: 50%;
 }
@@ -2390,7 +2390,7 @@ input[type="submit"]:hover {
 	text-transform: uppercase;
 	color: #000;
 	position: relative;
-	font:bold 12px/16px Arial, Helvetica, sans-serif;
+	font:bold 12px/12px Arial, Helvetica, sans-serif;
 	white-space: nowrap;
 }
 .cart-top-area .btn-holder a:before {
@@ -2463,7 +2463,7 @@ input[type="submit"]:hover {
 .cart-table-area th{
 	text-transform: uppercase;
 	color: #000;
-	font:17px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:14px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .cart-table-area th,
 .cart-table-area td{
@@ -2739,7 +2739,7 @@ input[type="submit"]:hover {
 	text-align: center;
 	color: #000;
 	position: relative;
-	font:bold 12px/16px Arial, Helvetica, sans-serif;
+	font:bold 12px/12px Arial, Helvetica, sans-serif;
 	white-space: nowrap;
 }
 .cart-bottom-area .btn-holder a:before {
@@ -3971,7 +3971,7 @@ input[type="submit"]:hover {
 	#footer .footer-nav li:before{left: -9px;}
 	.cart-table-area td:first-child{padding-left: 30px;}
 	.faq-area .openeer-holder .question{width: 93%;}
-	.products-grid .text-area .price{font: 22px/30px "Roboto Condensed",Helvetica,Arial,sans-serif;}
+	.products-grid .text-area .price{font: 18px/30px "Roboto Condensed",Helvetica,Arial,sans-serif;}
 	.products-grid .btn-holder a:first-child .span1{padding: 0 5px 0 0;}
 	.products-grid .btn-holder a:first-child{width: 24%;}
 	.products-grid .btn-holder a{width: 74%;}

@@ -16,11 +16,11 @@
 .checkout-form-headings h1 .skewed {
 	background: #000;
 	color: #fff;
-	font-size: 17px;
+	font-size: 15px;
 	transform: skewX(-18deg);
 	display: inline-block;
 	min-width: 214px;
-    padding: 6px 17px;	
+    padding: 4px 17px;	
 }
 
 .checkout-form-headings h1 .re-skewed {
@@ -107,7 +107,7 @@
 
 .select-paymt-methd {
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 16px;
 	margin-top: 10px;
 }
 
