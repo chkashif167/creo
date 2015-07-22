@@ -508,3 +508,7 @@ img.alignleft.img-responsive {
 	margin-right:0;
 	padding-right:0;
 }
+
+.main {
+    min-height: 700px;
+}
