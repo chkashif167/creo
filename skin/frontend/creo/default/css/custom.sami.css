@@ -509,6 +509,22 @@ img.alignleft.img-responsive {
 	padding-right:0;
 }
 
-.main {
+.main,.col-main {
     min-height: 700px;
+}
+
+div.fme-filter a.fme_layered_attribute {
+	background:none !important;
+	padding-left:10px !important;
+}
+
+.styles-lable {
+	position:relative;
+	right:178px;
+	top:3px;
+	text-transform:uppercase;
+}
+
+#fme_layered_gender {
+	margin-right:40px
 }

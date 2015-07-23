@@ -1444,6 +1444,7 @@ input[type="submit"]:hover {
 	-webkit-transform: skewX(18deg);
 	-ms-transform: skewX(18deg);
 	display:block;
+	text-transform:uppercase;
 }
 .cate-links .cate1 li.active a,
 .cate-links .cate1 a:hover{
@@ -1451,22 +1452,34 @@ input[type="submit"]:hover {
 	color:#fff;
 	background:#000;
 }
-.cate-links .cate2 a{
+#fme_layered_gender .fme_layered_attribute {
 	color:#767676;
-	background:#ddd;
+	background:#ddd !important;
 	display:block;
-	padding:2px 10px;
+	padding:0px 10px;
 	border:1px solid #ddd;
 	transform: skewX(-18deg);
 	-moz-transform: skewX(-18deg);
 	-webkit-transform: skewX(-18deg);
 	-ms-transform: skewX(-18deg);
+	margin:0 4px;
 }
-.cate-links .cate2 li.active a,
-.cate-links .cate2 a:hover{
+
+#fme_layered_styles .fme_layered_attribute {
+	margin-right:10px
+}
+
+#fme_layered_gender a.fme_layered_attribute span {
+	display: block;
+    transform: skewX(18deg);
+	text-transform:uppercase;
+}
+
+#fme_layered_gender .fme_layered_attribute.active,
+#fme_layered_gender .fme_layered_attribute:hover{
 	text-decoration:none;
 	border-color:#000;
-	background:#000;
+	background:#000 !important;
 	color:#fff;
 }
 .cate-links .cate2 a span{
@@ -1662,6 +1675,8 @@ input[type="submit"]:hover {
 	text-align: center;
 	display: block;
 	margin: 0 0 15px;
+	height:300px;
+	overflow:hidden;
 }
 .products-grid img{
 	display: block;

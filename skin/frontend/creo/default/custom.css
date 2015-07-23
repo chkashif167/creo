@@ -469,7 +469,7 @@
 	padding: 0;
 /*	position: relative;*/
 	text-decoration: none;
-	top: -14px;
+	top: 275px;
 	z-index: 10;
 	 width:100%;
 }
@@ -950,7 +950,7 @@
 		content: "";
 		}
 .sortbycontainer a:hover { text-decoration: none;}
- .sortbyUl { padding: 0; position: absolute; top: 43px;}
+ .sortbyUl { padding: 0; position: absolute; top: 43px;background:#fff; z-index:1;}
  .sortbyUl li a { border-top: none !important;}
 /* div.fme-filter a.fme_layered_attribute { background: none !important; padding: 0 !important;}*/
  

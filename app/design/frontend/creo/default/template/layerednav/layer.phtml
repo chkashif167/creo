@@ -32,6 +32,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                         
 
                         <?php $_filters = $this->getFilters() ?>
+                       <?php $_filters = array_reverse($_filters);?>
                         <?php foreach ($_filters as $_filter): ?>
                             <?php if ($_filter->getItemsCount()): ?>
                                 <?php /*?><dt class="fme_layered_dt">
@@ -40,7 +41,15 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                 <?php endif ?>
                                 <?php echo $this->__($_filter->getName()) ?>
                                 </dt><?php */?>
+                                <?php
+                                if($_filter->getVar()=='styles'){
+								?>
+                                <label class="styles-lable">Styles:</label>
+                                <?php	
+								}
+								?>
                                 <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd>
+                                
                             <?php endif; ?>
                         <?php endforeach; ?>
                         

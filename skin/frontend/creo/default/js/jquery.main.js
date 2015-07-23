@@ -1,4 +1,41 @@
 // page init
+
+jQuery( document ).ready(function() {
+//    jQuery('#largevshape').on('mouseover', function() {
+//  		$(this).attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
+//	});
+	
+	jQuery("#styles-22").on({
+    mouseenter: function () {
+        jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
+    },
+    mouseleave: function () {
+        jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape.png');
+    }
+});
+
+jQuery("#styles-21").on({
+    mouseenter: function () {
+        jQuery('#round').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/round-hover.png');
+    },
+    mouseleave: function () {
+        jQuery('#round').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/round.png');
+    }
+});
+
+jQuery("#styles-20").on({
+    mouseenter: function () {
+        jQuery('#vshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/vshape-hover.png');
+    },
+    mouseleave: function () {
+        jQuery('#vshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/vshape.png');
+    }
+});
+	
+});
+
+
+
 jQuery(function(){
 	initOpenClose();
 	initCarousel();
