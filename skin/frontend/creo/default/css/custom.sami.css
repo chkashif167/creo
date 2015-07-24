@@ -528,3 +528,34 @@ div.fme-filter a.fme_layered_attribute {
 #fme_layered_gender {
 	margin-right:40px
 }
+
+.shirts-category .col.col-lg-3.col-md-3.col-sm-6.col-xs-6 , .dark-box .col.col-lg-3.col-md-3.col-sm-6.col-xs-6 {
+	padding-left:7px;
+	padding-right:7px;
+}
+
+.shirts-category .col:first-child,.dark-box .col:first-child {
+	padding-left:15px !important;
+}
+
+.shirts-category .col:last-child,.dark-box .col:last-child {
+	padding-right:15px !important;
+}
+
+
+.shirts-category .col:last-child h2 {
+	margin: 3px 15px;
+}
+
+.breadcrumb1 {
+	margin-top:-30px;
+}
+
+#fme_layered_styles li {
+    line-height: 10px;
+    width: 40px;
+}
+
+#gender-23 {
+	display:none !important
+}

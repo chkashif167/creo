@@ -382,7 +382,7 @@ p.style1 {
 	padding: 0 30px;
 }
 #header {
-	margin-bottom: 18px;
+	margin-bottom: 28px;
 	position: relative;
 	z-index: 22;
 }
@@ -404,7 +404,7 @@ p.style1 {
 .logo {
 	display: block;
 	width: 137px;
-	margin: 28px 0 22px;
+	margin: 22px 0 16px;
 }
 .logo img {
 	display: block;
@@ -420,9 +420,9 @@ p.style1 {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	letter-spacing: -1px;
+/*	letter-spacing: -1px;*/
 	text-transform: uppercase;
-	font: 14px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 15px/21px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #nav ol > li {
 	float: left;
@@ -430,7 +430,7 @@ p.style1 {
 }
 #nav ol > li > a {
 	display: block;
-	padding: 0 18px 5px;
+	padding: 0 15px 5px;
 	position: relative;
 }
 #nav ol > li a:hover { text-decoration: none; }
@@ -663,7 +663,7 @@ p.style1 {
 }
 #header .bottom-area {
 	text-align: right;
-	padding: 67px 0 10px;
+	padding: 55px 0 10px;
 }
 .search-form {
 	margin: 0 0 0 5px;
@@ -686,6 +686,7 @@ p.style1 {
 	font-size: 9px;
 	line-height: 11px;
 	float: right;
+	outline:none;
 }
 .search-form input[type="submit"] {
 	background: url(images/productpage/search.png) no-repeat;
@@ -774,7 +775,7 @@ p.style1 {
 	position: relative;
 	color: #222;
 	text-transform: uppercase;
-	font: 12px/19px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 13px/19px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #header .basic-open-close.active .opener,
 #header .basic-open-close .opener:hover {
@@ -888,12 +889,12 @@ p.style1 {
 	left: auto;
 	right: 13px;
 }
-.shirts-category .col { margin-bottom: 30px; }
+.shirts-category .col { margin-bottom:24px; }
 .shirts-category h2 {
 	position: absolute;
 	bottom: 28px;
 	right: 0;
-	margin: 0 15px;
+	margin: 3px 7px;
 	text-align: center;
 	text-transform: uppercase;
 	transform: skewY(-12deg);
@@ -901,7 +902,7 @@ p.style1 {
 	-ms-transform: skewY(-12deg);
 	-webkit-transform: skewY(-12deg);
 	color: #000;
-	font: bold 24px/26px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: bold 19px/26px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .shirts-category img {
 	display: block;
@@ -911,7 +912,7 @@ p.style1 {
 .shirts-category h2 .border {
 	background: #000;
 	height: 2px;
-	margin: 2px 0;
+	margin: 2.6px 0;
 	display: block;
 }
 .shirts-category h2 strong {
@@ -932,7 +933,7 @@ p.style1 {
 	text-align: center;
 	text-transform: uppercase;
 	color: #fff;
-	font: bold 40px/42px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: bold 34px/42px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .dark-box .box:hover {
 	text-decoration: none;
@@ -949,10 +950,10 @@ p.style1 {
 .heading-holder {
 	overflow: hidden;
 	text-align: center;
-	margin: 0 0 30px;
+	margin: 0 0 13px;
 }
 .heading-holder h2 {
-	font: 26px/30px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 22px/30px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	color: #222;
 	margin: 0;
 	position: relative;
@@ -970,7 +971,7 @@ p.style1 {
 	left: 100%;
 	width: 9999px;
 	top: 50%;
-	margin-top: -2px;
+	margin-top: 2px;
 }
 .heading-holder h2:before {
 	right: 100%;
@@ -1014,7 +1015,7 @@ p.style1 {
 #footer .column h3 {
 	color: #fff;
 	text-transform: uppercase;
-	margin: 0 0 10px;
+	margin: 0 0 12px;
 	font: 16px/24px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #footer .list {
@@ -4063,4 +4064,10 @@ input[type="submit"]:hover {
 		margin-bottom: 0;
 		margin-top: 0;
 	}
+}
+
+.std > p {
+	margin:0;
+	padding:0;
+	line-height:0;
 }
