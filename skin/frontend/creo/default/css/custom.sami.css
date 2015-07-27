@@ -520,31 +520,29 @@ div.fme-filter a.fme_layered_attribute {
 
 .styles-lable {
 	position:relative;
-	right:178px;
-	top:3px;
+	right:152px;
+	top:5px;
 	text-transform:uppercase;
 }
 
 #fme_layered_gender {
-	margin-right:40px
+	margin-right:30px
 }
 
 .shirts-category .col.col-lg-3.col-md-3.col-sm-6.col-xs-6 , .dark-box .col.col-lg-3.col-md-3.col-sm-6.col-xs-6 {
 	padding-left:7px;
 	padding-right:7px;
 }
-
-.shirts-category .col:first-child,.dark-box .col:first-child {
-	padding-left:15px !important;
+.row.dark-box,
+.row.shirts-category {
+    margin: 0 -7px;
 }
 
-.shirts-category .col:last-child,.dark-box .col:last-child {
-	padding-right:15px !important;
-}
+
 
 
 .shirts-category .col:last-child h2 {
-	margin: 3px 15px;
+	margin: 3px 7px;
 }
 
 .breadcrumb1 {
@@ -553,7 +551,7 @@ div.fme-filter a.fme_layered_attribute {
 
 #fme_layered_styles li {
     line-height: 10px;
-    width: 40px;
+    width: 33px;
 }
 
 #gender-23 {

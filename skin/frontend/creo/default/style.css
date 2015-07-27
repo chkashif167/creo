@@ -1463,9 +1463,14 @@ input[type="submit"]:hover {
 	-moz-transform: skewX(-18deg);
 	-webkit-transform: skewX(-18deg);
 	-ms-transform: skewX(-18deg);
-	margin:0 4px;
+	min-width: 67px;
+	line-height: 18px;
+	text-align: center;
 }
-
+div.fme-filter dd li{overflow: visible !important;}
+#fme_layered_gender > ol {
+    padding: 0;
+}
 #fme_layered_styles .fme_layered_attribute {
 	margin-right:10px
 }
