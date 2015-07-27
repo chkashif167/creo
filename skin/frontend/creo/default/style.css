@@ -1455,7 +1455,7 @@ input[type="submit"]:hover {
 }
 #fme_layered_gender .fme_layered_attribute {
 	color:#767676;
-	background:#ddd !important;
+	background:#ddd;
 	display:block;
 	padding:0px 10px;
 	border:1px solid #ddd;
