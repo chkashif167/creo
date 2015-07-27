@@ -69,9 +69,9 @@
                    <label><?php echo $this->__('Sort By:') ?></label>
                    
                   <div class=" sortbycontainer open-close basic-open-close">
-						<a class="opener" href="#"><?php if($_GET['order']){echo ucfirst($_GET['order']);} else {echo "Position";} ?> </a>
+                      <a id="sortbyopener" class="" href="#"><?php if($_GET['order']){echo ucfirst($_GET['order']);} else {echo "Position";} ?> </a>
                    
-                  <ul onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By:') ?>" class="slide js-slide-hidden sortbyUl" style="display: none;">
+                  <ul onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By:') ?>" class="slide sortbyUl js-slide-hidden" style="display: none;">
                   <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
                   <li<?php if($this->isOrderCurrent($_key)): ?> class="selected"<?php endif; ?>>
                   <a href="<?php echo $this->getOrderUrl($_key, 'asc') ?>" >
@@ -169,3 +169,14 @@
 </div>
 <?php endif ?>
 <?php */?>
+
+<script>
+    jQuery('#sortbyopener').click(function() {
+        var sort_by_menu = jQuery( ".slide.sortbyUl" );
+        if(sort_by_menu.hasClass( "js-slide-hidden" )) {
+            sort_by_menu.removeClass("js-slide-hidden").css('display', 'block');
+        } else {
+            sort_by_menu.addClass("js-slide-hidden").css('display', 'hidden');
+        }
+    });
+</script>
