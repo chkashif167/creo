@@ -10,13 +10,11 @@ div.fme-filter a.adj-nav-price {}
 div.fme-filter a.adj-nav-price-selected {font-weight: bold}
 
 /*attributes*/
-div.fme-filter a.fme_layered_attribute { padding-left:25px; background:transparent url(../../images/FME/Check-Box.png) no-repeat scroll 0px 3px;}
 div.fme-filter a.fme_layered_attribute_selected {padding-left:25px; background-position: 0px -16px; font-weight: bold; overflow:hidden;}
 
-div.fme-filter a.fme_layered_attribute_selected_men, div.fme-filter a.fme_layered_attribute_selected_women {  
+#fme_layered_gender a.fme_layered_attribute_selected_men, #fme_layered_gender a.fme_layered_attribute_selected_women {  
   text-decoration: none;
-  border-color: #000 !important;
-  background: #000 !important;
+  background: #000;
   color: #fff !important;
 }
 div.fme-filter a.fme_layered_swatches {padding:0px 0px 5px 0px;}
