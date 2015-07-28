@@ -60,7 +60,7 @@
    
       <?php if ($_product->isSaleable() && $this->hasOptions()):?>
       <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-      <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span>
+     <!-- <span class="price"><?php //echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span> -->
 	  <?php endif;?>
       </div>
       

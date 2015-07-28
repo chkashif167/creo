@@ -76,5 +76,35 @@ $mod_version	= Mage::helper('onestepcheckout')->getOPCVersion();
         });
 		opc_window	= new COGOPC.Window({triggers: win_triggers});
     });
+    jQuery(document).ready(function(){
+
+      jQuery('#billing_customer_address').change(function(){
+        if (jQuery(this).val() == '' ) {  
+          clear_form_elements('bill_form');
+        }
+      });
+       jQuery('#shipping_customer_address').change(function(){
+        if (jQuery(this).val() == '' ) {
+          clear_form_elements('ship_form');
+        }
+      });
+    });
+  function clear_form_elements(class_name) {
+  jQuery("#"+class_name).find(':input').each(function() {
+    switch(this.type) {
+        case 'password':
+        case 'text':
+        case 'textarea':
+        case 'file':
+        case 'select-one':
+        case 'select-multiple':
+            jQuery(this).val('');
+            break;
+        case 'checkbox':
+        case 'radio':
+            this.checked = false;
+    }
+  });
+}
 //]]>
 </script>
