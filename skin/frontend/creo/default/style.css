@@ -1561,8 +1561,8 @@ div.fme-filter dd li{overflow: visible !important;}
 	font:italic 10px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .sort-area{
-	padding-bottom: 30px;
-	padding-top: 25px
+	padding-bottom: 0;
+	padding-top: 0;
 }
 .sort-area .view-options{
 	margin: 0;
@@ -1599,7 +1599,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	float: left;
 	text-transform: uppercase;
 	color: #888;
-	font:18px/45px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:12px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .sort-area .sort-by select{
 	margin: 0;
@@ -1613,12 +1613,12 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .sort-area .sort-by .sort-by-switcher{
 	float: left;
-	font-size: 20px;
+	font-size: 16px;
 	background: #ddd;
 	color: #888;
-	width: 45px;
-	height: 45px;
-	line-height: 45px;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
 	text-align: center;
 	margin: 0 0 0 2px;
 }
