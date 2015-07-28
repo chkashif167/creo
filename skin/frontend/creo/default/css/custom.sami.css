@@ -557,3 +557,19 @@ div.fme-filter a.fme_layered_attribute {
 #gender-23 {
 	display:none !important
 }
+
+.fme_layered_attribute span {
+	display:none
+}
+
+#styles-22 {
+	background:url(../images/largevshape.png) no-repeat !important;
+}
+
+#styles-22:hover {
+	background:url(../images/largevshape-hover.png) no-repeat !important;
+}
+
+#styles-22.fme_layered_attribute_selected_largevshape {
+	background:url(../images/largevshape-hover.png) no-repeat !important;
+}

@@ -1,9 +1,18 @@
 // page init
-
 jQuery( document ).ready(function() {
 //    jQuery('#largevshape').on('mouseover', function() {
 //  		$(this).attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
 //	});
+
+$(".fme-filter").load(function() {
+alert("hi");
+//        var vshapeSelected = jQuery( "#styles-22" );
+//        if(vshapeSelected.hasClass( "fme_layered_attribute_selected_largevshape" )) {
+//            jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape.png');
+//        } else {
+//            jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
+//        }
+});
 	
 jQuery("#styles-22").on({
     mouseenter: function () {
@@ -13,17 +22,6 @@ jQuery("#styles-22").on({
         jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape.png');
     }
 });
-
-// jQuery('.largevshape').click(function() {
-//        var vshapeSelected = jQuery( "#styles-22" );
-//        if(vshapeSelected.hasClass( "fme_layered_attribute_selected_largevshape" )) {
-//            jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape.png');
-//        } else {
-//            jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
-//        }
-//    });
-//	
-	
 
 jQuery("#styles-21").on({
     mouseenter: function () {

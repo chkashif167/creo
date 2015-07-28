@@ -66,7 +66,7 @@
             <span>
                 <?php
                 if(in_array(strtolower($_item->getLabel()), $style_array)){?>
-                 <span> <img id="<?php echo strtolower($_item->getLabel()); ?>" src="<?php echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');?>"> </span>
+                 <?php /*?><span> <img id="<?php echo strtolower($_item->getLabel()); ?>" src="<?php echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');?>"> </span><?php */?>
                 <?php }else{?>
                 <?php echo $_item->getLabel(); ?>
                 <?php /*if ($this->shouldDisplayProductCount()): ?>
