@@ -68,7 +68,7 @@
                   
                    <label><?php echo $this->__('Sort By:') ?></label>
                    
-                  <div class=" sortbycontainer open-close basic-open-close">
+                  <div class=" sortbycontainer open-close">
                       <a id="sortbyopener" class="" href="#"><?php if($_GET['order']){echo ucfirst($_GET['order']);} else {echo "Position";} ?> </a>
                    
                   <ul onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By:') ?>" class="slide sortbyUl js-slide-hidden" style="display: none;">
