@@ -519,7 +519,7 @@ div.fme-filter a.fme_layered_attribute {
 
 .styles-lable {
 	position:relative;
-	right:152px;
+	right:160px;
 	top:5px;
 	text-transform:uppercase;
 }
@@ -561,14 +561,15 @@ div.fme-filter a.fme_layered_attribute {
 	display:none
 }
 
-#styles-22 {
-	background:url(../images/largevshape.png) no-repeat !important;
-}
+#styles-22 {background:url(../images/round.png) no-repeat !important;}
+#styles-22.fme_layered_attribute_selected_largevshape,
+#styles-22:hover {background:url(../images/round-hover.png) no-repeat !important;}
 
-#styles-22:hover {
-	background:url(../images/largevshape-hover.png) no-repeat !important;
-}
+#styles-21 {background:url(../images/largevshape.png) no-repeat !important;}
+#styles-21.fme_layered_attribute_selected_round,
+#styles-21:hover {background:url(../images/largevshape-hover.png) no-repeat !important;}
 
-#styles-22.fme_layered_attribute_selected_largevshape {
-	background:url(../images/largevshape-hover.png) no-repeat !important;
-}
+#styles-20 {background:url(../images/vshape.png) no-repeat !important;}
+#styles-20.fme_layered_attribute_selected_vshape,
+#styles-20:hover {background:url(../images/vshape-hover.png) no-repeat !important;}
+#fme_layered_styles > ol {padding: 0 0 0 56px;}
