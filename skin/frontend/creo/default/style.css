@@ -1687,7 +1687,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .products-grid img{
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 100%;
 }
 .products-grid .image-area:hover .quick-view{display: block;}
 .products-grid .quick-view{
@@ -4092,4 +4092,8 @@ div.fme-filter dd li{overflow: visible !important;}
 	margin:0;
 	padding:0;
 	line-height:0;
+}
+
+.main-container.col3-layout .products-grid .quick-view {
+	top:90%;
 }
