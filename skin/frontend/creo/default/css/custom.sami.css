@@ -73,7 +73,8 @@
 	width: 30px;
 	height: 32px;
 	position: absolute;
-	right: 15px;
+	right: 0;
+	top: -1px;
     bottom: 1px !important;
     z-index: 0;
     pointer-events: none;

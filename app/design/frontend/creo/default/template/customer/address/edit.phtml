@@ -38,6 +38,14 @@
     <h2><?php echo $this->getTitle() ?></h2>
 
 <?php endif; ?>
+
+<?php if($this->isDefaultBilling() && $this->isDefaultShipping()): ?>
+<div class="welcome-msg">
+    <p class="hello"><strong>Note!</strong></p>
+    <p>Editing this address will update both your billing and shipping address. If you want to add an entirely new billing or shipping address <a href="<?php echo $this->getBaseUrl();?>customer/address/new/" title="Create New Billing or Shipping Address">CLICK HERE</a>.</p>
+</div>
+<?php endif; ?>
+
 <div class="form-holder">
                                 <div class="form-frame">
 <?php echo $this->getMessagesBlock()->toHtml() ?>
@@ -167,4 +175,6 @@
 //]]>
 </script>
 </div>
+
+
 </div>

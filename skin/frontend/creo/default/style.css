@@ -357,7 +357,7 @@ p.style {
 }
 form select {
 	width: 232px;
-	height: 53px;
+	height: 35px;
 	position: relative;
 	bottom: 37px;
 	left: 82px;
@@ -3045,6 +3045,16 @@ div.fme-filter dd li{overflow: visible !important;}
 	color: #000;
 	font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
+
+.my-account .welcome-msg{
+	overflow: hidden;
+	border: 2px solid #d7d7d7;
+	padding: 10px 13px;
+	margin: 0 0 40px;
+	color: #000;
+	font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+
 .tab-content2 .welcome-msg h3{
 	margin: 0 0 10px;
 	border: none;
@@ -3946,13 +3956,44 @@ div.fme-filter dd li{overflow: visible !important;}
 .scaffold-form .buttons-set .button:hover{
 	background: #000;
 }
-
-
-
-
-
-
-
+.billingcountryselect {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.showShippingAddress {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.showShippingAddress label {
+    margin: 8px 0 0 10px !important;
+}
+.checkout-form .form-group input[type="checkbox"] {
+    float: left;
+    width: auto;
+}
+.address-book-area {
+    clear: both;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 15px;
+}
+.address-book-area label {
+    margin: 0 0 0 10px !important;
+}
+#checkout-shipping-method-load .messages {
+    overflow: hidden;
+}
+.full:after{
+	display: block;
+	content: '';
+	clear: both;
+}
+.form-group .full {overflow: hidden;}
+.address-book-area .checkbox.validation-passed {float: left;}
 
 
 
