@@ -28,9 +28,10 @@ $has_addr	= $this->customerHasAddresses();
         <input type="text" name="billing[email]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="t1 validate-email required-entry" />
         <?php endif; ?>
 		   <?php if ($phone_r !== 'hidden') : ?>
-        <label for="billing:telephone"<?php if($phone_r === 'required') { echo ' class="required" ';}?>> <?php echo $this->__('Telephone') ?> </label>
+        <label for="billing:telephone" class="<?php if($phone_r === 'required') { echo 'required';}?> required" > <?php echo $this->__('Telephone') ?> </label>
+		 <sup>*</sup>
         <?php if($phone_r === 'required') { echo ' <sup>*</sup> ';}?>
-        <input type="text" name="billing[telephone]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1<?php if($phone_r === 'required') { echo ' required-entry validate-number';}?>" id="billing:telephone" maxlength="20" />
+        <input type="text" name="billing[telephone]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1<?php if($phone_r === 'required') { echo ' required-entry validate-number';}?> required-entry validate-number" id="billing:telephone" maxlength="20" />
         <?php endif; ?>
 			 
           <?php
