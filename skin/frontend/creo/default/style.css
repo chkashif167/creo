@@ -1690,7 +1690,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .products-grid img{
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 100%;
 }
 .products-grid .image-area:hover .quick-view{display: block;}
 .products-grid .quick-view{
@@ -2396,10 +2396,11 @@ div.fme-filter dd li{overflow: visible !important;}
 .cart-top-area h2{
 	margin: 0;
 	color: #222;
-	font:28px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:35px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	float: left;
 	max-width: 50%;
 }
+	
 .cart-top-area .btn-holder {
 	overflow: hidden;
 	text-align: center;
@@ -2479,6 +2480,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .cart-top-area{
 	padding-bottom: 10px;
 	padding-top: 10px;
+	border-bottom:3px solid #eee;
 }
 .cart-table-area table{
 	border-top: 3px solid #eee;
@@ -4136,4 +4138,8 @@ div.fme-filter dd li{overflow: visible !important;}
 	margin:0;
 	padding:0;
 	line-height:0;
+}
+
+.main-container.col3-layout .products-grid .quick-view {
+	top:90%;
 }

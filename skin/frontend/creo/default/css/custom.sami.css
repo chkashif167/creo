@@ -510,7 +510,9 @@ img.alignleft.img-responsive {
 	padding-right:0;
 }
 
-
+.main,.col-main {
+    min-height: 290px;
+}
 
 div.fme-filter a.fme_layered_attribute {
 	padding-left:10px !important;
@@ -572,3 +574,8 @@ div.fme-filter a.fme_layered_attribute {
 #styles-20.fme_layered_attribute_selected_vshape,
 #styles-20:hover {background:url(../images/vshape-hover.png) no-repeat !important;}
 #fme_layered_styles > ol {padding: 0 0 0 56px;}
+
+/*****************************  product detail page  *********************************/
+
+.product-detail .fancy-product-price{display:none;}
+.fancy-product-price { float: left; text-align: left; width: 100%;}

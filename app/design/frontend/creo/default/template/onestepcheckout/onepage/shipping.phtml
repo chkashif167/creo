@@ -43,9 +43,13 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
 		?>
       <div class="form-group col-lg-2 col-sm-4">
         <?php if ($phone_r !== 'hidden') : ?>
-        <label> <?php echo $this->__('Telephone') ?> </label>
+        <label class="required"> <?php echo $this->__('Telephone') ?> </label>
         <?php if($phone_r === 'required') { echo ' <sup>*</sup> ';}?>
-        <input type="text" name="shipping[telephone]" id="shipping:telephone" value="<?php echo $this->htmlEscape($this->getShipAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1<?php if($phone_r === 'required') { echo ' required-entry validate-number ';}?>" maxlength="20" onChange="shipping.setSameAsBilling(false);" />
+
+		<sup>*</sup>
+        <input type="text" name="shipping[telephone]" id="shipping:telephone" value="<?php echo $this->htmlEscape($this->getShipAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1<?php if($phone_r === 'required') { echo ' required-entry validate-number ';}?> required-entry validate-number" maxlength="20" onchange="shipping.setSameAsBilling(false);" />
+
+       
         <?php endif; ?>
       </div>
       <?php 
