@@ -8,7 +8,10 @@
   font-weight: normal;
   font-style: normal;
 }
-html { box-sizing: border-box; }
+html {
+	box-sizing: border-box;
+	background: #000;
+}
 *,
 *:before,
 *:after { box-sizing: inherit; }

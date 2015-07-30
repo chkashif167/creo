@@ -510,9 +510,7 @@ img.alignleft.img-responsive {
 	padding-right:0;
 }
 
-.main,.col-main {
-    min-height: 700px;
-}
+
 
 div.fme-filter a.fme_layered_attribute {
 	padding-left:10px !important;
