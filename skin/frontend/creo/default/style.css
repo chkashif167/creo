@@ -357,7 +357,7 @@ p.style {
 }
 form select {
 	width: 232px;
-	height: 53px;
+	height: 35px;
 	position: relative;
 	bottom: 37px;
 	left: 82px;
@@ -3956,13 +3956,44 @@ div.fme-filter dd li{overflow: visible !important;}
 .scaffold-form .buttons-set .button:hover{
 	background: #000;
 }
-
-
-
-
-
-
-
+.billingcountryselect {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.showShippingAddress {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.showShippingAddress label {
+    margin: 8px 0 0 10px !important;
+}
+.checkout-form .form-group input[type="checkbox"] {
+    float: left;
+    width: auto;
+}
+.address-book-area {
+    clear: both;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 15px;
+}
+.address-book-area label {
+    margin: 0 0 0 10px !important;
+}
+#checkout-shipping-method-load .messages {
+    overflow: hidden;
+}
+.full:after{
+	display: block;
+	content: '';
+	clear: both;
+}
+.form-group .full {overflow: hidden;}
+.address-book-area .checkbox.validation-passed {float: left;}
 
 
 
