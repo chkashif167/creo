@@ -746,7 +746,7 @@ p.style1 {
 	padding: 0;
 	list-style: none;
 	background: #fff;
-	width: 100%;
+	width: 110px;
 	text-align: center;
 	position: absolute;
 	box-shadow: 0 1px 2px #ccc;
@@ -3927,8 +3927,25 @@ div.fme-filter dd li{overflow: visible !important;}
 	font: 10px/12px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 #footer .column li a{color: #fff;}
-
-
+.scaffold-form .form-list {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.scaffold-form .form-list label {
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.scaffold-form .buttons-set .button {
+    background: #f16167 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    height: 26px;
+    padding: 5px 20px;
+}
+.scaffold-form .buttons-set .button:hover{
+	background: #000;
+}
 
 
 

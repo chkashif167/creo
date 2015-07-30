@@ -58,7 +58,7 @@
 
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
-    <ul class="product-image-thumbs">
+    <ul class="product-image-thumbs slide-pagination">
     <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
         <?php if ($this->isGalleryImageVisible($_image)): ?>
         <li>
