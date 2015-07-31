@@ -38,7 +38,15 @@
   <div>
           <div class="form-frame reg-form">
     <?php echo $this->getChildHtml('form_fields_before')?>
-    <?php echo $this->getMessagesBlock()->toHtml() ?>
+	
+	<?php 
+	$urlString =  $_SERVER['REQUEST_URI'];
+	if(strpos($urlString,'login') == false) {
+    echo $this->getMessagesBlock()->toHtml();
+	}
+	?>		
+	
+   
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="signup-form" enctype="multipart/form-data">
         
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
