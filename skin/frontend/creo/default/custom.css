@@ -758,7 +758,10 @@
     font-weight: bold;
     height: auto;
     padding: 8px 100px;
-    width: auto; float: right;}
+    width: auto;
+    float: right;
+    text-transform: uppercase;
+}
 .cate2.cate:nth-child(2) { }
 .cate2.cate:nth-child(2) a { border: none; background: none; }
 .cate2.cate:nth-child(2) a:hover { background: none; }
