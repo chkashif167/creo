@@ -380,7 +380,7 @@
 #configurable_swatch_color .swatch-link {
 	border: none;
 }
-.fancybox-wrap.fancybox-desktop.fancybox-type-iframe.fancybox-opened {
+.fancybox-wrap.fancybox-type-iframe.fancybox-opened {
 	transform: skewY(-5deg);
 	backface-visibility: hidden;
 	border-radius: 0;

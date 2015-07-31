@@ -510,10 +510,8 @@ img.alignleft.img-responsive {
 	padding-right:0;
 }
 
-.main,.col-main {
-    min-height: 290px;
-}
-
+.main,.col-main {min-height: 290px;}
+.col-main{padding: 0 0 30px;}
 div.fme-filter a.fme_layered_attribute {
 	padding-left:10px !important;
 }
@@ -574,7 +572,7 @@ div.fme-filter a.fme_layered_attribute {
 #styles-20.fme_layered_attribute_selected_vshape,
 #styles-20:hover {background:url(../images/vshape-hover.png) no-repeat !important;}
 #fme_layered_styles > ol {padding: 0 0 0 56px;}
-
+.col.col-lg-12.col-md-12.col-sm-12.col-xs-12 > h2 {text-transform: uppercase;}
 /*****************************  product detail page  *********************************/
 
 .product-detail .fancy-product-price{display:none;}
