@@ -1714,6 +1714,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .products-grid .text-area h3{
 	float: left;
 	width: 60%;
+	/*min-height:40px;*/
 	margin: 0;
 	text-transform: capitalize;
 	color: #222;
@@ -2466,6 +2467,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	-webkit-transform: skewX(25deg);
 	-ms-transform: skewX(25deg);
 	padding: 0 15px;
+	color:#000;
 }
 .cart-top-area .btn-holder a:first-child:hover .span1 {
 	background: #f16167;
@@ -2816,6 +2818,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	-webkit-transform: skewX(25deg);
 	-ms-transform: skewX(25deg);
 	padding: 0 15px;
+	color:#000;
 }
 .cart-bottom-area .btn-holder a:first-child:hover .span1 {
 	background: #f16167;
