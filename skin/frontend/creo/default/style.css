@@ -2482,7 +2482,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .cart-top-area{
 	padding-bottom: 10px;
 	padding-top: 10px;
-	border-bottom:3px solid #eee;
+/*	border-bottom:3px solid #eee;*/
 }
 .cart-table-area table{
 	border-top: 3px solid #eee;
@@ -2513,7 +2513,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	text-align: left;
 	padding-left: 55px;
 }
-.cart-table-area tr{border-bottom: 2px dotted #2e2e2e;}
+.cart-table-area tr{/*border-bottom: 2px dotted #2e2e2e;*/background: url('images/border-slice.png') repeat-x bottom }
 .cart-table-area .alignleft{
 	float: left;
 	width: 78px;
