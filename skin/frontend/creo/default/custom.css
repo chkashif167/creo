@@ -103,11 +103,10 @@
 	color: red;
 }
 .subscribe-form .validation-advice {
-	position: relative;
 	font-size: 10px;
-	top: -14px;
 	text-align: left;
 	color: red;
+	float: left;
 }
 .popuplogin_button:hover, .newslettersubscribe:hover {
 	color: #000;

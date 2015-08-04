@@ -9,8 +9,8 @@
   font-style: normal;
 }
 html {
-	box-sizing: border-box;
-	background: #000;
+	box-sizing: border-box;.
+	height: 100%;
 }
 iframe#fancybox-frame1438432377523 html{background: none;}
 *,
@@ -21,8 +21,8 @@ body {
 	margin: 0;
 	color: #040707;
 	font: 14px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
-	background: #fff;
-	overflow-y: scroll;
+	background: #000;
+	height: inherit;
 	min-width: 320px;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
@@ -382,6 +382,7 @@ p.style1 {
 #wrapper {
 	overflow: hidden;
 	position: relative;
+	background: #fff;
 }
 #wrapper > .container {
 	background: #fff;
@@ -1435,7 +1436,7 @@ input[type="submit"]:hover {
 	vertical-align:middle;
 }
 .cate-links a{color:#000;}
-.cate-links .cate1 li{margin:0 5px 0 0;}
+.cate-links .cate1 li{margin:0 5px 5px 0;}
 .cate-links .cate1 a{
 	display:block;
 	padding:2px 10px;
@@ -2206,10 +2207,11 @@ div.fme-filter dd li{overflow: visible !important;}
 .product-detail .price-area .old-price{
 	display: inline-block;
 	vertical-align: middle;
-	color: #fdda00;
+	color: #f16167;
 	font-size: 18px;
 	font-style: normal;
 	display: inline-block;
+	text-decoration: line-through;
 }
 .product-detail .price-area .availability{
 	float: right;
@@ -3929,7 +3931,7 @@ div.fme-filter dd li{overflow: visible !important;}
 #footer .left-area{overflow: hidden;}
 #footer .logo-holder{
 	float: left;
-	width: 111px;
+	width: 128px;
 	margin: 0 35px 0 0;
 }
 #footer .logo{
