@@ -218,16 +218,12 @@
 
 <?php endif;*/ ?>
 
-
- <div class="shipping-area">
-     <?php 
+   <div class="shipping-area"> 
+   <?php 
    $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
     $options = array();
     ?>
-    <ul>
-    <li class="shippingheading"> 
-
-    <a class="shipping-info" href="#">SHIPPING INFORMATION</a> </li>
+    <?php //echo "<pre>";print_r($methods);?>
     <?php 
     foreach($methods as $_ccode => $_carrier)
     {
@@ -236,38 +232,19 @@
         {
         if(!$_title = Mage::getStoreConfig("carriers/$_ccode/title"))
                 $_title = $_ccode;
-              echo "<li><strong>".$_title."</strong><br><ul>";
+              echo "<a class='shipping-info' href='#'>".$_title."</a><ul>";
             foreach($_methods as $_mcode => $_method)
             {
                 $_code = $_ccode . '_' . $_mcode;
-                echo "<li style='display:block;'>".$_method."</li>";
-                //$_methodOptions[] = array('value' => $_code, 'label' => $_method);
+                echo "<li><a href='#'>".$_method."</a></li>";
+                $_methodOptions[] = array('value' => $_code, 'label' => $_method);
             }
-            echo "</ul></li>";
+            echo "</ul>";
         }
     }
 
-    //echo "<pre>";print_r($options);exit;
 
      ?>
-     </ul>
-</div>
-     <!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
-
-        <ul>
-
-          <li><a href="#">Shipping within next day</a></li>
-
-          <li class="active"><a href="#">Shipping within 2 days</a></li>
-
-          <li><a href="#">Shipping within 3 days</a></li>
-
-          <li><a href="#">Shipping within 4 days</a></li>
-
-        </ul>
-
-      </div>-->
-
     </div>
 
   </form>

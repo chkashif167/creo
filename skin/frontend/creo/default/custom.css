@@ -910,17 +910,19 @@
  .quickview-index-view .swatch-attr .select-label { display: none !important;}
  .onestepcheckout-index-index footer{ float: left; width:100%; }
  .shipping-area { border-top: 0;}
-  .shipping-area > ul li { width: 20%;}
+/*  .shipping-area > ul li { width: 20%;}*/
   .shipping-area > ul li strong { width: 20%; font-size: 14px;}
   .shipping-area > ul li ul li { width: 100%; float: left; margin: 0 0 1px 0 !important; font-size:13px !important;}
   .shippingheading { text-align: left; width:32% !important;}
-  .shipping-area .shipping-info { float: left !important;  font-size: 13px;}
-  .shipping-area li a { padding: 8px !important; }
+/*  .shipping-area .shipping-info { float: left !important;  font-size: 13px;}
+*/  
+.shipping-area .shipping-info {  border: 2px solid #ddd;  color: #000;    float: right;    font: 10px/15px "Roboto Condensed",Helvetica,Arial,sans-serif;    padding: 3px 6px;    text-align: center;}  
+/*  .shipping-area li a { padding: 8px !important; }
   .shipping-area li a::before { position: relative; float: left;  background: none !important; width: auto !important; height: auto !important;}
   .shipping-area li a:hover::before { background-position: 0 -28px !important;}
   .shipping-area li a:hover { background: none !important; color: #000 !important; background-position:inherit !important; border: 2px solid #ddd !important; cursor:default;}
   .old-price {text-decoration: line-through;}
- 
+*/ 
  
  
  
