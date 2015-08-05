@@ -64,7 +64,7 @@
     <default>
         <quickview>
 			<setting>
-				<loadjquery>1</loadjquery>
+				<loadjquery>0</loadjquery>
                 <title>View</title>
             </setting>
         </quickview>

@@ -290,7 +290,7 @@ a.alignleft.checkout-items {
 	width: 99%
 }
 
-.validation-advice { color: red; font-size: 10px;}
+.validation-advice { color: red; font-size: 10px; float: left;}
 .onestepcheckout-index-success .button {
     background: black none repeat scroll 0 0;
     border: medium none;
@@ -510,7 +510,7 @@ img.alignleft.img-responsive {
 	padding-right:0;
 }
 
-.main,.col-main {min-height: 290px;}
+/*.main,.col-main {min-height: 290px;}*/
 .col-main{padding: 0 0 30px;}
 div.fme-filter a.fme_layered_attribute {
 	padding-left:10px !important;
