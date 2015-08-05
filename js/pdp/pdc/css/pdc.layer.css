@@ -1,40 +1,40 @@
 #pdc_block_layer {
-  border: 1px solid #00a0c6;
-  margin-left: 5px;
-  width: 240px;
-  z-index: 99;
+  display: block;
+	overflow: hidden;
+	width: 100%;
+	z-index: 99;
 }
 #pdc-his-block > label, #pdc_block_layer > label {
-  background: none repeat scroll 0 0 #00a0c6;
-  box-sizing: padding-box;
-  color: #ffffff;
-  float: left;
-  font-family: "Proxima_Nova_Regular";
-  letter-spacing: 1px;
-  line-height: 35px;
-  padding: 0 15px;
-  text-transform: uppercase;
-  width: 100%;
+	box-sizing: padding-box;
+	cursor: pointer;
+	font-family: roboto condensed;
+	font-size: 18px;
+	line-height: 30px;
+	text-transform: uppercase;
+	width: 100%;
+	background: rgba(0, 0, 0, 0) url("../images/bg-divi.png") repeat-x scroll left bottom;
+	margin:0 0 10px 0;
 }
 #pdc_block_layer > ul {
   clear: both;
   display: table;
 }
 #pdc-his-block li, #pdc_block_layer li {
-  border-bottom: 1px dashed;
-  box-sizing: padding-box;
-  color: #c2c2c2;
   cursor: pointer;
   display: table-cell;
   float: left;
   line-height: 20px;
-  padding: 5px;
+  padding: 5px 0;
   vertical-align: middle;
   width: 100%;
+}
+#pdc_block_layer li:first-child{
+	border-bottom: 2px dotted #5e5e5e;
 }
 #pdc-his-block li:last-child, #pdc_block_layer li:last-child {
     
 }
+
 #pdc-his-block li.active, #pdc_block_layer li.active {
   color: #111;
 }
@@ -42,50 +42,54 @@
     background: none repeat scroll 0 0 rgb(97, 184, 60);
 }
 #pdc_block_layer img {
-  width: 50px;
+  height: 50px;
 }
 #pdc_block_layer span {
     float: left;
     text-align: center;
     color: #111;
+	text-transform:uppercase;
 }
 #pdc_block_layer span:nth-child(1) {
-  margin: 0 10px 0 0;
   max-height: 100px;
   overflow: auto;
-  width: 60px;
+    text-align: left;
+
 }
 #pdc_block_layer span:nth-child(2) {
-  width: 40px;
+
 }
 #pdc_block_layer span:nth-child(3) {
   text-align: center;
-  width: 70px;
+
 }
 #pdc_block_layer span:nth-child(4) {
-  text-align: center;
-  width: 40px;
+
 }
 #pdc_block_layer span:nth-child(5) {
   float: right;
-  width: 30px;
+
 }
 #pdc_block_layer span:nth-child(6) {
-    width: 40px;
+
 }
 #pdc_block_layer span:nth-child(7) {
     
 }
+#pdc_block_layer li:first-child span {line-height:20px;}
 #pdc_block_layer span {
-  color: #111111;
   float: left;
   text-align: center;
+  width:25%;
+  font-family: roboto condensed;
+  line-height:50px;
 }
+#pdc_block_layer span i{line-height:45px; font-size:20px;}
 #pdc_block_layer li.active{
     
 }
 #pdc_block_layer li.active span {
-  color: #00a0c6;
+  color: #f16a79;
 }
 #pdc_block_layer li span i.pdc-lock {
     display: none;
@@ -97,21 +101,40 @@
   display: block;
 }
 #pdc_block_layer li.active span {
-  color: #00a0c6;
+  color: #f16a79;
 }
 #pdc_block_layer li:first-child span i {
     display: none;
 }
 #pdc_block_layer li:first-child span span {
-  display: block;
+  display: block; width:100%;
 }
 #pdc_block_layer li span span {
   display: none;
 }
+#pdc_block_layer > div ul {background:rgba(0, 0, 0, 0) url("../images/bg-divi.png") repeat-x scroll left bottom; display:block; overflow:hidden;}
 #pdc_block_layer > div {
-  padding: 5px;
+  border: 1px solid #b7b7b7;
+padding: 15px;
 }
 #pdc_block_layer span.price_layer {
   float: right;
   font-weight: bold;
+  float:right;
+  line-height:30px;
+  font-size:20px;
+}
+.layer-final {
+	background:rgba(0, 0, 0, 0) url("../images/bg-divi.png") repeat-x scroll left bottom;
+	clear: both;
+	display: block;
+	font-family: roboto condensed;
+	overflow: hidden;
+	padding: 10px 0;
+}
+.layer-final label{
+	float: left;
+	font-weight: normal;
+	line-height: 30px;
+	text-transform: uppercase;
 }

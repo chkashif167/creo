@@ -35,8 +35,15 @@
 <?php
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
+	$_isCustomizeProduct = false;
+	if(Mage::helper('core')->isModuleEnabled('MST_Pdp')) {
+		$designBtnObj = new MST_Pdp_Block_Designbutton();
+		if($designBtnObj->isDesignAble()) {
+			$_isCustomizeProduct = true;
+		}
+	}
 ?>
-
+<?php if(!$_isCustomizeProduct) : ?>
 <div class="product-image product-image-zoom">
     <div class="product-image-gallery">
         <img id="image-main"
@@ -74,4 +81,45 @@
 <?php endif; ?>
 
 <?php echo $this->getChildHtml('after'); ?>
+
+<?php else : ?>
+	<!-- EOSide-tab-->
+	<div class="pdc-design-view">
+		<div class="pdc-main design-area">
+		<!-- Block main design area -->
+			<div id="pdc_main_design_area">
+				<?php /* ===The Main Design Area == */ ?>
+				<!-- End Block side view -->
+				<div class="pdc-product-image act" id="product-image-wrap">
+					<div id="wrap_inlay" class="wrap_inlay"><canvas id="canvas_area"></canvas></div>
+				</div>
+			</div>
+			
+		</div><!-- EODesign-area-->
+		<?php echo $this->getLayout()->createBlock("pdp/pdp")->setTemplate("pdp/action/zoom.phtml")->toHtml(); ?>
+		<?php echo $this->getLayout()->createBlock("pdp/pdp")->setTemplate("pdp/edit/edit_tool.phtml")->toHtml(); ?>
+		<?php echo $this->getLayout()->createBlock("pdp/pdp")->setTemplate("pdp/edit/colorsLibrary.phtml")->toHtml(); ?>
+	</div><!-- EODesign-view--> 
+	<div class="pdc-side-thumbnail">
+		<?php 
+		$sideModel = Mage::getModel('pdp/pdpside');
+		$sides = $sideModel->getActiveDesignSides($_product->getId());
+		$imageUrl = Mage::helper("pdp")->getImagePath();
+		$counter = 0;
+		?>
+		<ul>
+		<?php foreach($sides as $side) : ?>
+			<li>
+				<a pdc-data="TEMP_SWITCH_SIDE" id="temp_side_<?php echo $side->getId(); ?>" class="switch-side <?php echo ($counter == 0) ? 'active' : ''; $counter++; ?>">
+					<div class="pdc-thumbnail">
+						<img class="background-img" src="<?php echo $imageUrl . $side->getFilename() ?>"/>
+						<img class="overlay-img" src="<?php echo $imageUrl . $side->getOverlay() ?>" title="<?php echo $side->getLabel() ?>"/>
+					</div>
+				</a>
+			</li>
+		<?php endforeach; ?>
+		</ul>
+	</div>
+	
+<?php endif; ?>
 

@@ -7,27 +7,6 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
     }
     public function testAction() {
         echo "Test Function </br>";
-        echo "<br>Is Imagick Avaiable: " . $this->_helper->isImagickLoaded();
-        echo "<br/>Is getimagesize function Avaiable: " . $this->_helper->isGetImageSizeLoaded();
-        /*$size = $this->_helper->getUploadMaxFileSize();
-        Zend_Debug::dump($size);
-        $isRealImage = $this->_helper->getImageSize($this->_helper->uploadDir . "1426125678-customupload.jpg");
-        Zend_Debug::dump($isRealImage);
-        echo "<hr>Crop Image <br/>";
-        $imgPath = $this->_helper->uploadDir . "artworkimage11414811752.svg";
-        $cropData = [100, 100, 10, 20];
-        $cropResult = $this->_helper->cropImage($imgPath, $cropData);
-        Zend_Debug::dump($cropResult);*/
-        Mage::getSingleton("core/session")->setCustomUploadImages("");
-        //Zend_Debug::dump($this->_helper->getConfig());
-        
-        $isRealImage = $this->_helper->getImageSize($this->_helper->uploadDir . "1426125678-customupload.jpg");
-        Zend_Debug::dump($isRealImage);
-        echo "<hr>Crop Image <br/>";
-        $imgPath = $this->_helper->uploadDir . "crop-img-1429583104_1429580067-customupload.jpg";
-        $cropData = [10, 50, 300, 300];
-        $cropResult = $this->_helper->cropImage($imgPath, $cropData);
-        Zend_Debug::dump($cropResult);
     }
 	public function uploadCustomImageAction() {
 		if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES["uploads"])) {
@@ -48,20 +27,34 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
 							$size = $uploads["size"][$key];
 							$type = $uploads["type"][$key]; // could be bogus!!! Users and browsers lie!!!
 							$tmp  = $uploads["tmp_name"][$key];
-							$result = move_uploaded_file( $tmp, $baseDir .$name);
+							$result = move_uploaded_file( $tmp, $baseDir . $name);
 							if ($result) {
-                                //Check if image is real, if not, remove file for security reason.
-                                if($uploads["type"][$key] == "image/svg+xml") {
-                                    $uploadedImages[] = $mediaUrl . $name;
+                                //Check upload file types
+                                $applicationFileTypes = Mage::helper("pdp/upload")->getApplicationFileTypes();
+                                if(in_array($type, $applicationFileTypes)) {
+                                    //Using imagick to convert application file to png file
+                                    $convertResult = Mage::helper("pdp/upload")->convertFileToImage($baseDir . $name);
+                                    if(isset($convertResult['status']) && $convertResult['status'] == "success") {
+                                        $uploadedImages[] = $mediaUrl . $convertResult['filename'];
+                                    } else {
+                                        $this->getResponse()->setBody(json_encode($convertResult))->sendResponse();
+                                        exit();
+                                    }
                                 } else {
-                                    $isRealImage = $this->_helper->isRealImage($baseDir . $name);
-                                    if($isRealImage) {
+                                    //Check if image is real, if not, remove file for security reason.
+                                    if($uploads["type"][$key] == "image/svg+xml") {
                                         $uploadedImages[] = $mediaUrl . $name;
                                     } else {
-                                        $response['status'] = 'error';
-                                        $response['message'] = 'Please upload a valid file!';
-                                        $this->getResponse()->setBody(json_encode($response))->sendResponse();
-							            exit();
+                                        $isRealImage = $this->_helper->isRealImage($baseDir . $name);
+                                        if($isRealImage) {
+                                            $uploadedImages[] = $mediaUrl . $name;
+                                        } else {
+                                            $response['status'] = 'error';
+                                            $response['message'] = 'Please upload a valid file!';
+                                            //unlink($baseDir . $name);
+                                            $this->getResponse()->setBody(json_encode($response))->sendResponse();
+                                            exit();
+                                        }
                                     }
                                 }
 							}
@@ -100,6 +93,23 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
         } else {
             $response['status'] = "error";
             $response['message'] = "Image not found!";
+        }
+        $this->getResponse()->setBody(json_encode($response));
+    }
+    public function deleteImageAction() {
+        $response = array(
+            'status' => 'error',
+            'message' => 'Can not remove image! Something went wrong!'
+        );
+        $request = $this->getRequest()->getPost();
+        if(isset($request['image']) && $request['image']) {
+            $customImages = Mage::getSingleton("core/session")->getCustomUploadImages();
+            $newCustomImages = array_diff($customImages, array($request['image']));
+            Mage::getSingleton("core/session")->setCustomUploadImages($newCustomImages);
+            $response = array(
+                'status' => 'success',
+                'message' => 'Image had been successfully removed!'
+            );
         }
         $this->getResponse()->setBody(json_encode($response));
     }

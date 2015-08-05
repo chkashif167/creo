@@ -50,9 +50,9 @@ pdc2(document).ready(function($){
 		var color_panel = window.document.querySelector('.color_fill_tool');
 		var draggie = new Draggabilly( color_panel, {
 		  handle: '.drag-panel',
-		  containment: $("#pdcwrapper").length ? '#pdcwrapper' : '.wrap_pdp_design'
-		});	  
-	 
+		  //containment: $("#pdcwrapper").length ? '#pdcwrapper' : '.product-detail'
+		});		
+
 
 	$('#opacityBtn').click(function(){
 		$(this).toggleClass('selected');
@@ -100,12 +100,12 @@ pdc2(document).ready(function($){
 
 
 /*###### PHOTO CATEGORY LIST #####*/
-	$(".selected_category_photo").mCustomScrollbar({
+	/* $(".selected_category_photo").mCustomScrollbar({
 		scrollButtons:{ enable: true },
 		axis:"y",
 		theme: 'inset-2-dark',
 		live: true
-	});
+	}); */
 
 /*###### Design Area #####*/
 	/* $(".design-area").mCustomScrollbar({
@@ -116,20 +116,27 @@ pdc2(document).ready(function($){
 	}); */
 	
 /*###### Quotes Library LIST #####*/
-	$(".pdc_text_list").mCustomScrollbar({
+	/* $(".pdc_text_list").mCustomScrollbar({
 		scrollButtons:{ enable: true },
 		axis:"y",
 		theme: 'inset-2-dark',
 		live: true
-	});
+	}); */
+/*###### Uploaded Image List #####*/
+	/* $("#lists_img_upload").mCustomScrollbar({
+		scrollButtons:{ enable: true },
+		axis:"y",
+		theme: 'inset-2-dark',
+		live: true
+	}); */
 	
 /*###### Color filling CATEGORY LIST #####*/
-	$(".color_fill_list").mCustomScrollbar({
+	/* $(".color_fill_list").mCustomScrollbar({
 		scrollButtons:{ enable: true },
 		axis:"y",
 		theme: 'inset-2-dark',
 		live: true
-	});
+	}); */
 /* Show Color picker popup */
 	$('.btn-picker, .btn-color-list').on('click',function(){
 		$('#pdc_color_picker').toggle();
@@ -174,12 +181,12 @@ pdc2(document).ready(function($){
 	
 	 
 /*###### FONTs FAMILY LIST #####*/
-	$(".item-font-list").mCustomScrollbar({
+/* 	$(".item-font-list").mCustomScrollbar({
 		scrollButtons:{ enable: true },
 		axis:"y",
 		theme: 'inset-2-dark',
 		live: true
-	});
+	}); */
 
 /*###### UPLOAD POPUP FORM #####*/
 	/*$("#fileToUploadNew").fileinput({
