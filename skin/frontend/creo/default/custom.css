@@ -475,14 +475,14 @@
 	box-shadow: none;
 	color: #555;
 	cursor: pointer;
-	left: 0px;
+	left: 0;
 	opacity: 1;
 	padding: 0;
 /*	position: relative;*/
 	text-decoration: none;
-	top: 275px;
+	top: 325px;
 	z-index: 10;
-	 width:100%;
+	width:100%;
 }
 #products-list .mp_quickview_icon { width:22%;}  
 .products-grid .quick-view {
