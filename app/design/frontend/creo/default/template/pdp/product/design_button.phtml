@@ -43,5 +43,5 @@ $baseUrl = Mage::helper("pdp")->getPdpBaseUrl();
 	<input type="hidden" id="product_price_config" value="<?php echo htmlentities($productViewObj->getJsonConfig()); ?>" />
 	<?php endif; ?>
 </div>
-
-    <span class="button create-sample-btn design-product" id="design_product_<?php echo $this->getProductId() ?>"><?php echo $this->__($this->getButtonLabel()); ?></span>
+<!-- ************************* Convert iframe version to product page ***************************-->
+<?php echo $this->getChildHtml("main_design_area") ?>

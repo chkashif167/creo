@@ -25,11 +25,11 @@ var pdc = PDC();
     
 /////////////Setting default info///////////////
     PDC_setting = {
-       color_default: '#FF0000',
+       color_default: pdc_product_config.default_color || '#000',
        font_family_default: "Arial",
-       font_size_default: '20',
+       font_size_default: pdc_product_config.default_fontsize || '25',
        div_side_action : $('#pdc_sides'),
-       line_height_default: '1.3'
+       line_height_default: pdc_product_config.default_fontheight || '1.3'
     }
 /////////////Setting default info///////////////
 
@@ -107,11 +107,10 @@ var pdc = PDC();
             if(e.target.get('type')!='group'){
                 $('[pdc-box="toolbox"]').addClass('active');
                 var activeObject = canvas.getActiveObject();
-                console.log(activeObject.type);
                 CanvasEvents.init_opacity(activeObject);
-                if (activeObject.type =='text') {
+                if((activeObject.type=='text')||(activeObject.type=='i-text')||(activeObject.type=='curvedText')) {
                     CanvasEvents.init_text(activeObject);
-                    CanvasEvents.edit_text('Text',activeObject.text);
+                    //CanvasEvents.edit_text('Text',activeObject.text);
                 }
                 if (activeObject.type =='image') {
                     CanvasEvents.edit_img(activeObject,'image');
@@ -119,20 +118,13 @@ var pdc = PDC();
                 if (activeObject.type =='path-group') {
                     CanvasEvents.edit_img(activeObject);
                 }
-                if((activeObject.type =='text')||(activeObject.type =='path-group')){
-                    $('.color_fill_tool').addClass('active');
-                }else{
-                    $('.color_fill_tool').removeClass('active');
-                }
                 var name = activeObject.name;
                 $('[pdc-block="layer"] li[name="'+name+'"]').addClass('active');
             }else{
                 $('[pdc-box="toolbox"]').removeClass('active');
+                
             }
             $('#add_image, #add_text').slideUp();
-            //
-            //canvasEvents.showinfo();
-            //console.log(activeObject.type);
             
         },
         editItem: function(task,value){ 
@@ -147,7 +139,7 @@ var pdc = PDC();
                 case 'flipY'    : active.flipY = active.flipY ? false : true; break;
                 case 'delete'   : canvas.remove(active); break;
                 case 'duplicate': this.copyObject(); break;
-                case 'color'    :   console.log(CanvasEvents.rgb2hex(value));   active.set('fill',CanvasEvents.rgb2hex(value));break;
+                case 'color'    : if(active.type=='i-text'){ CanvasEvents.setStyle(active, 'fill', CanvasEvents.rgb2hex(value)); }else{ active.set('fill',CanvasEvents.rgb2hex(value)); }   break;
                 case 'opacity'  :   active.set('opacity',value);    break; 
                 case 'move': 
                     var zoom = canvas.getZoom(),
@@ -218,31 +210,78 @@ var pdc = PDC();
                 }
                 return;
               }else{
-                if(active.type!='text'){
+                if((active.type!='i-text')&&(active.type!='text')&&(active.type!='curvedText')){
                     if(act=='text'){
                        canvas.deactivateAll().renderAll(); 
                        CanvasEvents.addText(val); 
                     }
+                }else{
+                    if(act=='text'){
+                        if(active.type=='curvedText'){
+                            active.set({
+                                scaleX: 1,
+                                scaleY: 1
+                            });
+                        }
+                        active.setText(val);
+			            canvas.renderAll();
+                    }else{
+                         //active.set(act,val);
+                         if(active.type!='curvedText'){
+                            CanvasEvents.setStyle(active, act, val);
+                         }else{
+                            active.set({
+                                scaleX: 1,
+                                scaleY: 1
+                            });
+                            active.set(act, val);
+                            canvas.renderAll();
+                         }
+                    }
+                     
                 }
               }
               $('.color_fill_tool, .opacity_tool').removeClass('expanded');
               $('#ColorFillBtn, #opacityBtn').removeClass('selected');
               $('[pdc-box="toolbox"]').show();
-              active.set(act,val);
-              canvas.renderAll();
+              PDC_layer.load_layer();
         },
         edit_img: function(obj,type){
             if(!$('[pdc-box="toolbox"]').hasClass('active')) return;
             $('#pdc_toolbox .tools_text').hide();
-          $('[pdc-data="text"]').val('');
-          $('.color_fill_tool, .opacity_tool').removeClass('expanded');
-          $('#ColorFillBtn, #opacityBtn').removeClass('selected');
-          if(type=='image'){
-                $('#ColorFillBtn').hide();
-          }else{
-                $('#ColorFillBtn').show();
+            $('[pdc-data="text"]').val('');
+            $('.color_fill_tool, .opacity_tool').removeClass('expanded');
+            $('#ColorFillBtn, #opacityBtn').removeClass('selected');
+            $('#clipartTab').addClass('active').removeClass('fade');
+            $('#textTab').addClass('fade').removeClass('active');
+            $('#tools-button li.active').removeClass('active');
+            $('#photo-btn').parent().addClass('active');
+              CanvasEvents.init_color_item(obj);
+        },
+        setStyle: function(object, styleName, value) {
+          if (object.setSelectionStyles && object.isEditing) {
+            var style = { };
+            style[styleName] = value;
+            object.setSelectionStyles(style).setCoords();
           }
-          CanvasEvents.init_color_item(obj);
+          else {
+            object[styleName] = value;
+          }
+          canvas.renderAll();
+        },
+        getStyle: function(object, styleName) {
+          return (object.getSelectionStyles && object.isEditing)
+            ? object.getSelectionStyles()[styleName]
+            : object[styleName];
+        },
+        addHandler: function(id, fn, eventName) {
+          document.getElementById(id)[eventName || 'onclick'] = function() {
+            var el = this;
+            if (obj = canvas.getActiveObject()) {
+                fn.call(el, obj);
+                canvas.renderAll();
+            }
+          };
         },
         init_opacity : function(obj){
             if(!$('[pdc-box="toolbox"]').hasClass('active')) return;
@@ -268,8 +307,27 @@ var pdc = PDC();
             if(!$('[pdc-box="toolbox"]').hasClass('active')) return;
             if(obj){
                 $('[pdc-data="text"]').val(obj.text);
-                /*
+                $('#textTab').addClass('active').removeClass('fade');
+                $('#clipartTab').addClass('fade').removeClass('active');
+                $('#tools-button li.active').removeClass('active');
+                $('#text-btn').parent().addClass('active');
+                
+                if(obj.type!='curvedText'){
+                    $('#pdc_ctext_radius').val(50);
+                    $('#pdc_ctext_spacing').val(5);
+                    $('#pdc_ctext_reverse').prop('checked', false);
+                    $('#pdc_text_curved_control').hide();
+                }else{
+                    $('#pdc_text_curved_control').show();
+                    if(obj.reverse){
+                        $('#pdc_ctext_reverse').prop('checked', true);
+                    }
+                    $('#pdc_ctext_radius').val(obj.radius);
+                    $('#pdc_ctext_spacing').val(obj.spacing);
+                }
                 var font_size = obj.get('fontSize');
+                $('input[name="fontsize"],input[name="fontsize_num"]').val(font_size);
+                /*
                   $( "#pdc_font_size_input" ).slider({
                     range: false,
                     min: 0,
@@ -323,14 +381,29 @@ var pdc = PDC();
                         $('[pdc-text-align="left"]').addClass("active");
                     }
                 }
+				var text_font = obj.get('fontFamily');
+                $('#select_font li').removeClass('active');
+                $('#select_font li[pdc-font="'+text_font+'"]').addClass('active');
                 CanvasEvents.init_color_item(obj);
             }
         },
         init_color_item: function(obj){
             var color = obj.get('fill'); 
             $('.color_fill_tool').addClass('active');
-            if((color=='')||(color==undefined)||(color=='rgb(0,0,0)')) { $('#tools_color').hide(); return; }
-            $('#ColorFillBtn').show();
+            if(obj.type=='image'){ 
+               $('#ColorFillBtn').hide();
+               $('.color_fill_tool').removeClass('active');
+            }
+            //if((color=='')||(color==undefined)||(color=='rgb(0,0,0)')) { $('#tools_color').hide(); return; }
+            if((color=='#')||(color==undefined)||(color=='rgb(0,0,0)')) { $('#tools_color').hide(); return; }
+			//Check path-group type is simple or complex svg
+            if(obj.type == "path-group") {
+                if(!(obj.isSameColor && obj.isSameColor() || !obj.paths)) {
+                    $('.color_fill_tool').removeClass('active');
+                    return;
+                }
+            }
+			$('#ColorFillBtn').show();
             var rgb_color = CanvasEvents.hexToRgb(color);
             $("#pRed").val(rgb_color.r);
             $("#pGreen").val(rgb_color.g);
@@ -406,7 +479,7 @@ var pdc = PDC();
             //$('#edit_text').css('opacity',"1");
             //$('#color_item').css('opacity',.5);
             var center = canvas.getCenter(),
-                textObj = new fabric.Text(text, {
+                textObj = new fabric.IText(text, {
                     fontFamily: PDC_setting.font_family_default,
                     //left: center.left,
                     //top: center.top,
@@ -426,6 +499,10 @@ var pdc = PDC();
             textObj.lockUniScaling = false;
             textObj.hasRotatingPoint = true;
             textObj.transparentCorners = true;
+			textObj.on('changed', function(e) {
+                CanvasEvents.init_text(textObj);
+                PDC_layer.load_layer();
+            });
             //textObj.cornerColor = setting.border;
             canvas.centerObject(textObj);
             canvas.add(textObj).setActiveObject(textObj);
@@ -476,7 +553,6 @@ var pdc = PDC();
                 canvas.add(loadedObject).setActiveObject(loadedObject).centerObject(loadedObject);
                 CanvasEvents.editItem('move','m_cc');
                 //canvasEvents.center();
-                //console.log(canvas.toJSON(['name','price']));
                 //canvasEvents.addlayer();
             });
         },
@@ -489,6 +565,10 @@ var pdc = PDC();
             CanvasEvents.resetTextBox();
             $('.color_fill_tool').removeClass('active');
             $('[pdc-box="toolbox"]').removeClass('active');
+            $('#pdc_ctext_radius').val(50);
+            $('#pdc_ctext_spacing').val(5);
+            $('#pdc_ctext_reverse').prop('checked', false);
+            $('#pdc_text_curved_control').hide();
         },
         removeObject: function () {
             var active = canvas.getActiveObject();
@@ -520,6 +600,7 @@ var pdc = PDC();
                     //canvasEvents.renderall();
                 }
             }
+            canvas.renderAll();
         },
         restore_design: function (objs) {
             var json = JSON.parse(objs);
@@ -686,7 +767,6 @@ var pdc = PDC();
             var objects = json.objects, side_act = $('#pdc_sides li.active').attr('tab');
             $('.layer_'+side_act+' .layer_pricing tbody').html('');
             $('.layer_'+side_act+' tbody').append(html).parents('.layer_pricing').attr('pr',final_pr);
-			//console.log("Add layer called" + objects.length);
 			//return;
             for (var i = 0; i < objects.length; i++) {
                 //objects[i].price = 32;
@@ -861,7 +941,12 @@ var pdc = PDC();
                 }
             });
             ////////////////////////////////////Zoom takes easy/////////////////////////////////////////////
-        }
+        },
+		saveDesignBeforeAddToCart : function(element) {
+			pdc.action = "SAVE_CUSTOMER_DESIGN";
+			pdc.saveBeforeAction(pdc.action);
+			return false;
+		}
     }
     
     Clipart = {
@@ -896,7 +981,7 @@ var pdc = PDC();
                     },
 					beforeSend : function() {
 						$('.content_designs .loading-img').show();
-                        Clipart.showLoading();
+						Clipart.showLoading();
 					},
 					error : function() {
 					
@@ -945,7 +1030,7 @@ var pdc = PDC();
                     },
 					beforeSend : function() {
 						$('.content_designs .loading-img').show();
-                        Clipart.showLoading();
+						Clipart.showLoading();
 					},
 					error : function() {
 					
@@ -1059,7 +1144,7 @@ var pdc = PDC();
                         },
     					beforeSend : function() {
     						$('.content_designs .loading-img').show();
-                            Clipart.showLoading();
+							Clipart.showLoading();
     					},
     					error : function() {
     					
@@ -1124,13 +1209,12 @@ var pdc = PDC();
                         },
     					beforeSend : function() {
     						$('.content_designs .loading-img').show();
-                            Clipart.showLoading();
+							Clipart.showLoading();
     					},
     					error : function() {
     					
     					}, 
     					success : function(response) {
-                            Clipart.switchCategoryFilterAndSearch(true);
     						if (response != "nomore") {
     							var data = $.parseJSON(response);
     							var item = "", colorImages;
@@ -1206,8 +1290,7 @@ var pdc = PDC();
                 $.each(items, function(i, item) {
                     if (item.upload) formData.append(item.name, item.file);
                 });
-                console.log(formData);
-                var uploadUrl = $("#upload_images_form").attr("action");
+                var uploadUrl = $("#base_url").val() + "pdp/upload/uploadCustomImage";//$("#upload_images_form").attr("action");
                 $.ajax({
                     url: uploadUrl,
                     data: formData,
@@ -1239,22 +1322,27 @@ var pdc = PDC();
                 if(checkFileResult.status == "error") {
                     $("#msg_error .message").text(checkFileResult.message);
                     $("#msg_error").removeClass("hide");
+                    //Reset items
+                    Clipart.handleImageUpload.item = [];
                     return false;
                 } else {
                     $("#msg_success .message").text(checkFileResult.message);
-                    $("#msg_success").removeClass("hide");
+                    $("#msg_success").removeClass("hide").show();
                 }
                 Clipart.handleImageUpload.item = [];
                 $.each(g,function(i,file){
                      //test image types: image/svg+xml, image/png, image/gif, image/jpeg, image/jpg, image/bmp, image/tiff, image/tif
-                    if (file.type.match("image/")) {
+                    if (file.type.match("image/")
+                       || (file.type === "application/pdf" || file.type === "application/postscript")
+                       || (file.type === "" && file.name.split(".")[1] === "psd")) {
                         Clipart.handleImageUpload.item.push({name:name,file:file,upload:true});
                         //Clipart.handleImageUpload.uploadCustomImage(item);
                     } else {
-                        alert("Please upload a file in one of the following formats: .svg, .jpg, .png, .jpeg, .bmp, .gif");
-                        document.getElementById("upload_images_form").reset();
+                        var message = $("#unsuported_message").val();
+                        alert(message);
+                        $("#msg_success").hide();
+						Clipart.handleImageUpload.item = [];
                     }
-
                 });
             },
             //Return object.status = error | success with message
@@ -1291,7 +1379,6 @@ var pdc = PDC();
                           t=="number"?evt+'%':
                           t=="string"?evt:
                           "0%";
-                          //console.log(pcent);
                 $('.progress-bar').html(pcent);
                 $('.progress-bar').css("width", pcent);
                 if(pcent=='100%'){
@@ -1302,13 +1389,24 @@ var pdc = PDC();
             },
             showUploadedImage : function(response) {
                 var images = $.parseJSON(response);
+                if(images.status && images.status === "error") {
+                    $("#msg_success").addClass("hide");
+                    $("#msg_error .message").text(images.message || 'Something went wrong!');
+                    $("#msg_error").removeClass("hide");
+                    //Reset items
+                    Clipart.handleImageUpload.item = [];
+                    return false;
+                } else {
+                    $("#msg_error").addClass("hide");
+                }
                 if (images.length) {
                     $.each(images, function(index, imgSrc) {
                         var item = Clipart.getImageHtmlFormated(imgSrc);
                         $("#lists_img_upload .row").prepend(item);
                     });
                 }
-                document.getElementById("upload_images_form").reset();
+                $("#msg_success").addClass("hide");
+				Clipart.handleImageUpload.item = [];
             }
         },
         /** Add a div contain image to upload list image**/
@@ -1320,7 +1418,8 @@ var pdc = PDC();
 				        imgDiv += '<div class="caption" style="text-align: center;">';
 							imgDiv += '<p>';
                                 imgDiv += '<a class="btn btn-default crop-item" role="button"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span>Crop</a>';
-									imgDiv += ' <a class="btn btn-default add-to-design" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Add To Design</a>';
+									imgDiv += ' <a class="btn btn-default add-to-design" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Use</a>';
+									imgDiv += ' <a class="btn btn-danger delete-upload-image" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>';
 								imgDiv += '</p>';
 							imgDiv += '</div>';
 						imgDiv += '</div>';
@@ -1333,11 +1432,9 @@ var pdc = PDC();
                 $("#crop_image").attr("src", $(img).attr("src"));
                 $("#crop_image").Jcrop({
                     onSelect: function(c) {
-                        console.log(c);
                         window.pdcCropSelection = c;
                     },
                     onchange: function(c) {
-                        //console.log(c);
                     },
                     onRelease: function() {
                         console.log(this);
@@ -1391,6 +1488,7 @@ var pdc = PDC();
                         } else if(responseJson.status === "error") {
                             alert(responseJson.message);
                         }
+                        $('.pdploading').hide();
                     }
 				}
 			});
@@ -1400,6 +1498,52 @@ var pdc = PDC();
             $("#lists_img_upload").on("click", ".add-to-design", function() {
                 $(this).closest('[pdc-data="upload-item"]').find('[pdc-data="upload-image"]').click();
                 $("#uploadPhotos").modal("hide");
+            });
+        }(),
+		deleteUploadImage: function() {
+            $("#lists_img_upload").on("click", ".delete-upload-image", function() {
+                var self = $(this);
+                var img = $(this).closest('[pdc-data="upload-item"]').find('[pdc-data="upload-image"]');
+                var confirmMsg = $("#delete_image_msg").val();
+                if(!confirm(confirmMsg)) {
+                    return false;
+                }
+                //Remove from canvas
+                /* canvas.forEachObject(function(obj) {
+                    if(obj.isrc && obj.isrc == img.attr("src")) {
+                        canvas.remove(obj);
+                    }
+                });
+                canvas.renderAll(); */
+                //Remove image from session
+                var deleteUrl = baseUrl + "pdp/upload/deleteImage";
+                $.ajax({
+                    type : "POST",
+                    url : deleteUrl,
+                    data : {
+                        image: img.attr("src")
+                    },
+                    beforeSend : function() {
+                        Clipart.showLoading();
+                        //$('.pdploading').show();  
+                    },
+                    error : function() {
+                        console.log("Something went wrong...");
+                    }, 
+                    success : function(response) {
+                        if(response != "") {
+                            var responseJson = JSON.parse(response);
+                            if(responseJson.status === "success") {
+                                //Remove image html
+                                console.info("Remove image html");
+                                self.closest('[pdc-data="upload-item"]').parent().remove();
+                            } else if(responseJson.status === "error") {
+                                alert(responseJson.message);
+                            }
+                            $('.pdploading').hide();
+                        }
+                    }
+                });
             });
         }()
 	}
@@ -1411,9 +1555,6 @@ var pdc = PDC();
 				data : data,
 				beforeSend : function() {
 					$('.pdploading').show();
-                    if(window.Pace !== undefined) {
-                        Pace.restart();
-                    }
 				},
 				error : function() {
 					console.log("Something went wrong...");

@@ -91,6 +91,45 @@ $productConfigs = Mage::helper("pdp")->getProductConfig($productId);
 						-->
 					</td>
 				</tr>
+                <tr>
+					<td><label><?php echo $this->__("Default Color") ?></label></td>
+					<td>
+                        <?php 
+                        $defaultColor = Mage::getStoreConfig("pdp/design/default_object_color");
+                        if(isset($productConfigs['default_color']) && $productConfigs['default_color'] != "") {
+                            $defaultColor = $productConfigs['default_color'];
+                        }
+                        if($defaultColor != "") {
+                            $defaultColor = str_replace("#", "", $defaultColor);
+                        }
+                        ?>
+						<input type="text" name="default_color" class="input-text" value="#<?php echo $defaultColor ?>" />
+					</td>
+				</tr>
+                <tr>
+					<td><label><?php echo $this->__("Default Font Size") ?></label></td>
+					<td>
+                        <?php 
+                        $defaultFontSize = Mage::getStoreConfig("pdp/design/default_object_fontsize");
+                        if(isset($productConfigs['default_fontsize']) && $productConfigs['default_fontsize'] != "") {
+                            $defaultFontSize = $productConfigs['default_fontsize'];
+                        }
+                        ?>
+						<input type="text" name="default_fontsize" class="input-text" value="<?php echo $defaultFontSize ?>" />
+					</td>
+				</tr>
+                <tr>
+					<td><label><?php echo $this->__("Default Font Height") ?></label></td>
+					<td>
+                        <?php 
+                        $defaultFontHeight = Mage::getStoreConfig("pdp/design/default_object_fontheight");
+                        if(isset($productConfigs['default_fontheight']) && $productConfigs['default_fontheight'] != "") {
+                            $defaultFontHeight = $productConfigs['default_fontheight'];
+                        }
+                        ?>
+						<input type="text" name="default_fontheight" class="input-text" value="<?php echo $defaultFontHeight ?>" />
+					</td>
+				</tr>
 			</table>
 		</form>
     </div>
@@ -121,6 +160,7 @@ $productConfigs = Mage::helper("pdp")->getProductConfig($productId);
 		</div>
     </div>
 </div>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/jquery/jquery-1.10.2.min.js') ?>"></script>
 <script>
 var mstPdpDesign = jQuery.noConflict();
 mstPdpDesign(function($){
@@ -158,6 +198,11 @@ mstPdpDesign(function($){
 				PdpSide.updateProductConfig();
 			});
 		}(),
+        editDefaultSettings: function() {
+			$("input[name='default_color'], input[name='default_fontsize'], input[name='default_fontheight']").change(function() {
+				PdpSide.updateProductConfig();
+			});
+		}(),
 		sendRequest : function(url, callback) {
 			$.ajax({
 				type:"GET",
@@ -177,6 +222,10 @@ mstPdpDesign(function($){
 				showPrice = $("select[name='hide_price_panel']").val(),
 				textPrice = $("input[name='text_price']").val(),
 				clipartPrice = $("input[name='clipart_price']").val(),
+                defaultColor = $("input[name='default_color']").val(),
+                defaultFontSize = $("input[name='default_fontsize']").val(),
+                defaultFontHeight = $("input[name='default_fontheight']").val(),
+                autoReplacePattern = ($("#auto_replace_pattern").length && $("#auto_replace_pattern").is(":checked")) ? 1 : 2,
 				productId = '<?php echo $productId ?>';
 			if (textPrice != "") {
 				if(isNaN(textPrice)) {
@@ -200,6 +249,10 @@ mstPdpDesign(function($){
 				clipart_price: clipartPrice,
 				//text_price_type: $("select[name='text_price_type']").val(),
 				//clipart_price_type: $("select[name='clipart_price_type']").val(),
+                default_color: defaultColor,
+                default_fontsize: defaultFontSize,
+                default_fontheight: defaultFontHeight,
+                auto_replace_pattern: autoReplacePattern
 			}
 			$.ajax({
 				type:"POST",

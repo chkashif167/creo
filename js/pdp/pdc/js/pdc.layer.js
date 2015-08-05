@@ -37,7 +37,7 @@ pdc_layer(document).ready(function($){
                     var html = $('[pdc-block="layer"] pdc-layer="0"');
                     $('[pdc-block="layer"] ul').append(html);
                     var html = '<li>';
-                    if(o.type=='text'){
+                    if(o.type=='i-text'){
                         html  +=   o.text;
                     }
                     if((o.type=='path-group')||(o.type=='image')){
@@ -106,7 +106,7 @@ pdc_layer(document).ready(function($){
                     if((o.price=='')||(o.price==undefined)){o.price=0;}
                     price+=parseFloat(o.price);
                     $('[pdc-block="layer"] ul').append('<li pdc-layer="'+i+'" name="'+name+'">'+html+'</li>');
-                    if(o.type=='text'){
+                    if(o.type=='i-text'){
                         $('[pdc-layer="'+i+'"] [pdc-layer-info="type"]').html(o.text.substring(0,10));
                     }
                     if((o.type=='image')||(o.type=='path-group')){

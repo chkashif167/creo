@@ -216,7 +216,16 @@ $js_pdp = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'pdp/';
 			}
  		}
  		LoadDesign.autoClickCustomBtn();
-        LoadDesign.showSampleImage();
+        //Auto replace base image or not
+        if($("input[name='extra_options']", mainWindow).val() != "") {
+            //Check config
+            var pdcConfig = JSON.parse($("#pdc_product_config", mainWindow).val());
+            var productConfig = JSON.parse(pdcConfig.note);
+            var isAutoReplace = productConfig.auto_replace_pattern || 2;
+            if(isAutoReplace === 1) {
+                LoadDesign.showSampleImage();
+            }
+        }
         LoadDesign.reloadPrice();
 	});
 </script>
