@@ -775,6 +775,7 @@
     padding: 8px 100px;
     width: auto;
     float: right;
+	margin-top:20px;
     text-transform: uppercase;
 }
 .cate2.cate:nth-child(2) { }
