@@ -2194,8 +2194,9 @@ div.fme-filter dd li{overflow: visible !important;}
 .product-detail .price-area{
 	padding: 20px 50px 5px 0;
 	overflow: hidden;
-	border-width: 2px 0;
-	border-style: dotted;
+	border-width: 1px 0;
+	border-style: solid;
+	border-bottom:none;
 	border-color: #515151;
 }
 .product-detail .price-area .price{
@@ -2206,7 +2207,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .product-detail .price-area .old-price{
 	display: inline-block;
 	vertical-align: middle;
-	color: #fdda00;
+	color: #F16A79;
 	font-size: 18px;
 	font-style: normal;
 	display: inline-block;
@@ -2247,7 +2248,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .product-detail .btn-holder a:first-child:before { display: none; }
 .product-detail .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .product-detail .btn-holder a:hover {
-	opacity: 0.8;
+	opacity: 1;
 	background: #000;
 	color: #fff;
 	border-color: #000;
@@ -2292,8 +2293,8 @@ div.fme-filter dd li{overflow: visible !important;}
 	border-color: #000;
 }
 .product-detail .options-area{
-	border-width: 2px 0;
-	border-style: dotted;
+	border-width: 1px 0;
+	border-style: solid;
 	border-color: #515151;
 	padding: 20px 0 20px 2px;
 }
@@ -4149,4 +4150,9 @@ div.fme-filter dd li{overflow: visible !important;}
 
 .main-container.col3-layout .products-grid .quick-view {
 	top:90%;
+}
+
+.pdp-main-des h5.title {
+	background:none !important;
+	border-bottom:1px solid;
 }
