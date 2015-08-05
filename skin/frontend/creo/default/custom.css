@@ -138,11 +138,11 @@
 	background: #f16167 none repeat scroll 0 0;
 	color: #fff;
 	display: block;
-	font-size: 24px;
-	height: 44px;
-	line-height: 44px;
+	font-size: 18px;
+	height: 32px;
+	line-height: 32px;
 	text-align: center;
-	width: 44px;
+	width: 32px;
 }
 .view-mode, .view-mode a, .view-mode strong {
 	float: left;
@@ -165,22 +165,18 @@
 	background: #eee none repeat scroll 0 0;
 	color: #aaa;
 	display: block;
-	font-size: 24px;
-	height: 44px;
-	line-height: 44px;
+	font-size: 18px;
+	height: 32px;
+	line-height: 32px;
 	text-align: center;
-	width: 44px;
+	width: 32px;
 	text-decoration: none;
 }
 .view-mode a:hover {
-	background: #f16167 none repeat scroll 0 0;
+	background: #f16167;
 	color: #fff;
 	display: block;
-	font-size: 24px;
-	height: 44px;
-	line-height: 44px;
 	text-align: center;
-	width: 44px;
 	text-decoration: none;
 }
 .sort-by-switcher--asc:before {
@@ -384,7 +380,7 @@
 #configurable_swatch_color .swatch-link {
 	border: none;
 }
-.fancybox-wrap.fancybox-desktop.fancybox-type-iframe.fancybox-opened {
+.fancybox-wrap.fancybox-type-iframe.fancybox-opened {
 	transform: skewY(-5deg);
 	backface-visibility: hidden;
 	border-radius: 0;
@@ -559,7 +555,7 @@
 	display: none;
 }
 .checkout-cart-index #shopping-cart-table tfoot tr {
-	border-bottom: none !important
+	background: none !important
 }
 .checkout-cart-index .subtotal .price {
 	font-size: 15px !important;
@@ -762,7 +758,10 @@
     font-weight: bold;
     height: auto;
     padding: 8px 100px;
-    width: auto; float: right;}
+    width: auto;
+    float: right;
+    text-transform: uppercase;
+}
 .cate2.cate:nth-child(2) { }
 .cate2.cate:nth-child(2) a { border: none; background: none; }
 .cate2.cate:nth-child(2) a:hover { background: none; }
@@ -926,13 +925,13 @@
  
  
  .sort-items { display: none;}
- .sortbyCustom { float: right !important; width: 355px; }
- .sortbycontainer { float: left; width: 222px; position: relative; }
- .sortbycontainer a { float: left; width: 222px; border: 1px solid #e2e2e2;
+ .sortbyCustom { float: right !important; width: 240px; }
+ .sortbycontainer { float: left; position: relative; }
+ .sortbycontainer a { float: left; width: 144px; border: 1px solid #e2e2e2;
     color: #222;
     float: left;
-    font: 18px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
-   padding: 11px;
+    font: 13px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+   padding: 5px 10px;
     margin: 0;
     text-transform: uppercase;
 	 position: relative;
@@ -942,15 +941,15 @@
 	{ width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 10px 5px 0;
-		border-color: #000000 transparent transparent;
+		border-width: 8px 5px 0;
+		border-color: #888 transparent transparent;
 		position: absolute;
 		right: 10px;
-		top: 18px;
+		top: 12px;
 		content: "";
 		}
 .sortbycontainer a:hover { text-decoration: none;}
- .sortbyUl { padding: 0; position: absolute; top: 43px;background:#fff; z-index:1;}
+ .sortbyUl { padding: 0; position: absolute; top: 32px;background:#fff; z-index:1;}
  .sortbyUl li a { border-top: none !important;}
 /* div.fme-filter a.fme_layered_attribute { background: none !important; padding: 0 !important;}*/
  

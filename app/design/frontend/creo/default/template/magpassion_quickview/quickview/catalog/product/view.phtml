@@ -60,9 +60,10 @@
    
       <?php if ($_product->isSaleable() && $this->hasOptions()):?>
       <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-      <?php endif;?>
+     <!-- <span class="price"><?php //echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span> -->
+	  <?php endif;?>
       </div>
-      <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span>
+      
      <?php /*?>   <div class="btn-holder"> 
   
 		<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">

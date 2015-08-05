@@ -49,6 +49,8 @@
             <?php else: ?>
                 <?php echo $this->__('Login'); ?>
             <?php endif; ?></h2>
+	
+<?php echo $this->getMessagesBlock()->toHtml() ?>
   <div class="form-holder login-sec col-sm-6 no-padding-left">
    <div class="form-frame">
     
@@ -91,7 +93,7 @@
                     
                     <?php // echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
                     
-				 <p class="required red"><?php echo $this->__('* Required Fields') ?></p>
+				 <?php /*?><p class="required red"><?php echo $this->__('* Required Fields') ?></p><?php */?>
                  
                  <?php /*?><a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a><?php */?>
                  

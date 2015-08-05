@@ -1,11 +1,20 @@
 // page init
-
 jQuery( document ).ready(function() {
 //    jQuery('#largevshape').on('mouseover', function() {
 //  		$(this).attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
 //	});
+
+//$(".fme-filter").load(function() {
+//	alert("hi");
+//        var vshapeSelected = jQuery( "#styles-22" );
+//        if(vshapeSelected.hasClass( "fme_layered_attribute_selected_largevshape" )) {
+//            jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape.png');
+//        } else {
+//            jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
+//        }
+//});
 	
-	jQuery("#styles-22").on({
+jQuery("#styles-22").on({
     mouseenter: function () {
         jQuery('#largevshape').attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
     },
@@ -1079,8 +1088,44 @@ function centerModals(){
 $j('.modal').on('show.bs.modal', centerModals);
 $j(window).on('resize, load, ready', centerModals);
 $j(window).load(function(){
-      $j('.modal_newsletter').modal('show');
-    });
+	checkNewsletterCookie();
+  	jQuery('.dontshowagain #checkbox1').click(function(){
+		if (this.checked) {
+			setCookie("newsletter", "hide-news-letter", 60);
+		}
+	});
+});
+
+function checkNewsletterCookie() {
+	//console.log("here");
+	var seeit=getCookie("newsletter");
+	//console.log(seeit);
+	if (seeit == 'undefined' || seeit == "") {
+		//console.log("here1");
+		jQuery('.modal_newsletter').modal('show');
+	}else{
+		//console.log("here2");
+		jQuery('.modal_newsletter').modal('hide');
+	}
+}
+
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	var expires = "expires="+d.toUTCString();
+	document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+} 
  /*
  * custom scrollbar
  */

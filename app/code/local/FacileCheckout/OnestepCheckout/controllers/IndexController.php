@@ -122,6 +122,7 @@ class FacileCheckout_OnestepCheckout_IndexController extends Mage_Checkout_Contr
     
     public function successAction()
     {
+	
     	$notallowed = $this->getRequest()->getParam('na', false);
     	if($notallowed)
     	{
@@ -153,10 +154,13 @@ class FacileCheckout_OnestepCheckout_IndexController extends Mage_Checkout_Contr
             return;
         }
 		
+		 
+
         $session->clear();
         $this->loadLayout();
         $this->_initLayoutMessages('checkout/session');
         Mage::dispatchEvent('checkout_onepage_controller_success_action', array('order_ids' => array($lastOrderId)));
+		
 		$this->renderLayout();
     }
 
@@ -541,6 +545,14 @@ class FacileCheckout_OnestepCheckout_IndexController extends Mage_Checkout_Contr
                     $this->getOnestepcheckout()->getQuote()->getPayment()->importData($pmnt_data);
 
                 $this->getOnestepcheckout()->saveOrder();
+				
+				//delete items from cart when checkout is completed.
+				foreach( Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection() as $item ){
+		
+					Mage::getSingleton('checkout/cart')->removeItem( $item->getId() )->save();
+				}
+				//End delete.
+		
                 $redirectUrl = $this->getOnestepcheckout()->getCheckout()->getRedirectUrl();
 
                 $result['success'] = true;
