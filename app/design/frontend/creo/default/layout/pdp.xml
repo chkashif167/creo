@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<pdp_view_finaldesign>
+		<reference name="content">
+			<block type="core/template" name="root" template="pdp/view/finaldesign.phtml" />
+		</reference>
+	</pdp_view_finaldesign>
+	<pdp_view_getdesignpage>
+		<reference name="content">
+			<block type="pdp/pdp" name="root" template="pdp/design.phtml" output="toHtml" >
+				<block type="pdp/pdp" name="design_top_bar" template="pdp/design/topbar.phtml" />
+				<block type="pdp/pdp" name="pdp_sideview" as="product_side"  template="pdp/edit/pdc_sideview.phtml" />
+				<block type="pdp/pdp" name="design_main" template="pdp/design/main.phtml" >	 
+					<block type="pdp/pdp" name="design_edit_tool" as="design_edit_tool" template="pdp/edit/edit_tool.phtml">
+					</block>
+					<block type="pdp/pdp" name="colors_library" as="colors_library" template="pdp/edit/colorsLibrary.phtml"/>
+					<block type="pdp/pdp" name="zoom" template="pdp/action/zoom.phtml" />
+				</block>
+				<block type="pdp/pdp" name="design_tabs" template="pdp/design/right_tabs.phtml" >
+					<block type="pdp/pdp" name="pdp_artworks" as="pdp_artworks" template="pdp/design/artwork.phtml"/>
+					<block type="pdp/pdp" name="pdp_text" as="pdp_text" template="pdp/design/text.phtml">
+						<block type="core/template" name="load_fonts" as="load_fonts" output="toHtml" template="pdp/action/load_fonts.phtml"/>
+					</block>
+					<block type="pdp/pdp" name="item_colors" as="item_colors" template="pdp/design/itemColors.phtml" />
+					<!--  
+					<block type="pdp/pdp" name="pdp_price_item" as="pdp_price_item" template="pdp/design/price_item.phtml"/> -->
+					<block type="pdp/pdp" name="layer" template="pdp/action/layer.phtml" />
+				</block>
+				
+				
+				<block type="pdp/pdp" name="hidden_popups" template="pdp/action/default.phtml" >
+					<!-- Modal uploadPhotos-->
+					<block type="pdp/pdp" name="pdp_action_upload" template="pdp/action/uploadPhotos.phtml" />
+                    <!-- Modal uploadPhotos-->
+					<block type="pdp/pdp" name="pdp_action_shape" template="pdp/action/shapes.phtml" />
+					<!-- Modal Facebook Login-->
+					<block type="pdp/pdp" name="pdp_action_fb" template="pdp/action/facebookPhotos.phtml" />
+					<!-- Modal Instagram Login-->
+					<block type="pdp/pdp" name="pdp_action_ins" template="pdp/action/instagramPhotos.phtml" />					
+					<!-- Modal Quote Library-->
+					<block type="pdp/pdp" name="pdp_action_quote" template="pdp/action/textLibrary.phtml" />
+					<!-- Modal Save Design-->
+					<block type="pdp/pdp" name="pdp_action_save" template="pdp/action/save.phtml" />
+					<!-- Modal Download Design -->
+					<block type="pdp/pdp" name="pdp_action_download" template="pdp/action/download.phtml" />
+					<!-- Modal Share Design -->
+					<block type="pdp/pdp" name="pdp_action_sharing" template="pdp/action/sharing.phtml" />
+					<!-- Modal Notify message for smartphone -->
+					<block type="pdp/pdp" name="pdp_action_notify" template="pdp/action/notify.phtml" />
+				</block>
+			</block>
+		</reference>
+	</pdp_view_getdesignpage>
+    <sales_order_view>
+		<reference name="head">
+			<action method="addItem" ifconfig="pdp/setting/enable" ><type>js</type><name>pdp/jquery/jquery-1.10.2.min.js</name></action>
+			<!-- <action method="addItem" ifconfig="pdp/setting/enable" ><type>js</type><name>pdp/js/customorder.js</name></action> -->
+		</reference>
+    </sales_order_view>
+    <pdp_pdptemplate_view>
+		<update handle="customer_account"/>
+		<reference name="content">
+			<block type="pdp/pdptemplate" name="view.pdptemplate" template="pdp/pdptemplate/view.phtml"/>
+		</reference>
+    </pdp_pdptemplate_view>
+    <catalog_product_view>
+        <reference name="head">
+            <!-- <action method="addItem" ifconfig="pdp/setting/enable"><type>js_css</type><name>pdp/css/styles.css</name></action> -->
+            <block type="pdp/designbutton" name="pdpdesign_share_images" as="pdpdesign_share_images" template="pdp/product/share_images.phtml" />
+        </reference>
+        <!-- <reference name="product.info.addtocart">
+            <block type="pdp/designbutton" name="extra_options_hidden" template="pdp/product/extra_options.phtml" ouput="toHtml" />
+        </reference> -->
+        <reference name="pdp_main_des">
+            <block type="pdp/designbutton" name="pdpdesign_button" as="design_button" template="pdp/product/design_button.phtml" before="" >
+                <block type="pdp/pdp" name="main_design_area" template="pdp/design-frontend.phtml" before="" >
+                    <block type="pdp/pdp" name="design_top_bar" template="pdp/design/topbar.phtml" />
+                    <block type="pdp/pdp" name="pdp_sideview" as="product_side"  template="pdp/edit/pdc_sideview.phtml" />
+                    <!-- <block type="pdp/pdp" name="design_main" template="pdp/design/main.phtml" >	 
+                        <block type="pdp/pdp" name="design_edit_tool" as="design_edit_tool" template="pdp/edit/edit_tool.phtml">
+                        </block>
+                        <block type="pdp/pdp" name="colors_library" as="colors_library" template="pdp/edit/colorsLibrary.phtml"/>
+                        <block type="pdp/pdp" name="zoom" template="pdp/action/zoom.phtml" />
+                    </block> -->
+                    <block type="pdp/pdp" name="design_tabs" template="pdp/design/right_tabs.phtml" >
+                        <block type="pdp/pdp" name="pdp_artworks" as="pdp_artworks" template="pdp/design/artwork.phtml"/>
+                        <block type="pdp/pdp" name="pdp_text" as="pdp_text" template="pdp/design/text.phtml">
+                            <block type="core/template" name="load_fonts" as="load_fonts" output="toHtml" template="pdp/action/load_fonts.phtml"/>
+                        </block>
+                        <block type="pdp/pdp" name="item_colors" as="item_colors" template="pdp/design/itemColors.phtml" />
+                        <!--  
+                        <block type="pdp/pdp" name="pdp_price_item" as="pdp_price_item" template="pdp/design/price_item.phtml"/> -->
+                        <block type="pdp/pdp" name="layer" template="pdp/action/layer.phtml" />
+                    </block>
+
+
+                    <block type="pdp/pdp" name="hidden_popups" template="pdp/action/default.phtml" >
+                        <!-- Modal uploadPhotos-->
+                        <block type="pdp/pdp" name="pdp_action_upload" template="pdp/action/uploadPhotos.phtml" />
+                        <!-- Modal uploadPhotos-->
+                        <block type="pdp/pdp" name="pdp_action_shape" template="pdp/action/shapes.phtml" />
+                        <!-- Modal Facebook Login-->
+                        <block type="pdp/pdp" name="pdp_action_fb" template="pdp/action/facebookPhotos.phtml" />
+                        <!-- Modal Instagram Login-->
+                        <block type="pdp/pdp" name="pdp_action_ins" template="pdp/action/instagramPhotos.phtml" />					
+                        <!-- Modal Quote Library-->
+                        <block type="pdp/pdp" name="pdp_action_quote" template="pdp/action/textLibrary.phtml" />
+                        <!-- Modal Save Design-->
+                        <block type="pdp/pdp" name="pdp_action_save" template="pdp/action/save.phtml" />
+                        <!-- Modal Download Design -->
+                        <block type="pdp/pdp" name="pdp_action_download" template="pdp/action/download.phtml" />
+                        <!-- Modal Share Design -->
+                        <block type="pdp/pdp" name="pdp_action_sharing" template="pdp/action/sharing.phtml" />
+                        <!-- Modal Notify message for smartphone -->
+                        <block type="pdp/pdp" name="pdp_action_notify" template="pdp/action/notify.phtml" />
+                    </block>
+                </block>
+            </block>
+			<reference name="product.info.media">
+				<block type="pdp/pdp" name="pdc_design_media" template="pdp/design/main.phtml" >	 
+					<block type="pdp/pdp" name="design_edit_tool" as="design_edit_tool" template="pdp/edit/edit_tool.phtml">
+					</block>
+					<block type="pdp/pdp" name="colors_library" as="colors_library" template="pdp/edit/colorsLibrary.phtml"/>
+					<block type="pdp/pdp" name="zoom" template="pdp/action/zoom.phtml" />
+				</block>
+			</reference>
+        </reference>
+    </catalog_product_view>
+	<checkout_cart_index>
+        <!--<reference name="checkout.cart">
+            <action method="addItemRender">
+                <type>simple</type>
+                <block>checkout/cart_item_renderer</block>
+                <template>pdp/cart/item/default.phtml</template>
+            </action>
+        </reference>-->
+        <reference name="additional.product.info">
+            <block type="pdp/additional_product_info" name="pdp_additional_product_info"/>
+        </reference>
+	</checkout_cart_index>
+	<sales_email_order_items>
+		<reference name="additional.product.info">
+            <block type="pdp/email_additional_product_info" name="pdp_additional_product_info"/>
+        </reference>
+	</sales_email_order_items>
+	<checkout_onepage_review>
+		<reference name="additional.product.info">
+			<block type="pdp/checkout_onepage_review_info" name="pdp_review_item"/>
+		</reference>
+	</checkout_onepage_review>
+    <pdp_customerdesign_index>
+		<reference name="head">
+            <action method="setTitle"><title>Customized Products!</title></action>
+        </reference>
+		<update handle="customer_account"/>
+		<reference name="content">
+			<block type="pdp/customerdesign" name="customer_designer" template="pdp/customer/design_list.phtml" />
+		</reference>
+	</pdp_customerdesign_index>
+	<customer_account>        
+        <reference name="customer_account_navigation">           
+			<action method="addLink" translate="label" module="pdp">
+				<name>customer design</name>
+				<path>pdp/customerdesign/index</path>
+				<label>Customized Products</label>
+			</action>
+		</reference>
+    </customer_account>
+</layout>

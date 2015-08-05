@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/Mage.php';
+$magento_folder = str_replace('\js\pdp\instagram','',dirname(__FILE__));
+require_once $magento_folder . '/app/Mage.php';
 Mage::app();
 require_once 'lib/instagram.php';
 

@@ -74,6 +74,23 @@
 							</manageartworks>
 						</children>
                     </images>
+                    <shapes module="pdp">
+                        <title>Shapes Library</title>
+                        <sort_order>33</sort_order>
+                      
+						<children>
+							<add_shape_cate module="pdp">
+								<title>Shapes Categories</title>
+								<sort_order>10</sort_order>
+								<action>pdpadmin/adminhtml_shapecate/index</action>
+							</add_shape_cate>
+							<manageshapes module="pdp">
+								<title>Manage Shapes</title>
+								<sort_order>30</sort_order>
+								<action>pdpadmin/adminhtml_shape/index</action>
+							</manageshapes>
+						</children>
+                    </shapes>
 					<font module="pdp">
                         <title>Fonts Library</title>
                         <sort_order>35</sort_order>
@@ -84,7 +101,7 @@
                         <sort_order>36</sort_order>
                         <action>pdpadmin/adminhtml_color/index</action>
                     </color>
-					<text module="pdp">
+                    <text module="pdp">
                         <title>Quote Library</title>
                         <sort_order>37</sort_order>
                         <action>pdpadmin/adminhtml_text/index</action>
@@ -125,6 +142,23 @@
 										</manageartworks>
 									</children>
 								</images>
+                                <shapes module="pdp">
+                                    <title>Shapes Library</title>
+                                    <sort_order>33</sort_order>
+
+                                    <children>
+                                        <add_shape_cate module="pdp">
+                                            <title>Shapes Categories</title>
+                                            <sort_order>10</sort_order>
+                                            <action>pdpadmin/adminhtml_shapecate/index</action>
+                                        </add_shape_cate>
+                                        <manageshapes module="pdp">
+                                            <title>Manage Shapes</title>
+                                            <sort_order>30</sort_order>
+                                            <action>pdpadmin/adminhtml_pdp/shape</action>
+                                        </manageshapes>
+                                    </children>
+                                </shapes>
 								<font module="pdp">
 									<title>Fonts Library</title>
 									<sort_order>35</sort_order>
@@ -373,6 +407,9 @@
 				<is_delete>1</is_delete>
 				<is_quote_lib>1</is_quote_lib>
 				<curved>0</curved>
+                <default_object_color>#000</default_object_color>
+                <default_object_fontsize>25</default_object_fontsize>
+                <default_object_fontheight>1.3</default_object_fontheight>
 			</design>
 			<customer_action>
 				<is_sharing>1</is_sharing>

@@ -65,6 +65,7 @@ shape(function($){
                                     
                                     imageItems += '<div class="col-sm-4 col-md-2">';
                                         imageItems += '<div class="thumbnail">';
+                                            imageItems += '<input type="checkbox" style="display: none;" id="img_'+ collection[i][j].id +'" class="checkbox-item"/>';
                                             imageItems += '<img src="'+ mediaUrl + collection[i][j].filename +'" alt="" width="100px" />';
                                             imageItems += '<div class="caption">';
                                                 imageItems += '<div class="form-group">';

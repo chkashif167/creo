@@ -1,0 +1,47 @@
+#pdc_ctext_tool {
+  border: 0 solid #cccccc;
+  text-align: center;
+}
+#pdc_ctext_convert {
+background: transparent none repeat scroll 0 0;
+border: 1px solid #b7b7b7;
+font-family: roboto condensed;
+font-size: 16px;
+line-height: 30px;
+padding: 0;
+text-transform: uppercase;
+width: 100%;
+}
+#pdc_ctext_convert.active{background-color:#f16a79;}
+#pdc_text_curved_control div {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+#pdc_text_curved_control {}
+#pdc_text_curved_control div label {
+  float: left;
+	font-family: roboto condensed;
+	font-weight: normal;
+	line-height: 20px;
+	margin: 0 0 -1px;
+	padding: 0;
+	text-transform: uppercase;
+	width: 70px;
+}
+#pdc_text_curved_control div input {
+    
+}
+#pdc_ctext_radius, #pdc_ctext_spacing {
+    width: 140px;
+    margin: 5px 0 0 0;
+}
+
+
+
+
+
+
+
+
+
