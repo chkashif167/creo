@@ -193,6 +193,167 @@
 					</div>
 				<?php } ?>
 		<?php //endif; ?>
+
+    <?php echo $this->getBlockHtml('formkey') ?>
+
+    <div class="no-display">
+
+      <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+
+      <input type="hidden" name="related_product" id="related-products-field" value="" />
+
+    </div>
+
+    <div class="carousel-creo carousel3">
+
+    <div class="product-img-box">
+
+    <?php echo $this->getChildHtml('media') ?>
+
+    </div>
+
+    </div>
+
+    <div class="text-area">
+
+      <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+
+      <div class="price-area"> 
+
+      <span class="price"><i class="old-price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></i> 
+
+		<?php echo  $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span>
+
+      <span class="availability">Availability:  
+
+       <?php echo $this->getChildHtml('product_type_availability'); ?>
+
+      </span> 
+
+      </div>
+
+    
+
+    
+
+      <!-- tabs structure example -->
+
+      <ul class="tabset tabset1">
+
+
+
+        <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
+
+        <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
+
+        <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
+
+      </ul>
+
+      <div class="tab-content">
+
+        <div id="tab1" style="display: block;" class="">
+
+          <p><?php print $_product->getDescription(); ?> </p>
+
+        </div>
+
+        <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
+
+          <p><?php print $_product->getShortDescription(); ?> </p>
+
+        </div>
+
+        <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
+
+          <p><?php print $_product->getDesign(); ?> </p>
+
+        </div>
+
+      </div>
+
+      <div class="options-area">
+
+		<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+
+      <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+
+      <?php endif;?>
+
+      </div>
+
+
+
+
+
+
+
+      
+
+     <?php $_product = $this->getProduct(); ?>
+
+<?php $buttonTitle = $this->__(' Add to Cart'); ?>
+
+<?php /*if($_product->isSaleable()): ?>
+
+    <div class="add-to-cart">
+
+        <?php if(!$_product->isGrouped()): ?>
+
+        <?php endif; ?>
+
+         <div class="btn-holder"> 
+
+  
+
+		<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
+
+		<span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span>
+
+      </button>
+
+      <a class="link-wishlist" href="<?php echo $this->getUrl('wishlist') ?>"><i class="icon-heart-empty"></i></a> 
+
+      </div>
+
+        
+
+
+
+      
+
+    </div>
+
+<?php endif;*/ ?>
+
+   <div class="shipping-area"> 
+   <?php 
+   $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
+    $options = array();
+    ?>
+    <?php //echo "<pre>";print_r($methods);?>
+    <?php 
+    foreach($methods as $_ccode => $_carrier)
+    {
+        $_methodOptions = array();
+        if($_methods = $_carrier->getAllowedMethods())
+        {
+        if(!$_title = Mage::getStoreConfig("carriers/$_ccode/title"))
+                $_title = $_ccode;
+              echo "<a class='shipping-info' href='#'>".$_title."</a><ul>";
+            foreach($_methods as $_mcode => $_method)
+            {
+                $_code = $_ccode . '_' . $_mcode;
+                echo "<li><a href='#'>".$_method."</a></li>";
+                $_methodOptions[] = array('value' => $_code, 'label' => $_method);
+            }
+            echo "</ul>";
+        }
+    }
+
+
+     ?>
+    </div>
   </form>
 <script type="text/javascript">
         //<![CDATA[
