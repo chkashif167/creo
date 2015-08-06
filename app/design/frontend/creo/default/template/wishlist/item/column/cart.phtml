@@ -32,18 +32,39 @@ $options = $this->getChild('customer.wishlist.item.options')
     ->setItem($item)
     ->getConfiguredOptions();
 ?>
+
+<script>
+
+function incrementQty(fid){
+	var currentVal = parseInt($j("#qty-"+fid).val());
+	if (!currentVal || currentVal == "" || currentVal == "NaN")
+	currentVal = 0;
+	$j("#qty-"+fid).val(currentVal + 1);
+ }
+
+function decrementQty(fid){
+	var currentVal = parseInt($j("#qty-"+fid).val());
+	if (currentVal == "NaN")
+		currentVal = 0;
+		if (currentVal > 0){
+		$j("#qty-"+fid).val(currentVal - 1);
+		}
+}
+
+</script>
+
 <div class="col-xs-4">
   <div class="cart-area">
     <h3>ADD TO CART</h3>
     <span class="price"><?php echo $this->getPriceHtml($product, empty($options));?></span>
 
 <div class="bottom-area">
-      <div class="qty-area"> <span class="up">up</span>
+      <div class="qty-area"> <span class="up" onclick="incrementQty('<?php echo $item->getId() ?>');">up</span>
     <?php if ($item->canHaveQty() && $item->getProduct()->isVisibleInSiteVisibility()): ?>
-        <input id="qty" type="text" pattern="\d*" class="input-text qty validate-not-negative-number" 
+        <input id="qty-<?php echo $item->getId() ?>" type="text" pattern="\d*" class="input-text qty validate-not-negative-number" 
         name="qty[<?php echo $item->getId() ?>]" value="<?php echo $this->getAddToCartQty($item) * 1 ?>" />
     <?php endif; ?>
-        <span class="down">down</span> 
+        <span class="down" onclick="decrementQty('<?php echo $item->getId() ?>');">down</span> 
     </div>
     
     <?php if ($product->isSaleable()): ?>
@@ -70,5 +91,4 @@ $options = $this->getChild('customer.wishlist.item.options')
 <?php /*if ($product->isVisibleInSiteVisibility()): ?>
     <p><a class="link-edit button button-secondary" href="<?php echo $this->getItemConfigureUrl($item) ?>"><?php echo $this->__('Edit') ?></a></p>
 <?php endif*/ ?>
-
 
