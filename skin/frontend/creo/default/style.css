@@ -12,6 +12,7 @@ html {
 	box-sizing: border-box;
 	background: #000;
 }
+iframe#fancybox-frame1438432377523 html{background: none;}
 *,
 *:before,
 *:after { box-sizing: inherit; }
@@ -128,6 +129,8 @@ p { margin: 0 0 1.2em; }
 .icon-sort-alt-up:before { content: '\e811'; } /* '' */
 .icon-down-open:before { content: '\e812'; } /* '' */
 .icon-pencil:before { content: '\e813'; } /* '' */
+.icon-instagram:before { content: '\e814'; } /* '' */
+.icon-pinterest:before { content: '\e815'; } /* '' */
 .nav li,
 form li {
 	float: left;
@@ -1255,7 +1258,7 @@ input[type="submit"]:hover {
 	margin: 0 0 20px;
 }
 .modal-holder .heading-holder h3 {
-	font: 30px/34px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:bold 30px/34px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	color: #222;
 	margin: 0;
 	position: relative;
@@ -2032,8 +2035,9 @@ div.fme-filter dd li{overflow: visible !important;}
 .options-area .column.color-area li.active a{border: 1px solid #000;}
 .options-area .column.size-area a{
 	display: block;
-	width: 16px;
-	height: 16px;
+	min-width: auto !important;
+	width: 16px !important;
+	height: 16px !important;
 	background: #fff;
 	color: #000;
 	border: 1px solid #c2c2c2;
@@ -2482,7 +2486,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .cart-top-area{
 	padding-bottom: 10px;
 	padding-top: 10px;
-	border-bottom:3px solid #eee;
+/*	border-bottom:3px solid #eee;*/
 }
 .cart-table-area table{
 	border-top: 3px solid #eee;
@@ -2513,7 +2517,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	text-align: left;
 	padding-left: 55px;
 }
-.cart-table-area tr{border-bottom: 2px dotted #2e2e2e;}
+.cart-table-area tr{/*border-bottom: 2px dotted #2e2e2e;*/background: url('images/border-slice.png') repeat-x bottom }
 .cart-table-area .alignleft{
 	float: left;
 	width: 78px;
@@ -4002,7 +4006,7 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .form-group .full {overflow: hidden;}
 .address-book-area .checkbox.validation-passed {float: left;}
-
+.fancybox-skin{border-radius: 0 !important;}
 
 
 
