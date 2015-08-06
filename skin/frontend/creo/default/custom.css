@@ -555,7 +555,7 @@
 	display: none;
 }
 .checkout-cart-index #shopping-cart-table tfoot tr {
-	border-bottom: none !important
+	background: none !important
 }
 .checkout-cart-index .subtotal .price {
 	font-size: 15px !important;
