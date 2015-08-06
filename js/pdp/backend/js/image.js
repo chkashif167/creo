@@ -71,14 +71,21 @@ image(function($){
 			var image_id = $('#image_id').val(),
 				image_name = $("#edit_image_name").val(),
 				color_type = '2',
-				price = $("#edit_image_price").val();
+				price = $("#edit_image_price").val(),
+                category = $("#edit_image_category").val();
 			if ($("#color_type").is(":checked")) {
 				color_type = '1';
 			}
 			$.ajax({
 				type : "POST",
 				url : baseUrl + "pdp/index/updateImageInfo",
-				data : {image_name : image_name, image_id : image_id, price : price, color_type: color_type},
+				data : {
+                    image_name : image_name, 
+                    image_id : image_id, 
+                    price : price, 
+                    color_type: color_type,
+                    category: category
+                },
 				beforeSend : function () {
 					$("#loading-mask").attr("style","left: -2px; top: 0px; width: 1034px; height: 833px; z-index: 10000;");
 					$("#loading-mask").show();
@@ -230,6 +237,7 @@ image(function($){
 					$('#image_id_color').val(jsonData.image.image_id);
 					$("#edit_image_name").val(jsonData.image.image_name);
 					$("#edit_image_price").val(jsonData.image.price);
+                    $("#edit_image_category").val(jsonData.image.category);
 					//Hide fill color checkbox
 					$("#color_type").closest(".form-group").hide();
 					$("#image-form p.color-msg").hide();

@@ -194,4 +194,80 @@ class MST_Pdp_Helper_Upload extends Mage_Core_Helper_Abstract {
         }
         return false;
     }
+    public function getSupportedImages() {
+        //Please upload a file in one of the following formats: .svg, .jpg, .png, .jpeg, .bmp, .gif
+        $formats = array('svg', 'jpg', 'jpeg', 'png', 'bmp', 'gif');
+        if($this->isImagickLoaded()) {
+            $formats[] = "pdf";
+            $formats[] = "ai";
+            $formats[] = "eps";
+            $formats[] = "psd";
+        }
+        return $formats;
+    }
+    public function getUnsuportedMessage() {
+        $message = $this->__("Please upload a file in one of the following formats:");
+        $formats = $this->getSupportedImages();
+        return $message . ' ' .  join($formats, ', ');
+    }
+    public function getFileAccept() {
+        $fileTypes = array("image/*");
+        if($this->isImagickLoaded()) {
+            $fileTypes[] = "application/pdf";
+            $fileTypes[] = "application/postscript";
+        }
+        if(count($fileTypes) > 1) {
+            return join($fileTypes, ',');
+        } else {
+            return $fileTypes[0];
+        }
+        
+    }
+    //Used in Upload controller
+    public function getApplicationFileTypes() {
+        $types = array("application/pdf", "application/postscript");
+        //PSD
+        $types[] = "application/octet-stream";
+        return $types;
+    }
+    public function convertFileToImage($filePath) {
+        $response = array(
+            'status' => 'error',
+            'message' => 'Sorry! Unable to convert this file!'
+        );
+        try {
+            $pathParts = pathinfo($filePath);
+            $filename = $pathParts['filename'];
+            $ext = $pathParts['extension'];
+            $baseDir = Mage::getBaseDir('media') . DS . "pdp" . DS . "images" . DS . "upload" . DS;
+            $newFilename = 'converted-' . $filename . '.png';
+            //exec("convert -geometry 1600x1600 -density 300x300 -quality 100 demo.pdf test_image.png"); // 300x300 DPI
+            switch($ext) {
+                case "psd" :
+                    //For PSD, need -flatten
+                    //Trick test3.psd[0]
+                    //exec("convert identify 300 300 test6.psd[0] -flatten demo.jpg");
+                    exec("convert " . $filePath ."[0] -flatten " . $baseDir . $newFilename);
+                    break;
+                case "eps" :
+                    //convert white color to transparent
+                    exec("convert -colorspace rgb ". $filePath ." -transparent white " . $baseDir . $newFilename);
+                    //Keep white color, please use default case
+                    break;
+                default:
+                    exec("convert " . $filePath . " " . $baseDir . $newFilename);
+                    break;
+            }
+            if(file_exists($baseDir . $newFilename)) {
+                $response = array(
+                    'status' => 'success',
+                    'message' => 'Convert file to image successfully!',
+                    'filename' => $newFilename
+                );
+            }
+        } catch(Exception $e) {
+            
+        }
+        return $response;
+    }
 }

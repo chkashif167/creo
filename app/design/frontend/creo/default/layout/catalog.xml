@@ -214,7 +214,9 @@ Product view
                 <block type="core/text_list" name="alert.urls" as="alert_urls" translate="label">
                     <label>Alert Urls</label>
                 </block>
-
+				<block type="core/text_list" name="pdp_main_des" as="pdp_main_des" translate="label">
+                    <label>Pdp main design</label>
+                </block>	
                 <action method="setTierPriceTemplate"><template>catalog/product/view/tierprices.phtml</template></action>
 
                 <block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products" template="catalog/product/list/upsell.phtml">
@@ -235,8 +237,7 @@ Product view
 
                 <block type="catalog/product_view" name="product.info.addto" as="addto" template="catalog/product/view/addto.phtml"/>
                 <block type="catalog/product_view" name="product.info.sharing" as="sharing" template="catalog/product/view/sharing.phtml"/>
-                <block type="catalog/product_view" name="product.info.addtocart" as="addtocart" template="catalog/product/view/addtocart.phtml"/>
-
+                <block type="catalog/product_view" name="product.info.addtocart" as="addtocart" template="catalog/product/view/addtocart.phtml"/>				<block type="core/text_list" name="pdp_main_des" as="pdp_main_des"/>
                 <block type="core/text_list" name="product.info.extrahint" as="extrahint" translate="label">
                     <label>Product View Extra Hint</label>
                 </block>

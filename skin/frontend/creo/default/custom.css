@@ -96,18 +96,10 @@
 	text-transform: uppercase;
 }
 .login-form .validation-advice {
-	position: relative;
 	font-size: 10px;
-	top: -14px;
 	text-align: left;
 	color: red;
-}
-.subscribe-form .validation-advice {
-	position: relative;
-	font-size: 10px;
-	top: -14px;
-	text-align: left;
-	color: red;
+	float: left;
 }
 .popuplogin_button:hover, .newslettersubscribe:hover {
 	color: #000;
@@ -235,6 +227,7 @@
 .product-detail .btn-holder button:first-child {
 	background: #fff none repeat scroll 0 0;
 	border-color: #eee;
+	outline:none !important;
 	border-style: solid;
 	border-width: 0 0 0 4px;
 	color: #aaa;
@@ -254,16 +247,30 @@
 	display: inline-block;
 	transform: skewX(25deg);
 }
-.product-detail .btn-holder button:first-child:hover .span1 {
+.product-detail .btn-holder button:first-child .span1 {
 	background: #000 none repeat scroll 0 0;
 	border-color: #000;
 }
-.product-detail .btn-holder button:first-child:hover {
+
+.product-detail .btn-holder button:first-child:hover .span1 {
+	background: #f16167 none repeat scroll 0 0;
+	border-color: #f16167;
+} 
+
+.product-detail .btn-holder button:first-child {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 	border-color: #000;
 	color: #fff;
 	opacity: 1;
 }
+
+.product-detail .btn-holder button:first-child:hover {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border-color: #f16167;
+	color: #000;
+	opacity: 1;
+} 
+
 .product-detail .btn-holder .span2 {
 	font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
@@ -460,14 +467,14 @@
 	box-shadow: none;
 	color: #555;
 	cursor: pointer;
-	left: 0px;
+	left: 0;
 	opacity: 1;
 	padding: 0;
 /*	position: relative;*/
 	text-decoration: none;
-	top: 275px;
+	top: 325px;
 	z-index: 10;
-	 width:100%;
+	width:100%;
 }
 #products-list .mp_quickview_icon { width:22%;}  
 .products-grid .quick-view {
@@ -760,6 +767,7 @@
     padding: 8px 100px;
     width: auto;
     float: right;
+	margin-top:20px;
     text-transform: uppercase;
 }
 .cate2.cate:nth-child(2) { }

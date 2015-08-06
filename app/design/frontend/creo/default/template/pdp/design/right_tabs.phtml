@@ -2,24 +2,29 @@
 	//Get product information
     $productId = $this->getCurrentProductId();
     $productTitle = Mage::getModel('catalog/product')->load($productId)->getName();
+	//Get product color option
+	$productColors = $this->getProductColorCollection();
 ?>
 <div class="tools-tab">
-<ul role="tablist" id="tools-button" >
-  <li class="active" role="presentation"><a aria-expanded="true" aria-controls="clipartTab" data-toggle="tab" role="tab" id="photo-btn" href="#clipartTab"><span class="pdc-image"></span><?php echo $this->__('Graphics'); ?></a></li>
-  <li role="presentation" class=""><a aria-controls="textTab" data-toggle="tab" id="text-btn" role="tab" href="#textTab" aria-expanded="false"><span class="pdc-text-format"></span><?php echo $this->__('Text'); ?></a></li>
-  <li role="presentation" class=""><a aria-expanded="false" href="#colorTab" role="tab" id="color-btn" data-toggle="tab" aria-controls="colorTab"><span class="pdc-compare"></span><?php echo $this->__('Select Color');?></a></li>
-</ul>
-<div class="tool-tab-content tab-content">
-  <div aria-labelledby="photo-btn" id="clipartTab" class="tab-pane fade active in" role="tabpanel">
-	<?php echo $this->getChildHtml('pdp_artworks'); ?>
-  </div>
-  <div aria-labelledby="text-btn" id="textTab" class="tab-pane fade" role="tabpanel">
-	<?php echo $this->getChildHtml('pdp_text'); ?>
-  </div>
-  <div aria-labelledby="color-btn" id="colorTab" class="tab-pane fade" role="tabpanel">
-	<?php echo $this->getChildHtml('item_colors'); ?>
-  </div>
-  
-</div>
-<?php echo $this->getChildHtml('layer'); ?>
+	<ul role="tablist" id="tools-button" >
+		  <li class="active" role="presentation"><a aria-expanded="true" aria-controls="clipartTab" data-toggle="tab" role="tab" id="photo-btn" href="#clipartTab"><!--span class="pdc-image"></span--><?php echo $this->__('Add Graphic'); ?></a></li>
+		  <li role="presentation" class=""><a aria-controls="textTab" data-toggle="tab" id="text-btn" role="tab" href="#textTab" aria-expanded="false"><!--span class="pdc-text-format"></span--><?php echo $this->__('Add Text'); ?></a></li>
+		<?php if(count($productColors)){ ?>  
+		  <li role="presentation" class=""><a aria-expanded="false" href="#colorTab" role="tab" id="color-btn" data-toggle="tab" aria-controls="colorTab"><!--span class="pdc-compare"></span--><?php echo $this->__('Select Color');?></a></li>
+		<?php } ?>
+	</ul>
+	<div class="tool-tab-content tab-content">
+		  <div aria-labelledby="photo-btn" id="clipartTab" class="tab-pane fade active in" role="tabpanel">
+			<?php echo $this->getChildHtml('pdp_artworks'); ?>
+		  </div>
+		  <div aria-labelledby="text-btn" id="textTab" class="tab-pane fade" role="tabpanel">
+			<?php echo $this->getChildHtml('pdp_text'); ?>
+		  </div>
+		<?php if(count($productColors)){ ?>
+		  <div aria-labelledby="color-btn" id="colorTab" class="tab-pane fade" role="tabpanel">
+			<?php echo $this->getChildHtml('item_colors'); ?>
+		  </div>
+		 <?php } ?>
+	</div>
+	<?php echo $this->getChildHtml('layer'); ?>
 </div>

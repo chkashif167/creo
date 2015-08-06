@@ -82,7 +82,10 @@
                                 <input type="text" class="required-entry input-text" value="<?php echo $sideLabel ?>" name="label" id="pdplabel" />
                             </div>
                             <div class='design-area-input'>
-                                <label for="overlay_image"><?php echo $this->__('Overlay image') ?> <span class="required">*</span></label> 
+                                <label for="overlay_image">
+                                    <?php echo $this->__('Overlay image') ?> <span class="required">*</span>
+                                    <a target="_blank" href="http://www.magebay.com/forum/forums/topic/how-to-make-overlay-image/"><?php echo $this->__("Help?") ?></a>
+                                </label> 
                                 <input id="overlay_image_input" type="file" <?php echo (isset($sideInfo['overlay'])) ? '' : 'class="required-entry"'; ?> name="overlay" onchange="Tshirt.previewOverImage(this)" />
                             </div>
                             <div class='design-area-input'>

@@ -61,8 +61,9 @@
                                 <div class="row">
                                     <?php foreach ($imageList as $image) :?>
                                     <div class="col-sm-4 col-md-2">
-                                        <div class="thumbnail">
-                                             <img src='<?php echo $mediaUrl . $image->getFilename() ?>' alt='' width="100px" />
+                                        <div class="thumbnail" style="position: relative;">
+                                            <input type="checkbox" style="display: none;" id="img_<?php echo $image->getId() ?>" class="checkbox-item">
+                                            <img src='<?php echo $mediaUrl . $image->getFilename() ?>' alt='' width="100px" />
                                             <div class="caption">
                                                 <div class="form-group">
                                                     <label for="shape_<?php echo $image->getId() ?>"><?php echo $this->__("Shape Name") ?></label>
