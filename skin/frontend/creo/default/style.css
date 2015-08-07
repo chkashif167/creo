@@ -1568,7 +1568,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	font:italic 10px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .sort-area{
-	padding-bottom: 0;
+	padding-bottom: 20px;
 	padding-top: 0;
 }
 .sort-area .view-options{
@@ -4167,4 +4167,8 @@ div.fme-filter dd li{overflow: visible !important;}
 .pdp-main-des h5.title {
 	background:none !important;
 	border-bottom:1px solid;
+}
+
+.view-mode {
+	display:none;
 }
