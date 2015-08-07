@@ -3764,12 +3764,18 @@ div.fme-filter dd li{overflow: visible !important;}
 	background: #858585;
 	content: '';
 }
-.faq-area .openeer-holder .question:hover{
+.faq-area .openeer-holder .question:hover, .open-close2.active a.opener.question {
 	text-decoration: none;
 	background: #f16167;
 	border-color: #f16167;
 	color: #000;
+	font-size:12px;
 }
+
+.open-close2.active a.opener.question span:before {
+	background: #F16167;
+}
+
 .faq-area .openeer-holder .question:hover span:before{background: #f16167;}
 #nav .drop{
 	text-align: center;
