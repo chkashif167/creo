@@ -21,7 +21,6 @@
  * @category    Mage
  * @package     Mage_Core
  * @copyright  Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
-
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -405,7 +404,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
                 break;
         }
 
-        if (!($this->hasQueue() && $this->getQueue() instanceof Mage_Core_Model_Email_Queue)) {
+        if ($this->hasQueue() && $this->getQueue() instanceof Mage_Core_Model_Email_Queue) {
             /** @var $emailQueue Mage_Core_Model_Email_Queue */
             $emailQueue = $this->getQueue();
             $emailQueue->setMessageBody($text);
@@ -417,6 +416,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
                     'from_name'         => $this->getSenderName(),
                     'reply_to'          => $this->getMail()->getReplyTo(),
                     'return_to'         => $this->getMail()->getReturnPath(),
+					
                 ))
                 ->addRecipients($emails, $names, Mage_Core_Model_Email_Queue::EMAIL_TYPE_TO)
                 ->addRecipients($this->_bccEmails, array(), Mage_Core_Model_Email_Queue::EMAIL_TYPE_BCC);
