@@ -787,17 +787,18 @@
 	 }
 #review-buttons-container { display: inline-block; width: 100%;}
 #review-buttons-container button {   background: #f16167 none repeat scroll 0 0;
-    border: medium none;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     height: auto;
-    padding: 8px 100px;
+    padding: 5px 100px;
     width: auto;
     float: right;
 	margin-top:20px;
     text-transform: uppercase;
+    border: 3px solid #ef4f61;
 }
+#review-buttons-container button:hover{border-color: #000;}
 .cate2.cate:nth-child(2) { }
 .cate2.cate:nth-child(2) a { border: none; background: none; }
 .cate2.cate:nth-child(2) a:hover { background: none; }
