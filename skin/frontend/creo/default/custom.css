@@ -241,11 +241,17 @@
 	display: block;
 	margin-left: -12px;
 	transform: skewX(-25deg);
+	-ms-transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
 	width: 100%;
 }
 .product-detail .btn-holder button:first-child .span2 {
 	display: inline-block;
 	transform: skewX(25deg);
+	-ms-transform: skewX(25deg);
+	-moz-transform: skewX(25deg);
+	-webkit-transform: skewX(25deg);
 }
 .product-detail .btn-holder button:first-child .span1 {
 	background: #000 none repeat scroll 0 0;
@@ -323,11 +329,17 @@
 	display: block;
 	margin-left: -12px;
 	transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg);
+	-ms-transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
 	width: 100%;
 }
 .quickview-index-view .btn-holder button:first-child .span2 {
 	display: inline-block;
 	transform: skewX(25deg);
+	-moz-transform: skewX(25deg);
+	-ms-transform: skewX(25deg);
+	-webkit-transform: skewX(25deg);
 }
 .quickview-index-view .btn-holder button:first-child:hover .span1 {
 	background: #000 none repeat scroll 0 0;
@@ -387,8 +399,11 @@
 #configurable_swatch_color .swatch-link {
 	border: none;
 }
-.fancybox-wrap.fancybox-type-iframe.fancybox-opened {
+.fancybox-wrap {
 	transform: skewY(-5deg);
+	-ms-transform: skewY(-5deg);
+	-moz-transform: skewY(-5deg);
+	-webkit-transform: skewY(-5deg);
 	backface-visibility: hidden;
 	border-radius: 0;
 	border-top: 17px solid #000;
