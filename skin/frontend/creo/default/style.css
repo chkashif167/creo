@@ -2240,7 +2240,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	display: inline-block;
 	vertical-align: top;
 	width: 18%;
-	margin: 0 0 0 1.8%;
+	margin: 0;
 	border: 4px solid #f16167;
 	background: #f16167;
 	text-transform: uppercase;
@@ -4093,6 +4093,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	.products-grid .mp_quickview_icon{top: 260px !important;}
 	.subscribe-form.footer-form .button.newslettersubscribe{width: 57px !important;}
 	.product-detail .btn-holder button:first-child{width: 80.4%;}
+	.products-grid li.item .btn-holder{bottom: 54px !important;}
 }
 @media only screen and (max-width: 991px) {
 	#wrapper > .container{padding: 0 15px;}
