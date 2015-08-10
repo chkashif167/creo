@@ -4172,6 +4172,12 @@ div.fme-filter dd li{overflow: visible !important;}
 	line-height:0;
 }
 
+.cms-page-view.cms-privacy-policy-cookie-restriction-mode .std > p {
+	line-height:inherit;
+	letter-spacing:1px;
+	margin:0 0 1.2em;
+}
+
 .main-container.col3-layout .products-grid .quick-view {
 	top:90%;
 }
