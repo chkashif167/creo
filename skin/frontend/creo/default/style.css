@@ -2198,13 +2198,13 @@ div.fme-filter dd li{overflow: visible !important;}
 	overflow: hidden;
 }
 .product-detail h2{
-	margin: 0 0 25px;
+	margin: 0 0 20px;
 	text-transform: uppercase;
 	color: #222;
-	font: 38px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font: 38px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .price-area{
-	padding: 20px 50px 5px 0;
+	padding: 20px 50px 0 0;
 	overflow: hidden;
 	border-width: 1px 0;
 	border-style: solid;
@@ -2314,7 +2314,7 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .tabset.tabset1{
 	overflow: hidden;
-	margin: 25px 0 22px -4px;
+	margin: 20px 0 20px -4px;
 	padding: 0;
 	list-style: none ;
 	text-transform: uppercase;
@@ -4028,8 +4028,8 @@ div.fme-filter dd li{overflow: visible !important;}
 .form-group .full {overflow: hidden;}
 .address-book-area .checkbox.validation-passed {float: left;}
 .fancybox-skin{border-radius: 0 !important;}
-
-
+p.availability{margin: 0;}
+.wrap_pdp_design #pdc_sides {display: none;}
 
 
 
