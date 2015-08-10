@@ -2377,7 +2377,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .shipping-area li a{
 	display: block;
 	color: #888;
-	padding: 0 0 0 35px;
+	padding: 0;
 	position: relative;
 }
 .shipping-area li a:before{
