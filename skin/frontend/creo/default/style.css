@@ -2380,7 +2380,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	position: relative;
 }
 .shipping-area li a:before{
-	background: url('images/sprite.png') no-repeat 0 -28px;
+	/*background: url('images/sprite.png') no-repeat 0 -28px;*/
 	width: 29px;
 	height: 19px;
 	position: absolute;

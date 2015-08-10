@@ -945,7 +945,7 @@
  }
  .quickview-index-view .swatch-attr .select-label { display: none !important;}
  .onestepcheckout-index-index footer{ float: left; width:100%; }
- .shipping-area { border-top: 0;}
+ .shipping-area { border-top: 0; border-bottom:1px solid #000}
 /*  .shipping-area > ul li { width: 20%;}*/
   .shipping-area > ul li strong { width: 20%; font-size: 14px;}
   .shipping-area > ul li ul li { width: 100%; float: left; margin: 0 0 1px 0 !important; font-size:13px !important;}
