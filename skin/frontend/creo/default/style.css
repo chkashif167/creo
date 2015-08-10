@@ -4043,7 +4043,16 @@ p.availability{margin: 0;}
 
 
 
-
+#configurable_swatch_size li.selected:before {
+    background: #f16167;
+    bottom: -1px; 
+    content: "";
+    height: 2px; 
+    left: -2px;
+    position: absolute;
+    right: 5px; 
+}
+#configurable_swatch_size li.selected{position: relative;}
 
 
 
