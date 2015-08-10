@@ -4030,7 +4030,16 @@ div.fme-filter dd li{overflow: visible !important;}
 .fancybox-skin{border-radius: 0 !important;}
 p.availability{margin: 0;}
 .wrap_pdp_design #pdc_sides {display: none;}
-
+#configurable_swatch_color li.selected:before {
+    background: #f16167;
+    bottom: 1px;
+    content: "";
+    height: 2px;
+    left: -2px;
+    position: absolute;
+    right: 5px;
+}
+#configurable_swatch_color li.selected{position: relative;}
 
 
 
