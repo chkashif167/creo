@@ -19,7 +19,7 @@ class Progos_Creomob_SoapController extends Mage_Core_Controller_Front_Action{
         $client = new SoapClient($this->soapURLv1);
         $token = $client->login($this->API_USER, $this->API_KEY);
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         echo json_encode(array('token'=>$token));
         die;
@@ -40,7 +40,7 @@ class Progos_Creomob_SoapController extends Mage_Core_Controller_Front_Action{
             
         }
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         echo $valid;
         die;

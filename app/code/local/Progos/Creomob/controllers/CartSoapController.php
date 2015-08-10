@@ -39,7 +39,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         $sessionId = $this->getRequest()->getParam('sid');
         $cart_id = $this->createCart($sessionId);
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         echo json_encode(array('cart_id'=>$cart_id));
         die;
@@ -119,7 +119,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
             }
         }
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         echo json_encode($response);
         die;
@@ -163,7 +163,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                 $response['message'] = $e->getMessage();
         }
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         echo json_encode($response);
         die;
@@ -194,7 +194,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                 $response['message'] = $e->getMessage();
         }
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         echo json_encode($response);
         die;

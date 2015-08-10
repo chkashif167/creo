@@ -44,7 +44,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $data[] = $prod;
         }
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($data));
         die;
@@ -117,7 +117,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         
         $prod['configurable_options']=$configurable_options;
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($prod));
         die;
@@ -189,7 +189,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $response['message'] = 'Product id not provided';
         }
         
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($response));
         die;
