@@ -498,7 +498,20 @@
 	
 }
 .mp_quickview_icon { top: 0;}
-.products-grid li:hover .quick-view { display: block !important;}
+.products-grid li:hover .quick-view { display: none !important;}
+
+.products-grid li.item .btn-holder {
+	position:absolute;
+	width:100%;
+	bottom:39px;
+	display:none;
+}
+
+.products-grid li.item:hover .btn-holder {
+	display:block;
+}
+
+
 .products-list {
 	padding: 0;
 	margin: 0;
