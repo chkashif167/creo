@@ -577,3 +577,8 @@ div.fme-filter a.fme_layered_attribute {
 
 .product-detail .fancy-product-price{display:none;}
 .fancy-product-price { float: left; text-align: left; width: 100%;}
+
+.pdp_side_item_content.active {
+	display:none;
+}
+

@@ -42,9 +42,11 @@
                 <connection>
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
-                    <password><![CDATA[dasatti]]></password>
-                    <dbname><![CDATA[creo2]]></dbname>
+                    <password><![CDATA[]]></password>
 
+						  
+						  
+                    <dbname><![CDATA[creodbmage]]></dbname>
 
 
 
