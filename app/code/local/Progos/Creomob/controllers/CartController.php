@@ -45,7 +45,9 @@ class Progos_Creomob_CartController extends Mage_Core_Controller_Front_Action{
             
             $data['product'][] = $prod;
         }
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
+        
         print_r(json_encode($data));
         die;
     }
@@ -82,6 +84,7 @@ class Progos_Creomob_CartController extends Mage_Core_Controller_Front_Action{
                 'message'=>$ex->getMessage()
             );
         }
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($res));
         die;
@@ -106,6 +109,7 @@ class Progos_Creomob_CartController extends Mage_Core_Controller_Front_Action{
         $cart->save();
         Mage::getSingleton('checkout/session')->setCartWasUpdated(true);
         
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode(array($flag)));
         die;
@@ -120,6 +124,7 @@ class Progos_Creomob_CartController extends Mage_Core_Controller_Front_Action{
         $res = array('sub_total'=>$sub_total,'currency_code'=>$currency_code,
             'currency_symbol'=>$currency_symbol,'items_count'=>$items_count);
         
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode(array($res)));
         die;

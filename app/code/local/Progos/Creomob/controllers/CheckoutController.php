@@ -15,6 +15,7 @@ class Progos_Creomob_CheckoutController extends Mage_Core_Controller_Front_Actio
         $res['cart'] = array('sub_total'=>$sub_total,'currency_code'=>$currency_code,
             'currency_symbol'=>$currency_symbol,'items_count'=>$items_count);
         
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode(array($res)));
         die;
@@ -40,6 +41,7 @@ class Progos_Creomob_CheckoutController extends Mage_Core_Controller_Front_Actio
         $data['telephone'] = $address->getTelephone();
         $data['fax'] = $address->getFax();
         
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($data));
         die;
@@ -104,6 +106,7 @@ class Progos_Creomob_CheckoutController extends Mage_Core_Controller_Front_Actio
             //echo $paymentTitle,':',$paymentCode,'<br>';
         }
         //echo '<br><br>';
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($methods));
         die;
@@ -119,6 +122,7 @@ class Progos_Creomob_CheckoutController extends Mage_Core_Controller_Front_Actio
             'code' =>$code
         );
         
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($data));
         die;
@@ -144,6 +148,7 @@ class Progos_Creomob_CheckoutController extends Mage_Core_Controller_Front_Actio
             }
         }
         //echo '<br><br>';
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($options));
         die;

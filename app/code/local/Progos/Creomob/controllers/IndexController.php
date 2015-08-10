@@ -18,6 +18,7 @@ class Progos_Creomob_IndexController extends Mage_Core_Controller_Front_Action {
             $data[] = $cat;
         }
 
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($data));
         die;
@@ -36,6 +37,7 @@ class Progos_Creomob_IndexController extends Mage_Core_Controller_Front_Action {
             $data[] = $cat;
         }
 
+        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
         print_r(json_encode($data));
         die;
