@@ -336,6 +336,8 @@ a.alignleft.checkout-items {
 
 .form-holder.login-sec.forgot-sec {
 	padding-top:0;
+	padding-left:0;
+	padding-right:0;
 } 
 
 .signup-form button[type="submit"] {
@@ -582,3 +584,13 @@ div.fme-filter a.fme_layered_attribute {
 	display:none;
 }
 
+.login-with-fb {
+	cursor:pointer;
+}
+
+.login-with-fb.page-view {
+	display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
