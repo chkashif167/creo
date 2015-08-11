@@ -199,4 +199,33 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         echo json_encode($response);
         die;
     }
+    
+    public function setShipping($sessionId,$qid,$address_array){
+        $proxy = new SoapClient($this->soapURLv2);
+        return $proxy->shoppingCartCustomerAddresses($sessionId, $qid, array($address_array)); 
+    }
+    
+    public function setShippingAddressAction(){
+        
+        $sessionId = $this->getRequest()->getParam('sid');
+        $qid = $this->getRequest()->getParam('qid');
+        
+        $address_data = json_decode(file_get_contents('php://input'),true);
+        
+        $response = array('success'=>0,'message'=>'','res'=>null);
+        try{
+            $res = $this->setShipping($sessionId,$qid,$address_data);
+            $response['success'] = 1;
+            $response['message'] = 'Product removed successfully';
+            $response['res'] = $res;
+        } catch(Exception $e){
+            $response['error_code'] = $e->getCode();
+            $response['message'] = $e->getMessage();
+        }
+        
+        
+        header("Content-Type: application/json");
+        echo json_encode($response);
+        die;
+    }
 }
