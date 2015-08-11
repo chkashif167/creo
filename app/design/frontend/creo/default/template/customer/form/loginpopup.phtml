@@ -58,7 +58,7 @@
           <div class="row">
           	<div class="col-xs-12">
 				<a class="pull-left" href="<?php echo Mage::getUrl('customer/account/create'); ?>">Create account</a>
-          		<a  class="pull-right login-with-fb" rel=facebook-connect>Login with Facebook</a>
+          		<?php echo $this->getLayout()->createBlock("pslogin/buttons")->setTemplate("pslogin/customer/form/login/buttons.phtml")->toHtml(); ?>
             </div>
           </div>
         </div>

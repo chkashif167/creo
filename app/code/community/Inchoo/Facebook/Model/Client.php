@@ -149,7 +149,7 @@ class Inchoo_Facebook_Model_Client
 				->setUri(self::FACEBOOK_GRAPH_URI.'/oauth/access_token')
 				->setMethod(Zend_Http_Client::POST)
 				->resetParameters()
-				->setParameterPost($this->_prepareParams(array(
+				->setRawData($this->_prepareParams(array(
 					'client_id'		=>	$this->_apiKey,
 					'client_secret'	=>	$this->_secret,
 					'redirect_uri'	=>	'',
@@ -195,7 +195,7 @@ class Inchoo_Facebook_Model_Client
 				->setUri($url)
 				->setMethod(Zend_Http_Client::POST)
 				->resetParameters()
-				->setParameterPost($params);
+				->setRawData($params);
 
 		try {
 			$response = $client->request();
