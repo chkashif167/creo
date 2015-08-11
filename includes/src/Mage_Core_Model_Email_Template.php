@@ -416,6 +416,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
                     'from_name'         => $this->getSenderName(),
                     'reply_to'          => $this->getMail()->getReplyTo(),
                     'return_to'         => $this->getMail()->getReturnPath(),
+					
                 ))
                 ->addRecipients($emails, $names, Mage_Core_Model_Email_Queue::EMAIL_TYPE_TO)
                 ->addRecipients($this->_bccEmails, array(), Mage_Core_Model_Email_Queue::EMAIL_TYPE_BCC);
