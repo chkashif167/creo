@@ -231,21 +231,27 @@
 	border-style: solid;
 	border-width: 0 0 0 4px;
 	color: #aaa;
-	margin: 0 13px 0 0;
+	margin: 0;
 	overflow: hidden;
 	padding: 0;
-	width: 79.5%;
+	width: 81%;
 }
 .product-detail .btn-holder button:first-child .span1 {
 	border: 4px solid #eee;
 	display: block;
-	margin-left: -12px;
+	margin-left: -10px;
 	transform: skewX(-25deg);
+	-ms-transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
 	width: 100%;
 }
 .product-detail .btn-holder button:first-child .span2 {
 	display: inline-block;
 	transform: skewX(25deg);
+	-ms-transform: skewX(25deg);
+	-moz-transform: skewX(25deg);
+	-webkit-transform: skewX(25deg);
 }
 .product-detail .btn-holder button:first-child .span1 {
 	background: #000 none repeat scroll 0 0;
@@ -323,11 +329,17 @@
 	display: block;
 	margin-left: -12px;
 	transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg);
+	-ms-transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
 	width: 100%;
 }
 .quickview-index-view .btn-holder button:first-child .span2 {
 	display: inline-block;
 	transform: skewX(25deg);
+	-moz-transform: skewX(25deg);
+	-ms-transform: skewX(25deg);
+	-webkit-transform: skewX(25deg);
 }
 .quickview-index-view .btn-holder button:first-child:hover .span1 {
 	background: #000 none repeat scroll 0 0;
@@ -387,8 +399,11 @@
 #configurable_swatch_color .swatch-link {
 	border: none;
 }
-.fancybox-wrap.fancybox-type-iframe.fancybox-opened {
+.fancybox-wrap {
 	transform: skewY(-5deg);
+	-ms-transform: skewY(-5deg);
+	-moz-transform: skewY(-5deg);
+	-webkit-transform: skewY(-5deg);
 	backface-visibility: hidden;
 	border-radius: 0;
 	border-top: 17px solid #000;
@@ -483,7 +498,20 @@
 	
 }
 .mp_quickview_icon { top: 0;}
-.products-grid li:hover .quick-view { display: block !important;}
+.products-grid li:hover .quick-view { display: none !important;}
+
+.products-grid li.item .btn-holder {
+	position:absolute;
+	width:100%;
+	bottom:39px;
+	display:none;
+}
+
+.products-grid li.item:hover .btn-holder {
+	display:block;
+}
+
+
 .products-list {
 	padding: 0;
 	margin: 0;
@@ -759,17 +787,18 @@
 	 }
 #review-buttons-container { display: inline-block; width: 100%;}
 #review-buttons-container button {   background: #f16167 none repeat scroll 0 0;
-    border: medium none;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     height: auto;
-    padding: 8px 100px;
+    padding: 5px 100px;
     width: auto;
     float: right;
 	margin-top:20px;
     text-transform: uppercase;
+    border: 3px solid #ef4f61;
 }
+#review-buttons-container button:hover{border-color: #000;}
 .cate2.cate:nth-child(2) { }
 .cate2.cate:nth-child(2) a { border: none; background: none; }
 .cate2.cate:nth-child(2) a:hover { background: none; }
@@ -917,18 +946,20 @@
  }
  .quickview-index-view .swatch-attr .select-label { display: none !important;}
  .onestepcheckout-index-index footer{ float: left; width:100%; }
- .shipping-area { border-top: 0;}
-  .shipping-area > ul li { width: 20%;}
+ .shipping-area { border-top: 0; border-bottom:1px solid #000}
+/*  .shipping-area > ul li { width: 20%;}*/
   .shipping-area > ul li strong { width: 20%; font-size: 14px;}
   .shipping-area > ul li ul li { width: 100%; float: left; margin: 0 0 1px 0 !important; font-size:13px !important;}
   .shippingheading { text-align: left; width:32% !important;}
-  .shipping-area .shipping-info { float: left !important;  font-size: 13px;}
-  .shipping-area li a { padding: 8px !important; }
+/*  .shipping-area .shipping-info { float: left !important;  font-size: 13px;}
+*/  
+.shipping-area .shipping-info {  border: 2px solid #ddd;  color: #000;    float: right;    font: 10px/15px "Roboto Condensed",Helvetica,Arial,sans-serif;    padding: 3px 6px;    text-align: center;}  
+/*  .shipping-area li a { padding: 8px !important; }
   .shipping-area li a::before { position: relative; float: left;  background: none !important; width: auto !important; height: auto !important;}
   .shipping-area li a:hover::before { background-position: 0 -28px !important;}
   .shipping-area li a:hover { background: none !important; color: #000 !important; background-position:inherit !important; border: 2px solid #ddd !important; cursor:default;}
   .old-price {text-decoration: line-through;}
- 
+*/ 
  
  
  

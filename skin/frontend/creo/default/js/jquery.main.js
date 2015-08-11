@@ -1152,7 +1152,7 @@ jQuery(document).ready(function(){
 	console.log(mainheight,headerheight,foorterheight,contentHeight);
 });
 
-jQuery(document).load(function(){console.log("jquery loading");
+jQuery(window).load(function(){
 	mainheight = jQuery(window).height();
 	headerheight = jQuery("#header").outerHeight();
 	foorterheight = jQuery("#footer").outerHeight();
