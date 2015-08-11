@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <action ifconfig="pslogin/general/enable" method="addCss"><stylesheet>css/plumrocket/pslogin/pslogin.css</stylesheet></action>
+            <action ifconfig="pslogin/general/enable" method="addCss"><stylesheet>css/plumrocket/pslogin/pslogin-custom.css</stylesheet></action>
+            <action ifconfig="pslogin/general/enable" method="addItem"><type>skin_js</type><name>js/plumrocket/pslogin/jquery-1.10.2.min.js</name></action>
+            <action ifconfig="pslogin/general/enable" method="addItem"><type>skin_js</type><name>js/plumrocket/pslogin/pslogin.js</name></action>
+        </reference>
+        <reference name="after_body_start">
+            <block type="pslogin/share" name="pslogin.customer.form.register.sharepopup" as="pslogin_sharepopup" before="content">
+                <action ifconfig="pslogin/general/enable" method="setTemplate"><template>pslogin/customer/form/register/sharepopup.phtml</template></action>
+            </block>
+            <block type="core/template" name="pslogin.js">
+                <action ifconfig="pslogin/persona/enable" method="setTemplate"><template>pslogin/js.phtml</template></action>
+            </block>
+            <block type="pslogin/general" name="pslogin_general" />
+        </reference>
+        <reference name="popuplogin_form_login">
+            <block type="pslogin/buttons" name="pslogin.customer.form.login.buttons" as="pslogin_buttons" template="pslogin/customer/form/login/buttons.phtml" />
+        </reference>
+        <reference name="popup.login">
+            <block type="pslogin/buttons" name="pslogin.customer.form.login.buttons" as="pslogin_buttons" template="pslogin/customer/form/login/buttons.phtml" />
+        </reference>
+        <reference name="popuplogin_form_register">
+            <block type="pslogin/buttons" name="pslogin.customer.form.register.buttons" as="pslogin_buttons" template="pslogin/customer/form/register/buttons.phtml" />
+        </reference>
+    </default>
+
+    <cms_index_index>
+        <reference name="popuplogin_form_login">
+            <block type="pslogin/buttons" name="pslogin.customer.form.login.buttons" as="pslogin_buttons" template="pslogin/customer/form/login/buttons.phtml" />
+        </reference>
+        <reference name="popuplogin_form_register">
+            <block type="pslogin/buttons" name="pslogin.customer.form.register.buttons" as="pslogin_buttons" template="pslogin/customer/form/register/buttons.phtml" />
+        </reference>
+    </cms_index_index>
+
+    <customer_account_login translate="label">
+        <reference name="customer_form_login">
+            <action ifconfig="pslogin/general/replace_templates" method="setTemplate"><template>pslogin/customer/form/login.phtml</template></action>
+            <block type="pslogin/buttons" name="pslogin.customer.form.login.buttons" as="pslogin_buttons" template="pslogin/customer/form/login/buttons.phtml" />
+        </reference>
+    </customer_account_login>
+
+    <customer_account_create translate="label">
+        <reference name="customer_form_register">
+            <action ifconfig="pslogin/general/replace_templates" method="setTemplate"><template>pslogin/customer/form/register.phtml</template></action>
+            <block type="pslogin/buttons" name="pslogin.customer.form.register.buttons" as="pslogin_buttons" template="pslogin/customer/form/register/buttons.phtml" />
+            <!-- <block type="pslogin/share" name="pslogin.customer.form.register.share" as="pslogin_share" template="pslogin/customer/form/register/share.phtml" /> -->
+        </reference>
+    </customer_account_create>
+
+    <customer_account_edit>
+        <reference name="after_body_start">
+            <block type="core/template" name="pslogin_fake_email_edit" template="pslogin/customer/form/edit/fake_email.phtml" before="content" />
+        </reference>
+    </customer_account_edit>
+
+    <checkout_onepage_index translate="label">
+        <reference name="after_body_start">
+            <block type="core/template" name="pslogin_fake_email_message" template="pslogin/checkout/onepage/message/fake_email.phtml" before="content" />
+        </reference>
+        <reference name="checkout.onepage.login">
+            <action ifconfig="pslogin/general/replace_templates" method="setTemplate"><template>pslogin/checkout/onepage/login.phtml</template></action>
+            <block type="pslogin/buttons" name="pslogin.customer.form.login.buttons" as="pslogin_buttons" template="pslogin/customer/form/login/buttons.phtml" />
+        </reference>
+    </checkout_onepage_index>
+
+    <privatesales_splashpage_login translate="label">
+        <reference name="splashpage_form_login">
+            <block type="pslogin/buttons" name="pslogin.customer.form.login.buttons" as="pslogin_buttons" template="pslogin/customer/form/login/buttons.phtml" />
+        </reference>
+        <reference name="splashpage_form_register">
+            <block type="pslogin/buttons" name="pslogin.customer.form.register.buttons" as="pslogin_buttons" template="pslogin/customer/form/register/buttons.phtml" />
+        </reference>
+    </privatesales_splashpage_login>
+
+    <!-- <pslogin_account_sharedata>
+        <reference name="root">
+            <action ifconfig="pslogin/general/enable" method="setTemplate"><template>pslogin/customer/form/register/sharedata.phtml</template></action>
+        </reference>
+    </pslogin_account_sharedata> -->
+
+    <!-- Theme Black&White -->
+    <onepagecheckout_index_index>
+        <reference name="customer.login">
+            <action ifconfig="pslogin/general/replace_templates" method="setTemplate"><template>pslogin/onepagecheckout/login.phtml</template></action>
+            <block type="pslogin/buttons" name="pslogin.customer.form.login.buttons" as="pslogin_buttons" template="pslogin/customer/form/login/buttons.phtml" />
+        </reference>
+    </onepagecheckout_index_index>
+
+</layout>

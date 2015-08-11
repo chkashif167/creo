@@ -1,0 +1,225 @@
+<?php
+/**
+ * Acumen for Magento
+ * http://gravitydept.com/to/acumen-magento
+ *
+ * @author     Brendan Falkowski
+ * @package    gravdept_acumen
+ * @copyright  Copyright 2012 Gravity Department http://gravitydept.com
+ * @license    All rights reserved.
+ * @version    1.3.4
+ */
+?>
+<?php
+/**
+ * Create account form template
+ *
+ * @see app/design/frontend/base/default/template/customer/form/register.phtml
+ */
+/** @var $this Mage_Customer_Block_Form_Register */
+?>
+
+<div class="grid-block">
+    <h1><?php echo $this->__('Create an Account') ?></h1>
+    
+    <?php echo $this->getChildHtml('form_fields_before')?>
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+    <?php if(Mage::helper('pslogin')->modulePositionEnabled('register') && Mage::helper('pslogin')->hasButtons()) : ?>
+        <?php echo $this->getChildHtml('pslogin_buttons'); ?>
+        <div class="pslogin-spacer pslogin-clearfix"> 
+            <table>
+                <tr>
+                    <td><div class="pslogin-border"></div></td>
+                    <td class="pslogin-bordertext w25"><?php echo $this->__('OR'); ?></td>
+                    <td><div class="pslogin-border"></div></td>
+                </tr>
+            </table>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="grid">
+    <div class="grid_7">
+        <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="register-form" class="scaffold-form">
+            <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
+            <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+            
+            <div class="fieldset">
+                <h2 class="legend"><?php echo $this->__('Personal Information') ?></h2>
+                
+                <ul class="form-list">
+                    <li class="fields"><?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->toHtml() ?></li>
+                
+                    <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
+                    <?php if ($_dob->isEnabled()): ?>
+                        <li><?php echo $_dob->setDate($this->getFormData()->getDob())->toHtml() ?></li>
+                    <?php endif ?>
+                    
+                    <?php $_taxvat = $this->getLayout()->createBlock('customer/widget_taxvat') ?>
+                    <?php if ($_taxvat->isEnabled()): ?>
+                        <li><?php echo $_taxvat->setTaxvat($this->getFormData()->getTaxvat())->toHtml() ?></li>
+                    <?php endif ?>
+                    
+                    <?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
+                    <?php if ($_gender->isEnabled()): ?>
+                        <li><?php echo $_gender->setGender($this->getFormData()->getGender())->toHtml() ?></li>
+                    <?php endif ?>
+                </ul>
+            </div>
+            
+            <?php if($this->getShowAddressFields()): ?>
+                <div class="fieldset">
+                    <input type="hidden" name="create_address" value="1" />
+                    
+                    <h2 class="legend"><?php echo $this->__('Address Information') ?></h2>
+                    
+                    <ul class="form-list">
+                        <li>
+                            <label for="company"><?php echo $this->__('Company') ?></label>
+                            
+                            <div class="input-box">
+                                <input type="text" name="company" id="company" value="<?php echo $this->escapeHtml($this->getFormData()->getCompany()) ?>" title="<?php echo $this->__('Company') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('company') ?>" />
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <label for="telephone" class="required"><em>*</em><?php echo $this->__('Phone') ?></label>
+                            
+                            <div class="input-box">
+                                <input type="text" name="telephone" id="telephone" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" />
+                            </div>
+                        </li>
+                        
+                        <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
+                        <li>
+                            <label for="street_1" class="required"><em>*</em><?php echo $this->__('Street Address') ?></label>
+                            
+                            <div class="input-box">
+                                <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(1)) ?>" title="<?php echo $this->__('Street Address') ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
+                            </div>
+                        </li>
+                        
+                        <?php $_streetValidationClass = trim(str_replace('required-entry', '', $_streetValidationClass)); ?>
+                        <?php for ($_i = 2, $_n = $this->helper('customer/address')->getStreetLines(); $_i <= $_n; $_i++): ?>
+                            <li>
+                                <label for="street_<?php echo $_i ?>"><?php echo $this->__('Street Address') ?> <?php echo $_i ?></label>
+                                
+                                <div class="input-box">
+                                    <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet($_i)) ?>" title="<?php echo $this->__('Street Address %s', $_i) ?>" id="street_<?php echo $_i ?>" class="input-text <?php echo $_streetValidationClass ?>" />
+                                </div>
+                            </li>
+                        <?php endfor; ?>
+                        
+                        <li>
+                            <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                            
+                            <div class="input-box">
+                                <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getFormData()->getCity()) ?>" title="<?php echo $this->__('City') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <label for="region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
+                            
+                            <div class="input-box">
+                                <select id="region_id" name="region_id" class="validate-select" style="display:none;">
+                                    <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                                </select>
+                                
+                                <script type="text/javascript">
+                                    $('region_id').setAttribute('defaultValue',  "<?php echo $this->getFormData()->getRegionId() ?>");
+                                </script>
+                                
+                                <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getRegion()) ?>" title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" style="display:none;" />
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
+                            
+                            <div class="input-box">
+                                <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getFormData()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
+                            
+                            <div class="input-box">
+                                <?php echo $this->getCountryHtmlSelect() ?>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <input type="hidden" name="default_billing" value="1" />
+                    <input type="hidden" name="default_shipping" value="1" />
+                </div>
+            <?php endif; ?>
+            
+            <div class="fieldset">
+                <h2 class="legend"><?php echo $this->__('Account Information') ?></h2>
+                
+                <ul class="form-list">
+                    <li>
+                        <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email') ?></label>
+                        
+                        <div class="input-box">
+                            <input type="text" id="email_address" name="email" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" class="input-text validate-email required-entry" />
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                        
+                        <div class="input-box">
+                            <input type="password" id="password" name="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password" />
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
+                        
+                        <div class="input-box">
+                            <input type="password" id="confirmation" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" class="input-text required-entry validate-cpassword" />
+                        </div>
+                    </li>
+                    
+                    <?php if ($this->isNewsletterEnabled()): ?>
+                        <li class="control">
+                            <input type="checkbox" id="is_subscribed" name="is_subscribed" value="1" <?php if($this->getFormData()->getIsSubscribed()): ?>checked="checked"<?php endif; ?> class="checkbox" />
+                            <label for="is_subscribed"><?php echo $this->__('Subscribe to the newsletter to receive store news and offers via email.') ?></label>
+                        </li>
+                    <?php endif ?>
+                    
+                    <?php echo $this->getChildHtml('form.additional.info'); ?>
+                    <?php echo $this->getChildHtml('persistent.remember.me'); ?>
+                </ul>
+                
+                <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
+            </div>
+            
+            <div class="buttons-set">
+                <button type="submit" class="button"><?php echo $this->__('Register') ?></button>
+            </div>
+            
+            <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
+                <input name="context" type="hidden" value="checkout" />
+            <?php endif; ?>
+        </form>
+        
+        <script type="text/javascript">
+        //<![CDATA[
+            var dataForm = new VarienForm('register-form', true);
+            <?php if($this->getShowAddressFields()): ?>
+            new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
+            <?php endif; ?>
+        //]]>
+        </script>
+    </div>
+    
+    <div class="grid_4 prefix_1">
+        <h2><?php echo $this->__('Already registered?') ?></h2>
+        <a class="button" href="<?php echo $this->helper('customer')->getLoginUrl() ?>"><?php echo $this->__('Sign In') ?></a>
+    </div>
+</div>

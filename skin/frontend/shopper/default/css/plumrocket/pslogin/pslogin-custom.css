@@ -1,0 +1,51 @@
+.w25 { width: 25px; }
+
+.pslogin-addedoverlay,
+.pslogin-pop-up-form,
+.pslogin-fake-email-message {
+	z-index: 15000;
+}
+
+.notice-msg a {
+	color: #97d2c9;
+}
+
+.pslogin-block {
+	width: 100%;
+	margin: 0;
+	padding: 0 50px;
+	box-sizing: border-box;
+}
+
+.account-create .pslogin-spacer,
+.pslogin-buttons .pslogin-spacer {
+	padding: 0;
+}
+
+.pslogin-buttons .pslogin-border {
+	border: 0px;
+}
+
+.pslogin-spacer {
+	width: 100%;
+	padding: 0 50px;
+	box-sizing: border-box;
+}
+
+/* Popup login */
+#prpop-pop-up-bg .pslogin-spacer {
+	padding: 0;
+}
+
+#prpop-pop-up-bg .pslogin-block {
+	padding: 0;
+}
+
+#prpop-pop-up-bg .pslogin-spacer .pslogin-border {
+	border-top: 1px solid #e5e2e2;
+	width: 100%;
+}
+
+#prpop-pop-up-bg.simple-form-logo .pslogin-spacer .pslogin-border {
+	border-top: 1px solid #A5A5A5;
+}

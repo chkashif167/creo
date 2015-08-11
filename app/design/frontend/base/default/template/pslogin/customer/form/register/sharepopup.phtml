@@ -1,0 +1,44 @@
+<?php
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_SocialLogin
+ * @copyright   Copyright (c) 2014 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+?>
+
+<?php if($this->showPopup()) { ?>
+	<div class="pslogin-addedoverlay"></div>
+
+	<div class="pslogin-pop-up-form">
+		<div id="pslogin-pop-up-bg" class="pslogin-cf fadeInDownBig">
+			<div class="pslogin-share">
+				<h2><?php echo $this->escapeHtml($this->getTitle()); ?></h2>
+				<a href="#" class="prpop-close-btn">&#10005;</a>
+				<p><?php echo nl2br($this->getDescription()); ?></p>
+                <div class="button-top"></div>
+                <p class="ta-center">
+                    <?php foreach ($this->getButtons() as $button) { ?>
+                        <a href="<?php echo $this->escapeHtml($button['href']); ?>" target="_blank" title="<?php echo $this->escapeHtml($button['name']); ?>">
+                            <img src="<?php echo $this->escapeHtml($button['image']); ?>" border="0" alt="<?php echo $this->escapeHtml($button['name']); ?>"/>
+                        </a>    
+                    <?php } ?>
+
+                    <br />
+                    <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=<?php echo $this->escapeHtml(urlencode($this->getPageUrl())); ?>&ct=1&title=-&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/email.png" border="0" alt="Email"/></a>
+                    <a href="https://www.addthis.com/bookmark.php?source=tbx32nj-1.0&v=300&url=<?php echo $this->escapeHtml(urlencode($this->getPageUrl())); ?>&ct=1&title=-&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/addthis.png" border="0" alt="Addthis"/></a>
+                </p>
+			
+			</div>
+		</div>
+	</div>
+<?php } ?>

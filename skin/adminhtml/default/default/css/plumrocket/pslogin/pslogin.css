@@ -1,0 +1,294 @@
+.social-td {
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+#sortable-visible { 
+	background-color: #FFFFFF;
+}
+
+#sortable-hidden { 
+	background: #EAEAEA;
+	margin-left: 2%;
+}
+
+.soc-networks {
+	list-style-type: none;
+	margin: 0; 
+	padding: 0; 
+	float: left; 
+	padding: 0px;
+	width: 49%; 
+	box-sizing: border-box;	
+	height: 110px;			
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 1px solid #aaa;
+}
+
+.soc-networks.ui-sortable-disabled {
+	background: #EAEAEA!important;
+	color: #8E8E8E;
+}
+
+.soc-networks.ui-sortable-disabled li:hover {
+	background: #EAEAEA!important;
+	cursor: auto;
+}
+
+.soc-networks.ui-sortable-disabled li .soc-li-icon {
+	opacity: 0.6;
+	filter: aplha(opacity=60);
+}
+
+.soc-networks li.ui-sortable-helper {
+	border: 1px solid #CCC;
+}
+
+.div-visible {
+	width: 49%;
+	float: left;
+	font-size: 13px;
+}
+
+.div-hidden {
+	width: 49%;
+	float: left;
+	margin-left: 2%;
+	font-size: 13px;
+}
+
+.soc-networks li {
+	line-height: 30px;
+	border-bottom: 1px solid #CCC;
+	font-size: 13px;
+}
+
+.soc-networks li:hover {
+	background: #F6F6F6;
+	cursor: pointer;
+}
+
+.soc-networks li img {
+	float: left;
+	margin-right: 5px;
+	height: 16px;
+}
+
+#sortable-visible li, #sortable-hidden li, #sortable3 li { 
+	margin: 0px; 
+	padding: 5px; 
+	font-size: 13px;
+	line-height: 16px;
+}
+
+.pslogin-form ul li .soc-li-icon {
+	background: url('../../../images/plumrocket/pslogin/social_admin.png');
+	display: block;
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin: 0 5px 0 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.pslogin-form ul li .soc-li-text {
+	display: block;
+	float: left;
+	height: 16px;
+	line-height: 16px;
+}
+
+
+.pslogin-form ul li.facebook .soc-li-icon { background-position: 0px 0px; background-color: #1e4389; }
+.pslogin-form ul li.twitter .soc-li-icon { background-position: -17px 0px; background-color: #28a9e2; }
+.pslogin-form ul li.linkedin .soc-li-icon { background-position: -85px 0px; background-color: #11669c; }
+.pslogin-form ul li.yahoo .soc-li-icon { background-position: -102px 0px; background-color: #85228f; }
+.pslogin-form ul li.vkontakte .soc-li-icon { background-position: -34px 0px; background-color: #3f658c; }
+.pslogin-form ul li.googleplus .soc-li-icon { background-position: -68px 0px; background-color: #df4b38; }
+
+
+.pslogin-form ul li.hotmail .soc-li-icon { background-color: #f67d20; }
+.pslogin-form ul li.hotmail .soc-li-icon { background-position: 0px -16px; }
+
+.pslogin-form ul li.live .soc-li-icon { background-color: #0cb3ee; }
+.pslogin-form ul li.live .soc-li-icon { background-position: -17px -102px; }
+
+.pslogin-form ul li.pinterest .soc-li-icon { background-color: #cb2028; }
+.pslogin-form ul li.pinterest .soc-li-icon { background-position: -17px -17px; }
+
+.pslogin-form ul li.amazon .soc-li-icon { background-color: #ff8e2e; }
+.pslogin-form ul li.amazon .soc-li-icon { background-position: -34px -17px; }
+
+.pslogin-form ul li.aol .soc-li-icon { background-color: #008bd3; }
+.pslogin-form ul li.aol .soc-li-icon { background-position: -51px -17px; }
+
+.pslogin-form ul li.github .soc-li-icon { background-color: black; }
+.pslogin-form ul li.github .soc-li-icon { background-position: -68px -17px; }
+
+.pslogin-form ul li.instagram .soc-li-icon { background-color: #9a6e51; }
+.pslogin-form ul li.instagram .soc-li-icon { background-position: -84px -17px; }
+
+.pslogin-form ul li.foursquare .soc-li-icon { background-color: #3472ad; }
+.pslogin-form ul li.foursquare .soc-li-icon { background-position: -102px -17px; }
+
+.pslogin-form ul li.dropbox .soc-li-icon { background-color: #008bd3; }
+.pslogin-form ul li.dropbox .soc-li-icon { background-position: -0px -34px; }
+
+.pslogin-form ul li.disqus .soc-li-icon { background-color: #3d7198; }
+.pslogin-form ul li.disqus .soc-li-icon { background-position: -16px -34px; }
+
+.pslogin-form ul li.livejournal .soc-li-icon { background-color: #104378; }
+.pslogin-form ul li.livejournal .soc-li-icon { background-position: -33px -34px; }
+
+.pslogin-form ul li.tumblr .soc-li-icon { background-color: #304e6c; }
+.pslogin-form ul li.tumblr .soc-li-icon { background-position: -51px -34px; }
+
+.pslogin-form ul li.openid .soc-li-icon { background-color: #f8931f; }
+.pslogin-form ul li.openid .soc-li-icon { background-position: -68px -37px; }
+
+.pslogin-form ul li.flickr .soc-li-icon { background-color: #ff0084; }
+.pslogin-form ul li.flickr .soc-li-icon { background-position: -85px -34px; }
+
+.pslogin-form ul li.wordpress .soc-li-icon { background-color: #1b3f57; }
+.pslogin-form ul li.wordpress .soc-li-icon { background-position: -102px -34px; }
+
+.pslogin-form ul li.blogger .soc-li-icon { background-color: #ec7825; }
+.pslogin-form ul li.blogger .soc-li-icon { background-position: 0px -52px; }
+
+.pslogin-form ul li.odnoklassniki .soc-li-icon { background-color: #ee6600; }
+.pslogin-form ul li.odnoklassniki .soc-li-icon { background-position: -17px -52px; }
+
+.pslogin-form ul li.mailru .soc-li-icon { background-color: #168de2; }
+.pslogin-form ul li.mailru .soc-li-icon { background-position: -34px -52px; }
+
+.pslogin-form ul li.yandex .soc-li-icon { background-color: #dd0000; }
+.pslogin-form ul li.yandex .soc-li-icon { background-position: -51px -51px; }
+
+.pslogin-form ul li.paypal .soc-li-icon { background-color: #195d82; }
+.pslogin-form ul li.paypal .soc-li-icon { background-position: -67px -51px; }
+
+.pslogin-form ul li.myspace .soc-li-icon { background-color: #0022a0;}
+.pslogin-form ul li.myspace .soc-li-icon { background-position: -85px -51px; }
+
+.pslogin-form ul li.salesforce .soc-li-icon { background-color: #00a0de; }
+.pslogin-form ul li.salesforce .soc-li-icon { background-position: -102px -51px; }
+
+.pslogin-form ul li.steamcommunity .soc-li-icon { background-color: #282828; }
+.pslogin-form ul li.steamcommunity .soc-li-icon { background-position: -1px -69px; }
+
+.pslogin-form ul li.hyves .soc-li-icon { background-color: #ffca63; }
+.pslogin-form ul li.hyves .soc-li-icon { background-position: -17px -69px; }
+
+.pslogin-form ul li.stackoverflow .soc-li-icon { background-color: #f95500; }
+.pslogin-form ul li.stackoverflow .soc-li-icon { background-position: -34px -69px; }
+
+.pslogin-form ul li.evernote .soc-li-icon { background-color: #7ac141; }
+.pslogin-form ul li.evernote .soc-li-icon { background-position: -51px -69px; }
+
+.pslogin-form ul li.mixi .soc-li-icon { background-color: #d1ac5b; }
+.pslogin-form ul li.mixi .soc-li-icon { background-position: -68px -68px; }
+
+.pslogin-form ul li.mydigipass .soc-li-icon { background-color: #49bbeb; }
+.pslogin-form ul li.mydigipass .soc-li-icon { background-position: -85px -69px; }
+
+.pslogin-form ul li.netlog .soc-li-icon { background-color: #bb2026; }
+.pslogin-form ul li.netlog .soc-li-icon { background-position: -101px -69px; }
+
+.pslogin-form ul li.qq .soc-li-icon { background-color: #c46f1c; }
+.pslogin-form ul li.qq .soc-li-icon { background-position: 0px -86px; }
+
+.pslogin-form ul li.sinaweibo .soc-li-icon { background-color: #bd4342; }
+.pslogin-form ul li.sinaweibo .soc-li-icon { background-position: -17px -85px; }
+
+.pslogin-form ul li.soundcloud .soc-li-icon { background-color: #ff5419; }
+.pslogin-form ul li.soundcloud .soc-li-icon { background-position: -33px -85px; }
+
+.pslogin-form ul li.tencentweibo .soc-li-icon { background-color: #28a4e4; }
+.pslogin-form ul li.tencentweibo .soc-li-icon { background-position: -50px -85px; }
+
+.pslogin-form ul li.verisign .soc-li-icon { background-color: #b22253; }
+.pslogin-form ul li.verisign .soc-li-icon { background-position: -67px -85px; }
+
+.pslogin-form ul li.xing .soc-li-icon { background-color: #005d5e;}
+.pslogin-form ul li.xing .soc-li-icon { background-position: -84px -85px; }
+
+.pslogin-form ul li.kaixin001 .soc-li-icon { background-color: #e2332e; }
+.pslogin-form ul li.kaixin001 .soc-li-icon { background-position: -102px -85px; }
+
+.pslogin-form ul li.orange .soc-li-icon { background-color: #ff6600; }
+.pslogin-form ul li.orange .soc-li-icon { background-position: -0px -102px; }
+
+
+
+.pslogin-form ul li.bitbucket .soc-li-icon { background-color: #013567; }
+.pslogin-form ul li.bitbucket .soc-li-icon { background-position: -33px -102px; }
+
+.pslogin-form ul li.bitly .soc-li-icon { background-color: #ed6022; }
+.pslogin-form ul li.bitly .soc-li-icon { background-position: -50px -102px; }
+
+.pslogin-form ul li.boxcom .soc-li-icon { background-color: #00b9f2; }
+.pslogin-form ul li.boxcom .soc-li-icon { background-position: -67px -102px; }
+
+.pslogin-form ul li.vimeo .soc-li-icon { background-color: #1fb9eb; }
+.pslogin-form ul li.vimeo .soc-li-icon { background-position: -85px -102px; }
+
+.pslogin-form ul li.reddit .soc-li-icon { background-color: #337fb9; }
+.pslogin-form ul li.reddit .soc-li-icon { background-position: -102px -102px; }
+
+.pslogin-form ul li.odesk .soc-li-icon { background-color: #7ac043; }
+.pslogin-form ul li.odesk .soc-li-icon { background-position: -1px -119px; }
+
+.pslogin-form ul li.teamviewer .soc-li-icon { background-color: #0171b9; }
+.pslogin-form ul li.teamviewer .soc-li-icon { background-position: -17px -119px; }
+
+.pslogin-form ul li.skyrock .soc-li-icon { background-color: #009afe; }
+.pslogin-form ul li.skyrock .soc-li-icon { background-position: -34px -119px; }
+
+.pslogin-form ul li.renren .soc-li-icon { background-color: #153765; }
+.pslogin-form ul li.renren .soc-li-icon { background-position: -51px -119px; }
+
+
+.pslogin-form ul li.etsy .soc-li-icon { background-color: #ee5931; }
+.pslogin-form ul li.etsy .soc-li-icon { background-position: -68px -119px; }
+
+.pslogin-form ul li.imgur .soc-li-icon { background-color: #312e2f; }
+.pslogin-form ul li.imgur .soc-li-icon { background-position: -84px -119px; }
+ 
+.pslogin-form ul li.intuit .soc-li-icon { background-color: #B8B8B8; }
+.pslogin-form ul li.intuit .soc-li-icon { background-position: -102px -119px; }
+
+.pslogin-form ul li.mailchimp .soc-li-icon { background-color: #73cff4; }
+.pslogin-form ul li.mailchimp .soc-li-icon { background-position: -1px -136px; }
+
+.pslogin-form ul li.persona .soc-li-icon { background-color: #ee5931; }
+.pslogin-form ul li.persona .soc-li-icon { background-position: -17px -136px; }
+
+.pslogin-form ul li.dribbble .soc-li-icon { background-color: #f26798; }
+.pslogin-form ul li.dribbble .soc-li-icon { background-position: -34px -136px; }
+
+.pslogin-form ul li.goodreads .soc-li-icon { background-color: #743900; }
+.pslogin-form ul li.goodreads .soc-li-icon { background-position: -51px -136px; }
+ 
+.pslogin-form ul li.lastfm .soc-li-icon { background-color: #c02c0c; }
+.pslogin-form ul li.lastfm .soc-li-icon { background-position: -68px -136px; }
+
+.entry-edit-head.pslogin-notinstalled-section {
+	background: #BDBDBD;
+}
+
+.entry-edit-head.pslogin-notinstalled-section a span.pslogin-notinstalled-title {
+	font-weight: 400;
+	padding-left: 5px;
+	/*color: #ea7601;*/
+}
+
+/*.entry-edit-head.pslogin-notinstalled-section a:hover .pslogin-notinstalled-title {
+	text-decoration: underline;
+}*/
+
+.pslogin-notinstalled-section .entry-edit-head {
+	background: none;
+}
+

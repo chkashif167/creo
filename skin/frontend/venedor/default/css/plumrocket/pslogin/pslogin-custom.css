@@ -1,0 +1,15 @@
+.pslogin-pop-up-form {
+	z-index: 11100;
+}
+
+.pslogin-addedoverlay {
+	z-index: 11000;
+}
+
+.pslogin-fake-email-message {
+	z-index: 11000;
+}
+
+#prpop-pop-up-bg .pslogin-block .pslogin-buttons ul {
+	padding: 0;
+}
