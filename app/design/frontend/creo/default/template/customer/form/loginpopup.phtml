@@ -55,7 +55,12 @@
               <button type="submit" class="button popuplogin_button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
               <?php echo $this->getChildHtml('form.additional.info'); ?> </div>
           </form>
-          <a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Create account</a>
+          <div class="row">
+          	<div class="col-xs-12">
+				<a class="pull-left" href="<?php echo Mage::getUrl('customer/account/create'); ?>">Create account</a>
+          		<a  class="pull-right login-with-fb" rel=facebook-connect>Login with Facebook</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
