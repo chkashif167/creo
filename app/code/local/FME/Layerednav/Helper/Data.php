@@ -10,7 +10,8 @@
  * @version      Release: 1.0.0
  * @Class        FME_Layerednav_Helper_Data  
  */
-class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
+class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract
+{
 
     protected $_params = null;
     protected $_continueShoppingUrl = null;
@@ -18,34 +19,38 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
     const XML_PATH_CAT_STYLE = 'layerednav/layerednav/cat_style';
     const XML_PATH_REMOVE_LINKS = 'layerednav/layerednav/remove_links';
     const XML_PATH_RESET_FILTERS = 'layerednav/layerednav/reset_filters';
-    
-    public function catStyle($store = null) {
+
+    public function catStyle($store = null)
+    {
         if ($store == null) {
             $store = Mage::app()->getStore()->getId();
         }
-        
+
         return Mage::getStoreConfig(self::XML_PATH_CAT_STYLE, $store);
     }
-    
-    public function removeLinks($store = null) {
-        
+
+    public function removeLinks($store = null)
+    {
+
         if ($store == null) {
             $store = Mage::app()->getStore()->getId();
         }
-        
+
         return Mage::getStoreConfig(self::XML_PATH_REMOVE_LINKS, $store);
     }
-    
-    public function resetFilters($store = null) {
-        
+
+    public function resetFilters($store = null)
+    {
+
         if ($store == null) {
             $store = Mage::app()->getStore()->getId();
         }
-        
+
         return Mage::getStoreConfig(self::XML_PATH_RESET_FILTERS, $store);
     }
-    
-    public function isSearch() {
+
+    public function isSearch()
+    {
 
         $mod = Mage::app()->getRequest()->getModuleName();
         if ('catalogsearch' === $mod) {
@@ -59,7 +64,8 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
         return false;
     }
 
-    public function getContinueShoppingUrl() {
+    public function getContinueShoppingUrl()
+    {
         if (is_null($this->_continueShoppingUrl)) {
             $url = '';
 
@@ -91,7 +97,8 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
         return $this->_continueShoppingUrl;
     }
 
-    public function wrapProducts($html) {
+    public function wrapProducts($html)
+    {
         $html = str_replace('onchange="setLocation', 'onchange="catalog_toolbar_make_request', $html);
 
         $loaderHtml = '<div class="fme_loading_filters" style="display:none"><img id="loading-image" src="' . Mage::getDesign()->getSkinUrl('images/FME/ajax-loader.gif') . '" /></div>';
@@ -99,7 +106,7 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
 
         if (Mage::app()->getRequest()->isXmlHttpRequest()) {
 
-            
+
             $html = str_replace('?___SID=U&amp;', '?', $html);
             $html = str_replace('?___SID=U', '', $html);
             $html = str_replace('&amp;___SID=U', '', $html);
@@ -107,25 +114,26 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
             $k = Mage_Core_Controller_Front_Action::PARAM_NAME_URL_ENCODED;
             $v = Mage::helper('core')->urlEncode($this->getContinueShoppingUrl());
             $html = preg_replace("#$k/[^/]+#", "$k/$v", $html);
-            
         } else {//echo 'here';exit;
             $html = '<div id="fme_layered_container">'
                     . $html
                     . '</div>'
                     . '';
         }
-        
+
         return $html;
     }
 
-    public function getParam($k) {
+    public function getParam($k)
+    {
         $p = $this->getParams();
         $v = isset($p[$k]) ? $p[$k] : null;
         return $v;
     }
 
     // currently we use $without only if $asString=true
-    public function getParams($asString = false, $without = null) {
+    public function getParams($asString = false, $without = null)
+    {
         if (is_null($this->_params)) {
 
             $sessionObject = Mage::getSingleton('catalog/session');
@@ -222,7 +230,8 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
         return $this->_params;
     }
 
-    public function toQuery($params, $without = null) {
+    public function toQuery($params, $without = null)
+    {
         if (!is_array($without))
             $without = array($without);
 
@@ -234,14 +243,16 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
         return substr($queryStr, 0, -1);
     }
 
-    public function stripQuery($url) {
+    public function stripQuery($url)
+    {
         $pos = strpos($url, '?');
         if (false !== $pos)
             $url = substr($url, 0, $pos);
         return $url;
     }
 
-    public function getClearAllUrl($baseUrl) {
+    public function getClearAllUrl($baseUrl)
+    {
         $baseUrl .= '?clearall=true';
         if ($this->isSearch()) {
             $baseUrl .= '&q=' . urlencode($this->getParam('q'));
@@ -249,7 +260,8 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
         return $baseUrl;
     }
 
-    public function bNeedClearAll() {
+    public function bNeedClearAll()
+    {
         if ($aParams = Mage::registry('current_session_params')) {
             $bNeedClearAll = false;
 
@@ -269,17 +281,20 @@ class FME_Layerednav_Helper_Data extends Mage_Core_Helper_Abstract {
         return true;
     }
 
-    public function getCacheKey($attrCode) {
+    public function getCacheKey($attrCode)
+    {
         $keys = $this->getNonFilteringParamKeys();
         $keys[] = $attrCode;
         return md5($this->getParams(true, $keys));
     }
 
-    protected function getNonFilteringParamKeys() {
+    protected function getNonFilteringParamKeys()
+    {
         return array('x', 'y', 'mode', 'p', 'order', 'dir', 'limit', 'q', '___store', '___from_store', 'sns');
     }
 
-    public function checkColor($attrColor) {
+    public function checkColor($attrColor)
+    {
 
         $colorArray = array('AliceBlue' => '#F0F8FF',
             'AntiqueWhite' => '#FAEBD7',
