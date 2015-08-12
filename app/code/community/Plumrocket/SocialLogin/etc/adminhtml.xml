@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+	<config>
+		<menu>
+			<plumrocket>
+				<title>Plumrocket</title>
+				<sort_order>80</sort_order>
+	            <children>
+					<pslogin>
+						<title>Twitter &amp; Facebook Login</title>
+						<sort_order>350</sort_order>
+						<action>adminhtml/system_config/edit/section/pslogin</action>
+					</pslogin>
+				</children>
+			</plumrocket>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<pslogin translate="title" module="pslogin">
+											<title>Twitter &amp; Facebook Login Section</title>
+											<sort_order>102</sort_order>
+										</pslogin>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</config>

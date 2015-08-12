@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<adminhtml_system_config_edit translate="label">
+        <update handle="editor" />
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/plumrocket/pslogin/pslogin.css</stylesheet></action>
+            <!-- <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/magento.css</name></action>
+            <action method="addCss"><stylesheet>lib/prototype/windows/themes/magento.css</stylesheet></action> -->
+
+            <action method="addItem"><type>skin_js</type><name>js/plumrocket/pslogin/jquery-1.10.2.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/plumrocket/pslogin/jquery-ui.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/plumrocket/pslogin/pslogin.js</name></action>
+            
+            <action method="addJs"><script>tiny_mce/tiny_mce.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/wysiwyg/tiny_mce/setup.js</script></action>
+            <!-- <action method="addJs"><script>mage/adminhtml/variables.js</script></action> -->
+            <!-- <action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action> -->
+            <action method="addItem"><type>skin_js</type><name>js/plumrocket/pslogin/config.js</name></action>
+        </reference>
+    </adminhtml_system_config_edit>
+</layout>

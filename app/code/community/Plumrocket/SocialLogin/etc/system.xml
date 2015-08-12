@@ -1,0 +1,1374 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+		<plumrocket>
+            <label>
+			<![CDATA[
+				<div style="padding-left:22px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NEIxMEIyRkRCOTg1MTFFMkI4Qjg5OEZGNjcwRUQ4MDciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NEIxMEIyRkVCOTg1MTFFMkI4Qjg5OEZGNjcwRUQ4MDciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0QjEwQjJGQkI5ODUxMUUyQjhCODk4RkY2NzBFRDgwNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0QjEwQjJGQ0I5ODUxMUUyQjhCODk4RkY2NzBFRDgwNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoBY2kYAAAJCSURBVHjaJFJNaxVBEOzu2cfDZPflkSgkfsSP5CKBoBeDigeRgIgk4MWDePemqJHgBwgiCEFB9C94CkYMEuK/iF4CXgJ6UCOikBCyb6a7rVmX3WVmt6e6qrr49VppHknYXYMFFcfFzUXmRCROxmzsbPguhVpPqYcjLGSm7oRCIzo1fP/XztrG1grhlJMzBSUTKkyBnYFQDCCs8HRbB6aG539s7nz9ewhgaEa5hZuKqFtMFBvw5JyUcHBqdGFnW4Pb8b031HJHM6+N8Fc0Zky8NbFGVyv2FScmBq9CSNnfnmg/6vOhVKOUHVhqYi7RoAfA7oZ1ujD+kkk6AwPGUva3Th95nARlnBENHmhuB4IEk9QmB6+NVuegcmt7izVA2367MrJn0jOzrASQDoopgr0Gqc6PPYNNuNFPgmViZd/02Cs1VvWknm2HdkhXpWPdS2bRLcE2WILGkk3mQTk5NnS5hwYGl2CRwqPwZNo//3z74cu937sb5Fp1ugz7g3vA2d7s0TeSigTFWYOKJX2w2vKYrk8urq7P/6m/gVfV6ZRl2alKzznws4fnUnKpQcms0zf+9GKtKvdWik/flz6uP9ze3QQdwTBJBqouBnpmZL5qH+S7y232XiIOTguzemc5PJ+p5963VCjAGP6fJWlCZXkLeDR6MYPR2c13jO3tpZZmniE2M04IRcKAPCKYiQrKFtGtRc4YjIApkkmBJGqCR9lG48B1s0JR0dMaAc3posaBPIM8daMsVBpmMLiwHPhI/k+AAQDYqY0eXeLHAgAAAABJRU5ErkJggg==) left 50% no-repeat;">Plumrocket Inc.</div> ]]>
+            </label>
+            <sort_order>101</sort_order>
+        </plumrocket>
+	</tabs>
+    
+    <sections>
+        <pslogin>
+            <label>Twitter &amp; Facebook Login</label>
+            <tab>plumrocket</tab>
+            <sort_order>102</sort_order>
+            <frontend_type>text</frontend_type>
+    		<show_in_default>1</show_in_default>
+    		<show_in_website>1</show_in_website>
+    		<show_in_store>1</show_in_store>
+            
+            <groups>
+                <general>
+                    <label>General</label>
+                    <expanded>1</expanded>
+                    <sort_order>1</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+		                    <frontend_type>text</frontend_type>
+		                    <frontend_model>pslogin/system_config_version</frontend_model>
+		                    <sort_order>1</sort_order>
+		                    <show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+		                </version>
+                        <enable translate="label">
+                            <label>Enable Extension</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <replace_templates translate="label">
+                            <label>Replace Templates</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Set "Yes" to replace your customer login/registration template with this extension template and display the social login buttons automatically. Please see our online documentation if you want to keep your own template and install social buttons manually.</comment>
+                        </replace_templates>
+                        <enable_for_login translate="label">
+                            <label>Display on Login Form</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Display Social Login buttons on magento customer login form</comment>
+                        </enable_for_login>
+                        <enable_for_register translate="label">
+                            <label>Display on Registration Form</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Display Social Login buttons on magento customer registration form</comment>
+                        </enable_for_register>
+                        <validate_ignore translate="label">
+                            <label>Ignore Missing Data from Social Networks</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Many (but not all) social networks share only limited user profile/personal information. If this option is enabled, all required fields in magento that are missing will be pre-filled with temporary data to speed-up the registration process. If this option is set to "No" - the user will be sent to the registration form to enter missing info.</comment>
+                        </validate_ignore>
+                        <enable_photo translate="label">
+                            <label>Display Customer Photo</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Display customer photo from social network in your website header. Please see our online documentation for manual installation instructions if the photo is not shown.</comment>
+                        </enable_photo>
+                        <redirect_for_login translate="label">
+                            <label>Login Success Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pslogin/system_config_source_redirectto</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>User will be redirected to this page after each successful login</comment>
+                        </redirect_for_login>
+                        <redirect_for_login_link translate="label">
+                            <label>Login Custom Success Page URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Please enter the full URL of the page, including the domain name, to which you will be redirecting.</comment>
+                        </redirect_for_login_link>
+                        <redirect_for_register translate="label">
+                            <label>Registration Success Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pslogin/system_config_source_redirectto</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>User will be redirected to this page after successful registration</comment>
+                        </redirect_for_register>
+                        <redirect_for_register_link translate="label">
+                            <label>Registration Custom Success Page URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Please enter the full URL of the page, including the domain name, to which you will be redirecting.</comment>
+                        </redirect_for_register_link>
+                        <sortable_drag_and_drop translate="label">
+                            <label>Social Buttons Sorting</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_sortable</frontend_model>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sortable_drag_and_drop>
+                        <sortable translate="label">
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Visible buttons will be displayed by default. Hidden buttons will be listed under "show more" section in the front-end.</comment>
+                        </sortable>
+                    </fields>
+                </general>
+
+                <share>
+                    <label>Social Share</label>
+                    <expanded>1</expanded>
+                    <sort_order>25</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Display social share popup after successfull user registration</comment>
+                        </enable>
+                        <title translate="label">
+                            <label>Popup Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <description translate="label">
+                            <label>Popup Message</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                <![CDATA[
+                                <button style="" onclick="catalogWysiwygEditor.open(wysiwygEditorPath, 'pslogin_share_description')" class="scalable " type="button"><span>WYSIWYG Editor</span></button>
+                                ]]>
+                            </comment>
+                        </description>
+                        <page translate="label">
+                            <label>Share Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pslogin/system_config_source_shareurl</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Selected page of your store will be shared on social networks.</comment>
+                        </page>
+                        <page_link translate="label">
+                            <label>Custom Share Page URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Please enter the full URL of the page, including the domain name.</comment>
+                        </page_link>
+                    </fields>
+                </share>
+
+                <facebook>
+                    <label>Facebook</label>
+                    <expanded>1</expanded>
+                    <sort_order>50</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>For configuration instructions, please &lt;a href="http://wiki.plumrocket.com/wiki/Magento_Facebook_Login_Configuration" target="_blank"&gt;click here&lt;/a&gt;.</comment>
+                        </enable>
+                        <application_id translate="label">
+                            <label>App ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </application_id>
+                        <secret translate="label">
+                            <label>App Secret</label>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </secret>
+                        <icon_btn translate="label">
+                            <label>Small Icon Button</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">pslogin</upload_dir>
+                            <base_url type="media" scope_info="1">pslogin</base_url>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </icon_btn>
+                        <login_btn translate="label">
+                            <label>Login Button</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">pslogin</upload_dir>
+                            <base_url type="media" scope_info="1">pslogin</base_url>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </login_btn>
+                        <register_btn translate="label">
+                            <label>Registration Button</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">pslogin</upload_dir>
+                            <base_url type="media" scope_info="1">pslogin</base_url>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Optional fields. Default images of buttons are provided with extension.</comment>
+                        </register_btn>
+                        <login_btn_text translate="label">
+                            <label>Login Button Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </login_btn_text>
+                        <register_btn_text translate="label">
+                            <label>Registration Button Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </register_btn_text>
+                    </fields>
+                </facebook>
+
+                <twitter>
+                    <label>Twitter</label>
+                    <expanded>1</expanded>
+                    <sort_order>60</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>For configuration instructions, please &lt;a href="http://wiki.plumrocket.com/wiki/Magento_Twitter_Login_Configuration" target="_blank"&gt;click here&lt;/a&gt;.</comment>
+                        </enable>
+                        <application_id translate="label">
+                            <label>Consumer Key (API Key)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </application_id>
+                        <secret translate="label">
+                            <label>Consumer Secret (API Secret)</label>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </secret>
+                        <callbackurl translate="label">
+                            <label>Callback URL</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_callbackurl</frontend_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <comment>This URL should be used while creating new social login application.</comment>
+                        </callbackurl>
+                        <icon_btn translate="label">
+                            <label>Small Icon Button</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">pslogin</upload_dir>
+                            <base_url type="media" scope_info="1">pslogin</base_url>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </icon_btn>
+                        <login_btn translate="label">
+                            <label>Login Button</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">pslogin</upload_dir>
+                            <base_url type="media" scope_info="1">pslogin</base_url>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </login_btn>
+                        <register_btn translate="label">
+                            <label>Registration Button</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">pslogin</upload_dir>
+                            <base_url type="media" scope_info="1">pslogin</base_url>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Optional fields. Default images of buttons are provided with extension.</comment>
+                        </register_btn>
+                        <login_btn_text translate="label">
+                            <label>Login Button Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </login_btn_text>
+                        <register_btn_text translate="label">
+                            <label>Registration Button Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </register_btn_text>
+                    </fields>
+                </twitter>
+
+                <googleplus>
+                    <label>Google+ / Blogger</label>
+                    <sort_order>70</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </googleplus>
+
+                <linkedin>
+                    <label>LinkedIn</label>
+                    <sort_order>80</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </linkedin>
+
+                <yahoo>
+                    <label>Yahoo!</label>
+                    <sort_order>90</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </yahoo>
+
+                <live>
+                    <label>Live / Hotmail / MSN (Microsoft Account)</label>
+                    <sort_order>100</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </live>
+
+                <amazon>
+                    <label>Amazon</label>
+                    <sort_order>110</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </amazon>
+
+                <aol>
+                    <label>AOL.</label>
+                    <sort_order>120</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </aol>
+
+                <github>
+                    <label>GitHub</label>
+                    <sort_order>130</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </github>
+
+                <instagram>
+                    <label>Instagram</label>
+                    <sort_order>140</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </instagram>
+
+                <foursquare>
+                    <label>Foursquare</label>
+                    <sort_order>150</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </foursquare>
+
+                <dropbox>
+                    <label>Dropbox</label>
+                    <sort_order>160</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </dropbox>
+                
+                <disqus>
+                    <label>Disqus</label>
+                    <sort_order>170</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </disqus>
+
+                <livejournal>
+                    <label>LiveJournal</label>
+                    <sort_order>180</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </livejournal>
+
+                <tumblr>
+                    <label>Tumblr</label>
+                    <sort_order>190</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </tumblr>
+
+                <flickr>
+                    <label>Flickr</label>
+                    <sort_order>200</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </flickr>
+
+                <wordpress>
+                    <label>WordPress</label>
+                    <sort_order>210</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </wordpress>
+
+                <vkontakte>
+                    <label>Vkontakte</label>
+                    <sort_order>220</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </vkontakte>
+
+                <odnoklassniki>
+                    <label>Odnoklassniki</label>
+                    <sort_order>230</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </odnoklassniki>
+
+                <mailru>
+                    <label>Mail.ru</label>
+                    <sort_order>240</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </mailru>
+
+                <yandex>
+                    <label>Yandex</label>
+                    <sort_order>250</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </yandex>
+
+                <paypal>
+                    <label>PayPal</label>
+                    <sort_order>260</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </paypal>
+
+                <salesforce>
+                    <label>Salesforce</label>
+                    <sort_order>270</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </salesforce>
+
+                <stackoverflow>
+                    <label>Stackoverflow (StackExchange)</label>
+                    <sort_order>280</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </stackoverflow>
+
+                <evernote>
+                    <label>Evernote</label>
+                    <sort_order>290</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </evernote>
+
+                <mixi>
+                    <label>Mixi</label>
+                    <sort_order>300</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </mixi>
+
+                <mydigipass>
+                    <label>MYDIGIPASS.COM</label>
+                    <sort_order>310</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </mydigipass>
+
+                <qq>
+                    <label>QQ</label>
+                    <sort_order>320</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </qq>
+
+                <sinaweibo>
+                    <label>Sina Weibo</label>
+                    <sort_order>330</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </sinaweibo>
+
+                <soundcloud>
+                    <label>SoundCloud</label>
+                    <sort_order>350</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </soundcloud>
+
+                <verisign>
+                    <label>Verisign</label>
+                    <sort_order>360</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </verisign>
+
+                <xing>
+                    <label>XING</label>
+                    <sort_order>370</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </xing>
+
+                <kaixin001>
+                    <label>Kaixin001</label>
+                    <sort_order>380</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </kaixin001>
+
+                <persona>
+                    <label>Persona / BrowserID</label>
+                    <sort_order>390</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </persona>
+
+                <bitbucket>
+                    <label>Bitbucket</label>
+                    <sort_order>400</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </bitbucket>
+
+                <skyrock>
+                    <label>Skyrock</label>
+                    <sort_order>410</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </skyrock>
+
+                <renren>
+                    <label>Renren</label>
+                    <sort_order>420</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </renren>
+
+                <bitly>
+                    <label>Bitly</label>
+                    <sort_order>430</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </bitly>
+
+                <boxcom>
+                    <label>Box.com</label>
+                    <sort_order>440</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </boxcom>
+
+                <vimeo>
+                    <label>Vimeo</label>
+                    <sort_order>450</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </vimeo>
+
+                <reddit>
+                    <label>Reddit</label>
+                    <sort_order>460</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </reddit>
+
+                <odesk>
+                    <label>oDesk</label>
+                    <sort_order>470</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </odesk>
+
+                <teamviewer>
+                    <label>TeamViewer</label>
+                    <sort_order>480</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </teamviewer>
+
+                <etsy>
+                    <label>Etsy</label>
+                    <sort_order>490</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </etsy>
+
+                <imgur>
+                    <label>Imgur</label>
+                    <sort_order>500</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </imgur>
+
+                <intuit>
+                    <label>Intuit</label>
+                    <sort_order>510</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </intuit>
+
+                <mailchimp>
+                    <label>MailChimp</label>
+                    <sort_order>520</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </mailchimp>
+
+                <dribbble>
+                    <label>Dribbble</label>
+                    <sort_order>530</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </dribbble>
+
+                <goodreads>
+                    <label>Goodreads</label>
+                    <sort_order>540</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </goodreads>
+
+                <lastfm>
+                    <label>Last.fm</label>
+                    <sort_order>550</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    
+                    <fields>
+                        <version translate="label">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>pslogin/system_config_notinstalled</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                    </fields>
+                </lastfm>
+
+            </groups>
+        </pslogin>
+    </sections>
+</config>
