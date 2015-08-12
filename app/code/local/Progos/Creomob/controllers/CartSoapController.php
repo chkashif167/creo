@@ -216,7 +216,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         try{
             $res = $this->setShipping($sessionId,$qid,$address_data);
             $response['success'] = 1;
-            $response['message'] = 'Product removed successfully';
+            $response['message'] = 'Shipping added successfully';
             $response['res'] = $res;
         } catch(Exception $e){
             $response['error_code'] = $e->getCode();
