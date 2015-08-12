@@ -17,7 +17,7 @@ class Progos_Creomob_SoapController extends Mage_Core_Controller_Front_Action{
         
     
     public function loginAction(){
-        $client = new SoapClient($this->soapURLv1);
+        $client = new SoapClient($this->soapURLv2);
         $token = $client->login($this->API_USER, $this->API_KEY);
         
 //        header('Access-Control-Allow-Origin: *');
