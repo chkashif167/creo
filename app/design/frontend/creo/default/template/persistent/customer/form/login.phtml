@@ -107,7 +107,9 @@
             <input name="context" type="hidden" value="checkout" />
         <?php endif; ?>
     </form>
-	<a class="login-with-fb page-view" rel=facebook-connect>Login with Facebook</a>
+    <div class="login-fb">
+	<?php echo $this->getLayout()->createBlock("pslogin/buttons")->setTemplate("pslogin/customer/form/login/buttons.phtml")->toHtml(); ?>
+    </div>
     <?php echo $this->getChildHtml('form_register');?>
 </div>
 <?php //echo $this->getMessagesBlock()->toHtml() ?>

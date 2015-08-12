@@ -594,3 +594,7 @@ div.fme-filter a.fme_layered_attribute {
     margin-top: 20px;
     text-transform: uppercase;
 }
+
+.login-fb .pslogin-block.pslogin-login {
+	margin:0;
+}

@@ -24,14 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php $check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
-if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
+<?php 
+$check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
+$visitAttempt = $_SERVER['HTTP_REFERER'];
+if((!Mage::getModel('core/cookie')->get('popup-shown')) && ($visitAttempt=='')) { ?>
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
     <div class="modal-content block-subscribe">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-holder">
         <h2><?php echo $this->__('Newsletter') ?></h2>
+       
         <p>Subscribe to the Black & White mailing list to receive updates on new arrivals, special offers and other discount information.</p>
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
           <div class="block-content">
