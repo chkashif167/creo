@@ -137,7 +137,8 @@
 
                     <?php $_product = $this->getProduct(); ?>
                     <?php $buttonTitle = $this->__(' Add to Cart'); ?>
-                    <?php /* if($_product->isSaleable()): ?>
+					<?php 
+					/* if($_product->isSaleable()): ?>
                       <div class="add-to-cart">
                       <?php if(!$_product->isGrouped()): ?>
                       <?php endif; ?>
@@ -152,13 +153,20 @@
 
                       </div>
                       <?php endif; */ ?>
-                    <div class="shipping-area"> 
+                      
+                      <?php // j.work starts ?>
+                      <div class="shipping-area"> 
+                      	<a class="shipping-info" href="#">Shipping Information</a>
+                        <p><?php print $_product->getShippingDetails(); ?> </p>
+                      </div>                      
+<!--                    <div class="shipping-area"> 
                         <?php
-                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
-                        $options = array();
+//                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
+//                        $options = array();
                         ?>
                         <?php //echo "<pre>";print_r($methods);?>
                         <?php
+						/*
                         foreach ($methods as $_ccode => $_carrier) {
                             $_methodOptions = array();
                             if ($_methods = $_carrier->getAllowedMethods()) {
@@ -173,10 +181,14 @@
                                 echo "</ul>";
                             }
                         }
+						*/
                         ?>
                         <?php //Ghost code ends?>
                     </div>
-                    <!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
+-->                    
+                      <?php // j.work ends ?>
+                      
+					<!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
                            <ul>
                              <li><a href="#">Shipping within next day</a></li>
                              <li class="active"><a href="#">Shipping within 2 days</a></li>
