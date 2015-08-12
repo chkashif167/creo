@@ -1,0 +1,95 @@
+<?php
+/**
+ * Acumen for Magento
+ * http://gravitydept.com/to/acumen-magento
+ *
+ * @author     Brendan Falkowski
+ * @package    gravdept_acumen
+ * @copyright  Copyright 2012 Gravity Department http://gravitydept.com
+ * @license    All rights reserved.
+ * @version    1.3.4
+ */
+?>
+<?php
+/**
+ * Customer login form template
+ *
+ * @see app/design/frontend/base/default/template/customer/form/login.phtml
+ */
+/** @var $this Mage_Customer_Block_Form_Login */
+?>
+
+<div class="grid-block">
+	<h1><?php echo $this->__('Sign In') ?></h1>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+</div>
+
+<div id="account-login" class="grid">
+	<div class="grid_6 suffix_2">
+	    <form id="login-form" class="scaffold-form" action="<?php echo $this->getPostActionUrl() ?>" method="post">
+	    	<ul class="form-list">
+	    		<li>
+	    			<label for="email" class="required"><em>*</em><?php echo $this->__('Email') ?></label>
+	    			
+	    			<div class="input-box">
+	    			    <input type="email" id="email" name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" class="input-text required-entry validate-email" title="<?php echo $this->__('Email Address') ?>" />
+	    			</div>
+	    		</li>
+	    		
+	    		<li>
+	    			<label for="pass" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+	    			
+	    			<div class="input-box">
+	    			    <input type="password" id="pass" name="login[password]" class="input-text required-entry validate-password" title="<?php echo $this->__('Password') ?>" />
+	    			</div>
+	    		</li>
+	    		
+	    		<?php echo $this->getChildHtml('form.additional.info'); ?>
+	    		<?php echo $this->getChildHtml('persistent.remember.me'); ?>
+	    	</ul>
+	    	
+	    	<?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
+	    	
+	    	<div class="buttons-set">
+	    	    <button type="submit" class="button"><?php echo $this->__('Sign In') ?></button>
+	    	    <a class="alt-action" href="<?php echo $this->getForgotPasswordUrl() ?>"><?php echo $this->__('Forgot your password?') ?></a>
+	    	</div>
+	    	
+	    	<?php if (Mage::helper('checkout')->isContextCheckout()): ?>
+	    	    <input name="context" type="hidden" value="checkout" />
+	    	<?php endif; ?>
+	    </form>
+	    
+	    <?php if(Mage::helper('pslogin')->modulePositionEnabled('login') && Mage::helper('pslogin')->hasButtons()) : ?>
+            <div class="pslogin-spacer pslogin-clearfix"> 
+                <table>
+                    <tr>
+                        <td><div class="pslogin-border"></div></td>
+                        <td class="pslogin-bordertext w25"><?php echo $this->__('OR'); ?></td>
+                        <td><div class="pslogin-border"></div></td>
+                    </tr>
+                </table>
+            </div>
+            <?php echo $this->getChildHtml('pslogin_buttons'); ?>
+        <?php endif; ?>
+	    
+	    <script type="text/javascript">
+	    	//<![CDATA[
+	    		var dataForm = new VarienForm('login-form', true);
+	    	//]]>
+	    </script>
+	</div>
+    
+    <div class="grid_4 std">
+    	<h2><?php echo $this->__('Register For An Account') ?></h2>
+    	
+    	<ul>
+    		<li><?php echo $this->__('Checkout faster') ?></li>
+    		<li><?php echo $this->__('Store multiple shipping addresses') ?></li>
+    		<li><?php echo $this->__('View and track orders') ?></li>
+    		<li><?php echo $this->__('Save items to wishlist') ?></li>
+    	</ul>
+    	
+    	<a class="button" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><?php echo $this->__('Register') ?></a>
+    </div>
+</div>

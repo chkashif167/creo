@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<Plumrocket_Base>
+			<version>1.0.6</version>
+		</Plumrocket_Base>
+	</modules>
+
+	<global>
+		<helpers>
+			<plumbase>
+				<class>Plumrocket_Base_Helper</class>
+			</plumbase>
+		</helpers>
+		<blocks>
+			<plumbase>
+				<class>Plumrocket_Base_Block</class>
+			</plumbase>
+		</blocks>
+		<models>
+			<plumbase>
+				<class>Plumrocket_Base_Model</class>
+				<resourceModel>plumbase_mysql4</resourceModel>
+			</plumbase>
+			<plumbase_mysql4>
+                <class>Plumrocket_Base_Model_Mysql4</class>
+                <entities>
+                    <product>
+                        <table>plumbase_product</table>
+                    </product>
+                </entities>
+            </plumbase_mysql4>
+		</models>
+		<resources>
+            <base_setup>
+                <setup>
+                    <module>Plumrocket_Base</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </base_setup>
+        </resources>
+	</global>
+
+	<adminhtml>
+		<events>
+			<controller_action_predispatch>
+				<observers>
+					<plumrocket_base_notitications>
+						<type>singleton</type>
+						<class>plumbase/feed</class>
+						<method>checkUpdate</method>
+					</plumrocket_base_notitications>
+					<plumrocket_base_permissionsCheck>
+						<type>singleton</type>
+                        <class>plumbase/observer</class>
+                        <method>permissionsCheck</method>
+                    </plumrocket_base_permissionsCheck>
+				</observers>
+			</controller_action_predispatch>
+
+			<controller_action_postdispatch>
+				<observers>
+					<plumrocket_base_reindex>
+						<type>singleton</type>
+						<class>plumbase/product</class>
+						<method>reindex</method>
+					</plumrocket_base_reindex>
+				</observers>
+			</controller_action_postdispatch>
+
+			<controller_action_predispatch_adminhtml_system_config_edit>
+                <observers>
+                    <plumbase_controller_action_predispatch_adminhtml_system_config_edit>
+                        <class>plumbase/observer</class>
+                        <method>systemConfigLoad</method>
+                    </plumbase_controller_action_predispatch_adminhtml_system_config_edit>
+                </observers>
+            </controller_action_predispatch_adminhtml_system_config_edit>
+
+            <controller_action_predispatch_adminhtml_system_config_save>
+                <observers>
+                    <plumbase_controller_action_predispatch_adminhtml_system_config_save>
+                        <class>plumbase/observer</class>
+                        <method>systemConfigBeforeSave</method>
+                    </plumbase_controller_action_predispatch_adminhtml_system_config_save>
+                </observers>
+            </controller_action_predispatch_adminhtml_system_config_save>
+
+            <controller_action_postdispatch_adminhtml_system_config_save>
+                <observers>
+                    <plumbase_controller_action_postdispatch_adminhtml_system_config_save>
+                        <class>plumbase/observer</class>
+                        <method>systemConfigSave</method>
+                    </plumbase_controller_action_postdispatch_adminhtml_system_config_save>
+                </observers>
+            </controller_action_postdispatch_adminhtml_system_config_save>
+		</events>
+	</adminhtml>
+
+	<default>
+		<plumbase>
+			<notifications>
+				<feed_url>store.plumrocket.com/notificationmanager/feed/</feed_url>
+				<popup_url>widgets.magentocommerce.com/notificationPopup</popup_url>
+				<severity_icons_url>widgets.magentocommerce.com/%s/%s.gif</severity_icons_url>
+				<use_https>1</use_https>
+				<frequency>1</frequency>
+			</notifications>
+		</plumbase>
+	</default>
+</config> 

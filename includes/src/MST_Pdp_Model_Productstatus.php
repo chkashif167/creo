@@ -35,6 +35,15 @@ class MST_Pdp_Model_Productstatus extends Mage_Core_Model_Abstract
 			$note = array();
 			if ($data['note']) {
 				$note = json_decode($data['note'], true);
+                if(!isset($note['default_color']) || (isset($note['default_color']) && !$note['default_color'])) {
+                    $note['default_color'] = Mage::getStoreConfig("pdp/design/default_object_color");
+                }
+                if(!isset($note['default_fontsize']) || (isset($note['default_fontsize']) && !$note['default_fontsize'])) {
+                    $note['default_fontsize'] = Mage::getStoreConfig("pdp/design/default_object_fontsize");
+                }
+                if(!isset($note['default_fontheight']) || (isset($note['default_fontheight']) && !$note['default_fontheight'])) {
+                    $note['default_fontheight'] = Mage::getStoreConfig("pdp/design/default_object_fontheight");
+                }
 			}
 			//Check product status more details 
 			//--Check product has side to design or not--
