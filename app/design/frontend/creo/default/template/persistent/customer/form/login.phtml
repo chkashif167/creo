@@ -108,7 +108,9 @@
         <?php endif; ?>
     </form>
     <div class="login-fb">
-	<?php echo $this->getLayout()->createBlock("pslogin/buttons")->setTemplate("pslogin/customer/form/login/buttons.phtml")->toHtml(); ?>
+    <a href="#" onclick="login();return false;" class="fb_button fb_button_medium">
+                        <span class="fb_button_text">Login with Facebook</span>
+                    </a>
     </div>
     <?php echo $this->getChildHtml('form_register');?>
 </div>

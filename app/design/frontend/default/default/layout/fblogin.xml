@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/magestore/fblogin.css</stylesheet></action>
+		</reference>
+    </default>
+	<customer_account_login translate="label">
+        <reference name="content">
+            <block type="fblogin/fblogin" name="fblogin" template="fblogin/fblogin.phtml" />
+        </reference>
+    </customer_account_login>
+	
+	<fblogin_index_index>
+		<reference name="content">
+			<block type="fblogin/fblogin" name="bt_fblogin" template="fblogin/bt_fblogin.phtml" />
+		</reference>
+	</fblogin_index_index>
+</layout>

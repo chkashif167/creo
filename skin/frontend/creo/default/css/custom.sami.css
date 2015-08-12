@@ -598,3 +598,19 @@ div.fme-filter a.fme_layered_attribute {
 .login-fb .pslogin-block.pslogin-login {
 	margin:0;
 }
+
+.account-login .fb-login h2 {
+	background:none;
+}
+
+.login-fb {
+	margin-top:20px;
+}
+
+.login-fb .fb_button.fb_button_medium {
+	padding:7px !important;
+	display:block; 
+	background:#3C5A98;
+	text-decoration:none; color:#fff;
+	text-align:center;
+}
