@@ -200,9 +200,13 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         die;
     }
     
-    public function setShipping($sessionId,$qid,$address_array){
+    public function setCustomerAddress($sessionId,$qid,$address_array){
         $proxy = new SoapClient($this->soapURLv2);
-        return $proxy->shoppingCartCustomerAddresses($sessionId, $qid, array($address_array)); 
+        $shipping = $address_array;
+        $shipping['mode']='shipping';
+        $billing = $address_array;
+        $billing['mode']='billing';
+        return $proxy->shoppingCartCustomerAddresses($sessionId, $qid, array($shipping,$billing)); 
     }
     
     public function setShippingAddressAction(){
@@ -214,7 +218,9 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         
         $response = array('success'=>0,'message'=>'','res'=>null);
         try{
-            $res = $this->setShipping($sessionId,$qid,$address_data);
+            $res = $this->setCustomerAddress($sessionId,$qid,$address_data);
+            
+            
             $response['success'] = 1;
             $response['message'] = 'Shipping added successfully';
             $response['res'] = $res;
