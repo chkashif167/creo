@@ -73,3 +73,25 @@
         
        <?php // echo $this->getCopyright() ?>
 
+<script type="text/javascript">
+var hdata = jQuery(".messages").text();
+var msgType = jQuery(".messages>li").attr("class");
+if(msgType=='error-msg'){
+	var msgTitle = 'Error';	
+}else{
+	var msgTitle = 'Success';	
+}
+			
+jQuery( document ).ready( function($){
+	if(hdata){
+		jQuery.confirm({
+			title: msgTitle,
+			confirmButtonClass: 'btn-info',
+			content: hdata, // You can also LOAD the html data using LOAD FROM URL feature,
+			
+		});
+	}
+});
+	//autoClose: 'cancel|6000',
+	jQuery(".messages").hide();
+</script>
