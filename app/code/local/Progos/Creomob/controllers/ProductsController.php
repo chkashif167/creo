@@ -11,23 +11,26 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         
         if($categoryId){
         $products = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection()
-                ->addAttributeToSelect('name')
-                ->addAttributeToSelect('thumbnail')
-                ->addAttributeToSelect('small_image')
-                ->addAttributeToSelect('image')
-                ->addAttributeToSelect('price')
-                ->addAttributeToSelect('qty')
-                ->addAttributeToSelect('status')
+//                ->addAttributeToSelect('name')
+//                ->addAttributeToSelect('thumbnail')
+//                ->addAttributeToSelect('small_image')
+//                ->addAttributeToSelect('image')
+//                ->addAttributeToSelect('price')
+//                ->addAttributeToSelect('qty')
+//                ->addAttributeToSelect('status')
+                ->addAttributeToFilter("visibility",array("gt"=>1))
+                ->addAttributeToSelect('*')
                 ->load();
         } else{
             $products = Mage::getModel('catalog/product')->getCollection()
+                        ->addAttributeToFilter("visibility",array("gt"=>1))
                         ->addAttributeToSelect('*');
         }
         
 
         
         $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
-        foreach ($products as $p2) {
+        foreach ($products as $p2) {//print_r($p2);echo "<hr>";
             //$p2 = Mage::getModel('catalog/product')->load($p->getId());
             //$img = (string)Mage::helper('catalog/image')->init($p2, 'small_image')->resize(200,200);
             $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p2);
