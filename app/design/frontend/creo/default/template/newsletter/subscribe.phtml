@@ -23,11 +23,24 @@
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+ 
+ $visitCount=0;
+ $visitCount = $_COOKIE['siteVisits'];
+ if(!isset($_COOKIE['siteVisits']) || $_COOKIE['siteVisits']=='') {
+    setcookie('siteVisits', 0,time() + (86400 * 30),'/'); // 86400 = 1 day
+} else {
+	//unset($_COOKIE['siteVisits']);
+	//setcookie('siteVisits', '', time() - 3600);
+    setcookie('siteVisits', $visitCount+1,time() + (86400 * 30),'/'); // 86400 = 1 day
+}
+
 ?>
+
 <?php 
 $check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
 $visitAttempt = $_SERVER['HTTP_REFERER'];
-if((!Mage::getModel('core/cookie')->get('popup-shown')) && ($visitAttempt=='')) { ?>
+if((!Mage::getModel('core/cookie')->get('popup-shown')) && ($visitCount=='0')) { ?>
+
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
     <div class="modal-content block-subscribe">
@@ -59,6 +72,7 @@ if((!Mage::getModel('core/cookie')->get('popup-shown')) && ($visitAttempt=='')) 
     </div>
   </div>
 </div>
+
 <?php } ?>
 
 
