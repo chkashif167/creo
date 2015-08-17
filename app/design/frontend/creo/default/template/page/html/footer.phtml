@@ -74,7 +74,8 @@
        <?php // echo $this->getCopyright() ?>
 
 <script type="text/javascript">
-var hdata = jQuery(".messages").text();
+var hdata ='';
+var hdata = jQuery(".messages li:first").text();
 var msgType = jQuery(".messages>li").attr("class");
 if(msgType=='error-msg'){
 	var msgTitle = 'Error';	
@@ -92,6 +93,18 @@ jQuery( document ).ready( function($){
 		});
 	}
 });
-	//autoClose: 'cancel|6000',
+	autoClose: 'cancel|6000',
 	jQuery(".messages").hide();
+	
+	function removeProd(){
+		jQuery.confirm({
+			title: msgTitle,
+			confirmButtonClass: 'btn-info',
+			content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
+			    confirm: function(){
+					return true;
+				}
+			
+		});
+		}
 </script>
