@@ -41,7 +41,7 @@ if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
             <div class="actions">
               <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button newslettersubscribe "><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
             </div>
-            <div class="row dontshowagain">
+            <div class="row dontshowagain" onclick="checkcookie()">
               <input type="checkbox" value="" name="checkbox1" id="checkbox1">
               <label for="checkbox1">Don’t show this popup again</label>
             </div>
@@ -74,6 +74,11 @@ if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
     //<![CDATA[
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail1');
     //]]>
+    function checkcookie(){
+       jQuery(".modal-backdrop").fadeOut().removeClass("active");
+        jQuery(".modal_newsletter ").fadeOut().removeClass("active");
+        <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/'); ?>
+    }
     </script>
     
     
