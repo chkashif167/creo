@@ -4053,6 +4053,26 @@ p.availability{margin: 0;}
     right: 5px; 
 }
 #configurable_swatch_size li.selected{position: relative;}
+.hidden-popups .modal-content{
+	transform: skewY(-5deg) !important;
+	-webkit-transform: skewY(-5deg) !important;
+}
+.popup-text01 {
+    color: #222;
+    font: 12px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+}
+.hidden-popups .modal-header {
+    border: medium none;
+    padding: 30px 10px 0;
+}
+
+
+
+
+
+
+
+
 
 
 
