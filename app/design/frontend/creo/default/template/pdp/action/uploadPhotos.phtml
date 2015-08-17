@@ -87,13 +87,12 @@
                             <span class="message"></span>
                         </div>
 					</div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-12">
                         <div class="file-upload">
-                            <span class="btn btn-md btn-primary btn-file">
-                                <i class="glyphicon glyphicon-file "></i>
+                            <span class="btn-file">
                                 <?php echo $this->__('Browse File') ?> <input type="file" accept="<?php echo $helper->getFileAccept() ?>" name="uploads[]" id="fileToUpload" class="upload_photo" />
                             </span>
-                            <button id="upload_custom_img_btn" class="btn btn-success" type="button" name="upload_custom_img_btn"><?php echo $this->__('Upload') ?></button>
+                            <button id="upload_custom_img_btn" class="btn-upload" type="button" name="upload_custom_img_btn"><?php echo $this->__('Upload') ?></button>
                         </div>
                     </div>
                     <div class="col-sm-9">

@@ -1019,7 +1019,3 @@
 .page-header.checkout-form-headings > h1 {
 	margin-top:0;
 }
-
-.jconfirm white, .jconfirm-box-container.span6.offset3.col-md-5.col-md-offset-3 {
-    display: none;
-}
