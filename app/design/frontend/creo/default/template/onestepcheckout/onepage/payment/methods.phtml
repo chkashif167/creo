@@ -14,8 +14,10 @@
 <div class="clearfix"> </div>
 <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
 <?php echo $html; ?>
-<?php endif; ?>
 <div class="option-alternate"><strong>OR</strong></div>
+<?php endif; ?>
+
+
 <?php endforeach; ?>
 <script type="text/javascript">
 //<![CDATA[

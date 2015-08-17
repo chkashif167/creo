@@ -50,7 +50,7 @@ class MST_Pdp_Block_Adminhtml_Shapecate_Edit_Tab_Artwork extends Mage_Adminhtml_
 			'align'             => 'center',
 			'index'             => 'id'
 		));
-		$this->addColumn('id', array(
+		$this->addColumn('shape_id', array(
 			'header'    => Mage::helper('pdp')->__('ID'),
 			'width'     => '50px',
 			'index'     => 'id',

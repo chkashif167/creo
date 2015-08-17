@@ -43,11 +43,21 @@ class MST_Pdp_Block_Pdp extends Mage_Core_Block_Template
 			$params = Mage::app()->getRequest()->getParams();
 			if (isset($params['product-id'])) {
 				return $params['product-id'];
-			}
+            } else {
+                //Convert product from iframe to product page
+                $product = Mage::registry('current_product');
+                if($product->getId()) {
+                    return $product->getId();
+                }
+            }
 		}
 		return null;
 	}
 	public function getProductInfo() {
+        $product = Mage::registry('current_product');
+        if($product) {
+            return $product->getData();
+        }
 		return Mage::getModel("catalog/product")->load($this->getCurrentProductId())->getData();
 	}
 	public function getFacebookInfo () {

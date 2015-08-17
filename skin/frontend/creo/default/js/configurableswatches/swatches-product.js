@@ -801,3 +801,10 @@ Product.ConfigurableSwatches.prototype = {
         }
     }
 }
+
+
+//Custom default selection code by Imran Zahoor
+jQuery(document).ready(function(){
+    jQuery('#configurable_swatch_color').find('li:first a .swatch-label').trigger('click');
+    jQuery('#configurable_swatch_size').find('li:not(.not-available):first a .swatch-label').trigger('click');
+});

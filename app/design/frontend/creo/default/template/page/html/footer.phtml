@@ -31,7 +31,8 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="right-area">
-                            <?php echo $this->getChildHtml('newsletter'); ?>
+                            <?php // echo $this->getChildHtml('newsletter'); ?>
+                            <?php echo $this->getChildHtml() ?>
 <!--								<form class="footer-form" action="#">
 									<span class="title">Join us for 20% off your first order</span>
 									<div class="form-row">
@@ -69,6 +70,28 @@
 				</footer>
 
 
-        <?php // echo $this->getChildHtml() ?>
+        
        <?php // echo $this->getCopyright() ?>
 
+<script type="text/javascript">
+var hdata = jQuery(".messages").text();
+var msgType = jQuery(".messages>li").attr("class");
+if(msgType=='error-msg'){
+	var msgTitle = 'Error';	
+}else{
+	var msgTitle = 'Success';	
+}
+			
+jQuery( document ).ready( function($){
+	if(hdata){
+		jQuery.confirm({
+			title: msgTitle,
+			confirmButtonClass: 'btn-info',
+			content: hdata, // You can also LOAD the html data using LOAD FROM URL feature,
+			
+		});
+	}
+});
+	//autoClose: 'cancel|6000',
+	jQuery(".messages").hide();
+</script>

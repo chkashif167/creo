@@ -71,7 +71,7 @@
             <?php endif; ?>
         <?php endif; ?>
     </td>
-    <td width="10%"><a href="#" class="cancel">x</a></td>
+    <td width="10%"><a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('') ?>" class="btn-remove btn-remove2 cancel"><?php echo $this->__('x') ?></a></td>
     <?php endif; ?>
     <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-right">

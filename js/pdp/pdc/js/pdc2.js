@@ -74,6 +74,8 @@ var m = $('#url_site').val().replace('index.php/',''),
                 $(this).attr({'side_img':img,'overlay':img_over}).find('img').attr('src',pdcMediaUrl + img);
                 //For some side using color as background
                 $(this).attr('side_color', $('.active[pdc-color]').attr('color'));
+				$("#temp_side_" + tab_index + " .pdc-thumbnail .background-img").attr('src', pdcMediaUrl + img);
+				$("#temp_side_" + tab_index + " .pdc-thumbnail .overlay-img").attr('src', pdcMediaUrl + img_over);
             })
             var img_act = pdcMediaUrl + $('.active[pdc-side]').attr('side_img');
             //Set overlay image
@@ -129,28 +131,29 @@ var m = $('#url_site').val().replace('index.php/',''),
     })
     $('[pdc-text]').click(function(){
         $(this).toggleClass('active');
-        var text_deco = font_weight = font_style = '';
+        var text_deco = font_style = '', 
+            font_weight = 'Normal';
         $('.active[pdc-text]').each(function(){
             var textstyle = $(this).attr('pdc-text');
                 if(textstyle == 'underline'){
-                    text_deco += ' underline ';
+                    text_deco += 'underline';
                 }
                 if(textstyle == 'overline'){
-                    text_deco += 'overline ';
+                    text_deco += ' overline';
                 }
                 if(textstyle == 'line-through'){
-                    text_deco += 'line-through ';
+                    text_deco += ' line-through';
                 }
                 if(textstyle == 'bold'){
-                    font_weight += 'bold';
+                    font_weight = 'bold';
                 }
                 if(textstyle == 'italic'){
-                    font_style += 'italic';
+                    font_style = 'italic';
                 }
-            CanvasEvents.edit_text('fontStyle',font_style);
-            CanvasEvents.edit_text('fontWeight',font_weight);
-            CanvasEvents.edit_text('textDecoration',text_deco);
         });
+        CanvasEvents.edit_text('fontStyle',font_style);
+        CanvasEvents.edit_text('fontWeight',font_weight);
+        CanvasEvents.edit_text('textDecoration',text_deco);
     })
     
     $('#icon_list, #shape_list ,#search_shape_list, #lists_img_upload, #photos_album, #pdc_instagram_list_img').on('click', 'img', function () {
@@ -160,6 +163,7 @@ var m = $('#url_site').val().replace('index.php/',''),
             icolor = url.split('/'),
             name = $(this).attr('image_name'),
             id = $(this).attr('id'),
+            zoom = canvas.getZoom(),
             color_type = $(this).attr('color_type'),
             color = PDC_setting.color_default;
             himg = $(this).height();
@@ -178,6 +182,7 @@ var m = $('#url_site').val().replace('index.php/',''),
             price = pdc_product_config.clipart_price;
         }
         $('.tab_content:not(#pdc_rotate_item)').slideUp(200);
+        $('.modal .close').click();
         //$('#select_image').slideToggle(600);
         if ((type_img[type_img.length - 1] != 'svg')) {
             fabric.Image.fromURL(url, function (image) {
@@ -188,8 +193,8 @@ var m = $('#url_site').val().replace('index.php/',''),
                     angle: 0,
                     price: price,
                     id: id,
-                    scaleY: canvas.width / image.width / 2,
-                    scaleX: canvas.width / image.width / 2,
+                    scaleY: (canvas.width / image.width / 2)/zoom,
+                    scaleX: (canvas.width / image.width / 2)/zoom,
                     isrc: url,
                     tcolor: color_type,
                     icolor: icolor[icolor.length - 1]
@@ -241,9 +246,9 @@ var m = $('#url_site').val().replace('index.php/',''),
     })
 //////////////////////////////////////////////Z-index////////////////////////////////////////////////////////////////////////////
     $('html').on('click', function (e) {
-        var target = $('#pdc_info_item, #select_image, #add_text, #canvas_area, #textTab, #pdc_block_layer, #pdc_opacity_item, .color_fill_tool, .tools-tab,  .canvas-container,#pdc_toolbox, .edit-tools , #textLibrary, #add_text, #edit_item_wrap').has(e.target).length;
+        var target = $('#pdc_info_item, #select_image,#photo-btn, #text-btn, #canvas_area, #textTab, #pdc_block_layer, #pdc_opacity_item, .color_fill_tool,  .canvas-container,#pdc_toolbox, .edit-tools , #textLibrary, #add_text, #edit_item_wrap').has(e.target).length;
         if (target === 0) {
-            //CanvasEvents.clearSelected();
+            CanvasEvents.clearSelected();
         }
         var font_target = $('#font_menu_wrap').has(e.target).length;
         if (font_target===0){
@@ -260,20 +265,28 @@ var m = $('#url_site').val().replace('index.php/',''),
     });
     $(window).on('keydown', function (e) {
         var key = e.keyCode || e.which;
+        var hasFocus = $('[pdc-data="text"]').is(':focus');
         if (key == 37) { // left arrow
-            CanvasEvents.moveObject('left');
+            if(!hasFocus){
+                CanvasEvents.moveObject('left');
+            }
             return false;
         } else if (key == 38) { // up arrow
-            CanvasEvents.moveObject('up');
+            if(!hasFocus){
+                CanvasEvents.moveObject('up');
+            }
             return false;
         } else if (key == 39) { // right arrow
-            CanvasEvents.moveObject('right');
+            if(!hasFocus){
+                CanvasEvents.moveObject('right');
+            }
             return false;
         } else if (key == 40) { // down arrow
-            CanvasEvents.moveObject('down');
+            if(!hasFocus){
+                CanvasEvents.moveObject('down');
+            }
             return false;
         } else if (key == 46) { // delete key
-            var hasFocus = $('[pdc-data="text"]').is(':focus');
             if(!hasFocus){
                 CanvasEvents.removeObject();
                 PDC_layer.load_layer();

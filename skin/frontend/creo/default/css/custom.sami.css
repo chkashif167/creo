@@ -16,11 +16,11 @@
 .checkout-form-headings h1 .skewed {
 	background: #000;
 	color: #fff;
-	font-size: 17px;
+	font-size: 15px;
 	transform: skewX(-18deg);
 	display: inline-block;
 	min-width: 214px;
-    padding: 6px 17px;	
+    padding: 4px 17px;	
 }
 
 .checkout-form-headings h1 .re-skewed {
@@ -73,8 +73,9 @@
 	width: 30px;
 	height: 32px;
 	position: absolute;
-	right: 15px;
-    top: 21px;
+	right: 0;
+	top: -1px;
+    bottom: 1px !important;
     z-index: 0;
     pointer-events: none;
 }
@@ -107,7 +108,7 @@
 
 .select-paymt-methd {
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 16px;
 	margin-top: 10px;
 }
 
@@ -289,7 +290,7 @@ a.alignleft.checkout-items {
 	width: 99%
 }
 
-.validation-advice { color: red; font-size: 10px;}
+.validation-advice { color: red; font-size: 10px; float: left;}
 .onestepcheckout-index-success .button {
     background: black none repeat scroll 0 0;
     border: medium none;
@@ -335,6 +336,8 @@ a.alignleft.checkout-items {
 
 .form-holder.login-sec.forgot-sec {
 	padding-top:0;
+	padding-left:0;
+	padding-right:0;
 } 
 
 .signup-form button[type="submit"] {
@@ -351,7 +354,7 @@ a.alignleft.checkout-items {
 }
 
 #login-form .submit-holder.btn-holder {
-	margin-top:58px;
+	margin-top:40px;
 }
 
 .form-holder.login-sec {
@@ -383,7 +386,231 @@ a.alignleft.checkout-items {
 	width:5%;
 }
 
+ul.form-list.newsltr-manage {
+	padding-left:0;
+	padding-top:50px;
+}
+
+.form-list.newsltr-manage input {
+	margin-right:7px;
+}
+
+.form-list.newsltr-manage label {
+	padding-top:2px;
+}
+
+.newsletter-sbmt button {
+	background: #ef4f61;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Roboto Condensed",Helvetica,Arial,sans-serif;
+    height: 32px;
+	font-weight:bold;
+	font-size:20px;
+    margin: 0;
+    padding: 10px 55px;
+	line-height:0;
+}
+
+.newsletter-sbmt {
+	padding-bottom:300px;
+}
+
+.marg-right {
+	margin-right:4px;
+}
+
+form select#country {
+	bottom:15px;
+	height:auto;
+	border:1px solid #ddd;
+}
+
+.scaffold-form .customer-name .row {
+	margin-left:0;
+	margin-right:0;
+}
+
+#advice-validate-cc-type-ccsave_cc_number, #advice-required-entry-ccsave_cc_cid, #advice-required-entry-ccsave_expiration_yr, #advice-required-entry-ccsave_expiration {
+	position: absolute;
+	bottom:-17px;
+}
+
+#advice-required-entry-ccsave_cc_cid {
+	right:3px;
+}
+
+#advice-required-entry-ccsave_expiration_yr {
+	right:-28px;
+}
+
+.validation-advice {
+    color: #d01901 !important;
+    font-size: 11px !important;
+}
+
+#checkout-review-table tr {
+	width:32%;
+	display:inline-block;
+}
+
+#checkout-review-table tr td.last:after {
+	border-right: 2px solid #f3f3f3;
+    bottom: 12px;
+    content: "";
+    right: 0;
+    position: absolute;
+    top: 12px;
+}
+
+#checkout-review-table tr td.a-center {
+	padding:0 10px !important;
+}
+
+.click2print {
+	text-decoration:underline;
+}
+
+.success-continue {
+	margin-bottom:200px;
+}
+
+.footer-form input[type="text"], .footer-form input.email {
+	width:76% !important;
+}
+
+.subscribe-form.footer-form .button.newslettersubscribe {
+	right:16px !important;
+}
+
+#footer .right-area {
+	width:240px !important;
+}
+
+.product-details.col-xs-7 {
+	padding:0
+}
+
+.my-wishlist .product-area {
+	margin-bottom:20px;
+}
+
+img.alignleft.img-responsive {
+	margin-top:0;
+	margin-right:0;
+}
+
+.tab-content2 .col-xs-4 .cart-area {
+	float: none;
+    margin: 0;
+    width: auto;
+}
+
+.tab-content2 .product-area .col-xs-4 {
+	margin-right:0;
+	padding-right:0;
+}
+
+/*.main,.col-main {min-height: 290px;}*/
+.col-main{padding: 0 0 30px;}
+div.fme-filter a.fme_layered_attribute {
+	padding-left:10px !important;
+}
+
+.styles-lable {
+	position:relative;
+	right:160px;
+	top:5px;
+	text-transform:uppercase;
+}
+
+#fme_layered_gender {
+	margin-right:30px
+}
+
+.shirts-category .col.col-lg-3.col-md-3.col-sm-6.col-xs-6 , .dark-box .col.col-lg-3.col-md-3.col-sm-6.col-xs-6 {
+	padding-left:7px;
+	padding-right:7px;
+}
+.row.dark-box,
+.row.shirts-category {
+    margin: 0 -7px;
+}
 
 
 
 
+.shirts-category .col:last-child h2 {
+	margin: 3px 7px;
+}
+
+.breadcrumb1 {
+	margin-top:-30px;
+}
+
+#fme_layered_styles li {
+    line-height: 10px;
+    width: 33px;
+}
+
+#gender-23 {
+	display:none !important
+}
+
+.fme_layered_attribute span {
+	display:none
+}
+
+#styles-22 {background:url(../images/round.png) no-repeat !important;}
+#styles-22.fme_layered_attribute_selected_largevshape,
+#styles-22:hover {background:url(../images/round-hover.png) no-repeat !important;}
+
+#styles-21 {background:url(../images/largevshape.png) no-repeat !important;}
+#styles-21.fme_layered_attribute_selected_round,
+#styles-21:hover {background:url(../images/largevshape-hover.png) no-repeat !important;}
+
+#styles-20 {background:url(../images/vshape.png) no-repeat !important;}
+#styles-20.fme_layered_attribute_selected_vshape,
+#styles-20:hover {background:url(../images/vshape-hover.png) no-repeat !important;}
+#fme_layered_styles > ol {padding: 0 0 0 56px;}
+.col.col-lg-12.col-md-12.col-sm-12.col-xs-12 > h2 {text-transform: uppercase;}
+/*****************************  product detail page  *********************************/
+
+.product-detail .fancy-product-price{display:none;}
+.fancy-product-price { float: left; text-align: left; width: 100%;}
+
+.pdp_side_item_content.active {
+	display:none;
+}
+
+.login-with-fb {
+	cursor:pointer;
+}
+
+.login-with-fb.page-view {
+	display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.login-fb .pslogin-block.pslogin-login {
+	margin:0;
+}
+
+.account-login .fb-login h2 {
+	background:none;
+}
+
+.login-fb {
+	margin-top:20px;
+}
+
+.login-fb .fb_button.fb_button_medium {
+	padding:7px !important;
+	display:block; 
+	background:#3C5A98;
+	text-decoration:none; color:#fff;
+	text-align:center;
+}

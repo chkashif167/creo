@@ -9,7 +9,7 @@ class AjaxNewsletter_Ajaxnewsletter_IndexController extends Mage_Core_Controller
     }
     public function newAction()
     {
-     
+    
     if ($_REQUEST['email']) {
             $session            = Mage::getSingleton('core/session');
             $customerSession    = Mage::getSingleton('customer/session');
@@ -43,6 +43,7 @@ class AjaxNewsletter_Ajaxnewsletter_IndexController extends Mage_Core_Controller
                 }
                 else {
                    echo "Thank you for your subscription.&&1";
+            }
                    return;
                 }
             }

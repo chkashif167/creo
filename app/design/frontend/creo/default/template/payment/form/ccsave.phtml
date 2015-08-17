@@ -31,7 +31,7 @@
     <div class="col-sm-4">
       <div class="credit-card clearfix">
         <div class="card-sctn-black"></div>
-        <div class="form-group col-xs-12">
+        <div class="form-group col-xs-12" style="margin-bottom:12px;">
           <label for="<?php echo $_code ?>_cc_type" class="required"><em>*</em><?php echo $this->__('Credit Card Type') ?></label>
           <select id="<?php echo $_code ?>_cc_type" name="payment[cc_type]" title="<?php echo $this->__('Credit Card Type') ?>" class="required-entry validate-cc-type-select">
             <option value=""><?php echo $this->__('--Please Select--') ?></option>
@@ -41,6 +41,10 @@
             <?php endforeach ?>
           </select>
           <span class="fake-select"></span> </div>
+          <div class="form-group col-xs-12">
+          <label for="<?php echo $_code ?>_cc_owner" class="required"><em>*</em><?php echo $this->__('Name on Card') ?></label>
+          <input type="text" title="<?php echo $this->__('Name on Card') ?>" class="input-text required-entry bg-white" id="<?php echo $_code ?>_cc_owner" name="payment[cc_owner]" value="<?php echo $this->escapeHtml($this->getInfoData('cc_owner')) ?>" />
+        </div>
       </div>
     </div>
     <div class="col-sm-4">
@@ -51,7 +55,7 @@
           <!--<input type="text" placeholder="ccv" class="ccv">-->
            <input type="text"  placeholder="ccv" pattern="\d*" title="<?php echo $this->__('Card Verification Number') ?>" class="input-text cvv required-entry validate-cc-cvn ccv" id="<?php echo $_code ?>_cc_cid" name="payment[cc_cid]" value="" />
         </div>
-        <div class="form-group col-xs-12 clearfix centered-card">
+        <div class="form-group col-xs-12 clearfix centered-card" style="margin-top:5px; margin-bottom:49px;">
           <div class="pull-left">
             <label for="<?php echo $_code ?>_expiration" class="required"><em>*</em><?php echo $this->__('Expiration Date') ?></label>
           </div>
@@ -76,15 +80,15 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <?php /*?><div class="col-sm-4">
       <div class="credit-card clearfix">
         <div class="card-sctn-black"></div>
         <div class="form-group col-xs-12">
-          <label for="<?php echo $_code ?>_cc_owner" class="required"><em>*</em><?php echo $this->__('Name on Card') ?></label>
+          <label for="<?php echo $_code ?>_cc_owner" class="required"><em>*</em><?php echo $this->__('Name on Card') ?></label>dddd
           <input type="text" title="<?php echo $this->__('Name on Card') ?>" class="input-text required-entry bg-white" id="<?php echo $_code ?>_cc_owner" name="payment[cc_owner]" value="<?php echo $this->escapeHtml($this->getInfoData('cc_owner')) ?>" />
         </div>
       </div>
-    </div>
+    </div><?php */?>
   </div>
   <?php /*?><p class="required"><?php echo $this->__('* Required Fields') ?></p><?php */?>
   <?php echo $this->getChildHtml() ?>

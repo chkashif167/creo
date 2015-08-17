@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <fblogin_adminhtml_fblogin_index>
+        <reference name="content">
+            <block type="fblogin/adminhtml_fblogin" name="fblogin" />
+        </reference>
+    </fblogin_adminhtml_fblogin_index>
+</layout>

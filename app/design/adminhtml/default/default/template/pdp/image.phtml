@@ -144,6 +144,25 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label for='edit_image_price' class="col-sm-3 control-label">Category</label>
+                                        <div class="col-sm-9">
+                                            <?php 
+                                            $categories = Mage::getModel('pdp/artworkcate')->getCollection();
+                                            $categories->setOrder("position", "ASC");                                                
+                                            ?>
+                                            <select class="form-control" name="category" id="edit_image_category">
+                                                <option value="">--Please select--</option>
+                                                <?php
+                                                if($categories->count()) {
+                                                    foreach($categories as $_category) {
+                                                        echo "<option value='". $_category->getId() ."'>". $_category->getTitle() ."</option>";    
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label for='color_type' class="col-sm-3 control-label">Allow Filling Color</label>
                                         <div class="col-sm-9">
                                             <input type="checkbox" class="control-label" name="color_type" id="color_type" />

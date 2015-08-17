@@ -680,7 +680,6 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
     public function forgotPasswordAction()
     {
         $this->loadLayout();
-
         $this->getLayout()->getBlock('forgotPassword')->setEmailValue(
             $this->_getSession()->getForgottenEmail()
         );
@@ -720,11 +719,18 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                     return;
                 }
             }
+
+             else //custom code start
+            {
+              $this->_getSession()->addError(Mage::helper('customer')->__('Your email address %s does not exist.',Mage::helper('customer')->htmlEscape($email)));
+              $this->_redirect('*/*/forgotpassword');
+            return;  
+            }//custom code end
             $this->_getSession()
                 ->addSuccess( $this->_getHelper('customer')
                 ->__('If there is an account associated with %s you will receive an email with a link to reset your password.',
                     $this->_getHelper('customer')->escapeHtml($email)));
-            $this->_redirect('*/*/');
+            $this->_redirect('*/*/forgotpassword');
             return;
         } else {
             $this->_getSession()->addError($this->__('Please enter your email.'));

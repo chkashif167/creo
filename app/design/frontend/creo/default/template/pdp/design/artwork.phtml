@@ -18,7 +18,7 @@
 		}			
 		?>
 	</select>
-	 
+	 <span class="fake-select"></span>
 </div>
 <div class="selected_category_photo">
 	<ul id="icon_list" pdc-data="clipart-list" class="item-color-list">
@@ -44,18 +44,18 @@
 </div>
 <div class="add-more">
 	<input type="hidden" value='<?php echo $limit;?>' name='default_page_size' id="default_page_size" />
-	<button class="btn btn-xs " id="load_more_image" pdc-action="load-more-clipart" type="button" <?php echo ($clipartCollection && $clipartCollection->count() >= $limit) ? "" : "style='display: none;'"?>><i class="pdc-autorenew"></i> <?php echo $this->__("More artwork")?></button>
+	<button class="btn btn-xs " id="load_more_image" pdc-action="load-more-clipart" type="button" <?php echo ($clipartCollection && $clipartCollection->count() >= $limit) ? "" : "style='display: none;'"?>><i class="pdc-autorenew"></i> <?php echo $this->__("Load More Artwork")?></button>
 </div>
 <div class="get_photo_upload">
 	 
-	<button class="upload_photo_btn" type="button" data-toggle="modal" data-target="#uploadPhotos"><i class="pdc-laptop"></i> <?php echo $this->__('Upload Image');?></button>
+	<button class="upload_photo_btn" type="button" data-toggle="modal" data-target="#uploadPhotos"><i class="pdc-image"></i> <?php echo $this->__('Upload Image');?></button>
     <?php if($shapeCategoryOptions && count($shapeCategoryOptions)) : ?>
-    <button class="upload_photo_btn" type="button" data-toggle="modal" data-target="#shapeLibrary"><i class="pdc-favorite"></i> <?php echo $this->__('Shapes Plugin');?></button>
+    <button class="upload_photo_btn" type="button" data-toggle="modal" data-target="#shapeLibrary"><i class="pdc-star"></i> <?php echo $this->__('Shapes Plugin');?></button>
     <?php endif; ?>
 	<?php if(Mage::getStoreConfig('pdp/customer_action/is_facebook')){ ?>
-	<button class=" upload_photo_btn fb_photo_btn " data-toggle="modal" data-target="#facebookPhotos" type="button"><i class="pdc-facebook-square"></i> <?php echo $this->__('My Facebook Photo');?></button>
+	<button class=" upload_photo_btn fb_photo_btn " data-toggle="modal" data-target="#facebookPhotos" type="button"><i class="pdc-social-facebook"></i> <?php echo $this->__('Upload Facebook Photo');?></button>
 	<?php } ?>
 	<?php if(Mage::getStoreConfig('pdp/customer_action/is_instagram')){ ?>
-	<button class=" upload_photo_btn fb_photo_btn instagram_btn" data-toggle="modal" data-target="#instagramPhotos" type="button"><i class="pdc-instagram"></i> <?php echo $this->__('My Instagram Photo');?></button>
+	<button class=" upload_photo_btn instagram_btn" data-toggle="modal" data-target="#instagramPhotos" type="button"><i class="pdc-instagram"></i> <?php echo $this->__('Upload Instagram Photo');?></button>
 	<?php } ?>
 </div>

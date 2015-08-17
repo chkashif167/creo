@@ -163,6 +163,16 @@ class MST_Pdp_IndexController extends Mage_Core_Controller_Front_Action
         if($result->getId()) {
             //add product media images
             try {
+                //Try to exclude image products -- Get unknown error, but it work anyway
+				/*$productId = $data['product_id'];
+				if($productId) {
+					$mediaApi = Mage::getModel("catalog/product_attribute_media_api");
+					$mediaItems = $mediaApi->items($productId);
+					foreach($mediaItems as $item) {
+						$item['exclude'] = 1;
+						$mediaApi->update($productId, $item['file'], $item);
+					}
+				}*/
                 //$this->addProductBaseImage($data['product_id'], $data['pdp_design']);
             } catch(Exception $e) {
             
@@ -179,13 +189,21 @@ class MST_Pdp_IndexController extends Mage_Core_Controller_Front_Action
             'status' => 'error',
             'message' => 'Unable to save json file!'
         );
+		$jsonContent = "";
         if(!isset($postData['json_content'])) {
-            $this->getResponse()->setBody(json_encode($response));
-            return;
-        }
+			//Try get data another way, fix mod_security problem
+			$postString = file_get_contents("php://input");
+			if($postString != "") {
+				$jsonContent = $postString;
+			} else {
+				$this->getResponse()->setBody(json_encode($response));
+				return;
+			}
+        } else {
+			$jsonContent = $postData['json_content'];
+		}
         //Side Info
         $sides = array();
-        $jsonContent = $postData['json_content'];
         $jsonBaseDir = Mage::getBaseDir('media') . DS . "pdp" . DS . "json" . DS;
 		$response = array();
 		if(!file_exists($jsonBaseDir)) {

@@ -5,7 +5,7 @@
     <default>
         <reference name="head">
             <action method="addItem"><type>skin_js</type><name>fancybox/lib/jquery.mousewheel-3.0.6.pack.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>fancybox/source/jquery.fancybox.pack.js"</name></action>
+            <!--<action method="addItem"><type>skin_js</type><name>fancybox/source/jquery.fancybox.pack.js"</name></action>-->
             <action method="addItem"><type>skin_css</type><name>fancybox/source/jquery.fancybox.css</name></action>
         </reference>
 

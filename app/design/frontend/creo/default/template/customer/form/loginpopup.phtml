@@ -43,6 +43,7 @@
           <div class="heading-holder">
             <h3>Login</h3>
           </div>
+         
           <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="login-form">
             <?php echo $this->getBlockHtml('formkey'); ?>
             <label for="email" class="required"><?php echo $this->__('Email Address') ?> <em> *</em></label>
@@ -54,6 +55,16 @@
               <button type="submit" class="button popuplogin_button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
               <?php echo $this->getChildHtml('form.additional.info'); ?> </div>
           </form>
+          <div class="row">
+          	<div class="col-xs-12 text-center">
+				<a class="text-center" href="<?php echo Mage::getUrl('customer/account/create'); ?>">Create account</a>
+                <div class="login-fb col-xs-12" style="margin-bottom:20px;">
+					<a href="#" onclick="login();return false;" class="fb_button fb_button_medium">
+                        <span class="fb_button_text">Sign up with Facebook</span>
+                	</a>
+    			</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

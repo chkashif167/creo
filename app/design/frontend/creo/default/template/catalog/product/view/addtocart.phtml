@@ -24,6 +24,15 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<?php
+	$_isCustomizeProduct = false;
+	if(Mage::helper('core')->isModuleEnabled('MST_Pdp')) {
+		$designBtnObj = new MST_Pdp_Block_Designbutton();
+		if($designBtnObj->isDesignAble()) {
+			$_isCustomizeProduct = true;
+		}
+	}
+?>
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__(' Add to Cart'); ?>
 <?php if($_product->isSaleable()): ?>
@@ -45,9 +54,16 @@
             <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
         </div><?php */?>
         <?php endif; ?>
+        <div class="fancy-product-price">
+          <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></span>
+      </div>
+
         <div class="add-to-cart-buttons btn-holder">
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
-            
+			<?php if($_isCustomizeProduct) : ?>
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="PDC_Actions.saveDesignBeforeAddToCart(); return false; productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
+            <?php else : ?>
+			<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
+			<?php endif; ?>
             <?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
 		<?php if ($this->helper('wishlist')->isAllow()) : ?>
       <a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist"> <i class="icon-heart-empty"></i> <?php //echo $this->__('Add to Wishlist') ?></a>

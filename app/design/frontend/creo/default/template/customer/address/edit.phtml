@@ -38,6 +38,14 @@
     <h2><?php echo $this->getTitle() ?></h2>
 
 <?php endif; ?>
+
+<?php if($this->isDefaultBilling() && $this->isDefaultShipping()): ?>
+<div class="welcome-msg">
+    <p class="hello"><strong>Note!</strong></p>
+    <p>Editing this address will update both your billing and shipping address. If you want to add an entirely new billing or shipping address <a href="<?php echo $this->getBaseUrl();?>customer/address/new/" title="Create New Billing or Shipping Address">CLICK HERE</a>.</p>
+</div>
+<?php endif; ?>
+
 <div class="form-holder">
                                 <div class="form-frame">
 <?php echo $this->getMessagesBlock()->toHtml() ?>
@@ -57,7 +65,7 @@
                 </div>
             
                 <div class="field">
-                    <label for="telephone" class="required"><em>*</em><?php echo $this->__('Telephone') ?></label>
+                    <label for="telephone" class="required"><em class="red marg-right">*</em><?php echo $this->__('Telephone') ?></label>
                     <div class="input-box">
                         <input type="tel" name="telephone" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text  <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?> email" id="telephone" />
                     </div>
@@ -75,7 +83,7 @@
        
         <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
             
-                <label for="street_1" class="required"><em>*</em><?php echo $this->__('Street Address') ?></label>
+                <label for="street_1" class="required"><em class="red marg-right">*</em><?php echo $this->__('Street Address') ?></label>
                 <div class="input-box">
                     <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getAddress()->getStreet(1)) ?>" title="<?php echo $this->__('Street Address') ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
                 </div>
@@ -99,13 +107,13 @@
             <?php endif; ?>
             
                 <div class="field">
-                    <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                    <label for="city" class="required"><em class="red marg-right">*</em><?php echo $this->__('City') ?></label>
                     <div class="input-box">
                         <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>"  title="<?php echo $this->__('City') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
                     </div>
                 </div>
                 <div class="field">
-                    <label for="region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
+                    <label for="region_id" class="required"><em class="red marg-right">*</em><?php echo $this->__('State/Province') ?></label>
                     <div class="input-box">
                         <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
                            <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
@@ -120,13 +128,13 @@
                 </div>
            
                 <div class="field">
-                    <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
+                    <label for="zip" class="required"><em class="red marg-right">*</em><?php echo $this->__('Zip/Postal Code') ?></label>
                     <div class="input-box">
                         <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getAddress()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
                     </div>
                 </div>
                 <div class="field">
-                    <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
+                    <label for="country" class="required"><em class="red marg-right">*</em><?php echo $this->__('Country') ?></label>
                     <div class="input-box">
                         <?php echo $this->getCountryHtmlSelect() ?>
                     </div>
@@ -135,7 +143,9 @@
                 <?php if($this->isDefaultBilling()): ?>
                     <strong><?php echo $this->__('Default Billing Address') ?></strong>
                 <?php elseif($this->canSetAsDefaultBilling()): ?>
+                    <div class="checkbox-holder">
                     <input type="checkbox" id="primary_billing" name="default_billing" value="1" title="<?php echo $this->__('Use as My Default Billing Address') ?>" class="checkbox" /><label for="primary_billing"><?php echo $this->__('Use as my default billing address') ?></label>
+                    </div>
                 <?php else: ?>
                     <input type="hidden" name="default_billing" value="1" />
                 <?php endif; ?>
@@ -143,7 +153,9 @@
                 <?php if($this->isDefaultShipping()): ?>
                     <strong><?php echo $this->__('Default Shipping Address') ?></strong>
                 <?php elseif($this->canSetAsDefaultShipping()): ?>
+                 <div class="checkbox-holder">
                     <input type="checkbox" id="primary_shipping" name="default_shipping" value="1" title="<?php echo $this->__('Use as My Default Shipping Address') ?>" class="checkbox" /><label for="primary_shipping"><?php echo $this->__('Use as my default shipping address') ?></label>
+                    </div>
                 <?php else: ?>
                     <input type="hidden" name="default_shipping" value="1" />
                 <?php endif; ?>
@@ -163,4 +175,6 @@
 //]]>
 </script>
 </div>
+
+
 </div>

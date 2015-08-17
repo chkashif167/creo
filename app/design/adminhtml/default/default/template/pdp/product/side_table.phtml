@@ -4,6 +4,7 @@ $sides = Mage::getModel('pdp/pdpside')->getDesignSides($productId);
 $deleteSideUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/deleteside/");
 $editUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/addNewSide/", array("productid" => $productId));
 $inlineUpdateUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designarea/inlineUpdate/");
+$productConfigs = Mage::helper("pdp")->getProductConfig($productId);
 ?>
 <script src="<?php echo $this->getJsUrl('pdp/backend/js/pdpdesign.js') ?>"></script>
 <input type="hidden" name="inline_input_url" id="inline_input_url" value="<?php echo $inlineUpdateUrl ?>" />
@@ -29,7 +30,7 @@ $inlineUpdateUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designa
 			<th><?php echo $this->__('Position') ?></th>
 			<th class="delete_th">&nbsp;</th>
 			<th><?php echo $this->__('Design Colors') ?></th>
-			<th><?php echo $this->__('Default Pattern Style') ?></th>
+			<th><?php echo $this->__('Default Pattern Design') ?></th>
             <!--<th><?php echo $this->__('View All Samples') ?></th>-->
 		</tr>
         <?php $rowCounter = 0; ?>
@@ -57,6 +58,22 @@ $inlineUpdateUrl = Mage::helper("adminhtml")->getUrl("pdpadmin/adminhtml_designa
 			<?php if ($rowCounter == 1) : ?>
 			<td rowspan="<?php echo $sides->count() ?>">
 				<button id="sample_btn_<?php echo $side->getId() ?>" type="button" class="create-sample-btn"><?php echo $this->__('Create Pattern') ?></button>
+                <?php $adminTemplate = Mage::helper("pdp")->getAdminTemplates($productId); ?>
+                <?php if($adminTemplate !== "") : ?>
+                <div class="auto-replace-pattern">
+                    <br/>
+                    <?php $checked = (isset($productConfigs['auto_replace_pattern']) && $productConfigs['auto_replace_pattern'] == 1) ? 'checked="checked"' : ''; ?>
+                    <input <?php echo $checked ?> type="checkbox" id="auto_replace_pattern" />
+                    <?php echo $this->__("Auto replace base product image and thumbnails by default pattern design") ?>
+                    <br/>
+                    <strong><?php echo $this->__("NOTE") ?></strong>: <i><?php echo $this->__("This feature might not working properly with custom theme.") ?></i>
+                </div>
+                <script>
+                jQuery("#auto_replace_pattern").click(function() {
+                    PdpSide.updateProductConfig();
+                });
+                </script>
+                <?php endif; ?>
 			</td>
             <?php endif; ?>
             <?php if ($rowCounter == 1) : ?>

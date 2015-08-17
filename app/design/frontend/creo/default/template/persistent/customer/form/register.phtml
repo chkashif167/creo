@@ -33,12 +33,19 @@
 /** @var $this Mage_Customer_Block_Form_Register */
 ?>
 
-       <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12 form-holder login-sec no-padding-right">
-        <h3><?php echo $this->__('Create an Account') ?></h3>
-  <div>
+<div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12 form-holder login-sec no-padding-right">
+        <h3><?php echo $this->__('NEW CUSTOMERS') ?></h3>
           <div class="form-frame reg-form">
     <?php echo $this->getChildHtml('form_fields_before')?>
-    <?php echo $this->getMessagesBlock()->toHtml() ?>
+	
+	<?php 
+	$urlString =  $_SERVER['REQUEST_URI'];
+	if(strpos($urlString,'login') == false) {
+    echo $this->getMessagesBlock()->toHtml();
+	}
+	?>		
+	
+   
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="signup-form" enctype="multipart/form-data">
         
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
@@ -46,7 +53,7 @@
             <?php /*?><p class="form-instructions"><?php echo $this->__('Please enter the following information to create your account.') ?></p><?php */?>
             
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
-                    <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                    <label for="email_address" class="required"><em class="red marg-right">*</em><?php echo $this->__('Email Address') ?></label>
                     <div class="input-box">
                         <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="email_address" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry email" />
                     </div>
@@ -73,14 +80,14 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label for="telephone" class="required"><em>*</em><?php echo $this->__('Telephone') ?></label>
+                        <label for="telephone" class="required"><em class="red marg-right">*</em><?php echo $this->__('Telephone') ?></label>
                         <div class="input-box">
                             <input type="tel" name="telephone" id="telephone" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?> email" />
                         </div>
                     </div>
                
             <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
-                    <label for="street_1" class="required"><em>*</em><?php echo $this->__('Street Address') ?></label>
+                    <label for="street_1" class="required"><em class="red marg-right">*</em><?php echo $this->__('Street Address') ?></label>
                     <div class="input-box">
                         <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(0)) ?>" title="<?php echo $this->__('Street Address') ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?> email" />
                     </div>
@@ -94,13 +101,13 @@
                
             <?php endfor; ?>
                     <div class="field">
-                        <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                        <label for="city" class="required"><em class="red marg-right">*</em><?php echo $this->__('City') ?></label>
                         <div class="input-box">
                             <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getFormData()->getCity()) ?>" title="<?php echo $this->__('City') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?> email" id="city" />
                         </div>
                     </div>
                     <div class="field">
-                        <label for="region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
+                        <label for="region_id" class="required"><em class="red marg-right">*</em><?php echo $this->__('State/Province') ?></label>
                         <div class="input-box">
                             <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
                                 <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
@@ -115,13 +122,13 @@
                     </div>
                 
                     <div class="field">
-                        <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
+                        <label for="zip" class="required"><em class="red marg-right">*</em><?php echo $this->__('Zip/Postal Code') ?></label>
                         <div class="input-box">
                             <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getFormData()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="email input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
                         </div>
                     </div>
                     <div class="field">
-                        <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
+                        <label for="country" class="required"><em class="red marg-right">*</em><?php echo $this->__('Country') ?></label>
                         <div class="input-box">
                             <?php echo $this->getCountryHtmlSelect() ?>
                         </div>
@@ -134,15 +141,15 @@
                
                     <div class="row">
                                         <div class="col">
-                        <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                        <label for="password" class="required"><em class="red marg-right">*</em><?php echo $this->__('Password') ?></label>
                         
-                            <input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password" />
+                            <input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password validate-alphanum" />
                        
                     </div>
                     <div class="col">
-                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
+                        <label for="confirmation" class="required"><em class="red marg-right">*</em><?php echo $this->__('Confirm Password') ?></label>
                        
-                            <input type="password" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" id="confirmation" class="input-text required-entry validate-cpassword" />
+                            <input type="password" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" id="confirmation" class="input-text required-entry validate-cpassword validate-alphanum" />
                         
                     </div>
                 </div>
@@ -159,7 +166,7 @@
                 <?php //echo $this->getChildHtml('persistent.remember.me'); ?>
             
             <?php //echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
-        <p class="required red no-margin"><?php echo $this->__('* Required Fields') ?></p>
+       <?php /*?> <p class="required red no-margin"><?php echo $this->__('* Required Fields') ?></p><?php */?>
         <div class="submit-holder">
             <?php /*?><p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p><?php */?>
             <button type="submit" title="<?php echo $this->__('Register') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
@@ -168,7 +175,6 @@
             <input name="context" type="hidden" value="checkout" />
         <?php endif; ?>
     </form>
-</div>
 </div>
     <script type="text/javascript">
     //<![CDATA[
@@ -180,4 +186,3 @@
     </script>
 
 </div>
-  </div>

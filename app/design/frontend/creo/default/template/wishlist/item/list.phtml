@@ -115,16 +115,16 @@ $product = $item->getProduct();
     <?php foreach ($this->getItems() as $item): ?>
     <div class="product-area">
       <?php
-                        foreach ($columns as $key => $column):
-                            $_blockName = str_replace('.','-',strtolower($column->getNameInLayout()));
+              foreach ($columns as $key => $column):
+                  $_blockName = str_replace('.','-',strtolower($column->getNameInLayout()));
 
-                            /* Override default column title in layout, useful for certain cases like select all box */
-                            if ($column->getRwdTitle()) {
-                                $_rwdLabel = $column->getRwdTitle();
-                            } else {
-                                $_rwdLabel = ($column->getTitle()) ? $column->getTitle() : false;
-                            }
-                    ?>
+                  /* Override default column title in layout, useful for certain cases like select all box */
+                  if ($column->getRwdTitle()) {
+                      $_rwdLabel = $column->getRwdTitle();
+                  } else {
+                      $_rwdLabel = ($column->getTitle()) ? $column->getTitle() : false;
+                  }
+          ?>
  
 		<?php $column->setItem($item);
 		echo $column->toHtml($item);
@@ -139,8 +139,8 @@ $product = $item->getProduct();
 
       <div class="btn-holder">
                  
-                    <a href="javascript:void()" ><span class="span1"><span class="span2">UPDATE WISHLIST</span></span></a>
-                    <a href="javascipt:void(0)" onclick="addAllWItemsToCart()">ADD ALL TO CART</a>
+                    <a style="display:none" href="javascript:void(0)" onclick="updateWishList()"><span class="span1"><span class="span2">UPDATE WISHLIST</span></span></a>
+                    <a href="javascript:void(0)" onclick="addAllWItemsToCart()">ADD ALL TO CART</a>
                   </div>
 
 <?php foreach ($columns as $column): ?>
