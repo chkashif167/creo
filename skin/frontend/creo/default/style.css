@@ -378,8 +378,6 @@ form select {
 	width: 232px;
 	height: 35px;
 	position: relative;
-	bottom: 37px;
-	left: 82px;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 19px;
 	color: #222222;
@@ -4248,12 +4246,11 @@ p.availability{margin: 0;}
 }
 #uploadPhotos .btn-file:hover{color: #444;}
 #uploadPhotos .btn-upload:hover{opacity: 0.9;}
-
-
-
 #facebookPhotos button,
 #instagramPhotos button{color: #fff;}
-
+.product-detail .pdp-style .btn-holder .link-wishlist {
+    width: 20%;
+}
 
 
 
