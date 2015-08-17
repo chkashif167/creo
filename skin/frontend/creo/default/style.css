@@ -4033,9 +4033,9 @@ p.availability{margin: 0;}
     bottom: 1px;
     content: "";
     height: 2px;
-    left: -2px;
+    left: -3px;
     position: absolute;
-    right: 5px;
+    right: 8px;
 }
 #configurable_swatch_color li.selected{position: relative;}
 
