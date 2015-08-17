@@ -4061,6 +4061,8 @@ p.availability{margin: 0;}
     color: #222;
     font: 12px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
 }
+#.modal-content, .modal-header,
+#facebookPhotos .modal-header,
 #shapeLibrary .modal-header,
 #textLibrary .modal-header,
 .hidden-popups .modal-header {
@@ -4247,6 +4249,10 @@ p.availability{margin: 0;}
 #uploadPhotos .btn-file:hover{color: #444;}
 #uploadPhotos .btn-upload:hover{opacity: 0.9;}
 
+
+
+#facebookPhotos button,
+#instagramPhotos button{color: #fff;}
 
 
 
