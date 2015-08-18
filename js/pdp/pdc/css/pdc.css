@@ -1009,7 +1009,11 @@ button:focus,
 #search_shape{height:34px; line-height:34px;}
 #shape_category{bottom:0;}
 .file-upload .glyphicon{left:0; top:1px;}
-.hidden-popups .modal-content {transform:none; padding:2%; margin-top:0!important;}
+#instagramPhotos .modal-content,
+#facebookPhotos .modal-content,
+#shapeLibrary .modal-content,
+#textLibrary .modal-content,
+.hidden-popups .modal-content {padding:2%;}
 .hidden-popups .modal-header, .hidden-popups .modal-body {
   display: block;
   overflow: hidden;
