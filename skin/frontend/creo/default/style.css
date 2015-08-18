@@ -2202,7 +2202,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	font: 38px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .price-area{
-	padding: 20px 50px 0 0;
+	padding: 10px 50px 10px 0;
 	overflow: hidden;
 	border-width: 1px 0;
 	border-style: solid;
@@ -4251,7 +4251,7 @@ p.availability{margin: 0;}
 .product-detail .pdp-style .btn-holder .link-wishlist {
     width: 20%;
 }
-
+.pdc-thumbnail .overlay-img {display: none;}
 
 
 

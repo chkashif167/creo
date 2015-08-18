@@ -466,7 +466,7 @@
 	left: 0;
 	position: absolute;
 	right: 0;
-	top: 24px;
+	top: 100%;
 	color: red;
 }
 .select-label {
