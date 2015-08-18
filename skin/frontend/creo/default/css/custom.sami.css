@@ -614,3 +614,11 @@ div.fme-filter a.fme_layered_attribute {
 	text-decoration:none; color:#fff;
 	text-align:center;
 }
+
+#configurable_swatch_color span.x {
+	display:none; 
+}	
+
+#configurable_swatch_size li.not-available {
+	pointer-events:none;
+}
