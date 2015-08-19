@@ -81,7 +81,9 @@
     <?php // Grid Mode  ?>
 
     <?php $_collectionSize = $_productCollection->count() ?>
-    <?php $_columnCount = $this->getColumnCount(); ?>
+    <?php $_columnCount = 4;
+	//$this->getColumnCount(); 
+	?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
         <ul class="products-grid">
