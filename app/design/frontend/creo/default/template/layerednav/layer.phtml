@@ -4,6 +4,12 @@
 /*
  * Adding javascript include
  */
+ if($this->getRequest()->getControllerName()!='result') {
+	$current_category_id = Mage::registry('current_category')->getId();	 
+ }else{
+	$current_category_id='';
+}
+
 
 if ('front' != Mage::app()->getRequest()->getControllerName()) {
     ?>
@@ -44,7 +50,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                 <?php
                                 if ($_filter->getVar() == 'styles') {
                                     ?>
-                                    <label class="styles-lable">Styles:</label>
+                                    <label class="styles-lable" id="styles_label">Styles:</label>
                                     <?php
                                 }
                                 ?>
@@ -53,9 +59,9 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                             <?php endif; ?>
                         <?php endforeach; ?>
 
-                        <?php /*if ($state[1] AND $this->bNeedClearAll())://disabled clear all option ?>
+                        <?php //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option ?>
                             <div class="actions fme_layered_clear_all"><a class="fme_layered_clearall" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>            
-                        <?php endif*/ ?>
+                        <?php //endif ?>
 
                     </dl>
                     <script type="text/javascript">
@@ -68,3 +74,12 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
         <div class="fme_loading_filters" style="display:none"></div>
     </div>
 <?php endif; ?>
+<?php
+if($current_category_id!='17'){?>
+	<script>
+	document.getElementById("fme_layered_styles").style.display='none';
+    document.getElementById("styles_label").style.display='none';
+    </script>
+    <?php
+}
+?>

@@ -466,7 +466,7 @@
 	left: 0;
 	position: absolute;
 	right: 0;
-	top: 24px;
+	top: 100%;
 	color: red;
 }
 .select-label {
@@ -1021,7 +1021,9 @@
 }
 
 
+
 /*.jconfirm white, .jconfirm-box-container.span6.offset3.col-md-5.col-md-offset-3 {
     display: none;
 }*/
+
 
