@@ -679,6 +679,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function forgotPasswordAction()
     {
+		if (Mage::getSingleton('customer/session')->isLoggedIn()){$this->_redirect(''); return;}
         $this->loadLayout();
         $this->getLayout()->getBlock('forgotPassword')->setEmailValue(
             $this->_getSession()->getForgottenEmail()

@@ -10,6 +10,11 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $categoryId = $this->getRequest()->getParam('cid');
         
         if($categoryId){
+        $category = Mage::getModel('catalog/category')->load($categoryId);
+        $category_name = $category->getName();
+        $data['category_id'] = $categoryId;
+        $data['category_name'] = $category_name;
+            
         $products = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection()
 //                ->addAttributeToSelect('name')
 //                ->addAttributeToSelect('thumbnail')
@@ -43,8 +48,10 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $prod['stock_qty_min_sales'] = $stock->getMinSaleQty();
             $prod['status'] = $p2->getStatus();
             $prod['currency'] = $currency_code;
+            $prod['category_id'] = $categoryId;
+            $prod['category_name'] = $category_name;
 
-            $data[] = $prod;
+            $data['products'][] = $prod;
         }
         
 //        header('Access-Control-Allow-Origin: *');

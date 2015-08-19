@@ -88,6 +88,13 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                 $dataObj = $this->getCart($sessionId,$quoteId);
 
                 //$quote = Mage::getModel('sales/quote')->load($quoteId);
+//                $shipping_flatrate_price = Mage::getStoreConfig('carriers/flatrate/price');
+//                $cart = Mage::getModel('sales/quote')->load($quoteId);
+//                print_r($cart); //die;
+//                echo $totalItems = Mage::getModel('sales/quote')->load($quoteId)->getItemsCount();  echo '<br>';
+//                echo $subTotal = Mage::getModel('sales/quote')->load($quoteId)->getSubtotal();  echo '<br>';
+//                echo $grandTotal = Mage::getModel('sales/quote')->load($quoteId)->getGrandTotal();   echo '<br>';
+//                echo $totalQuantity = Mage::getModel('sales/quote')->load($quoteId)->getItemsQty(); die;
                 
                 $response['success'] = 1;
                 $response['message'] = 'Cart data found';
@@ -112,10 +119,12 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                     $data['items'][$i] = $extended_items;
                     $i++;
                 }
+//                $data['shipping_flatrate_price'] = $shipping_flatrate_price;
                 $response['cart'] = $data;
             } catch(Exception $e){
                 $response['error_code'] = $e->getCode();
                 $response['message'] = $e->getMessage();
+                $response['trace'] = $e->getTraceAsString();
             }
         }
         
