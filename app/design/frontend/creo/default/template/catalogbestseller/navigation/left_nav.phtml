@@ -1,0 +1,33 @@
+<?php
+$obj = new Mage_Catalog_Block_Navigation();
+$store_cats = $obj->getStoreCategories();
+$current_cat    = $obj->getCurrentCategory();
+$current_cat    = (is_object($current_cat) ? $current_cat->getName() : '');
+
+$_helper= Mage::helper('catalog/category');
+$_category = Mage::registry('current_category');
+$path = $_category->getPath(); //get the path of where you are
+$ids = explode('/', $path);
+//print_r($ids);
+if (isset($ids[2])) { //you should add some more complex lookout
+    $topParent = Mage::getModel('catalog/category')->setStoreId(Mage::app()->getStore()->getId())->load($ids[2]);
+//topParent is the ralph loren category even if you are in one of its children cat
+}
+$subcategories = Mage::getModel('catalog/category')->getCategories($ids[2]);
+?>
+<nav class="cate1">
+<ul>
+<?php
+foreach ($subcategories as $cat) {
+    if ($cat->getName() == $current_cat) {
+
+        echo '<li class="active"><a href="'.$_helper->getCategoryUrl($cat).'"><span>'.$cat->getName()."</span></a></li>\n";
+
+    }else
+    {
+    	 echo '<li><a href="'.$_helper->getCategoryUrl($cat).'"><span>'.$cat->getName()."</span></a></li>\n";
+    }
+}
+?>
+</ul>
+</nav>

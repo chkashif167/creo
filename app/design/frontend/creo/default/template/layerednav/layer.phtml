@@ -4,7 +4,12 @@
 /*
  * Adding javascript include
  */
-$current_category_id = Mage::registry('current_category')->getId();
+ if($this->getRequest()->getControllerName()!='result') {
+	$current_category_id = Mage::registry('current_category')->getId();	 
+ }else{
+	$current_category_id='';
+}
+
 
 if ('front' != Mage::app()->getRequest()->getControllerName()) {
     ?>

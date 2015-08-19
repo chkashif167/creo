@@ -1126,6 +1126,7 @@ function getCookie(cname) {
     }
     return "";
 } 
+
  /*
  * custom scrollbar
  */

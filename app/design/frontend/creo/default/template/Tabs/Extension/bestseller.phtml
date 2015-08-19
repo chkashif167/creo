@@ -1,0 +1,17 @@
+<div class="box best-selling">
+<h3>Best Selling Products</h3>
+<table border="0" cellspacing="0">
+    <tbody>
+    <?php $counter=0; foreach ($this->getBestsellerProducts() as $product): ?>
+        <?php if ($counter%2 == 0): ?><tr class="<?php echo $counter%4 ? 'even' : 'odd'; ?>"><?php endif ?>
+        <td>
+            <a href="<?php echo $product->getProductUrl() ?>"><img class="product-img" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(99); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($product, 'small_image'), null, true) ?>" width="95" border="0" /></a>
+            <div class="product-description">
+                <p><a href="<?php echo $product->getProductUrl() ?>"><?php echo $this->stripTags($product->getName(), null, true); ?></a></p>
+            </div>
+        </td>
+        <?php if ($counter++%2): ?></tr><?php endif ?>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
