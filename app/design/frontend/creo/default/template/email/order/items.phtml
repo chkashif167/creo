@@ -33,10 +33,27 @@
     <tr>
         <td>
             <table class="items" cellpadding="0" cellspacing="0" border="0">
-                <thead>
+            <thead>
+                <tr>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin:4px;"> <span style='display: block; ' >Product</span></a></td>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin:4px;"> <span style='display: block; ' >Description</span></a></td>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;margin: 4px;"> <span style='display: block; ' >
+                Sku</span></a></td>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;margin: 4px;"> <span style='display: block; ' >
+                Color</span></a></td>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;margin: 4px;"> <span style='display: block; ' >
+                Size</span></a></td>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin: 4px;"> <span style='display: block; ' >
+                Quantity</span></a></td>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase; margin: 4px;"> <span style='display: block;' >Price</span></a></td>
+                </tr>
+	        </thead>
+
+                  
+<!--                <thead>
                     <tr>
                         <th class="cell-name">
-                            <?php if($_itemCount > 1): ?>
+                            <?php /*if($_itemCount > 1): ?>
                                 <?php echo $this->__('Items in your order'); ?>
                             <?php else: ?>
                                 <?php echo $this->__('Item in your order'); ?>
@@ -46,20 +63,21 @@
                             <?php echo $this->__('Qty'); ?>
                         </th>
                         <th class="cell-name align-right">
-                            <?php echo $this->__('Price'); ?>
+                            <?php echo $this->__('Price'); */?>
                         </th>
                     </tr>
                 </thead>
-            <?php $i=0; foreach ($_order->getAllItems() as $_item): ?>
+-->         
+			<?php $i=0; foreach ($_order->getAllItems() as $_item): ?>
             <?php if($_item->getParentItem()) continue; else $i++; ?>
-                <?php echo $this->getItemHtml($_item) ?>
+               <?php echo $this->getItemHtml($_item) ?>
             <?php endforeach; ?>
             </table>
         </td>
     </tr>
     <tr>
         <td>
-            <?php echo $this->getChildHtml('order_totals') ?>
+            <?php //echo $this->getChildHtml('order_totals') ?>
         </td>
     </tr>
     <?php if ($this->helper('giftmessage/message')->isMessagesAvailable('order', $_order, $_order->getStore()) && $_order->getGiftMessageId()): ?>
