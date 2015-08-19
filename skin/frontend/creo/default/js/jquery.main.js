@@ -68,6 +68,14 @@ function initOpenClose() {
 		effect: 'slide',
 		hideOnClickOutside: false
 	});
+	jQuery('.open-close.cart').openClose({
+		activeClass: 'active',
+		opener: '.opener',
+		slider: '.slide',
+		animSpeed: 200,
+		event: 'over',
+		effect: 'fade'
+	});
 }
 
 /*
