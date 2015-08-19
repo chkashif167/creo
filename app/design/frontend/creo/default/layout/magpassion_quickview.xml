@@ -53,6 +53,16 @@
 	   		<action method="setTemplate" ifconfig="quickview/setting/ecategory"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
 		</reference> 
 	</catalog_category_default>
+    <extension_index_seller>
+        <reference name="bestseller">
+            <action method="setTemplate"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
+        </reference>
+    </extension_index_seller>
+    <extension_index_new>
+        <reference name="new">
+            <action method="setTemplate"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
+        </reference>
+    </extension_index_new>
 	<catalog_category_layered>
 		<reference name="product_list">
 	   		<action method="setTemplate" ifconfig="quickview/setting/ecategory"><template>magpassion_quickview/quickview/catalog/product/list.phtml</template></action>
