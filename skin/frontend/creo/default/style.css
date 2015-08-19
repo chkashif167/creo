@@ -2202,7 +2202,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	font: 38px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .price-area{
-	padding: 20px 50px 0 0;
+	padding: 10px 50px 10px 0;
 	overflow: hidden;
 	border-width: 1px 0;
 	border-style: solid;
@@ -3633,6 +3633,8 @@ div.fme-filter dd li{overflow: visible !important;}
 	padding-bottom: 22px;
 	padding-top: 26px;
 	position: relative;
+	color: #000;
+	font: 11px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
 }
 .faq-area:before{
 	position: absolute;
@@ -4251,6 +4253,22 @@ p.availability{margin: 0;}
 .product-detail .pdp-style .btn-holder .link-wishlist {
     width: 20%;
 }
+.pdc-thumbnail .overlay-img {display: none;}
+.faq-area .faq-frame.terms .open-close2 {
+    margin: 0 0 18px;
+    width: 100%;
+}
+.faq-area .faq-frame.terms .openeer-holder .question {
+    color: #ef4f61;
+    text-align: left;
+}
+.faq-area .faq-frame.terms .openeer-holder .question:hover,
+.faq-area .faq-frame.terms .active .openeer-holder .question{color: #fff;}
+.faq-area p.pink {color: #ef4f61;}
+.faq-area .faq-frame.terms p {margin: 0 0 12px;}
+.faq-area .faq-frame.terms .openeer-holder .question{width: 98%;}
+.faq-area .faq-frame.terms .openeer-holder .arrow{width: 2%;}
+.faq-area .faq-frame.terms .open-close2 h5 {text-transform: uppercase;}
 
 
 
@@ -4377,6 +4395,7 @@ p.availability{margin: 0;}
 	.footer-form input[type="submit"]{width: 30%;}
 	.products-grid .mp_quickview_icon {top: 199px !important;}
 	.product-detail .btn-holder button:first-child{width: 79.8%;}
+	.faq-area .faq-frame.terms .openeer-holder .question {width: 97.4%;}
 }
 @media only screen and (max-width: 767px) {
 	body { min-width: 768px; }
