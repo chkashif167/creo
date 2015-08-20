@@ -1610,4 +1610,5 @@ Product.ConfigurableSwatches.prototype = {
 jQuery(document).ready(function(){
     jQuery('#configurable_swatch_color').find('li:first a .swatch-label').trigger('click');
     //jQuery('#configurable_swatch_size').find('li:not(.not-available):first a .swatch-label').trigger('click');
+	//jQuery('#product-options-wrapper').find('#configurable_swatch_size').parent().on('change', '.validation-advice', function(){alert("GGG")});
 });
