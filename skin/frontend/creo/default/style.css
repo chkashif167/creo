@@ -3891,9 +3891,11 @@ div.fme-filter dd li{overflow: visible !important;}
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	margin: 0 -9999px -9999px;
-	padding: 0 9999px 9999px;
+	/*margin: 0 -9999px -9999px;
+	padding: 0 9999px 9999px;*/
 	content: '';
+	width: 200%;
+	left: -50%;
 }
 #footer .right-area{
 	float: right;
