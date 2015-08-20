@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Clarion
+ * @package    Clarion_ReviewReminder
+ * @created    6th Jan 2015
+ * @author     Clarion magento team <magento.team@clariontechnologies.co.in>
+ * @purpose    Module configuration file 
+ * @copyright  Copyright (c) 2014 Clarion Technologies Pvt. Ltd.
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License
+ */
+-->
+<config>
+    <modules>
+        <Clarion_ReviewReminder>
+            <version>1.0.2</version>
+        </Clarion_ReviewReminder>
+    </modules>
+    
+    <frontend>
+        <routers>
+            <clarion_reviewreminder>
+                <use>standard</use>
+                <args>
+                    <module>Clarion_ReviewReminder</module>
+                    <frontName>reviewreminder</frontName>
+                </args>
+            </clarion_reviewreminder>
+        </routers>
+        
+        <events>
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <clarion_reviewreminder_save_reviewreminder_information>
+                        <class>clarion_reviewreminder/observer</class>
+                        <method>addReviewReminderInformation</method>
+                    </clarion_reviewreminder_save_reviewreminder_information>
+                </observers>
+            </checkout_onepage_controller_success_action>
+            <review_save_after>
+                <observers>
+                    <clarion_reviewreminder_review_save_after>
+                        <class>clarion_reviewreminder/observer</class>
+                        <method>reviewSaveAfter</method>
+                    </clarion_reviewreminder_review_save_after>
+                </observers>
+            </review_save_after>
+        </events>
+    </frontend>
+    
+    <global>
+        <models>
+            <clarion_reviewreminder>
+                <class>Clarion_ReviewReminder_Model</class>
+                <resourceModel>reviewreminder_resource</resourceModel>
+            </clarion_reviewreminder>
+            <reviewreminder_resource>
+                <class>Clarion_ReviewReminder_Model_Resource</class>
+                <entities>
+                    <reviewreminder>
+                        <table>clarion_review_reminder</table>
+                    </reviewreminder>
+                </entities>
+            </reviewreminder_resource>
+        </models>
+        <helpers>
+            <clarion_reviewreminder>
+                <class>Clarion_ReviewReminder_Helper</class>
+            </clarion_reviewreminder>  
+        </helpers>
+        <blocks>
+            <clarion_reviewreminder>
+                <class>Clarion_ReviewReminder_Block</class>
+            </clarion_reviewreminder>
+        </blocks>
+        
+         <!-- Setup resource -->
+        <resources>
+            <clarion_reviewreminder_setup>
+                <setup>
+                    <module>Clarion_ReviewReminder</module>
+                    <class>Clarion_ReviewReminder_Model_Resource_Setup</class>
+                </setup>
+            </clarion_reviewreminder_setup>
+        </resources>
+        
+        <!-- Set email template for reminder -->
+        <template>
+            <email>
+                <!-- name is same as in system.xml file -->
+                <review_reminder_general_settings_email_template translate="label" module="clarion_reviewreminder">
+                    <label>Product review reminder</label>
+                    <file>clarion_reviewreminder.html</file>
+                    <type>html</type>
+                </review_reminder_general_settings_email_template>
+            </email>
+        </template>
+    </global>
+    
+    <!-- Adminhtml layout xml configuration -->
+    <adminhtml>
+        <layout>
+            <updates>
+                <clarion_reviewreminder>
+                    <file>clarion_reviewreminder.xml</file>
+                </clarion_reviewreminder>
+            </updates>
+        </layout>
+    </adminhtml>
+    
+    <!-- Admin router configuration-->
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <clarion_reviewreminder after="Mage_Adminhtml">Clarion_ReviewReminder_Adminhtml</clarion_reviewreminder>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    
+    <default>
+        <!-- Set default values of system configuration varables -->
+        <review_reminder>
+            <status>
+                <extension_enable>1</extension_enable>
+            </status>
+            <general_settings>
+                <order_status>complete</order_status>
+                <number_of_days>5</number_of_days>
+                <sender_email_identity>general</sender_email_identity>
+                <email_template>review_reminder_general_settings_email_template</email_template>
+            </general_settings>
+        </review_reminder>
+    </default>
+    <crontab>
+        <jobs>
+            <clarion_reviewreminder>
+                <schedule>
+                    <cron_expr>0 6 * * 1</cron_expr>
+                    <!-- minute(0-59) Hour(0-23) day of month(1-31) month(1-12) day of week(0-7 0 or 7 is Sunday)-->
+                </schedule>
+                <run>
+                    <model>clarion_reviewreminder/observer::sendReviewReminder</model>
+                </run>
+            </clarion_reviewreminder>
+        </jobs>
+    </crontab>
+</config>
+

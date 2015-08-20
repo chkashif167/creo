@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category   design
+ * @package    default_default
+ * @created    16th Dec 2014
+ * @author     Clarion magento team <magento.team@clariontechnologies.co.in>
+ * @purpose    Review reminder admin layout file 
+ * @copyright  Copyright (c) 2014 Clarion Technologies Pvt. Ltd.
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License
+ */
+-->
+<layout version="0.1.0">
+    <adminhtml_managereminders_index>
+        <reference name="content">
+             <block type="clarion_reviewreminder/adminhtml_reviewreminder" name="reviewreminder.grid.container" />
+        </reference>
+    </adminhtml_managereminders_index>
+    <adminhtml_closedreminders_index>
+        <reference name="content">
+             <block type="clarion_reviewreminder/adminhtml_closedreminder" name="closedreminder.grid.container" />
+        </reference>
+    </adminhtml_closedreminders_index>
+</layout>
