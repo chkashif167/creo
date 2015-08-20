@@ -310,4 +310,39 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         die;
         
     }
+    
+    public function updateCart($sessionId,$qid,$products){
+        $proxy = new SoapClient($this->soapURLv2);
+        
+        return $proxy->shoppingCartProductUpdate($sessionId, $qid, $products);
+    }
+    
+    public function updateCartQtyAction(){
+        $sessionId = $this->getRequest()->getParam('sid');
+        $qid = $this->getRequest()->getParam('qid');
+        
+        $request_data = json_decode(file_get_contents('php://input'),true);
+        
+        $product_update = array();
+        foreach($request_data as $product){
+            $product_update[] = array("product_id"=>$product['product_id'],"qty"=>$product['qty']);
+        }
+        
+        $response = array('success'=>0,'message'=>'','res'=>null);
+        try{
+            $res = $this->updateCart($sessionId,$qid,$product_update);
+            
+            $response['success'] = 1;
+            $response['message'] = 'Cart updated successfully';
+            $response['res'] = $res;
+        } catch(Exception $e){
+            $response['error_code'] = $e->getCode();
+            $response['message'] = $e->getMessage();
+        }
+        
+        header("Content-Type: application/json");
+        echo json_encode($response);
+        die;
+    }
+    
 }
