@@ -29,31 +29,32 @@
 <tbody>
     <tr>
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;">
-            <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())
+            <div style="width:48%; float:left">
+         		 <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())
 				  ->load($_item->getProductId()); ?>
 		 	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
+            </div>
+            <div style="width:48%;float:left; margin-left:10px">
+                <h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase; text-align:left"><?php echo $this->escapeHtml($_item->getName()) ?></h2>
+                <p style="text-align:left; "><strong>SKU:</strong> <?php echo $this->escapeHtml($this->getSku($_item)) ?></p>
+            <?php if ($this->getItemOptions()): ?>
+                <dl style="margin:0; padding:0;">
+            <?php foreach ($this->getItemOptions() as $option): ?>
+                            <dt><strong><em><?php echo $option['label'] ?></em></strong></dt>
+                            <dd style="margin:0; padding:0 0 0 9px;">
+                                <?php echo nl2br($option['value']) ?>
+                            </dd>
+                        <?php endforeach; ?>
+                    </dl>
+                <?php endif; ?>
+                <?php $addInfoBlock = $this->getProductAdditionalInformationBlock(); ?>
+                <?php if ($addInfoBlock) :?>
+                    <?php echo $addInfoBlock->setItem($_item)->toHtml(); ?>
+                <?php endif; ?>
+                <?php echo $this->escapeHtml($_item->getDescription()) ?>
+        	</div>
         </td>
-        <td style="border-bottom: 1px solid #c2c2c2; padding:10px;">
-			<h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $this->escapeHtml($_item->getName()) ?>
-            </h2>
-            </td>
-        <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $this->escapeHtml($this->getSku($_item)) ?></h2>
-        </td>
-		<?php if ($this->getItemOptions()): ?>
-        <?php foreach ($this->getItemOptions() as $option): ?>
-			<?php if( $option['label'] == 'Color' || $option['label'] == 'Size' ) : ?>
-				<?php if( $option['value'] ) : ?>
-				<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo nl2br($option['value']) ?></h2>
-                </td>
-				<?php else : ?>
-				<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"> </h2>
-                </td>
-				<?php endif; ?>
-			<?php endif; ?>
-		<?php endforeach; ?>
-		<?php endif; ?>
-		<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQtyOrdered()*1 ?></h2></td>
-        <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_order->formatPrice($_item->getRowTotal()) ?></h2></td>
+		<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQty()*1 ?></h2></td>
         </tr>
     <?php if ($_item->getGiftMessageId() && $_giftMessage = $this->helper('giftmessage/message')->getGiftMessage($_item->getGiftMessageId())): ?>
         <tr>

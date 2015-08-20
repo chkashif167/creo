@@ -33,38 +33,24 @@
     <?php $_itemCount = count($_items) ?>
     <table class="items" cellpadding="0" cellspacing="0" border="0">
         <thead>
-			<tr>
-                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin:4px;"> <span style='display: block; ' >Product</span></a></td>
-                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin:4px;"> <span style='display: block; ' >Description</span></a></td>
-                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;margin: 4px;"> <span style='display: block; ' >
-                Sku</span></a></td>
-                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;margin: 4px;"> <span style='display: block; ' >
-                Color</span></a></td>
-                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;margin: 4px;"> <span style='display: block; ' >
-                Size</span></a></td>
+                <tr>
+                <td style="min-width: 80%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin:4px;"> <span style='display: block; ' >Product Description</span></a></td>
                 <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin: 4px;"> <span style='display: block; ' >
                 Quantity</span></a></td>
-                </tr>        
-<!--        <tr>
-            <th class="cell-name">
-                <?php /*if($_itemCount > 1): echo $this->__('Items in your order'); else: echo $this->__('Item in your order'); endif; ?>
-            </th>
-            <th class="cell-name align-center">
-                <?php echo $this->__('Sku'); ?>
-            </th>
-            <th class="cell-name align-right">
-                <?php echo $this->__('Qty'); */?>
-            </th>
-        </tr>
--->        </thead>
+                <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase; margin: 4px;"> <span style='display: block;' >Price</span></a></td>
+                </tr>
+	        </thead>
 
         <?php $i=0; foreach ($_invoice->getAllItems() as $_item): ?>
         <?php if($_item->getOrderItem()->getParentItem()) continue; else $i++; ?>
             <?php echo $this->getItemHtml($_item) ?>
         <?php endforeach; ?>
-
         <tfoot>
-            <?php echo $this->getChildHtml('invoice_totals')?>
+        <tr>
+        <td style="min-width: 20%; overflow: hidden; padding: 4px;text-align:right;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;  margin: 4px;"> <span style='display: block; ' >
+            <?php echo $this->getChildHtml('invoice_totals') ?></span></a>
+        </td>
+    </tr>
         </tfoot>
     </table>
 <?php endif; ?>
