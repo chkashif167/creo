@@ -27,11 +27,9 @@
  $visitCount=0;
  $visitCount = $_COOKIE['siteVisits'];
  if(!isset($_COOKIE['siteVisits']) || $_COOKIE['siteVisits']=='') {
-    setcookie('siteVisits', 0,time() + (86400 * 30),'/'); // 86400 = 1 day
+    setcookie('siteVisits', 0);
 } else {
-	//unset($_COOKIE['siteVisits']);
-	//setcookie('siteVisits', '', time() - 3600);
-    setcookie('siteVisits', $visitCount+1,time() + (86400 * 30),'/'); // 86400 = 1 day
+    setcookie('siteVisits', $visitCount+1);
 }
 
 ?>
@@ -39,7 +37,7 @@
 <?php 
 $check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
 $visitAttempt = $_SERVER['HTTP_REFERER'];
-if((!Mage::getModel('core/cookie')->get('popup-shown')) && ($visitCount=='0')) { ?>
+if((Mage::getModel('core/cookie')->get('popup-shown')) && ($visitCount=='0')) { ?>
 
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
