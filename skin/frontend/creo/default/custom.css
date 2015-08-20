@@ -503,7 +503,7 @@
 .products-grid li.item .btn-holder {
 	position:absolute;
 	width:100%;
-	bottom:39px;
+	bottom:100%;
 	display:none;
 }
 
@@ -805,7 +805,7 @@
 .cate2.cate:nth-child(3) { text-transform: uppercase;}
 .cate1, .currently, .actions, .cate { float: left !important;}
 .filtersol { padding: 0; margin: 0;}
-.cate-links .actions { margin: 0 20px;}
+.cate-links .actions { margin: 6px 20px 0;}
 
 
 

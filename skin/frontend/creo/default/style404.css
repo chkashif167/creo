@@ -33,6 +33,7 @@ p { margin: 0 0 1.2em; }
 	height: 100%;
 	width: 100%;
 	display: table;
+	background: none !important;
 }
 .w1{display: table-row;}
 .w2{
