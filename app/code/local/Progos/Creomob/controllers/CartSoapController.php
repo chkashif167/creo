@@ -20,7 +20,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         
         //initialize with customer address to cope with magento not calculating subtotal bug
         $proxy->shoppingCartCustomerAddresses($sessionId, $stroeId, array(array(
-            'mode' => '',
+            'mode' => 'shipping',
             'firstname' => 'Creo',
             'lastname' => 'Mobile',
             'street' => 'Rehman Baba Road',
@@ -30,7 +30,20 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
             'country_id' => 'PK',
             'telephone' => '03125511678',
             'is_default_billing' => 1
-            )));
+            ),
+            array(
+            'mode' => 'billing',
+            'firstname' => 'Creo',
+            'lastname' => 'Mobile',
+            'street' => 'Rehman Baba Road',
+            'city' => 'Islamabad',
+            'region' => '',
+            'postcode' => '46000',
+            'country_id' => 'PK',
+            'telephone' => '03125511678',
+            'is_default_billing' => 1
+            ),
+            ));
         
         return $proxy->shoppingCartCreate($sessionId, $stroeId);
     }
@@ -51,7 +64,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         
         //initialize with customer address to cope with magento not calculating subtotal bug
         $proxy->shoppingCartCustomerAddresses($sessionId, $quoteId, array(array(
-            'mode' => '',
+            'mode' => 'shipping',
             'firstname' => 'Creo',
             'lastname' => 'Mobile',
             'street' => 'Rehman Baba Road',
@@ -61,7 +74,20 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
             'country_id' => 'PK',
             'telephone' => '03125511678',
             'is_default_billing' => 1
-            ))); 
+            ),
+            array(
+            'mode' => 'billing',
+            'firstname' => 'Creo',
+            'lastname' => 'Mobile',
+            'street' => 'Rehman Baba Road',
+            'city' => 'Islamabad',
+            'region' => '',
+            'postcode' => '46000',
+            'country_id' => 'PK',
+            'telephone' => '03125511678',
+            'is_default_billing' => 1
+            ),
+            )); 
         
         
         return $proxy->shoppingCartInfo($sessionId, $quoteId);
@@ -88,7 +114,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                 $dataObj = $this->getCart($sessionId,$quoteId);
 
                 //$quote = Mage::getModel('sales/quote')->load($quoteId);
-//                $shipping_flatrate_price = Mage::getStoreConfig('carriers/flatrate/price');
+                $shipping_flatrate_price = Mage::getStoreConfig('carriers/flatrate/price');
 //                $cart = Mage::getModel('sales/quote')->load($quoteId);
 //                print_r($cart); //die;
 //                echo $totalItems = Mage::getModel('sales/quote')->load($quoteId)->getItemsCount();  echo '<br>';
@@ -119,7 +145,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                     $data['items'][$i] = $extended_items;
                     $i++;
                 }
-//                $data['shipping_flatrate_price'] = $shipping_flatrate_price;
+                $data['shipping_flatrate_price'] = $shipping_flatrate_price;
                 $response['cart'] = $data;
             } catch(Exception $e){
                 $response['error_code'] = $e->getCode();
@@ -242,5 +268,46 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         header("Content-Type: application/json");
         echo json_encode($response);
         die;
+    }
+    
+    public function updateProductQty($sessionId,$qid,$productId,$qty){
+        $proxy = new SoapClient($this->soapURLv2);
+        
+        return $proxy->shoppingCartProductUpdate($sessionId, $qid, array(array(
+                'product_id' => $productId,
+                'qty' => $qty,
+                'options' => null,
+                'bundle_option' => null,
+                'bundle_option_qty' => null,
+                'links' => null
+                )));
+    }
+
+
+    public function updateProductQtyAction(){
+        
+        $sessionId = $this->getRequest()->getParam('sid');
+        $qid = $this->getRequest()->getParam('qid');
+        $productId = $this->getRequest()->getParam('pid');
+        $qty = $this->getRequest()->getParam('qty');
+        
+        
+        $response = array('success'=>0,'message'=>'','res'=>null);
+        try{
+            $res = $this->updateProductQty($sessionId,$qid,$productId,$qty);
+            
+            $response['success'] = 1;
+            $response['message'] = 'Quantity updated successfully';
+            $response['res'] = $res;
+        } catch(Exception $e){
+            $response['error_code'] = $e->getCode();
+            $response['message'] = $e->getMessage();
+        }
+        
+        
+        header("Content-Type: application/json");
+        echo json_encode($response);
+        die;
+        
     }
 }

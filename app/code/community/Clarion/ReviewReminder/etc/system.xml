@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category   Clarion
+ * @package    Clarion_ReviewReminder
+ * @created    6th Jan 2015
+ * @author     Clarion magento team <magento.team@clariontechnologies.co.in>
+ * @purpose    System config file 
+ * @copyright  Copyright (c) 2014 Clarion Technologies Pvt. Ltd.
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License
+ */
+-->
+<config>
+    <tabs>
+        <review_reminder_tab translate="label" module="clarion_reviewreminder">
+            <label>Review Reminder</label>
+            <sort_order>0</sort_order>
+        </review_reminder_tab>
+    </tabs> 
+    <sections>
+        <review_reminder translate="label" module="clarion_reviewreminder">
+            <label>Review Reminder</label>
+            <tab>review_reminder_tab</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <status translate="label">
+                    <label>Status</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store> 
+                    <fields>
+                        <extension_enable translate="label">
+                            <label>Extension enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </extension_enable>
+                    </fields>  
+                </status>
+                <general_settings>
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store> 
+                    <fields>
+                        <order_status translate="label">
+                            <label>Order Status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>clarion_reviewreminder/adminhtml_system_config_source_status</source_model>
+                            <sort_order>1</sort_order>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_status>
+                        <number_of_days translate="label">
+                            <label>Number of days after order placed</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>clarion_reviewreminder/adminhtml_system_config_source_days</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </number_of_days>
+                        <email_template translate="label">
+                            <label>Email template</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+                        <sender_email_identity translate="label">
+                            <label>Email Sender</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_email_identity>
+                    </fields>  
+                </general_settings>
+            </groups>
+        </review_reminder>
+    </sections>
+</config>
