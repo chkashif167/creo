@@ -4280,13 +4280,49 @@ p.availability{margin: 0;}
 .review-product-list .product-detail .options-area,
 .review-product-list .product-detail .shipping-area{display: none;}
 .review-product-list .product-detail .text-area{border-bottom: 1px solid #000;}
-
-
-
-
-
-
-
+.box-collateral.box-reviews {
+    margin: 0;
+    overflow: hidden;
+    padding: 20px 0 10px;
+}
+.form-list {
+    list-style: outside none none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.form-list li{
+	float: none;
+	margin: 0 0 12px;
+}
+textarea {
+    background: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    height: 99px;
+    line-height: 20px;
+    margin: 0 0 10px;
+    padding: 4px 10px;
+    text-align: left;
+    width: 100%;
+}
+.form-list label {
+    display: block;
+    font-weight: normal;
+}
+#customer-reviews .no-rating {display: none;}
+#review-form button {
+    background: #f16167;
+    border: none;
+    color: #fff;
+    padding: 10px 12px;
+}
+#review-form button:hover{opacity: 0.9;}
+.validation-advice {
+    display: block;
+    margin: -10px 0 10px;
+    width: 100%;
+}
 
 
 

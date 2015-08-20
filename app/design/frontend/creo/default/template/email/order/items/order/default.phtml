@@ -42,8 +42,13 @@
 		<?php if ($this->getItemOptions()): ?>
         <?php foreach ($this->getItemOptions() as $option): ?>
 			<?php if( $option['label'] == 'Color' || $option['label'] == 'Size' ) : ?>
+				<?php if( $option['value'] ) : ?>
 				<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo nl2br($option['value']) ?></h2>
                 </td>
+				<?php else : ?>
+				<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"> </h2>
+                </td>
+				<?php endif; ?>
 			<?php endif; ?>
 		<?php endforeach; ?>
 		<?php endif; ?>

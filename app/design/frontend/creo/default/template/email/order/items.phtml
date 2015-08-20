@@ -77,7 +77,7 @@
     </tr>
     <tr>
         <td>
-            <?php //echo $this->getChildHtml('order_totals') ?>
+            <?php echo $this->getChildHtml('order_totals') ?>
         </td>
     </tr>
     <?php if ($this->helper('giftmessage/message')->isMessagesAvailable('order', $_order, $_order->getStore()) && $_order->getGiftMessageId()): ?>
