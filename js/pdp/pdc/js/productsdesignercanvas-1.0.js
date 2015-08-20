@@ -748,10 +748,19 @@
 		//Reset design action
         $('[pdc-action="reset_design"]').click(function() {
             var resetDesignMessage = "Are you sure? Your current design will be discarded!";
-            if(!confirm(resetDesignMessage)) {
-                return false;
-            }
-            self.resetToSampleDesign();
+			
+			jQuery.confirm({
+			title: 'Confirm',
+			confirmButtonClass: 'btn-info',
+			content: resetDesignMessage,
+			    confirm: function(){
+					self.resetToSampleDesign();
+				}
+			});
+            //if(!confirm(resetDesignMessage)) {
+               // return false;
+           // }
+            //self.resetToSampleDesign();
         });
         //init sides data, assign json to sides properties
         self.initSidesData();
