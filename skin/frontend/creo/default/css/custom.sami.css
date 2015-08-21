@@ -642,3 +642,8 @@ div.fme-filter a.fme_layered_attribute {
 	color:#fff;
 	border:none;
 }
+
+.item-options.pdp_cart_item img {
+    max-height: 110px;
+    width: auto;
+}
