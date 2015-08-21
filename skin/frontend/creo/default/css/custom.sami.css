@@ -622,3 +622,28 @@ div.fme-filter a.fme_layered_attribute {
 #configurable_swatch_size li.not-available {
 	pointer-events:none;
 }
+
+.catalog-category-view.categorypath-create-html.category-create .products-grid li h2 {
+	margin-top:10px;
+}
+
+.catalog-category-view.categorypath-create-html.category-create .products-grid li h2 a {
+  	border: 2px solid #ececec;
+    display: block;
+    font-size: 21px;
+    line-height: 2;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.catalog-category-view.categorypath-create-html.category-create .products-grid li h2 a:hover {
+	background:#f16a79;
+	color:#fff;
+	border:none;
+}
+
+.item-options.pdp_cart_item img {
+    max-height: 110px;
+    width: auto;
+}
