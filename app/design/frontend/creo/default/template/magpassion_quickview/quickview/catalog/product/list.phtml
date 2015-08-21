@@ -77,7 +77,37 @@
     <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
     <?php else: ?>
-
+<script>
+function setLocationAjax(url,id){
+        url += 'isAjax/1';
+        url = url.replace("checkout/cart","ajax/index");
+        jQuery('#ajax_loader'+id).show();
+        try {
+            jQuery.ajax( {
+                url : url,
+                dataType : 'json',
+                success : function(data) {
+                    jQuery('#ajax_loader'+id).hide();
+                   if (jQuery('#header-cart')) {
+									jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">'+data.qty+'</span>My Cart</a>'+data.minicart );
+								}
+                          /*initialize the minicart dropdown again*/
+						  jQuery('#open-close-minicart').openClose({
+								activeClass: 'active',
+								opener: '.opener',
+								slider: '.slide',
+								animSpeed: 400,
+								effect: 'slide'
+							});
+						  jQuery('#ajaxModalTitle').html(data.status);
+						  jQuery('#ajaxModalContent').html(data.message);
+						  jQuery('.ajaxAddToCartModal').modal('show');       
+                }
+            });
+        } catch (e) {
+        }
+    }
+</script>
     <?php // Grid Mode  ?>
 
     <?php $_collectionSize = $_productCollection->count() ?>
@@ -100,7 +130,12 @@
         <?php if ($this->helper('wishlist')->isAllow()) : ?>
         <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
          <?php endif; ?>
-        <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a> 
+        <?php if ( !($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped()) ) { ?>
+                        <a href="javascript:;" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>','<?php echo $_product->getId()?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>
+                        <?php } else { ?>
+                            <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>
+                        <?php }  ?>
+         
         </div>
       </div>
             </li>
@@ -116,3 +151,17 @@
     </div>
 </div>
 <?php endif; ?>
+<!--code added by Naveed Abbas on 20-08-2015-->
+<div class="modal fade ajaxAddToCartModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content modal-login">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-holder">
+						<div class="heading-holder">
+							<h3 id="ajaxModalTitle"></h3>
+						</div>
+						<p id="ajaxModalContent"></p>
+					</div>
+					</div>
+				</div>
+			</div>

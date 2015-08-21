@@ -85,7 +85,7 @@
                             </span> 
                         </div>
                         <div class="options-area">
-                            <?php if ($_product->isSaleable() && $this->hasOptions()): ?>
+                            <?php if ($_product->isSaleable()): ?>
                                 <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                             <?php endif; ?>
                         </div>
@@ -130,7 +130,7 @@
                         </div>
                     </div>
                     <div class="options-area">
-                        <?php if ($_product->isSaleable() && $this->hasOptions()): ?>
+                        <?php if ($_product->isSaleable()): ?>
                             <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                         <?php endif; ?>
                     </div>
@@ -203,7 +203,8 @@
         <script type="text/javascript">
             //<![CDATA[
             var productAddToCartForm = new VarienForm('product_addtocart_form');
-            productAddToCartForm.submit = function (button, url) {
+            /*Modified by Naveed Abbas on 20-08-2015*/
+			/*productAddToCartForm.submit = function (button, url) {
                 if (this.validator.validate()) {
                     var form = this.form;
                     var oldUrl = form.action;
@@ -223,7 +224,57 @@
                         button.disabled = true;
                     }
                 }
-            }.bind(productAddToCartForm);
+            }.bind(productAddToCartForm);*/
+			productAddToCartForm.submit = function(button, url) {
+				if (this.validator.validate()) {
+					var form = this.form;
+					var oldUrl = form.action;
+	 
+					if (url) {
+					   form.action = url;
+					}
+					var e = null;
+	//Start of our new ajax code
+					if(!url){
+						url = jQuery('#product_addtocart_form').attr('action');
+					}
+					var data = jQuery('#product_addtocart_form').serialize();
+					data += '&isAjax=1';   
+					jQuery('#ajax_loader').show();
+					try {
+						jQuery.ajax({
+                          url: url,
+                          dataType: 'json',
+                          type : 'post',
+                          data: data,
+                          success: function(data){
+                                jQuery('#ajax_loader').hide();
+                                //alert(data.status + ": " + data.message);
+                                if (jQuery('#header-cart')) {
+									jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">'+data.qty+'</span>My Cart</a>'+data.minicart );
+								}
+                          /*initialize the minicart dropdown again*/
+						  jQuery('#open-close-minicart').openClose({
+								activeClass: 'active',
+								opener: '.opener',
+								slider: '.slide',
+								animSpeed: 400,
+								effect: 'slide'
+							});
+						  jQuery('#ajaxModalTitle').html(data.status);
+						  jQuery('#ajaxModalContent').html(data.message);
+						  jQuery('.ajaxAddToCartModal').modal('show');
+						  }
+                    });
+					} catch (e) {
+					}
+	//End of our new ajax code
+					this.form.action = oldUrl;
+					if (e) {
+						throw e;
+					}
+				}
+			}.bind(productAddToCartForm);
             productAddToCartForm.submitLight = function (button, url) {
                 if (this.validator) {
                     var nv = Validation.methods;
@@ -261,3 +312,18 @@
           </div><?php */ ?>
         <?php echo $this->getChildHtml('upsell_products') ?> <?php echo $this->getChildHtml('product_additional_data') ?>
     </div>
+   
+<!--code added by Naveed Abbas on 20-08-2015-->
+<div class="modal fade ajaxAddToCartModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content modal-login">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-holder">
+						<div class="heading-holder">
+							<h3 id="ajaxModalTitle"></h3>
+						</div>
+						<p id="ajaxModalContent"></p>
+					</div>
+					</div>
+				</div>
+			</div>   
