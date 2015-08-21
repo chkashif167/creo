@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Progos_Creomob>
+            <version>0.1.0</version>    <!-- Version number of your module -->
+        </Progos_Creomob>
+    </modules>
+    <frontend>
+        <routers>
+            <creomob>
+                <use>standard</use>
+                <args>
+                    <module>Progos_Creomob</module>
+                    <frontName>creomob</frontName>
+                </args>
+            </creomob>
+        </routers>
+    </frontend>
+</config>

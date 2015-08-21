@@ -23,15 +23,29 @@
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+ 
+ $visitCount=0;
+ $visitCount = $_COOKIE['siteVisits'];
+ if(!isset($_COOKIE['siteVisits']) || $_COOKIE['siteVisits']=='') {
+    setcookie('siteVisits', 0);
+} else {
+    setcookie('siteVisits', $visitCount+1);
+}
+
 ?>
-<?php $check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
-if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
+
+<?php 
+$check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
+$visitAttempt = $_SERVER['HTTP_REFERER'];
+if((Mage::getModel('core/cookie')->get('popup-shown')) && ($visitCount=='0')) { ?>
+
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
     <div class="modal-content block-subscribe">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-holder">
         <h2><?php echo $this->__('Newsletter') ?></h2>
+       
         <p>Subscribe to the Black & White mailing list to receive updates on new arrivals, special offers and other discount information.</p>
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
           <div class="block-content">
@@ -41,7 +55,7 @@ if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
             <div class="actions">
               <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button newslettersubscribe "><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
             </div>
-            <div class="row dontshowagain">
+            <div class="row dontshowagain" onclick="checkcookie()">
               <input type="checkbox" value="" name="checkbox1" id="checkbox1">
               <label for="checkbox1">Don’t show this popup again</label>
             </div>
@@ -56,6 +70,7 @@ if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
     </div>
   </div>
 </div>
+
 <?php } ?>
 
 
@@ -74,6 +89,11 @@ if(!Mage::getModel('core/cookie')->get('popup-shown')) { ?>
     //<![CDATA[
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail1');
     //]]>
+    function checkcookie(){
+       jQuery(".modal-backdrop").fadeOut().removeClass("active");
+        jQuery(".modal_newsletter ").fadeOut().removeClass("active");
+        <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/'); ?>
+    }
     </script>
     
     

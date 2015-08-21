@@ -96,18 +96,10 @@
 	text-transform: uppercase;
 }
 .login-form .validation-advice {
-	position: relative;
 	font-size: 10px;
-	top: -14px;
 	text-align: left;
 	color: red;
-}
-.subscribe-form .validation-advice {
-	position: relative;
-	font-size: 10px;
-	top: -14px;
-	text-align: left;
-	color: red;
+	float: left;
 }
 .popuplogin_button:hover, .newslettersubscribe:hover {
 	color: #000;
@@ -235,35 +227,56 @@
 .product-detail .btn-holder button:first-child {
 	background: #fff none repeat scroll 0 0;
 	border-color: #eee;
+	outline:none !important;
 	border-style: solid;
 	border-width: 0 0 0 4px;
 	color: #aaa;
-	margin: 0 13px 0 0;
+	margin: 0;
 	overflow: hidden;
 	padding: 0;
-	width: 79.5%;
+	width: 81%;
 }
 .product-detail .btn-holder button:first-child .span1 {
 	border: 4px solid #eee;
 	display: block;
-	margin-left: -12px;
+	margin-left: -10px;
 	transform: skewX(-25deg);
+	-ms-transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
 	width: 100%;
 }
 .product-detail .btn-holder button:first-child .span2 {
 	display: inline-block;
 	transform: skewX(25deg);
+	-ms-transform: skewX(25deg);
+	-moz-transform: skewX(25deg);
+	-webkit-transform: skewX(25deg);
 }
-.product-detail .btn-holder button:first-child:hover .span1 {
+.product-detail .btn-holder button:first-child .span1 {
 	background: #000 none repeat scroll 0 0;
 	border-color: #000;
 }
-.product-detail .btn-holder button:first-child:hover {
+
+.product-detail .btn-holder button:first-child:hover .span1 {
+	background: #f16167 none repeat scroll 0 0;
+	border-color: #f16167;
+} 
+
+.product-detail .btn-holder button:first-child {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 	border-color: #000;
 	color: #fff;
 	opacity: 1;
 }
+
+.product-detail .btn-holder button:first-child:hover {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border-color: #f16167;
+	color: #000;
+	opacity: 1;
+} 
+
 .product-detail .btn-holder .span2 {
 	font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
@@ -316,11 +329,17 @@
 	display: block;
 	margin-left: -12px;
 	transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg);
+	-ms-transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
 	width: 100%;
 }
 .quickview-index-view .btn-holder button:first-child .span2 {
 	display: inline-block;
 	transform: skewX(25deg);
+	-moz-transform: skewX(25deg);
+	-ms-transform: skewX(25deg);
+	-webkit-transform: skewX(25deg);
 }
 .quickview-index-view .btn-holder button:first-child:hover .span1 {
 	background: #000 none repeat scroll 0 0;
@@ -380,8 +399,11 @@
 #configurable_swatch_color .swatch-link {
 	border: none;
 }
-.fancybox-wrap.fancybox-type-iframe.fancybox-opened {
+.fancybox-wrap {
 	transform: skewY(-5deg);
+	-ms-transform: skewY(-5deg);
+	-moz-transform: skewY(-5deg);
+	-webkit-transform: skewY(-5deg);
 	backface-visibility: hidden;
 	border-radius: 0;
 	border-top: 17px solid #000;
@@ -444,7 +466,7 @@
 	left: 0;
 	position: absolute;
 	right: 0;
-	top: 24px;
+	top: 100%;
 	color: red;
 }
 .select-label {
@@ -460,14 +482,14 @@
 	box-shadow: none;
 	color: #555;
 	cursor: pointer;
-	left: 0px;
+	left: 0;
 	opacity: 1;
 	padding: 0;
 /*	position: relative;*/
 	text-decoration: none;
-	top: 275px;
+	top: 325px;
 	z-index: 10;
-	 width:100%;
+	width:100%;
 }
 #products-list .mp_quickview_icon { width:22%;}  
 .products-grid .quick-view {
@@ -476,7 +498,20 @@
 	
 }
 .mp_quickview_icon { top: 0;}
-.products-grid li:hover .quick-view { display: block !important;}
+.products-grid li:hover .quick-view { display: none !important;}
+
+.products-grid li.item .btn-holder {
+	position:absolute;
+	width:100%;
+	bottom:100%;
+	display:none;
+}
+
+.products-grid li.item:hover .btn-holder {
+	display:block;
+}
+
+
 .products-list {
 	padding: 0;
 	margin: 0;
@@ -555,7 +590,7 @@
 	display: none;
 }
 .checkout-cart-index #shopping-cart-table tfoot tr {
-	border-bottom: none !important
+	background: none !important
 }
 .checkout-cart-index .subtotal .price {
 	font-size: 15px !important;
@@ -752,23 +787,25 @@
 	 }
 #review-buttons-container { display: inline-block; width: 100%;}
 #review-buttons-container button {   background: #f16167 none repeat scroll 0 0;
-    border: medium none;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     height: auto;
-    padding: 8px 100px;
+    padding: 5px 100px;
     width: auto;
     float: right;
+	margin-top:20px;
     text-transform: uppercase;
+    border: 3px solid #ef4f61;
 }
+#review-buttons-container button:hover{border-color: #000;}
 .cate2.cate:nth-child(2) { }
 .cate2.cate:nth-child(2) a { border: none; background: none; }
 .cate2.cate:nth-child(2) a:hover { background: none; }
 .cate2.cate:nth-child(3) { text-transform: uppercase;}
 .cate1, .currently, .actions, .cate { float: left !important;}
 .filtersol { padding: 0; margin: 0;}
-.cate-links .actions { margin: 0 20px;}
+.cate-links .actions { margin: 6px 20px 0;}
 
 
 
@@ -909,18 +946,20 @@
  }
  .quickview-index-view .swatch-attr .select-label { display: none !important;}
  .onestepcheckout-index-index footer{ float: left; width:100%; }
- .shipping-area { border-top: 0;}
-  .shipping-area > ul li { width: 20%;}
+ .shipping-area { border-top: 0; border-bottom:1px solid #000}
+/*  .shipping-area > ul li { width: 20%;}*/
   .shipping-area > ul li strong { width: 20%; font-size: 14px;}
   .shipping-area > ul li ul li { width: 100%; float: left; margin: 0 0 1px 0 !important; font-size:13px !important;}
   .shippingheading { text-align: left; width:32% !important;}
-  .shipping-area .shipping-info { float: left !important;  font-size: 13px;}
-  .shipping-area li a { padding: 8px !important; }
+/*  .shipping-area .shipping-info { float: left !important;  font-size: 13px;}
+*/  
+.shipping-area .shipping-info {  border: 2px solid #ddd;  color: #000;    float: right;    font: 10px/15px "Roboto Condensed",Helvetica,Arial,sans-serif;    padding: 3px 6px;    text-align: center;}  
+/*  .shipping-area li a { padding: 8px !important; }
   .shipping-area li a::before { position: relative; float: left;  background: none !important; width: auto !important; height: auto !important;}
   .shipping-area li a:hover::before { background-position: 0 -28px !important;}
   .shipping-area li a:hover { background: none !important; color: #000 !important; background-position:inherit !important; border: 2px solid #ddd !important; cursor:default;}
   .old-price {text-decoration: line-through;}
- 
+*/ 
  
  
  
@@ -980,3 +1019,11 @@
 .page-header.checkout-form-headings > h1 {
 	margin-top:0;
 }
+
+
+
+/*.jconfirm white, .jconfirm-box-container.span6.offset3.col-md-5.col-md-offset-3 {
+    display: none;
+}*/
+
+

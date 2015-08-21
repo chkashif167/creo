@@ -119,7 +119,8 @@
 				}, 
 				success: function(response) {
 					callback(response);
-					$('.pdploading').hide();
+                    //Should hide in callback function
+					//$('.pdploading').hide();
 				}
 			});
 		},
@@ -154,12 +155,23 @@
             self.showLog("Save Customer Design", "info");
             self.saveJsonFile(function(response) {
                 var responseJson = JSON.parse(response);
+                //If skip save design step
+                //if($("#is_skip_design_step").length && $("#is_skip_design_step").val() === "1") {
+				if(true) {
+                    self.showLog("Skip save design step", "info");
+                    $("#customer_design_json").val(responseJson.filename);
+                    self.newestJsonFilename = responseJson.filename;
+                    self.saveAndContinue();
+                    $('.pdploading').hide();
+                    return false;
+                }
                 self.showLog("Save json to customer account if user request", "info");
                 if($("#customer_design_json").length && (responseJson.filename || '')) {
                     $("#customer_design_json").val(responseJson.filename);
                     self.newestJsonFilename = responseJson.filename;
                     self.previewResultImageBeforeSave();
                     $("#savePopup").modal("show");
+                    $('.pdploading').hide();
                 }
             });
         },
@@ -180,9 +192,66 @@
         },
         saveJsonFile: function(callback) {
             if(this.sides) {
-                this.doRequest(config.save_json_url, {json_content: JSON.stringify(this.sides)}, callback); 
+                //this.doRequest(config.save_json_url, {json_content: JSON.stringify(this.sides)}, callback);
+				//this.postData(config.save_json_url, JSON.stringify(this.sides), callback);
+				$.ajax({
+					type: "POST",
+					url: config.save_json_url,
+					data: JSON.stringify(this.sides),
+					contentType: 'application/json',
+					beforeSend: function() {
+						//Developer can using this class to make their own process bar
+						$('.pdploading').show();
+						if(global.Pace !== undefined) {
+							Pace.restart();
+						}
+					},
+					error: function(error) {
+						console.log(error);
+						console.log("Something went wrong...");
+					}, 
+					success: function(response) {
+						callback(response);
+						//Should hide in callback function
+						//$('.pdploading').hide();
+					}
+				});
             }
         },
+        //Might need in the future
+		postData: function(url, data, callback) {
+			// 1. Create XHR instance - Start
+			var xhr;
+			if (window.XMLHttpRequest) {
+				xhr = new XMLHttpRequest();
+			}
+			else if (window.ActiveXObject) {
+				xhr = new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			else {
+				throw new Error("Ajax is not supported by this browser");
+			}
+			// 1. Create XHR instance - End
+			// 2. Define what to do when XHR feed you the response from the server - Start
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status == 200 && xhr.status < 300) {
+						console.log(xhr.responseText);
+						callback(xhr.responseText);
+					}
+				}
+			}
+			// 2. Define what to do when XHR feed you the response from the server - End
+
+			// 3. Specify your action, location and Send to the server - Start
+			console.info('using XMLHttpRequest');
+			xhr.open('POST', url);
+			//xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			//xhr.setRequestHeader("Content-Type", "text/plain; charset=UTF-8");
+			//xhr.setRequestHeader('Access-Control-Allow-origin', 'true');
+			xhr.send(data);
+			// 3. Specify your action, location and Send to the server - End
+		},
         saveDesignToCustomerAccount: function() {
             var self = this,
                 data = {
@@ -219,8 +288,7 @@
         },
         saveAndContinue: function() {
             var self = this;
-            //Pass data from iframe to parent window
-            var mainWindow = top.document;
+            var mainWindow = document; // on same window, not iframe any more
             self.showLog("Save And Continue", "info");
             //Update json file to extra_options
             self.showLog("Add new json filename to extra_option hidden input. " + self.newestJsonFilename, "info");
@@ -246,7 +314,11 @@
             // close popup or save current json in session and reload page
             $("#savePopup").modal("hide");
             $("#close_iframe").click();
-            
+			console.info("Can add design-rendered class and add to cart");
+			//Modified onclick event for add to cart button
+			var cartBtn = $("button.btn-cart");
+			cartBtn.attr("onclick", "productAddToCartForm.submit(this)");
+			cartBtn.click();
         },
         //This function might need to update with different magento theme
         previewDesign: function() {
@@ -267,6 +339,8 @@
         switchSide: function() {
             var self = this;
             self.showLog("Switch Side", 'info');
+            //Hide loading bar
+            $('.pdploading').hide();
             self.reset();
             return this;
         },
@@ -276,6 +350,7 @@
         handleCurrentAction: function() {
             var self = this,
                 _timeout;
+			console.info(self.status, self.action);
             if(self.status === 0) {
                 _timeout = setTimeout(function() {
                     self.handleCurrentAction();
@@ -357,6 +432,30 @@
             }
             return total.toFixed(2);
         },
+		reloadPrice: function() {
+			/********************************** RELOAD PRICE **********************************/
+			var mainWindow = document;
+			if ($("#product_price_config", mainWindow).length) {
+				var productPriceConfig = JSON.parse($("#product_price_config", mainWindow).val());
+				if (productPriceConfig.productId === undefined) {
+					return false;
+				}
+				var extraPrice = parseFloat(this.getFinalPrice());
+				console.info(extraPrice);
+				productPriceConfig.productPrice = productPriceConfig.productPrice + extraPrice;
+				productPriceConfig.productOldPrice = productPriceConfig.productOldPrice + extraPrice;
+				optionsPrice = new Product.OptionsPrice(productPriceConfig);
+				try {
+					//Reload price for configurable product
+					optionsPrice.reload();
+					//Reload price for simple product has custom options
+					opConfig.reloadPrice();
+				} catch(error) {
+					console.log(error);
+				}
+			}
+			/********************************** End RELOAD PRICE **********************************/
+		},
         isEnableClipartPrice: function() {
             var _isEnable = false;
             if($("#pdc_product_config").length) {
@@ -381,6 +480,24 @@
                 //this.showLog(_currentJson);
                 this.sides = _currentJson;
                 this.setActiveSideColor();
+            }
+        },
+		resetToSampleDesign: function() {
+            //If exists sample, then reset to sample design, else => canvas.clear();
+            this.showLog("Reset design to sample design or empty design", "info");
+            var self = this;
+            this.getCurrentCanvas().clear();
+            //Try to import sample json
+            if(this.sampleDesignJson) {
+                var currentIndex = this.getActiveSideIndex();
+                if(this.sampleDesignJson[currentIndex] && this.sampleDesignJson[currentIndex].json) {
+                    var jsonString = this.sampleDesignJson[currentIndex].json || '';
+                    if(jsonString) {
+                        this.getCurrentCanvas().loadFromJSON(jsonString, function() {
+                            self.getCurrentCanvas().renderAll();
+                        });
+                    }
+                }
             }
         },
         getSampleJson: function() {
@@ -411,6 +528,7 @@
             var self = this,
                 _canvas = self.getCurrentCanvas();
             _canvas.setZoom(1);
+            _canvas.deactivateAll();
             if(self.sides[self.getActiveSideIndex()] === undefined) {
                 var originalSize = self.getActiveSide().attr("inlay").split(",");
             } else {
@@ -442,6 +560,7 @@
                 if(responseJson.status === "success") {
                     window.location = responseJson.thumbnail_path;
                     $("#downloadPopup").modal("hide");
+                    $('.pdploading').hide();
                     return false;
                 }
                 alert(responseJson.message);
@@ -461,6 +580,7 @@
                 if(responseJson.status === "success") {
                     window.location = responseJson.pdf_url;
                     $("#downloadPopup").modal("hide");
+                    $('.pdploading').hide();
                     return false;
                 }
                 alert(responseJson.message);
@@ -494,6 +614,7 @@
 							addthis.url = newUrl;                
 							addthis.toolbox(".addthis_toolbox"); */
 							$("#sharingPopup").modal("show");
+                            $('.pdploading').hide();
 							return;
 						}
 					} catch (error) {
@@ -623,6 +744,23 @@
         //Remove sample data
         $('[pdc-data="pdc-remove-sample"]').click(function() {
             self.removeSampleData();
+        });
+		//Reset design action
+        $('[pdc-action="reset_design"]').click(function() {
+            var resetDesignMessage = "Are you sure? Your current design will be discarded!";
+			
+			jQuery.confirm({
+			title: 'Confirm',
+			confirmButtonClass: 'btn-info',
+			content: resetDesignMessage,
+			    confirm: function(){
+					self.resetToSampleDesign();
+				}
+			});
+            //if(!confirm(resetDesignMessage)) {
+               // return false;
+           // }
+            //self.resetToSampleDesign();
         });
         //init sides data, assign json to sides properties
         self.initSidesData();

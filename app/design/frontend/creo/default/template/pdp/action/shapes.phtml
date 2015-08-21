@@ -5,17 +5,16 @@ $limit = $this->_default_page_size_shape;
 ?>
 <!-- Modal Shape Plugin-->
 <div class="modal fade" id="shapeLibrary" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><i class="pdc-favorite"></i> <?php echo $this->__('Shape Plugin');?> </h4>
+			<div class="modal-holder">
+            <div class="modal-header">
+                <div class="heading-holder"><h3 class="modal-title"><i class="pdc-star"></i> <?php echo $this->__('Shape Plugin');?> </h3></div>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-inline">
-                            <div class="form-group">
+                            <div class="col-md-5">
                                 <label for="shape_category"><?php echo $this->__("Shape Category") ?></label>
                                 <select class="form-control" id="shape_category" pdc-action="change-shape-category">
                                 <?php 
@@ -30,18 +29,18 @@ $limit = $this->_default_page_size_shape;
                                 ?>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="col-md-7">
                                 <label for="search_shape"><?php echo $this->__("Search Shapes") ?></label>
                                 <input type="text" class="form-control" id="search_shape">
-                                <button class="btn btn-primary" pdc-action="search-shape" cr_act="0" type="button"><?php echo $this->__("Search") ?></button>
-                                <button class="btn btn-info" pdc-action="reset-search-shape" cr_act="0" type="button"><?php echo $this->__("Reset") ?></button>
+                                <button class="btn-primary" pdc-action="search-shape" cr_act="0" type="button"><?php echo $this->__("Search") ?></button>
+                                <button class="btn-info" pdc-action="reset-search-shape" cr_act="0" type="button"><i class="pdc-autorenew"></i><?php echo $this->__("") ?></button>
 
                             </div>
-                        </div>  
-                    </div>
+							</div>
+							<div class="row">
                     <div class="col-md-12">
                         <div class="selected_shape_photo">
-                            <ul id="shape_list" pdc-data="shape-list" class="shape-list">
+                            <ul id="shape_list" pdc-data="shape-list" class="shape-list shape-list1">
                                 <?php $defaultArtCate = Mage::getModel('pdp/shapecate')->getDefaultArtCate() ?>
                                 <?php $clipartCollection = $this->pagingShapeCollection(1, $defaultArtCate, $limit);?>
                                 <?php if ($clipartCollection) : ?>
@@ -69,5 +68,6 @@ $limit = $this->_default_page_size_shape;
                 </div>
             </div>
         </div>
+		</div>
     </div>
 </div>

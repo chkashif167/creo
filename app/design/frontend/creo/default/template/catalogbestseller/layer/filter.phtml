@@ -1,0 +1,81 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for filter items block
+ *
+ * @see Mage_Catalog_Block_Layer_Filter
+ */
+?>
+<?php $style_array = array('largevshape','round','vshape')?>
+<?php $gender_array = array('men','children','women');?>
+<nav class="cate2 cate">
+<ul>
+<?php foreach ($this->getItems() as $_item): ?>
+    <li>
+        <?php if ($_item->getCount() > 0): ?>
+
+            <?php 
+               // echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');
+            /***check styles attribute******/
+                if(in_array(strtolower($_item->getLabel()), $style_array)){?>
+                <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" onmouseover="change_image('<?php echo strtolower($_item->getLabel()); ?>')" onmouseout="remove_image('<?php echo strtolower($_item->getLabel()); ?>')" >
+                
+                <span> <img id="<?php echo strtolower($_item->getLabel()); ?>" src="<?php echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');?>"> </span> </a>
+                <?php }else if(in_array(strtolower($_item->getLabel()), $gender_array)) { ?>
+
+                    <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"  >
+                   <span> <?php echo $_item->getLabel() ?> </span>
+                  </a>
+               <?php  }else
+
+                {?>
+                 <span> <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" > </a>
+                <?php echo $_item->getLabel() ?>
+</a>
+                <?php /*if ($this->shouldDisplayProductCount()): ?>
+                <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                <?php endif;*/ ?>
+                <?php }?> 
+            
+        <?php else: ?>
+            <span>
+                <?php
+                if(in_array(strtolower($_item->getLabel()), $style_array)){?>
+                 <span> <img id="<?php echo strtolower($_item->getLabel()); ?>" src="<?php echo $this->getSkinUrl('images/'.strtolower($_item->getLabel()).'.png');?>"> </span>
+                <?php }else{?>
+                <?php echo $_item->getLabel(); ?>
+                <?php /*if ($this->shouldDisplayProductCount()): ?>
+                    <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                <?php endif;*/ ?>
+                <?php }?> 
+            </span>
+        <?php endif; ?>
+    </li>
+<?php endforeach ?>
+</ul>
+</nav>

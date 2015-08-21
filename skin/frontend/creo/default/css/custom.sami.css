@@ -290,7 +290,7 @@ a.alignleft.checkout-items {
 	width: 99%
 }
 
-.validation-advice { color: red; font-size: 10px;}
+.validation-advice { color: red; font-size: 10px; float: left;}
 .onestepcheckout-index-success .button {
     background: black none repeat scroll 0 0;
     border: medium none;
@@ -336,6 +336,8 @@ a.alignleft.checkout-items {
 
 .form-holder.login-sec.forgot-sec {
 	padding-top:0;
+	padding-left:0;
+	padding-right:0;
 } 
 
 .signup-form button[type="submit"] {
@@ -510,7 +512,7 @@ img.alignleft.img-responsive {
 	padding-right:0;
 }
 
-.main,.col-main {min-height: 290px;}
+/*.main,.col-main {min-height: 290px;}*/
 .col-main{padding: 0 0 30px;}
 div.fme-filter a.fme_layered_attribute {
 	padding-left:10px !important;
@@ -518,7 +520,7 @@ div.fme-filter a.fme_layered_attribute {
 
 .styles-lable {
 	position:relative;
-	right:160px;
+	right:244px;
 	top:5px;
 	text-transform:uppercase;
 }
@@ -577,3 +579,46 @@ div.fme-filter a.fme_layered_attribute {
 
 .product-detail .fancy-product-price{display:none;}
 .fancy-product-price { float: left; text-align: left; width: 100%;}
+
+.pdp_side_item_content.active {
+	display:none;
+}
+
+.login-with-fb {
+	cursor:pointer;
+}
+
+.login-with-fb.page-view {
+	display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.login-fb .pslogin-block.pslogin-login {
+	margin:0;
+}
+
+.account-login .fb-login h2 {
+	background:none;
+}
+
+.login-fb {
+	margin-top:20px;
+}
+
+.login-fb .fb_button.fb_button_medium {
+	padding:7px !important;
+	display:block; 
+	background:#3C5A98;
+	text-decoration:none; color:#fff;
+	text-align:center;
+}
+
+#configurable_swatch_color span.x {
+	display:none; 
+}	
+
+#configurable_swatch_size li.not-available {
+	pointer-events:none;
+}

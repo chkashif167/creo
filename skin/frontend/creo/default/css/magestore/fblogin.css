@@ -1,0 +1,16 @@
+.account-login .fb-login h2 {
+	background-image:url("../../images/magestore/fblogin/fb_icon.gif");
+}
+
+.fb-seprate{
+	margin-top:30px;
+}
+
+#connected{
+	text-align:center; 
+	margin-top:60px;
+}
+
+#connected #image{
+	margin-bottom:10px;
+}

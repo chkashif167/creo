@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <magestore translate="label">
+            <label>Magestore Extension</label>
+            <sort_order>400</sort_order>
+        </magestore>
+    </tabs>
+	<sections>
+        <fblogin translate="label" module="fblogin">
+            <class>separator-top</class>
+            <label>Facebook Login</label>
+            <tab>magestore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>300</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+				<general translate="label">
+                    <label>Facebook Login Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+						<app_id translate="label">
+                            <label>Application ID</label>
+                            <frontend_type>text</frontend_type>              
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment><![CDATA[<a href="http://developers.facebook.com/setup/" target="_bank">Register</a>]]></comment>
+                        </app_id>
+						
+						<app_secret translate="label">
+                            <label>App Secret</label>
+                            <frontend_type>text</frontend_type>              
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment></comment>
+                        </app_secret>
+						
+						<not_connected_template translate="label">
+                            <label>Not connected template</label>
+                            <frontend_type>text</frontend_type>                      
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Show text when user not connect to Facebook</comment>
+                        </not_connected_template>
+
+						<connected_template translate="label">
+							<label>Connected template</label>
+						  	<frontend_type>text</frontend_type>
+						  	<sort_order>10</sort_order>
+						  	<show_in_default>1</show_in_default>
+						  	<show_in_website>1</show_in_website>
+						  	<show_in_store>1</show_in_store>
+							<comment>Show text when user connected to Facebook</comment>
+						</connected_template>
+						
+						<is_show_avatar translate="label">
+							<label>Show avatar</label>
+						  	<frontend_type>select</frontend_type>
+						  	<source_model>adminhtml/system_config_source_yesno</source_model>
+						  	<sort_order>15</sort_order>
+						  	<show_in_default>1</show_in_default>
+						  	<show_in_website>1</show_in_website>
+						  	<show_in_store>1</show_in_store>
+							<comment></comment>
+						</is_show_avatar>
+
+						<is_send_password_to_customer translate="label">
+							<label>Send Password To Customer</label>
+						  	<frontend_type>select</frontend_type>
+						  	<source_model>adminhtml/system_config_source_yesno</source_model>
+						  	<sort_order>20</sort_order>
+						  	<show_in_default>1</show_in_default>
+						  	<show_in_website>1</show_in_website>
+						  	<show_in_store>1</show_in_store>
+						</is_send_password_to_customer>
+						
+						<!--<email_template_to_customer translate="label comment">
+                            <label>Sent Password Email Template To Customer</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </email_template_to_customer>-->
+					</fields>	
+				</general>
+            </groups>
+        </fblogin>  
+    </sections>
+</config>

@@ -1,29 +1,58 @@
 <?php if(Mage::getStoreConfig('pdp/customer_action/is_facebook')){ ?>
+<?php $js_pdp = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'pdp/'; ?>
+<script type="text/javascript">
+var facebook_app_id = '<?php echo Mage::getStoreConfig('pdp/customer_action/facebook_api') ?>';
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : facebook_app_id,
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<?php if (!$this->isAdminUser()) { ?>
+    <script type="text/javascript" src="<?php echo $js_pdp;?>facebook/facebook_connect.js"></script>
+<?php } ?>
+<link type="text/css" href="<?php echo $js_pdp;?>facebook/css/fb.css" rel="stylesheet" />
 <div class="modal fade" id="facebookPhotos" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-md">
 	<div class="modal-content">
-	  <div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title"><i class="pdc-facebook-square"></i> <?php echo $this->__('My Facebook Photo');?></h4>
+	<div class="modal-holder">
+	  <div class="modal-header">
+		<div class="heading-holder"><h3 class="modal-title"><i class="pdc-facebook-square"></i> <?php echo $this->__('My Facebook Photo');?></h3></div>
 	  </div>
 	  <div class="modal-body">
-			<?php $facebookInfo = $this->getFacebookInfo();
-				if (is_array($facebookInfo)) {
-					$facebookAppId = $facebookInfo['facebook_app_id'];
-					$facebookKey = $facebookInfo['facebook_secret_key'];
-				}
-			?>
-			<?php if(isset($facebookInfo['facebook_app_id']) && $facebookInfo['facebook_app_id'] != ''){ ?> 
-			   <a  title="<?php echo $this->__('Facebook'); ?>" tab-content="content_facebook" class="facebook_api"><?php echo $this->__('Facebook'); ?></a>
-			<?php } ?>
+			<input type="hidden" id="pdc_fb_api" value="<?php echo Mage::getStoreConfig('pdp/customer_action/facebook_api') ?>" />
+			<input type="hidden" id="pdc_fb_key" value="<?php echo Mage::getStoreConfig('pdp/customer_action/facebook_key') ?>" />
 		<div class="content_facebook nodisplay" pdc-clipart-tab="content_facebook">
 			  <div id="fb-root"></div>
-			  <div id="user-info"></div>
-			  <div id="photos_album"></div>
-			  <button id="fb-auth" class=" upload_photo_btn fb_photo_btn " type="button"><i class="pdc-facebook-square"></i> <?php echo $this->__('Login To My Facebook');?></button>
+			  <div id="user-info" class="no-display">
+                <label><?php echo $this->__('You logged as: ') ?><span pdc-fb-info="avatar"></span><span pdc-fb-info="name"></span></label>
+              </div>
+			  <div id="photos_album" class="no-display">
+                    <select pdc-block="fb_albums">
+                        <option value="0"><?php echo $this->__('Select your album') ?></option>
+                    </select>
+                    <div pdc-fb-info="list_img"></div>
+              </div>
+			  <button id="magebay_fb_button" scope="user_photos"  class="upload_photo_btn fb_photo_btn btn " type="button">
+                  <i class="pdc-facebook-square"></i>
+                  <span class="not_login">
+                    <?php echo $this->__('Login Facebook');?>
+                  </span><span class="login no-display"><?php echo $this->__('Logout Facebook');?></span>
+              </button>
 		</div>
 	  </div>
 	</div> 
+	</div>
   </div>
 </div>
 <?php } ?>

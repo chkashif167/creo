@@ -1,0 +1,111 @@
+<layout version="0.1.0">
+ <extension_index_seller>
+        <!-- extensionseller -->
+        <reference name="head">
+            <action method="setTitle">
+                <title>Best Seller</title>
+            </action>
+        </reference>
+         <reference name="root">
+            <action method="setTemplate"><template>page/filters.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="extension/seller" name="bestseller" as="bestseller"  template="magpassion_quickview/quickview/catalog/product/list.phtml">
+            	<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <!-- Add pager to toolbar -->
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+                <!-- Specify toolbar block name -->
+                <action method="setToolbarBlockName">
+                    <name>product_list_toolbar</name>
+                </action>
+
+                <action method="setSortBy">
+                    <value>price</value>
+                </action>
+ 
+                <!-- Set default direction to ascending -->
+                <action method="setDefaultDirection">
+                    <value>asc</value>
+                </action>
+ 
+                <action method="setColumnCount">
+                    <coulumn>5</coulumn>
+                </action>
+            </block>
+           
+        </reference>
+    </extension_index_seller>
+ 
+ <extension_index_new>
+ 	<reference name="head">
+            <action method="setTitle">
+                <title>New Products</title>
+            </action>
+    </reference>
+    <reference name="root">
+        <action method="setTemplate"><template>page/filters.phtml</template></action>
+    </reference>
+ 	<reference name="content">
+ 	<block type="extension/new" name="new" as="new" template="magpassion_quickview/quickview/catalog/product/list.phtml">
+ 		<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <!-- Add pager to toolbar -->
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+                <!-- Specify toolbar block name -->
+                <action method="setToolbarBlockName">
+                    <name>product_list_toolbar</name>
+                </action>
+
+                <action method="setSortBy">
+                    <value>price</value>
+                </action>
+ 
+                <!-- Set default direction to ascending -->
+                <action method="setDefaultDirection">
+                    <value>asc</value>
+                </action>
+ 
+                <action method="setColumnCount">
+                    <coulumn>5</coulumn>
+                </action>
+ 	</block>
+ </reference>
+ </extension_index_new>
+ 
+ <extension_index_trending>
+    <reference name="head">
+            <action method="setTitle">
+                <title>Trending</title>
+            </action>
+    </reference>
+    <reference name="root">
+        <action method="setTemplate"><template>page/filters.phtml</template></action>
+    </reference>
+ 	<reference name="content">
+ 	<block type="extension/trending" name="trending" as="trending" template="magpassion_quickview/quickview/catalog/product/list.phtml">
+    <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <!-- Add pager to toolbar -->
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+                <!-- Specify toolbar block name -->
+                <action method="setToolbarBlockName">
+                    <name>product_list_toolbar</name>
+                </action>
+
+                <action method="setSortBy">
+                    <value>price</value>
+                </action>
+ 
+                <!-- Set default direction to ascending -->
+                <action method="setDefaultDirection">
+                    <value>asc</value>
+                </action>
+ 
+                <action method="setColumnCount">
+                    <coulumn>5</coulumn>
+                </action>
+            </block>
+ </reference>
+ </extension_index_trending>
+</layout>

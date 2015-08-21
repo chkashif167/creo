@@ -1,0 +1,68 @@
+<div class="fb-seprate"></div>
+<?php $user = $this->helper('fblogin')->getFbUser()?>
+<div class="account-login">
+    <div class="col2-set">
+        <div class="col-1 fb-login">
+            <div class="content">
+                <h2><?php echo $this->__('Login by Facebook account') ?></h2>
+                <div id="form-loginfb" style="text-align:center">
+                	<?php if($user){?>
+                    	<?php if($this->isShowAvatar()){?>
+                        	<img src="http://graph.facebook.com/<?php echo $user['id'] ?>/picture" />
+                        <?php }?>
+                    	<p><?php echo $this->getConnectedTemplate() ?></p>
+                    <?php }else{?>
+                    	<?php echo $this->getNotConnectedTemplate() ?>
+                    <?php }?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col2-set">
+        <div class="col-1 new-users">
+            <div class="buttons-set">
+                <?php if(!$user || !$user['email']){?>
+					<!--<fb:login-button perms="email"><?php echo $this->__('Login') ?></fb:login-button>-->
+                    <a class="fb_button fb_button_medium" onclick="login();return false;" href="#">
+                        <span class="fb_button_text"><?php echo $this->__('Login') ?></span>
+                    </a>
+				<?php }else{?>
+                    <a class="fb_button fb_button_medium" onclick="window.location.href = '<?php echo $this->getFbloginUrl() ?>';">
+                        <span class="fb_button_text"><?php echo $this->__('Login') ?></span>
+                    </a>
+                <?php }?>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+<?php if (!$user) { ?>
+var newwindow;
+var intId;
+function login(){
+	var  screenX    = typeof window.screenX != 'undefined' ? window.screenX : window.screenLeft;
+	var	 screenY    = typeof window.screenY != 'undefined' ? window.screenY : window.screenTop;
+	var	 outerWidth = typeof window.outerWidth != 'undefined' ? window.outerWidth : document.body.clientWidth;
+	var	 outerHeight = typeof window.outerHeight != 'undefined' ? window.outerHeight : (document.body.clientHeight - 22);
+	var	 width    = 500;
+	var	 height   = 270;
+	var	 left     = parseInt(screenX + ((outerWidth - width) / 2), 10);
+	var	 top      = parseInt(screenY + ((outerHeight - height) / 2.5), 10);
+	var	 features = (
+			'width=' + width +
+			',height=' + height +
+			',left=' + left +
+			',top=' + top
+		  );
+
+	newwindow=window.open('<?php echo $this->getFbLoginButtonUrl() ?>','Login_by_facebook',features);
+
+	if (window.focus) {
+		newwindow.focus()
+	}
+	return false;
+}
+<?php } ?>
+</script>

@@ -11,21 +11,24 @@ ul {
 }
 /* Update CSS for Iframe */
 .pdc_design_panel {
-    display: inline-block;
-    padding: 0;
-    width: 100%;
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+  width: 100%;
 }
 .iframe-container #close_iframe {
   background: none repeat scroll 0 0 #ffffff;
-  border-radius: 100%;
+  /* border-radius: 100%; */
   color: #000000;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 28px;
   left: auto;
   position: absolute;
   right: 10px;
   top: 10px;
   z-index: 1000;
+  opacity:1;
 }
 .iframe-container {
   
@@ -36,7 +39,6 @@ body {
   border:0px;
   padding: 0;
   position: relative;
-  background:transparent;
 }
 .no-display {
     display: none;

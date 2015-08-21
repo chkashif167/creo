@@ -679,8 +679,8 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function forgotPasswordAction()
     {
+		if (Mage::getSingleton('customer/session')->isLoggedIn()){$this->_redirect(''); return;}
         $this->loadLayout();
-
         $this->getLayout()->getBlock('forgotPassword')->setEmailValue(
             $this->_getSession()->getForgottenEmail()
         );
@@ -695,6 +695,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function forgotPasswordPostAction()
     {
+		if (Mage::getSingleton('customer/session')->isLoggedIn()){$this->_redirect(''); return;}
         $email = (string) $this->getRequest()->getPost('email');
         if ($email) {
             if (!Zend_Validate::is($email, 'EmailAddress')) {
@@ -731,7 +732,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                 ->addSuccess( $this->_getHelper('customer')
                 ->__('If there is an account associated with %s you will receive an email with a link to reset your password.',
                     $this->_getHelper('customer')->escapeHtml($email)));
-            $this->_redirect('*/*/');
+            $this->_redirect('*/*/forgotpassword');
             return;
         } else {
             $this->_getSession()->addError($this->__('Please enter your email.'));

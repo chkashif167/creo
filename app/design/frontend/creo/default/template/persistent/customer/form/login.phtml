@@ -107,7 +107,9 @@
             <input name="context" type="hidden" value="checkout" />
         <?php endif; ?>
     </form>
-
+<?php ?>    <div class="login-fb">
+				<?php echo $this->getLayout()->createBlock('fblogin/fblogin')->setTemplate('fblogin/bt_fblogin.phtml')->toHtml() ; ?>
+    </div><?php ?>
     <?php echo $this->getChildHtml('form_register');?>
 </div>
 <?php //echo $this->getMessagesBlock()->toHtml() ?>

@@ -354,4 +354,5 @@
 #narrow-by-list dd .has-image .swatch-label {
   padding: 0;
 }
-
+/*Messages are shifted to popups using these hidden fields, so do not remove*/
+.input-box .validation-advice {visibility:hidden;}/*Disabled visibility because, the messages are now shown in popups*/
