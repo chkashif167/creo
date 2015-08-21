@@ -1610,4 +1610,51 @@ Product.ConfigurableSwatches.prototype = {
 jQuery(document).ready(function(){
     jQuery('#configurable_swatch_color').find('li:first a .swatch-label').trigger('click');
     //jQuery('#configurable_swatch_size').find('li:not(.not-available):first a .swatch-label').trigger('click');
+    //jQuery('#product-options-wrapper').find('#configurable_swatch_size').parent().on('change', '.validation-advice', function(){alert("GGG")});
 });
+function popupValidation()
+{
+	//alert("yoo");
+    //jQuery('#configurable_swatch_color').find('li:first a .swatch-label').trigger('click');
+    //jQuery('#configurable_swatch_size').find('li:not(.not-available):first a .swatch-label').trigger('click');
+	//jQuery('#product-options-wrapper').find('#configurable_swatch_size').parent().on('change', '.validation-advice', function(){alert("GGG")});
+		var validated = jQuery('#product_addtocart_form').attr('validation_status');
+		console.log("validated:" + validated);
+		if(validated.length > 0) {
+			return true;
+		}
+		//e.preventDefault();
+		var errors = "Please specify the product's option(s). Make sure you've selected color/size.";
+		//console.log(jQuery('#product_addtocart_form .validation-advice'));
+		//Commenting the dynamic code below due to number of calling sequence problems
+		/*jQuery.each(jQuery('#product_addtocart_form .validation-advice'), function(index, value){
+			if(errors != ""){
+				errors = errors + "<br />";
+			}
+			var targetVal = jQuery(value);
+			console.log("length: "+targetVal.length);
+			var text = targetVal.text();
+			var fieldName = targetVal.parent().find('select:first').attr('attr_name');
+			console.log(fieldName);
+			errors = errors + fieldName + ": " + text;
+		});*/
+		//console.log("Errors:" + errors);
+		if(errors != ""){
+			//alert(errors);
+
+			//stop form's default behavior
+			//var form = jQuery(this).parents('form:first');
+			//console.log(form);
+
+			jQuery.alert({
+				title: 'Alert!',
+				content: errors,
+				/*confirm: function(){
+					alert('Confirmed!');
+				}*/
+			});
+			return false;
+		}
+	return true;
+}
+//});
