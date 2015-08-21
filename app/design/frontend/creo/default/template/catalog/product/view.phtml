@@ -38,7 +38,7 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 <div class="row">
     <div class="product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> validation_status="">
             <?php echo $this->getBlockHtml('formkey') ?>
             <div class="no-display">
                 <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
@@ -204,7 +204,10 @@
             //<![CDATA[
             var productAddToCartForm = new VarienForm('product_addtocart_form');
             productAddToCartForm.submit = function (button, url) {
+				//submit = popupValidation();
+				//var submit = false;
                 if (this.validator.validate()) {
+					jQuery('#product_addtocart_form').attr('validation_status', "true");
                     var form = this.form;
                     var oldUrl = form.action;
                     if (url) {
@@ -212,19 +215,28 @@
                     }
                     var e = null;
                     try {
-                        this.form.submit();
+						//submit = popupValidation();
+						//if(submit == true){
+	                        this.form.submit();
+						//}
                     } catch (e) {
                     }
                     this.form.action = oldUrl;
                     if (e) {
+						//alert("exception");
+						//submit = popupValidation();
                         throw e;
                     }
                     if (button && button != 'undefined') {
                         button.disabled = true;
                     }
-                }
+                } else {
+					popupValidation();
+				}
             }.bind(productAddToCartForm);
             productAddToCartForm.submitLight = function (button, url) {
+				//submit = popupValidation();
+				//var submit = false;
                 if (this.validator) {
                     var nv = Validation.methods;
                     delete Validation.methods['required-entry'];
@@ -237,11 +249,17 @@
                         }
                     }
                     if (this.validator.validate()) {
+						jQuery('#product_addtocart_form').attr('validation_status', "true");
                         if (url) {
                             this.form.action = url;
                         }
-                        this.form.submit();
-                    }
+						//submit = popupValidation();
+						//if(submit == true){
+	                        this.form.submit();
+						//}
+                    } else {
+						popupValidation();
+					}
                     Object.extend(Validation.methods, nv);
                 }
             }.bind(productAddToCartForm);
