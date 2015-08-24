@@ -695,6 +695,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function forgotPasswordPostAction()
     {
+		if (Mage::getSingleton('customer/session')->isLoggedIn()){$this->_redirect(''); return;}
         $email = (string) $this->getRequest()->getPost('email');
         if ($email) {
             if (!Zend_Validate::is($email, 'EmailAddress')) {

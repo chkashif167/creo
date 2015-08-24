@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Clarion
+ * @package    Clarion_ReviewReminder
+ * @created    6th Jan 2015
+ * @author     Clarion magento team <magento.team@clariontechnologies.co.in>
+ * @purpose    Configuration file for admin menu and access permission
+ * @copyright  Copyright (c) 2014 Clarion Technologies Pvt. Ltd.
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License
+ */
+-->
+<config>
+    <!-- Review Reminder Menu -->
+    <menu>
+        <catalog>
+            <children>
+                <review_reminder translate="title" module="clarion_reviewreminder">
+                    <title>Review Reminder</title>
+                    <sort_order>210</sort_order> 
+                    <children>
+                        <scheduled_reminders translate="title" module="clarion_reviewreminder">
+                            <title>Manage Reminders</title>
+                            <sort_order>1</sort_order> 
+                            <action>adminhtml/managereminders</action>
+                        </scheduled_reminders>
+                        <reminder_history translate="title" module="clarion_reviewreminder">
+                            <title>Closed Reminders</title>
+                            <sort_order>2</sort_order> 
+                            <action>adminhtml/closedreminders</action>
+                        </reminder_history>
+                    </children>
+                </review_reminder>
+            </children>
+        </catalog>
+    </menu>
+    <!-- Access permissions -->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <review_reminder translate="title" module="clarion_reviewreminder">
+                                <title>Review Reminder</title>
+                                <children>
+                                    <scheduled_reminders translate="title" module="clarion_reviewreminder">
+                                        <title>Scheduled Reminders</title>
+                                        <sort_order>1</sort_order> 
+                                    </scheduled_reminders>
+                                    <reminder_history translate="title" module="clarion_reviewreminder">
+                                        <title>Reminder History</title>
+                                        <sort_order>2</sort_order> 
+                                    </reminder_history>
+                                </children>
+                            </review_reminder>
+                        </children>
+                    </catalog>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <review_reminder translate="title" module="clarion_reviewreminder">
+                                        <title>Review Reminder</title>
+                                    </review_reminder>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

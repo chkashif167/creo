@@ -38,7 +38,7 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 <div class="row">
     <div class="product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> validation_status="">
             <?php echo $this->getBlockHtml('formkey') ?>
             <div class="no-display">
                 <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
@@ -202,10 +202,11 @@
         </form>
         <script type="text/javascript">
             //<![CDATA[
-            var productAddToCartForm = new VarienForm('product_addtocart_form');
+			var productAddToCartForm = new VarienForm('product_addtocart_form');
             /*Modified by Naveed Abbas on 20-08-2015*/
 			/*productAddToCartForm.submit = function (button, url) {
                 if (this.validator.validate()) {
+					jQuery('#product_addtocart_form').attr('validation_status', "true");
                     var form = this.form;
                     var oldUrl = form.action;
                     if (url) {
@@ -213,11 +214,16 @@
                     }
                     var e = null;
                     try {
-                        this.form.submit();
+						//submit = popupValidation();
+						//if(submit == true){
+	                        this.form.submit();
+						//}
                     } catch (e) {
                     }
                     this.form.action = oldUrl;
                     if (e) {
+						//alert("exception");
+						//submit = popupValidation();
                         throw e;
                     }
                     if (button && button != 'undefined') {
@@ -225,6 +231,7 @@
                     }
                 }
             }.bind(productAddToCartForm);*/
+			<?php if (strpos(Mage::helper('core/url')->getCurrentUrl(),'configure') == false ) :?>
 			productAddToCartForm.submit = function(button, url) {
 				if (this.validator.validate()) {
 					var form = this.form;
@@ -240,7 +247,7 @@
 					}
 					var data = jQuery('#product_addtocart_form').serialize();
 					data += '&isAjax=1';   
-					jQuery('#ajax_loader').show();
+					jQuery('.fme_loading_filters').show();
 					try {
 						jQuery.ajax({
                           url: url,
@@ -248,7 +255,7 @@
                           type : 'post',
                           data: data,
                           success: function(data){
-                                jQuery('#ajax_loader').hide();
+                                jQuery('.fme_loading_filters').hide();
                                 //alert(data.status + ": " + data.message);
                                 if (jQuery('#header-cart')) {
 									jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">'+data.qty+'</span>My Cart</a>'+data.minicart );
@@ -259,7 +266,8 @@
 								opener: '.opener',
 								slider: '.slide',
 								animSpeed: 400,
-								effect: 'slide'
+								event: 'over',
+								effect: 'fade'
 							});
 						  jQuery('#ajaxModalTitle').html(data.status);
 						  jQuery('#ajaxModalContent').html(data.message);
@@ -273,9 +281,42 @@
 					if (e) {
 						throw e;
 					}
+				} else {
+					popupValidation();
 				}
-			}.bind(productAddToCartForm);
+            }.bind(productAddToCartForm);
+			<?php else: ?>
+			productAddToCartForm.submit = function (button, url) {
+                if (this.validator.validate()) {
+					jQuery('#product_addtocart_form').attr('validation_status', "true");
+                    var form = this.form;
+                    var oldUrl = form.action;
+                    if (url) {
+                        form.action = url;
+                    }
+                    var e = null;
+                    try {
+						//submit = popupValidation();
+						//if(submit == true){
+	                        this.form.submit();
+						//}
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+						//alert("exception");
+						//submit = popupValidation();
+                        throw e;
+                    }
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+			<?php endif; ?>
             productAddToCartForm.submitLight = function (button, url) {
+				//submit = popupValidation();
+				//var submit = false;
                 if (this.validator) {
                     var nv = Validation.methods;
                     delete Validation.methods['required-entry'];
@@ -288,11 +329,17 @@
                         }
                     }
                     if (this.validator.validate()) {
+						jQuery('#product_addtocart_form').attr('validation_status', "true");
                         if (url) {
                             this.form.action = url;
                         }
-                        this.form.submit();
-                    }
+						//submit = popupValidation();
+						//if(submit == true){
+	                        this.form.submit();
+						//}
+                    } else {
+						popupValidation();
+					}
                     Object.extend(Validation.methods, nv);
                 }
             }.bind(productAddToCartForm);
@@ -327,3 +374,23 @@
 					</div>
 				</div>
 			</div>   
+ <div class="fme_loading_filters" style="display:none;"><img id="loading-image" src="<?php echo $this->getSkinUrl(); ?>images/FME/ajax-loader.gif" /></div>
+ <style>
+ .fme_loading_filters {
+    background-color: #d8d8d8;
+    height: 1000%;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+}
+.fme_loading_filters img {
+    display: block;
+    left: 48%;
+    position: fixed;
+    top: 45%;
+    z-index: 900;
+}
+ </style>         
