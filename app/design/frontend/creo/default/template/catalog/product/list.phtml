@@ -136,12 +136,7 @@
 
         <span class="price"><?php echo $this->getPriceHtml($_product, true) ?></span>
 
-        <div class="btn-holder"> 
-        <?php if ($this->helper('wishlist')->isAllow()) : ?>
-        <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
-         <?php endif; ?>
-         <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="btn-cart"><span class="span1"><span class="span2"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </span></span></a> 
-        </div>
+        
       </div>
     </li>
     <?php /*?><li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>"> <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">

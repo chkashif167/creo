@@ -93,7 +93,7 @@ if(empty($_cartQty)) {
       <?php echo $this->getChildHtml('extra_actions') ?>
      <a title="<?php echo $this->__('PROCEED TO CHECKOUT') ?>" class="button checkout-button" href="<?php echo $this->getCheckoutUrl() ?>"><?php echo $this->__('PROCEED TO CHECKOUT') ?></a> 
     <?php endif ?>
-<?php /*?>    <a class="cart-link" href="<?php echo $this->getUrl('checkout/cart'); ?>">  <?php echo $this->__('View Cart'); ?> </a> 
+<?php /* ?>    <a class="cart-link" href="<?php echo $this->getUrl('checkout/cart'); ?>">  <?php echo $this->__('View Cart'); ?> </a> 
 <?php */?>    </div>
   <?php else: ?>
   <p class="empty"><?php echo $this->__('You have no items in your shopping cart.') ?></p>
