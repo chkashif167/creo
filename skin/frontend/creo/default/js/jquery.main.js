@@ -68,7 +68,7 @@ function initOpenClose() {
 		effect: 'slide',
 		hideOnClickOutside: false
 	});
-	jQuery('.open-close.cart').openClose({
+	jQuery('.open-close3.cart').openClose({
 		activeClass: 'active',
 		opener: '.opener',
 		slider: '.slide',
