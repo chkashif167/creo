@@ -4330,7 +4330,10 @@ textarea {
     margin: -10px 0 10px;
     width: 100%;
 }
-
+#image_category_list > option {
+    padding: 2px 10px;
+    text-align: left;
+}
 
 
 
