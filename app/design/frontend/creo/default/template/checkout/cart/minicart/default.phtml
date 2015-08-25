@@ -191,12 +191,9 @@
       </a>
       <?php endif; ?>
     </h2>
-    <?php if ($_options = $this->getOptionList()):?>
-
-
-          <ul class="minicartInnerUl">
+     <ul class="minicartInnerUl">
+	 <?php if ($_options = $this->getOptionList()):?>
                 <?php foreach ($_options as $_option) : ?>
-                
                 <li>
                 <label> <?php echo $this->escapeHtml($_option['label']) ?> </label>
                 <span>
@@ -208,10 +205,6 @@
                     </span>
                 </li>
                 <?php endforeach; ?>
-         
-        
-       
-       
         <?php endif; ?>
         <li>
         <label> Qty </label>

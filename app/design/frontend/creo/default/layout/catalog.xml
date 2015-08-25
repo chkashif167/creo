@@ -44,7 +44,11 @@ Default layout, loads most of the pages
 
     <default>
 
-        <!-- Mage_Catalog -->
+        <reference name="head">
+            <action method="addItem"><type>js</type><name>jquery/jquery-1.11.3.min.js</name></action>
+            <action method="addItem"><type>js</type><name>jquery/noconflict.js</name></action>
+        </reference>
+		<!-- Mage_Catalog -->
         <reference name="left">
             <!--<block type="core/template" name="left.permanent.callout" template="callouts/left_col.phtml">-->
                 <!--<action method="setImgSrc"><src>images/media/col_left_callout.jpg</src></action>-->
