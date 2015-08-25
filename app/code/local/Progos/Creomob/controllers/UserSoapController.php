@@ -65,4 +65,42 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         echo json_encode($response);
         die;
     }
+    
+    protected function addCustomer($sessionId,$customer){
+        $proxy = new SoapClient($this->soapURLv2);
+        return $proxy->customerCustomerCreate($sessionId, 
+                array('email' => $customer['email'],
+                    'firstname' => $customer['firstname'],
+                    'lastname' => $customer['lastname'],
+                    'password' => $customer['password'],
+                    'website_id' => 1,
+                    'store_id' => 1,
+                    'group_id' => 1)
+                );
+    }
+    
+    public function addCustomerAction() {
+        $sessionId = $this->getRequest()->getParam('sid');
+        $customer_data = json_decode(file_get_contents('php://input'),true);
+        
+
+        $response = array('success'=>0,'message'=>'','customer'=>array());
+        try
+        {
+            $res = $this->addCustomer($sessionId,$customer_data);
+            $response['success'] = 1;
+            $response['message'] = 'Customer added';
+            $response['customer'] = $res;
+            
+        }
+        catch( Exception $e )
+        {
+            $response['message'] = $e->getMessage();
+        }
+        
+        header("Content-Type: application/json");
+        echo json_encode($response);
+        die;
+    }
+    
 }
