@@ -168,8 +168,9 @@ $count = 0;?>
     </li>
     <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */?>
 
-<li class="active"><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
-<li> <a href="javascript:void(0)">CLOTHING</a>
+<li <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
+){?>class="active"<?php } ?>><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'clothing') == true ){echo'class="active"';}?>> <a href="javascript:void(0)">CLOTHING</a>
   <div class="drop">
     <div class="links-area">
       <h2>MEN &amp; WOMEN</h2>
@@ -231,7 +232,7 @@ $count = 0;?>
     </div>
   </div>
 </li>
-<li> <a href="javascript:void(0)">ACCESSORIES</a>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'accessories') == true ){echo'class="active"';}?>> <a href="javascript:void(0)">ACCESSORIES</a>
   <div class="drop"> 
      <div class="links-area">
       <h2>MEN &amp; WOMEN</h2>
@@ -276,7 +277,7 @@ $count = 0;?>
   
   </div>
 </li>
-<li><a href="javascript:void(0)">CAPS</a>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'caps') == true ){echo'class="active"';}?>><a href="javascript:void(0)">CAPS</a>
 <div class="drop">
     <div class="links-area">
       <h2>MEN &amp; WOMEN</h2>
@@ -320,7 +321,7 @@ $count = 0;?>
     </div>
   </div>
 </li>
-<li> <a href="javascript:void(0)">CATEGORIES</a>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'categories') == true ){echo'class="active"';}?>> <a href="javascript:void(0)">CATEGORIES</a>
 
 
 <div class="drop">
@@ -371,4 +372,4 @@ $count = 0;?>
 
   
 </li>
-<li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'create') == true ){echo'class="active"';}?>><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
