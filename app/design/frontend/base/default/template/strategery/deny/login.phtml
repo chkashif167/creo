@@ -1,0 +1,71 @@
+<?php
+/**
+ *
+ * Strategery-Deny - Magento Extension
+ *
+ * @copyright Copyright (c) 2015 Strategery Inc. (http://www.usestrategery.com/)
+ * @author Damian A. Pastorini - damian.pastorini@dwdeveloper.com
+ *
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+    <head>
+        <?php echo $this->getChildHtml('head') ?>
+    </head>
+    <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+        <div class="wrapper">
+            <div class="page">
+                <div class="main-container col2-layout">
+                    <div class="main">
+                        <div class="col-main">
+                            <div class="account-login container">
+                                <div class="page-title">
+                                    <h1><?php echo $this->__('Front Access') ?></h1>
+                                </div>
+                                <?php echo $this->getChildHtml('global_messages') ?>
+                                <?php echo $this->getMessagesBlock()->toHtml() ?>
+                                <form action="<?php echo Mage::getUrl('frontaccess/login'); ?>" method="post" id="frontaccess-form">
+                                    <div class="col1-set">
+                                        <div class="col-1">
+                                            <div class="content">
+                                                <h2><?php echo $this->__('Login') ?></h2>
+                                                <ul class="form-list">
+                                                    <li>
+                                                        <label for="user" class="required"><em>*</em><?php echo $this->__('User') ?></label>
+                                                        <div class="input-box">
+                                                            <input type="text" name="user" id="user" class="input-text required-entry" title="<?php echo Mage::helper('core')->quoteEscape($this->__('User')) ?>"/>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                                                        <div class="input-box">
+                                                            <input type="password" name="password" class="input-text required-entry" id="password" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Password')) ?>" />
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col1-set">
+                                        <div class="col-1 registered-users">
+                                            <div class="buttons-set">
+                                                <button type="submit" class="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Login')) ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <script type="text/javascript">
+                                    //<![CDATA[
+                                    var dataForm = new VarienForm('frontaccess-form', true);
+                                    //]]>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
