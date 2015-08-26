@@ -8,28 +8,29 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
     
     public function productsAction() {
         $categoryId = $this->getRequest()->getParam('cid');
+        $search = $this->getRequest()->getParam('s');
         
         if($categoryId){
-        $category = Mage::getModel('catalog/category')->load($categoryId);
-        $category_name = $category->getName();
-        $data['category_id'] = $categoryId;
-        $data['category_name'] = $category_name;
-            
-        $products = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection()
-//                ->addAttributeToSelect('name')
-//                ->addAttributeToSelect('thumbnail')
-//                ->addAttributeToSelect('small_image')
-//                ->addAttributeToSelect('image')
-//                ->addAttributeToSelect('price')
-//                ->addAttributeToSelect('qty')
-//                ->addAttributeToSelect('status')
-                ->addAttributeToFilter("visibility",array("gt"=>1))
-                ->addAttributeToSelect('*')
-                ->load();
+            $category = Mage::getModel('catalog/category')->load($categoryId);
+            $category_name = $category->getName();
+            $data['category_id'] = $categoryId;
+            $data['category_name'] = $category_name;
+
+            $collection = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection();
+            $collection->addAttributeToFilter("visibility",array("gt"=>1));
+            if($search){
+                $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
+            }
+            $products = $collection
+                    ->addAttributeToSelect('*')
+                    ->load();
         } else{
-            $products = Mage::getModel('catalog/product')->getCollection()
-                        ->addAttributeToFilter("visibility",array("gt"=>1))
-                        ->addAttributeToSelect('*');
+            $collection = Mage::getModel('catalog/product')->getCollection();
+            $collection->addAttributeToFilter("visibility",array("gt"=>1));
+            if($search){
+                $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
+            }
+            $products = $collection->addAttributeToSelect('*');
         }
         
 
@@ -48,7 +49,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $prod['stock_qty_min_sales'] = $stock->getMinSaleQty();
             $prod['status'] = $p2->getStatus();
             $prod['currency'] = $currency_code;
-            $prod['category_id'] = $categoryId;
+            $prod['category_id'] = $p2->getCategoryIds();//$categoryId;
             $prod['category_name'] = $category_name;
 
             $data['products'][] = $prod;

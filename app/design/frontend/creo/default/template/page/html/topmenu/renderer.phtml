@@ -168,8 +168,9 @@ $count = 0;?>
     </li>
     <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */?>
 
-<li class="active"><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
-<li> <a href="#">CLOTHING</a>
+<li <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
+){?>class="active"<?php } ?>><a href="<?php echo  Mage::getBaseUrl(); ?>">Home</a></li>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'clothing') == true ){echo'class="active"';}?>> <a href="javascript:void(0)">CLOTHING</a>
   <div class="drop">
     <div class="links-area">
       <h2>MEN &amp; WOMEN</h2>
@@ -231,7 +232,7 @@ $count = 0;?>
     </div>
   </div>
 </li>
-<li> <a href="#">ACCESSORIES</a>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'accessories') == true ){echo'class="active"';}?>> <a href="javascript:void(0)">ACCESSORIES</a>
   <div class="drop"> 
      <div class="links-area">
       <h2>MEN &amp; WOMEN</h2>
@@ -276,15 +277,15 @@ $count = 0;?>
   
   </div>
 </li>
-<li><a href="#">CAPS</a>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'caps') == true ){echo'class="active"';}?>><a href="javascript:void(0)">CAPS</a>
 <div class="drop">
     <div class="links-area">
       <h2>MEN &amp; WOMEN</h2>
       <div class="links-frame">
         <ul class="sorting-items">
-          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/trending/?id=48"?>">Trending</a></li>
-          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/seller/?id=48"?>">Best Seller</a></li>
-          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/new/?id=48"?>">NEW</a></li>
+          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/trending/?id=54"?>">Trending</a></li>
+          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/seller/?id=54"?>">Best Seller</a></li>
+          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/new/?id=54"?>">NEW</a></li>
          
         </ul>
         <ul class="links">
@@ -293,7 +294,7 @@ $count = 0;?>
       <li><a href="#">Polo</a></li>-->
          
 	<?php 
-	$children_category = Mage::getModel('catalog/category')->load('48')->getChildrenCategories();
+	$children_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
    foreach ($children_category as $category):
    $_category = Mage::getModel('catalog/category')->load($category->getId());
    echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() .'</a></li>';
@@ -308,7 +309,7 @@ $count = 0;?>
       </div>
       <ul class="featured-products">
         <?php 
-		$Featured_category = Mage::getModel('catalog/category')->load('48')->getChildrenCategories();
+		$Featured_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
 		foreach ($Featured_category as $category):
 		$_category = Mage::getModel('catalog/category')->load($category->getId());
 		if($_category->featured_category == 1) {
@@ -320,7 +321,7 @@ $count = 0;?>
     </div>
   </div>
 </li>
-<li> <a href="#">CATEGORIES</a>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'categories') == true ){echo'class="active"';}?>> <a href="javascript:void(0)">CATEGORIES</a>
 
 
 <div class="drop">
@@ -371,4 +372,4 @@ $count = 0;?>
 
   
 </li>
-<li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
+<li <?php if(strpos(Mage::helper('core/url')->getCurrentUrl(),'create') == true ){echo'class="active"';}?>><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>

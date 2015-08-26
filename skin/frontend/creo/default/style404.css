@@ -105,6 +105,7 @@ p { margin: 0 0 1.2em; }
 	text-decoration: none;
 	color: #000;
 }
+.std{height: 100%;}
 @media only screen and (max-width: 991px) {
 	.text-area{
 		padding: 20px 140px 108px;

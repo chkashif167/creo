@@ -60,7 +60,7 @@
 
         <div class="add-to-cart-buttons btn-holder">
 			<?php if($_isCustomizeProduct) : ?>
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="PDC_Actions.saveDesignBeforeAddToCart(); return false; productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="var ret = designYourOwnPopupValidation(); if(ret == false){return false;} PDC_Actions.saveDesignBeforeAddToCart(); return false; productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
             <?php else : ?>
 			<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
 			<?php endif; ?>
