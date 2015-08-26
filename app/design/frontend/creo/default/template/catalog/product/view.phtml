@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
  * Magento
@@ -34,296 +33,7 @@
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
 <script type="text/javascript">
-    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
-</script>
-<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-<div class="row">
-    <div class="product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> validation_status="">
-            <?php echo $this->getBlockHtml('formkey') ?>
-            <div class="no-display">
-                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-                <input type="hidden" name="related_product" id="related-products-field" value="" />
-            </div>
-            <?php //if(Mage::helper('core')->isModuleEnabled('MST_Pdp')) : ?>
-            <?php $designBtnObj = new MST_Pdp_Block_Designbutton(); ?>
-            <?php if ($designBtnObj->isDesignAble()) { ?>
-                <div class="pdp-style row">
-                    <div class="col-lg-12 head-title">
-                        <h2><?php echo $this->__('Design Your Own') ?></h2>
-                    </div>
-                    <div class="carousel-creo carousel3 col-lg-6 col-xs-12">
-                        <div class="product-img-box">
-                            <?php echo $this->getChildHtml('media') ?>
-                            <!-- tabs structure example -->
-                            <div class="tabs-cont">
-                                <ul class="tabset tabset1">
-                                    <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
-                                    <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
-                                    <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div id="tab1" style="display: block;" class="">
-                                        <p><?php print $_product->getDescription(); ?> </p>
-                                    </div>
-                                    <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                                        <p><?php print $_product->getShortDescription(); ?> </p>
-                                    </div>
-                                    <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
-                                        <p><?php print $_product->getDesign(); ?> </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="text-area col-lg-6 col-xs-12">
-                        <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
-                        <div class="price-area"> 
-                            <span class="price">
-				<?php if($_product->getSpecialPrice() > 0):?>
-                                <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i>
-                                <?php endif;?>
-                                <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-                            <span class="availability">Availability:  
-                                <?php echo $this->getChildHtml('product_type_availability'); ?>
-                            </span> 
-                        </div>
-                        <div class="options-area">
-                            <?php if ($_product->isSaleable() && $this->hasOptions()): ?>
-                                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                            <?php endif; ?>
-                        </div>
-                        <div class="pdp-main-des">
-                            <h5 class="title"><?php echo $this->__('CUSTOMIZE IT'); ?></h5>
-                            <?php echo $this->getChildHtml('pdp_main_des'); ?>
-                        </div>
-                    </div>
-                </div>
-            <?php }else { ?>
-                <div class="carousel-creo carousel3">
-                    <div class="product-img-box">
-                        <?php echo $this->getChildHtml('media') ?>
-                    </div>
-                </div>
-                <div class="text-area">
-                    <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
-                    <div class="price-area"> 
-                        <span class="price">
-			<?php if($_product->getSpecialPrice() > 0):?>
-                           <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i>
-                        <?php endif;?>
-                        <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-                        <span class="availability">Availability:  
-                            <?php echo $this->getChildHtml('product_type_availability'); ?>
-                        </span> 
-                    </div>
-
-
-                    <!-- tabs structure example -->
-                    <ul class="tabset tabset1">
-                        <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
-                        <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
-                        <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab1" style="display: block;" class="">
-                            <p><?php print $_product->getDescription(); ?> </p>
-                        </div>
-                        <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                            <p><?php print $_product->getShortDescription(); ?> </p>
-                        </div>
-                        <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
-                            <p><?php print $_product->getDesign(); ?> </p>
-                        </div>
-                    </div>
-                    <div class="options-area">
-                        <?php if ($_product->isSaleable() && $this->hasOptions()): ?>
-                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                        <?php endif; ?>
-                    </div>
-
-                    <?php $_product = $this->getProduct(); ?>
-                    <?php $buttonTitle = $this->__(' Add to Cart'); ?>
-					<?php 
-					/* if($_product->isSaleable()): ?>
-                      <div class="add-to-cart">
-                      <?php if(!$_product->isGrouped()): ?>
-                      <?php endif; ?>
-                      <div class="btn-holder">
-
-                      <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
-                      <span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span>
-                      </button>
-                      <a class="link-wishlist" href="<?php echo $this->getUrl('wishlist') ?>"><i class="icon-heart-empty"></i></a>
-                      </div>
-
-
-                      </div>
-                      <?php endif; */ ?>
-                      
-                      <?php // j.work starts ?>
-                      <div class="shipping-area"> 
-                      	<a class="shipping-info" href="#">Shipping Information</a>
-                        <p><?php print $_product->getShippingDetails(); ?> </p>
-                      </div>                      
-<!--                    <div class="shipping-area"> 
-                        <?php
-//                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
-//                        $options = array();
-                        ?>
-                        <?php //echo "<pre>";print_r($methods);?>
-                        <?php
-						/*
-                        foreach ($methods as $_ccode => $_carrier) {
-                            $_methodOptions = array();
-                            if ($_methods = $_carrier->getAllowedMethods()) {
-                                if (!$_title = Mage::getStoreConfig("carriers/$_ccode/title"))
-                                    $_title = $_ccode;
-                                echo "<a class='shipping-info' href='#'>" . $_title . "</a><ul>";
-                                foreach ($_methods as $_mcode => $_method) {
-                                    $_code = $_ccode . '_' . $_mcode;
-                                    echo "<li><a href='#'>" . $_method . "</a></li>";
-                                    $_methodOptions[] = array('value' => $_code, 'label' => $_method);
-                                }
-                                echo "</ul>";
-                            }
-                        }
-						*/
-                        ?>
-                        <?php //Ghost code ends?>
-                    </div>
--->                    
-                      <?php // j.work ends ?>
-                      
-					<!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
-                           <ul>
-                             <li><a href="#">Shipping within next day</a></li>
-                             <li class="active"><a href="#">Shipping within 2 days</a></li>
-                             <li><a href="#">Shipping within 3 days</a></li>
-                             <li><a href="#">Shipping within 4 days</a></li>
-                           </ul>
-                     </div>-->
-                </div>
-            <?php } ?>
-            <?php //endif;*/  ?>
-        </form>
-        <script type="text/javascript">
-            //<![CDATA[
-            var productAddToCartForm = new VarienForm('product_addtocart_form');
-            productAddToCartForm.submit = function (button, url) {
-				//submit = popupValidation();
-				//var submit = false;
-                if (this.validator.validate()) {
-					jQuery('#product_addtocart_form').attr('validation_status', "true");
-                    var form = this.form;
-                    var oldUrl = form.action;
-                    if (url) {
-                        form.action = url;
-                    }
-                    var e = null;
-                    try {
-						//submit = popupValidation();
-						//if(submit == true){
-	                        this.form.submit();
-						//}
-                    } catch (e) {
-                    }
-                    this.form.action = oldUrl;
-                    if (e) {
-						//alert("exception");
-						//submit = popupValidation();
-                        throw e;
-                    }
-                    if (button && button != 'undefined') {
-                        button.disabled = true;
-                    }
-                } else {
-					popupValidation();
-				}
-            }.bind(productAddToCartForm);
-            productAddToCartForm.submitLight = function (button, url) {
-				//submit = popupValidation();
-				//var submit = false;
-                if (this.validator) {
-                    var nv = Validation.methods;
-                    delete Validation.methods['required-entry'];
-                    delete Validation.methods['validate-one-required'];
-                    delete Validation.methods['validate-one-required-by-name'];
-                    // Remove custom datetime validators
-                    for (var methodName in Validation.methods) {
-                        if (methodName.match(/^validate-datetime-.*/i)) {
-                            delete Validation.methods[methodName];
-                        }
-                    }
-                    if (this.validator.validate()) {
-						jQuery('#product_addtocart_form').attr('validation_status', "true");
-                        if (url) {
-                            this.form.action = url;
-                        }
-						//submit = popupValidation();
-						//if(submit == true){
-	                        this.form.submit();
-						//}
-                    } else {
-						popupValidation();
-					}
-                    Object.extend(Validation.methods, nv);
-                }
-            }.bind(productAddToCartForm);
-            //]]>
-        </script>
-        <?php /* ?><div class="product-collateral toggle-content tabs">
-          <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
-          <dl id="collateral-tabs" class="collateral-tabs">
-          <?php foreach ($detailedInfoGroup as $alias => $html):?>
-          <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
-          <dd class="tab-container">
-          <div class="tab-content"><?php echo $html ?></div>
-          </dd>
-          <?php endforeach;?>
-          </dl>
-          <?php endif; ?>
-          </div><?php */ ?>
-        <?php echo $this->getChildHtml('upsell_products') ?> <?php echo $this->getChildHtml('product_additional_data') ?>
-    </div>
-=======
-<?php
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magento.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magento.com for more information.
- *
- * @category    design
- * @package     rwd_default
- * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
-/**
- * Product view template
- *
- * @see Mage_Catalog_Block_Product_View
- * @see Mage_Review_Block_Product_View
- */
-?>
-<?php $_helper = $this->helper('catalog/output'); ?>
-<?php $_product = $this->getProduct(); ?>
-<script type="text/javascript">
-    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
-</script>
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);</script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 <div class="row">
     <div class="product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -404,12 +114,12 @@
                     <!-- tabs structure example -->
                     <ul class="tabset tabset1">
                         <li class="active"><a href="#tab1"><span>
-	<?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
+                                    <?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
                         <li class="">
-                        <a href="#tab2"><span>
-                        SIZE GUIDE
-	<?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?>
-                        </span></a>
+                            <a href="#tab2"><span>
+                                    SIZE GUIDE
+                                    <?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?>
+                                </span></a>
                         </li>
                         <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
                     </ul>
@@ -418,18 +128,18 @@
                             <p><?php print $_product->getDescription(); ?> </p>
                         </div>
                         <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                            <?php 
-							$gender = $_product->getGender(); 
-							if($gender == 24) {
-								echo $_product->getSizeguidemen();
-								//echo "Men";
-							}
-							elseif($gender == 25) {
-								//echo "Women";
-								echo $_product->getSizeguidewomen();
-							}
-							else {echo " ";}
-							?> 
+                            <?php
+                            $gender = $_product->getGender();
+                            if ($gender == 24) {
+                                echo $_product->getSizeguidemen();
+                                //echo "Men";
+                            } elseif ($gender == 25) {
+                                //echo "Women";
+                                echo $_product->getSizeguidewomen();
+                            } else {
+                                echo " ";
+                            }
+                            ?> 
                         </div>
                         <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
                             <p><?php print $_product->getDesign(); ?> </p>
@@ -443,8 +153,7 @@
 
                     <?php $_product = $this->getProduct(); ?>
                     <?php $buttonTitle = $this->__(' Add to Cart'); ?>
-					<?php 
-					/* if($_product->isSaleable()): ?>
+                    <?php /* if($_product->isSaleable()): ?>
                       <div class="add-to-cart">
                       <?php if(!$_product->isGrouped()): ?>
                       <?php endif; ?>
@@ -459,198 +168,197 @@
 
                       </div>
                       <?php endif; */ ?>
-                      
-                      <?php // j.work starts ?>
-                      <div class="shipping-area"> 
-                      <h4 st> Shipping Information  </h4>
-                      	<!--<a class="shipping-info" href="#">Shipping Information</a>-->
+
+                    <?php // j.work starts  ?>
+                    <div class="shipping-area"> 
+                        <h4 st> Shipping Information  </h4>
+                        <!--<a class="shipping-info" href="#">Shipping Information</a>-->
                         <p><?php print $_product->getShippingDetails(); ?> </p>
-                      </div>                      
-<!--                    <div class="shipping-area"> 
-                        <?php
+                    </div>                      
+                    <!--                    <div class="shipping-area"> 
+                    <?php
 //                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
 //                        $options = array();
-                        ?>
-                        <?php //echo "<pre>";print_r($methods);?>
-                        <?php
-						/*
-                        foreach ($methods as $_ccode => $_carrier) {
-                            $_methodOptions = array();
-                            if ($_methods = $_carrier->getAllowedMethods()) {
-                                if (!$_title = Mage::getStoreConfig("carriers/$_ccode/title"))
-                                    $_title = $_ccode;
-                                echo "<a class='shipping-info' href='#'>" . $_title . "</a><ul>";
-                                foreach ($_methods as $_mcode => $_method) {
-                                    $_code = $_ccode . '_' . $_mcode;
-                                    echo "<li><a href='#'>" . $_method . "</a></li>";
-                                    $_methodOptions[] = array('value' => $_code, 'label' => $_method);
-                                }
-                                echo "</ul>";
-                            }
-                        }
-						*/
-                        ?>
-                        <?php //Ghost code ends?>
-                    </div>
--->                    
-                      <?php // j.work ends ?>
-                      
-					<!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
-                           <ul>
-                             <li><a href="#">Shipping within next day</a></li>
-                             <li class="active"><a href="#">Shipping within 2 days</a></li>
-                             <li><a href="#">Shipping within 3 days</a></li>
-                             <li><a href="#">Shipping within 4 days</a></li>
-                           </ul>
-                     </div>-->
+                    ?>
+                    <?php //echo "<pre>";print_r($methods);?>
+                    <?php
+                    /*
+                      foreach ($methods as $_ccode => $_carrier) {
+                      $_methodOptions = array();
+                      if ($_methods = $_carrier->getAllowedMethods()) {
+                      if (!$_title = Mage::getStoreConfig("carriers/$_ccode/title"))
+                      $_title = $_ccode;
+                      echo "<a class='shipping-info' href='#'>" . $_title . "</a><ul>";
+                      foreach ($_methods as $_mcode => $_method) {
+                      $_code = $_ccode . '_' . $_mcode;
+                      echo "<li><a href='#'>" . $_method . "</a></li>";
+                      $_methodOptions[] = array('value' => $_code, 'label' => $_method);
+                      }
+                      echo "</ul>";
+                      }
+                      }
+                     */
+                    ?>
+                    <?php //Ghost code ends?>
+                                        </div>
+                    -->                    
+                    <?php // j.work ends  ?>
+
+                    <!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
+       <ul>
+         <li><a href="#">Shipping within next day</a></li>
+         <li class="active"><a href="#">Shipping within 2 days</a></li>
+         <li><a href="#">Shipping within 3 days</a></li>
+         <li><a href="#">Shipping within 4 days</a></li>
+       </ul>
+    </div>-->
                 </div>
             <?php } ?>
             <?php //endif;*/  ?>
         </form>
         <script type="text/javascript">
-            //<![CDATA[
-			var productAddToCartForm = new VarienForm('product_addtocart_form');
-            /*Modified by Naveed Abbas on 20-08-2015*/
-			/*productAddToCartForm.submit = function (button, url) {
+                    //<![CDATA[
+                    var productAddToCartForm = new VarienForm('product_addtocart_form');
+                    /*Modified by Naveed Abbas on 20-08-2015*/
+                    /*productAddToCartForm.submit = function (button, url) {
+                     if (this.validator.validate()) {
+                     jQuery('#product_addtocart_form').attr('validation_status', "true");
+                     var form = this.form;
+                     var oldUrl = form.action;
+                     if (url) {
+                     form.action = url;
+                     }
+                     var e = null;
+                     try {
+                     //submit = popupValidation();
+                     //if(submit == true){
+                     this.form.submit();
+                     //}
+                     } catch (e) {
+                     }
+                     this.form.action = oldUrl;
+                     if (e) {
+                     //alert("exception");
+                     //submit = popupValidation();
+                     throw e;
+                     }
+                     if (button && button != 'undefined') {
+                     button.disabled = true;
+                     }
+                     }
+                     }.bind(productAddToCartForm);*/
+<?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), 'configure') == false) : ?>
+                productAddToCartForm.submit = function(button, url) {
                 if (this.validator.validate()) {
-					jQuery('#product_addtocart_form').attr('validation_status', "true");
-                    var form = this.form;
-                    var oldUrl = form.action;
-                    if (url) {
-                        form.action = url;
-                    }
-                    var e = null;
-                    try {
-						//submit = popupValidation();
-						//if(submit == true){
-	                        this.form.submit();
-						//}
-                    } catch (e) {
-                    }
-                    this.form.action = oldUrl;
-                    if (e) {
-						//alert("exception");
-						//submit = popupValidation();
-                        throw e;
-                    }
-                    if (button && button != 'undefined') {
-                        button.disabled = true;
-                    }
+                var form = this.form;
+                        var oldUrl = form.action;
+                        if (url) {
+                form.action = url;
                 }
-            }.bind(productAddToCartForm);*/
-			<?php if (strpos(Mage::helper('core/url')->getCurrentUrl(),'configure') == false ) :?>
-			productAddToCartForm.submit = function(button, url) {
-				if (this.validator.validate()) {
-					var form = this.form;
-					var oldUrl = form.action;
-	 
-					if (url) {
-					   form.action = url;
-					}
-					var e = null;
-	//Start of our new ajax code
-					if(!url){
-						url = jQuery('#product_addtocart_form').attr('action');
-					}
-					var data = jQuery('#product_addtocart_form').serialize();
-					data += '&isAjax=1';   
-					jQuery('.fme_loading_filters').show();
-					try {
-						jQuery.ajax({
-                          url: url,
-                          dataType: 'json',
-                          type : 'post',
-                          data: data,
-                          success: function(data){
+                var e = null;
+                        //Start of our new ajax code
+                        if (!url){
+                url = jQuery('#product_addtocart_form').attr('action');
+                }
+                var data = jQuery('#product_addtocart_form').serialize();
+                        data += '&isAjax=1';
+                        jQuery('.fme_loading_filters').show();
+                        try {
+                        jQuery.ajax({
+                        url: url,
+                                dataType: 'json',
+                                type : 'post',
+                                data: data,
+                                success: function(data){
                                 jQuery('.fme_loading_filters').hide();
-                                //alert(data.status + ": " + data.message);
-                                if (jQuery('#header-cart')) {
-									jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">'+data.qty+'</span>My Cart</a>'+data.minicart );
-								}
-                          /*initialize the minicart dropdown again*/
-						  jQuery('#open-close-minicart').openClose({
-								activeClass: 'active',
-								opener: '.opener',
-								slider: '.slide',
-								animSpeed: 400,
-								event: 'over',
-								effect: 'fade'
-							});
-						  jQuery('#ajaxModalTitle').html(data.status);
-						  jQuery('#ajaxModalContent').html(data.message);
-						  jQuery('.ajaxAddToCartModal').modal('show');
-						  }
-                    });
-					} catch (e) {
-					}
-	//End of our new ajax code
-					this.form.action = oldUrl;
-					if (e) {
-						throw e;
-					}
-				} else {
-					popupValidation();
-				}
-            }.bind(productAddToCartForm);
-			<?php else: ?>
-			productAddToCartForm.submit = function (button, url) {
-                if (this.validator.validate()) {
-					jQuery('#product_addtocart_form').attr('validation_status', "true");
-                    var form = this.form;
-                    var oldUrl = form.action;
-                    if (url) {
-                        form.action = url;
-                    }
-                    var e = null;
-                    try {
-						//submit = popupValidation();
-						//if(submit == true){
-	                        this.form.submit();
-						//}
-                    } catch (e) {
-                    }
-                    this.form.action = oldUrl;
-                    if (e) {
-						//alert("exception");
-						//submit = popupValidation();
-                        throw e;
-                    }
-                    if (button && button != 'undefined') {
-                        button.disabled = true;
-                    }
+                                        //alert(data.status + ": " + data.message);
+                                        if (jQuery('#header-cart')) {
+                                jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+                                }
+                                /*initialize the minicart dropdown again*/
+                                jQuery('#open-close-minicart').openClose({
+                                activeClass: 'active',
+                                        opener: '.opener',
+                                        slider: '.slide',
+                                        animSpeed: 400,
+                                        event: 'over',
+                                        effect: 'fade'
+                                });
+                                        jQuery('#ajaxModalTitle').html(data.status);
+                                        jQuery('#ajaxModalContent').html(data.message);
+                                        jQuery('.ajaxAddToCartModal').modal('show');
+                                }
+                        });
+                        } catch (e) {
                 }
-            }.bind(productAddToCartForm);
-			<?php endif; ?>
+                //End of our new ajax code
+                this.form.action = oldUrl;
+                        if (e) {
+                throw e;
+                }
+                } else {
+                popupValidation();
+                }
+                }.bind(productAddToCartForm);
+<?php else: ?>
+                productAddToCartForm.submit = function (button, url) {
+                if (this.validator.validate()) {
+                jQuery('#product_addtocart_form').attr('validation_status', "true");
+                        var form = this.form;
+                        var oldUrl = form.action;
+                        if (url) {
+                form.action = url;
+                }
+                var e = null;
+                        try {
+                        //submit = popupValidation();
+                        //if(submit == true){
+                        this.form.submit();
+                                //}
+                        } catch (e) {
+                }
+                this.form.action = oldUrl;
+                        if (e) {
+                //alert("exception");
+                //submit = popupValidation();
+                throw e;
+                }
+                if (button && button != 'undefined') {
+                button.disabled = true;
+                }
+                }
+                }.bind(productAddToCartForm);
+<?php endif; ?>
             productAddToCartForm.submitLight = function (button, url) {
-				//submit = popupValidation();
-				//var submit = false;
-                if (this.validator) {
-                    var nv = Validation.methods;
+            //submit = popupValidation();
+            //var submit = false;
+            if (this.validator) {
+            var nv = Validation.methods;
                     delete Validation.methods['required-entry'];
                     delete Validation.methods['validate-one-required'];
                     delete Validation.methods['validate-one-required-by-name'];
                     // Remove custom datetime validators
                     for (var methodName in Validation.methods) {
-                        if (methodName.match(/^validate-datetime-.*/i)) {
-                            delete Validation.methods[methodName];
-                        }
-                    }
-                    if (this.validator.validate()) {
-						jQuery('#product_addtocart_form').attr('validation_status', "true");
-                        if (url) {
-                            this.form.action = url;
-                        }
-						//submit = popupValidation();
-						//if(submit == true){
-	                        this.form.submit();
-						//}
-                    } else {
-						popupValidation();
-					}
-                    Object.extend(Validation.methods, nv);
-                }
+            if (methodName.match(/^validate-datetime-.*/i)) {
+            delete Validation.methods[methodName];
+            }
+            }
+            if (this.validator.validate()) {
+            jQuery('#product_addtocart_form').attr('validation_status', "true");
+                    if (url) {
+            this.form.action = url;
+            }
+            //submit = popupValidation();
+            //if(submit == true){
+            this.form.submit();
+                    //}
+            } else {
+            popupValidation();
+            }
+            Object.extend(Validation.methods, nv);
+            }
             }.bind(productAddToCartForm);
-            //]]>
+                    //]]>
         </script>
         <?php /* ?><div class="product-collateral toggle-content tabs">
           <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
@@ -666,39 +374,38 @@
           </div><?php */ ?>
         <?php echo $this->getChildHtml('upsell_products') ?> <?php echo $this->getChildHtml('product_additional_data') ?>
     </div>
-   
-<!--code added by Naveed Abbas on 20-08-2015-->
-<div class="modal fade ajaxAddToCartModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-md">
-					<div class="modal-content modal-login">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<div class="modal-holder">
-						<div class="heading-holder">
-							<h3 id="ajaxModalTitle"></h3>
-						</div>
-						<p id="ajaxModalContent"></p>
-					</div>
-					</div>
-				</div>
-			</div>   
- <div class="fme_loading_filters" style="display:none;"><img id="loading-image" src="<?php echo $this->getSkinUrl(); ?>images/FME/ajax-loader.gif" /></div>
- <style>
- .fme_loading_filters {
-    background-color: #d8d8d8;
-    height: 1000%;
-    left: 0;
-    opacity: 0.4;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 500;
-}
-.fme_loading_filters img {
-    display: block;
-    left: 48%;
-    position: fixed;
-    top: 45%;
-    z-index: 900;
-}
- </style>         
->>>>>>> 55ce503bb3f7ccb3f8c649e038082d27db720958
+
+    <!--code added by Naveed Abbas on 20-08-2015-->
+    <div class="modal fade ajaxAddToCartModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content modal-login">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-holder">
+                    <div class="heading-holder">
+                        <h3 id="ajaxModalTitle"></h3>
+                    </div>
+                    <p id="ajaxModalContent"></p>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <div class="fme_loading_filters" style="display:none;"><img id="loading-image" src="<?php echo $this->getSkinUrl(); ?>images/FME/ajax-loader.gif" /></div>
+    <style>
+        .fme_loading_filters {
+            background-color: #d8d8d8;
+            height: 1000%;
+            left: 0;
+            opacity: 0.4;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 500;
+        }
+        .fme_loading_filters img {
+            display: block;
+            left: 48%;
+            position: fixed;
+            top: 45%;
+            z-index: 900;
+        }
+    </style>
