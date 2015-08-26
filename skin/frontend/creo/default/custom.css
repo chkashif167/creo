@@ -1034,6 +1034,7 @@
 .catalog-product-view  #tab2   table {
     border-collapse: separate;
     border-spacing: 10px 4px;
+	width: 400px;
 }
 
 .catalog-product-view  #tab2  table>tbody>tr:nth-of-type(even) {
