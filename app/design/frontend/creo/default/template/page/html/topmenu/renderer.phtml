@@ -283,9 +283,9 @@ $count = 0;?>
       <h2>MEN &amp; WOMEN</h2>
       <div class="links-frame">
         <ul class="sorting-items">
-          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/trending/?id=48"?>">Trending</a></li>
-          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/seller/?id=48"?>">Best Seller</a></li>
-          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/new/?id=48"?>">NEW</a></li>
+          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/trending/?id=54"?>">Trending</a></li>
+          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/seller/?id=54"?>">Best Seller</a></li>
+          <li><a href="<?php echo Mage::getBaseUrl()."extension/index/new/?id=54"?>">NEW</a></li>
          
         </ul>
         <ul class="links">
@@ -294,7 +294,7 @@ $count = 0;?>
       <li><a href="#">Polo</a></li>-->
          
 	<?php 
-	$children_category = Mage::getModel('catalog/category')->load('48')->getChildrenCategories();
+	$children_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
    foreach ($children_category as $category):
    $_category = Mage::getModel('catalog/category')->load($category->getId());
    echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() .'</a></li>';
@@ -309,7 +309,7 @@ $count = 0;?>
       </div>
       <ul class="featured-products">
         <?php 
-		$Featured_category = Mage::getModel('catalog/category')->load('48')->getChildrenCategories();
+		$Featured_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
 		foreach ($Featured_category as $category):
 		$_category = Mage::getModel('catalog/category')->load($category->getId());
 		if($_category->featured_category == 1) {
