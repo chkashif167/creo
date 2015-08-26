@@ -4334,8 +4334,11 @@ textarea {
     padding: 2px 10px;
     text-align: left;
 }
-
-
+#newsletter-validate-detail1 .validation-advice {margin-top: 0;}
+.item-options.pdp_cart_item > dt {
+    font-size: 12px;
+    padding: 0 0 0 32px;
+}
 
 
 
