@@ -78,7 +78,7 @@
                         <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                         <div class="price-area"> 
                             <span class="price">
-                                <?php if($_product->getSpecialPrice() > 0):?>
+                                <?php if($_product->getSpecialPrice() > 0.0):?>
                                     <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
                                 <?php endif;?>
                                 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
@@ -107,7 +107,7 @@
                     <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                     <div class="price-area"> 
                         <span class="price">
-                            <?php if($_product->getSpecialPrice() > 0):?>
+                            <?php if($_product->getSpecialPrice() > 0.0):?>
                                 <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
                             <?php endif;?>
                             <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
