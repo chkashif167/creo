@@ -1027,23 +1027,23 @@
 
 .shipping-area h4 { margin-top: 0px;}
 /*design guide table*/
-  table, th, td {
+.catalog-product-view  #tab2  table, th, td {
     border: 1px solid transparent;
 
    }
-   table {
+.catalog-product-view  #tab2   table {
     border-collapse: separate;
     border-spacing: 10px 4px;
 }
 
-   table>tbody>tr:nth-of-type(even) {
+.catalog-product-view  #tab2  table>tbody>tr:nth-of-type(even) {
     background-color: #facbd1;
 }
 
-   table>tbody>tr:nth-of-type(odd) {
+.catalog-product-view  #tab2  table>tbody>tr:nth-of-type(odd) {
     background-color: #fde7ea;
 }
-  th{
+.catalog-product-view  #tab2  th{
     background-color: #f16b7a;
     text-align: center;
     width: 175px;
@@ -1056,7 +1056,7 @@
     text-transform: uppercase;
     background-color: #fff;
    }
-   .heading{
+.catalog-product-view  #tab2   .heading{
     font-size: 18.13px;
     font-weight: bold;
     text-align: center;
@@ -1066,7 +1066,7 @@
         width: 549px;
     margin-left: 10px;
    }
-   td{
+.catalog-product-view  #tab2 td{
     padding:5px;
     width: 200px;
     text-align: center;
