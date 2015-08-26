@@ -38,7 +38,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 
 
                         <?php $_filters = $this->getFilters() ?>
-                        <?php $_filters = array_reverse($_filters); ?>
+                        <?php // $_filters = array_reverse($_filters); ?>
                         <?php foreach ($_filters as $_filter): ?>
                             <?php if ($_filter->getItemsCount()): ?>
                                 <?php /* ?><dt class="fme_layered_dt">
