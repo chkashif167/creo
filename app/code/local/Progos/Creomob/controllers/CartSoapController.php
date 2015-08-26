@@ -18,8 +18,15 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         $stroeId = $store->getId();
         $proxy = new SoapClient($this->soapURLv2);
         
+        
+        
+        return $proxy->shoppingCartCreate($sessionId, $stroeId);
+    }
+    
+    protected function initShipping($sessionId, $quoteId){
+        $proxy = new SoapClient($this->soapURLv2);
         //initialize with customer address to cope with magento not calculating subtotal bug
-        $proxy->shoppingCartCustomerAddresses($sessionId, $stroeId, array(array(
+        return $proxy->shoppingCartCustomerAddresses($sessionId, $quoteId, array(array(
             'mode' => 'shipping',
             'firstname' => 'Creo',
             'lastname' => 'Mobile',
@@ -44,13 +51,13 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
             'is_default_billing' => 1
             ),
             ));
-        
-        return $proxy->shoppingCartCreate($sessionId, $stroeId);
     }
     
     public function createCartAction(){
         $sessionId = $this->getRequest()->getParam('sid');
         $cart_id = $this->createCart($sessionId);
+        
+        $this->initShipping($sessionId,$cart_id);
         
 //        header('Access-Control-Allow-Origin: *');
         header("Content-Type: application/json");
@@ -61,34 +68,6 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
     protected function getCart($sessionId,$quoteId){
         
         $proxy = new SoapClient($this->soapURLv2);
-        
-        //initialize with customer address to cope with magento not calculating subtotal bug
-        $proxy->shoppingCartCustomerAddresses($sessionId, $quoteId, array(array(
-            'mode' => 'shipping',
-            'firstname' => 'Creo',
-            'lastname' => 'Mobile',
-            'street' => 'Rehman Baba Road',
-            'city' => 'Islamabad',
-            'region' => '',
-            'postcode' => '46000',
-            'country_id' => 'PK',
-            'telephone' => '03125511678',
-            'is_default_billing' => 1
-            ),
-            array(
-            'mode' => 'billing',
-            'firstname' => 'Creo',
-            'lastname' => 'Mobile',
-            'street' => 'Rehman Baba Road',
-            'city' => 'Islamabad',
-            'region' => '',
-            'postcode' => '46000',
-            'country_id' => 'PK',
-            'telephone' => '03125511678',
-            'is_default_billing' => 1
-            ),
-            )); 
-        
         
         return $proxy->shoppingCartInfo($sessionId, $quoteId);
     }
@@ -244,6 +223,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         return $proxy->shoppingCartCustomerAddresses($sessionId, $qid, array($shipping,$billing)); 
     }
     
+    
     public function setShippingAddressAction(){
         
         $sessionId = $this->getRequest()->getParam('sid');
@@ -254,7 +234,6 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         $response = array('success'=>0,'message'=>'','res'=>null);
         try{
             $res = $this->setCustomerAddress($sessionId,$qid,$address_data);
-            
             
             $response['success'] = 1;
             $response['message'] = 'Shipping added successfully';

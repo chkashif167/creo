@@ -1,0 +1,35 @@
+
+<script type="text/javascript">
+
+
+    $buttonCheckout =  null;
+    if($buttonCheckout = $$('#checkout-review-submit .btn-checkout')) {
+        var eventClick = $buttonCheckout[$buttonCheckout.length-1].readAttribute('onclick');
+        <?php if($this->isSelected()): ?>
+
+        if(typeof Checkout !='undefined' && Checkout.hasOwnProperty('render') && !Checkout.isMobile()) {
+            $buttonCheckout.each(function(item,index){
+                $buttonCheckout[index].writeAttribute('onclick','Checkout.open(); checkout.setLoadWaiting(\'review\')');
+            });
+
+        }else   if(typeof CheckoutIntegration !='undefined' && CheckoutIntegration.hasOwnProperty('render') &&  !CheckoutIntegration.isMobile()) {
+
+            $buttonCheckout.each(function(item,index){
+                $buttonCheckout[index].writeAttribute('onclick','CheckoutIntegration.open(); checkout.setLoadWaiting(\'review\')');
+            });
+
+        }
+
+
+
+        <?php endif; ?>
+        $buttonCheckout.each(function(item,index){
+            $buttonCheckout[index].writeAttribute('data-clickevent',eventClick);
+        });
+
+
+
+    }
+
+
+</script>

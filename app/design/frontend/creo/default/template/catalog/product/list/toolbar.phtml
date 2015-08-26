@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * Magento
@@ -179,4 +180,189 @@
             sort_by_menu.addClass("js-slide-hidden").css('display', 'hidden');
         }
     });
+=======
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @see Mage_Catalog_Block_Product_List_Toolbar
+ */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+
+<div class="row">
+  <div class="col sort-area col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <?php if( $this->isExpanded() ): ?>
+    <?php if( $this->isEnabledViewSwitcher() ): ?>
+    <p class="view-mode">
+      <?php $_modes = $this->getModes(); ?>
+      <?php if($_modes && count($_modes)>1): ?>
+      <?php foreach ($this->getModes() as $_code=>$_label): ?>
+      <?php if($this->isModeActive($_code)): ?>
+      <strong title="<?php echo $_label ?>" class=" <?php echo strtolower($_code); ?>">
+      <?php //echo $_label ?>
+      </strong>
+      <?php else: ?>
+      <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>">
+      <?php //echo $_label ?>
+      </a>
+      <?php endif; ?>
+      <?php endforeach; ?>
+      <?php endif; ?>
+    </p>
+    <?php endif; ?>
+    <?php endif; ?>
+    
+         <div class="pagination paginationlistpage">
+                  <?php echo $this->getPagerHtml() ?>
+     </div>
+
+    
+    <div class="sort-by sortbyCustom">
+      <?php /*?> <label><?php echo $this->__('Sort By:') ?></label>
+                  <select onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By:') ?>">
+                  <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                  <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+                  <?php echo $this->__($_order) ?>
+                  </option>
+                  <?php endforeach; ?>
+                  </select><?php */?>
+      <label><?php echo $this->__('Sort By:') ?></label>
+      <div class=" sortbycontainer open-close"> <a id="sortbyopener" class="" href="javascript:void(0)">
+        <?php if($_GET['order']){echo ucfirst($_GET['order']);} else {echo "Position";} ?>
+        </a>
+        <ul onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By:') ?>" class="slide sortbyUl js-slide-hidden" style="display: none;">
+          <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+          <li<?php if($this->isOrderCurrent($_key)): ?> class="selected"<?php endif; ?>> <a href="<?php echo $this->getOrderUrl($_key, 'asc') ?>" > <?php echo $this->__($_order) ?> </a> </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      
+      <!--<a class="sort-by-switcher" href="#"><i class="icon-sort-alt-down"></i></a>-->
+      <?php if($this->getCurrentDirection() == 'desc'): ?>
+      <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo $this->__('Set Ascending Direction') ?>">
+      <?php //echo $this->__('Set Ascending Direction') ?>
+      </a>
+      <?php else: ?>
+      <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" class="sort-by-switcher sort-by-switcher--asc" title="<?php echo $this->__('Set Descending Direction') ?>">
+      <?php //echo $this->__('Set Descending Direction') ?>
+      </a>
+      <?php endif; ?>
+    </div>
+    
+    <ul class="sort-items">
+      <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+      <li <?php if($this->isLimitCurrent($_key) == $_limit): ?> class="active" <?php endif ?>> <a href="<?php echo $this->getLimitUrl($_key) ?>" onClick="setLocation(this.value)"><?php echo $_limit ?> </a> </li>
+      <?php endforeach; ?>
+    </ul>
+    
+    
+  </div>
+</div>
+
+<?php endif ?>
+<?php /*?>
+<?php if($this->getCollection()->getSize()): ?>
+<div class="toolbar">
+    <?php if( $this->isExpanded() ): ?>
+        <div class="sorter">
+            <?php if( $this->isEnabledViewSwitcher() ): ?>
+                <p class="view-mode">
+                    <?php $_modes = $this->getModes(); ?>
+                    <?php if($_modes && count($_modes)>1): ?>
+                        <label><?php echo $this->__('View as') ?></label>
+                        <?php foreach ($this->getModes() as $_code=>$_label): ?>
+                            <?php if($this->isModeActive($_code)): ?>
+                                <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>
+                            <?php else: ?>
+                                <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </p>
+            <?php endif; ?>
+
+            <div class="sort-by">
+                <label><?php echo $this->__('Sort By') ?></label>
+                <select onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By') ?>">
+                    <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                        <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+                            <?php echo $this->__($_order) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <?php if($this->getCurrentDirection() == 'desc'): ?>
+                    <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo $this->__('Set Ascending Direction') ?>"><?php echo $this->__('Set Ascending Direction') ?></a>
+                <?php else: ?>
+                    <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" class="sort-by-switcher sort-by-switcher--asc" title="<?php echo $this->__('Set Descending Direction') ?>"><?php echo $this->__('Set Descending Direction') ?></a>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div class="pager">
+        <div class="count-container">
+            <?php if($this->getLastPageNum()>1): ?>
+                <p class="amount amount--has-pages">
+                    <?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+                </p>
+            <?php else: ?>
+                <p class="amount amount--no-pages">
+                    <strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
+                </p>
+            <?php endif; ?>
+
+            <div class="limiter">
+                <label><?php echo $this->__('Show') ?></label>
+                <select onchange="setLocation(this.value)" title="<?php echo $this->__('Results per page'); ?>">
+                <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                    <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                        <?php echo $_limit ?>
+                    </option>
+                <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+
+        <?php echo $this->getPagerHtml() ?>
+
+    </div>
+</div>
+<?php endif ?>
+<?php */?>
+<script>
+    jQuery('#sortbyopener').click(function() {
+        var sort_by_menu = jQuery( ".slide.sortbyUl" );
+        if(sort_by_menu.hasClass( "js-slide-hidden" )) {
+            sort_by_menu.removeClass("js-slide-hidden").css('display', 'block');
+        } else {
+            sort_by_menu.addClass("js-slide-hidden").css('display', 'hidden');
+        }
+    });
+>>>>>>> 55ce503bb3f7ccb3f8c649e038082d27db720958
 </script>
