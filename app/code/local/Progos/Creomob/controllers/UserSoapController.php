@@ -44,9 +44,9 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
             $session->login( $email, $password );
             //$session->setCustomerAsLoggedIn( $session->getCustomer() );
             $customer = $session->getCustomer();
-            
             try{
                 $res = $this->getCustomer($sessionId,$customer->getEmail(),$customer->getPasswordHash());
+                
                 $response['success'] = 1;
                 $response['message'] = 'Login successful';
                 $response['customer'] = $res;
@@ -103,4 +103,39 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         die;
     }
     
+    protected function updateCustomer($sessionId,$customer){
+        $proxy = new SoapClient($this->soapURLv2);
+        return $proxy->customerCustomerUpdate($sessionId, $customer['customer_id'],
+                array('email' => $customer['email'],
+                    'firstname' => $customer['firstname'],
+                    'lastname' => $customer['lastname'],
+                    'website_id' => 1,
+                    'store_id' => 1,
+                    'group_id' => 1)
+                );
+    }
+    
+    public function updateCustomerAction() {
+        $sessionId = $this->getRequest()->getParam('sid');
+        $customer_data = json_decode(file_get_contents('php://input'),true);
+        
+
+        $response = array('success'=>0,'message'=>'','customer'=>array());
+        try
+        {
+            $res = $this->updateCustomer($sessionId,$customer_data);
+            $response['success'] = 1;
+            $response['message'] = 'Customer updated';
+            $response['customer'] = $res;
+            
+        }
+        catch( Exception $e )
+        {
+            $response['message'] = $e->getMessage();
+        }
+        
+        header("Content-Type: application/json");
+        echo json_encode($response);
+        die;
+    }
 }
