@@ -77,7 +77,10 @@
                     <div class="text-area col-lg-6 col-xs-12">
                         <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                         <div class="price-area"> 
-                            <span class="price"><i class="old-price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></i> 
+                            <span class="price">
+                                <?php if($_product->getSpecialPrice() > 0):?>
+                                    <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
+                                <?php endif;?>
                                 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
                             <span class="availability">Availability:  
                                 <?php echo $this->getChildHtml('product_type_availability'); ?>
@@ -103,7 +106,10 @@
                 <div class="text-area">
                     <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                     <div class="price-area"> 
-                        <span class="price"><i class="old-price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></i> 
+                        <span class="price">
+                            <?php if($_product->getSpecialPrice() > 0):?>
+                                <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
+                            <?php endif;?>
                             <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
                         <span class="availability">Availability:  
                             <?php echo $this->getChildHtml('product_type_availability'); ?>
