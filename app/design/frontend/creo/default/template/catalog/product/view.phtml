@@ -114,8 +114,14 @@
 
                     <!-- tabs structure example -->
                     <ul class="tabset tabset1">
-                        <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
-                        <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
+                        <li class="active"><a href="#tab1"><span>
+	<?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
+                        <li class="">
+                        <a href="#tab2"><span>
+                        SIZE GUIDE
+	<?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?>
+                        </span></a>
+                        </li>
                         <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
                     </ul>
                     <div class="tab-content">
@@ -123,7 +129,18 @@
                             <p><?php print $_product->getDescription(); ?> </p>
                         </div>
                         <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                            <p><?php print $_product->getShortDescription(); ?> </p>
+                            <?php 
+							$gender = $_product->getGender(); 
+							if($gender == 24) {
+								echo $_product->getSizeguidemen();
+								//echo "Men";
+							}
+							elseif($gender == 25) {
+								//echo "Women";
+								echo $_product->getSizeguidewomen();
+							}
+							else {echo " ";}
+							?> 
                         </div>
                         <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
                             <p><?php print $_product->getDesign(); ?> </p>
@@ -156,7 +173,8 @@
                       
                       <?php // j.work starts ?>
                       <div class="shipping-area"> 
-                      	<a class="shipping-info" href="#">Shipping Information</a>
+                      <h4 st> Shipping Information  </h4>
+                      	<!--<a class="shipping-info" href="#">Shipping Information</a>-->
                         <p><?php print $_product->getShippingDetails(); ?> </p>
                       </div>                      
 <!--                    <div class="shipping-area"> 

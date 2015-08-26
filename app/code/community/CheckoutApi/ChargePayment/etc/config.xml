@@ -1,0 +1,203 @@
+<config>
+    <modules>
+        <CheckoutApi_ChargePayment>
+            <version>0.0.1</version>
+        </CheckoutApi_ChargePayment>
+    </modules>
+    <global>
+        <models>
+            <checkoutapi_chargePayment>
+                <class>CheckoutApi_ChargePayment_Model</class>
+            </checkoutapi_chargePayment>
+        </models>
+        <blocks>
+            <checkoutapi_chargePayment>
+                <class>CheckoutApi_ChargePayment_Block</class>
+            </checkoutapi_chargePayment>
+        </blocks>
+        <helpers>
+            <checkoutapi_chargePayment>
+                <class>CheckoutApi_ChargePayment_Helper</class>
+            </checkoutapi_chargePayment>
+        </helpers>
+        <events>
+            <sales_order_payment_place_start>
+                <observers>
+                    <checkoutapi_chargePayment_observer>
+                        <class>CheckoutApi_ChargePayment_Model_Observer</class>
+                        <method>salesOrderPaymentPlaceStart</method>
+                    </checkoutapi_chargePayment_observer>
+                </observers>
+            </sales_order_payment_place_start>
+        </events>
+
+        <payment>
+            <checkout_cc>
+                <types>
+                    <AE>
+                        <code>AE</code>
+                        <name>American Express</name>
+                        <order>0</order>
+                    </AE>
+                    <VI>
+                        <code>VI</code>
+                        <name>Visa</name>
+                        <order>10</order>
+                    </VI>
+                    <MC>
+                        <code>MC</code>
+                        <name>MasterCard</name>
+                        <order>20</order>
+                    </MC>
+                    <DI>
+                        <code>DI</code>
+                        <name>Discover</name>
+                        <order>30</order>
+                    </DI>
+                    <SM>
+                        <code>SM</code>
+                        <name>Maestro/Switch</name>
+                        <order>40</order>
+                    </SM>
+                    <JCB>
+                        <code>JCB</code>
+                        <name>JCB</name>
+                        <order>50</order>
+                    </JCB>
+                    <OT>
+                        <code>OT</code>
+                        <name>Other</name>
+                        <order>1000</order>
+                    </OT>
+                </types>
+            </checkout_cc>
+            <checkout_apiUrl>
+                <types>
+
+                    <preprod>
+                        <code>sandbox</code>
+                        <name>Sandbox</name>
+                    </preprod>
+                    <live>
+                        <code>live</code>
+                        <name>Live</name>
+                    </live>
+                </types>
+            </checkout_apiUrl>
+            <groups>
+                <offline>Offline Payment Methods</offline>
+            </groups>
+        </payment>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                    <checkoutapi_chargePayment>
+                        <file>checkoutapi/chargePayment.xml</file>
+                    </checkoutapi_chargePayment>
+
+            </updates>
+        </layout>
+        <routers>
+            <checkoutapi_chargePayment>
+                <use>standard</use>
+                <args>
+                    <module>CheckoutApi_ChargePayment</module>
+                    <frontName>webhook</frontName>
+                </args>
+            </checkoutapi_chargePayment>
+
+        </routers>
+
+
+        <events>
+            <sales_model_service_quote_submit_after>
+                <observers>
+                    <checkoutapi_chargePayment>
+                        <class>CheckoutApi_ChargePayment_Model_Observer</class>
+                        <type>singleton</type>
+                        <method>salesModelServiceQuoteSubmitAfter</method>
+                    </checkoutapi_chargePayment>
+                </observers>
+            </sales_model_service_quote_submit_after>
+        </events>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <checkoutApi_chargePayment before="Mage_Adminhtml" >CheckoutApi_ChargePayment_Adminhtml</checkoutApi_chargePayment>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+        <!--<routers>-->
+            <!--<CheckoutApi_ChargePayment>-->
+                <!--<use>admin</use>-->
+                <!--<args>-->
+                    <!--<frontname>charges</frontname>-->
+                    <!--<module>charges</module>-->
+                <!--</args>-->
+            <!--</CheckoutApi_ChargePayment>-->
+        <!--</routers>-->
+    </admin>
+
+
+    <adminhtml>
+        <events>
+            <adminhtml_widget_container_html_before>
+                <observers>
+                    <checkoutapi_chargePayment>
+                        <class>CheckoutApi_ChargePayment_Model_Observer</class>
+                        <type>singleton</type>
+                        <method>adminhtmlWidgetContainerHtmlBefore</method>
+                    </checkoutapi_chargePayment>
+                </observers>
+            </adminhtml_widget_container_html_before>
+
+        </events>
+    </adminhtml>
+    <default>
+        <payment>
+            <creditcardpci>
+                <active>0</active>
+                <active>0</active>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <model>checkoutapi_chargePayment/method_creditcardpci</model>
+                <order_status>processing</order_status>
+                <order_status_capture>processing</order_status_capture>
+                <title>Credit Card (Checkout.com) pci</title>
+                <payment_action>authorize</payment_action>
+                <order_status_capture>complete</order_status_capture>
+                <allowspecific>0</allowspecific>
+                <mode>dev</mode>
+                <timeout>60</timeout>
+                <auto_capture_time>0</auto_capture_time>
+            </creditcardpci>
+            <creditcard>
+                <active>1</active>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <model>checkoutapi_chargePayment/method_creditcard</model>
+                <order_status>processing</order_status>
+                <title>Credit Card (Checkout.com)</title>
+                <payment_action>processing</payment_action>
+                <order_status_capture>complete</order_status_capture>
+                <allowspecific>0</allowspecific>
+                <mode>dev</mode>
+                <timeout>60</timeout>
+                <auto_capture_time>0</auto_capture_time>
+            </creditcard>
+            <localpayment>
+                <active>0</active>
+                <model>checkoutapi_chargePayment/method_localpayment</model>
+                <order_status>processing</order_status>
+                <order_status_capture>processing</order_status_capture>
+                <title>Local payment provider(s)</title>
+                <allowspecific>0</allowspecific>
+
+            </localpayment>
+
+        </payment>
+    </default>
+</config>
