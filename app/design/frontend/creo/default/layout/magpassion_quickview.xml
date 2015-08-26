@@ -14,9 +14,9 @@
         <reference name="head">
             <action method="addCss"><stylesheet>magpassion_quickview/css/mp_quickview.css</stylesheet></action>
             <action method="addCss"><stylesheet>magpassion_quickview/css/jquery.fancybox.css</stylesheet></action>
-            <action method="addJs" ifconfig="quickview/setting/loadjquery"><script>magpassion/quickview/jquery-1.10.1.min.js</script></action>
+           <!-- <action method="addJs" ifconfig="quickview/setting/loadjquery"><script>magpassion/quickview/jquery-1.10.1.min.js</script></action>
             <action method="addJs"><script>magpassion/quickview/jquery.fancybox.pack.js</script></action>
-            <action method="addJs"><script>magpassion/quickview/mp_quickview.js</script></action>
+            <action method="addJs"><script>magpassion/quickview/mp_quickview.js</script></action>-->
         </reference>
         <!--reference name="content">
             <block type="quickview/page" name="quickview_page_view" template="magpassion_quickview/quickview/page/view.phtml" />
