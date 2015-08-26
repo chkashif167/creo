@@ -688,7 +688,6 @@
 }
 .checkout-cart-index .btn-holder .btn-proceed-checkout:hover:before { border-color: transparent transparent #f16167; }
 .checkout-cart-index .btn-holder .btn-proceed-checkout:hover {
-	opacity: 0.8;
 	background: #f16167;
 	color: #000;
 	border-color: #f16167;
