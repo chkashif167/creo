@@ -1126,3 +1126,6 @@
     width: 100%;
 }
 
+.has-swatches.swatch-type-image { padding: 0;}
+.has-swatches.swatch-type-label { padding: 0;}
+.catalog-product-view #fancybox-link { display: none;}
