@@ -189,7 +189,7 @@
     float: left;
     margin: 0;
     padding: 0;
-    width: 100% !important;
+    /*width: 100% !important;*/
 }
 .in-stock span {
     color: #3ebd00;
@@ -505,6 +505,7 @@
     width:100%;
     bottom:100%;
     display:none;
+	z-index:9999;
 }
 
 .products-grid li.item:hover .btn-holder {
@@ -1132,3 +1133,4 @@
 
 .catalog-product-view .product-detail { z-index: 1;}
 .products-grid { z-index: 9; position: relative;}
+#product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}
