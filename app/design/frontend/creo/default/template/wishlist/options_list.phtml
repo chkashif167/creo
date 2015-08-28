@@ -59,9 +59,9 @@ foreach ($productAttributeOptions as $productAttribute) {
 <?php
 foreach( $attributeOptions['Color'] as $ao ){
 	if(strtolower($ao) == strtolower($color) ){
-		$txt [] = '<li class="active '.strtolower($ao).'"><img width="21" height="21" alt="'.$ao.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.$ao.'.png" style="border:1px solid black; transform:skew(-15deg)"></li>';
+		$txt [] = '<li class="active '.strtolower($ao).'"><img width="21" height="21" alt="'.$ao.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.strtolower($ao).'.png" style="border:1px solid black; transform:skew(-15deg)"></li>';
 		}else{
-	$txt [] = '<li class="'.str_replace(" ","_",strtolower($ao)).'"><img width="21" height="21" alt="'.$ao.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.$ao.'.png"></li>';
+	$txt [] = '<li class="'.str_replace(" ","_",strtolower($ao)).'"><img width="21" height="21" alt="'.$ao.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.strtolower($ao).'.png"></li>';
 		}
 		
 }
