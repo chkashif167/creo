@@ -4,10 +4,10 @@
 /*
  * Adding javascript include
  */
- if($this->getRequest()->getControllerName()!='result') {
-	$current_category_id = Mage::registry('current_category')->getId();	 
- }else{
-	$current_category_id='';
+if ($this->getRequest()->getControllerName() != 'result') {
+    $current_category_id = Mage::registry('current_category')->getId();
+} else {
+    $current_category_id = '';
 }
 
 
@@ -60,7 +60,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                         <?php endforeach; ?>
 
                         <?php //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option ?>
-                            <div class="actions fme_layered_clear_all"><a class="fme_layered_clearall" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>            
+                        <div class="actions fme_layered_clear_all"><a class="fme_layered_clearall" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>            
                         <?php //endif ?>
 
                     </dl>
@@ -74,11 +74,10 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
         <div class="fme_loading_filters" style="display:none"></div>
     </div>
 <?php endif; ?>
-<?php
-if($current_category_id!='17'){?>
-	<script>
-	document.getElementById("fme_layered_styles").style.display='none';
-    document.getElementById("styles_label").style.display='none';
+<?php if ($current_category_id != '17') { ?>
+    <script>
+        document.getElementById("fme_layered_styles").style.display = 'none';
+        document.getElementById("styles_label").style.display = 'none';
     </script>
     <?php
 }

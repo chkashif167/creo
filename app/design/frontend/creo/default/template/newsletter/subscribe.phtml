@@ -32,12 +32,15 @@
     setcookie('siteVisits', $visitCount+1);
 }
 
+// check if user is logged in and already subscribed.
+$customerEmail = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
+$subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($customerEmail);
 ?>
 
 <?php 
 $check_cookie = Mage::getModel('core/cookie')->get('popup-shown');
 $visitAttempt = $_SERVER['HTTP_REFERER'];
-if((Mage::getModel('core/cookie')->get('popup-shown')) && ($visitCount=='0')) { ?>
+if((Mage::getModel('core/cookie')->get('popup-shown')) && ($visitCount=='0') && ($subscriber->subscriber_email=='')) { ?>
 
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
