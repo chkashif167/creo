@@ -1110,10 +1110,10 @@ function checkNewsletterCookie() {
 	//console.log(seeit);
 	if (seeit == 'undefined' || seeit == "") {
 		//console.log("here1");
-		jQuery('.modal_newsletter').modal('show');
+		$j('.modal_newsletter').modal('show');
 	}else{
 		//console.log("here2");
-		jQuery('.modal_newsletter').modal('hide');
+		$j('.modal_newsletter').modal('hide');
 	}
 }
 

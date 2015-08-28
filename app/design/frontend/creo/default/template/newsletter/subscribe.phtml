@@ -27,9 +27,9 @@
  $visitCount=0;
  $visitCount = $_COOKIE['siteVisits'];
  if(!isset($_COOKIE['siteVisits']) || $_COOKIE['siteVisits']=='') {
-    setcookie('siteVisits', 0);
+    setcookie('siteVisits', 0,time() + (60 * 10),'/');
 } else {
-    setcookie('siteVisits', $visitCount+1);
+    setcookie('siteVisits', $visitCount+1,time() + (60 * 10),'/');
 }
 
 // check if user is logged in and already subscribed.
