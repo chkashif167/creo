@@ -1076,11 +1076,6 @@ function initTabs() {
 	}
 	});
 	
-			jQuery('#tools-button').find('li').find('a').click(function(){
-			setTimeout(function(){
-			jQuery('#tools-button').find('li').find('a').show();
-			},2);
-			});
 });
 
 
