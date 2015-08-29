@@ -1075,6 +1075,12 @@ function initTabs() {
 	jQuery(this).prev('#qty').val(parseInt(jQuery(this).prev('#qty').val())-1);
 	}
 	});
+	
+			jQuery('#tools-button').find('li').find('a').click(function(){
+			setTimeout(function(){
+			jQuery('#tools-button').find('li').find('a').show();
+			},2);
+			});
 });
 
 
