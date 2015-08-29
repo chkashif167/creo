@@ -10,7 +10,7 @@ class Mango_Attributeswatches_Helper_Product_List extends Mage_Core_Helper_Abstr
     protected $_images_width = false;
     protected $_images_height = false;
     /* resize extra parameters */
-    protected $_keep_aspect_ratio = false;
+    protected $_keep_aspect_ratio = true;
     protected $_constrain_only = true;
     protected $_keep_frame = true;
     protected $_settings = false;

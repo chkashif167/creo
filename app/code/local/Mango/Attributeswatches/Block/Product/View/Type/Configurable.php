@@ -94,6 +94,9 @@ class Mango_Attributeswatches_Block_Product_View_Type_Configurable extends Mage_
                 foreach ($_attributes_to_reload as $attribute_code) {
                     $attributeValue     = $product->getData($attribute_code);
                     if($attributeValue) $_product_attributes[$productId][$attribute_code]['value'] = $attributeValue;
+                    /* for select attributes */
+                    $attributeText     = $product->getAttributeText($attribute_code);
+                    if($attributeText) $_product_attributes[$productId][$attribute_code]['text'] = $attributeText;
                 }
             }
         }

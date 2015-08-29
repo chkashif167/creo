@@ -91,7 +91,7 @@ $_swatches_height = (int) $_settings['swatch_height'];
                 </div>
                 <div class="clearer">&nbsp;</div>
             </dd>
-           </div>
+            </div>
         <?php endforeach; ?>
     </dl>
     <script type="text/javascript">
@@ -105,9 +105,9 @@ $_swatches_height = (int) $_settings['swatch_height'];
             window.mng_Config<?php echo $_product_id; ?> = <?php echo Mage::helper('core')->jsonEncode($_json_config); ?>;
             window.mng_Config<?php echo $_product_id; ?>.containerId = 'options-container-<?php echo $_product_id; ?>';
             window.spConfig<?php echo $_product_id; ?> = new Product.Config(window.mng_Config<?php echo $_product_id; ?>);
-            jQuery(document).on("click", "#options-container-<?php echo $_product_id; ?> .has-swatches li a.active", function(e) {
+            jQuery(document).on("click", "#options-container-<?php echo $_product_id; ?> .has-swatches li a", function(e) {
                 e.preventDefault();
-                if (!jQuery(this).hasClass("selected")) {
+                if ( jQuery(this).hasClass("active") && !jQuery(this).hasClass("selected")) {
                     _select = jQuery(this).closest("dd.option-container").find("select.configurable-option-select");
                     _select.val(jQuery(this).attr("rel"));//.change();
                     _id = _select.attr("id");

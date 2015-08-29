@@ -965,7 +965,7 @@
 
 .sort-items { display: none;}
 .sortbyCustom { float: right !important; width: 240px; }
-.sortbycontainer { float: left; position: relative; }
+.sortbycontainer { float: left; position: relative; z-index:10; }
 .sortbycontainer a { float: left; width: 144px; border: 1px solid #e2e2e2;
                      color: #222;
                      float: left;
