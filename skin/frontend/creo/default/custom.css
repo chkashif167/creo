@@ -1142,3 +1142,4 @@
     border: 0px solid #fff !important;
     box-shadow: 0 0 0px #ccc !important;}
 .catalog-product-view li.product-image-thumbs { margin-right: 1px !important;}
+.modal-backdrop.fade.in { z-index: -99;}
