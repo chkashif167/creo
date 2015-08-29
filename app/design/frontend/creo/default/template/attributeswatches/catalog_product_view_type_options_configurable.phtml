@@ -12,6 +12,7 @@ $_swatches_height = (int) $_settings['swatch_height'];
 <?php if ($_product->isSaleable() && count($_json_config["attributes"])): ?>
     <dl id="options-container-<?php echo $_product_id; ?>">
         <?php foreach ($_json_config["attributes"] as $_attribute): ?>
+        <div class="attributeItem">
             <dt id="label-attribute-<?php echo $_attribute["id"] ?>"><label class="required"><em>*</em><?php echo $_attribute["label"] ?></label><span class="selected-label">&nbsp;</span>   </dt>
             <dd class="option-container">
                 <?php
@@ -90,6 +91,7 @@ $_swatches_height = (int) $_settings['swatch_height'];
                 </div>
                 <div class="clearer">&nbsp;</div>
             </dd>
+           </div>
         <?php endforeach; ?>
     </dl>
     <script type="text/javascript">
