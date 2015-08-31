@@ -1,0 +1,117 @@
+<?php
+/* to override the default configurable options template  */
+$_config = $this->getJsonConfig();
+$_json_config = $this->helper("attributeswatches")->addAttributeSwatches($_config);
+$_product = $this->getProduct();
+$_product_id = $_product->getId();
+$_settings = Mage::getStoreConfig('attributeswatches/settings');
+
+$_swatches_width = (int) $_settings['swatch_width'];
+$_swatches_height = (int) $_settings['swatch_height'];
+?>
+<?php if ($_product->isSaleable() && count($_json_config["attributes"])): ?>
+    <dl id="options-container-<?php echo $_product_id; ?>">
+        <?php foreach ($_json_config["attributes"] as $_attribute): ?>
+            <dt id="label-attribute-<?php echo $_attribute["id"] ?>"><label class="required"><em>*</em><?php echo $_attribute["label"] ?></label><span class="selected-label">&nbsp;</span>   </dt>
+            <dd class="option-container">
+                <?php
+                /* WILL DISPLAY THE COLOR SWATCHES AND ALL THE CUSTOM OPTION SELECTORS HERE */
+                if (in_array($_attribute["swatch_type"], array("image", "child", "label"))) {
+                    ?>
+                    <div id="attribute-<?php echo $_attribute["id"] ?>-container" class="product-swatches-container">
+                        <ul id="swatches-options-<?php echo $_attribute["id"] ?>" class="has-swatches swatch-type-<?php echo $_attribute["swatch_type"] ?>">
+                            <?php
+                            /* preload swatches from product gallery if necessary */
+                            $_gallery_images = array();
+                            $_load_swatch_from_gallery = Mage::getStoreConfig("attributeswatches/settings/images") == "gallery";
+                            if ($_attribute["swatch_type"] == "child" && $_load_swatch_from_gallery) {
+                                $_gallery = $_product->getSwatchesGalleryImages($_attribute["id"]);
+                                foreach ($_gallery as $_image) {
+                                    $_gallery_images[$_image->getAttributeValue()] = $_image->getFile();
+                                }
+                            }
+                            foreach ($_attribute["options"] as $_option) {
+                                ?>
+                                <li>
+                                    <?php
+                                    switch ($_attribute["swatch_type"]) {
+                                        case "child":
+                                            $_image = "";
+                                            if ($_load_swatch_from_gallery) {
+                                                if (isset($_gallery_images[$_option["id"]])) {
+                                                    $_image = $this->helper('catalog/image')->init($_product, 'image', $_gallery_images[$_option["id"]]);
+                                                } else {
+                                                    $_image = $this->helper('catalog/image')->init($_product, 'image');
+                                                }
+                                            } else {
+                                                $_image_product = Mage::getModel('catalog/product')->load($_option["products"][0]);
+                                                $_image = $this->helper('catalog/image')->init($_image_product, 'image');
+                                            }
+                                            ?>
+                                            <a class="" style="width:<?php echo $_swatches_width ?>px; height:<?php echo $_swatches_height; ?>px;" title="<?php echo $_option["label"] ?>" data-original-title="<?php echo $_option["label"] ?>"  rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="<?php //echo $_image; ?>" rev="<?php //echo $_image->resize(256); ?>">
+                                                <?php
+                                                echo "<img src='" . $_image->resize($_swatches_width, $_swatches_height) . "' title='" . $_option["label"] . "' alt='" . $_option["label"] . "'/>";
+                                                ?>
+                                            </a>
+                                            <span class="tooltip-container"><span class="tooltip"><span><?php echo $_option["label"] ?></span></span></span>
+                                            <?php
+                                            break;
+                                        case 'image':
+                                            ?>
+                                            <a class="" style="<?php echo $_option["swatch_value"] ?>; width:<?php echo $_swatches_width ?>px; height:<?php echo $_swatches_height; ?>px;" data-original-title="<?php echo $_option["label"] ?>"  title="<?php echo $_option["label"] ?>" rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="#" rev="">
+                                                <span><?php echo $_option["label"] ?></span>
+                                            </a>
+                                            <span class="tooltip-container"><span class="tooltip"><span><?php echo $_option["label"] ?></span></span></span>
+                                            <?php
+                                            break;
+                                        case 'label':
+                                            ?>
+                                            <a class="swatch-label" title="<?php echo $_option["label"] ?>" data-original-title="<?php echo $_option["label"] ?>"   rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="#">
+                                                <?php echo $_option["label"] ?>
+                                            </a>
+                                            <?php
+                                            break;
+                                    }
+                                    ?>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <?php
+                }
+                /* Eof MAIN SWATCHES CODE */
+                ?>
+                <div class="input-box">
+                    <select name="super_attribute[<?php echo $_attribute["id"] ?>]" id="attribute<?php echo $_attribute["id"] ?>" class="configurable-option-select required-entry super-attribute-select  swatches-type-<?php echo $_attribute["swatch_type"]; ?> <?php echo (($_attribute["hideselect"]) ? "hideselect" : ""); ?> <?php echo (($_attribute["switchgallery"]) ? "switch-gallery" : ""); ?>">
+                        <option value=""><?php echo $this->__('Choose an Option...') ?></option>
+                    </select>
+                </div>
+                <div class="clearer">&nbsp;</div>
+            </dd>
+        <?php endforeach; ?>
+    </dl>
+    <script type="text/javascript">
+        function out_of_stock_string() {
+            return "<?php echo $this->__(" (Out of Stock)"); ?>";
+        }
+        var mng_Config<?php echo $_product_id; ?> = null;
+        var spConfig<?php echo $_product_id; ?> = null;
+        window.addNewConfigurableProductMethods();
+        jQuery(document).ready(function() {
+            window.mng_Config<?php echo $_product_id; ?> = <?php echo Mage::helper('core')->jsonEncode($_json_config); ?>;
+            window.mng_Config<?php echo $_product_id; ?>.containerId = 'options-container-<?php echo $_product_id; ?>';
+            window.spConfig<?php echo $_product_id; ?> = new Product.Config(window.mng_Config<?php echo $_product_id; ?>);
+            jQuery(document).on("click", "#options-container-<?php echo $_product_id; ?> .has-swatches li a.active", function(e) {
+                e.preventDefault();
+                if (!jQuery(this).hasClass("selected")) {
+                    _select = jQuery(this).closest("dd.option-container").find("select.configurable-option-select");
+                    _select.val(jQuery(this).attr("rel"));//.change();
+                    _id = _select.attr("id");
+                    window.spConfig<?php echo $_product_id; ?>.configureElement($(_id));
+                }
+            });
+        });
+    </script>
+<?php endif; ?>

@@ -93,6 +93,13 @@ jQuery( document ).ready( function($){
 			
 		});
 	}
+	
+	jQuery('#tools-button').find('li').find('a').click(function(){
+	setTimeout(function(){
+	jQuery('#tools-button').find('li').find('a').show();
+	},2);
+	});
+
 });
 	autoClose: 'cancel|6000',
 	jQuery(".messages").hide();
