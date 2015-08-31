@@ -10,7 +10,46 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $categoryId = $this->getRequest()->getParam('cid');
         $search = $this->getRequest()->getParam('s');
         
-        if($categoryId){
+        $filters = json_decode(file_get_contents("php://input"),true);
+        
+        //retrieve category ids from request
+        $category_filters = $filters['category'];
+        $category_filters_ids = array();
+        foreach($category_filters as $sub_category){
+            if(is_array($sub_category)){
+                foreach ($sub_category as $key=>$val){
+                    if($val==true)
+                        $category_filters_ids[] = $key;
+                }
+            }
+        }
+        $color_filters = $filters['attr']['color'];
+        $colors = array();
+        foreach($color_filters as $key=>$val){
+            if($val=='1')
+                $colors[] = $key;
+        }
+        $size_filters = $filters['attr']['size'];
+        $gender_filters = $filters['attr']['gender'];
+        
+        if(!empty($category_filters_ids)){
+            //apply category filters if set
+            $products = null;
+            $collection = Mage::getModel('catalog/product')->getCollection();
+            $collection->addAttributeToFilter("visibility",array("gt"=>1));
+            $collection->addCategoryFilter(Mage::getModel('catalog/category')->load(array(implode(',',$category_filters_ids))),true);
+            if($search){
+                $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
+            }
+            if(!empty($color_filters)){//print_r($colors);echo implode(',',$colors);
+                //$collection->a/ddAttributeFilter('Color',array('in'=>array('7,8,9,10,11,12,13,14,15')));
+               // $collection->addAttributeToSelect('color');
+                //$collection->addAttributeToFilter('color',array('in'=>array('red','blue','gamboge','ripe-lemon',
+                  //  'pistachio','robin-egg-blue','denim','blue-gem','purple','shockingpink')));
+                
+            }
+            $products = $collection->addAttributeToSelect('*');
+        }elseif($categoryId){
             $category = Mage::getModel('catalog/category')->load($categoryId);
             $category_name = $category->getName();
             $data['category_id'] = $categoryId;
@@ -21,6 +60,9 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             if($search){
                 $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
             }
+            if(!empty($color_filters)){
+//                $collection->addAttributeFilter('Color',array('in'=>array($colors)));
+            }
             $products = $collection
                     ->addAttributeToSelect('*')
                     ->load();
@@ -30,8 +72,13 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             if($search){
                 $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
             }
+            if(!empty($color_filters)){
+//                $collection->addAttributeFilter('Color',array('in'=>array($colors)));
+            }
             $products = $collection->addAttributeToSelect('*');
         }
+        
+        
         
 
         
