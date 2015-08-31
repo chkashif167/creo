@@ -1,0 +1,552 @@
+<?xml version="1.0"?>
+<config>
+    
+    <sections>
+        <attributeswatches  translate="label" module="attributeswatches">
+            <label>Attribute Swatches</label>
+            <tab>catalog</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            
+            <groups>
+                
+                <settings translate="label">
+                    <label>Product details page</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[<b style='color:red;'>IMPORTANT!:</b>For attributes to appear on the lists, you need to configure the value <b>"Use To Create Configurable Product"</b> to <b>Yes</b> in Catalog > Attributes > Manage Attributes.]]></comment>
+                    <fields>
+                        <jquery translate="label">
+                            <label>Include jQuery</label>
+                            <comment><![CDATA[If your theme or another extension already includes jQuery, set to <b>No</b>.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jquery>
+                        <attributes translate="label">
+                            <label>Display Swatches</label>
+                            <comment><![CDATA[Configurable attributes to display as <b>SWATCHES</b> in the product details page.]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_attributeswatches</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attributes>
+                        
+                        <childproducts translate="label">
+                            <label>Display Child Products Images</label>
+                            <comment><![CDATA[Display <b>CHIlD PRODUCTS</b> as swatches options in the product details page, instead of color swatches or text labels.]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_attributeswatches</source_model>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </childproducts>
+                        
+                        
+                         <labels translate="label">
+                            <label>Labels</label>
+                            <comment><![CDATA[Configurable attributes to display as <b>LABELS</b> instead of select boxes in the product details page.]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_attributeswatches</source_model>
+                            <sort_order>17</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </labels>
+                        
+                        <hideselect translate="label">
+                            <label>Hide Select</label>
+                            <comment><![CDATA[Hide the default <b>SELECT</b> option and display only the swatches or labels in the product details page.]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_attributeswatches</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hideselect>
+                        
+                        
+                        <defaultselect translate="label">
+                            <label>Select first option</label>
+                            <comment><![CDATA[Show the first available option of the first configurable attribute as selected.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </defaultselect>
+                        
+                        <switchimage translate="label">
+                            <label>Switch Images</label>
+                            <comment><![CDATA[Change the main image when an option is chosen for this attributes.]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_attributeswatches</source_model>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </switchimage>
+                        
+                        <images translate="label">
+                            <label>Load child product gallery</label>
+                            <comment><![CDATA[Choose whether to display images from the product gallery (faster) or from the child products.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>attributeswatches/system_config_source_imagesource</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </images>
+                        
+                        <outofstock translate="label">
+                            <label>Show out of stock options</label>
+                            <comment><![CDATA[Will show options that are out of stock, with the options greyed out.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </outofstock>
+                        
+                        <swatch_width translate="label">
+                            <label>Swatches width</label>
+                            <comment><![CDATA[Swatches width on the configurable product options block.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swatch_width>
+                        
+                        <swatch_height translate="label">
+                            <label>Swatches height</label>
+                            <comment><![CDATA[Swatches height on the configurable product options block.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>75</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swatch_height>
+                        
+                        
+                        <small_image_width translate="label">
+                            <label>Gallery thumbs width</label>
+                            <comment><![CDATA[Width for images on the more-views block below the main product image.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </small_image_width>
+                        
+                        <small_image_height translate="label">
+                            <label>Gallery thumbs height</label>
+                            <comment><![CDATA[Height for images on the more-views block below the main product image..]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </small_image_height>
+                        
+                        <large_image_width translate="label">
+                            <label>Main image width</label>
+                            <comment><![CDATA[Width for main product image.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </large_image_width>
+                        
+                        <large_image_height translate="label">
+                            <label>Main image height</label>
+                            <comment><![CDATA[Height for main product image.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </large_image_height>
+                        
+                        <zoom_image_width translate="label">
+                            <label>Enlarged image width</label>
+                            <comment><![CDATA[Width for zoom/lightbox image.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zoom_image_width>
+                         <zoom_image_height translate="label">
+                            <label>Enlarged image height</label>
+                            <comment><![CDATA[Height for zoom/lightbox image.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zoom_image_height>
+
+                        <reload_attributes translate="label">
+                            <label>Reload Attribute</label>
+                            <comment><![CDATA[Only attributes with value "Used in Product Listing" are displayed. <br/>In order to update the attribute value on the product page after the options have been chosen, create an element with id='swatches-update-attribute-[attribute_code]'. e.g.: <br/>
+                            <b>&lt;div id=&quot;swatches-update-attribute-description&quot;&gt;&lt;/div&gt;</b>]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_reloadattributes</source_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reload_attributes>
+
+                        <hide_gallery translate="label">
+                            <label>Hide single image gallery</label>
+                            <comment><![CDATA[Hide product images gallery or carousel when there is only one image available.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hide_gallery>
+
+
+
+                    </fields>
+                </settings>
+
+                <productlist translate="label">
+                    <label>Product List</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>15</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[Extension settings for products list: category pages and search results]]></comment>
+                    <fields>
+                        <attributes translate="label">
+                            <label>Swatches in Products List</label>
+                            <comment><![CDATA[Configurable attribute to display as <b>SWATCHES</b> in the products list page.<br/><b style='color:red;'>IMPORTANT!:</b> you need to configure the value <b>"Use To Create Configurable Product"</b> to <b>Yes</b> in Catalog > Attributes > Manage Attributes.]]>
+                            </comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_attributeswatches</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attributes>
+                        
+                        <mode translate="label">
+                            <label>Swatches in Products List Mode</label>
+                            <comment><![CDATA[Display swatches or pictures of the child products.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>attributeswatches/system_config_source_listmode</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mode>
+                        <swatch_width translate="label">
+                            <label>Swatch width</label>
+                            <comment><![CDATA[Swatch width on products list/grid.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swatch_width>
+                        <swatch_height translate="label">
+                            <label>Swatch height</label>
+                            <comment><![CDATA[Swatch height on products list/grid.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>135</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swatch_height>
+                        
+                        <images translate="label">
+                            <label>Images source object</label>
+                            <comment><![CDATA[Choose whether to display images from the product gallery (faster) or from the child products.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>attributeswatches/system_config_source_imagesource</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </images>
+                        
+                        <availability translate="label">
+                            <label>Show availability list</label>
+                            <comment><![CDATA[Configurable attribute to display as a <b>LIST</b> of available options, without switching images.<br/><b style='color:red;'>IMPORTANT!:</b> you need to configure the value <b>"Use To Create Configurable Product"</b> to <b>Yes</b> in Catalog > Attributes > Manage Attributes.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>attributeswatches/system_config_source_attributeswatches</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </availability>
+                        
+                        
+                        <alternate_image_source translate="label">
+                            <label>Alternate Image Attribute</label>
+                            <comment><![CDATA[To show  and alternate image on product image hover, enter the attribute code of the gallery image to be used as alternate image. You need to create first a product attribute of type "image", and then enter the code here. Empty to not use this effect.]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alternate_image_source>
+                        
+                        
+                    </fields>
+                </productlist>
+                
+                
+
+
+                <lightbox translate="label">
+                    <label>LIghtbox Effects</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable FancyBox</label>
+                            <comment><![CDATA[]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                    </fields>
+                </lightbox>
+
+
+                <cloudzoom translate="label">
+                    <label>CloudZoom</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable CloudZoom</label>
+                            <comment><![CDATA[Version 1.0.3]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <position translate="label">
+                            <label>Zoom position</label>
+                            <comment>Left, right or inside</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>attributeswatches/system_config_source_zoomposition</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </position>
+                    </fields>
+                </cloudzoom>
+
+     
+                <carousel translate="label">
+                    <label>Carousel for Product Gallery</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>33</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable BXSlider</label>
+                            <comment><![CDATA[Version 4.2.3]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <position translate="label">
+                            <label>Carousel Gallery Position</label>
+                            <comment><![CDATA[ For the vertical carousel, the width is calculated using the radion: thumbnail_width / main_image_width   ]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>attributeswatches/system_config_source_carouselposition</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </position>
+                        <min_items translate="label">
+                            <label>Min Number of Items</label>
+                            <comment><![CDATA[The minimum number of slides to be shown. Slides will be sized down if carousel becomes smaller than the original size.<br/>Useful for responsive themes when the number of items in the carousel accomodates based on the page width.<br/>For vertical carousels or non-responsive themes, the same values for minimum and maximum.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </min_items> 
+                        <max_items translate="label">
+                            <label>Max Number of Items</label>
+                            <comment><![CDATA[The maximum number of slides to be shown. Slides will be sized up if carousel becomes larger than the original size.<br/>Useful for responsive themes when the number of items in the carousel accomodates based on the page width.<br/>For vertical carousels or non-responsive themes, the same values for minimum and maximum.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </max_items>                        
+                        <move_items translate="label">
+                            <label>Move Slides</label>
+                            <comment><![CDATA[The number of slides to move on transition. This value must be >= minSlides, and <= maxSlides. If zero (default), the number of fully-visible slides will be used.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>95</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </move_items> 
+                    </fields>
+                </carousel>     
+     
+                <layerednavigation>
+                    <label>Layered Navigation</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>35</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[<b style='color:red;'>IMPORTANT!:</b> you need to configure the value <b>"Use In Layered Navigation"</b> to <b>Yes</b> in Catalog > Attributes > Manage Attributes.]]></comment>
+                    <fields>
+                        <attributes translate="label">
+                            <label>Links and Swatches</label>
+                            <comment><![CDATA[Configurable attributes to display as <b>SWATCHES</b> in the layered navigation.]]>
+                            </comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_layered</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attributes>
+                        <hidelabel translate="label">
+                            <label>Show swatches without labels</label>
+                            <comment><![CDATA[Configurable attributes to display as <b>SWATCHES</b> in the layered navigation without any text label.]]>
+                            </comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>attributeswatches/system_config_source_layered</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hidelabel>
+                        <switchimages translate="label">
+                            <label>Switch images</label>
+                            <comment><![CDATA[Change the images in the product list based on the option selected in the layered navigation if the attribute is used to display swatches.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </switchimages>
+                        
+                        <swatch_width translate="label">
+                            <label>Swatch width</label>
+                            <comment><![CDATA[Swatch width on layered navigation.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swatch_width>
+                        
+                        <swatch_height translate="label">
+                            <label>Swatch height</label>
+                            <comment><![CDATA[Swatch height on layered navigation.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swatch_height>
+                    </fields>
+                    
+                </layerednavigation>
+
+
+                <checkout translate="label">
+                    <label>Checkout</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>45</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <overrideimage translate="label">
+                            <label>Override images in cart</label>
+                            <comment><![CDATA[Display images from the parent product gallery based on the attributes selection and based on the attributes chosen in the <b>"Switch Image"</b> field, instead of showing the child/parent product thumbnail (Magento default) . ]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </overrideimage>
+                    </fields>
+                </checkout>
+
+            </groups>
+
+        </attributeswatches>
+
+
+
+    </sections>
+</config>

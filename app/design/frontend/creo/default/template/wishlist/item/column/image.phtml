@@ -31,5 +31,5 @@ $product = $item->getProduct();
 
 
 <a class="product-image col-xs-1" href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>">
-    <img class="alignleft img-responsive" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(113, 113); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
+    <img class="alignleft img-responsive" src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail')->resize(120,120); ?>" width="120" height="120" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
 </a>
