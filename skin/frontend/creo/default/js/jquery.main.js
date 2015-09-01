@@ -1186,13 +1186,19 @@ function popupValidation()
  
         //check all required elements color/size 
         if(jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
-                errors = "Please make sure to select color/size."; 
+                errors = "Please make sure to select color"; 
         } 
         if(jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
-                errors = "Please make sure to select color/size."; 
+            if(errors.length >= 1) {
+                errors = errors + " and size";
+            } 
+            else {
+                errors = "Please make sure to select size"; 
+            }
         } 
  
         if(errors != ""){ 
+                errors = errors + ".";//Adding . to end the sentence
                 jQuery.alert({ 
                         title: 'Alert!', 
                         content: errors, 
