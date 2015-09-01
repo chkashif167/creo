@@ -42,22 +42,7 @@ class Progos_Creomob_IndexController extends Mage_Core_Controller_Front_Action {
         print_r(json_encode($data));
         die;
     }
-
-    public function categoryFilterTreeAction() {
-        $categories = Mage::getModel('catalog/category')
-                        ->getCollection()
-                        ->addAttributeToSelect('*')
-                        ->addIsActiveFilter()
-                        ->addLevelFilter(3)
-                        ->addAttributeToFilter('level', array( 'gt' => 1))
-                        ->addAttributeToFilter('is_active', '1')
-                        ->addAttributeToFilter('include_in_menu', '1')
-                        ->addAttributeToSort('path', 'asc')
-                        ->load()->toArray();
-        header("Content-Type: application/json");
-        print_r(json_encode($categories));
-        die;
-    }
+    
 
 
 }
