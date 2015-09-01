@@ -25,13 +25,28 @@
  */
 
 /* @var Mage_Wishlist_Model_Item $item */
+
 $item = $this->getItem();
 $product = $item->getProduct();
-
-
+$item_s = Mage::getModel('wishlist/item')
+     ->loadWithOptions($item->getId(), 'simple_product')
+     ->getOptionsByCode();
+if($item_s){
+$simple_product = $item_s['simple_product']->getData();
+$simple_product_id = $simple_product['product_id'];
+$simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_id);
+}
 ?>
 <div class="col-xs-7">
 <div class="product-details">
+<?php
+if($item_s){
+?>
+<img src="<?php echo $this->helper('catalog/image')
+    ->init($simple_product_attr ,'small_image')->resize(113,113);  ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
+<?php
+}
+?>
     <h3>PRODUCT DETAILS</h3>
  <strong class="title">
     <a href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a>
@@ -44,17 +59,15 @@ $product = $item->getProduct();
     <span><?php echo $this->__('SKU'); ?> <?php echo $this->escapeHtml($product->getSku()) ?></span>
 </div> 
 
-
-
  <div class="description std">
     <div class="inner"> 
         <?php  
 		
-			$total_words = strlen($this->escapeHtml($this->stripTags($product->getShortDescription())));
+			$total_words = strlen($this->escapeHtml($this->stripTags($simple_product_attr['description'])));
 			if( $total_words >=  100 ){
-				echo substr($this->escapeHtml($this->stripTags($product->getShortDescription())),0,100)." ...";
+				echo substr($this->escapeHtml($this->stripTags($simple_product_attr['description'])),0,100)." ...";
 			}else{
-				echo $this->escapeHtml($this->stripTags($product->getShortDescription()));	
+				echo $this->escapeHtml($this->stripTags($simple_product_attr['description']));	
 			}
 		
 		?>
