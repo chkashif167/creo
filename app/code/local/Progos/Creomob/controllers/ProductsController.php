@@ -10,28 +10,109 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $categoryId = $this->getRequest()->getParam('cid');
         $search = $this->getRequest()->getParam('s');
         
-        if($categoryId){
+        $filters = json_decode(file_get_contents("php://input"),true);
+        
+        //retrieve category ids from request
+        $category_filters = $filters['category'];
+        $category_filters_ids = array();
+        foreach($category_filters as $sub_category){
+            if(is_array($sub_category)){
+                foreach ($sub_category as $key=>$val){
+                    if($val==true)
+                        $category_filters_ids[] = $key;
+                }
+            }
+        }
+        $color_filters = $filters['attr']['color'];
+        $colors = array();
+        foreach($color_filters as $key=>$val){
+            if($val=='1')
+                $colors[] = $key;
+        }
+        $size_filters = $filters['attr']['size'];
+        $sizes = array();
+        foreach($size_filters as $key=>$val){
+            if($val=='1')
+                $sizes[] = $key;
+        }
+        $gender_filters = $filters['attr']['gender'];
+        $gender = array();
+        foreach($gender_filters as $key=>$val){
+            if($val=='1')
+                $gender[] = $key;
+        }
+        
+        if(!empty($category_filters_ids)){
+            //apply category filters if set
+            $products = null;
+            $collection = Mage::getModel('catalog/product')->getCollection();
+//            $collection->addAttributeToFilter("visibility",array("gt"=>1));
+            $collection->addCategoryFilter(Mage::getModel('catalog/category')->load(array(implode(',',$category_filters_ids))),true);
+            if($search){
+                $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
+            }
+            if(!empty($colors)){
+//                $collection->addAttributeToFilter('color',array('in'=>array(7,8,9,10,11,12,13,14,15,41,42,43,44,45,46)));
+                $collection->addAttributeToFilter('color',array('in'=>$colors));
+            }
+            if(!empty($sizes)){
+                $collection->addAttributeToFilter('size',array('in'=>$sizes));
+            }
+            if(!empty($gender)){
+                $collection->addAttributeToFilter('size',array('in'=>$gender));
+            }
+            if(empty($colors) && empty($sizes) && empty($gender)){
+                $collection->addAttributeToFilter("visibility",array("gt"=>1));
+            }
+            $products = $collection->addAttributeToSelect('*');
+        }elseif($categoryId){
             $category = Mage::getModel('catalog/category')->load($categoryId);
             $category_name = $category->getName();
             $data['category_id'] = $categoryId;
             $data['category_name'] = $category_name;
 
             $collection = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection();
-            $collection->addAttributeToFilter("visibility",array("gt"=>1));
+//            $collection->addAttributeToFilter("visibility",array("gt"=>1));
             if($search){
                 $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
+            }
+            if(!empty($colors)){
+                $collection->addAttributeToFilter('color',array('in'=>$colors));
+            }
+            if(!empty($sizes)){
+                $collection->addAttributeToFilter('size',array('in'=>$sizes));
+            }
+            if(!empty($gender)){
+                $collection->addAttributeToFilter('size',array('in'=>$gender));
+            }
+            if(empty($colors) && empty($sizes) && empty($gender)){
+                $collection->addAttributeToFilter("visibility",array("gt"=>1));
             }
             $products = $collection
                     ->addAttributeToSelect('*')
                     ->load();
         } else{
             $collection = Mage::getModel('catalog/product')->getCollection();
-            $collection->addAttributeToFilter("visibility",array("gt"=>1));
+//            $collection->addAttributeToFilter("visibility",array("gt"=>1));
             if($search){
                 $collection->addAttributeToFilter("name",array("like"=>"%$search%"));
             }
+            if(!empty($colors)){
+                $collection->addAttributeToFilter('color',array('in'=>$colors));
+            }
+            if(!empty($sizes)){
+                $collection->addAttributeToFilter('size',array('in'=>$sizes));
+            }
+            if(!empty($gender)){
+                $collection->addAttributeToFilter('size',array('in'=>$gender));
+            }
+            if(empty($colors) && empty($sizes) && empty($gender)){
+                $collection->addAttributeToFilter("visibility",array("gt"=>1));
+            }
             $products = $collection->addAttributeToSelect('*');
         }
+        
+        
         
 
         

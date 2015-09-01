@@ -79,6 +79,10 @@ function fme_layered_show_products(transport)
     }
     if (typeof (fme_slider) != 'undefined')
         fme_slider.setEnabled();
+
+//reinitialize infinite ajax scroll
+jQuery.ias('destroy');
+SgyIAS.init();
 }
 
 function fme_layered_add_params(k, v, isSingleVal)
