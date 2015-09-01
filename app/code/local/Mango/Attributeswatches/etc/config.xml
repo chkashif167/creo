@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+* @category   Mango
+* @package    Mango_Attributeswatches
+* @author     MangoExtensions
+* @license    http://www.mangoextensions.com  Open Software License (OSL 3.0)
+*/
+-->
+<config>
+    <modules>
+        <Mango_Attributeswatches>
+            <version>1.7.2</version>
+        </Mango_Attributeswatches>
+    </modules>
+    <frontend>
+        <routers>
+            <attributeswatches>
+                <use>standard</use>
+                <args>
+                    <module>Mango_Attributeswatches</module>
+                    <frontName>attributeswatches</frontName>
+                </args>
+            </attributeswatches>
+        </routers>
+        <layout>
+            <updates>
+                <attributeswatches>
+                    <file>attributeswatches.xml</file>
+                </attributeswatches>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <attributeswatches>
+                <use>admin</use>
+                <args>
+                    <module>Mango_Attributeswatches</module>
+                    <frontName>attributeswatches</frontName>
+                </args>
+            </attributeswatches>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <attributeswatches module="attributeswatches">
+                <title>Attribute Swatches</title>
+                <sort_order>71</sort_order>
+                <children>
+                    <items module="attributeswatches">
+                        <title>Manage Items</title>
+                        <sort_order>0</sort_order>
+                        <action>attributeswatches/adminhtml_attributeswatches</action>
+                    </items>
+                </children>
+            </attributeswatches>
+        </menu>
+        <layout>
+            <updates>
+                <attributeswatches>
+                    <file>attributeswatches.xml</file>
+                </attributeswatches>
+            </updates>
+        </layout>
+        <events>            	
+            <controller_action_postdispatch_adminhtml_system_config_save>
+                <observers>
+                    <attributeswatches>
+                        <type>singleton</type>
+                        <class>attributeswatches/observer</class>
+                        <method>makeAttributeVisible</method>
+                    </attributeswatches>
+                </observers>
+            </controller_action_postdispatch_adminhtml_system_config_save>
+        </events>
+    </adminhtml>
+    <global>
+        <models>
+            <attributeswatches>
+                <class>Mango_Attributeswatches_Model</class>
+                <resourceModel>attributeswatches_mysql4</resourceModel>
+            </attributeswatches>
+            
+            <catalog>
+                <rewrite>
+                    <product>Mango_Attributeswatches_Model_Catalog_Product</product>
+                    <product_attribute_backend_media>Mango_Attributeswatches_Model_Catalog_Product_Attribute_Backend_Media</product_attribute_backend_media>
+                </rewrite>
+            </catalog>
+            
+            
+            <attributeswatches_mysql4>
+                <class>Mango_Attributeswatches_Model_Mysql4</class>
+                <entities>
+                    <attributeswatches>
+                        <table>attributeswatches</table>
+                    </attributeswatches>
+                </entities>
+            </attributeswatches_mysql4>
+            
+            <catalog_resource>
+                <rewrite>
+                    <product_attribute_backend_media>Mango_Attributeswatches_Model_Resource_Catalog_Product_Attribute_Backend_Media</product_attribute_backend_media>
+                </rewrite>
+            </catalog_resource>
+            
+            
+            
+            
+        </models>
+        <resources>
+            <attributeswatches_setup>
+                <setup>
+                    <module>Mango_Attributeswatches</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </attributeswatches_setup>
+            <attributeswatches_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </attributeswatches_write>
+            <attributeswatches_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </attributeswatches_read>
+        </resources>
+        <blocks>
+            <attributeswatches>
+                <class>Mango_Attributeswatches_Block</class>
+            </attributeswatches>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_helper_form_gallery_content>Mango_Attributeswatches_Block_Adminhtml_Catalog_Product_Helper_Form_Gallery_Content</catalog_product_helper_form_gallery_content>
+                </rewrite>
+            </adminhtml>
+            <checkout>
+                <rewrite>
+                    <cart_item_renderer_configurable>Mango_Attributeswatches_Block_Checkout_Cart_Item_Renderer_Configurable</cart_item_renderer_configurable>
+                </rewrite>
+            </checkout>
+            <catalog>
+                <rewrite>
+                    <product_view_type_configurable>Mango_Attributeswatches_Block_Product_View_Type_Configurable</product_view_type_configurable>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <helpers>
+            <attributeswatches>
+                <class>Mango_Attributeswatches_Helper</class>
+            </attributeswatches>
+        </helpers>
+        <events>
+            <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <attributeswatches_layer_block>
+                        <type>singleton</type>
+                        <class>attributeswatches/observer</class>
+                        <method>swatchesForLayeredNavigationFilter</method>
+                    </attributeswatches_layer_block>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <attributeswatches_wishlist_image>
+                        <type>singleton</type>
+                        <class>attributeswatches/observer</class>
+                        <method>wishlistConfigurableProductImage</method>
+                    </attributeswatches_wishlist_image>
+                </observers>
+            </core_block_abstract_to_html_before>
+            <catalog_product_collection_load_before>
+                <observers>
+                    <attributeswatches_child_attributes>
+                        <type>singleton</type>
+                        <class>attributeswatches/observer</class>
+                        <method>addExtraAttributes</method>
+                    </attributeswatches_child_attributes>
+                </observers>
+            </catalog_product_collection_load_before>
+        </events>
+
+    </global>
+    
+    <!-- default option values -->
+    <default>
+        <attributeswatches>
+            <settings>
+                <attributes>color</attributes>
+                <labels>size</labels>
+                <swatch_width>30</swatch_width>
+                <swatch_height>30</swatch_height>
+                <small_image_width>120</small_image_width>
+                <small_image_height>120</small_image_height>
+                <large_image_width>600</large_image_width>
+                <large_image_height>600</large_image_height>
+                <zoom_image_width>1200</zoom_image_width>
+                <zoom_image_height>1200</zoom_image_height>
+                <hide_gallery>0</hide_gallery>
+            </settings>
+            <carousel>
+                <enabled>1</enabled>
+                <min_items>5</min_items>
+                <max_items>5</max_items>
+                <move_items>1</move_items>
+            </carousel>
+            <cloudzoom>
+                <enabled>1</enabled>
+                <position>inside</position>
+            </cloudzoom>            
+            <productlist>
+                <swatch_width>25</swatch_width>
+                <swatch_height>25</swatch_height>
+            </productlist>
+            <layerednavigation>
+                <attributes>color</attributes>
+                <hidelabel>color</hidelabel>
+                <swatch_width>25</swatch_width>
+                <swatch_height>25</swatch_height>
+            </layerednavigation>
+        </attributeswatches>
+    </default>
+    
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <attributeswatches_adminhtml_attributeswatches_index>
+        <reference name="content">
+            <block type="attributeswatches/adminhtml_attributeswatches" name="attributeswatches" />
+        </reference>
+    </attributeswatches_adminhtml_attributeswatches_index>
+    
+    <default>
+        <reference name="head">
+            <action method="addJs"><file>attributeswatches/adminhtml_product.override.js</file></action>
+        </reference>
+    </default>
+</layout>
