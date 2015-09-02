@@ -1179,3 +1179,48 @@ jQuery(window).resize(function(){
 	jQuery(".main").css('min-height',contentHeight);
 	console.log(mainheight,headerheight,foorterheight,contentHeight);
 }); 
+
+function popupValidation() 
+{ 
+        var errors = ""; 
+ 
+        //check all required elements color/size 
+        if(jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
+                errors = "Please make sure to select color"; 
+        } 
+        if(jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
+            if(errors.length >= 1) {
+                errors = errors + " and size";
+            } 
+            else {
+                errors = "Please make sure to select size"; 
+            }
+        } 
+ 
+        if(errors != ""){ 
+                errors = errors + ".";//Adding . to end the sentence
+                jQuery.alert({ 
+                        title: 'Alert!', 
+                        content: errors, 
+                        /*confirm: function(){ 
+                                alert('Confirmed!'); 
+                        }*/ 
+                }); 
+                return false; 
+        } 
+        return true; 
+} 
+
+function designYourOwnPopupValidation() 
+{ 
+    if(jQuery('.options-area .product-options').find('select:first').val().length > 0) {  
+        return true; 
+    }     
+    jQuery.alert({ 
+        title: 'Alert!', 
+        content: "Please choose size first.", 
+        /*confirm: function(){ 
+            alert('Confirmed!'); 
+        }*/ 
+    });   
+}
