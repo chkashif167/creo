@@ -165,7 +165,7 @@
 <li <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
     ?>class="active"<?php } ?>><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), 'clothing') == true) {
+<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/clothing/') == true) {
     echo'class="active"';
 } ?>> <a href="javascript:void(0)">CLOTHING</a>
     <div class="drop">
@@ -229,7 +229,7 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), 'accessories') == true) {
+<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/accessories/') == true) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">ACCESSORIES</a>
     <div class="drop"> 
@@ -276,7 +276,7 @@ endforeach;
 
     </div>
 </li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), 'caps') == true) {
+<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/caps/') == true) {
                     echo'class="active"';
                 } ?>><a href="javascript:void(0)">CAPS</a>
     <div class="drop">
@@ -322,7 +322,7 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), 'categories') == true) {
+<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/categories/') == true) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">CATEGORIES</a>
 
@@ -375,6 +375,6 @@ endforeach;
 
 
 </li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), 'create') == true) {
+<li <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), 'create.html') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/create/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/account/') == false) {
                     echo'class="active"';
                 } ?>><a href="<?php echo Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
