@@ -174,7 +174,7 @@ class Progos_Creomob_CheckoutController extends Mage_Core_Controller_Front_Actio
         $shippingAddress = $quote->getShippingAddress()->addData($addressData);
         
         $shippingAddress->setCollectShippingRates(true)->collectShippingRates()->
-            setShippingMethod('flatrate_flatrate')->setPaymentMethod('cashondelivery');
+            setShippingMethod('freeshipping_freeshipping')->setPaymentMethod('cashondelivery');
         
 //        $quote->getPayment()->importData(array('method' => 'cashondelivery'));
 //        $quote->collectTotals()->save();
