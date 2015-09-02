@@ -45,6 +45,8 @@
 $item = $this->getItem();
 $product = $item->getProduct();
 // Collect options applicable to the configurable product
+if($product->isConfigurable()){
+
 $productAttributeOptions = $product->getTypeInstance(true)->getConfigurableAttributesAsArray($product);
 $attributeOptions = array();
 foreach ($productAttributeOptions as $productAttribute) {
@@ -85,6 +87,15 @@ echo implode(' ',$txt2);
 ?>
 	</ul>
 </div>
-
+<?php }
+else{
+	if($color){
+	echo '<div class="column color-area"> <h4>Color:</h4><ul><li class="active '.strtolower($color).'"><img width="21" height="21" alt="'.$color.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.strtolower($color).'.png" style="border:1px solid black; transform:skew(-15deg)"></li></ul></div>';
+	}
+	if($size){
+		echo '<div class="column size-area"> <h4>Size:</h4><ul><li class="active"><a href="#">'.$size.'</a></li></ul></div>';
+	}
+}
+?>
 <?php endif ?>
 </div>
