@@ -52,8 +52,6 @@ function decrementQty(fid){
 }
 
 </script>
-
-<div class="col-xs-4">
   <div class="cart-area">
     <h3>ADD TO CART</h3>
     <span class="price"><?php echo $this->getPriceHtml($product, empty($options));?></span>
@@ -87,8 +85,5 @@ function decrementQty(fid){
     <?php //echo $this->getChildHtml($childName, false);?>
 <?php endforeach;?>
 </div>
-</div>
-<?php if ($product->isVisibleInSiteVisibility()): ?>
-    <p><a class="link-edit button button-secondary" href="<?php echo $this->getItemConfigureUrl($item) ?>"><?php echo $this->__('Edit') ?></a></p>
-<?php endif ?>
+
 
