@@ -35,18 +35,12 @@ if($item_s){
 $simple_product = $item_s['simple_product']->getData();
 $simple_product_id = $simple_product['product_id'];
 $simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_id);
-}
 ?>
+<img class="alignleft" src="<?php echo $this->helper('catalog/image')
+    ->init($simple_product_attr ,'small_image')->resize(113,113);  ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
 
 <div class="product-details">
-<?php
-if($item_s){
-?>
-<img src="<?php echo $this->helper('catalog/image')
-    ->init($simple_product_attr ,'small_image')->resize(113,113);  ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
-<?php
-}
-?>
+
     <h3>PRODUCT DETAILS</h3>
  <strong class="title">
     <a href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a>
@@ -62,7 +56,6 @@ if($item_s){
  <div class="description std">
     <div class="inner"> 
         <?php  
-		
 			$total_words = strlen($this->escapeHtml($this->stripTags($simple_product_attr['description'])));
 			if( $total_words >=  100 ){
 				echo substr($this->escapeHtml($this->stripTags($simple_product_attr['description'])),0,100)." ...";
@@ -86,3 +79,60 @@ if($item_s){
     </div>
 <?php endif; ?>
 </div>
+<?php
+}
+?>
+
+<?php
+if(!($item_s)){
+?>
+<!--<a class="product-image" href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>">
+-->    <img class="alignleft" src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail')->resize(113, 113); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
+<!--</a>
+-->
+<div class="product-details">
+
+
+
+
+    <h3>PRODUCT DETAILS</h3>
+ <strong class="title">
+    <a href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a>
+ </strong>
+
+
+
+
+<div class="wishlist-sku">
+    <span><?php echo $this->__('SKU'); ?> <?php echo $this->escapeHtml($product->getSku()) ?></span>
+</div> 
+
+ <div class="description std">
+    <div class="inner"> 
+        <?php  
+			$total_words = strlen($this->escapeHtml($product->getDescription()));
+			if( $total_words >=  100 ){
+				echo substr($this->escapeHtml($product->getDescription()),0,100)." ...";
+			}else{
+				echo $this->escapeHtml($product->getDescription());	
+			}
+		
+		?>
+     </div>
+</div> 
+
+<textarea style="display:none" name="description[<?php echo $item->getWishlistItemId() ?>]" rows="3" cols="5" title="<?php echo $this->__('Comment') ?>" placeholder="<?php echo $this->helper('wishlist')->defaultCommentString(); ?>"><?php echo ($this->escapeHtml($item->getDescription() ? $item->getDescription() : '')) ?></textarea> 
+<?php ?>
+
+<?php if($this->getSortedChildren()): ?>
+    <div class="item-manage">
+    <?php foreach($this->getSortedChildren() as $childName):
+    ?>
+        <?php echo $this->getChildHtml($childName, false);?>
+    <?php endforeach;?>
+    </div>
+<?php endif; ?>
+</div>
+<?php
+}
+?>

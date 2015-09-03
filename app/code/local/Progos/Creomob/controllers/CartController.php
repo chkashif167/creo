@@ -81,7 +81,8 @@ class Progos_Creomob_CartController extends Mage_Core_Controller_Front_Action{
         } catch(Exception $ex){
             $res = array(
                 'success'=>0,
-                'message'=>$ex->getMessage()
+                'message'=>$ex->getMessage(),
+                'error_code'=>$ex->getCode()
             );
         }
 //        header('Access-Control-Allow-Origin: *');

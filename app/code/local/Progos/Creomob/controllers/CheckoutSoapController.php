@@ -55,12 +55,12 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
         $response = array('success'=>0,'message'=>'','res'=>null);
         try {
             
-            $customer = json_decode(file_get_contents("php://input"));
-            if(count($customer) && !empty((array) $customer)){
-                $this->setCustomer($sessionId,$cartId,$customer[0]);
-            } else {
-//                $this->setGuestCustomer($sessionId,$cartId);
-            }
+//            $customer = json_decode(file_get_contents("php://input"));
+//            if(count($customer) && !empty((array) $customer)){
+//                $this->setCustomer($sessionId,$cartId,$customer[0]);
+//            } else {
+////                $this->setGuestCustomer($sessionId,$cartId);
+//            }
             
             
             $res = $this->processPayment($sessionId,$cartId);
