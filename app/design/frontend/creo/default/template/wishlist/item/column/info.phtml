@@ -36,10 +36,10 @@ $simple_product = $item_s['simple_product']->getData();
 $simple_product_id = $simple_product['product_id'];
 $simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_id);
 ?>
+<img class="alignleft" src="<?php echo $this->helper('catalog/image')
+    ->init($simple_product_attr ,'small_image')->resize(113,113);  ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
 
 <div class="product-details">
-<img src="<?php echo $this->helper('catalog/image')
-    ->init($simple_product_attr ,'small_image')->resize(113,113);  ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
 
     <h3>PRODUCT DETAILS</h3>
  <strong class="title">
@@ -86,13 +86,14 @@ $simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_i
 <?php
 if(!($item_s)){
 ?>
+<!--<a class="product-image" href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>">
+-->    <img class="alignleft" src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail')->resize(113, 113); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
+<!--</a>
+-->
 <div class="product-details">
 
 
 
-<a class="product-image" href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>">
-    <img src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail')->resize(113, 113); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
-</a>
 
     <h3>PRODUCT DETAILS</h3>
  <strong class="title">
