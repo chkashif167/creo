@@ -36,7 +36,7 @@ class Magestore_Fblogin_Helper_Data extends Mage_Core_Helper_Abstract{
 		$fbme = NULL;
 		if ($userId) {
 			try {
-				$fbme = $facebook->api('/me');
+				$fbme = $facebook->api('/me?fields=email,first_name,last_name');
 			} catch (FacebookApiException $e) {}
 		}
 		

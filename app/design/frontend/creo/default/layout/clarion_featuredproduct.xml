@@ -70,7 +70,7 @@
         <update handle="MAP_popup" />
                 
         <reference name="content">
-            <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" before="-">
+          <!--  <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" before="-">
                 <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
                 <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
                 <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
@@ -79,7 +79,7 @@
                 <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
                 <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
                 <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
-            </block>
+            </block>-->
         </reference>
     </cms_index_index>
     
