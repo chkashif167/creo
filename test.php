@@ -28,7 +28,6 @@ $fields = array(
 		<Weight>100</Weight>
 	  </RateReq>
 	</WSGET>',
-
     'LevelConfirm' => 'summary'
 );
 
