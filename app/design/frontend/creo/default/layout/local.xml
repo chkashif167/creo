@@ -68,12 +68,25 @@
     </block>
 	
 	
-	<block type="cms/block" name="featuredproducts_mid">
+	<!--<block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
     </block>
 	
 	
-	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>
+	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
+	
+	
+	  <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
+                <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+                <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
+                <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+            </block>
+	
 	
 	<block type="cms/block" name="main_content-bottom">
       <action method="setBlockId"><block_id>about-area</block_id></action>
