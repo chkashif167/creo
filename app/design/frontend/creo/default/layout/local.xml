@@ -66,6 +66,8 @@
 	<block type="cms/block" name="main_content-top">
       <action method="setBlockId"><block_id>cutomecategories</block_id></action>
     </block>
+	
+	 <block type="featuredcategory/featuredcategory" name="featuredcategory" template="featuredcategory/featuredcategory.phtml" />
 	<block type="cms/block" name="main_content-bottom">
       <action method="setBlockId"><block_id>about-area</block_id></action>
     </block>
