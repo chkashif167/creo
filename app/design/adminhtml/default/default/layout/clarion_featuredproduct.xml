@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category    design
+ * @package     default_default
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+-->
+<layout version="0.1.0">
+    <adminhtml_featuredproduct_index>
+        <reference name="content">
+            <block type="clarion_featuredproduct/adminhtml_featuredproduct" name="featuredproductr.grid.container" />
+        </reference>
+    </adminhtml_featuredproduct_index>
+</layout>

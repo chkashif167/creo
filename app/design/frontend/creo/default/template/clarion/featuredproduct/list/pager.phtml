@@ -1,0 +1,70 @@
+<?php
+/**
+ * Featured product pager template
+ *
+ * @category    design
+ * @package     base_default
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+/* @var $this Clarion_FeaturedProduct_Block_Pager */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+
+    <?php if($this->getUseContainer()): ?>
+    <div class="pager">
+    <?php endif ?>
+
+    <?php if($this->getShowAmounts()): ?>
+    <p class="amount">
+        <?php if($this->getLastPageNum()>1): ?>
+            <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+        <?php else: ?>
+            <strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
+        <?php endif; ?>
+    </p>
+    <?php endif ?>
+
+    <?php if($this->getShowPerPage()): ?>
+    <div class="limiter">
+        <label><?php echo $this->__('Show') ?></label>
+        <select onchange="setLocation(this.value)">
+        <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+            <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                <?php echo $_limit ?>
+            </option>
+        <?php endforeach; ?>
+        </select> <?php echo $this->__('per page') ?>
+    </div>
+    <?php endif ?>
+
+    <?php if($this->getLastPageNum()>1): ?>
+    <div class="pages">
+        <table id="previousnext-table">
+            <tr>
+                <td class="previous-arrow">
+                    <?php if (!$this->isFirstPage()): ?>
+                    <?php $previousPageNo = $this->getCollection()->getCurPage(-1);?>
+                    <?php $previousPageImg = $this->getSkinUrl('images/clarion/featuredproduct/arrow_big_previous.png');?>
+                    <?php $urlController = $this->getUrl('featuredproduct/index/pager');?>
+                    <img  onclick="showFeaturedProduct(<?php echo $previousPageNo ;?>, '<?php echo $urlController ;?>')" src="<?php echo $previousPageImg; ?>" alt="<?php echo $this->__('Previous') ?>" title="<?php echo $this->__('Previous') ?>" class="previous-img" />
+                    <?php endif;?>
+                </td>
+                <td class="small-spacer">&nbsp;</td>
+                <td class="next-arrow">
+                    <?php if (!$this->isLastPage()): ?>
+                    <?php $lastPageNo = $this->getCollection()->getCurPage(+1);?>
+                    <?php $lastPageImg = $this->getSkinUrl('images/clarion/featuredproduct/arrow_big_next.png');?>
+                    <?php $urlController = $this->getUrl('featuredproduct/index/pager'); ?>
+                    <img onclick="showFeaturedProduct(<?php echo $lastPageNo;?>, '<?php echo $urlController ;?>')" src="<?php echo $lastPageImg;?>" alt="<?php echo $this->__('Next') ?>" title="<?php echo $this->__('Next') ?>" class="next-img" />
+                    <?php endif;?>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <?php endif; ?>
+
+    <?php if($this->getUseContainer()): ?>
+    </div>
+    <?php endif ?>
+
+<?php endif ?>

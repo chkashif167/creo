@@ -110,11 +110,11 @@ if(!($item_s)){
  <div class="description std">
     <div class="inner"> 
         <?php  
-			$total_words = strlen($this->escapeHtml($product->getDescription()));
+			$total_words = strlen($this->escapeHtml($this->stripTags($product->getDescription())));
 			if( $total_words >=  100 ){
-				echo substr($this->escapeHtml($product->getDescription()),0,100)." ...";
+				echo substr($this->escapeHtml($this->stripTags($product->getDescription()),0,100))." ...";
 			}else{
-				echo $this->escapeHtml($product->getDescription());	
+				echo $this->escapeHtml($this->stripTags($product->getDescription()));	
 			}
 		
 		?>
