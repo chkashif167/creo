@@ -49,7 +49,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
  
                 if (!$cart->getQuote()->getHasError()){
                     $checkoutUrl = Mage::helper('checkout/url')->getCheckoutUrl();
-					$buttons = '<div class="checkout-cart-index"><div class="cart-top-area"><div class="btn-holder" style="float:none;"><a href="javascript:;" onclick="jQuery(\'.ajaxAddToCartModal\').modal(\'hide\');"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a><button onclick="window.location=\''.$checkoutUrl.'/\';" class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>';
+					$buttons = '<div class="checkout-cart-index"><div class="cart-top-area"><div class="btn-holder" style="float:none;"><a href="javascript:;" onclick="jQuery(\'.ajaxAddToCartModal\').modal(\'hide\');"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a><button onclick="window.location=\''.$checkoutUrl.'\';" class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>';
 					$message = $this->__('%s was added to your shopping cart.'.$buttons, Mage::helper('core')->escapeHtml($product->getName()));
                     $response['status'] = 'SUCCESS';
                     $response['message'] = $message;

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Featured product frontend layout file
+ *
+ * @category    design
+ * @package     base_default
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+-->
+<layout version="0.1.0">
+    <default>
+         <reference name="head">
+            <!-- css file -->
+             <action method="addCss" ifconfig="featuredproduct/featuredproduct/enabled"><stylesheet>css/clarion_featuredproduct.css</stylesheet></action>
+            <!-- Added jquery library -->
+            <action method="addJs" ifconfig="featuredproduct/featuredproduct/enabled"><script>clarion_featuredproduct/jquery-1.11.1.min.js</script></action>
+            <action method="addJs" ifconfig="featuredproduct/featuredproduct/enabled"><script>clarion_featuredproduct/jquery_noconflict.js</script></action>
+            <!-- Add featured product js file-->
+             <action method="addItem" ifconfig="featuredproduct/featuredproduct/enabled"><type>skin_js</type><name>js/clarion_featuredproduct/featuredproduct.js</name></action>
+        </reference>
+        
+        <!-- Left Sidebar -->
+        <reference name="left">
+            <block type="clarion_featuredproduct/sidebar_left_sidebar" name="featured.product.left.sidebar" before="-">
+                <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/sidebar/left/sidebar.phtml</template></action>
+                <action method="setFeaturedPrdoctsOnPage"><page>left_sidebar</page></action>
+                <block type="clarion_featuredproduct/sidebar_left_pager" name="featured.product.left.sidebar.pager" before="-"/>
+            </block>
+        </reference>
+        
+        <!-- Right Sidebar -->
+        <reference name="right">
+            <block type="clarion_featuredproduct/sidebar_right_sidebar" name="featured.product.right.sidebar" before="-">
+                <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/sidebar/right/sidebar.phtml</template></action>
+                <action method="setFeaturedPrdoctsOnPage"><page>right_sidebar</page></action>
+                <block type="clarion_featuredproduct/sidebar_right_pager" name="featured.product.right.sidebar.pager" before="-"/>
+            </block>
+        </reference>
+    </default>
+    
+    <!-- Stand Alone Page -->
+    <clarion_featuredproduct_index_index>
+        <!-- Display MAP --> 
+        <update handle="MAP_price_msrp_item" />
+         <update handle="MAP_popup" />
+         
+        <reference name="root">
+            <action method="setTemplate"><template>page/3columns.phtml</template></action>
+        </reference>
+        
+        <reference name="content">
+            <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page">
+                <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+                <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
+                <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+            </block>
+        </reference>
+    </clarion_featuredproduct_index_index>
+    
+      <!-- home page -->
+    <cms_index_index>
+        <!-- Display MAP --> 
+        <update handle="MAP_price_msrp_item" />
+        <update handle="MAP_popup" />
+                
+        <reference name="content">
+            <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" before="-">
+                <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+                <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
+                <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+            </block>
+        </reference>
+    </cms_index_index>
+    
+    <!-- Category default layout -->
+    <catalog_category_default>
+        <reference name="content">
+            <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" before="-">
+                <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+                <action method="setFeaturedPrdoctsOnPage"><page>category_page</page></action>
+                <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                <!-- Since the addColumnCountLayoutDepend does not work, we are manually setting the max columns -->
+                <!--<action method="setColumnCount"><count>4</count></action>-->
+                <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+            </block>
+        </reference>
+    </catalog_category_default>
+    
+    <!-- Category layered navigation layout -->
+    <catalog_category_layered>
+        <reference name="content">
+            <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" before="-">
+                <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+                <action method="setFeaturedPrdoctsOnPage"><page>category_page</page></action>
+                <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                <!-- Since the addColumnCountLayoutDepend does not work, we are manually setting the max columns -->
+                <!--<action method="setColumnCount"><count>4</count></action>-->
+                <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+            </block>
+        </reference>
+    </catalog_category_layered>
+</layout>

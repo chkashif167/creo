@@ -1,13 +1,13 @@
 #auguria-slider .btn-prev, #auguria-slider .btn-next {
-    width: 56px;
-    height: 56px;
     background: #000;
-    position: absolute;
-    margin-top: -28px;
-    top: 50%;
-    left: 0;
     font-size: 0;
+    height: 35px;
+    left: 0;
     line-height: 0;
+    margin-top: -28px;
+    position: absolute;
+    top: 50%;
+    width: 35px;
 }
 #auguria-slider .btn-prev:hover, #auguria-slider .btn-next:hover {
     text-decoration: none;
@@ -24,30 +24,30 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 56px 20px 0 0;
+    border-width: 35px 14px 0 0;;
     border-color: #000 transparent transparent;
     content: '';
 }
 #auguria-slider .btn-next:before {
     left: auto;
     right: 100%;
-    border-width: 0 0 56px 20px;
+    border-width: 0 0 35px 14px;
     border-color: transparent transparent #000 transparent;
 }
 #auguria-slider .btn-prev:after, #auguria-slider .btn-next:after {
     position: absolute;
-    top: 52%;
-    left: 25px;
-    background: url('images/sprite.png') no-repeat -83px 0;
+    top: 0;
+    left: 13px;
     width: 14px;
-    height: 20px;
-    margin-top: -10px;
-    content: '';
+    height: 35px;
+    content: '\e80f';
+    color: #fff;
+    font: bold 20px/35px fontello;
 }
 #auguria-slider .btn-next:after {
+    content: '\e810';
     left: auto;
-    right: 25px;
-    background-position: -105px 0;
+    right: 13px;
 }
 #auguria-slider .pagination {
     display: none;

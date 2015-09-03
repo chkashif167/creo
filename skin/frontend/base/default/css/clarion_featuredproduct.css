@@ -1,0 +1,102 @@
+/**
+ * featured product css file
+ * 
+ * @category    design
+ * @package     base_default
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+/*paging block*/
+img.previous-img {
+    cursor: pointer;
+}
+img.next-img {
+    cursor: pointer;
+}
+/*featured product block*/
+#loading{
+    display: none;
+    padding-left:100px;
+}
+#featuredproductlist{
+    width: 100%;
+}
+#featuredproductlist h2.title {
+    color: #3399cc;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    font-style:normal;
+}
+#featured-product-list-table2 td{
+    vertical-align: top;
+    padding-right: 10px;
+    width: 300px;
+}
+
+#featured-product-list-table3 td{
+    vertical-align: top;
+   /* padding-right: 10px;
+    width: 300px;*/
+}
+#featured-product-list-table1, #featured-product-list-table2, #featured-product-list-table3{
+    width: 100%;
+}
+.previousnext{
+    text-align: right !important;
+}
+
+#previousnext-table{
+    width: 20%;
+    float: right;
+}
+
+.previous-arrow{
+    text-align: right;
+    vertical-align: middle;
+    width: 10px;
+}
+.next-arrow{
+    text-align: right;
+    vertical-align: middle;
+     width: 10px;
+}
+.small-spacer{
+    width: 2px;
+}
+/* sidebar*/
+.up-arrow {
+    cursor: pointer;
+}
+
+.down-arrow {
+    cursor: pointer;
+}
+
+#featured-product-left-sidebar{
+    width: 100%;
+}
+
+#featured-product-right-sidebar {
+    width: 100%;
+}
+
+#left-sidebar-loading {
+    display: none;
+}
+
+#right-sidebar-loading {
+    display: none;
+}
+#featured-sidebar-arrows {
+    float: right;
+    margin-top: 0px;;
+  
+}
+#featured-product-right-sidebar .block-title {
+    height: 35px !important;
+    background-image: none !important;
+} 
+#featured-product-left-sidebar .block-title {
+    height: 35px !important;
+    background-image: none !important;
+} 

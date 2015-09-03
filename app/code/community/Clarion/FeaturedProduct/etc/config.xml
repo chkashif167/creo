@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Configuration file
+ *
+ * @category   Clarion
+ * @package    Clarion_FeaturedProduct
+ * @author     Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+-->
+<config>
+    <modules>
+        <Clarion_FeaturedProduct>
+            <version>0.1.0</version>
+        </Clarion_FeaturedProduct>
+    </modules>
+    
+    <global>
+        <models>
+            <clarion_featuredproduct>
+                <class>Clarion_FeaturedProduct_Model</class>
+                <resourceModel>featuredproduct_resource</resourceModel>
+            </clarion_featuredproduct>
+            <featuredproduct_resource>
+                <class>Clarion_FeaturedProduct_Model_Resource</class>
+            </featuredproduct_resource>
+        </models>
+        
+        <helpers>
+            <clarion_featuredproduct>
+                <class>Clarion_FeaturedProduct_Helper</class>
+            </clarion_featuredproduct>  
+        </helpers>
+        
+        <blocks>
+            <clarion_featuredproduct>
+                <class>Clarion_FeaturedProduct_Block</class>
+            </clarion_featuredproduct>  
+        </blocks>
+        <!-- Setup Resource -->
+        <resources>
+            <clarion_featuredproduct_setup>
+                <setup>
+                    <module>Clarion_FeaturedProduct</module>
+                    <class>Clarion_FeaturedProduct_Model_Resource_Setup</class>
+                </setup>
+            </clarion_featuredproduct_setup>
+        </resources>
+    </global>
+    
+    <!-- Adminhtml layout xml configuration -->
+    <adminhtml>
+        <layout>
+            <updates>
+                <clarion_featuredproduct>
+                    <file>clarion_featuredproduct.xml</file>
+                </clarion_featuredproduct>
+            </updates>
+        </layout>
+    </adminhtml>
+    
+    <!-- Admin router configuration-->
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Clarion_FeaturedProduct after="Mage_Adminhtml">Clarion_FeaturedProduct_Adminhtml</Clarion_FeaturedProduct>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    
+    <frontend>
+        <routers>
+            <clarion_featuredproduct>
+                <use>standard</use>
+                <args>
+                    <module>Clarion_FeaturedProduct</module>
+                    <frontName>featuredproduct</frontName>
+                </args>
+            </clarion_featuredproduct>
+        </routers>
+        <!-- set frontend layout file-->
+        <layout>
+            <updates>
+                <clarion_featuredproduct>
+                    <file>clarion_featuredproduct.xml</file>
+                </clarion_featuredproduct>
+            </updates>
+        </layout>
+        
+        <!--set events-->
+        <events>
+            <controller_action_postdispatch_catalog_product_compare_add><!-- Full Event Name -->
+                <observers>
+                    <clarion_featuredproduct><!-- Yourmodule i.e observer name -->
+                        <class>clarion_featuredproduct/observer</class>
+                        <method>stopRedirect</method>
+                    </clarion_featuredproduct>
+                </observers>
+            </controller_action_postdispatch_catalog_product_compare_add>
+        </events>
+        
+    </frontend>
+    
+    <default>
+        <featuredproduct>
+            <featuredproduct>
+                <enabled>1</enabled>
+            </featuredproduct>    
+            <display>
+                <show_featuredproduct>home_page,left_sidebar,right_sidebar,category_page</show_featuredproduct>
+                <title>Featured Products</title>
+                <number_of_products_home_page>4</number_of_products_home_page>
+                <number_of_products_cat_page>4</number_of_products_cat_page>
+                <number_of_products_sidebar>4</number_of_products_sidebar>
+            </display>
+        </featuredproduct>
+    </default>
+</config>
