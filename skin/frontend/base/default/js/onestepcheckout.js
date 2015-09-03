@@ -158,7 +158,8 @@ COGOPC.prototype = {
         })
     },
     update: function (params) {
-        var parameters = $(this.form).serialize(true);
+        $$('div.fme_loading_filters')[0].show();
+		var parameters = $(this.form).serialize(true);
         for (var i in params) {
             if (!params[i]) {
                 continue
@@ -212,6 +213,7 @@ COGOPC.prototype = {
                     }
                 }
             }
+			$$('div.fme_loading_filters')[0].hide();
         }
         if (response.duplicateBillingInfo) {
             shipping.syncWithBilling()
@@ -221,7 +223,8 @@ COGOPC.prototype = {
                 'review': 1
             })
         }
-        return false
+        
+		return false
     },
     blockform: function () {
         $(this.form).remove();
@@ -373,8 +376,8 @@ ShippingAddress.prototype = {
                 }
             }
             shippingRegionUpdater.update();
-            $('shipping:region_id').value = $('billing:region_id').value;
-            $('shipping:region').value = $('billing:region').value
+            //$('shipping:region_id').value = $('billing:region_id').value;
+            //$('shipping:region').value = $('billing:region').value
         } else {
             $('shipping_customer_address').value = $('billing_customer_address').value
         }

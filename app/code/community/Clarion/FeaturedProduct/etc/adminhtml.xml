@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Configuration file for admin menu and access permission
+ *
+ * @category   Mage
+ * @package    Clarion_FeaturedProduct
+ * @author     Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+-->
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <featured_product translate="title" module="clarion_featuredproduct">
+                    <title>Manage Featured Products</title>
+                    <sort_order>200</sort_order> 
+                    <action>adminhtml/featuredproduct</action>
+                </featured_product>
+            </children>
+        </catalog>
+    </menu>
+    <!-- Access permissions -->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <featured_product translate="title" module="clarion_featuredproduct">
+                                <title>Manage Featured Products</title>
+                                <sort_order>31</sort_order>
+                            </featured_product>
+                        </children>
+                    </catalog>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <featuredproduct translate="title" module="clarion_featuredproduct">
+                                        <title>Featured Product</title>
+                                    </featuredproduct>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

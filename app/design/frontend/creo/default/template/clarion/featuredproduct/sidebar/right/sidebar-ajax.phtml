@@ -1,0 +1,45 @@
+<?php
+/**
+ * Featured product right sidebar ajax template
+ *
+ * @category    design
+ * @package     base_default
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+/* @var $this Clarion_FeaturedProduct_Block_Sidebar_Right_Sidebar */
+?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<div class="block">
+    <div class="block-title">
+        <table>
+            <tr>
+                <td style="vertical-align: top;"><strong><span><?php echo $this->getBlockTitle(); ?></span></strong></td>
+                <td style="width: 15px;">&nbsp;</td>
+                <td><?php echo $this->getPager() ?></td>
+            </tr>
+        </table>
+    </div>
+    <div class="block-content">
+        <ol id="right-featured-products-items" class="mini-products-list">
+        <?php foreach ($_products->getItems() as $_product): ?>
+            <li class="item">
+                <a href="<?php echo $_product->getProductUrl() ?>">
+                    <span class="product-image">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(50, 50); ?>" 
+                                                     width="50" height="50" alt="<?php echo $this->escapeHtml($_product->getName()) ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>" />
+                    </span>
+                </a>
+                <div class="product-details">
+                    <p class="product-name">
+                        <a href="<?php echo $_product->getProductUrl() ?>">
+                            <?php echo $this->escapeHtml($_product->getName()) ?>
+                        </a>
+                    </p>
+                </div>
+            </li>
+        <?php endforeach; ?>
+        </ol>
+        <script type="text/javascript">decorateList('right-featured-products-items');</script>
+    </div>
+</div>
+<?php endif; ?>

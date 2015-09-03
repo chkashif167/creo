@@ -66,6 +66,15 @@
 	<block type="cms/block" name="main_content-top">
       <action method="setBlockId"><block_id>cutomecategories</block_id></action>
     </block>
+	
+	
+	<block type="cms/block" name="featuredproducts_mid">
+      <action method="setBlockId"><block_id>featuredproducts</block_id></action>
+    </block>
+	
+	
+	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>
+	
 	<block type="cms/block" name="main_content-bottom">
       <action method="setBlockId"><block_id>about-area</block_id></action>
     </block>
