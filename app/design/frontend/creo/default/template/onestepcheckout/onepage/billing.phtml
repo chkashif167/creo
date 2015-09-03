@@ -72,10 +72,10 @@ $has_addr	= $this->customerHasAddresses();
         <?php if ($city_r === 'required'){ echo ' <sup>*</sup> ';}?>
         <input type="text" name="billing[city]" id="billing:city" title="<?php echo $this->__('City') ?>" value="<?php echo $this->htmlEscape($this->getBillAddress()->getCity()) ?>" class="validate-alpha t1<?php if ($city_r === 'required'){ echo ' required-entry ';}?>" maxlength="20"  />
         <?php endif; ?>
-        <?php /*?><div class="short"<?php if($state_r === 'hidden'){ echo ' style="display:none" ';}?>><?php */?>
+        <div class="short"<?php if($state_r === 'hidden'){ echo ' style="display:none" ';}?>>
         <label for="billing:region_id"<?php if($state_r === 'required'){ echo ' class="required" ';}?>> <?php echo $this->__('State / Province') ?> </label>
         <?php if($state_r === 'required'){ echo ' <sup>*</sup> ';}?>
-     	<div class="billingcountryselect">
+     	<!--<div class="billingcountryselect">
         <select id="billing:region_id" name="billing[region_id]" title="<?php echo $this->__('State/Province') ?>" class=" billingadressselect validate-select<?php if($state_r === 'required') { echo ' required-entry';}?>" style="display:none;">
           <option value=""><?php echo $this->__('Select One') ?></option>
         </select>
@@ -88,7 +88,7 @@ $has_addr	= $this->customerHasAddresses();
 						</script>
         <input type="text" id="billing:region" name="billing[region]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="validate-alpha t1<?php if($state_r === 'required'){ echo ' required-entry';}?>" maxlength="20" style="display:none;" />
         
-        <!-- </div>
+         </div>
       </div>--> 
         
 		</div>

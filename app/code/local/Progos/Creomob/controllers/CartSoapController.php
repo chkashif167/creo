@@ -224,16 +224,36 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
     }
     
     
+    protected function setCustomer($sessionId,$cartId,$customer){
+        $proxy = new SoapClient($this->soapURLv2);
+        $customer['mode'] = 'customer';
+        return $proxy->shoppingCartCustomerSet($sessionId, $cartId, $customer);
+    }
+    
+    protected function setGuestCustomer($sessionId,$cartId,$shipping_data){
+        $proxy = new SoapClient($this->soapURLv2);
+        
+        $customer = array('mode'=>'guest',
+            'email'=>'todo@progos.org',
+            'firstname'=>$shipping_data['firstname'],'lastname'=>$shipping_data['lastname']);
+        return $proxy->shoppingCartCustomerSet($sessionId, $cartId, $customer);
+    }
+    
     public function setShippingAddressAction(){
         
         $sessionId = $this->getRequest()->getParam('sid');
         $qid = $this->getRequest()->getParam('qid');
         
-        $address_data = json_decode(file_get_contents('php://input'),true);
-        
+        $address_customer_data = json_decode(file_get_contents('php://input'),true);
         $response = array('success'=>0,'message'=>'','res'=>null);
         try{
-            $res = $this->setCustomerAddress($sessionId,$qid,$address_data);
+            $res = $this->setCustomerAddress($sessionId,$qid,$address_customer_data['shipping']);
+            
+            if(count($address_customer_data['customer']) && !empty((array) $address_customer_data['customer'])){
+                $this->setCustomer($sessionId,$qid,$address_customer_data['customer'][0]);
+            } else {
+                $this->setGuestCustomer($sessionId,$qid,$address_customer_data['shipping']);
+            }
             
             $response['success'] = 1;
             $response['message'] = 'Shipping added successfully';

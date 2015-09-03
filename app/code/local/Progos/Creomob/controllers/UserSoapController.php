@@ -95,6 +95,7 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         }
         catch( Exception $e )
         {
+            $response['error_code'] = $e->getCode();
             $response['message'] = $e->getMessage();
         }
         
@@ -131,6 +132,7 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         }
         catch( Exception $e )
         {
+            $response['error_code'] = $e->getCode();
             $response['message'] = $e->getMessage();
         }
         
