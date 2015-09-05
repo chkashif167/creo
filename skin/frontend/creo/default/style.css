@@ -4454,7 +4454,7 @@ textarea {
     z-index: 9999;
 }
 .featured-items .item:hover .btn-holder{display: block;}
-.featured-items .btn-holder a {
+.featured-items .btn-holder button {
     background: #f16167;
     border: none;
     color: #000;
@@ -4464,7 +4464,7 @@ textarea {
     text-transform: uppercase;
     width: 77%;
 }
-.featured-items .btn-holder a:before {
+.featured-items .btn-holder button:before {
     border-color: #f16167 transparent transparent;
     border-style: solid;
     border-width: 32px 20px 0 0;
@@ -4475,7 +4475,7 @@ textarea {
     top: 0;
     width: 0;
 }
-.featured-items .btn-holder a:first-child {
+.featured-items .btn-holder button:first-child {
     background: #000;
     border: none;
     color: #fff;
@@ -4484,7 +4484,7 @@ textarea {
     padding: 0;
     width: 13%;
 }
-.featured-items .btn-holder a:first-child:before {
+.featured-items .btn-holder button:first-child:before {
     width: 0;
     height: 0;
     border-style: solid;
@@ -4496,17 +4496,20 @@ textarea {
     left: auto;
     top: 0;
 }
-.featured-items .btn-holder a:hover{
+.featured-items .btn-holder button:hover{
     background: #000;
     color: #fff;
     text-decoration: none;
 }
-.featured-items .btn-holder a:hover:before{border-color: #000 transparent transparent;}
-.featured-items .btn-holder a:first-child:hover{
+.featured-items .btn-holder button:hover:before{border-color: #000 transparent transparent;}
+.featured-items .btn-holder button:first-child:hover{
     background: #f16167;
     color: #000;
 } 
-.featured-items .btn-holder a:first-child:hover:before{border-color: transparent transparent #f16167;}
+.featured-items .btn-holder button:first-child:hover:before{border-color: transparent transparent #f16167;}
+
+
+
 .col-creat-area{
     text-align: center;
     color: #222;
@@ -4596,6 +4599,7 @@ textarea {
     /*New Home Page*/
     .two-column-category .category-title span,
     .two-column-category img{height: 476px;}
+    .featured-items .btn-holder button{width: 76%;}
 }
 @media only screen and (max-width: 991px) {
     #wrapper > .container{padding: 0 15px;}
@@ -4672,11 +4676,13 @@ textarea {
     /*New Home Page*/
     .two-column-category .category-title span,
     .two-column-category img{height: 374px;}
-    .featured-items .btn-holder a{width: 80%;}
+    .featured-items .btn-holder button{width: 80%;}
     .col-about-area li{
         width: 100%;
         margin: 0 0 15px;
     }
+    #featured-product-list-table2 td{float: left;}
+    .featured-items .btn-holder {display: block;}
 }
 @media only screen and (max-width: 767px) {
     body { min-width: 768px; }
