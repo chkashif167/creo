@@ -561,19 +561,21 @@ div.fme-filter a.fme_layered_attribute {
     display:none
 }
 
-#styles-22 {background:url(../images/round.png) no-repeat !important;}
-#styles-22.fme_layered_attribute_selected_TankTop,
-#styles-22:hover {background:url(../images/round-hover.png) no-repeat !important;}
+.Round {background:url(../images/round.png) no-repeat !important;}
+.Round.fme_layered_attribute_selected_Round, 
+.Round:hover {background:url(../images/round-hover.png) no-repeat !important;}
 
-#styles-21 {background:url(../images/largevshape.png) no-repeat !important;}
-#styles-21.fme_layered_attribute_selected_Round,
-#styles-21:hover {background:url(../images/largevshape-hover.png) no-repeat !important;}
+.TankTop {background:url(../images/vshape.png) no-repeat !important;}
+.TankTop.fme_layered_attribute_selected_TankTop,
+.TankTop:hover {background:url(../images/vshape-hover.png) no-repeat !important;}
 
-#styles-20 {background:url(../images/vshape.png) no-repeat !important;}
-#styles-20.fme_layered_attribute_selected_Vshape,
-#styles-20:hover {background:url(../images/vshape-hover.png) no-repeat !important;}
+.Vshape{background:url(../images/largevshape.png) no-repeat !important;}
+.Vshape.fme_layered_attribute_selected_Vshape,
+.Vshape:hover {background:url(../images/largevshape-hover.png) no-repeat !important;}
+
 #fme_layered_styles > ol {padding: 0 0 0 56px;}
 .col.col-lg-12.col-md-12.col-sm-12.col-xs-12 > h2 {text-transform: uppercase;}
+
 /*****************************  product detail page  *********************************/
 
 .product-detail .fancy-product-price{display:none;}
