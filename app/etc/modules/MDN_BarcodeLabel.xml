@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MDN_BarcodeLabel>
+            <active>true</active>
+            <codePool>community</codePool>
+        </MDN_BarcodeLabel>
+    </modules>
+</config>

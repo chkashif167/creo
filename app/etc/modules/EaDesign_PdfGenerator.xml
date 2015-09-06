@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <EaDesign_PdfGenerator>
+            <active>true</active>
+            <codePool>local</codePool>
+        </EaDesign_PdfGenerator>
+    </modules>
+</config>
