@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<config>
+    <menu>
+        <pdfadmin_menu translate="title" module="pdfgenerator">
+            <title>EaDesign PDF</title>
+            <sort_order>50</sort_order>
+            <children>
+                <first_page module="pdfgenerator">
+                    <title>Templates</title>
+                    <action>adminpdfgenerator/adminhtml_pdfgenerator</action>
+                </first_page>
+            </children>
+        </pdfadmin_menu>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <pdfadmin_menu translate="title" module="pdfgenerator">
+                        <title>EaDesign PDF</title>
+                        <sort_order>50</sort_order>
+                        <children>
+                            <!-- child items go here -->
+                            <first_page module="pdfgenerator">
+                                <title>Templates</title>
+                                <sort_order>10</sort_order>
+                                <action>adminpdfgenerator/adminhtml_pdfgenerator</action>
+                            </first_page>
+                        </children>
+                    </pdfadmin_menu>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,22 @@
+<div class="entry-edit">
+    <div class="content-header">
+        <table cellspacing="0" class="grid-header">
+            <tr>
+                <td><h3><?php echo $this->__('Barcodes list') ?></h3></td>
+                <td class="a-right">
+                    <form method="POST" id="frm_submit_file" action="<?php echo $this->getSubmitUrl(); ?>" enctype="multipart/form-data">
+                        <input id="form_key" name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                        <input type="file" name="file" id="file">
+                        <select name="mode">
+                            <option value="append"><?php echo $this->__('Append'); ?></option>
+                            <option value="replace"><?php echo $this->__('Replace'); ?></option>
+                        </select>
+                        <button onclick="document.getElementById('frm_submit_file').submit();" class="scalable save" type="button"><span><?php echo $this->__('Import file') ?></span></button>
+                    </form>
+                </td>
+            </tr>
+        </table>   
+
+    </div>
+    <?php echo $this->getGridParentHtml(); ?>
+</div>

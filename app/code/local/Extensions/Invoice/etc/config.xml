@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Extensions_Invoice>
+            <version>0.1.0</version>
+        </Extensions_Invoice>
+    </modules>
+    <global>
+        <models>
+            <sales>
+                <rewrite>
+                    <order_pdf_invoice>Extensions_Invoice_Model_Order_Pdf_Invoice</order_pdf_invoice>
+                    <order_pdf_items_invoice_default>Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default</order_pdf_items_invoice_default>
+                </rewrite>
+            </sales>
+        </models>
+    </global>
+</config>

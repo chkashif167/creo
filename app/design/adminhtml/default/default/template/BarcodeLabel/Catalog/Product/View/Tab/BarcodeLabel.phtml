@@ -1,0 +1,82 @@
+<script>
+    var printBarcodeLabelUrl = '<?php echo $this->getPrintUrl(); ?>';
+    var printBarCodeChildrenURL = '<?php echo $this->getChildrenPrintUrl(); ?>';
+    
+    function urlMaker()
+    {
+        var NumberValue = document.getElementById('label_count').value;
+        if ( isNaN(NumberValue) || NumberValue == '' || NumberValue == 0) 
+        {
+            <?php $message = $this->__('Please enter the number of label'); ?>
+            alert('<?php echo $message; ?>');        
+            return false;
+        }
+        
+         document.location.href = (printBarcodeLabelUrl + document.getElementById('label_count').value);
+         
+     }
+</script>
+
+<div class="entry-edit">
+
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Label preview'); ?></h4>
+    </div>
+    <div class="entry-edit">
+        <fieldset>
+
+            <img src="<?php echo $this->getLabelImageUrl(); ?>" border="1"/>
+
+        </fieldset>
+    </div>
+
+    <?php if (!( $this->isConfigurableProduct() )): ?>
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Print labels'); ?></h4>
+        </div>
+        <div class="entry-edit">
+            <fieldset>
+
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                        <tr>
+                            <td class="label"><label for="label_count"><?php echo $this->__('Label count'); ?></label></td>
+                            <td class="value">
+                                <input name="label_count" id="label_count" value="" class=" input-text" type="text"></td>
+                            <td class="scope-label"><span class="nobr"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="label_count"><?php echo $this->__('Print'); ?></label></td>
+                            <td class="value">
+                                <input type="button" id="print_button" value="<?php echo $this->__('Print'); ?>" onclick='urlMaker()'></td>
+                            <td class="scope-label"><span class="nobr"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </fieldset>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($this->isConfigurableProduct()) : ?>
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Print Children labels'); ?></h4>
+        </div>
+        <div class="entry-edit">
+            <fieldset>
+
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                        <tr>
+                            <td class="value">
+                                <input type="button" value="<?php echo $this->__('Print'); ?>" onclick="document.location.href = (printBarCodeChildrenURL );"></td>
+                            <td class="scope-label"><span class="nobr"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </fieldset>
+        </div>
+    <?php endif; ?>
+
+</div>
