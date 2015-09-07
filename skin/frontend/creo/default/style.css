@@ -4798,7 +4798,33 @@ textarea {
     vertical-align: top;
     font:10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
-
+/*Payment Method*/
+.column-holder{
+    overflow: hidden;
+    margin: 0 0 10px;
+    min-height: 222px;
+}
+.column-holder .col-img{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    max-width: 34%;
+    height: auto;
+    margin: 0 2% 0 0;
+}
+.column-holder .text-area{
+    display: inline-block;
+    vertical-align: middle;
+    font:12px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+    width: 63%;
+}
+.column-holder .text-area p{margin: 0;}
+.three-column.payment-methods .column:first-child{margin-left: 0;}
+.three-column.payment-methods .column{
+    width: 31.2%;
+    margin: 0 0 0 3%;
+    border-bottom: 1px solid #d7d7d7;
+}
 
 
 @media only screen and (max-width: 1199px) {
@@ -4943,6 +4969,15 @@ textarea {
     .featured-items .btn-holder {display: block;}
     /*New CMS Pages*/
     .cs-form select{width: 290px;}
+    /*Payment Method*/
+    .column-holder .col-img {
+        display: block;
+        margin: 0 auto 10px;
+    }
+    .column-holder .text-area {
+        display: block;
+        width: auto;
+    }
 }
 @media only screen and (max-width: 767px) {
     body { min-width: 768px; }
