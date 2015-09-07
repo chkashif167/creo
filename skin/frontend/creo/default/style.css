@@ -4607,8 +4607,8 @@ textarea {
     appearance:none;
     width:176px;
     position: relative;
-    left: 0;
-    bottom: 0;
+    left: 0 !important;
+    bottom: 0 !important;
     height: 18px;
     font-size: 10px;
     line-height: 12px;
