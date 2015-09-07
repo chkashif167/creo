@@ -151,7 +151,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 					 ->setFromEmail($email)
 					 ->setFromName($first_name)
 					 ->setType('html');
-			try{
+			try{ 
 			//Confimation E-Mail Send
 			$mail->send();
 			
