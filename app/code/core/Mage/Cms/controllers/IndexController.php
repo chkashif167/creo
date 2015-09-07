@@ -60,7 +60,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 		//echo "<pre>";print_r($post);
 		//echo  $emailTemplate = Mage::getModel('core/email_template')->loadDefault('bulk_order');exit;
 		if($post){
-            
+             
 			$first_name = $post['first_name'];
 			$last_name = $post['last_name'];
 			$email = $post['email'];
