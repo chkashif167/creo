@@ -4599,7 +4599,6 @@ textarea {
     margin:0;
     font:inherit;
     outline:none;
-    line-height:1.2;
     background:#fff;
     -webkit-appearance:none;
     -webkit-border-radius:6px;
@@ -4615,6 +4614,17 @@ textarea {
     text-transform: uppercase;
     color: #949494;
     border-radius: 0;
+}
+.bulk-order-form .form-select-col input[type="text"]{
+    border:1px solid #e4e4e4;
+    padding:2px 3px 2px 5px;
+    width:176px;
+    height: 18px !important;
+    color: #949494;
+    font-size: 10px;
+    line-height: 12px;
+    border-radius: 0;
+    background:#fff;
 }
 .bulk-order-form .fake-select:before{
     content:"";
