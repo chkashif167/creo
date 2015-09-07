@@ -39,12 +39,75 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
      *
      * @param string $coreRoute
      */
+	 
+	 const XML_PATH_EMAIL_RECIPIENT  = 'contacts/email/recipient_email';
+     const XML_PATH_EMAIL_SENDER     = 'contacts/email/sender_email_identity';
+     const XML_PATH_EMAIL_TEMPLATE   = 'contacts/email/email_template';
+     const XML_PATH_ENABLED          = 'contacts/contacts/enabled';
+	
     public function indexAction($coreRoute = null)
     {
+	
         $pageId = Mage::getStoreConfig(Mage_Cms_Helper_Page::XML_PATH_HOME_PAGE);
         if (!Mage::helper('cms/page')->renderPage($this, $pageId)) {
             $this->_forward('defaultIndex');
         }
+    }
+	
+	public function postAction()
+    {
+		$post = $this->getRequest()->getPost();
+		//echo "<pre>";print_r($post);
+		//echo  $emailTemplate = Mage::getModel('core/email_template')->loadDefault('bulk_order');exit;
+		if($post){
+            
+			$first_name = $post['first_name'];
+			$last_name = $post['last_name'];
+			$email = $post['email'];
+			$phone = $post['phone'];
+			$country = $post['country'];
+			$message = $post['message'];
+			 
+			$emailTemplate = Mage::getModel('core/email_template')->loadByCode('bulk_order');
+			$emailTemplateVariables = array();
+			$emailTemplateVariables['first_name'] = $first_name;
+			$emailTemplateVariables['last_name'] = $last_name;
+			$emailTemplateVariables['email'] = $email;
+			$emailTemplateVariables['phone'] = $phone;
+			$emailTemplateVariables['country'] = $country;
+			$emailTemplateVariables['message'] = $message;
+			//$emailTemplateVariables = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'phone' => $phone, 'country' => $country, 'message' => $message);
+			//echo "<pre>";print_r($emailTemplateVariables);echo "</pre>";
+			$processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
+			// print_r($processedTemplate);exit;
+			$toName = Mage::getStoreConfig('trans_email/ident_general/name');
+
+			//Getting the Store General E-Mail.
+			//$toEmail = Mage::getStoreConfig('trans_email/ident_general/email');
+			$toEmail = 'danish.ktk@gmail.com';
+			$mail = Mage::getModel('core/email')
+					 ->setToName($toName)
+					 ->setToEmail($toEmail)
+					 ->setBody($processedTemplate)
+					 ->setSubject('Subject : testing')
+					 ->setFromEmail($email)
+					 ->setFromName($first_name)
+					 ->setType('html');
+			try{
+			//Confimation E-Mail Send
+			$mail->send();
+			
+			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
+                $this->_redirect('bulk-order');
+				return;
+			}
+			 catch(Exception $error)
+			 {
+			 Mage::getSingleton('customer/session')->addError(Mage::helper('contacts')->__('Unable to submit your request. Please, try again later'));
+                $this->_redirect('bulk-order');
+                return;
+			 }
+           } 
     }
 
     /**
