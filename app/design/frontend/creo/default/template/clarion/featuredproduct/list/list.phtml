@@ -39,8 +39,8 @@
                         <td class="col col-md-3 col-sm-6 col-xs-6">
                             <div class="item">
                                 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>" class="image-area">
-                                    <?php $_imgSize = 135; ?>
-                                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" width="135" height="135" />
+                                    <?php $_imgSize = 480; ?>
+                                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" width="414" height="500" />
                                 </a>
                                 <div class="text-area">
                                     <h3>
