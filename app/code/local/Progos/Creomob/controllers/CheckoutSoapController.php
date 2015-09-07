@@ -15,7 +15,8 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
     
     protected function processPayment($sessionId,$cartId){
         $proxy = new SoapClient($this->soapURLv2);
-        $proxy->shoppingCartShippingMethod($sessionId, $cartId, 'freeshipping_freeshipping');
+        //freeshipping_freeshipping,tablerate_bestway,flatrate_flatrate
+        $proxy->shoppingCartShippingMethod($sessionId, $cartId, 'tablerate_bestway');
 
         $paymentMethod =  array(
             'po_number' => null,
