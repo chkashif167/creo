@@ -4609,11 +4609,12 @@ textarea {
     position: relative;
     left: 0 !important;
     bottom: 0 !important;
-    height: 18px;
+    height: 18px !important;
     font-size: 10px;
     line-height: 12px;
     text-transform: uppercase;
     color: #949494;
+    border-radius: 0;
 }
 .bulk-order-form .fake-select:before{
     content:"";
