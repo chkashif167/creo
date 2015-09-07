@@ -89,7 +89,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 					 ->setToName($toName)
 					 ->setToEmail($toEmail)
 					 ->setBody($processedTemplate)
-					 ->setSubject('Subject : testing')
+					 ->setSubject('Subject : Bulk Order')
 					 ->setFromEmail($email)
 					 ->setFromName($first_name)
 					 ->setType('html');
@@ -97,7 +97,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			//Confimation E-Mail Send
 			$mail->send();
 			
-			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
+			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your bulk order was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
                 $this->_redirect('bulk-order');
 				return;
 			}
@@ -110,6 +110,63 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
            } 
     }
 
+
+
+	public function customeremailAction()
+    {
+		
+		$post = $this->getRequest()->getPost();
+		echo "<pre>";print_r($post);exit;
+		//echo  $emailTemplate = Mage::getModel('core/email_template')->loadDefault('bulk_order');exit;
+		if($post){
+             
+			$first_name = $post['first_name'];
+			$last_name = $post['last_name'];
+			$subject = $post['subject'];
+			$email = $post['email'];
+			$order_number = $post['order_number'];
+			$message = $post['message'];
+			 
+			$emailTemplate = Mage::getModel('core/email_template')->loadByCode('customer_service_email');
+			$emailTemplateVariables = array();
+			$emailTemplateVariables['first_name'] = $first_name;
+			$emailTemplateVariables['last_name'] = $last_name;
+			$emailTemplateVariables['subject'] = $subject;
+			$emailTemplateVariables['email'] = $email;
+			$emailTemplateVariables['order_number'] = $order_number;
+			$emailTemplateVariables['message'] = $message;
+	
+			$processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
+			// print_r($processedTemplate);exit;
+			$toName = Mage::getStoreConfig('trans_email/ident_general/name');
+
+			//Getting the Store General E-Mail.
+			//$toEmail = Mage::getStoreConfig('trans_email/ident_general/email');
+			$toEmail = 'danish.ktk@gmail.com';
+			$mail = Mage::getModel('core/email')
+					 ->setToName($toName)
+					 ->setToEmail($toEmail)
+					 ->setBody($processedTemplate)
+					 ->setSubject('Subject : Customer Service')
+					 ->setFromEmail($email)
+					 ->setFromName($first_name)
+					 ->setType('html');
+			try{
+			//Confimation E-Mail Send
+			$mail->send();
+			
+			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
+                $this->_redirect('customer-service');
+				return;
+			}
+			 catch(Exception $error)
+			 {
+			 Mage::getSingleton('customer/session')->addError(Mage::helper('contacts')->__('Unable to submit your request. Please, try again later'));
+                $this->_redirect('customer-service');
+                return;
+			 }
+           } 
+    }
     /**
      * Default index action (with 404 Not Found headers)
      * Used if default page don't configure or available
