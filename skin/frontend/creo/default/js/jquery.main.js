@@ -1224,3 +1224,13 @@ function designYourOwnPopupValidation()
         }*/ 
     });   
 }
+
+jQuery(document).ready(function(e) {
+    jQuery(".categorypath-create-html .category52 a").click(function(){
+			jQuery.alert({ 
+			title: 'Message!', 
+			content: "Customizing you Cap is not yet ready, Please check back very soon. This will be cool. 															#keepitcreo :) ", 
+			
+			}); 
+		})
+});
