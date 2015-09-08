@@ -1213,7 +1213,8 @@ function popupValidation()
 
 function designYourOwnPopupValidation() 
 { 
-    if(jQuery('.options-area .product-options').find('select:first').val().length > 0) {  
+    if(jQuery('.options-area .product-options')){
+	if(jQuery('.options-area .product-options').find('select:first').val().length > 0) {  
         return true; 
     }     
     jQuery.alert({ 
@@ -1223,4 +1224,5 @@ function designYourOwnPopupValidation()
             alert('Confirmed!'); 
         }*/ 
     });   
+	}
 }
