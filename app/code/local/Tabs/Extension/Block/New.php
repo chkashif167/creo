@@ -12,7 +12,6 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
 
        $_testproductCollection = Mage::getResourceModel('catalog/product_collection')
        ->addCategoryFilter($_category)
-       ->addAttributeToFilter('upcomingproduct', 0)
        ->addAttributeToSelect('*')
        ->setOrder('entity_id', 'desc')
        ->setPageSize(20);
