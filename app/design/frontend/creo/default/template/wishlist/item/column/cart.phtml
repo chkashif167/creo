@@ -38,15 +38,15 @@ $options = $this->getChild('customer.wishlist.item.options')
 function incrementQty(fid){
 	var currentVal = parseInt($j("#qty-"+fid).val());
 	if (!currentVal || currentVal == "" || currentVal == "NaN")
-	currentVal = 0;
+	currentVal = 1;
 	$j("#qty-"+fid).val(currentVal + 1);
  }
 
 function decrementQty(fid){
 	var currentVal = parseInt($j("#qty-"+fid).val());
 	if (currentVal == "NaN")
-		currentVal = 0;
-		if (currentVal > 0){
+		currentVal = 1;
+		if (currentVal > 1){
 		$j("#qty-"+fid).val(currentVal - 1);
 		}
 }
