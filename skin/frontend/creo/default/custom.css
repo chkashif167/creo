@@ -1143,3 +1143,6 @@
     box-shadow: 0 0 0px #ccc !important;}
 .catalog-product-view li.product-image-thumbs { margin-right: 1px !important;}
 .modal-backdrop.fade.in { z-index: -99;}
+.categorypath-clothing-women-tshirt-html #fme_filters_list #styles_label { display:inline-block !important;}
+.categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}
+.previousnext { display: none;}
