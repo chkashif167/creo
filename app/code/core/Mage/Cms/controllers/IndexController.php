@@ -101,13 +101,13 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$mail->send();
 			
 			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your bulk order was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
-                $this->_redirect('bulk-order');
+                $this->_redirect('bulk-orders');
 				return;
 			}
 			 catch(Exception $error)
 			 {
 			 Mage::getSingleton('customer/session')->addError(Mage::helper('contacts')->__('Unable to submit your request. Please, try again later'));
-                $this->_redirect('bulk-order');
+                $this->_redirect('bulk-orders');
                 return;
 			 }
            } 
