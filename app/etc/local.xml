@@ -43,8 +43,8 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
                     <password><![CDATA[]]></password>
-                    <dbname><![CDATA[creodbmage]]></dbname>
-s                    <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
+                    <dbname><![CDATA[creo_7]]></dbname>
+             	    <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
                     <pdoType><![CDATA[]]></pdoType>
