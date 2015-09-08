@@ -3972,6 +3972,7 @@ div.fme-filter dd li{overflow: visible !important;}
 #footer .column ul{
     margin: 0;
     padding: 0;
+    text-transform: uppercase;
     list-style: none;
     color: #fff;
     font: 10px/12px "Roboto Condensed", Helvetica, Arial, sans-serif;
