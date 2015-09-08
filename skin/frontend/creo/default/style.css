@@ -3972,6 +3972,7 @@ div.fme-filter dd li{overflow: visible !important;}
 #footer .column ul{
     margin: 0;
     padding: 0;
+    text-transform: uppercase;
     list-style: none;
     color: #fff;
     font: 10px/12px "Roboto Condensed", Helvetica, Arial, sans-serif;
@@ -4327,7 +4328,7 @@ textarea {
 #review-form button:hover{opacity: 0.9;}
 .validation-advice {
     display: block;
-    margin: -10px 0 10px;
+    margin: 10px 0 10px;
     width: 100%;
 }
 #image_category_list > option {
@@ -4683,7 +4684,7 @@ textarea {
     margin: 0;
     padding: 10px 0 0;
 }
-.cs-text-area .pink-border{
+.pink-border{
     border: 1px solid #f27281;
     display: block;
     padding: 3px 12px;
@@ -4798,6 +4799,76 @@ textarea {
     vertical-align: top;
     font:10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
+/*Payment Method*/
+.column-holder{
+    overflow: hidden;
+    margin: 0 0 10px;
+    min-height: 222px;
+}
+.column-holder .col-img{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    max-width: 34%;
+    height: auto;
+    margin: 0 2% 0 0;
+}
+.column-holder .text-area{
+    display: inline-block;
+    vertical-align: middle;
+    font:12px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+    width: 63%;
+}
+.column-holder .text-area p{margin: 0;}
+.three-column.payment-methods .column:first-child{margin-left: 0;}
+.three-column.payment-methods .column{
+    width: 31.2%;
+    margin: 0 0 0 3%;
+    border-bottom: 1px solid #d7d7d7;
+}
+/* Return Policy Page */
+.faq-area.return-area .return-two-column{
+    overflow: hidden;
+    color: #000;
+    font:11px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.faq-area.return-area .return-col{
+    width: 49%;
+    float: left;
+}
+.faq-area.return-area .return-col:first-child{margin: 0 2% 0 0;}
+.faq-area.return-area p{margin: 0 0 15px;}
+.faq-area.return-area p.pink{line-height: 19px;}
+.faq-area.return-area .step-col{
+    margin: 0;
+    padding: 0;
+    width: 102%;
+    list-style: none;
+    overflow: hidden;
+    color: #000;
+    font:11px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.faq-area.return-area .step-col li{
+    float: left;
+    width: 18%;
+    margin: 0 2% 0 0;
+}
+.faq-area.return-area .step-col .numeric{
+    display: block;
+    background: #ef4f61;
+    margin: 0 0 10px;
+    padding: 1px 5;
+    text-align: center;
+    color: #fff;
+    font:bold 15px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.faq-area.return-area .step-col p{margin: 0 0 15px;}
+.faq-area.return-area h5{
+    margin: 0 0 5px;
+    text-transform: uppercase;
+}
+.faq-area.return-area .list{margin: 0 0 15px;}
+
 
 
 
@@ -4943,6 +5014,15 @@ textarea {
     .featured-items .btn-holder {display: block;}
     /*New CMS Pages*/
     .cs-form select{width: 290px;}
+    /*Payment Method*/
+    .column-holder .col-img {
+        display: block;
+        margin: 0 auto 10px;
+    }
+    .column-holder .text-area {
+        display: block;
+        width: auto;
+    }
 }
 @media only screen and (max-width: 767px) {
     body { min-width: 768px; }

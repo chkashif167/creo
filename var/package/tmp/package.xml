@@ -1,26 +1,63 @@
 <?xml version="1.0"?>
 <package>
-    <name>Auctionmaid_Matrxrate</name>
-    <version>5.0.1</version>
+    <name>trackorder_module</name>
+    <version>0.1.4</version>
     <stability>stable</stability>
-    <license uri="http://www.opensource.org/licenses/osl-3.0.php)">OSL v3.0</license>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
     <channel>community</channel>
     <extends/>
-    <summary>Multiple Table Rates via CSV. Filter by country, region,city, zipcode. Numeric Postcode ranges, and enhanced pattern matching supported. Ability to exclude items from free shipping, and specify collection only.</summary>
-    <description>Supports following:&#xD;
+    <summary>Add more value and usability to your e-store! You can do it now by integrating track order extension and enabling your customers&#x2019; track their consignments easily and accurately that too without signing in!</summary>
+    <description>Add more value and usability to your e-store! You can do it now by integrating track order extension and enabling your customers&#x2019; track their consignments easily and accurately that too without signing in!&#xD;
+Once the buyer fills out the order number and the relevant email address, the system will display all the details of the said order with latest status, including the shipment tracking data also. It will also have the link to the shipment website, through which the order has been sent, to enable the customers track the status of the order directly going to the shipment site.&#xD;
+Make your customers least worried about the shipment of products as a real-time access is available to track their order now! They can sit back and relax, as tracking shipment is now possible with the extension.  &#xD;
+Core Features for Customers&#xD;
+&#x27A2;	Track Order Without Login&#xD;
+No need to log in to account for tracking order status&#xD;
 &#xD;
-- multiple table rates&#xD;
-- country, region, city, postcode filtering&#xD;
-- partial postcode filtering, including pattern matching&#xD;
-- numerical postcode ranges&#xD;
-- option to exclude items from free shipping&#xD;
-- collection only option</description>
-    <notes>Minor changes to postcode filtering.&#xD;
-Added extra options around free shipping.</notes>
-    <authors><author><name>Karen Baker</name><user>birches</user><email>sales@webshopapps.com</email></author></authors>
-    <date>2011-09-27</date>
-    <time>21:52:27</time>
-    <contents><target name="magecommunity"><dir name="Webshopapps"><dir name="Matrixrate"><dir name="Block"><dir name="Adminhtml"><dir name="Shipping"><dir name="Carrier"><dir name="Matrixrate"><file name="Grid.php" hash="791db18cd9af2d9df91a5a70eb272611"/></dir></dir></dir><dir name="System"><dir name="Config"><dir name="Form"><dir name="Field"><file name="Exportmatrix.php" hash="4ed1f6634f15727205da4e479e84bd91"/></dir></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="97307283fd4c85ed72a699ab4be68661"/></dir><dir name="Model"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Backend"><dir name="Shipping"><file name="Matrixrate.php" hash="d8b6999f8ad837a232ece7a69bc5893f"/></dir></dir><dir name="Source"><dir name="Shipping"><file name="Matrixrate.php" hash="f2914f0d8d36206646e7551ad69736fa"/></dir></dir></dir></dir></dir><dir name="Carrier"><file name="Matrixrate.php" hash="fcbcecf2ab5e39fa1236e2ea0286547d"/></dir><dir name="Mysql4"><dir name="Carrier"><dir name="Matrixrate"><file name="Collection.php" hash="7a4c5d64156700dc82799c5828e4f65c"/></dir><file name="Matrixrate.php" hash="6815bcddf029de5a1871b0baa4e2b19c"/></dir></dir></dir><file name="changelog.txt" hash="7fd8a2c21b764027cef340103ca450be"/><dir name="controllers"><dir name="System"><file name="ConfigController.php" hash="5ee3cdd9ea3277607d7a17c327acc9e2"/></dir></dir><dir name="etc"><file name="config.xml" hash="e55ee4a9369ae362599e5c848e76f99a"/><file name="system.xml" hash="f1d6839b3929fa0cfacecfaa7f5b6ad5"/></dir><dir name="sql"><dir name="matrixrate_setup"><file name="mysql4-install-2.0.1.php" hash="52a413f99ce3d571a067cdfb677bbf32"/><file name="mysql4-install-2.0.2.php" hash="b6530f7e95e610db357ed46bc23629b9"/><file name="mysql4-upgrade-2.0.1-2.0.2.php" hash="b6530f7e95e610db357ed46bc23629b9"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Webshopapps_Matrixrate.xml" hash="ac8b13f26402b2f0e7f6b22c3430fec8"/></dir></target></contents>
+&#x27A2;	View Order Status&#xD;
+Complete order status can be viewed now &#xD;
+&#xD;
+&#x27A2;	Link to Shipment Tracking Order&#xD;
+Link to order shipment tracking with the website is also visible&#xD;
+&#xD;
+&#x27A2;	Link Available in Main Menu&#xD;
+Tracking order link will be available in main-menu or top link for the customers for easy accessibility&#xD;
+&#xD;
+&#x27A2;	Widget for Tracking Order&#xD;
+Tracking order widget can be visible at right side or left side of webpage, as defined by the admin&#xD;
+&#xD;
+&#x27A2;	Real Time Tracking&#xD;
+Customers can have real-time access to track orders and shipments of their products&#xD;
+&#xD;
+&#xD;
+Core Features for Admin&#xD;
+&#xD;
+&#xD;
+&#x27A2;	Admin Places Link to Track Order&#xD;
+Admin can place the separate link to &#x2018;track order&#x2019; in the top link or the top menu&#xD;
+&#xD;
+&#x27A2;	Admin Decides the Placement of Widget &#xD;
+Admin can place the track order widget to either left or right side of the webpage&#xD;
+&#xD;
+&#x27A2;	Link to Track Order in Email &#xD;
+A track order link can be sent in the order confirmation and shipment notification&#xD;
+&#xD;
+&#x27A2;	Easily Install Extension&#xD;
+Admin can easily install the extension and it is simple to be configured&#xD;
+&#xD;
+&#xD;
+Your Gain&#xD;
+&#xD;
+&#x25CF;	Happy Customer &#xD;
+&#x25CF;	More Feature-equipped e-store&#xD;
+&#x25CF;	Increased Customer Satisfaction&#xD;
+&#x25CF;	More Loyal Customers&#xD;
+</description>
+    <notes>-Bug Fixing</notes>
+    <authors><author><name>Biztech</name><user>biztechcon</user><email>sales@biztechconsultancy.com</email></author></authors>
+    <date>2015-07-31</date>
+    <time>09:11:37</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Biztech_All.xml" hash="f4c3b9c029e56da8f09d7d71336c00f7"/><file name="Biztech_Trackorder.xml" hash="b81eefbec619714c203ea48b08569cf9"/></dir></target><target name="magelocal"><dir name="Biztech"><dir name="All"><dir name="Helper"><file name="Data.php" hash="e856726fd089e7f73ca7de450b696419"/></dir><dir name="Model"><file name="All.php" hash="a9aeeb9c6d7be9cf20414f405efc878d"/><dir name="Mysql4"><dir name="All"><file name="Collection.php" hash="a1909236183d126f38e628b85bb57e81"/></dir><file name="All.php" hash="f02542393eb26eadfb9b92d901d2ac12"/></dir><dir name="Source"><dir name="Updates"><file name="Type.php" hash="fa695bf4764c2d93c7436ed54bde89ba"/></dir></dir><file name="Status.php" hash="30a6f0da7d9d45e1082da532d5f8dabc"/><file name="Update.php" hash="8be940508b4ee734bf244ccdca9026ea"/></dir><dir name="etc"><file name="config.xml" hash="27e403cedb861da03753d28527d9c664"/><file name="system.xml" hash="17262087dc933d934e09ac04cafb4c51"/></dir></dir><dir name="Trackorder"><dir name="Block"><file name="Trackorder.php" hash="e50a5a3be035ac2c55cf50e76af03601"/><file name="Trackwidget.php" hash="2c0acfa5b09c216ef4907a88afba4050"/><file name="View.php" hash="0c65f7bd839db3f2588f05466c61f279"/></dir><dir name="Helper"><file name="Data.php" hash="ca4d65b28c67e74f8bdf05bb58a47a73"/></dir><dir name="Model"><file name="Observer.php" hash="8083e595380980470140c9a5ac19bba4"/><dir name="System"><dir name="Config"><dir name="Frontend"><file name="Widgetsettings.php" hash="30f5a6e8fc3a8856e289890fa11247c1"/></dir></dir></dir></dir><dir name="controllers"><file name="IndexController.php" hash="81f8391c0c6aeab5789ae002b9803e4b"/></dir><dir name="etc"><file name="config.xml" hash="87c59652b791bd2f3f0a04e55d78d84d"/><file name="system.xml" hash="4d6c933b47575ed0ff7ffed6c6bd7608"/><file name="widget.xml" hash="ff61595a908d0ce4c846f5b330ce5dd7"/></dir><dir name="sql"><dir name="trackorder_setup"><file name="mysql4-install-0.1.0.php" hash="47c62d342c96c4628c2da5c2e3dafacf"/><file name="mysql4-upgrade-0.1.0-0.1.1.php" hash="4f08e9d298368363dcf13fd0a9cc9eb8"/><file name="mysql4-upgrade-0.1.3-0.1.4.php" hash="3b08d40b8e1ae6a359334bd162d087ba"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="trackorder.xml" hash="7d81b1e199c97dff44d9502917d49514"/></dir><dir name="template"><dir name="trackorder"><file name="info.phtml" hash="592dd505f0bb03cb19017d55120b51a2"/><dir name="order"><file name="items.phtml" hash="1953cc2fb3cad9c24af8f2238c1454fb"/></dir><dir name="shipment"><file name="items.phtml" hash="bf1301921046e9416adc8968c6a0609e"/></dir><file name="trackdetail.phtml" hash="6f515a0db9ad081b71b9297a743b0ff8"/><file name="trackorder.phtml" hash="2939541a8537a23c78cbe5f1ed49f824"/><file name="trackorderlink.phtml" hash="55338259c837d10814a56ed3d6cc1d02"/><file name="trackwidget.phtml" hash="78d940b9765d109236c24ed6d95fdb22"/><file name="view.phtml" hash="71f72f80ecf948a65cba97cbd7ce7e26"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="trackorder"><dir name="css"><file name="trackorder.css" hash="9bfecdaa1cf87a42f67f642dc865bea6"/></dir><dir name="images"><file name="ajax-loader-tr.gif" hash="1ae32bc8232ff2527c627e5b38eb319a"/><file name="ajax-loader.gif" hash="57ca1a2085d82f0574e3ef740b9a5ead"/><file name="i-trackorder.png" hash="65f5d4dbeafa21878e487859e29b0453"/><file name="main-bg.png" hash="615e539beac7fc4ad7b6aa7e519ca2ee"/></dir></dir></dir></dir></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
