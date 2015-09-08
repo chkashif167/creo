@@ -5,31 +5,35 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
 
     const DEFAULT_PRODUCTS_COUNT = 10;
 
+    protected function getProductCollectionLatest($category)
+    {
+ 
+       $_category = Mage::getModel('catalog/category')->load($category);
+
+       $_testproductCollection = Mage::getResourceModel('catalog/product_collection')
+       ->addCategoryFilter($_category)
+       ->addAttributeToSelect('*')
+       ->setOrder('entity_id', 'desc')
+       ->setPageSize(20);
+                           
+        return $_testproductCollection;
+    }
+
     protected function _getProductCollection()
     {
         
-        $todayDate  = Mage::app()->getLocale()->date()->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
-        $collection = Mage::getResourceModel('catalog/product_collection');
-        Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
-        Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
-        
-        $collection = $this->_addProductAttributesAndPrices($collection)
-            ->addStoreFilter()
-            ->addAttributeToFilter('news_from_date', array('date' => true, 'to' => $todayDate))
-            ->addAttributeToFilter('news_to_date', array('or'=> array(
-                0 => array('date' => true, 'from' => $todayDate),
-                1 => array('is' => new Zend_Db_Expr('null')))
-            ), 'left')
-            ->addAttributeToSort('news_from_date', 'desc')
-            ->setPageSize($this->getProductsCount())
-            ->setCurPage(1)
-        ;
+
+       $_testproductCollection = Mage::getResourceModel('catalog/product_collection')
+       ->addAttributeToSelect('*')
+       ->setOrder('entity_id', 'desc')
+       ->setPageSize(20);
+
         if($categoryId=$this->getRequest()->getParam('id')){
         $category = Mage::getModel('catalog/category')->load($categoryId);
-        $collection->addCategoryFilter($category);
+        $_testproductCollection->addCategoryFilter($category);
         } 
 
-        return $collection;
+        return $_testproductCollection;
     }
 
      public function getLoadedProductCollection()
@@ -38,13 +42,17 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
     }
 
 
-     protected function _beforeToHtml()
-    {  
-        
+      public function getMode()
+    {
+        return $this->getChild('toolbar')->getCurrentMode();
+    }
+
+    protected function _beforeToHtml()
+    {
         $toolbar = $this->getToolbarBlock();
 
         // called prepare sortable parameters
-        $collection = $this->_getProductCollection();
+        $collection = $this->getLoadedProductCollection();
 
         // use sortable parameters
         if ($orders = $this->getAvailableOrders()) {
@@ -65,30 +73,15 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
 
         $this->setChild('toolbar', $toolbar);
         Mage::dispatchEvent('catalog_block_product_list_collection', array(
-            'collection' => $this->_getProductCollection()
+            'collection' => $this->getLoadedProductCollection()
         ));
 
-        $this->_getProductCollection()->load();
-    
+        $this->getLoadedProductCollection()->load();
 
         return parent::_beforeToHtml();
     }
 
-    public function setProductsCount($count)
-    {
-        $this->_productsCount = $count;
-        return $this;
-    }
-
-    public function getProductsCount()
-    {
-        if (null === $this->_productsCount) {
-            $this->_productsCount = self::DEFAULT_PRODUCTS_COUNT;
-        }
-        return $this->_productsCount;
-    }
-
-     public function getToolbarBlock()
+    public function getToolbarBlock()
     {
         if ($blockName = $this->getToolbarBlockName()) {
             if ($block = $this->getLayout()->getBlock($blockName)) {
@@ -122,7 +115,7 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
 
     public function addAttribute($code)
     {
-        $this->_getProductCollection()->addAttributeToSelect($code);
+        $this->getLoadedProductCollection()->addAttributeToSelect($code);
         return $this;
     }
 
@@ -175,7 +168,7 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
     {
         return array_merge(
             parent::getCacheTags(),
-            $this->getItemsTags($this->_getProductCollection())
+            $this->getItemsTags($this->getLoadedProductCollection())
         );
     }
 } 

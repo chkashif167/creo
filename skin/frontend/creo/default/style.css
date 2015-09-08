@@ -4327,7 +4327,7 @@ textarea {
 #review-form button:hover{opacity: 0.9;}
 .validation-advice {
     display: block;
-    margin: -10px 0 10px;
+    margin: 10px 0 10px;
     width: 100%;
 }
 #image_category_list > option {

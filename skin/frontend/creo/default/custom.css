@@ -1146,3 +1146,18 @@
 .categorypath-clothing-women-tshirt-html #fme_filters_list #styles_label { display:inline-block !important;}
 .categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}
 .previousnext { display: none;}
+
+#creditcardnumbercn { width: 58%; float: left;}
+#creditcardpci_cc_type_cvv_div { width: 40%; float: right;}
+#payment_form_creditcardpci { margin: 14px 0 0 0;}
+#payment_form_creditcardpci .v-fix { position: relative;} 
+#payment_form_creditcardpci .v-fix .fake-select { right: 0;    top: 0px;    width: 25px;  }
+#payment_form_creditcardpci .v-fix1 { float: left;  width: 50%;} 
+#payment_form_creditcardpci .v-fix2 { float: right;  width: 48%;} 
+#payment_form_creditcardpci .cvv-what-is-this {  font-size: 11px;    margin: 4px 0;    padding: 0; text-transform: capitalize; background: none;}
+#payment_form_creditcardpci .form-group { margin-bottom: 0;}
+#payment_form_creditcardpci .credit-card { padding-bottom: 20px;}
+#payment_form_creditcardpci input { background: #fff; height: 27px;}
+#payment_form_creditcardpci #creditcardnumbercn, #payment_form_creditcardpci #creditcardpci_cc_type_cvv_div { margin: 0;}
+#creditcardNamecn { margin: 12px 0 0 0;}
+#payment_form_creditcardpci  .validation-advice { margin: 0;}
