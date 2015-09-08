@@ -131,7 +131,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$message = $post['message'];
 			 
 			$emailTemplate = Mage::getModel('core/email_template')->loadByCode('customer_service_email');
-			$emailTemplateVariables = array();
+			$emailTemplateVariables = array(); 
 			$emailTemplateVariables['first_name'] = $first_name;
 			$emailTemplateVariables['last_name'] = $last_name;
 			$emailTemplateVariables['subject'] = $subject;
