@@ -1,0 +1,8 @@
+.loading-details {     background: url("../images/main-bg.png") repeat scroll 0 0 transparent;  height: 100%;  left: 0;  position: fixed;  top: 0;  width: 100%;   z-index: 99; }
+#loading-details .update-popup { position:fixed; top:45%; left:45%; width:300px; margin-left:-105px; padding:15px 30px; background:#fff; color:#d85909; font-weight:bold; text-align:center; z-index:400;webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px;}
+#loading-mask {   background: none repeat scroll 0 0 #F5F5F5;  border: 1px solid #F18200;  margin: 20% auto;  padding: 15px; text-align: center;  width: 200px;}
+#loading-mask p{ margin-bottom:0;}
+
+.track-data-table{ margin-bottom:20px;}
+
+.order-info-message{ padding-top: 15px;}
