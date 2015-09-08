@@ -4454,7 +4454,7 @@ textarea {
     z-index: 9999;
 }
 .featured-items .item:hover .btn-holder{display: block;}
-.featured-items .btn-holder a {
+.featured-items .btn-holder button {
     background: #f16167;
     border: none;
     color: #000;
@@ -4464,7 +4464,7 @@ textarea {
     text-transform: uppercase;
     width: 77%;
 }
-.featured-items .btn-holder a:before {
+.featured-items .btn-holder button:before {
     border-color: #f16167 transparent transparent;
     border-style: solid;
     border-width: 32px 20px 0 0;
@@ -4475,7 +4475,7 @@ textarea {
     top: 0;
     width: 0;
 }
-.featured-items .btn-holder a:first-child {
+.featured-items .btn-holder button:first-child {
     background: #000;
     border: none;
     color: #fff;
@@ -4484,7 +4484,7 @@ textarea {
     padding: 0;
     width: 13%;
 }
-.featured-items .btn-holder a:first-child:before {
+.featured-items .btn-holder button:first-child:before {
     width: 0;
     height: 0;
     border-style: solid;
@@ -4496,17 +4496,20 @@ textarea {
     left: auto;
     top: 0;
 }
-.featured-items .btn-holder a:hover{
+.featured-items .btn-holder button:hover{
     background: #000;
     color: #fff;
     text-decoration: none;
 }
-.featured-items .btn-holder a:hover:before{border-color: #000 transparent transparent;}
-.featured-items .btn-holder a:first-child:hover{
+.featured-items .btn-holder button:hover:before{border-color: #000 transparent transparent;}
+.featured-items .btn-holder button:first-child:hover{
     background: #f16167;
     color: #000;
 } 
-.featured-items .btn-holder a:first-child:hover:before{border-color: transparent transparent #f16167;}
+.featured-items .btn-holder button:first-child:hover:before{border-color: transparent transparent #f16167;}
+
+
+
 .col-creat-area{
     text-align: center;
     color: #222;
@@ -4538,8 +4541,290 @@ textarea {
     font:bold 17px/22px "Roboto Condensed",Helvetica,Arial,sans-serif;
 }
 .col-about-area p{margin: 0;}
-
-
+/*New CMS Pages*/
+.pink:hover,
+.pink{color: #f16b7a;}
+.faq-area.bulk-area p{
+    margin:0 0 10px;
+    line-height: 20px;
+}
+.bulk-order-form{
+    display: block;
+    width: 100%;
+    padding: 30px 0;
+}
+.bulk-order-form h5{
+    margin: 0 0 12px;
+}
+.bulk-order-form .form-row{
+    overflow: hidden;
+    margin: 0 0 10px;
+    width: 101%;
+}
+.bulk-order-form .form-col{
+    width: 24%;
+    margin: 0 1% 0 0;
+    float: left;
+}
+.bulk-order-form label{
+    display: block;
+    padding: 0;
+    margin: 0 0 3px;
+    text-transform: capitalize;
+    color: #000;
+    font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.bulk-order-form label span{
+    display: block;
+    font-size: 10px;
+    text-transform: none;
+}
+.bulk-order-form input[type="text"],
+.bulk-order-form input.email{margin: 0;}
+/* select */
+.bulk-order-form .form-select-col{
+    float: left;
+    width: 176px;
+    margin: 0 12px 0 0;
+}
+.bulk-order-form .fake-select{
+    position:relative;
+    display:block;
+}
+.bulk-order-form select::-ms-expand {display: none;}
+.bulk-order-form select{
+    display:inline-block;
+    border:1px solid #e4e4e4;
+    padding:2px 3px 2px 5px;
+    margin:0;
+    font:inherit;
+    outline:none;
+    background:#fff;
+    -webkit-appearance:none;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    appearance:none;
+    width:176px;
+    position: relative;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: 18px !important;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #949494;
+    border-radius: 0;
+}
+.bulk-order-form .form-select-col input[type="text"]{
+    border:1px solid #e4e4e4;
+    padding:2px 3px 2px 5px;
+    width:176px;
+    height: 18px !important;
+    color: #949494;
+    font-size: 10px;
+    line-height: 12px;
+    border-radius: 0;
+    background:#fff;
+}
+.bulk-order-form .fake-select:before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    background: url(images/bg-select.jpg) no-repeat;
+    background-size: 100% 100%;
+    height: 18px;
+    width: 22px;
+    pointer-events:none;
+    z-index: 1;
+}
+.bulk-order-form .form-textarea-col{
+    width: 430px;
+    overflow: hidden;
+}
+.bulk-order-form textarea{
+    height: 70px;
+    background: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin: 0 0 10px;
+    padding: 4px 10px;
+    text-align: left;
+    width: 100%;
+}
+.bulk-order-form input[type="submit"]{
+    float: right;
+    background: #000;
+    border: none;
+    width: 92px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font:12px/22px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.bulk-order-form input[type="submit"]:hover{
+    background: #ef4f61;
+    color: #fff;
+    border: none;
+}
+.cs-text-area{
+    overflow: hidden;
+    border-bottom: 1px solid #d4d4d4;
+    padding: 0 0 12px;
+    color: #000;
+    font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.cs-text-area p{margin: 0 0 10px;}
+.cs-text-area h5{
+    margin: 0;
+    padding: 10px 0 0;
+}
+.cs-text-area .pink-border{
+    border: 1px solid #f27281;
+    display: block;
+    padding: 3px 12px;
+    margin: 0 0 15px;
+    color: #000;
+    font:bold 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.cs-form{
+    display: block;
+    width: 100%;
+    padding: 30px 0;
+}
+.cs-form .form-row{
+    overflow: hidden;
+    margin: 0 0 10px;
+    width: 101%;
+}
+.cs-form .form-col{
+    width: 29%;
+    margin: 0 1% 0 0;
+    float: left;
+}
+.cs-form label{
+    display: block;
+    padding: 0;
+    margin: 0 0 3px;
+    text-transform: capitalize;
+    color: #000;
+    font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+/* select */
+.cs-form .form-select-col{
+    float: left;
+    width: 176px;
+    margin: 0 12px 0 0;
+}
+.cs-form .fake-select{
+    position:relative;
+    display:inline-block;
+}
+.cs-form select::-ms-expand {display: none;}
+.cs-form select{
+    display:inline-block;
+    border:1px solid #e4e4e4;
+    padding:2px 3px 2px 5px;
+    margin:0;
+    font:inherit;
+    outline:none;
+    background:#fff;
+    -webkit-appearance:none;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    appearance:none;
+    width:448px;
+    position: relative;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: 18px !important;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #949494;
+    border-radius: 0;
+}
+.cs-form .fake-select:before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    background: url(images/bg-select.jpg) no-repeat;
+    background-size: 100% 100%;
+    height: 18px;
+    width: 22px;
+    pointer-events:none;
+    z-index: 1;
+}
+.cs-form .form-textarea-col{
+    width: 40%;
+    overflow: hidden;
+}
+.cs-form textarea{
+    height: 94px;
+    background: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin: 0 0 10px;
+    padding: 4px 10px;
+    text-align: left;
+    width: 100%;
+}
+.cs-form input[type="submit"]{
+    float: right;
+    background: #000;
+    border: none;
+    width: 92px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font:12px/22px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.cs-form input[type="submit"]:hover{
+    background: #ef4f61;
+    color: #fff;
+    border: none;
+}
+.cs-form .ps{
+    display: inline-block;
+    vertical-align: top;
+    font:10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+/*Payment Method*/
+.column-holder{
+    overflow: hidden;
+    margin: 0 0 10px;
+    min-height: 222px;
+}
+.column-holder .col-img{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    max-width: 34%;
+    height: auto;
+    margin: 0 2% 0 0;
+}
+.column-holder .text-area{
+    display: inline-block;
+    vertical-align: middle;
+    font:12px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+    width: 63%;
+}
+.column-holder .text-area p{margin: 0;}
+.three-column.payment-methods .column:first-child{margin-left: 0;}
+.three-column.payment-methods .column{
+    width: 31.2%;
+    margin: 0 0 0 3%;
+    border-bottom: 1px solid #d7d7d7;
+}
 
 
 @media only screen and (max-width: 1199px) {
@@ -4596,6 +4881,9 @@ textarea {
     /*New Home Page*/
     .two-column-category .category-title span,
     .two-column-category img{height: 476px;}
+    .featured-items .btn-holder button{width: 76%;}
+    /*New CMS Pages*/
+    .cs-form select{width: 368px;}
 }
 @media only screen and (max-width: 991px) {
     #wrapper > .container{padding: 0 15px;}
@@ -4672,10 +4960,23 @@ textarea {
     /*New Home Page*/
     .two-column-category .category-title span,
     .two-column-category img{height: 374px;}
-    .featured-items .btn-holder a{width: 80%;}
+    .featured-items .btn-holder button{width: 80%;}
     .col-about-area li{
         width: 100%;
         margin: 0 0 15px;
+    }
+    #featured-product-list-table2 td{float: left;}
+    .featured-items .btn-holder {display: block;}
+    /*New CMS Pages*/
+    .cs-form select{width: 290px;}
+    /*Payment Method*/
+    .column-holder .col-img {
+        display: block;
+        margin: 0 auto 10px;
+    }
+    .column-holder .text-area {
+        display: block;
+        width: auto;
     }
 }
 @media only screen and (max-width: 767px) {

@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+
+<config>
+    <sections>
+        <barcodelabel translate="label" module="BarcodeLabel">
+            <label>Barcode label</label>
+            <tab>catalog</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>99</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <versionning translate="label">
+                    <label>Version</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <sender translate="label">
+                            <label>Version</label>
+                            <frontend_model>BarcodeLabel/adminhtml_system_config_version</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender>                        
+                    </fields>
+                </versionning>
+
+                <preview translate="label">
+                    <label>Preview</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <product_id>
+                            <label>Product id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>Select product Id to use for label preview</comment>
+                        </product_id>
+                        <preview translate="label">
+                            <label>Label preview</label>
+                            <frontend_model>BarcodeLabel/adminhtml_system_config_preview</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </preview>
+                    </fields>
+                </preview>
+
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <attribute translate="label">
+                            <label>Barcode attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_ProductAttribute</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Select attribute to store generated barcode. If you dont have such attribute, you must create it</comment>
+                        </attribute>
+                        <standard translate="label">
+                            <label>Standard for barcode generation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_BarcodeStandards/</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>when clicking on 'Print' button in product view</comment>
+                        </standard>
+                        <generation_method translate="label">
+                            <label>Generation method</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_GenerationMethod</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Select if the system should generate barcode randomly or using a predefined list</comment>
+                        </generation_method>
+                        <enable>
+                            <label>Enable barcode generation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If enabled, a barcode will be generated for new products</comment>
+                        </enable>
+                        <manage_list translate="label">
+                            <label>Manage predefined list</label>
+                            <frontend_model>BarcodeLabel/System_Config_Button_ManageList</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Click here to manage predefined barcodes list</comment>
+                        </manage_list>
+                        <init translate="label">
+                            <label>Generate barcodes for all products</label>
+                            <frontend_model>BarcodeLabel/System_Config_Button_GenerateAllBarcodes</frontend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Click on this button after first installation to initialize barcodes for all products where barcode attribute is empty</comment>
+                        </init>
+                        <export translate="label">
+                            <label>Export</label>
+                            <frontend_model>BarcodeLabel/System_Config_Button_Export</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Export barcode / sku / product name to a csv file</comment>
+                        </export>
+                    </fields>
+                </general>
+                
+                 <label translate="label">
+                    <label>Label</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <font>
+                            <label>Font name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>Font file name in media/font</comment>
+                        </font>
+                        <border>
+                            <label>Draw border</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </border>
+                    </fields>
+                </label>
+                
+                <pdf translate="label">
+                    <label>Pdf settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <row_count translate="label">
+                            <label>Row count per page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>0 for no limit</comment>
+                        </row_count>
+                        <labels_per_row translate="label">
+                            <label>Labels per row</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </labels_per_row>
+                        <paper_height translate="label">
+                            <label>Paper height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm (0 for no limit)</comment>
+                        </paper_height>
+                        <paper_width translate="label">
+                            <label>Paper width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm</comment>
+                        </paper_width>
+                        <top_margin translate="label">
+                            <label>Top margin</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm</comment>
+                        </top_margin>
+                        <left_margin translate="label">
+                            <label>Left margin</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm</comment>
+                        </left_margin>
+                        <right_margin translate="label">
+                            <label>Right margin</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm</comment>
+                        </right_margin>
+                        <bottom_margin translate="label">
+                            <label>Bottom margin</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm</comment>
+                        </bottom_margin>
+                        <vertical_inter_margin translate="label">
+                            <label>Space between rows</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm</comment>
+                        </vertical_inter_margin>
+                        <horizontal_inter_margin translate="label">
+                            <label>Space between columns</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>cm</comment>
+                        </horizontal_inter_margin>
+                    </fields>
+                </pdf>
+               
+                <barcode translate="label">
+                    <label>Label - Barcode</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <position>
+                            <label>Position</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y</comment>
+                        </position>
+                        <height translate="label">
+                            <label>Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>the barcode height</comment>
+                        </height>
+                    </fields>
+                </barcode>
+                <name translate="label">
+                    <label>Label - Product Name</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <font_size>
+                            <label>Font size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_FontSize</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </font_size>
+                    </fields>
+                </name>
+                <sku translate="label">
+                    <label>Label - Product Sku</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <font_size>
+                            <label>Font size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_FontSize</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </font_size>
+                    </fields>
+                </sku>
+                <manufacturer translate="label">
+                    <label>Label - Manufacturer</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <attribute translate="label">
+                            <label>Manufacturer attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_ProductAttribute</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>>
+                        </attribute>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <font_size>
+                            <label>Font size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_FontSize</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </font_size>
+                    </fields>
+                </manufacturer>
+                <logo translate="label">
+                    <label>Label - Logo</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <picture>
+                            <label>Logo</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">upload/image</upload_dir>
+                            <base_url type="media" scope_info="1">upload/image</base_url>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>.jpeg or .jpg or .png only</comment>
+                        </picture>
+                    </fields>
+                </logo>
+                <product_image translate="label">
+                    <label>Product - Image</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>.jpeg or .jpg or .png only</comment>
+                        </print>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                    </fields>
+                </product_image>
+                <price translate="label">
+                    <label>Label - Price</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <special_price translate="label">
+                            <label>Print Special Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </special_price>
+                        <font_size>
+                            <label>Font size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_FontSize</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </font_size>
+                        <currency>
+                            <label>Currency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_currency</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </currency>
+                        <tax_rate>
+                            <label>Tax rate</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>the rate will be considerate like a percentage value</comment>
+                        </tax_rate>
+                    </fields>
+                </price>
+
+                <custom_1 translate="label">
+                    <label>Custom 1</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print translate="label">
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <content translate="label">
+                            <label>Content</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Use {attribute_code}</comment>
+                        </content>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <font_size>
+                            <label>Font size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_FontSize</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </font_size>
+                    </fields>
+                </custom_1>
+
+                <custom_2>
+                    <label>Custom 2</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>11</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <content>
+                            <label>Content</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Use {attribute_code}</comment>
+                        </content>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <font_size>
+                            <label>Font size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_FontSize</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </font_size>
+                    </fields>
+                </custom_2>
+
+                <custom_3>
+                    <label>Custom 3</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>12</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <print>
+                            <label>Print on label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </print>
+                        <content>
+                            <label>Content</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Use {attribute_code}</comment>
+                        </content>
+                        <position>
+                            <label>Position and size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment>X,Y,Width,Height</comment>
+                        </position>
+                        <font_size>
+                            <label>Font size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>BarcodeLabel/System_Config_FontSize</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </font_size>
+                    </fields>
+                </custom_3>
+                
+            </groups>
+        </barcodelabel>
+    </sections>
+</config>

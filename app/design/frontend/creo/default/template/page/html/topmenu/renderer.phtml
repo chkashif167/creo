@@ -178,13 +178,23 @@
                     <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/new/?id=3" ?>">NEW</a></li>
 
                 </ul>
-                <ul class="links">
-                    <!--<li><a href="#">T-Shirt</a></li>
-                    <li><a href="#">Tank Top</a></li>
-                    <li><a href="#">Polo</a></li>-->
 
+
+ <ul class="links">
+ <li> <strong> Men </strong> </li>
 <?php
-$children_category = Mage::getModel('catalog/category')->load('3')->getChildrenCategories();
+
+$children_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
+foreach ($children_category as $category):
+    $_category = Mage::getModel('catalog/category')->load($category->getId());
+    echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+endforeach;
+?>
+                </ul>
+   <ul class="links">
+   <li> <strong> Women </strong> </li>
+<?php
+$children_category = Mage::getModel('catalog/category')->load('58')->getChildrenCategories();
 foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
     echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
@@ -217,7 +227,7 @@ endforeach;
                                                                                                 </a>
                                                                                         </li>-->
 <?php
-$Featured_category = Mage::getModel('catalog/category')->load('3')->getChildrenCategories();
+$Featured_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
 foreach ($Featured_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
     if ($_category->featured_category == 1) {

@@ -1,0 +1,52 @@
+<?php
+/**
+ * Featured product right sidebar pager template
+ *
+ * @category    design
+ * @package     base_default
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+/* @var $this Clarion_FeaturedProduct_Block_Sidebar_Right_Pager */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+
+    <?php if($this->getUseContainer()): ?>
+    <div class="pager">
+    <?php endif ?>
+
+    <?php if($this->getLastPageNum()>1): ?>
+    <div id="featured-sidebar-arrows">
+        <table>
+            <tr>
+                <?php if (!$this->isFirstPage()): ?>
+                <td>
+                   <?php $previousPageNo = $this->getCollection()->getCurPage(-1);?>
+                   <?php $previousPageImg = $this->getSkinUrl('images/clarion/featuredproduct/arrow_small_up.png');?>
+                   <?php $urlController = $this->getUrl('featuredproduct/index/sidebarRightPager');?>
+                   <img  onclick="showRightSidebarFeaturedProduct(<?php echo $previousPageNo ;?>, '<?php echo $urlController ;?>')" src="<?php echo $previousPageImg; ?>" alt="<?php echo $this->__('Previous') ?>" title="<?php echo $this->__('Previous') ?>" class="v-middle up-arrow" />
+                </td>
+                <?php else: ?>
+                <td>&nbsp;</td>
+                <?php endif;?>
+            </tr>
+            <tr>
+                <?php if (!$this->isLastPage()): ?>
+                <td>
+                    <?php $lastPageNo = $this->getCollection()->getCurPage(+1);?>
+                    <?php $lastPageImg = $this->getSkinUrl('images/clarion/featuredproduct/arrow_small_down.png');?>
+                    <?php $urlController = $this->getUrl('featuredproduct/index/sidebarRightPager'); ?>
+                    <img onclick="showRightSidebarFeaturedProduct(<?php echo $lastPageNo;?>, '<?php echo $urlController ;?>')" src="<?php echo $lastPageImg;?>" alt="<?php echo $this->__('Next') ?>" title="<?php echo $this->__('Next') ?>" class="v-middle down-arrow"/>
+                </td>
+                <?php else: ?>
+                <td>&nbsp;</td>
+                <?php endif;?>
+            </tr>
+        </table>
+    </div>
+    <?php endif; ?>
+
+    <?php if($this->getUseContainer()): ?>
+    </div>
+    <?php endif ?>
+
+<?php endif ?>

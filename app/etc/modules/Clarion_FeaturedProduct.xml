@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module configuration file
+ * @category    Clarion
+ * @package     Clarion_FeaturedProduct
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+-->
+<config>
+    <modules>
+        <Clarion_FeaturedProduct>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog/>
+            </depends>
+        </Clarion_FeaturedProduct>
+    </modules>
+</config>
