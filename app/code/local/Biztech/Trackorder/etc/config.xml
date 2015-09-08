@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Biztech
+ * @package    Biztech_Trackorder
+ * @author     ModuleCreator
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <Biztech_Trackorder>
+            <version>0.1.0</version>
+        </Biztech_Trackorder>
+    </modules>
+    <frontend>
+        <routers>
+            <trackorder>
+                <use>standard</use>
+                <args>
+                    <module>Biztech_Trackorder</module>
+                    <frontName>trackorder</frontName>
+                </args>
+            </trackorder>
+        </routers>
+        <layout>
+            <updates>
+                <trackorder>
+                    <file>trackorder.xml</file>
+                </trackorder>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<trackorder>
+				<use>admin</use>
+				<args>
+					<module>Biztech_Trackorder</module>
+					<frontName>trackorder</frontName>
+				</args>
+			</trackorder>
+        </routers>
+    </admin>
+    <adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Biztech_Trackorder>
+							<title>Trackorder Module</title>
+							<sort_order>10</sort_order>
+						</Biztech_Trackorder>
+                         <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <trackorder>
+                                            <title>Track Order</title>
+                                        </trackorder>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<trackorder>
+					<file>trackorder.xml</file>
+				</trackorder>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <trackorder>
+                <class>Biztech_Trackorder_Model</class>
+                <resourceModel>trackorder_mysql4</resourceModel>
+            </trackorder>
+            <trackorder_mysql4>
+                <class>Biztech_Trackorder_Model_Mysql4</class>
+                <entities>
+                    <trackorder>
+                        <table>trackorder</table>
+                    </trackorder>
+                </entities>
+            </trackorder_mysql4>
+        </models>
+        <resources>
+            <trackorder_setup>
+                <setup>
+                    <module>Biztech_Trackorder</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </trackorder_setup>
+            <trackorder_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </trackorder_write>
+            <trackorder_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </trackorder_read>
+        </resources>
+        <blocks>
+            <trackorder>
+                <class>Biztech_Trackorder_Block</class>
+            </trackorder>
+        </blocks>
+        <helpers>
+            <trackorder>
+                <class>Biztech_Trackorder_Helper</class>
+            </trackorder>
+        </helpers>
+    </global>
+</config>

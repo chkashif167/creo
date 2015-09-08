@@ -66,6 +66,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$email = $post['email'];
 			$phone = $post['phone'];
 			$country = $post['country'];
+			$city = $post['city'];
 			$message = $post['message'];
 			 
 			$emailTemplate = Mage::getModel('core/email_template')->loadByCode('bulk_order');
@@ -75,16 +76,18 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$emailTemplateVariables['email'] = $email;
 			$emailTemplateVariables['phone'] = $phone;
 			$emailTemplateVariables['country'] = $country;
+			$emailTemplateVariables['city'] = $city;
 			$emailTemplateVariables['message'] = $message;
 			//$emailTemplateVariables = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'phone' => $phone, 'country' => $country, 'message' => $message);
 			//echo "<pre>";print_r($emailTemplateVariables);echo "</pre>";
 			$processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
-			// print_r($processedTemplate);exit;
+			 //print_r($processedTemplate);exit;
 			$toName = Mage::getStoreConfig('trans_email/ident_general/name');
 
 			//Getting the Store General E-Mail.
 			//$toEmail = Mage::getStoreConfig('trans_email/ident_general/email');
-			$toEmail = 'danish.ktk@gmail.com';
+			$toEmail = 'talktous@creoroom.com';
+			$toName = 'Creo support';
 			$mail = Mage::getModel('core/email')
 					 ->setToName($toName)
 					 ->setToEmail($toEmail)
@@ -98,13 +101,13 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$mail->send();
 			
 			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your bulk order was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
-                $this->_redirect('bulk-order');
+                $this->_redirect('bulk-orders');
 				return;
 			}
 			 catch(Exception $error)
 			 {
 			 Mage::getSingleton('customer/session')->addError(Mage::helper('contacts')->__('Unable to submit your request. Please, try again later'));
-                $this->_redirect('bulk-order');
+                $this->_redirect('bulk-orders'); 
                 return;
 			 }
            } 
@@ -116,7 +119,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
     {
 		
 		$post = $this->getRequest()->getPost();
-		echo "<pre>";print_r($post);exit;
+		//echo "<pre>";print_r($post);exit;
 		//echo  $emailTemplate = Mage::getModel('core/email_template')->loadDefault('bulk_order');exit;
 		if($post){
              
@@ -128,7 +131,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$message = $post['message'];
 			 
 			$emailTemplate = Mage::getModel('core/email_template')->loadByCode('customer_service_email');
-			$emailTemplateVariables = array();
+			$emailTemplateVariables = array(); 
 			$emailTemplateVariables['first_name'] = $first_name;
 			$emailTemplateVariables['last_name'] = $last_name;
 			$emailTemplateVariables['subject'] = $subject;
@@ -137,12 +140,13 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$emailTemplateVariables['message'] = $message;
 	
 			$processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
-			// print_r($processedTemplate);exit;
+			 //print_r($processedTemplate);exit;
 			$toName = Mage::getStoreConfig('trans_email/ident_general/name');
 
 			//Getting the Store General E-Mail.
 			//$toEmail = Mage::getStoreConfig('trans_email/ident_general/email');
-			$toEmail = 'danish.ktk@gmail.com';
+			$toEmail = 'talktous@creoroom.com';
+			$toName = 'Creo support';
 			$mail = Mage::getModel('core/email')
 					 ->setToName($toName)
 					 ->setToEmail($toEmail)
