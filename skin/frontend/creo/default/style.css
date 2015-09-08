@@ -4683,7 +4683,7 @@ textarea {
     margin: 0;
     padding: 10px 0 0;
 }
-.cs-text-area .pink-border{
+.pink-border{
     border: 1px solid #f27281;
     display: block;
     padding: 3px 12px;
@@ -4825,6 +4825,50 @@ textarea {
     margin: 0 0 0 3%;
     border-bottom: 1px solid #d7d7d7;
 }
+/* Return Policy Page */
+.faq-area.return-area .return-two-column{
+    overflow: hidden;
+    color: #000;
+    font:11px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.faq-area.return-area .return-col{
+    width: 49%;
+    float: left;
+}
+.faq-area.return-area .return-col:first-child{margin: 0 2% 0 0;}
+.faq-area.return-area p{margin: 0 0 15px;}
+.faq-area.return-area p.pink{line-height: 19px;}
+.faq-area.return-area .step-col{
+    margin: 0;
+    padding: 0;
+    width: 102%;
+    list-style: none;
+    overflow: hidden;
+    color: #000;
+    font:11px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.faq-area.return-area .step-col li{
+    float: left;
+    width: 18%;
+    margin: 0 2% 0 0;
+}
+.faq-area.return-area .step-col .numeric{
+    display: block;
+    background: #ef4f61;
+    margin: 0 0 10px;
+    padding: 1px 5;
+    text-align: center;
+    color: #fff;
+    font:bold 15px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.faq-area.return-area .step-col p{margin: 0 0 15px;}
+.faq-area.return-area h5{
+    margin: 0 0 5px;
+    text-transform: uppercase;
+}
+.faq-area.return-area .list{margin: 0 0 15px;}
+
+
 
 
 @media only screen and (max-width: 1199px) {
