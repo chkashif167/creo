@@ -1,4 +1,17 @@
+<?php $cat_id = Mage::getModel('catalog/layer')->getCurrentCategory()->getId(); ?>
+<?php $category = Mage::getModel('catalog/category')->load($cat_id); ?>
+<?php $categoryID = $category->getID(); ?>
+
 <?php
+
+$category = Mage::getModel('catalog/category')->load($categoryID);
+$names = array();
+foreach ($category->getParentCategories() as $parent) {
+    $names[] = $parent->getName();
+}
+$clothingCat = $names[0];
+//do what you need with `$names` array
+if(strcmp($clothingCat,"Clothing")!= 0) {
 $obj = new Mage_Catalog_Block_Navigation();
 $store_cats = $obj->getStoreCategories();
 $current_cat    = $obj->getCurrentCategory();
@@ -20,7 +33,6 @@ $subcategories = Mage::getModel('catalog/category')->getCategories($ids[2]);
 <?php
 foreach ($subcategories as $cat) {
     if ($cat->getName() == $current_cat) {
-
         echo '<li class="active"><a href="'.$_helper->getCategoryUrl($cat).'"><span>'.$cat->getName()."</span></a></li>\n";
 
     }else
@@ -31,3 +43,5 @@ foreach ($subcategories as $cat) {
 ?>
 </ul>
 </nav>
+
+<?php } ?>
