@@ -107,7 +107,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			 catch(Exception $error)
 			 {
 			 Mage::getSingleton('customer/session')->addError(Mage::helper('contacts')->__('Unable to submit your request. Please, try again later'));
-                $this->_redirect('bulk-orders');
+                $this->_redirect('bulk-orders'); 
                 return;
 			 }
            } 
