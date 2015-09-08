@@ -1213,7 +1213,10 @@ function popupValidation()
 
 function designYourOwnPopupValidation() 
 { 
-    if(jQuery('.options-area .product-options').length > 0){
+    if (typeof jQuery('.options-area .product-options').find('select:first').val() === "undefined") {
+	
+	}else{
+	
 	if(jQuery('.options-area .product-options').find('select:first').val().length > 0) {  
         return true; 
     }     
@@ -1224,5 +1227,6 @@ function designYourOwnPopupValidation()
             alert('Confirmed!'); 
         }*/ 
     });   
+	
 	}
 }
