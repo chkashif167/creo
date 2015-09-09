@@ -290,7 +290,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php if ($isVisibleProduct): ?>
 
             <?php if (!$this->isOnCheckoutPage()): ?>
-                <a href="<?php echo $this->getAjaxDeleteUrl() ?>" title="<?php echo $this->__('Remove This Item') ?>"
+                <a href="<?php echo str_replace('http:','',$this->getAjaxDeleteUrl()); ?>" title="<?php echo $this->__('Remove This Item') ?>"
                    data-confirm="<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>"
                    class="remove cancel"> <?php echo $this->__('') ?> 
                     <i class="icon-cancel"></i>

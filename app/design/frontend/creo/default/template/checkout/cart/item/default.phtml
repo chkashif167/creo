@@ -62,7 +62,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         </h3>
         <?php if ($isVisibleProduct): ?>
                <!-- <li>-->
-                    <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
+                    <a href="<?php echo $this->getConfigureUrl() ?>" class="edititem" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
                <!-- </li>-->
             <?php endif ?><a onclick="return jQuery.confirm({title: 'Warning',confirmButtonClass: 'btn-info',content: '<?php echo $this->__('Are you sure to remove this item?') ?>',confirm: function(){window.location.href='<?php echo $this->getDeleteUrl() ?>';}});
 		" href="javascript:;" title="<?php echo $this->__('Remove Item') ?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove Item') ?></a>
