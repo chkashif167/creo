@@ -40,14 +40,10 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             </a>
         <?php endif;?>
 
-      <?php /*?>  <ul class="cart-links">
-            <?php if ($isVisibleProduct): ?>
-                <li>
-                    <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
-                </li>
-            <?php endif ?>
-
-            <?php if ($this->helper('wishlist')->isAllowInCart() && $isVisibleProduct) : ?>
+        <!--<ul class="cart-links">-->
+            
+<!--</ul>-->
+           <?php /*?> <?php if ($this->helper('wishlist')->isAllowInCart() && $isVisibleProduct) : ?>
                 <li>
                     <a href="<?php echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax"><?php echo $this->__('Move to wishlist'); ?></a>
                 </li>
@@ -55,8 +51,8 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         </ul><?php */?>
         
         
-<?php /*?>        <a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('Remove Item') ?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove Item') ?></a>
-<?php */?>
+        
+
         <h3 class="product-name">
         <?php if ($this->hasProductUrl()):?>
             <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->escapeHtml($this->getProductName()) ?></a>
@@ -64,7 +60,12 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <?php echo $this->escapeHtml($this->getProductName()) ?>
         <?php endif; ?>
         </h3>
-        
+        <?php if ($isVisibleProduct): ?>
+               <!-- <li>-->
+                    <a href="<?php echo $this->getConfigureUrl() ?>" class="edititem" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
+               <!-- </li>-->
+            <?php endif ?><a onclick="return jQuery.confirm({title: 'Warning',confirmButtonClass: 'btn-info',content: '<?php echo $this->__('Are you sure to remove this item?') ?>',confirm: function(){window.location.href='<?php echo $this->getDeleteUrl() ?>';}});
+		" href="javascript:;" title="<?php echo $this->__('Remove Item') ?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove Item') ?></a>
   <?php /*?>      
 
         <div class="product-cart-sku">

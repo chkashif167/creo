@@ -49,10 +49,13 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         foreach ($products as $p2) {//print_r($p2);echo "<hr>";
             //$p2 = Mage::getModel('catalog/product')->load($p->getId());
             //$img = (string)Mage::helper('catalog/image')->init($p2, 'small_image')->resize(200,200);
+            
+            $image = (string)Mage::helper('catalog/image')->init($p2,'small_image');//->resize(600,600);
             $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p2);
             $prod['id'] = $p2->getId();
             $prod['name'] = $p2->getName();
-            $prod['img'] = $p2->getImageUrl();
+            $prod['img'] = $image;
+            $prod['img2'] = $p2->getImageUrl();
             $prod['price'] = $p2->getPrice();
             $prod['stock_qty'] = $stock->getQty();
             $prod['stock_qty_min'] = $stock->getMinQty();
@@ -102,11 +105,14 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
 
         $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
         $currency_symbol = Mage::app()->getLocale()->currency($currency_code)->getSymbol();
+        
+        $image = (string)Mage::helper('catalog/image')->init($product,'small_image');//->resize(600,600);
 
         $prod['id'] = $product->getId();
         $prod['type_id'] = $product->getTypeId();
         $prod['name'] = $product->getName();
-        $prod['img'] = $product->getImageUrl();
+        $prod['img'] = $image;
+        $prod['img2'] = $product->getImageUrl();
         $prod['price'] = $product->getPrice();
         $prod['status'] = $product->getStatus();
         $prod['stock_qty'] = (int) $stock->getQty();
@@ -177,11 +183,13 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
 
                     foreach ($simpleCollection as $product) {
                         $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product->getId());
+                        $image = (string)Mage::helper('catalog/image')->init($product,'small_image');//->resize(600,600);
 
                         $prod['id'] = $product->getId();
                         $prod['type_id'] = $product->getTypeId();
                         $prod['name'] = $product->getName();
-                        $prod['img'] = $product->getImageUrl();
+                        $prod['img'] = $image;
+                        $prod['img2'] = $product->getImageUrl();
                         $prod['price'] = $product->getPrice();
                         $prod['status'] = $product->getStatus();
                         $prod['stock_qty'] = (int) $stock->getQty();
