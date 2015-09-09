@@ -1213,7 +1213,10 @@ function popupValidation()
 
 function designYourOwnPopupValidation() 
 { 
-    if(jQuery('.options-area .product-options').length > 0){
+    if (typeof jQuery('.options-area .product-options').find('select:first').val() === "undefined") {
+	
+	}else{
+	
 	if(jQuery('.options-area .product-options').find('select:first').val().length > 0) {  
         return true; 
     }     
@@ -1224,5 +1227,16 @@ function designYourOwnPopupValidation()
             alert('Confirmed!'); 
         }*/ 
     });   
+	
 	}
 }
+
+jQuery(document).ready(function(e) {
+    jQuery(".categorypath-create-html .category52 a").click(function(){
+			jQuery.alert({ 
+			title: 'Message!', 
+			content: "Customizing your Cap is not yet ready, Please check back very soon. This will be cool. 															#keepitcreo :) ", 
+			
+			}); 
+		})
+});
