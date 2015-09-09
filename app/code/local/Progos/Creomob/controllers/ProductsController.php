@@ -54,7 +54,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p2);
             $prod['id'] = $p2->getId();
             $prod['name'] = $p2->getName();
-            $prod['img'] = $image;
+            $prod['img'] = $p2->getImage();
             $prod['img2'] = $p2->getImageUrl();
             $prod['price'] = $p2->getPrice();
             $prod['stock_qty'] = $stock->getQty();
@@ -111,7 +111,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $prod['id'] = $product->getId();
         $prod['type_id'] = $product->getTypeId();
         $prod['name'] = $product->getName();
-        $prod['img'] = $image;
+        $prod['img'] = $product->getImage();
         $prod['img2'] = $product->getImageUrl();
         $prod['price'] = $product->getPrice();
         $prod['status'] = $product->getStatus();
@@ -188,7 +188,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                         $prod['id'] = $product->getId();
                         $prod['type_id'] = $product->getTypeId();
                         $prod['name'] = $product->getName();
-                        $prod['img'] = $image;
+                        $prod['img'] = $product->getImage();
                         $prod['img2'] = $product->getImageUrl();
                         $prod['price'] = $product->getPrice();
                         $prod['status'] = $product->getStatus();
