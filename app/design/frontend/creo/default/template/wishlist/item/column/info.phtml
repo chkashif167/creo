@@ -58,7 +58,7 @@ $simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_i
         <?php  
 			$total_words = strlen($this->escapeHtml($this->stripTags($simple_product_attr['description'])));
 			if( $total_words >=  100 ){
-				echo substr($this->escapeHtml($this->stripTags($simple_product_attr['description'])),0,100)." ...";
+				echo $this->escapeHtml(substr($this->stripTags($simple_product_attr['description']),0,100))." ...";
 			}else{
 				echo $this->escapeHtml($this->stripTags($simple_product_attr['description']));	
 			}
@@ -112,7 +112,7 @@ if(!($item_s)){
         <?php  
 			$total_words = strlen($this->escapeHtml($this->stripTags($product->getDescription())));
 			if( $total_words >=  100 ){
-				echo substr($this->escapeHtml($this->stripTags($product->getDescription()),0,100))." ...";
+				echo $this->escapeHtml(substr($this->stripTags($product->getDescription()),0,100))." ...";
 			}else{
 				echo $this->escapeHtml($this->stripTags($product->getDescription()));	
 			}
