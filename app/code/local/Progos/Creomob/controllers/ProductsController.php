@@ -50,7 +50,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             //$p2 = Mage::getModel('catalog/product')->load($p->getId());
             //$img = (string)Mage::helper('catalog/image')->init($p2, 'small_image')->resize(200,200);
             
-            $image = (string)Mage::helper('catalog/image')->init($p2,'thumbnail');//->resize(600,600);
+            $image = (string)Mage::helper('catalog/image')->init($p2,'small_image');//->resize(600,600);
             $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p2);
             $prod['id'] = $p2->getId();
             $prod['name'] = $p2->getName();
@@ -106,7 +106,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
         $currency_symbol = Mage::app()->getLocale()->currency($currency_code)->getSymbol();
         
-        $image = (string)Mage::helper('catalog/image')->init($product,'thumbnail');//->resize(600,600);
+        $image = (string)Mage::helper('catalog/image')->init($product,'small_image');//->resize(600,600);
 
         $prod['id'] = $product->getId();
         $prod['type_id'] = $product->getTypeId();
@@ -183,7 +183,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
 
                     foreach ($simpleCollection as $product) {
                         $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product->getId());
-                        $image = (string)Mage::helper('catalog/image')->init($product,'thumbnail');//->resize(600,600);
+                        $image = (string)Mage::helper('catalog/image')->init($product,'small_image');//->resize(600,600);
 
                         $prod['id'] = $product->getId();
                         $prod['type_id'] = $product->getTypeId();
