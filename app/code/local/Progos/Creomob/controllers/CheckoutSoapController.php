@@ -13,13 +13,15 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
     }
     
     
-    protected function processPayment($sessionId,$cartId){
+    protected function processPayment($sessionId,$cartId,$payment_method,$shipment_method){
         $proxy = new SoapClient($this->soapURLv2);
-        $proxy->shoppingCartShippingMethod($sessionId, $cartId, 'freeshipping_freeshipping');
+        //freeshipping_freeshipping,tablerate_bestway,flatrate_flatrate/matrixrate_matrixrate
+        //matrixrate_matrixrate_3
+        $proxy->shoppingCartShippingMethod($sessionId, $cartId, $shipment_method);
 
         $paymentMethod =  array(
             'po_number' => null,
-            'method' => 'cashondelivery',
+            'method' => $payment_method,
             'cc_cid' => null,
             'cc_owner' => null,
             'cc_number' => null,
@@ -55,15 +57,16 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
         $response = array('success'=>0,'message'=>'','res'=>null);
         try {
             
-//            $customer = json_decode(file_get_contents("php://input"));
+            $payment_data = json_decode(file_get_contents("php://input"));
 //            if(count($customer) && !empty((array) $customer)){
 //                $this->setCustomer($sessionId,$cartId,$customer[0]);
 //            } else {
 ////                $this->setGuestCustomer($sessionId,$cartId);
 //            }
             
-            
-            $res = $this->processPayment($sessionId,$cartId);
+            $payment_method = $payment_data->payment_method;
+            $shipment_method = $payment_data->shipment_method;
+            $res = $this->processPayment($sessionId,$cartId,$payment_method,$shipment_method);
             
             $cart = Mage::getModel('sales/quote')->load($cartId);
             $cart->removeAllItems();
@@ -82,6 +85,42 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
         header("Content-Type: application/json");
         echo json_encode($response);
         die;
+    }
+    
+    public function shippingMethodsAction(){
+        
+        $sessionId = $this->getRequest()->getParam('sid');
+        $cartId = $this->getRequest()->getParam('qid');
+        
+        $proxy = new SoapClient($this->soapURLv2);
+        $result = $proxy->shoppingCartShippingList($sessionId, $cartId); 
+        var_dump($result);
+        
+        
+    }
+    
+    
+    public function paymentMethodsAction(){
+        
+        $sessionId = $this->getRequest()->getParam('sid');
+        $cartId = $this->getRequest()->getParam('qid');
+        $proxy = new SoapClient($this->soapURLv2);
+        
+        $quote = Mage::getModel('sales/quote')->load($cartId);
+        echo '<hr><br>Cart';
+        $result = $proxy->shoppingCartInfo($sessionId, $cartId);
+var_dump($result);
+        echo '<hr>';
+        
+        
+        echo 'Country -> ', $quote->getBillingAddress()->getCountry();
+        $paymentMethods = Mage::getModel('payment/config')->getAllMethods($storeid=null);
+        //print_r(json_encode((array)$paymentMethods['cashondelivery']));
+        
+        $result = $proxy->shoppingCartPaymentList($sessionId, $cartId); 
+        var_dump($result);
+        
+        
     }
     
 }
