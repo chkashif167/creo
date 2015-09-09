@@ -13,21 +13,23 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
     }
     
     
-    protected function processPayment($sessionId,$cartId,$payment_method,$shipment_method){
+    protected function processPayment($sessionId,$cartId,$payment_data){
         $proxy = new SoapClient($this->soapURLv2);
         //freeshipping_freeshipping,tablerate_bestway,flatrate_flatrate/matrixrate_matrixrate
         //matrixrate_matrixrate_3
+        $payment_method = $payment_data->payment_method;
+        $shipment_method = $payment_data->shipment_method;
         $proxy->shoppingCartShippingMethod($sessionId, $cartId, $shipment_method);
 
         $paymentMethod =  array(
             'po_number' => null,
             'method' => $payment_method,
-            'cc_cid' => null,
-            'cc_owner' => null,
-            'cc_number' => null,
-            'cc_type' => null,
-            'cc_exp_year' => null,
-            'cc_exp_month' => null
+            'cc_cid' => $payment_data->cc_ccid,
+            'cc_owner' => $payment_data->cc_owner,
+            'cc_number' => $payment_data->cc_number,
+            'cc_type' => $payment_data->cc_type,
+            'cc_exp_year' => $payment_data->cc_exp_year,
+            'cc_exp_month' => $payment_data->cc_exp_month
         );
          // add payment method
         $proxy->shoppingCartPaymentMethod($sessionId, $cartId, $paymentMethod);
@@ -66,7 +68,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
             
             $payment_method = $payment_data->payment_method;
             $shipment_method = $payment_data->shipment_method;
-            $res = $this->processPayment($sessionId,$cartId,$payment_method,$shipment_method);
+            $res = $this->processPayment($sessionId,$cartId,$payment_data);
             
             $cart = Mage::getModel('sales/quote')->load($cartId);
             $cart->removeAllItems();
