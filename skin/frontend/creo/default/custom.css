@@ -1165,3 +1165,16 @@
 .categorypath-create-phone-covers-html .get_photo_upload, .categorypath-create-notebooks-html .get_photo_upload,
 .categorypath-create-caps-143-html .get_photo_upload, categorypath-create-corporate-orders-html .get_photo_upload
 { display: none;}
+.checkout-cart-index #shopping-cart-table .text-area .item-options { display: table;}
+.checkout-cart-index #shopping-cart-table .text-area a.Edit { content: '\e807'; } 
+.checkout-cart-index #shopping-cart-table .text-area a.btn-remove { font-size: 0; float:right;}
+.checkout-cart-index #shopping-cart-table .text-area a.btn-remove:before { content: '\e806'; font-size: 12px; margin: 0 5px; font-family:fontello;} 
+
+.checkout-cart-index #shopping-cart-table .text-area a.edititem {font-size: 0; float:right;}
+.checkout-cart-index #shopping-cart-table .text-area a.edititem:before { content: '\e807'; font-size: 12px; margin: 0 5px; font-family:fontello;}
+.checkout-cart-configure .add-to-cart-buttons .btn-cart { background: #000 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    padding: 10px 0;
+    text-transform: uppercase;
+    width: 100%;}
