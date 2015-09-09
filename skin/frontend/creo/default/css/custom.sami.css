@@ -648,3 +648,8 @@ div.fme-filter a.fme_layered_attribute {
     max-height: 110px;
     width: auto;
 }
+
+.fix-error .validation-advice {
+	width:auto; 
+	margin: 0;
+}
