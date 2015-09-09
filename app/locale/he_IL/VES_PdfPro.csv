@@ -1,0 +1,20 @@
+Print Orders,הדפס הזמנות
+Print Invoices,הדפס חשבוניות
+Print Packingslips,הדפס תעודות משלוח
+Print Credit Memos,הדפס תזכירי אשראי (Credit Memo)
+Print All,הדפס הכל
+Print Order,הדפס הזמנה
+Print Invoice,הדפס חשבונית
+Print Packingslip,הדפס תעודת משלוח
+Print Credit Memo,הדפס תזכיר אשראי (Credit Memo)
+General,כללי
+Enable Easy PDF Module,הפעל Easy PDF Module
+API Key,API Key
+Remove the default print functions,הסר את אפשרויות ההדפסה המקוריות של מג'נטו
+Replace the default print functions of magento by Easy PDF,החלף את אפשרויות ההדפסה המקוריות של מג'נטו באלה של Easy PDF
+Print orders from backend,הדפס הזמנות ממשק הניהול
+Customer can print PDFs,לקוח יכול להדפיס הזמנות
+"If yes, customer will be able to use Easy PDF","אם כן, לקוח יוכל להשתמש ב Easy PDF"
+Attach the PDF Order to New Order Email,"צרף PDF שנוצר עם ההזמנה לדוא""ל הזמנה חדשה"
+This option will make your checkout a bit of slower for generating the PDF file,סימון אפשרות זו יאט במקצת את תהליך היציאה מהחנות בשל יצירת הPDF
+Attach the PDF Invoice to Invoice Email,"צרף PDF שנוצר עם חשבונית לדוא""ל חשבונית"

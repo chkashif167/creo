@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <ves>
+            <label>VNECOMS</label>
+            <sort_order>400</sort_order>
+        </ves>
+    </tabs>
+    
+    <sections>
+        <ves_core translate="label" module="ves_core">
+            <label>Core</label>
+            <tab>ves</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>                
+                <extension_keys>
+                    <label>License Key Management</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>						
+						<license_key>
+                    		<label>License Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Please enter your license key of the extension.</comment>
+                    	</license_key>
+                    </fields>
+                </extension_keys>
+			</groups>
+        </ves_core>
+    </sections>
+</config>

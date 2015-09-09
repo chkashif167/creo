@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="<?php echo $this->getSkinUrl('ves_pdfpros/default.css');?>" type="text/css" charset="utf-8" />
+	<?php if(sizeof($this->getCssUrls())):?>
+		<?php foreach($this->getCssUrls() as $cssUrl):?>
+			<link rel="stylesheet" href="<?php echo $cssUrl;?>" type="text/css" charset="utf-8" />
+		<?php endforeach;?>
+	<?php endif;?>
+	
+	<?php if(sizeof($this->getAdditionCssUrls())):?>
+		<?php foreach($this->getAdditionCssUrls() as $additionCssUrl):?>
+			<link rel="stylesheet" href="<?php echo $additionCssUrl;?>" type="text/css" charset="utf-8" />
+		<?php endforeach;?>
+	<?php endif;?>
+	<title><?php echo $this->__('Easy PDF')?></title>
+</head>
+<?php $_data			= $this->getSources();?>
+<?php $_i = 0;?>
+<body>
+	<?php foreach($_data as $item):?>
+		<?php foreach($item as $key=>$type):/* $key = array('order','invoice','shipment','creditmemo')*/?>
+			<?php foreach($type as $source):?>
+				<?php $source = unserialize($source);?>
+				<?php $apiKey = $source->getKey();?>
+				<?php $invoiceProduct = $this->getInvoice($apiKey);?>
+				<?php $_additionData	= $this->getAdditionData($apiKey);?>
+				<div class="page <?php echo $this->getInvoice($apiKey)->getSku();?><?php if(++$_i == $this->getNumberOfInvoice()):?> end-page<?php endif;?><?php if(isset($_additionData['rtl_language']) && $_additionData['rtl_language']):?> style="direction: rtl;"<?php endif;?>">
+					<?php echo $this->getBody($source,$key);?>
+					<?php if($this->isTrial($apiKey)):?>
+						<div class="trial-brand"><a href="http://www.easypdfinvoice.com">www.easypdfinvoice.com</a></div>
+					<?php endif;?>
+				</div>
+			<?php endforeach;?>
+		<?php endforeach;?>
+	<?php endforeach;?>
+</body>
+</html>

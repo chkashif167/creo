@@ -1,0 +1,55 @@
+.easypdf-free-001 {
+	margin: 0 auto;
+	display: block;
+	padding: 0 0;
+	position: relative;
+	z-index: 0;
+	page-break-after:always;
+	clear: both;
+	color: #000;
+	font: 12px "DejaVu Sans", Helvetica, Arial, Verdana, sans-serif;
+	font-weight: lighter;
+}
+
+.end-page{
+	page-break-after:auto;
+}
+
+.easypdf-free-001 h3{
+	margin: 0;
+}
+
+.easypdf-free-001 .logo-container{width: 100%;display: block;text-align: left;margin-bottom: 10px;}
+.easypdf-free-001 .tbl-info{border: 1px solid #808080;margin-bottom: 10px; valign: top;width: 100%;}
+.easypdf-free-001 .tbl-info td{padding: 10px 20px;width: 50%;}
+.easypdf-free-001 .tbl-info table td{padding: 0;}
+.easypdf-free-001 .items {
+	width: 100%;
+	text-align: left;
+	margin: 0;
+}
+.easypdf-free-001 .items thead th{
+	margin: 0;
+}
+.easypdf-free-001 .items thead .header {
+	background: #edebeb;
+	height: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-top: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+}
+
+.easypdf-free-001 .items tbody td {
+	padding: 10px;
+	vertical-align: top;
+}
+
+.easypdf-free-001 .total-due {
+	float: right;
+	width: 350px;
+	text-align: left;
+	display: block;
+	color: #000;
+}
+.easypdf-free-001 .total-due td{padding: 5px;}

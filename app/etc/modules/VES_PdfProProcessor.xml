@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VES_PdfProProcessor>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+            	<VES_PdfPro />
+            </depends>
+        </VES_PdfProProcessor>
+    </modules>
+</config> 
