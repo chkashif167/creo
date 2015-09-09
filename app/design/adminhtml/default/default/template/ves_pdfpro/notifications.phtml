@@ -1,0 +1,73 @@
+<?php 
+/**
+ * See more VES_PdfPro_Block_Adminhtml_Version
+ */
+?>
+<script type="text/javascript">
+	$$('#nav li span').each(function(s){
+		if(s.innerHTML == 'Easy PDF'){s.addClassName('easypdf-admin-menu');}
+		if(s.innerHTML == 'Visit Website'){s.parentNode.href='http://www.easypdfinvoice.com';s.parentNode.target="_blank";}
+	});
+	Event.observe(window,'load',function(){
+		$$('#system_config_tabs dd a span').each(function(s){
+			if(s.innerHTML.trim()=='Easy PDF'){s.addClassName('easypdf-system-tab');}
+		});
+	});
+	function vesPdfProHideCurrentNotificationMessage(){
+		new Ajax.Request('<?php echo $this->getUrl('pdfpro_cp/adminhtml_notify/hidemessage');?>', {
+            onSuccess: function(transport) {
+                try {
+                    if (transport.responseText.isJSON()) {
+                        var response = transport.responseText.evalJSON()
+                        if (response.error) {
+                            alert(response.message);
+                        }else{
+                            $$('.notification-global-notice').each(function(s){
+                                s.hide();
+                            });
+                        }
+                    } else {
+                        
+                    }
+                } catch (e) {
+                    
+                }
+            }
+        });
+	}
+</script>
+<?php if($this->canDisplayNotice() || $this->canDisplayNews() || $this->canDisplayDefaultApiKeyMsg()):?>
+	<div id="pdfpro-notifications">
+		<?php if($this->canDisplayDefaultApiKeyMsg()):?>
+			<div class="notification-global">
+			    <strong class="label">Easy PDF Invoice:</strong>
+			    <?php echo $this->__('You need to set the default API Key for your website in')?> <a href="<?php echo $this->getUrl('adminhtml/system_config/edit',array('section'=>'pdfpro'));?>"><?php echo $this->__('Configuration')?></a>
+			</div>
+		<?php endif;?>
+		<?php if($this->canDisplayNotice()):?>
+			<?php $serverVersion 	= $this->getServerVersion();?>
+			<?php if($serverVersion && version_compare(Mage::helper('pdfpro')->getVersion(), $serverVersion,'<')):?>
+				<div class="notification-global">
+				    <strong class="label">Easy PDF Invoice:</strong>
+				    <?php echo $this->__('You are using the old version of Easy PDF (%s).The current version is %s. Upgrade to latest version now!',Mage::helper('pdfpro')->getVersion(),$serverVersion)?> <a href="http://www.easypdfinvoice.com/blog/upgrade-easy-pdf-magento-extension/" target="_blank">How to upgrade?</a>
+				</div>
+			<?php endif;?>
+		<?php endif;?>
+		<?php if($this->canDisplayNews()):?>
+			<?php $message 	= $this->getServerMessage();?>
+			<?php if($message):?>
+				<div class="notification-global notification-global-notice">
+				    <strong class="label">Easy PDF Invoice:</strong>
+				    <?php echo $message;?>
+				    <a style="border: 1px solid #EA7601;border-radius:7px; -moz-border-radius: 7px;-webkit-border-radius: 7px;display: block; float: right;font-size:11px; font-weight: bold;line-height: 11px; padding: 1px 3px;text-decoration: none;" href="javascript: void(0);" onclick="vesPdfProHideCurrentNotificationMessage()">x</a>
+				</div>
+			<?php endif;?>
+		<?php endif;?>
+		<?php if(!$this->checkLocalPdfProcessor()):?>
+			<div class="notification-global notification-global-warning">
+			    <strong class="label">Easy PDF Invoice:</strong>
+			    <?php echo $this->__('You are using the remote PDF processor from <a href="http://www.easypdfinvoice.com" target="_blank">www.easypdfinvoice.com</a>. We recommend you to use remote PDF processor for testing only. Please <a href="http://www.easypdfinvoice.com/blog/local-pdf-processor/" target="_blank">install Local Pdf Processor</a> before go to live.');?>
+			</div>
+		<?php endif;?>
+	</div>
+<?php endif;?>
