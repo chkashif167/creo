@@ -4076,7 +4076,6 @@ p.availability{margin: 0;}
 .hidden-popups .modal-header {
     border: medium none;
     padding: 30px 10px 0;
-    overflow: hidden;
 }
 .other-formats > h4{
     font:bold 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
