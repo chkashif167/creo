@@ -1732,12 +1732,12 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .products-grid .text-area h3{
     float: left;
-    width: 70%;
+    width: 65%;
     /*min-height:40px;*/
     margin: 0;
     text-transform: capitalize;
     color: #222;
-    font:18px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
+    font:13px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .products-grid .text-area h3 a{color: #222;}
 .products-grid .text-area .price{
@@ -1746,8 +1746,8 @@ div.fme-filter dd li{overflow: visible !important;}
     color: #000;
     float: right;
     text-align: right;
-    width: 28%;
-    font:18px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+    width: 33%;
+    font:15px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .products-grid .btn-holder {
     overflow: hidden;
@@ -4430,7 +4430,7 @@ textarea {
 .featured-items .text-area h3 {
     color: #222;
     float: left;
-    font: 13px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    font: 13px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
     margin: 0;
     text-transform: capitalize;
     width: 65%;
@@ -4439,7 +4439,7 @@ textarea {
     color: #000;
     display: block;
     float: right;
-    font: 18px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    font: 15px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
     margin: 0 0 0 2%;
     text-align: right;
     width: 33%;
@@ -4996,8 +4996,8 @@ textarea {
     .products-grid .mp_quickview_icon {top: 199px !important;}
     .product-detail .btn-holder button:first-child{width: 79.8%;}
     .faq-area .faq-frame.terms .openeer-holder .question {width: 97.4%;}
-    .products-grid .text-area h3{font: 14px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;}
-    .products-grid .text-area .price {font: 14px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;}
+    .products-grid .text-area h3{font: 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;}
+    .products-grid .text-area .price {font: 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;}
     .products-grid .text-area{padding: 10px 0 0;}
     .styles-lable{right: 216px !important;}
     #fme_layered_gender {margin-right:20px  !important;}

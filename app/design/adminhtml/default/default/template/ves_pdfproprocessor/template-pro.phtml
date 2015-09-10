@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="<?php echo $this->getSkinUrl('ves_pdfpros/default.css');?>" type="text/css" charset="utf-8" />
+	<?php if(sizeof($this->getCssUrls())):?>
+		<?php foreach($this->getCssUrls() as $cssUrl):?>
+			<link rel="stylesheet" href="<?php echo $cssUrl;?>" type="text/css" charset="utf-8" />
+		<?php endforeach;?>
+	<?php endif;?>
+	<?php if($this->getAdditionCss()):?>
+		<style>
+			<?php echo $this->getAdditionCss();?>
+		</style>
+	<?php endif;?>
+	<title><?php echo $this->__('Easy PDF')?></title>
+</head>
+<?php $_sources	= $this->getSource();?>
+<?php $type 		= $this->getType();?>
+<?php $_i = 0;?>
+<body>
+	<script type="text/php">
+		$GLOBALS['current_head_foot'] = 0;
+		$GLOBALS['headers'] = array();
+		$GLOBALS['footers'] = array();
+		$GLOBALS['increment'] = array();
+	</script>
+	<?php foreach($_sources as $_invoice):?>
+	<?php $apiKey = $_invoice['key'];?>
+	<?php $sku = $this->getInvoiceSku($apiKey);?>
+	<?php $additionData	= $this->getAdditionData($apiKey);?>
+	<div class="page <?php echo $sku;?><?php if(++$_i == sizeof($_sources)):?> end-page<?php endif;?>"<?php if(isset($additionData['rtl_language']) && $additionData['rtl_language']):?> style="direction: rtl;"<?php endif;?>>
+		
+		<?php if($_i > 1):?>
+			<script type="text/php">$GLOBALS['increment'][] = $pdf->get_page_number(); $GLOBALS['current_head_foot']++;</script>
+		<?php endif;?>
+		
+		<?php $html = $this->processTemplate($_invoice);?>
+		<div class="page_header">
+			<script type="text/php">$GLOBALS['headers'][$GLOBALS['current_head_foot']] = $pdf->open_object();</script>
+			<?php $header = $this->getHeader($html)?>
+			<?php echo $header;?>
+		    <script type="text/php">$pdf->close_object();</script>
+		</div>
+		
+		<?php echo $this->getBody($html);?>
+		<div class="page_footer">
+			<script type="text/php">$GLOBALS['footers'][$GLOBALS['current_head_foot']] = $pdf->open_object();</script>
+			<?php $footer = $this->getFooter($html)?>
+			<?php echo $footer;?>
+			<script type="text/php">$pdf->close_object();</script>
+		</div>
+	</div>
+	<?php endforeach;?>
+	<script type="text/php">
+	$GLOBALS["invoice_count"] = 0;
+	$pdf->page_script('
+		if (in_array($PAGE_NUM,$GLOBALS["increment"])) {
+			$pdf->stop_object($GLOBALS["headers"][$GLOBALS["invoice_count"]]);
+			$pdf->stop_object($GLOBALS["footers"][$GLOBALS["invoice_count"]]);
+			$GLOBALS["invoice_count"]++;
+		}
+		$pdf->add_object($GLOBALS["headers"][$GLOBALS["invoice_count"]],"add");
+		$pdf->add_object($GLOBALS["footers"][$GLOBALS["invoice_count"]],"add");
+	');
+	</script>
+</body>
+</html>
