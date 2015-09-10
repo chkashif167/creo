@@ -2497,7 +2497,7 @@ function designYourOwnPopupValidation()
 
         if (jQuery('.options-area .product-options').find('select:first').val().length > 0) {
             return true;
-        }
+        }else{
         jQuery.alert({
             title: 'Alert!',
             content: "Please choose size first.",
@@ -2505,6 +2505,8 @@ function designYourOwnPopupValidation()
              alert('Confirmed!'); 
              }*/
         });
+		return false;
+		}
 
     }
 }
