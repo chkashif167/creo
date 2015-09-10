@@ -174,7 +174,12 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
   </div>
   </li><?php */ ?>
 
-
+<?php
+$hide_del = false;
+if(Mage::app()->getFrontController()->getRequest()->getModuleName() == 'onestepcheckout' || Mage::app()->getFrontController()->getRequest()->getModuleName() == 'ajax'){
+	$hide_del = true;
+	}
+?>
 <li class="product">
     <?php if ($this->hasProductUrl()): ?>
         <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft"><img src="<?php echo $this->getProductThumbnail()->resize(120, 140)->setWatermarkSize('30x10'); ?>" width="" height="" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></a>
@@ -290,11 +295,17 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php if ($isVisibleProduct): ?>
 
             <?php if (!$this->isOnCheckoutPage()): ?>
+                <?php if($hide_del){
+					?><a href="javascript:;" title="<?php echo $this->__('Remove This Item') ?>" class="cancel"> <?php echo $this->__('') ?> 
+                    <i class="icon-cancel"></i>
+                </a><?php
+				}else{?>
                 <a href="<?php echo str_replace('http:','',$this->getAjaxDeleteUrl()); ?>" title="<?php echo $this->__('Remove This Item') ?>"
                    data-confirm="<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>"
                    class="remove cancel"> <?php echo $this->__('') ?> 
                     <i class="icon-cancel"></i>
                 </a>
+                <?php } ?>
             <?php else: ?>
                 <span><?php echo $this->__('') ?></span>
             <?php endif; ?>
