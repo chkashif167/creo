@@ -184,8 +184,7 @@ Minicart.prototype = {
 			
 							if (result.success) {
 			
-								cart.updateCartQty(result.qty);
-			
+								jQuery('.count').html(result.qty);
 								cart.updateContentOnRemove(result, el.closest('li'));
 			
 							} else {

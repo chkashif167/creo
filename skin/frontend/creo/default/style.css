@@ -4076,7 +4076,6 @@ p.availability{margin: 0;}
 .hidden-popups .modal-header {
     border: medium none;
     padding: 30px 10px 0;
-    overflow: hidden;
 }
 .other-formats > h4{
     font:bold 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
@@ -4868,6 +4867,74 @@ textarea {
     text-transform: uppercase;
 }
 .faq-area.return-area .list{margin: 0 0 15px;}
+#track_order label{
+    color: #000;
+    display: block;
+    font: 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0 0 3px;
+    padding: 0;
+    text-transform: capitalize;
+}
+#track_order button {
+    background: #000;
+    border: none;
+    cursor: pointer;
+    float: left;
+    font: 14px/22px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    color: #fff;
+    height: 28px;
+    margin: 19px 0 0;
+    padding: 3px;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+}
+#track_order button:hover{
+    background: #ef4f61;
+    border: none;
+    color: #fff;
+}
+.order-info-message{padding: 0 !important;}
+.order-info-message .messages {margin: 0 0 15px;}
+.bulk-order-form.track-shipment-form .form-row{width: 720px;}
+.bulk-order-form.track-shipment-form{padding: 0 0 20px;}
+.bulk-order-form.track-shipment-form .form-select-col.second-child {width: 420px;}
+.bulk-order-form.track-shipment-form .form-select-col.third-child{
+    margin: 0;
+    width: 99px;
+}
+.bulk-order-form.track-shipment-form .form-select-col input[type="text"]{width: 100%;}
+.bulk-order-form.track-shipment-form input[type="button"] {
+    background: #000;
+    border: none;
+    cursor: pointer;
+    float: left;
+    font: 12px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    color: #fff;
+    height: 18px;
+    margin: 19px 0 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+}
+.bulk-order-form.track-shipment-form input[type="button"]:hover{
+    background: #ef4f61;
+    border: none;
+    color: #fff;
+}
+#iframdiv iframe{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: auto;
+}
+
+
+
+
+
 
 
 
