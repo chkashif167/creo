@@ -296,9 +296,9 @@ if(Mage::app()->getFrontController()->getRequest()->getModuleName() == 'onestepc
 
             <?php if (!$this->isOnCheckoutPage()): ?>
                 <?php if($hide_del){
-					?><a href="javascript:;" title="<?php echo $this->__('Remove This Item') ?>" class="cancel"> <?php echo $this->__('') ?> 
+					?><!--<a href="javascript:;" title="<?php echo $this->__('Remove This Item') ?>" class="cancel"> <?php echo $this->__('') ?> 
                     <i class="icon-cancel"></i>
-                </a><?php
+                </a>--><?php
 				}else{?>
                 <a href="<?php echo str_replace('http:','',$this->getAjaxDeleteUrl()); ?>" title="<?php echo $this->__('Remove This Item') ?>"
                    data-confirm="<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>"
