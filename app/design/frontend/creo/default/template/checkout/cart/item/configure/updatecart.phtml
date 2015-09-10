@@ -31,10 +31,15 @@
     
     <div class="add-to-cart">
         <?php if (!$_product->isGrouped()): ?>
+        
+        
         <div class="column color-area qty-area ">
+             
              <label for="qty"><?php echo $this->__('Quantity:') ?></label>
+            
             <span class="up">up</span>  
         <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+ 
   <span class="down">down</span>
         </div>
     
