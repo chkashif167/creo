@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			 <action method="addCss"><name>ves_pdfpro/styles.css</name></action>
+		</reference>
+		<reference name="notifications">
+			<block type="pdfpro/adminhtml_version" name="pdfpro.notifications" template="ves_pdfpro/notifications.phtml"></block>
+		</reference>
+	</default>
+    <adminhtml_sales_order_invoice_view>
+    	<block type="pdfpro/adminhtml_sales_order_invoice_view" name="ves_pdfpro" />
+    </adminhtml_sales_order_invoice_view>
+    <adminhtml_sales_order_view>
+    	<block type="pdfpro/adminhtml_sales_order_view" name="ves_pdfpro" />
+    </adminhtml_sales_order_view>
+    <adminhtml_sales_order_shipment_view>
+    	<block type="pdfpro/adminhtml_sales_order_shipment_view" name="ves_pdfpro" />
+    </adminhtml_sales_order_shipment_view>
+    <adminhtml_sales_order_creditmemo_view>
+    	<block type="pdfpro/adminhtml_sales_order_creditmemo_view" name="ves_pdfpro" />
+    </adminhtml_sales_order_creditmemo_view>
+    <pdfpro_cp_adminhtml_key_index>
+	    <reference name="content">
+	    	<block type="pdfpro/adminhtml_key" name="ves_pdfpro_api_key" />
+	    </reference>
+    </pdfpro_cp_adminhtml_key_index>
+    <pdfpro_cp_adminhtml_key_edit>
+    	<reference name="content">
+            <block type="pdfpro/adminhtml_key_edit" name="apikey_edit"></block>
+        </reference>
+
+        <reference name="left">
+            <block type="pdfpro/adminhtml_key_edit_tabs" name="apikey_edit_tabs">
+               
+            </block>
+        </reference>
+	</pdfpro_cp_adminhtml_key_edit>
+</layout>

@@ -1,0 +1,1152 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <ves translate="label">
+            <label>VnEcoms</label>
+            <sort_order>400</sort_order>
+        </ves>
+    </tabs>
+    
+    <sections>
+        <pdfpro translate="label" module="pdfpro">
+            <label>Easy PDF</label>
+            <tab>ves</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>101</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>                
+                <config>
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <frontend_model>pdfpro/adminhtml_system_config_form_fieldset</frontend_model>
+                    <comment><![CDATA[]]></comment>
+                    <fields>
+						<enabled>
+                            <label>Enable Easy PDF Module</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <processor>
+                            <label>PDF Processor</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pdfpro/source_processor</source_model>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </processor>
+                        <default_key>
+                            <label>Default API Key</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pdfpro/source_key</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_class>required-entry</frontend_class>
+                            <comment><![CDATA[This API Key will be used for default. <br />There is no API Key here? Go to <strong>Easy PDF</strong> -> <strong>Manage Api Keys</strong>]]></comment>
+                        </default_key>
+                        <remove_default_print>
+                        	<label>Remove the default print functions</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Replace the default print functions of magento by Easy PDF</comment>
+                        </remove_default_print>
+                        <admin_print_order>
+                        	<label>Print orders from backend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>18</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </admin_print_order>
+                        <allow_customer_print>
+                            <label>Customer can print PDFs</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>If yes, customer will be able to use Easy PDF</comment>
+                        </allow_customer_print>
+                        <order_email_attach>
+                            <label>Attach the Order PDF file to New Order Email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pdfpro/source_attach</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>This option will make your checkout a bit of slower for generating the PDF file</comment>
+                        </order_email_attach>
+                        <invoice_email_attach>
+                            <label>Attach the Invoice PDF file to Invoice Email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pdfpro/source_attach</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>This option will make your checkout a bit of slower for generating the PDF file</comment>
+                        </invoice_email_attach>
+                        <shipment_email_attach>
+                            <label>Attach the Shipment PDF to Shipment Email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pdfpro/source_attach</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </shipment_email_attach>
+                        <creditmemo_email_attach>
+                            <label>Attach the Creditmemo PDF to Creditmemo Email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pdfpro/source_attach</source_model>
+                            <sort_order>47</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </creditmemo_email_attach>
+                        <detect_language>
+                            <label>Detect language automatically by store</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>This option is used for multiple language website.</comment>
+                        </detect_language>
+                        <number_format>
+                            <label>Number Format</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>This option is used to change number of decimal places.</comment>
+                        </number_format>
+                        <currency_position>
+                            <label>Currency Position</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>pdfpro/source_currency</source_model>
+                        </currency_position>
+                        <communication_method>
+                            <label>Communication Method</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>pdfpro/source_communication_method</source_model>
+                            <comment>This option is used when you choose the PDF Processor "www.easypdfinvoice.com remote server"</comment>
+                        </communication_method>
+                    </fields>
+                </config>
+                <custom>
+                	<label>Custom PDF Printout</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>12</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                	<fields>
+                		<custom1>
+                            <label>Print Custom 1</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom1>
+                        <custom2>
+                            <label>Print Custom 2</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom2>
+                        <custom3>
+                            <label>Print Custom 3</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom3>
+                    </fields>
+                </custom>
+                <filename_format>
+                	<label>PDF file name format</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>15</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                    	<order>
+                            <label>Order PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print an individual order. Use $ID for order ID</comment>
+                        </order>
+                        <orders>
+                            <label>Order PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print multiple orders.</comment>
+                        </orders>
+                        <invoice>
+                            <label>Invoice PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print an individual invoice. Use $ID for invoice ID</comment>
+                        </invoice>
+                        <invoices>
+                            <label>Invoice PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print multiple invoices.</comment>
+                        </invoices>
+                        <shipment>
+                            <label>Shipment PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print an individual shipment. Use $ID for shipment ID</comment>
+                        </shipment>
+                        <shipments>
+                            <label>Shipment PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print multiple shipments.</comment>
+                        </shipments>
+                        <creditmemo>
+                            <label>Credit Memo PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print an individual credit memo. Use $ID for creditmemo ID</comment>
+                        </creditmemo>
+                        <creditmemos>
+                            <label>Credit Memo PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>41</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you print multiple credit memos.</comment>
+                        </creditmemos>
+                        <all>
+                            <label>Document PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>When you you select "Print All"</comment>
+                        </all>
+                        <custom1>
+                            <label>Custom 1 PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom1>
+                        <custom2>
+                            <label>Custom 2 PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom2>
+                        <custom3>
+                            <label>Custom 3 PDF File Name Format</label>
+                            <frontend_type>text</frontend_type>
+                            <tooltip><![CDATA[
+                            	<table width="100%" style="background: #FAFAFA;">
+									<thead>
+										<tr>
+											<th width="35">Var</th>
+											<th>Description</th>
+											<th>values</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>$dd</strong></td>
+											<td>Day of the month</td>
+											<td><em>01</em> to <em>31</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$EEE</strong></td>
+											<td>Day of the week</td>
+											<td><em>Mon</em> to <em>Sun</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MM</strong></td>
+											<td>Numeric representation of a month</td>
+											<td><em>01</em> to <em>12</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$MMM</strong></td>
+											<td>Textual representation of a month</td>
+											<td><em>Jan</em> to <em>Dec</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$y</strong></td>
+											<td>Numeric representation of a year</td>
+											<td>Ex: <em>1999</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$yy</strong></td>
+											<td>A two digit representation of a year</td>
+											<td>Ex: <em>99</em></td>
+										</tr>
+						
+										<tr>
+											<td><strong>$HH</strong></td>
+											<td>24-hour format of an hour</td>
+											<td><em>00</em> to <em>23</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$mm</strong></td>
+											<td>Minutes with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+								
+										<tr>
+											<td><strong>$ss</strong></td>
+											<td>Seconds, with leading zeros</td>
+											<td><em>00</em> to <em>59</em></td>
+										</tr>
+									</tbody>
+								</table>
+                            ]]></tooltip>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom3>
+                    </fields>
+                </filename_format>
+                <notification>
+                	<label>Notification</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                    	<notice>
+                            <label>Enable upgrade notice</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </notice>
+                    	<news>
+                            <label>Get news and promotion from EasyPdfInvoice.com</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </news>
+                    </fields>
+                </notification>
+                <author>
+                	<label>Author</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[
+                    The Easy PDF is developed and supported by <a href="http://www.easypdfinvoice.com/" target="_blank">www.EasyPdfInvoice.com</a>.<br />
+					If you need any support or have any question please contact us at <a href="mailto:support@easypdfinvoice.com">support@easypdfinvoice.com</a> or submit a ticket at <a href="http://www.easypdfinvoice.com/contacts/" target="_blank">http://www.easypdfinvoice.com/contacts/</a><br /><br />
+					Best Regards,<br />
+					<strong>Easy PDF Invoice Team</strong>
+					]]></comment>
+                </author>
+			</groups>
+        </pdfpro>
+    </sections>
+</config>

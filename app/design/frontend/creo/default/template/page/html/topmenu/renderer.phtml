@@ -161,11 +161,22 @@
   </div>
   </li>
   <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
-
+ <?php 
+ $parent_cat_array = array();
+ if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
+ $parentId = Mage::registry('current_category')->getParentId();
+ $parent = Mage::getModel('catalog/category')->load($parentId);
+ while($parentId != 0) {//check for root category
+     $parent_cat_array[] = strtolower($parent->getName());
+     $parentId = $parent->getParentId();
+     $parent = Mage::getModel('catalog/category')->load($parentId);
+ }
+ }
+ //$parentname = $this->getCurrentCategory()->getParentCategory()->getName(); echo $parentname."SHANI"; ?>
 <li <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
     ?>class="active"<?php } ?>><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/clothing/') == true) {
+<li <?php if (in_array("clothing",$parent_cat_array)) {
     echo'class="active"';
 } ?>> <a href="javascript:void(0)">CLOTHING</a>
     <div class="drop">
@@ -239,7 +250,7 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/accessories/') == true) {
+<li <?php if (in_array("accessories",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">ACCESSORIES</a>
     <div class="drop"> 
@@ -286,7 +297,7 @@ endforeach;
 
     </div>
 </li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/caps/') == true) {
+<li <?php if(in_array("caps",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>><a href="javascript:void(0)">CAPS</a>
     <div class="drop">
@@ -332,7 +343,7 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(), '/categories/') == true) {
+<li <?php if (in_array("categories",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">CATEGORIES</a>
 

@@ -70,12 +70,12 @@
                         <input type="tel" name="telephone" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text  <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?> email" id="telephone" />
                     </div>
                 </div>
-                <div class="field">
+                <!--<div class="field">
                     <label for="fax"><?php echo $this->__('Fax') ?></label>
                     <div class="input-box">
                         <input type="tel" name="fax" id="fax" title="<?php echo $this->__('Fax') ?>" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?> email" />
                     </div>
-                </div>
+                </div>-->
             
     </div>
     <div class="fieldset">
@@ -112,7 +112,7 @@
                         <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>"  title="<?php echo $this->__('City') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
                     </div>
                 </div>
-                <div class="field">
+                <!--<div class="field">
                     <label for="region_id" class="required"><em class="red marg-right">*</em><?php echo $this->__('State/Province') ?></label>
                     <div class="input-box">
                         <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
@@ -125,14 +125,14 @@
                         </script>
                         <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" />
                     </div>
-                </div>
+                </div>-->
            
-                <div class="field">
+                <!--<div class="field">
                     <label for="zip" class="required"><em class="red marg-right">*</em><?php echo $this->__('Zip/Postal Code') ?></label>
                     <div class="input-box">
                         <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getAddress()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
                     </div>
-                </div>
+                </div>-->
                 <div class="field">
                     <label for="country" class="required"><em class="red marg-right">*</em><?php echo $this->__('Country') ?></label>
                     <div class="input-box">
