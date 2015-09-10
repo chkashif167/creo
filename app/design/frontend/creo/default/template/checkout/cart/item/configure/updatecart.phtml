@@ -28,6 +28,7 @@
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Update Cart'); ?>
 <?php if ($_product->isSaleable()): ?>
+    
     <div class="add-to-cart">
         <?php if (!$_product->isGrouped()): ?>
         <div class="column color-area qty-area ">
