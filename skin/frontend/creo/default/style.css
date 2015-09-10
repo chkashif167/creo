@@ -1141,6 +1141,11 @@ p.style1 {
     float: right;
     width: 50%;
 }
+.modal-content:after {
+    clear: both;
+    content: "";
+    display: block;
+}
 .modal-content {
     border-radius: 0;
     border-top: 17px solid #000;
