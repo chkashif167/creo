@@ -174,12 +174,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
   </div>
   </li><?php */ ?>
 
-<?php
-$hide_del = false;
-if(Mage::app()->getFrontController()->getRequest()->getModuleName() == 'onestepcheckout' || Mage::app()->getFrontController()->getRequest()->getModuleName() == 'ajax'){
-	$hide_del = true;
-	}
-?>
+
 <li class="product">
     <?php if ($this->hasProductUrl()): ?>
         <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft"><img src="<?php echo $this->getProductThumbnail()->resize(120, 140)->setWatermarkSize('30x10'); ?>" width="" height="" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></a>
@@ -295,7 +290,7 @@ if(Mage::app()->getFrontController()->getRequest()->getModuleName() == 'onestepc
         <?php if ($isVisibleProduct): ?>
 
             <?php if (!$this->isOnCheckoutPage()): ?>
-                <?php if($hide_del){
+                <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/onestepcheckout/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/ajaxDelete/') == false){
 					?><!--<a href="javascript:;" title="<?php echo $this->__('Remove This Item') ?>" class="cancel"> <?php echo $this->__('') ?> 
                     <i class="icon-cancel"></i>
                 </a>--><?php

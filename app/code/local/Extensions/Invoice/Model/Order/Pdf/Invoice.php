@@ -66,27 +66,30 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
             $this->insertOrder($page, $order, Mage::getStoreConfigFlag(self::XML_PATH_SALES_PDF_INVOICE_PUT_ORDER_ID, $order->getStoreId()));
  
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-//            $this->_setFontRegular($page);
-            $page->drawText(Mage::helper('sales')->__('Invoice # ') . $invoice->getIncrementId(), 35, 650, 'UTF-8');
+            $page->drawText(Mage::helper('sales')->__('Invoice # ') . $invoice->getIncrementId(), 35, 760, 'UTF-8');
  
-            /* Add table */
-            $page->setFillColor(new Zend_Pdf_Color_RGB(0.93, 0.92, 0.92));
-            $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
-            $page->setLineWidth(0.5);
- 
-            $page->drawRectangle(25, $this->y, 570, $this->y -15);
-            $this->y -=10;
  
             /* Add table head */
-            $page->setFillColor(new Zend_Pdf_Color_RGB(0.4, 0.4, 0.4));
-			$page->drawText(Mage::helper('sales')->__('Product Image'), 35, $this->y, 'UTF-8');
-            $page->drawText(Mage::helper('sales')->__('Product(s)'), 100, $this->y, 'UTF-8');
-			$page->drawText(Mage::helper('sales')->__('SKU'), 300, $this->y, 'UTF-8');
-            $page->drawText(Mage::helper('sales')->__('Price'), 380, $this->y, 'UTF-8');
-            $page->drawText(Mage::helper('sales')->__('Qty'), 450, $this->y, 'UTF-8');
-            $page->drawText(Mage::helper('sales')->__('Subtotal'), 535, $this->y, 'UTF-8');
+			$page->setFillColor(new Zend_Pdf_Color_Rgb(0,0,0)); // background color
+			$page->setLineWidth(0.5);
+			$page->drawRectangle(25,  $this->y, 100, $this->y-25);
+			$page->drawRectangle(100, $this->y, 250, $this->y-25);
+			$page->drawRectangle(250, $this->y, 350, $this->y-25);
+			$page->drawRectangle(350, $this->y, 450, $this->y-25);
+			$page->drawRectangle(450, $this->y, 500, $this->y-25);
+			$page->drawRectangle(500, $this->y, 570, $this->y-25);
+	
+			$this->y -= 15;
+			$this->_setFontBold($page, 12);
+			$page->setFillColor(new Zend_Pdf_Color_GrayScale(1)); // heading color
+			$page->drawText(Mage::helper('sales')->__('Image'), 35, $this->y, 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Product'), 110, $this->y , 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Sku'), 260, $this->y , 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Price'), 360, $this->y , 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Qty'), 460, $this->y , 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Sub Total'), 510, $this->y , 'UTF-8');
  
-            $this->y -=15;
+            $this->y -=25;
  
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
  
@@ -95,18 +98,22 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
                 if ($item->getOrderItem()->getParentItem()) {
                     continue;
                 }
- 
                 if ($this->y < 15) {
                     $page = $this->newPage(array('table_header' => true));
                 }
  
-                /* Draw item */
-                $page = $this->_drawItem($item, $page, $order);
-
 				/* Draw product image */
 				$productId = $item->getOrderItem()->getProductId();
 				$image = Mage::getModel('catalog/product')->load($productId);
-				$this->insertImage($image, 35, (int)($this->y + 15), 90, (int)($this->y+65), $width, $height, $page);
+				$this->insertImage($image, 30, (int)($this->y-50), 90, (int)($this->y+5), $width, $height, $page);
+                /* Draw item */
+                $page = $this->_drawItem($item, $page, $order);
+				$this->_setFontRegular($page, 8);
+				$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+				$this->y = $this->y - 40;
+				$page->drawLine(25, $this->y+15, 570, $this->y+15);
+				
+
             }
  
             /* Add totals */
@@ -116,8 +123,44 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
                 Mage::app()->getLocale()->revert();
             }
         }
-        $this->_afterGetPdf();
+
+
+		/* Start Barcode */
+		$dir_invoicebarcode = "invoicebarcode";
+ 		$barCodeNo = $invoice->getIncrementId(); //For Order Number add this: $order->getIncrementId()
+		
+		header('Content-Type: image/png');
+		$barcodeOptions = array('text' => $barCodeNo, 'barHeight'=> 30, 'factor'=>1,);
+		$rendererOptions = array();
+		$imageResource = Zend_Barcode::draw(
+		   'code39', 'image', $barcodeOptions, $rendererOptions
+		);
+		$upload_path = str_replace("\/","/",Mage::getBaseDir('media').DS.$dir_invoicebarcode.DS.$barCodeNo."_barcode.png");
+		chmod($upload_path,0777);
+		imagepng($imageResource,$upload_path, 0, NULL);
+		imagedestroy($imageResource);
+		
+		$barcode_image = $upload_path;
+		$barcode_x = 25;
+		$barcode_y = 830;
+		if (is_file($barcode_image)) {
+		   $barcode_image = Zend_Pdf_Image::imageWithPath($barcode_image);
+		   $page->drawImage($barcode_image, 15, $barcode_y-40, 200, $barcode_y);
+		}
+		/* End Barcode*/
  
+
+		// footer
+		$this->_setFontRegular($page, 8);
+		$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+		$page->drawLine(25, 10, 570, 10);
+		$page->drawText(Mage::helper('sales')->__('Thank you, Creo'), 510, 60, 'UTF-8');
+		$page->drawText(Mage::helper('sales')->__('Creo, +971 4 331 0717, 9:00am to 9:00pm, Rand Almaeeni, Grosvenor Business Tower, Office 1211 Dubai - United Arab Emirates'), 70, 17, 'UTF-8');
+		$this->_setFontRegular($page, 8);
+		$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+		$page->drawLine(25, 30, 570, 30);
+        $this->_afterGetPdf();
+
         return $pdf;
     }
  
@@ -148,5 +191,18 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
             $this->y -=20;
         }
         return $page;
+    }
+	protected function _drawFooter(Zend_Pdf_Page $page)
+	{
+//		/* Add table foot */
+//		$this->_setFontRegular($page, 8);
+//		$this->y -= 280;
+//		$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+//		$page->drawLine(25, 20, 570, 20);
+//		
+//		$page->drawText(Mage::helper('sales')->__('Creo, +971 4 331 0717, 9:00am to 9:00pm, Rand Almaeeni, Grosvenor Business Tower, Office 1211 Dubai'), 35, $this->y-65, 'UTF-8');
+//		$page->drawText(Mage::helper('sales')->__('United Arab Emirates'), 35, $this->y-105, 'UTF-8');		
+//	  	$page->drawLine(25, $this->y-120, 570, $this->y-120);
+  
     }
 }

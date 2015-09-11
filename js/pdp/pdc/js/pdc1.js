@@ -139,7 +139,7 @@ var pdc = PDC();
                 case 'flipY'    : active.flipY = active.flipY ? false : true; break;
                 case 'delete'   : canvas.remove(active); break;
                 case 'duplicate': this.copyObject(); break;
-                case 'color'    : if(active.type=='i-text'){ CanvasEvents.setStyle(active, 'fill', CanvasEvents.rgb2hex(value)); }else{ active.set('fill',CanvasEvents.rgb2hex(value)); }   break;
+                case 'color'    : if(active.type=='i-text'){ CanvasEvents.setStyle(active, 'fill', CanvasEvents.rgb2hex(value)); }else{ active.set('fill',CanvasEvents.rgb2hex(value)); } console.log("shani");  break;
                 case 'opacity'  :   active.set('opacity',value);    break; 
                 case 'move': 
                     var zoom = canvas.getZoom(),

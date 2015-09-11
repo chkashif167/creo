@@ -157,8 +157,8 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
             if (is_file($image)) {
                 $image       = Zend_Pdf_Image::imageWithPath($image);
                 $top         = 830; //top border of the page
-                $widthLimit  = 270; //half of the page width
-                $heightLimit = 270; //assuming the image is not a "skyscraper"
+                $widthLimit  = 70; //half of the page width
+                $heightLimit = 70; //assuming the image is not a "skyscraper"
                 $width       = $image->getPixelWidth();
                 $height      = $image->getPixelHeight();
 
@@ -177,7 +177,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
 
                 $y1 = $top - $height;
                 $y2 = $top;
-                $x1 = 25;
+                $x1 = 500;
                 $x2 = $x1 + $width;
 
                 //coordinates after transformation are rounded by Zend
@@ -279,8 +279,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
         $this->y = $this->y ? $this->y : 815;
         $top = $this->y;
 
-//        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $page->setFillColor(new Zend_Pdf_Color_Rgb(247,47,193));
+        $page->setFillColor(new Zend_Pdf_Color_GrayScale(1,1,1));
         $page->setLineColor(new Zend_Pdf_Color_GrayScale(0));
         $page->drawRectangle(25, $top, 570, $top - 55);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
@@ -292,6 +291,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
                 Mage::helper('sales')->__('Order # ') . $order->getRealOrderId(), 35, ($top -= 30), 'UTF-8'
             );
         }
+
         $page->drawText(
             Mage::helper('sales')->__('Order Date: ') . Mage::helper('core')->formatDate(
                 $order->getCreatedAtStoreDate(), 'medium', false
@@ -302,8 +302,8 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
         );
 
         $top -= 10;
-        $page->setFillColor(new Zend_Pdf_Color_Rgb(0.93, 0.92, 0.92));
-        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
+        $page->setFillColor(new Zend_Pdf_Color_Rgb(0,0,0));
+        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));// sold to and ship to headings border color
         $page->setLineWidth(0.5);
         $page->drawRectangle(25, $top, 275, ($top - 25));
         $page->drawRectangle(275, $top, 570, ($top - 25));
@@ -333,7 +333,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
             $shippingMethod  = $order->getShippingDescription();
         }
 
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+        $page->setFillColor(new Zend_Pdf_Color_GrayScale(1)); // sold to and ship to headings color  
         $this->_setFontBold($page, 12);
         $page->drawText(Mage::helper('sales')->__('Sold to:'), 35, ($top - 15), 'UTF-8');
 
@@ -348,9 +348,9 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
             $addressesHeight = max($addressesHeight, $this->_calcAddressHeight($shippingAddress));
         }
 
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
+        $page->setFillColor(new Zend_Pdf_Color_GrayScale(1)); // sold to and ship to details background color 
         $page->drawRectangle(25, ($top - 25), 570, $top - 33 - $addressesHeight);
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0)); // sold to and ship to details color 
         $this->_setFontRegular($page, 10);
         $this->y = $top - 40;
         $addressesStartY = $this->y;
@@ -388,16 +388,16 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
             $addressesEndY = min($addressesEndY, $this->y);
             $this->y = $addressesEndY;
 
-            $page->setFillColor(new Zend_Pdf_Color_Rgb(0.93, 0.92, 0.92));
+            $page->setFillColor(new Zend_Pdf_Color_Rgb(0,0,0)); // payment method and shipment method background color
             $page->setLineWidth(0.5);
             $page->drawRectangle(25, $this->y, 275, $this->y-25);
             $page->drawRectangle(275, $this->y, 570, $this->y-25);
 
             $this->y -= 15;
             $this->_setFontBold($page, 12);
-            $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+            $page->setFillColor(new Zend_Pdf_Color_GrayScale(1)); // payment method and shipment method heading color
             $page->drawText(Mage::helper('sales')->__('Payment Method'), 35, $this->y, 'UTF-8');
-            $page->drawText(Mage::helper('sales')->__('Shipping Method:'), 285, $this->y , 'UTF-8');
+            $page->drawText(Mage::helper('sales')->__('Shipping Method'), 285, $this->y , 'UTF-8');
 
             $this->y -=10;
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
@@ -791,7 +791,8 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
      */
     protected function _setFontRegular($object, $size = 7)
     {
-        $font = Zend_Pdf_Font::fontWithPath(Mage::getBaseDir() . '/lib/LinLibertineFont/LinLibertine_Re-4.4.1.ttf');
+        //$font = Zend_Pdf_Font::fontWithPath(Mage::getBaseDir() . '/lib/LinLibertineFont/LinLibertine_Re-4.4.1.ttf');
+		$font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);	
         $object->setFont($font, $size);
         return $font;
     }
@@ -805,7 +806,8 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
      */
     protected function _setFontBold($object, $size = 7)
     {
-        $font = Zend_Pdf_Font::fontWithPath(Mage::getBaseDir() . '/lib/LinLibertineFont/LinLibertine_Bd-2.8.1.ttf');
+        //$font = Zend_Pdf_Font::fontWithPath(Mage::getBaseDir() . '/lib/LinLibertineFont/LinLibertine_Bd-2.8.1.ttf');
+		$font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);	
         $object->setFont($font, $size);
         return $font;
     }
@@ -819,7 +821,8 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
      */
     protected function _setFontItalic($object, $size = 7)
     {
-        $font = Zend_Pdf_Font::fontWithPath(Mage::getBaseDir() . '/lib/LinLibertineFont/LinLibertine_It-2.8.2.ttf');
+        //$font = Zend_Pdf_Font::fontWithPath(Mage::getBaseDir() . '/lib/LinLibertineFont/LinLibertine_It-2.8.2.ttf');
+		$font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);	
         $object->setFont($font, $size);
         return $font;
     }
