@@ -24,26 +24,26 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
  
         // draw Product name
         $lines[0] = array(array(
-            'text' => Mage::helper('core/string')->str_split($item->getName(), 100, true, true),
-            'feed' => 100,
+            'text' => Mage::helper('core/string')->str_split($item->getName(), 30, true, true),
+            'feed' => 110,
         ));
 
         // draw SKU
         $lines[0][] = array(
             'text'  => Mage::helper('core/string')->str_split($this->getSku($item), 10),
-            'feed'  => 300
+            'feed'  => 260
         );
  
         // draw QTY
         $lines[0][] = array(
             'text'  => $item->getQty()*1,
-            'feed'  => 450
+            'feed'  => 460
         );
  
         // draw Price
         $lines[0][] = array(
             'text'  => $order->formatPriceTxt($item->getPrice()),
-            'feed'  => 420,
+            'feed'  => 410,
             'font'  => 'bold',
             'align' => 'right'
         );
@@ -51,11 +51,11 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
         // draw Subtotal
         $lines[0][] = array(
             'text'  => $order->formatPriceTxt($item->getRowTotal()),
-            'feed'  => 565,
+            'feed'  => 560,
             'font'  => 'bold',
             'align' => 'right'
         );
- 
+		
         // custom options
         $options = $this->getItemOptions();
         if ($options) {
