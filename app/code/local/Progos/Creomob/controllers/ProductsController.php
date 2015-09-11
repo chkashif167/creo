@@ -24,6 +24,16 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 $category_name = $category->getName();
                 $data['category_id'] = $categoryId;
                 $data['category_name'] = $category_name;
+                
+                $sub_categories = Mage::getModel('catalog/category')->getCategories($categoryId);
+
+                foreach ($sub_categories as $c) {
+                    $sc = Mage::getModel('catalog/category')->load($c->getId());
+                    $cat['id'] = $sc->getId();
+                    $cat['name'] = $sc->getName();
+                    $cat['img'] = $sc->getImageUrl();
+                    $data['sub_categories'][] = $cat;
+                }
 
                 $collection = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection();
             $collection->addAttributeToFilter("visibility",array("gt"=>1));
