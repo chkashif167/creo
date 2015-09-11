@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   <div class="faq-area bulk-area col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <form id="shipment_track_frm" class="bulk-order-form" action="" method="get" name="shipment_track_frm">
+    <form id="shipment_track_frm" class="bulk-order-form track-shipment-form" action="" method="get" name="shipment_track_frm">
       <div class="form-row">
         <div class="form-select-col">
           <label for="country">*Shipment</label>
@@ -15,18 +15,21 @@
             <option title="Fedex" value="fedex">Fedex</option>
           </select>
           </span></div>
-        <div class="form-select-col">
+        <div class="form-select-col second-child">
           <label for="city">*Tracking number</label>
           <input id="tracking_number" class="required-entry" type="text" placeholder="Please enter tracking number" name="tracking_number" />
         </div>
-      </div>
-      <div class="form-row">
-        <div class="form-textarea-col">
+        <div class="form-select-col third-child">
           <input type="button" value="SUBMIT" onclick="return loadIframe('ifrm');" />
         </div>
       </div>
-      <div class="form-row" id="iframdiv" style="display:none;">
-        <iframe name="ifrm" id="ifrm" src="" frameborder="0" width="1100" height="520" scrolling="no"></iframe>
+      <!-- <div class="form-row">
+        <div class="form-textarea-col">
+          <input type="button" value="SUBMIT" onclick="return loadIframe('ifrm');" />
+        </div>
+      </div> -->
+      <div class="" id="iframdiv" style="display:none;">
+        <iframe name="ifrm" id="ifrm" src="" frameborder="0" width="1100" height="520" scrolling="yes"></iframe>
       </div>
     </form>
   </div>

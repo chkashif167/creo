@@ -1181,3 +1181,7 @@
 .pdploading { background: none !important;}
 .pdploading span { background: none !important; }
 .pdploading span::after { background: none !important; }
+
+.customer-account-edit .scaffold-form .fieldset1 em {  color: red;  margin: 0 6px 0 0; }
+.customer-account-edit .scaffold-form label[for=email] em {  color: red;  margin: 0 6px 0 0; }
+.customer-address-form form select#country { bottom: 0; font-size: 14px; padding: 4px 0; margin: 0 0 6px 0;} 

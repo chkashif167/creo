@@ -235,11 +235,12 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
            // echo $select_array[$_item->getSku()];
             $options = $attribute->getSource()->getAllOptions(false);
             $txt = "";
+			if($select_array[$_item->getSku()]){
             foreach($options as $option)
             {
                 if(strtolower($select_array[$_item->getSku()]) == strtolower($option['label']))
                     {
-
+ 
                         //$txt [] = '<span style="color:red;">'.$option['label'].'</span>';
 								$txt [] = '<li class="active"><a href="#" >' .$option['label']. '</a></li>';
                     }else{
@@ -248,6 +249,9 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
                     }
                // echo $option['label'].",";
             }
+			}else{
+				echo "N/A";	
+			}
 
         }
         echo implode(' ',$txt);

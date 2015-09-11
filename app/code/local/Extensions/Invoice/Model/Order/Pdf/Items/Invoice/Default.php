@@ -24,7 +24,7 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
  
         // draw Product name
         $lines[0] = array(array(
-            'text' => Mage::helper('core/string')->str_split($item->getName(), 60, true, true),
+            'text' => Mage::helper('core/string')->str_split($item->getName(), 100, true, true),
             'feed' => 100,
         ));
 
