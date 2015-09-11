@@ -3284,14 +3284,13 @@ div.fme-filter dd li{overflow: visible !important;}
 .form-holder .btn-holder button:first-child:before { display: none; }
 .form-holder .btn-holder button:hover:before { border-color: transparent transparent #000; }
 .form-holder .btn-holder button:hover {
-    opacity: 0.8;
     background: #000;
     color: #fff;
     border-color: #000;
     text-decoration: none;
 }
 .form-holder .btn-holder button:first-child {
-    margin: 0 2px 0 0;
+    margin: 0 -6px 0 0;
     color: #000;
     background: #fff;
     border-width: 0 0 0 2px;
@@ -3299,7 +3298,7 @@ div.fme-filter dd li{overflow: visible !important;}
     border-color: #959595;
     overflow: hidden;
     padding: 0;
-    width: 68%;
+    width: 50%;
 }
 .form-holder .btn-holder button:first-child .span1 {
     transform: skewX(-25deg);
@@ -3343,7 +3342,7 @@ div.fme-filter dd li{overflow: visible !important;}
     position: relative;
     font:bold 12px/16px Arial, Helvetica, sans-serif;
     white-space: nowrap;
-    width: 30%;
+    width: 50%;
 }
 .form-holder .submit-holder button:before {
     position: absolute;
@@ -3358,7 +3357,6 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .form-holder .submit-holder button:hover:before { border-color: transparent transparent #000; }
 .form-holder .submit-holder button:hover {
-    opacity: 0.8;
     background: #000;
     color: #fff;
     border-color: #000;
@@ -4993,7 +4991,8 @@ textarea {
 .buttons-set .back-link {display: none;}
 .buttons-set.buttons-set2{display: none;}
 .item-manage .options-area .column {width: 40%;}
-
+.fb_button .icon-facebook {font-size: 13px;}
+.fb_button{text-transform: uppercase;}
 
 
 @media only screen and (max-width: 1199px) {
