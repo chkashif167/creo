@@ -84,7 +84,7 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
             'lines'  => $lines,
             'height' => 10
         );
- 
+		
         $page = $pdf->drawLineBlocks($page, array($lineBlock), array('table_header' => true));
         $this->setPage($page);
  
