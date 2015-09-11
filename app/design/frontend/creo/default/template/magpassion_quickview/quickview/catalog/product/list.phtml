@@ -60,7 +60,11 @@ $_helper = $this->helper('catalog/output');
             <?php if ($this->helper('wishlist')->isAllow()) : ?>
                                     <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
                                 <?php endif; ?>
-                                <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')"><i class="icon-basket" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a> 
+                                <?php if($_product->isConfigurable()): ?>
+                                <a href="javascript:;" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><i class="icon-basket" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a> 
+                                <?php else:?>
+                                 <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')"><i class="icon-basket" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a> 
+                                 <?php endif;?>
                             </div>
 
                             <div class="description">
@@ -135,7 +139,13 @@ $_helper = $this->helper('catalog/output');
                                 <?php //if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped())) { ?>
                                     <!--<a href="javascript:;" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>', '<?php echo $_product->getId() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>-->
                                 <?php //} else { ?>
+                                
+                                	<?php if($_product->isConfigurable()){ ?>
+                                <a href="javascript:;" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a> 
+                                <?php }else{?>
+                                
                                     <a href="javascript:;" class="btn-cart" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>
+                                    <?php } ?>
                                 <?php //} ?>
 
                             </div>
