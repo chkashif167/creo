@@ -48,7 +48,9 @@ jQuery(document).ready(function () {
 jQuery(function () {
     initOpenClose();
     initCarousel();
-    initTabs();
+    if(is_product_details_page){
+		initTabs();
+	}
 });
 
 // open-close init
@@ -2497,7 +2499,7 @@ function designYourOwnPopupValidation()
 
         if (jQuery('.options-area .product-options').find('select:first').val().length > 0) {
             return true;
-        }
+        }else{
         jQuery.alert({
             title: 'Alert!',
             content: "Please choose size first.",
@@ -2505,6 +2507,8 @@ function designYourOwnPopupValidation()
              alert('Confirmed!'); 
              }*/
         });
+		return false;
+		}
 
     }
 }
