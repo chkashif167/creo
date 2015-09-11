@@ -844,10 +844,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
         else
           $confirmation = $this->getConfirmation();
     //To match passwords in both Create account and Checkout register pages end
-        $confirmation = $this->getConfirmation();
-        if ($password != $confirmation) {
-            $errors[] = Mage::helper('customer')->__('Please make sure your passwords match.');
-        }
+        
 
         $entityType = Mage::getSingleton('eav/config')->getEntityType('customer');
         $attribute = Mage::getModel('customer/attribute')->loadByCode($entityType, 'dob');
