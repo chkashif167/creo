@@ -158,14 +158,19 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         die;
     }
     
-    protected function addProduct($sessionId,$quoteId,$productId,$qty){
+    protected function addProduct($sessionId,$quoteId,$productId,$qty,$custom_options){
         
         $proxy = new SoapClient($this->soapURLv2);
-        
+        $options=array();
+        foreach ($custom_options as $key=>$val){
+            if($val!=''){
+                $options[] = array('key'=>$key,'value'=>$val);
+            }
+        }
         return $proxy->shoppingCartProductAdd($sessionId, $quoteId, array(array(
             'product_id' => $productId,
             'qty' => $qty,
-            'options' => null,
+            'options' => $options,
             'bundle_option' => null,
             'bundle_option_qty' => null,
             'links' => null
@@ -177,8 +182,12 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         $sessionId = $this->getRequest()->getParam('sid');
         $quoteId = $this->getRequest()->getParam('qid');
         
-        $productId = $this->getRequest()->getParam('pid');
-        $qty = $this->getRequest()->getParam('qty');
+        $product = json_decode(file_get_contents("php://input"));
+//        $productId = $this->getRequest()->getParam('pid');
+//        $qty = $this->getRequest()->getParam('qty');
+        $productId = $product->product_id;
+        $qty = $product->qty;
+        $custom_options = $product->custom_options;
         
         if(!$qty){
             $qty = 1;
@@ -187,7 +196,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         $response = array('success'=>0,'message'=>'','res'=>null);
         
         try{
-            $res = $this->addProduct($sessionId,$quoteId,$productId,$qty);
+            $res = $this->addProduct($sessionId,$quoteId,$productId,$qty,$custom_options);
             $response['success'] = 1;
             $response['message'] = 'Product added successfully';
             $response['res'] = $res;
