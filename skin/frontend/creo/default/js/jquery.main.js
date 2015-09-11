@@ -48,7 +48,9 @@ jQuery(document).ready(function () {
 jQuery(function () {
     initOpenClose();
     initCarousel();
-    initTabs();
+    if(is_product_details_page){
+		initTabs();
+	}
 });
 
 // open-close init
