@@ -279,7 +279,9 @@
                                 jQuery('.fme_loading_filters').hide();
                                         //alert(data.status + ": " + data.message);
                                         if (jQuery('#header-cart')) {
-                                jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+                                
+								if(data.status != "ERROR"){
+								jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -294,6 +296,7 @@
                                         jQuery('#ajaxModalContent').html(data.message);
                                         jQuery('.ajaxAddToCartModal').modal('show');
                                 
+										}
 								}
                         });
                         } catch (e) {

@@ -30,7 +30,7 @@
   <div class="column-content"> 
   <span class="author"><?php echo $this->escapeHtml($this->getCustomer()->getName()) ?></span> 
   <span class="email"><?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?></span> 
-  <a class="edit" href="<?php echo $this->getChangePasswordUrl() ?>">Change Password</a> <a href="<?php echo $this->getUrl('customer/account/edit') ?>" class="edit-icon"><i class="icon-pencil"></i></a> 
+  <a class="edit" href="<?php echo $this->getChangePasswordUrl() ?>">Change Password</a> <a href="<?php echo $this->getUrl('customer/account/edit') ?>" class="edit-icon"><i class="icon-pencil"></i> Edit </a> 
   </div>
 </div>
 
@@ -42,7 +42,7 @@
           <?php else: ?>
           <?php echo $this->__('You are currently not subscribed to any newsletter.') ?>
           <?php endif; ?></p>
-    <a href="<?php echo $this->getUrl('newsletter/manage') ?>" class="edit-icon"><i class="icon-pencil"></i></a> </div>
+    <a href="<?php echo $this->getUrl('newsletter/manage') ?>" class="edit-icon"><i class="icon-pencil"></i> Edit </a> </div>
 </div>
   <?php if( $this->isNewsletterEnabled() ): ?>
  <?php echo $this->getChildHtml('customer.account.dashboard.info.extra')?> 
