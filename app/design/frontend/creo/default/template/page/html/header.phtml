@@ -28,7 +28,16 @@
  */
 ?>
 
-
+<script>
+var is_product_details_page = false;
+<?php
+if(Mage::registry('current_product')) {
+    ?>
+	is_product_details_page = true;
+	<?php
+}
+?>
+</script>
 <header id="header" class="row">
     <div class="col col-static col-lg-7 col-md-7 col-sm-8 col-xs-8">
 
