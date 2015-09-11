@@ -2033,7 +2033,7 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .options-area .column li{
     float: left;
-    margin: 0 2px 3px 0;
+    margin: 0 3px 3px 0;
 }
 .options-area .column.color-area a{
     display: block;
@@ -2931,7 +2931,7 @@ div.fme-filter dd li{overflow: visible !important;}
     border-width: 0 1px 2px;
     border-style: solid;
     border-color: #d7d7d7 #eee;
-    min-height:118px;
+    min-height:155px;
 }
 .tab-content2 h3{
     margin: 0 0 4px;
@@ -2945,7 +2945,7 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .tab-content2 .title{
     display: block;
-    margin: 0 0 15px;
+    margin: 0 0 5px;
     padding: 0 18px;
     color: #000;
     font:12px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
@@ -2965,6 +2965,7 @@ div.fme-filter dd li{overflow: visible !important;}
     border-width: 0 1px 2px;
     border-style: solid;
     border-color: #d7d7d7 #eee;
+    min-height: 155px;
 }
 .tab-content2 .bottom-area{
     text-align: center;
@@ -4935,12 +4936,63 @@ textarea {
     display: block;
     overflow: auto;
 }
-
-
-
-
-
-
+.options-area .column li {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #aaa;
+    color: #333;
+    opacity: 1;
+    overflow: hidden;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+.options-area .column li.active {
+    box-shadow: 1px 1px 5px #444 inset;
+}
+.options-area .column li img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.options-area .column.size-area li {border-radius: 0;}
+.product-details .wishlist-sku, .product-details .description {
+    font-size: 11px;
+    margin: 0 0 5px;
+    padding: 0 18px;
+}
+.item-manage .btn-update-whishlist {
+    background: #000 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    margin: 0 18px 8px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    display: none;
+}
+.item-manage .btn-update-whishlist:hover{background: #f16167;}
+.tab-content2 .product-area{position: relative;}
+.product-area .cancel {
+    color: #ddd;
+    font-size: 16px;
+    position: absolute;
+    right: 340px;
+    top: 30px;
+}
+.product-area .edit {
+    color: #ddd;
+    font-size: 14px;
+    position: absolute;
+    right: 340px;
+    top: 52px;
+}
+.product-area .edit:hover,
+.product-area .cancel:hover{color: #222;}
+.buttons-set .back-link {display: none;}
+.buttons-set.buttons-set2{display: none;}
+.item-manage .options-area .column {width: 40%;}
 
 
 
