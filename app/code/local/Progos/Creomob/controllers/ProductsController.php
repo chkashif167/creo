@@ -106,6 +106,24 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
         $currency_symbol = Mage::app()->getLocale()->currency($currency_code)->getSymbol();
         
+        $custom_options = array();
+        
+        //Get product Options
+        $options = $product->getOptions();
+        if($options)
+        {
+
+            foreach ($options as $option) {
+
+                $options_array['option_id'] = $option->getOptionId();
+                $options_array['default_title'] = $option->getDefaultTitle();
+                foreach ($option->getValues() as  $values) {
+                    $options_array['values'][] = $values->getData();
+                }
+                $custom_options[] = $options_array;
+            }
+        }
+
         $image = (string)Mage::helper('catalog/image')->init($product,'small_image');//->resize(600,600);
 
         $prod['id'] = $product->getId();
@@ -124,6 +142,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $prod['size_options'] = $size_options;
         $prod['currency'] = $currency_code;
         $prod['currency_symbol'] = $currency_symbol;
+        $prod['custom_options'] = $custom_options;
 
 
         //handle simple/configurable product
