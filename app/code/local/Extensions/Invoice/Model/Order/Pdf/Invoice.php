@@ -16,16 +16,22 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			try{
 				$width = (int) $width;
 				$height = (int) $height;
+	 			$imageurl = 	$image->getImageUrl();
+				
+//				echo "<pre>";
+//				print_r($image->getData());
+//				echo "<pre>";
+//				exit;
 
 				//Get product image and resize it
-				$imagePath = Mage::helper('catalog/image')->init($image, 'image')
-					->keepAspectRatio(true)
-					->keepFrame(false)
-					->resize($width, $height)
-					->__toString();
-
-				$imageLocation = substr($imagePath,strlen(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)));
+//				$imagePath = Mage::helper('catalog/image')->init($image, 'image')
+//					->keepAspectRatio(true)
+//					->keepFrame(false)
+//					->resize($width, $height)
+//					->__toString();
+				$imageLocation = substr($imageurl,strlen(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)));
 				$image = Zend_Pdf_Image::imageWithPath($imageLocation);
+
 				//Draw image to PDF
 				$page->drawImage($image, $x1, $y1, $x2, $y2);
 			}
