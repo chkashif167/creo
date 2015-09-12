@@ -141,6 +141,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $prod['name'] = $product->getName();
         $prod['img'] = $image;
         $prod['img2'] = $product->getImageUrl();
+        $prod['description'] = $product->getDescription();
+        $prod['product_care'] = $product->getDesign();
         $prod['price'] = $product->getPrice();
         $prod['status'] = $product->getStatus();
         $prod['stock_qty'] = (int) $stock->getQty();
