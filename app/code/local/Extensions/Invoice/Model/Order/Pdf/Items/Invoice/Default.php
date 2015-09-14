@@ -28,12 +28,6 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
             'feed' => 110,
         ));
 
-        // draw SKU
-        $lines[0][] = array(
-            'text'  => Mage::helper('core/string')->str_split($this->getSku($item), 10),
-            'feed'  => 260
-        );
- 
         // draw QTY
         $lines[0][] = array(
             'text'  => $item->getQty()*1,
@@ -82,7 +76,7 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
  
         $lineBlock = array(
             'lines'  => $lines,
-            'height' => 10
+            'height' => 12
         );
 		
         $page = $pdf->drawLineBlocks($page, array($lineBlock), array('table_header' => true));
