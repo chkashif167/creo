@@ -1131,7 +1131,6 @@
 .has-swatches.swatch-type-label { padding: 0;}
 .catalog-product-view #fancybox-link { display: none !important;}
 
-.catalog-product-view .product-detail { z-index: 1;}
 .products-grid { z-index: 9; position: relative;}
 #product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}
 #product-options-wrapper { float: left; width: 75%;}
