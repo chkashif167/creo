@@ -1184,3 +1184,7 @@
 .customer-account-edit .scaffold-form label[for=email] em {  color: red;  margin: 0 6px 0 0; }
 .customer-address-form form select#country { bottom: 0; font-size: 14px; padding: 4px 0; margin: 0 0 6px 0;} 
 .upload_photo_btn.fb_photo_btn { display: none;}
+/*#fme_filters_list #fme_layered_gender { display:inline-block !important;}
+#fme_filters_list #styles_label { display: inline-block !important;}
+#fme_filters_list #fme_layered_styles { display:block !important;} 
+#fme_filters_list #fme_layered_clear_all_btn { display:inline-block !important;}*/
