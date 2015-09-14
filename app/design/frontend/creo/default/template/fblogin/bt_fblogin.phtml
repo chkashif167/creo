@@ -4,7 +4,7 @@
     <div id="bt-loginfb">
          <?php if(!$user || !$user['email']){?>
             <a class="fb_button fb_button_medium" onclick="login();return false;" href="#">
-                <span class="fb_button_text"><?php echo $this->__('Sign up with Facebook') ?></span>
+                <i class="icon-facebook">&nbsp;</i> <span class="fb_button_text"><?php echo $this->__('Sign up with Facebook') ?></span>
             </a>
         <?php }else{?>
             <a class="fb_button fb_button_medium" onclick="window.location.href = '<?php echo $this->getFbloginUrl() ?>';">

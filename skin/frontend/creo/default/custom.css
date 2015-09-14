@@ -1131,7 +1131,6 @@
 .has-swatches.swatch-type-label { padding: 0;}
 .catalog-product-view #fancybox-link { display: none !important;}
 
-.catalog-product-view .product-detail { z-index: 1;}
 .products-grid { z-index: 9; position: relative;}
 #product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}
 #product-options-wrapper { float: left; width: 75%;}
@@ -1142,7 +1141,6 @@
     border: 0px solid #fff !important;
     box-shadow: 0 0 0px #ccc !important;}
 .catalog-product-view li.product-image-thumbs { margin-right: 1px !important;}
-.modal-backdrop.fade.in { z-index: -99;}
 .categorypath-clothing-women-tshirt-html #fme_filters_list #styles_label { display:inline-block !important;}
 .categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}
 .previousnext { display: none;}

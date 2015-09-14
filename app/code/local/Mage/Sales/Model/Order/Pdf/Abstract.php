@@ -177,7 +177,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
 
                 $y1 = $top - $height;
                 $y2 = $top;
-                $x1 = 500;
+                $x1 = 25;
                 $x2 = $x1 + $width;
 
                 //coordinates after transformation are rounded by Zend
@@ -279,16 +279,16 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
         $this->y = $this->y ? $this->y : 815;
         $top = $this->y;
 
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(1,1,1));
-        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0));
-        $page->drawRectangle(25, $top, 570, $top - 55);
+//        $page->setFillColor(new Zend_Pdf_Color_GrayScale(1,1,1));
+//        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0));
+//        $page->drawRectangle(25, $top, 570, $top - 55);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
         $this->setDocHeaderCoordinates(array(25, $top, 570, $top - 55));
         $this->_setFontRegular($page, 10);
 
         if ($putOrderId) {
             $page->drawText(
-                Mage::helper('sales')->__('Order # ') . $order->getRealOrderId(), 35, ($top -= 30), 'UTF-8'
+                Mage::helper('sales')->__('Order # ') . $order->getRealOrderId(), 450, 805, 'UTF-8'
             );
         }
 
@@ -296,8 +296,8 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
             Mage::helper('sales')->__('Order Date: ') . Mage::helper('core')->formatDate(
                 $order->getCreatedAtStoreDate(), 'medium', false
             ),
-            35,
-            ($top -= 15),
+            450,
+            790,
             'UTF-8'
         );
 

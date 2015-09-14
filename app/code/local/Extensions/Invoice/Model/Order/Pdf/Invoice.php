@@ -16,12 +16,17 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			try{
 				$width = (int) $width;
 				$height = (int) $height;
-	 			$imageurl = 	$image->getImageUrl();
-				
-//				echo "<pre>";
-//				print_r($image->getData());
-//				echo "<pre>";
-//				exit;
+//echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+
+  $imageurl = Mage::helper('catalog/image')->init($image, 'small_image');
+//echo $imageurl .  "here2";
+//				
+//echo "<br />";
+//echo "<pre>";
+//print_r($image->getData());
+//echo "</pre>";
+//
+//exit;
 
 				//Get product image and resize it
 //				$imagePath = Mage::helper('catalog/image')->init($image, 'image')
@@ -29,8 +34,12 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 //					->keepFrame(false)
 //					->resize($width, $height)
 //					->__toString();
-				$imageLocation = substr($imageurl,strlen(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)));
+ 				$imageLocation = substr($imageurl,strlen(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)));
+				//echo $imageLocation."here3";
 				$image = Zend_Pdf_Image::imageWithPath($imageLocation);
+				//echo $image . "here4";
+
+
 
 				//Draw image to PDF
 				$page->drawImage($image, $x1, $y1, $x2, $y2);
@@ -72,15 +81,14 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
             $this->insertOrder($page, $order, Mage::getStoreConfigFlag(self::XML_PATH_SALES_PDF_INVOICE_PUT_ORDER_ID, $order->getStoreId()));
  
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-            $page->drawText(Mage::helper('sales')->__('Invoice # ') . $invoice->getIncrementId(), 35, 760, 'UTF-8');
+            $page->drawText(Mage::helper('sales')->__('Invoice # ') . $invoice->getIncrementId(), 450, 820, 'UTF-8');
  
  
             /* Add table head */
 			$page->setFillColor(new Zend_Pdf_Color_Rgb(0,0,0)); // background color
 			$page->setLineWidth(0.5);
 			$page->drawRectangle(25,  $this->y, 100, $this->y-25);
-			$page->drawRectangle(100, $this->y, 250, $this->y-25);
-			$page->drawRectangle(250, $this->y, 350, $this->y-25);
+			$page->drawRectangle(100, $this->y, 350, $this->y-25);
 			$page->drawRectangle(350, $this->y, 450, $this->y-25);
 			$page->drawRectangle(450, $this->y, 500, $this->y-25);
 			$page->drawRectangle(500, $this->y, 570, $this->y-25);
@@ -90,7 +98,6 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$page->setFillColor(new Zend_Pdf_Color_GrayScale(1)); // heading color
 			$page->drawText(Mage::helper('sales')->__('Image'), 35, $this->y, 'UTF-8');
 			$page->drawText(Mage::helper('sales')->__('Product'), 110, $this->y , 'UTF-8');
-			$page->drawText(Mage::helper('sales')->__('Sku'), 260, $this->y , 'UTF-8');
 			$page->drawText(Mage::helper('sales')->__('Price'), 360, $this->y , 'UTF-8');
 			$page->drawText(Mage::helper('sales')->__('Qty'), 460, $this->y , 'UTF-8');
 			$page->drawText(Mage::helper('sales')->__('Sub Total'), 510, $this->y , 'UTF-8');
@@ -104,22 +111,48 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
                 if ($item->getOrderItem()->getParentItem()) {
                     continue;
                 }
-                if ($this->y < 15) {
+                if ($this-> y < 15) {
                     $page = $this->newPage(array('table_header' => true));
                 }
  
 				/* Draw product image */
 				$productId = $item->getOrderItem()->getProductId();
+				$productSku = $item->getOrderItem()->getSku();
 				$image = Mage::getModel('catalog/product')->load($productId);
 				$this->insertImage($image, 30, (int)($this->y-50), 90, (int)($this->y+5), $width, $height, $page);
+
+
+
                 /* Draw item */
                 $page = $this->_drawItem($item, $page, $order);
 				$this->_setFontRegular($page, 8);
 				$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-				$this->y = $this->y - 40;
+				$this->y = $this->y - 60;
 				$page->drawLine(25, $this->y+15, 570, $this->y+15);
 				
 
+				/* Start Barcode */
+				$dir_invoicebarcode = "invoicebarcode";
+				$barCodeNo = $productSku; //For Order Number add this: $order->getIncrementId()
+				
+				header('Content-Type: image/png');
+				$barcodeOptions = array('text' => $barCodeNo, 'barHeight'=> 1, 'factor'=>1,'drawText' => false);
+				$rendererOptions = array();
+				$imageResource = Zend_Barcode::draw(
+				   'code128', 'image', $barcodeOptions, $rendererOptions
+				);
+				$upload_path = str_replace("\/","/",Mage::getBaseDir('media').DS.$dir_invoicebarcode.DS.$barCodeNo."_barcode.png");
+				chmod($upload_path,0777);
+				imagepng($imageResource,$upload_path, 0, NULL);
+				imagedestroy($imageResource);
+				
+				$barcode_image = $upload_path;
+				$barcode_y = $this-> y + 43;
+				if (is_file($barcode_image)) {
+				   $barcode_image = Zend_Pdf_Image::imageWithPath($barcode_image);
+				   $page->drawImage($barcode_image, 100, $barcode_y-20, 350, $barcode_y);
+				}
+				/*End Barcode*/
             }
  
             /* Add totals */
@@ -131,29 +164,6 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
         }
 
 
-		/* Start Barcode */
-		$dir_invoicebarcode = "invoicebarcode";
- 		$barCodeNo = $invoice->getIncrementId(); //For Order Number add this: $order->getIncrementId()
-		
-		header('Content-Type: image/png');
-		$barcodeOptions = array('text' => $barCodeNo, 'barHeight'=> 30, 'factor'=>1,);
-		$rendererOptions = array();
-		$imageResource = Zend_Barcode::draw(
-		   'code39', 'image', $barcodeOptions, $rendererOptions
-		);
-		$upload_path = str_replace("\/","/",Mage::getBaseDir('media').DS.$dir_invoicebarcode.DS.$barCodeNo."_barcode.png");
-		chmod($upload_path,0777);
-		imagepng($imageResource,$upload_path, 0, NULL);
-		imagedestroy($imageResource);
-		
-		$barcode_image = $upload_path;
-		$barcode_x = 25;
-		$barcode_y = 830;
-		if (is_file($barcode_image)) {
-		   $barcode_image = Zend_Pdf_Image::imageWithPath($barcode_image);
-		   $page->drawImage($barcode_image, 15, $barcode_y-40, 200, $barcode_y);
-		}
-		/* End Barcode*/
  
 
 		// footer
@@ -186,7 +196,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
             $this->y -=10;
  
             $page->setFillColor(new Zend_Pdf_Color_RGB(0.4, 0.4, 0.4));
-			$page->drawText(Mage::helper('sales')->__('Product Image'), 35, $this->y, 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Image'), 35, $this->y, 'UTF-8');
             $page->drawText(Mage::helper('sales')->__('Product'), 100, $this->y, 'UTF-8');
             $page->drawText(Mage::helper('sales')->__('SKU'), 325, $this->y, 'UTF-8');
             $page->drawText(Mage::helper('sales')->__('Price'), 380, $this->y, 'UTF-8');
