@@ -401,7 +401,7 @@ p.style1 {
 #header {
     margin-bottom: 26px;
     position: relative;
-    z-index: 22;
+    z-index: 9999;
 }
 #header:before {
     display: block;
