@@ -11,7 +11,7 @@ foreach ($category->getParentCategories() as $parent) {
 }
 $clothingCat = $names[0];
 //do what you need with `$names` array
-//if(strcmp($clothingCat,"Clothing")!= 0) {
+if(strcmp($clothingCat,"Clothing")!= 0) {
 $obj = new Mage_Catalog_Block_Navigation();
 $store_cats = $obj->getStoreCategories();
 $current_cat    = $obj->getCurrentCategory();
@@ -44,4 +44,4 @@ foreach ($subcategories as $cat) {
 </ul>
 </nav>
 
-<?php //} ?>
+<?php } ?>
