@@ -136,7 +136,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 				$barCodeNo = $productSku; //For Order Number add this: $order->getIncrementId()
 				
 				header('Content-Type: image/png');
-				$barcodeOptions = array('text' => $barCodeNo, 'barHeight'=> 5, 'factor'=>1,'drawText' => false);
+				$barcodeOptions = array('text' => $barCodeNo, 'barHeight'=> 1, 'factor'=>1,'drawText' => false);
 				$rendererOptions = array();
 				$imageResource = Zend_Barcode::draw(
 				   'code128', 'image', $barcodeOptions, $rendererOptions
@@ -147,10 +147,10 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 				imagedestroy($imageResource);
 				
 				$barcode_image = $upload_path;
-				$barcode_y = $this-> y + 40;
+				$barcode_y = $this-> y + 43;
 				if (is_file($barcode_image)) {
 				   $barcode_image = Zend_Pdf_Image::imageWithPath($barcode_image);
-				   $page->drawImage($barcode_image, 100, $barcode_y-10, 450, $barcode_y);
+				   $page->drawImage($barcode_image, 100, $barcode_y-20, 350, $barcode_y);
 				}
 				/*End Barcode*/
             }
