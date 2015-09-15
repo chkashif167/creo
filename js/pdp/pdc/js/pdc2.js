@@ -63,6 +63,8 @@ var m = $('#url_site').val().replace('index.php/',''),
         }
     });
     $('[pdc-color]').click(function(){
+        jQuery('.fme_loading_filters').show();
+        jQuery('.canvas-container').css('opacity','0');
         if(!$(this).hasClass('active')){
             $('.active[pdc-color]').removeClass('active');
             $(this).addClass('active');
@@ -81,6 +83,8 @@ var m = $('#url_site').val().replace('index.php/',''),
             //Set overlay image
             canvas.setOverlayImage($("#pdp_media_url").val() + $(".pdp_side_item_content.active").attr("overlay"), function(img){
                 canvas.renderAll();
+                jQuery('.canvas-container').css('opacity','1');
+                jQuery('.fme_loading_filters').hide();
             });
             //Check active side using image or color for background
             var backgroundType = $(".pdp_side_item_content.active").attr("background_type");
