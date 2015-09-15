@@ -66,6 +66,8 @@
                             </div>
                         </li>
                         <?php echo $this->getChildHtml('form.additional.info'); ?>
+   <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+
                     </ul>
                     <p class="required"><?php echo $this->__('* Required Fields') ?></p>
                 </div>
