@@ -401,7 +401,7 @@ p.style1 {
 #header {
     margin-bottom: 26px;
     position: relative;
-    z-index: 22;
+    z-index: 9999;
 }
 #header:before {
     display: block;
@@ -504,7 +504,7 @@ p.style1 {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 0 20px 130px;
+    border-width: 0 0 13px 82px;
     border-color: transparent transparent #fff;
     content: '';
 }
@@ -1395,7 +1395,9 @@ input[type="submit"]:hover {
     padding-left: 0px !important;
     padding-right: 0px !important;
     overflow-y: scroll;
+    z-index: 99999;
 }
+.modal-backdrop{z-index: 9999;}
 .breadcrumb1 ul {
     margin: 0;
     padding: 10px 0;
@@ -5056,7 +5058,6 @@ textarea {
 @media only screen and (max-width: 991px) {
     #wrapper > .container{padding: 0 15px;}
     .small-header #nav ol{padding: 2px 0 0;}
-    #header .cart:before { border-width: 0 0 15px 105px; }
     #nav ol { font: 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; }
     #nav ol > li { margin: 0 2px 0 0; }
     #nav ol > li > a { padding: 5px 8px; }

@@ -45,7 +45,7 @@ if(Mage::registry('current_product')) {
             <strong class="logo">
                 <a href="<?php echo Mage::getBaseUrl(); ?>">
                     <?php /* ?><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-                      <?php */ ?>            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+                      <?php */ ?> <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
                 </a>
 
             </strong>
@@ -96,7 +96,8 @@ if(Mage::registry('current_product')) {
             <?php echo $this->getChildHtml('currency_switcher') ?>
             <?php $islogedin = Mage::getSingleton('customer/session')->isLoggedIn() ?>
             <?php if (!$islogedin): ?>
-                <a class="headerLogin" data-target=".bs-example-modal-sm" data-toggle="modal" href="#">LOGIN</a>
+                <!--<a class="headerLogin" data-target=".bs-example-modal-sm" data-toggle="modal" href="#">LOGIN</a>-->
+                <a class="headerLogin" href="<?php echo Mage::getBaseUrl(); ?>/customer/account/login/">LOGIN</a>
             <?php else: ?>
                 <div class="open-close login-area">
                     <!--<a href="#" class="opener"  data-target=".bs-example-modal-md" data-toggle="modal"> NL </a>-->
