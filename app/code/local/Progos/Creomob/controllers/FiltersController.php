@@ -11,7 +11,7 @@ class Progos_Creomob_FiltersController extends Mage_Core_Controller_Front_Action
                         ->getCollection()
                         ->addAttributeToSelect('*')
                         ->addIsActiveFilter()
-                        ->addLevelFilter(3)
+//                        ->addLevelFilter(3)
                         ->addAttributeToFilter('level', array('gt' => 1))
                         ->addAttributeToFilter('is_active', '1')
                         ->addAttributeToFilter('include_in_menu', '1')
@@ -109,6 +109,13 @@ class Progos_Creomob_FiltersController extends Mage_Core_Controller_Front_Action
             $attrs['gender'][] = $attributeOption;
         }
         
+        $attributeCode = "styles";
+        $attributeOptions = $this->getAttribute($attributeCode);
+        foreach ($attributeOptions AS $attributeOption) {
+            //$attrs['gender'][] = array('code'=>$attributeOption['value'],'label'=>$attributeOption['label']);
+            $attrs['styles'][] = $attributeOption;
+        }
+            
         $data['attrs'] = $attrs;
         
         header("Content-Type: application/json");
