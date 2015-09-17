@@ -5011,8 +5011,8 @@ textarea {
 }
 .ajaxlogin-window .f-left.ajaxlogin-forgot{clear: both;}
 #ajaxlogin-login-window .modal-holder {padding: 20px 0 0;}
-
-
+.modal {z-index: 999999;}
+.modal-backdrop {z-index: 99999;}
 
 
 
