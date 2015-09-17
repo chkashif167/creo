@@ -144,9 +144,9 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             
             $category_filters = $filters['category'];
             $category_filters_ids = array();
-            if($categoryId){
-                $category_filters_ids[]=$categoryId;
-            }
+//            if($categoryId){
+//                $category_filters_ids[]=$categoryId;
+//            }
             foreach ($category_filters as $sub_category) {
                 if (is_array($sub_category)) {
                     foreach ($sub_category as $key => $val) {
