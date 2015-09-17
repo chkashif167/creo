@@ -195,7 +195,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 }
             }
             
-            $collection = Mage::getModel('catalog/product')->getCollection();
+//            $collection = Mage::getModel('catalog/product')->getCollection();
             
 
             if (!empty($category_filters_ids)) {
