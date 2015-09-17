@@ -1635,6 +1635,8 @@ function centerModals() {
         $j(this).find('.modal-content').css("margin-top", top);
     });
 }
+
+var newsletter_popup_called = false;
 $j('.modal').on('show.bs.modal', centerModals);
 $j(window).on('resize, load, ready', centerModals);
 $j(window).load(function () {
@@ -1650,9 +1652,14 @@ function checkNewsletterCookie() {
     //console.log("here");
     var seeit = getCookie("newsletter");
     //console.log(seeit);
-    if (seeit == 'undefined' || seeit == "") {
+    if (seeit == 'undefined' || seeiit == "") {
+        console.log("triggered 1");
         //console.log("here1");
-        $j('.modal_newsletter').modal('show');
+        if(newsletter_popup_called == false) {//do not allow multiple calls if popup is already shown
+	    console.log("triggered 1.1");
+            $j('.modal_newsletter').modal('show');
+            newsletter_popup_called = true;
+	}
     } else {
         //console.log("here2");
         $j('.modal_newsletter').modal('hide');
