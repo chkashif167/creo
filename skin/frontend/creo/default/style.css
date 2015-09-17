@@ -1398,7 +1398,7 @@ input[type="submit"]:hover {
     padding-left: 0px !important;
     padding-right: 0px !important;
     overflow-y: scroll;
-    z-index: 99999;
+    z-index: 999999;
 }
 .modal-backdrop{z-index: 9999;}
 .breadcrumb1 ul {
@@ -5011,8 +5011,8 @@ textarea {
 }
 .ajaxlogin-window .f-left.ajaxlogin-forgot{clear: both;}
 #ajaxlogin-login-window .modal-holder {padding: 20px 0 0;}
-
-
+.modal {z-index: 999999;}
+.modal-backdrop {z-index: 99999;}
 
 
 
