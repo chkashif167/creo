@@ -7,10 +7,10 @@ class Progos_Creomob_SoapController extends Mage_Core_Controller_Front_Action{
     //changin contentvdfslkbsdfkbsndkg
     
 //    protected $soapURLv1 = "http://localhost/creo/index.php/api/soap/?wsdl";
-    protected $soapURLv1 = "http://creoroom.com/api/soap/?wsdl";
+    protected $soapURLv1 = "https://creoroom.com/api/soap/?wsdl";
     
 //    protected $soapURLv2 = "http://localhost/creo/index.php/api/v2_soap/?wsdl";
-    protected $soapURLv2 = "http://creoroom.com/api/v2_soap/?wsdl";
+    protected $soapURLv2 = "https://creoroom.com/api/v2_soap/?wsdl";
     
     
     private $API_USER = "creomob"; //webservice user login

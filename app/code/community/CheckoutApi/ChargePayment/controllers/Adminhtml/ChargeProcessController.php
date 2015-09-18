@@ -24,7 +24,6 @@ class CheckoutApi_ChargePayment_Adminhtml_ChargeProcessController extends Mage_A
         $_chargeObj = $this->_getCharge($_config);
         $hasBeenCaptured = false;
         $_captureObj = $_chargeObj;
-
         if($_chargeObj) {
 
             if(!$_chargeObj->getCaptured()){
@@ -36,7 +35,7 @@ class CheckoutApi_ChargePayment_Adminhtml_ChargeProcessController extends Mage_A
                                                 );
 
                 $_captureCharge = $_Api->captureCharge($_config);
-                if($_captureCharge->isValid() && $_captureCharge->getStatus() == 'Captured' &&
+                if($_captureCharge->isValid() && $_captureCharge->getCaptured() &&
                     preg_match('/^1[0-9]+$/',$_captureCharge->getResponseCode()) ) {
                     $hasBeenCaptured = true;
                     $_captureObj = $_captureCharge;

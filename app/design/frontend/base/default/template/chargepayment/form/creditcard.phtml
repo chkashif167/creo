@@ -1,0 +1,113 @@
+<?php $tokenRersult = $this->getPaymentTokenResult($orderid = null); ?>
+<?php if($tokenRersult['succes']): ?>
+    <script type="text/javascript">
+        var reload = false;
+        window.CKOConfig = {
+            debugMode: false,
+            renderMode: 2,
+            namespace: 'CheckoutIntegration',
+            publicKey: '<?php echo $this->getPublicKey()?>',
+            paymentToken: "<?php echo $tokenRersult['token'] ?>",
+            value: '<?php echo $this->getAmount() ?>',
+            currency: '<?php echo $this->getCurrency() ?>',
+            customerEmail: '<?php echo $this->getEmailAddress() ?>',
+            customerName: '<?php echo $this->getName()?>',
+            paymentMode: 'mixed',
+            title: '<?php echo $this->getStoreName(); ?>',
+            logoUrl: '<?php echo $this->getLightBoxUrl() ?>',
+            themeColor: '<?php echo $this->getThemeColor() ?>',
+            buttonColor: '<?php echo $this->getButtonColor() ?>',
+            iconColor: '<?php echo $this->getIconColor() ?>',
+            useCurrencyCode: '<?php echo $this->getUseCurrencyCode() ?>',
+            forceMobileRedirect: true,
+            subtitle:'<?php echo $this->__('Please enter your credit card details') ?>',
+            widgetContainerSelector: '.payment-form',
+            cardCharged: function(event){
+                document.getElementById('cko-cc-paymenToken').value = event.data.paymentToken;
+                fireEvent($$('#review-buttons-container .btn-checkout')[0], 'click');
+            },
+            paymentTokenExpired: function(){
+                reload = true;
+            },
+            lightboxActivated: function() {
+                if($('advice-required-bridge-entry-cko-cc-paymenToken')) {
+                    $('advice-required-bridge-entry-cko-cc-paymenToken').hide();
+                }
+            },
+            lightboxDeactivated: function() {
+                if(reload) {
+                    window.location.reload();
+                }
+            },
+            ready: function() {
+                if(CheckoutIntegration.isMobile()) {
+                  document.getElementById('cko-cc-redirectUrl').value = CheckoutIntegration.getRedirectionUrl();
+                  
+                }
+
+            }
+        };
+
+    </script>
+
+    <div class="payment-form"></div>
+
+    <?php $_code=$this->getMethodCode() ?>
+    <ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+        <li>
+            <input type="hidden" name="payment[cko_cc_paymenToken]" id="cko-cc-paymenToken" value="-1"  class="input-text required-bridge-entry"/>
+            <input type="hidden" name="payment[cko_cc_redirectUrl]" id="cko-cc-redirectUrl" value=""  class="input-text "/>
+        </li>
+    </ul>
+<?php else:  ?>
+    <div style="" id="advice-required-entry-creditcard_cc_token" class="validation-advice">
+        <?php echo $this->__($tokenRersult['message']) ?>
+    </div>
+<?php endif; ?>
+
+<script type="text/javascript">
+    
+  COGOPC.prototype.save = COGOPC.prototype.save.wrap(function(save) {
+      var validator = new Validation(this.form);
+      var paymentoken = document.getElementById('cko-cc-paymenToken').value;
+      var isValid = true;
+      if (this.validator.validate() && ShippingMethod.prototype.validate() && Payment.prototype.validate() && paymentoken == -1) {
+          if($$('[name="payment\[method\]"]:checked')[0].id=='p_method_creditcard') {  
+              if($$('#checkout-review-submit .checkout-agreements input').length){
+                COGOPC.Messenger.clear('checkout-review-submit');
+                  $$('#checkout-review-submit .checkout-agreements input[type="checkbox"]').each(function (el) {
+                      if (!el.checked) {
+                          isValid = false;
+                      }
+                 });
+              }    
+              if( !CheckoutIntegration.isMobile()) {
+                  if(isValid){
+                    window.CKOConfig.customerEmail = document.getElementsByName('billing[email]')[0].value;
+                    CheckoutIntegration.configure(window.CKOConfig);
+                    CheckoutIntegration.open();
+                  }
+                  else {
+                   COGOPC.Messenger.add(this.acceptAgreementText, 'checkout-review-submit', 'error');
+                }   
+              }
+              else {
+                  save();
+              }
+            } 
+            else {
+                save();
+            }          
+      }
+      
+      else {  
+        this.validator.validate()
+        ShippingMethod.prototype.validate();
+        Payment.prototype.validate();
+      }
+      if( paymentoken != -1){
+         save(); 
+      }
+  });
+</script>
+
