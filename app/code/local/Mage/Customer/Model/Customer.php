@@ -845,7 +845,7 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
           }
         else
         {
-          $confirmation = $this->getConfirmation();
+          $confirmation = $this->getConfirmation() ? $this->getConfirmation() : $this->getPasswordConfirmation();
         }
         //To match passwords in both Create account and Checkout register pages end
         if ($password != $confirmation) {

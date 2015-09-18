@@ -1,0 +1,47 @@
+<layout version="0.1.0">
+    <checkout_onepage_review>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block name="checkoutapi.jsinit" type="checkoutapi_chargePayment/checkoutjs" >
+                <action method="setTemplate" ifconfig="payment/creditcard/active" >
+                    <template>chargepayment/jsinit.phtml</template>
+                </action>
+            </block>
+        </reference>
+    </checkout_onepage_review>
+
+
+    <onestepcheckout_index_index translate="label">
+        <update handle ="update_onepage_index" />
+    </onestepcheckout_index_index>
+    <onestepcheckout_index_updatecheckout>
+        <reference name="checkout.onepage.review.info.items.before">
+            <block name="checkoutapi.jsinit" type="checkoutapi_chargePayment/checkoutjs" >
+                <action method="setTemplate" ifconfig="payment/creditcard/active" >
+                    <template>chargepayment/jsinit.phtml</template>
+                </action>
+            </block>
+        </reference>
+    </onestepcheckout_index_updatecheckout>
+    <checkout_onepage_paymentmethod>
+        <reference name="payment.method.creditcard">
+            <block name="checkoutapi.widget" type="checkoutapi_chargePayment/checkoutjs" >
+                <action method="setTemplate" ifconfig="payment/creditcard/active" >
+                    <template>chargepayment/jsinit.phtml</template>
+                </action>
+            </block>
+        </reference>
+    </checkout_onepage_paymentmethod>
+
+    <update_onepage_index translate="label">
+        <reference name="before_body_end">
+            <block type="core/text" name="checkoutapi_js">
+
+                <action method="setText" ifconfig="payment/creditcard/active">
+                    <content  helper="checkoutapi_chargePayment/data/chargePayment/data/getJsPath">
+
+                    </content>
+                </action>
+            </block>
+        </reference>
+    </update_onepage_index>
+</layout>

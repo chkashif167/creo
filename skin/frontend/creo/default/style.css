@@ -1204,6 +1204,7 @@ input.email {
     padding: 4px 10px;
     text-align: left;
 }
+.login-popup-form button[type="submit"],
 input[type="submit"] {
     margin: 0 auto 20px;
     padding: 5px;
@@ -1218,6 +1219,7 @@ input[type="submit"] {
     color: #fff;
     font: 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
+.login-popup-form button[type="submit"]:hover,
 input[type="submit"]:hover {
     color: #000;
     background: #f16167;
@@ -1263,6 +1265,7 @@ input[type="submit"]:hover {
     color: #888;
     line-height: 40px;
 }
+.modal-holder .login-popup-form button[type="submit"],
 .modal-holder .login-form .submit-holder input[type="submit"] {
     float: right;
     width: 99px;
@@ -1395,7 +1398,7 @@ input[type="submit"]:hover {
     padding-left: 0px !important;
     padding-right: 0px !important;
     overflow-y: scroll;
-    z-index: 99999;
+    z-index: 999999;
 }
 .modal-backdrop{z-index: 9999;}
 .breadcrumb1 ul {
@@ -4995,6 +4998,26 @@ textarea {
 .item-manage .options-area .column {width: 40%;}
 .fb_button .icon-facebook {font-size: 13px;}
 .fb_button{text-transform: uppercase;}
+#ajaxlogin-mask{z-index: 9999;}
+.ajaxlogin-window{z-index: 99999;}
+.ajaxlogin-window{
+    transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -webkit-transform: skewY(-5deg);
+}
+.ajaxlogin-window .content{
+    height: auto !important;
+    overflow: visible;
+}
+.ajaxlogin-window .f-left.ajaxlogin-forgot{clear: both;}
+#ajaxlogin-login-window .modal-holder {padding: 20px 0 0;}
+.modal {z-index: 999999;}
+.modal-backdrop {z-index: 99999;}
+
+
+
+
+
 
 
 @media only screen and (max-width: 1199px) {
