@@ -44,8 +44,6 @@
                     <username><![CDATA[root]]></username>
                     <password><![CDATA[]]></password>
                     <dbname><![CDATA[creo_3_9_2015_beta]]></dbname>
-                    <password><![CDATA[]]></password>
-                    <dbname><![CDATA[creo]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
