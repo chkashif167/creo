@@ -260,9 +260,8 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
     
     protected function setGuestCustomer($sessionId,$cartId,$shipping_data){
         $proxy = new SoapClient($this->soapURLv2);
-        
         $customer = array('mode'=>'guest',
-            'email'=>'todo@progos.org',
+            'email'=>$shipping_data['email'],
             'firstname'=>$shipping_data['firstname'],'lastname'=>$shipping_data['lastname']);
         return $proxy->shoppingCartCustomerSet($sessionId, $cartId, $customer);
     }
@@ -279,7 +278,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
             
             if(count($address_customer_data['customer']) && !empty((array) $address_customer_data['customer'])){
                 $this->setCustomer($sessionId,$qid,$address_customer_data['customer'][0]);
-            } else {
+            }else {
                 $this->setGuestCustomer($sessionId,$qid,$address_customer_data['shipping']);
             }
             
