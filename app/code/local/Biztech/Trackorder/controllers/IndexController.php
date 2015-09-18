@@ -4,6 +4,7 @@ class Biztech_Trackorder_IndexController extends Mage_Core_Controller_Front_Acti
     public function indexAction()
     {
         $this->loadLayout();     
+		$this->getLayout()->getBlock('head')->setTitle($this->__('Track Your Order'));
         $this->renderLayout();
     }
     public function validate(){
