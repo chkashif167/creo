@@ -11,6 +11,10 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
        $_category = Mage::getModel('catalog/category')->load($category);
 
        $_testproductCollection = Mage::getResourceModel('catalog/product_collection')
+	   ->addAttributeToFilter('visibility', array('in' => array(
+		   \Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_SEARCH,
+		   \Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,
+		  )))
        ->addCategoryFilter($_category)
        ->addAttributeToSelect('*')
        ->setOrder('entity_id', 'desc')
@@ -24,6 +28,10 @@ class Tabs_Extension_Block_New extends Mage_Catalog_Block_Product_Abstract
         
 
        $_testproductCollection = Mage::getResourceModel('catalog/product_collection')
+	   ->addAttributeToFilter('visibility', array('in' => array(
+		   \Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_SEARCH,
+		   \Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,
+		  )))
        ->addAttributeToSelect('*')
        ->setOrder('entity_id', 'desc')
        ->setPageSize(20);
