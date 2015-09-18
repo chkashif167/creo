@@ -26,7 +26,7 @@
 ?>
 <meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
 <?php
-if(Mage::helper('mobiledetect')->isMobile() && !$detect->isTablet()) {
+if(Mage::helper('mobiledetect')->isMobile() && !Mage::helper('mobiledetect')->isTablet()) {
     echo '<meta name="viewport" content="width=1170"><meta name="MobileOptimized" content="1170">';
 }else {
     echo '<meta name="viewport" content="initial-scale=1.0, width=device-width" />';
