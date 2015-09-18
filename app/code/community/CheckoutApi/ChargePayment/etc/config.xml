@@ -108,8 +108,6 @@
             </checkoutapi_chargePayment>
 
         </routers>
-
-
         <events>
             <sales_model_service_quote_submit_after>
                 <observers>
@@ -155,7 +153,6 @@
                     </checkoutapi_chargePayment>
                 </observers>
             </adminhtml_widget_container_html_before>
-
         </events>
     </adminhtml>
     <default>

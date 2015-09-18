@@ -20,4 +20,15 @@ class CheckoutApi_ChargePayment_Helper_Data  extends Mage_Core_Helper_Abstract
        }
         return $js;
     }
+    
+    public function replace_between($str, $needle_start, $needle_end, $replacement) 
+    {
+      $pos = strpos($str, $needle_start);
+      $start = $pos === false ? 0 : $pos + strlen($needle_start);
+
+      $pos = strpos($str, $needle_end, $start);
+      $end = $start === false ? strlen($str) : $pos;
+
+      return substr_replace($str,$replacement,  $start, $end - $start);
+  }
 }

@@ -1,0 +1,18 @@
+<?php $tokenResult = $this->getPaymentTokenResult($orderid = null); ?>
+
+<script type="text/javascript">
+
+   if($$('[name="payment\[method\]"]:checked')[0].id == 'p_method_creditcard') {
+        $buttonCheckout =  null;
+        <?php if($tokenResult['success']): ?>
+        var paymentToken = "<?php echo $tokenResult['token'] ?>";
+            if(window.CKOConfig) {
+                window.CKOConfig.value = '<?php echo $tokenResult['value'] ?>';
+                window.CKOConfig.paymentToken = paymentToken;
+                CheckoutIntegration.configure(window.CKOConfig);
+                CheckoutIntegration.render();
+            }
+
+      <?php endif; ?>
+  }
+</script>

@@ -36,12 +36,10 @@ class CheckoutApi_ChargePayment_Block_Form_Creditcard  extends Mage_Payment_Bloc
     {
         return $this->getConfigData('publickey');
     }
-
-    public  function getLightBoxUrl()
+     public  function getLightBoxUrl()
     {
         return $this->getConfigData('icon_url');
     }
-
     public  function getThemeColor()
     {
         if($theme = $this->getConfigData('theme_color')) {
@@ -49,28 +47,23 @@ class CheckoutApi_ChargePayment_Block_Form_Creditcard  extends Mage_Payment_Bloc
         }
         return null;
     }
-
     public  function getButtonColor()
     {
-
         if($button_color = $this->getConfigData('button_color')) {
             return '#'.$button_color;
         }
         return null;
     }
-
     public  function getIconColor()
     {
-
         if($icon_color = $this->getConfigData('icon_color')) {
             return '#'.$icon_color;
         }
         return null;
     }
-
     public  function getUseCurrencyCode()
     {
-        return $this->getConfigData('use_currency_code')?'true':'false';
+        return $this->getConfigData('use_currency_code')?true:false;
     }
 
     public function getAmount()
@@ -85,11 +78,24 @@ class CheckoutApi_ChargePayment_Block_Form_Creditcard  extends Mage_Payment_Bloc
 
     public function getEmailAddress()
     {
+        $helper = Mage::helper('customer');
+        if($helper->isLoggedIn())    {
+
+            $customer = $helper->getCustomer();
+            return  $customer->getEmail();
+        }
         return  $this->_getQuote()->getBillingAddress()->getEmail();
     }
 
     public function getName()
     {
+        $helper = Mage::helper('customer');
+        if($helper->isLoggedIn())    {
+            $customer = $helper->getCustomer();
+            $customerName = $customer->getFirstname() .' '.$customer->getLastname();
+            return  $customerName;
+        }
+
         return  $this->_getQuote()->getBillingAddress()->getName();
     }
 
@@ -99,15 +105,15 @@ class CheckoutApi_ChargePayment_Block_Form_Creditcard  extends Mage_Payment_Bloc
        return  Mage::app()->getStore()->getName();
     }
 
-    public function getPaymentTokenResult()
+    public function getPaymentTokenResult($orderid = null)
     {
 
         $Api = CheckoutApi_Api::getApi(array('mode'=>$this->getConfigData('mode')));
-        $secretKey = $this->getConfigData('privatekey');
+        $secretKey  = $this->getConfigData('privatekey');
         $billingAddress = $this->_getQuote()->getBillingAddress();
         $shippingAddress = $this->_getQuote()->getBillingAddress();
         $orderedItems = $this->_getQuote()->getAllItems();
-        $currencyDesc =  Mage::app()->getStore()->getCurrentCurrencyCode();
+        $currencyDesc = $this->_getQuote()->getBaseCurrencyCode();
         $amountCents = $this->getAmount();
         $street = Mage::helper('customer/address')
             ->convertStreetLines($shippingAddress->getStreet(), 2);
@@ -134,7 +140,7 @@ class CheckoutApi_ChargePayment_Block_Form_Creditcard  extends Mage_Payment_Bloc
         }
 
         $config = array();
-        $config['authorization'] = $secretKey  ;
+        $config['authorization'] = $secretKey ;
         $config['mode'] = $this->getConfigData('mode');
         $config['timeout'] = $this->getConfigData('timeout');
         $street = Mage::helper('customer/address')
@@ -146,22 +152,23 @@ class CheckoutApi_ChargePayment_Block_Form_Creditcard  extends Mage_Payment_Bloc
             'country'        =>    $billingAddress->getCountry(),
             'city'           =>    $billingAddress->getCity(),
             'phone'          =>    array('number' => $billingAddress->getTelephone()),
+            'metadata'          =>   array(
+                'server'  => Mage::helper('core/http')->getHttpUserAgent(),
+                'quoteId' => $this->_getQuote()->getId()
+            )
         );
 
         $config['postedParam'] = array (
+            'trackId'           => $orderid,
             'value'             =>    $amountCents,
             "chargeMode"        =>    1,
             'currency'          =>    $currencyDesc,
             'shippingDetails'   =>    $shippingAddressConfig,
             'products'          =>    $products,
-            'metadata'          =>   array(
-                                        'server'  => Mage::helper('core/http')->getHttpUserAgent(),
-                                        'quoteId' => $this->_getQuote()->getId()
 
-            )
         );
 
-        if($this->getConfigData('payment_action') == Mage_Paygate_Model_Authorizenet::ACTION_AUTHORIZE ) {
+        if($this->getConfigData('order_status_capture') == Mage_Paygate_Model_Authorizenet::ACTION_AUTHORIZE ) {
             $config['postedParam']['autoCapture']  = CheckoutApi_Client_Constant::AUTOCAPUTURE_AUTH;
             $config['postedParam']['autoCapTime']  = 0;
         } else {
@@ -180,7 +187,7 @@ class CheckoutApi_ChargePayment_Block_Form_Creditcard  extends Mage_Payment_Bloc
             $paymentTokenReturn['token'] = $paymentToken ;
             $paymentTokenReturn['succes'] = true;
         }else {
-            $paymentTokenCharge->printError();
+          //  $paymentTokenCharge->printError();
         }
 
         if(!$paymentToken) {
