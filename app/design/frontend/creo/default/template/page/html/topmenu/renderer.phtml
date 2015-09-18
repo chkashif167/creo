@@ -173,9 +173,15 @@
  }
  }
  //$parentname = $this->getCurrentCategory()->getParentCategory()->getName(); echo $parentname."SHANI"; ?>
-<li <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
+ <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
-    ?>class="active"<?php } ?>><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+    ?>
+<li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<?php }else{?>
+<li><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<?php
+}
+?>
 <li <?php if (in_array("clothing",$parent_cat_array)) {
     echo'class="active"';
 } ?>> <a href="javascript:void(0)">CLOTHING</a>

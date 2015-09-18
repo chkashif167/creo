@@ -53,7 +53,21 @@
             <span class="error"><?php echo $this->__('* Required Fields') ?></span>
             <div class="submit-holder"> <a href="<?php echo $this->getForgotPasswordUrl() ?>" ><?php echo $this->__('Forgot Password?') ?></a>
               <button type="submit" class="button popuplogin_button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
-              <?php echo $this->getChildHtml('form.additional.info'); ?> </div>
+              <?php echo $this->getChildHtml('form.additional.info'); ?> 
+             <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+              </div>
+          </form><form action="<?php echo $this->getUrl('customer/account/login') ?>" method="post" id="login-form" class="login-form">
+            <?php echo $this->getBlockHtml('formkey'); ?>
+            <label for="email" class="required"><?php echo $this->__('Email Address') ?> <em> *</em></label>
+            <input type="text" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="input-text validate-emailAdress validate-email" title="<?php echo $this->__('Email Address') ?>" />
+            <label for="pass" class="required"><?php echo $this->__('Password') ?> <em> *</em></label>
+            <input type="password" name="login[password]" class="input-text validate-passwordlogin validate-password" id="pass" title="<?php echo $this->__('Password') ?>" />
+            <span class="error"><?php echo $this->__('* Required Fields') ?></span>
+            <div class="submit-holder"> <a href="<?php echo $this->getForgotPasswordUrl() ?>" ><?php echo $this->__('Forgot Password?') ?></a>
+              <button type="submit" class="button popuplogin_button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
+              <?php echo $this->getChildHtml('form.additional.info'); ?> 
+             <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+              </div>
           </form>
           <div class="row">
           	<div class="col-xs-12 text-center">

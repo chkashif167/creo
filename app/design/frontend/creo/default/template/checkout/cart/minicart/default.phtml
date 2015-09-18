@@ -290,7 +290,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php if ($isVisibleProduct): ?>
 
             <?php if (!$this->isOnCheckoutPage()): ?>
-                <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/onestepcheckout/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/ajaxDelete/') == false){
+                <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/onestepcheckout/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/ajaxDelete/') == false && strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/add/') == false){
 					?><!--<a href="javascript:;" title="<?php echo $this->__('Remove This Item') ?>" class="cancel"> <?php echo $this->__('') ?> 
                     <i class="icon-cancel"></i>
                 </a>--><?php

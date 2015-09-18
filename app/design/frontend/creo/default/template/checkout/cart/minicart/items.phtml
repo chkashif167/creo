@@ -91,7 +91,10 @@ if(empty($_cartQty)) {
     <?php if($_cartQty && $this->isPossibleOnepageCheckout()): ?>
     
       <?php echo $this->getChildHtml('extra_actions') ?>
-     <a title="<?php echo $this->__('PROCEED TO CHECKOUT') ?>" class="button checkout-button" href="<?php echo $this->getCheckoutUrl() ?>"><?php echo $this->__('PROCEED TO CHECKOUT') ?></a> 
+     <a title="<?php echo $this->__('View Cart') ?>" class="button checkout-button" 
+     href="<?php //echo $this->getCheckoutUrl()
+	  echo $this->getUrl('checkout/cart'); 
+	  ?>"><?php echo $this->__('View Cart') ?></a> 
     <?php endif ?>
 <?php /* ?>    <a class="cart-link" href="<?php echo $this->getUrl('checkout/cart'); ?>">  <?php echo $this->__('View Cart'); ?> </a> 
 <?php */?>    </div>
