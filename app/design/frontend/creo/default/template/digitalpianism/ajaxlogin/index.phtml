@@ -96,13 +96,13 @@
 <?php endif; ?>
 <?php if (Mage::getSingleton('customer/session')->isLoggedIn()): ?>
     <div id="ajaxlogin-logout-window" style="display: none;">
-        <div class="page-title">
+<!--        <div class="page-title">
             <span><?php echo $this->__('Logout from your Account') ?></span>
         </div>
-        <form action="<?php echo $this->getUrl('ajaxlogin/index/logout', array('_secure'=>(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on'))) ?>" method="post" id="ajaxlogin-logout-form">
-            <div class="content">
-               <p><?php echo $this->__('Are you sure you want to log out ?') ?></p>
-            </div>
+-->        <form action="<?php echo $this->getUrl('ajaxlogin/index/logout', array('_secure'=>(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on'))) ?>" method="post" id="ajaxlogin-logout-form">
+            <!--<div class="content">
+               <p><?php //echo $this->__('Are you sure you want to log out ?') ?></p>
+            </div>-->
             <div class="buttons-set">
                 <button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Logout') ?></span></span></button>
 				<div class="progress-indicator">
@@ -114,7 +114,7 @@
         </form>
         <script type="text/javascript">
             //<![CDATA[
-            var ajaxLogoutForm = new VarienForm('ajaxlogin-logout-form', true);
+           // var ajaxLogoutForm = new VarienForm('ajaxlogin-logout-form', true);
             //]]>
         </script>
     </div>
@@ -134,25 +134,25 @@
             <div class="page-title">
                 <span><?php echo Mage::helper('persistent')->__('Welcome, %s!', Mage::helper('core')->escapeHtml($customer->getName(), null)) ?></span>
             </div>
-            <div class="content">
-                <p><?php
-                    echo Mage::helper('ajaxlogin')->__(
-                        'You are browsing our store as %s %s',
-                        $customer->getName(),
-                        $this->getLayout()->createBlock('persistent/header_additional')->toHtml()
-                    );
+<!--             <div class="content">
+               <p><?php
+                   // echo Mage::helper('ajaxlogin')->__(
+                     //   'You are browsing our store as %s %s',
+                       // $customer->getName(),
+                       // $this->getLayout()->createBlock('persistent/header_additional')->toHtml()
+                    //);
                     ?></p>
                 <p><?php
-                    $login    = $this->__('Login');
+/*                    $login    = $this->__('Login');
                     $register = $this->__('Register');
                     echo Mage::helper('ajaxlogin')->__(
                         'Please %s or %s a new account to place order.',
                         "<a href='" . $this->getUrl('customer/account/login') . "' class='ajaxlogin-login'>" . $login . "</a>",
                         "<a href='" . $this->getUrl('persistent/index/saveMethod') . "' class='ajaxlogin-register'>" . $register . "</a>"
                     );
-                    ?></p>
+*/                    ?></p>
             </div>
-        </div>
+-->        </div>
 
 
         <script type="text/javascript">
@@ -193,7 +193,7 @@
                     maxWidth: 300
                 }
             },
-            logout: {
+/*            logout: {
                 el    : $$('.ajaxlogin-logout'),
                 event : 'click',
                 window: $('ajaxlogin-logout-window'),
@@ -201,7 +201,7 @@
                     maxWidth: 300
                 }
             }
-        };
+*/        };
         ajaxLoginWindow = new AjaxLogin({
             triggers: triggers
         });
