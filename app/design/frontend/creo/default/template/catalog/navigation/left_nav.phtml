@@ -27,6 +27,7 @@ if (isset($ids[2])) { //you should add some more complex lookout
 //topParent is the ralph loren category even if you are in one of its children cat
 }
 $subcategories = Mage::getModel('catalog/category')->getCategories($ids[2]);
+if(!($clothingCat == 'Accessories')){
 ?>
 <nav class="cate1">
 <ul>
@@ -44,4 +45,4 @@ foreach ($subcategories as $cat) {
 </ul>
 </nav>
 
-<?php } ?>
+<?php } }?>
