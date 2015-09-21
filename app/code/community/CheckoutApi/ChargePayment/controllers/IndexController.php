@@ -70,10 +70,10 @@ class CheckoutApi_ChargePayment_IndexController extends Mage_Core_Controller_Fro
 									$_payment->save();
 
 								$_order->setStatus ( $orderStatus , false );
-								$_order->addStatusToHistory ( $orderStatus , 'Payment successfully captured
+								$_order->addStatusToHistory ( $orderStatus , 'Payment successfully  captured
                                 with Transaction ID ' . $objectCharge->getId () );
 								$_order->save ();
-								$this->getResponse()->setBody('Payment successfully captured
+								$this->getResponse()->setBody('Payment successfully  captured
                                 with Transaction ID '.$objectCharge->getId());
 
 							}else {
@@ -182,11 +182,13 @@ class CheckoutApi_ChargePayment_IndexController extends Mage_Core_Controller_Fro
             $config['authorization'] = $this->_requesttConfigData('privatekey');
             $chargeObject = $Api->verifyChargePaymentToken($config);
             $_order = Mage::getModel('sales/order')->loadByIncrementId($order_id);
+
             $_payment = $_order->getPayment();
             $chargeUpdated = $Api->updateTrackId($chargeObject, $order_id);
             if($chargeObject->isValid()) {
                 $chargeId = $chargeObject->getId();
                 if ($chargeObject->getStatus() == 'Authorised' || $chargeObject->getStatus() == 'Flagged') {
+                    $_payment->setTransactionId($chargeId);
                     $_payment->setParentTransactionId($chargeId);
                     $_payment->authorize ( true,$_order->getBaseTotalDue() );
                     $orderStatus = $this->_requesttConfigData ( 'order_status' );

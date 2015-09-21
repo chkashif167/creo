@@ -278,7 +278,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
             
             if(count($address_customer_data['customer']) && !empty((array) $address_customer_data['customer'])){
                 $this->setCustomer($sessionId,$qid,$address_customer_data['customer'][0]);
-            } else {
+            }else {
                 $this->setGuestCustomer($sessionId,$qid,$address_customer_data['shipping']);
             }
             

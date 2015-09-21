@@ -141,9 +141,12 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         //applying filters
         if ($filter && $filter == 1) {
             $filters = json_decode(file_get_contents("php://input"), true);
-//            print_r($filters);die();
+            
             $category_filters = $filters['category'];
             $category_filters_ids = array();
+            if($categoryId){
+                $category_filters_ids[]=$categoryId;
+            }
             foreach ($category_filters as $sub_category) {
                 if (is_array($sub_category)) {
                     foreach ($sub_category as $key => $val) {
@@ -152,7 +155,6 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                     }
                 }
             }
-            
             
             $color_filters = $filters['attr']['color'];
             $colors = array();
@@ -194,6 +196,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             }
             
             $collection = Mage::getModel('catalog/product')->getCollection();
+            
+            
 
             if (!empty($category_filters_ids)) {
                 $collection->addCategoryFilter(Mage::getModel('catalog/category')->load(array(implode(',', $category_filters_ids))), true);
