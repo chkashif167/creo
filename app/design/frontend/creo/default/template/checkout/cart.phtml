@@ -41,7 +41,7 @@
       <div class="btn-holder">
         <?php foreach ($this->getMethods('top_methods') as $method): ?>
         <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-        <a href="<?php echo $this->getContinueShoppingUrl() ?>" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a>
+        <a href="<?php echo $this->getContinueShoppingUrl() ?>" onclick="window.history.go(-2); return false;"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a>
         <?php /*?> <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button2 btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span class="span1"><span class="span2"><?php echo $this->__('Continue Shopping') ?></span></span></button>
 <?php */?>
         <?php echo $methodHtml; ?>
@@ -166,7 +166,7 @@
         <div class="btn-holder">
           <?php foreach ($this->getMethods('top_methods') as $method): ?>
           <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-          <a href="<?php echo $this->getContinueShoppingUrl() ?>" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a>
+          <a href="<?php echo $this->getContinueShoppingUrl() ?>" onclick="window.history.go(-2); return false;"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a>
           <?php /*?> <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button2 btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span class="span1"><span class="span2"><?php echo $this->__('Continue Shopping') ?></span></span></button>
 <?php */?>
           <?php echo $methodHtml; ?>
