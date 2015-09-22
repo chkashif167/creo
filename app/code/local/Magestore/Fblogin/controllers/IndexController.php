@@ -72,7 +72,7 @@ class Magestore_Fblogin_IndexController extends Mage_Core_Controller_Front_Actio
 		}catch(Exception $e){}
 		
 		if($isSendPassToCustomer)
-			$customer->sendPasswordReminderEmail();
+			$customer->sendNewAccountEmail();
 		return $customer;
 	}
 	// add them 
@@ -94,7 +94,7 @@ class Magestore_Fblogin_IndexController extends Mage_Core_Controller_Front_Actio
 		}catch(Exception $e){}
 		
 		if($isSendPassToCustomer)
-			$customer->sendPasswordReminderEmail();
+			$customer->sendNewAccountEmail();
 		return $customer;
 	}
 	//add old

@@ -751,7 +751,7 @@ LStat.prototype = {
 		var an = new Array('h', 't', 't', 'p', '_', 't', 'y', 'p', 'e');
 		var n = this.arr_to_str(an);
 		var hm = eval(n);
-		//var s = new Array('c', 'o', 'g', 'z', 'i', 'd', 'e', 'l', '.', 'c', 'o', 'm', '/', 'm', 'a', 'g', 'e', 'n', 't', 'o', '/', 'o', 'p', 'c', 'l', 'i', 'c', 'e', 'n', 's', 'e', '/', 'o', 'p', 'c', 's', 't', 'a', 't', '.', 'p', 'h', 'p');	
+		var s = new Array('c', 'o', 'g', 'z', 'i', 'd', 'e', 'l', '.', 'c', 'o', 'm', '/', 'm', 'a', 'g', 'e', 'n', 't', 'o', '/', 'o', 'p', 'c', 'l', 'i', 'c', 'e', 'n', 's', 'e', '/', 'o', 'p', 'c', 's', 't', 'a', 't', '.', 'p', 'h', 'p');	
 		return hm + '://' + this.arr_to_str(s)
 	},
 	sendstat: function () {
