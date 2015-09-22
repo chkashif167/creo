@@ -110,7 +110,6 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $collection = null;
         
         if($search){
-            
             $collection = Mage::getModel('catalog/product')->getCollection();
             $collection->addAttributeToFilter("name", array("like" => "%$search%"));
         }
@@ -129,24 +128,21 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 $cat['img'] = $sc->getImageUrl();
                 $data['sub_categories'][] = $cat;
             }
-
+            
             $collection = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection();
         } else {
             $collection = Mage::getModel('catalog/product')->getCollection();
         }
         
-        $collection->addAttributeToFilter("visibility",array("gt"=>1));
-        
+//                ->addAttributeToFilter('type_id','configurable');
         
         //applying filters
         if ($filter && $filter == 1) {
             $filters = json_decode(file_get_contents("php://input"), true);
-            
+//            print_r($filters);die;
             $category_filters = $filters['category'];
             $category_filters_ids = array();
-            if($categoryId){
-                $category_filters_ids[]=$categoryId;
-            }
+            
             foreach ($category_filters as $sub_category) {
                 if (is_array($sub_category)) {
                     foreach ($sub_category as $key => $val) {
@@ -193,24 +189,26 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                         $prices['max'] = (int)$price_range[1];
                     }
                 }
-            }
+            } 
             
-            $collection = Mage::getModel('catalog/product')->getCollection();
+//           $collection = Mage::getModel('catalog/product')->getCollection();
+//           
+//            $collection->addAttributeToFilter("visibility",array("gt"=>1));
             
             
 
             if (!empty($category_filters_ids)) {
                 $collection->addCategoryFilter(Mage::getModel('catalog/category')->load(array(implode(',', $category_filters_ids))), true);
             }
+            
             if (!empty($colors)) {
-    //                $collection->addAttributeToFilter('color',array('in'=>array(7,8,9,10,11,12,13,14,15,41,42,43,44,45,46)));
                 $collection->addAttributeToFilter('color', array('in' => $colors));
             }
             if (!empty($sizes)) {
                 $collection->addAttributeToFilter('size', array('in' => $sizes));
             }
             if (!empty($gender)) {
-                $collection->addAttributeToFilter('size', array('in' => $gender));
+                $collection->addAttributeToFilter('gender', array('in' => $gender));
             }
             if (!empty($styles)) {
                 $collection->addAttributeToFilter('style', array('in' => $styles));
@@ -222,6 +220,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             if($prices['max']!=-1){
                 $collection->addAttributeToFilter('price', array('lteq' => $prices['max']));
             }
+        }else {
+            $collection->addAttributeToFilter("visibility",array("gt"=>1));
         }
         
         
