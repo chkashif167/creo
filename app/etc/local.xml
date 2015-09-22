@@ -43,9 +43,9 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
 
-                    <password><![CDATA[]]></password>
+                    <password><![CDATA[dasatti]]></password>
 
-                    <dbname><![CDATA[creo_3_9_2015_beta]]></dbname>
+                    <dbname><![CDATA[creo3]]></dbname>
 
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>

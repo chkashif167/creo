@@ -46,10 +46,12 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
             $customer = $session->getCustomer();
             try{
                 $res = $this->getCustomer($sessionId,$customer->getEmail(),$customer->getPasswordHash());
+                //$orders = $this->getCustomerOrders($customer->getCustomerId());
                 
                 $response['success'] = 1;
                 $response['message'] = 'Login successful';
                 $response['customer'] = $res;
+                //$response['customer_orders'] = $orders;
                 
             }catch(Exception $e){
                 $response['message'] = $e->getMessage();
@@ -140,4 +142,22 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         echo json_encode($response);
         die;
     }
+    
+    public function getCustomerOrders($customerId){
+        $orderCollection     = Mage::getModel("sales/order")->getCollection()
+                           ->addAttributeToSelect('*')
+                           ->addFieldToFilter('customer_id', $customerId);
+        $order = array();
+        foreach ($orderCollection as $_order)
+        {
+            $order['order_id'] = $_order->getRealOrderId() ;
+            $order['shipping_address'] = $_order->getShippingAddress();
+            $order['grand_total'] = $_order->formatPrice($_order->getGrandTotal());
+            $order['status_labe;'] = $_order->getStatusLabel();
+         }
+        echo "Orders : ";
+        print_r($order);die();
+        return $order;
+    }
+    
 }
