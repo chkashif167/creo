@@ -6,10 +6,10 @@
  */
 if ($this->getRequest()->getControllerName() != 'result') {
     $current_category_id = Mage::registry('current_category')->getId();
+    $current_category_p_id = Mage::registry('current_category')->getParentId();
 } else {
     $current_category_id = '';
 }
-
 
 if ('front' != Mage::app()->getRequest()->getControllerName()) {
     ?>
@@ -48,7 +48,20 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                   <?php echo $this->__($_filter->getName()) ?>
                                   </dt><?php */ ?>
                                 <?php
-                                if ($_filter->getVar() == 'styles') {
+								if($current_category_p_id == '57' || $current_category_p_id == '58'){
+								if ($_filter->getVar() == 'gender') {
+								}else if ($_filter->getVar() == 'styles') {
+                                    ?>
+                                    <label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
+                                    <?php
+                                
+                                ?>
+                                <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
+
+                            <?php }	
+								}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
+                                                                
+								if ($_filter->getVar() == 'styles') {
                                     ?>
                                     <label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
                                     <?php
@@ -56,12 +69,16 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                 ?>
                                 <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
 
-                            <?php endif; ?>
+                            <?php }
+								
+                                endif; ?>
                         <?php endforeach; ?>
 
-                        <?php //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option ?>
+                        <?php //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option 
+                              if(!($current_category_p_id == '5')){
+?>
                         <div class="actions fme_layered_clear_all" id="fme_layered_clear_all_btn" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><a class="fme_layered_clearall" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>            
-                        <?php //endif ?>
+                        <?php } //endif ?>
 
                     </dl>
                     <script type="text/javascript">
