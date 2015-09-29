@@ -32,8 +32,6 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         
         $email = $login_data['email'];
         $password = $login_data['password'];
-//        $email = 'chkashif167@gmail.com';
-//        $password = '1234567a';
         
         /** @var $session Mage_Customer_Model_Session */
         $session = Mage::getSingleton( 'customer/session' );
@@ -46,12 +44,11 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
             $customer = $session->getCustomer();
             try{
                 $res = $this->getCustomer($sessionId,$customer->getEmail(),$customer->getPasswordHash());
-                //$orders = $this->getCustomerOrders($customer->getCustomerId());
-                
+                $orders = $this->getCustomerOrders($customer->getId());
                 $response['success'] = 1;
                 $response['message'] = 'Login successful';
                 $response['customer'] = $res;
-                //$response['customer_orders'] = $orders;
+                $response['customer_orders'] = $orders;
                 
             }catch(Exception $e){
                 $response['message'] = $e->getMessage();
@@ -144,7 +141,7 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
     }
     
     public function getCustomerOrders($customerId){
-        $orderCollection     = Mage::getModel("sales/order")->getCollection()
+        $orderCollection = Mage::getModel("sales/order")->getCollection()
                            ->addAttributeToSelect('*')
                            ->addFieldToFilter('customer_id', $customerId);
         $order = array();
@@ -152,11 +149,9 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         {
             $order['order_id'] = $_order->getRealOrderId() ;
             $order['shipping_address'] = $_order->getShippingAddress();
-            $order['grand_total'] = $_order->formatPrice($_order->getGrandTotal());
-            $order['status_labe;'] = $_order->getStatusLabel();
+            $order['grand_total'] = $_order->getGrandTotal();
+            $order['status_label'] = $_order->getStatusLabel();
          }
-        echo "Orders : ";
-        print_r($order);die();
         return $order;
     }
     
