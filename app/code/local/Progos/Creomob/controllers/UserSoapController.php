@@ -144,15 +144,79 @@ class Progos_Creomob_UserSoapController extends Progos_Creomob_SoapController {
         $orderCollection = Mage::getModel("sales/order")->getCollection()
                            ->addAttributeToSelect('*')
                            ->addFieldToFilter('customer_id', $customerId);
-        $order = array();
+        $orders = array();
         foreach ($orderCollection as $_order)
         {
+            $order = array();
             $order['order_id'] = $_order->getRealOrderId() ;
             $order['shipping_address'] = $_order->getShippingAddress();
             $order['grand_total'] = $_order->getGrandTotal();
+            $order['currency'] = $_order->getOrderCurrencyCode();
             $order['status_label'] = $_order->getStatusLabel();
+            $orders[] = $order;
          }
-        return $order;
+        return $orders;
     }
     
+    public function getCustomerOrdersAction(){
+        $customerId = $this->getRequest()->getParam('cid');
+        $orders = $this->getCustomerOrders($customerId);
+        header("Content-Type: application/json");
+        echo json_encode($orders);
+        die;
+    }
+    
+    public function getCustomerAddressAction(){
+        $customerId = $this->getRequest()->getParam('cid');
+        $customer = Mage::getModel('customer/customer')->load($customerId);
+        
+        $customerAddress = array();
+        foreach ($customer->getAddresses() as $address)
+        {
+           $customerAddress[] = $address->toArray();
+        }
+        $billing = $customer->getPrimaryBillingAddress();
+        $shipping = $customer->getPrimaryShipingAddress();
+        $address = array('billing_address'=>$billing,'shipping_address'=>$shipping,
+            'addresses'=>$customerAddress);
+        header("Content-Type: application/json");
+        echo json_encode($customerAddress);
+        die;
+    }
+    
+    public function customerSuscribtionAction(){
+        $customerId = $this->getRequest()->getParam('cid');
+        $subscribe = $this->getRequest()->getParam('sub');
+        $customer = Mage::getModel('customer/customer')->load($customerId);
+        $customer_email = $customer->getEmail();
+        $subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($customer_email);
+
+        if($subscribe=="true"){
+            Mage::getModel('newsletter/subscriber')->subscribe($customer_email);
+        } elseif($subscribe=="false"){
+            $subscriber->setStatus(Mage_Newsletter_Model_Subscriber::STATUS_UNSUBSCRIBED);
+            $subscriber->save();
+            Mage::getModel('newsletter/subscriber')->loadByEmail($customer_email)->unsubscribe();
+        }
+        
+        echo $subscribe;
+    }
+    
+    public function getCustomerSuscribtionAction(){
+        $customerId = $this->getRequest()->getParam('cid');
+        $customer = Mage::getModel('customer/customer')->load($customerId);
+        $customer_email = $customer->getEmail();
+        $subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($customer_email);
+        
+        if(!$subscriber->getId() 
+                || $subscriber->getStatus() == Mage_Newsletter_Model_Subscriber::STATUS_UNSUBSCRIBED
+                || $subscriber->getStatus() == Mage_Newsletter_Model_Subscriber::STATUS_NOT_ACTIVE){
+            echo 'false';
+        } else {
+            echo 'true';
+        }
+        //print_r($subscriber->debug());
+        die();
+ 
+    }
 }
