@@ -20,8 +20,8 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
         $item   = $this->getItem();
         $pdf    = $this->getPdf();
         $page   = $this->getPage();
-        $lines  = array();
- 
+        $lines  = array();       
+
         // draw Product name
         $lines[0] = array(array(
             'text' => Mage::helper('core/string')->str_split($item->getName(), 30, true, true),
@@ -30,10 +30,10 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
 
         // draw QTY
         $lines[0][] = array(
-            'text'  => $item->getQty()*1,
+            'text'  => $item->getQty()*1, 
             'feed'  => 460
         );
- 
+        
         // draw Price
         $lines[0][] = array(
             'text'  => $order->formatPriceTxt($item->getPrice()),
@@ -52,13 +52,17 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
 		
         // custom options
         $options = $this->getItemOptions();
+	//echo "<pre>";
+	//print_r($options);
+	//echo "<p//re>";
+	//exit;  
         if ($options) {
             foreach ($options as $option) {
                 // draw options label
                 $lines[][] = array(
                     'text' => Mage::helper('core/string')->str_split(strip_tags($option['label']), 50, true, true),
                     'font' => 'italic',
-                    'feed' => 100
+                    'feed' => 110
                 );
  
                 if ($option['value']) {
@@ -67,11 +71,37 @@ class Extensions_Invoice_Model_Order_Pdf_Items_Invoice_Default extends Mage_Sale
                     foreach ($values as $value) {
                         $lines[][] = array(
                             'text' => Mage::helper('core/string')->str_split($value, 50, true, true),
-                            'feed' => 110
+                            'feed' => 120
                         );
                     }
                 }
             }
+            $lines[][] = array(
+             'text'  => '',
+             'feed'  => 560,
+             'font'  => 'bold',
+             'align' => 'right'
+            );
+            $lines[][] = array(
+             'text'  => '',
+             'feed'  => 560,
+             'font'  => 'bold',
+             'align' => 'right'
+            );
+            
+        }else{
+            $lines[][] = array(
+             'text'  => '',
+             'feed'  => 560,
+             'font'  => 'bold',
+             'align' => 'right'
+            );
+            $lines[][] = array(
+             'text'  => '',
+             'feed'  => 560,
+             'font'  => 'bold',
+             'align' => 'right'
+            );
         }
  
         $lineBlock = array(
