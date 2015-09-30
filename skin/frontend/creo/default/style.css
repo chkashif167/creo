@@ -5208,3 +5208,7 @@ textarea {
 .pdc_text_list {
 	max-height:900px !important;
 }
+
+.input-text.required-entry.validate-email.email {
+	box-shadow:none;
+}
