@@ -18,25 +18,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$height = (int) $height;
 			//echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);			
 			$imageurl = Mage::helper('catalog/image')->init($image, 'small_image');//->keepAspectRatio(true)
-			//->keepFrame(false)
-			//->resize($width, $height)
-			//->__toString();
-			//echo $imageurl .  "here2";
-			//				
-			//echo "<br />";
-			//echo "<pre>";
-			//print_r($image->getData());
-			//echo "</pre>";
-			//
-			//exit;
-			//Get product image and resize it
-			//$imagePath = Mage::helper('catalog/image')->init($image, 'image')
-			//->keepAspectRatio(true)
-			//->keepFrame(false)
-			//->resize($width, $height)
-			//->__toString();
 			$imageLocation = substr($imageurl,strlen(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)));
-			//echo $imageLocation."here3";
 			$image = Zend_Pdf_Image::imageWithPath($imageLocation);
 			$page->drawImage($image, $x1, $y1, $x2, $y2);
 		}
@@ -80,8 +62,6 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$page->drawText(Mage::helper('sales')->__('Invoice # ') . $invoice->getIncrementId(), 450, 820, 'UTF-8');
 			
 			/* Add table head */
-			//$page->setFillColor(new Zend_Pdf_Color_Rgb(0,0,0)); // background color
-			//$page->setLineWidth(0.5);
 			$page->drawRectangle(25,  $this->y, 100, $this->y-25);
 			$page->drawRectangle(100, $this->y, 350, $this->y-25);
 			$page->drawRectangle(350, $this->y, 450, $this->y-25);
@@ -100,6 +80,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$this->y -=25;
 			
 			$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+			$order->getData('total_qty_ordered');
 
 			/* Add body */
 			foreach ($invoice->getAllItems() as $item){
@@ -108,32 +89,37 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
                                    continue;
 
 				}
-
+	
    				/* Draw product image */
 				$productId = $item->getOrderItem()->getProductId();
 				$productSku = $item->getOrderItem()->getSku();
 				$image = Mage::getModel('catalog/product')->load($productId);	
                                 $c_options = $item->getOrderItem()->getProductOptions();
-                                //echo "<pre>";
-                                //print_r($c_options);
-                                //echo "<pre>";
-                                //exit;
-                                if($this->y > 180){
+                                if($this->y > 200){
 				/* Draw item */
 				$page = $this->_drawItem($item, $page, $order);
 				$this->_setFontRegular($page, 8);
 				$this->y = $this->y - 60;
 
                                 if($c_options['attributes_info']){
-                                   $custom_y1 = $this->y+73;
-                                   $custom_y2 = $this->y+152; 
-                                }else if($c_options['options']){
-                                   $custom_y1 = $this->y+47;
-                                   $custom_y2 = $this->y+128; 
-                                }else if($c_options['additional_options']){
-                                   $custom_y1 = $this->y+25;
-                                   $custom_y2 = $this->y+105; 
-                                }else if(!($c_options['attributes_info']) || !($c_options['options']) || !($c_options['additional_options']) ){
+                                 $size = sizeof($c_options['attributes_info']);
+                                 if($size == 1){
+                                   $custom_y1 = $this->y+36;
+                                   $custom_y2 = $this->y+117;                                 
+                                 }else if($size == 2){
+                                   $custom_y1 = $this->y+50;
+                                   $custom_y2 = $this->y+129;
+                                 }else{}
+                                }
+                                else if($c_options['options'] && $c_options['additional_options']){
+                                   $custom_y1 = $this->y+35;
+                                   $custom_y2 = $this->y+115; 
+                                }
+                                else if($c_options['options']){
+                                   $custom_y1 = $this->y+35;
+                                   $custom_y2 = $this->y+115;
+                                }                                
+                                else{
                                    $custom_y1 = $this->y+25;
                                    $custom_y2 = $this->y+105;
                                 }
@@ -202,21 +188,30 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 				$this->_setFontRegular($page, 8);
 				$this->y = $this->y - 60;
 
-
                                 if($c_options['attributes_info']){
-                                   $custom_y1 = $this->y+73;
-                                   $custom_y2 = $this->y+152; 
-                                }else if($c_options['options']){
-                                   $custom_y1 = $this->y+47;
-                                   $custom_y2 = $this->y+128; 
-                                }else if($c_options['additional_options']){
-                                   $custom_y1 = $this->y+25;
-                                   $custom_y2 = $this->y+105; 
-                                }else if(!($c_options['attributes_info']) || !($c_options['options']) || !($c_options['additional_options']) ){
+                                 $size = sizeof($c_options['attributes_info']);
+                                 if($size == 1){
+                                   $custom_y1 = $this->y+36;
+                                   $custom_y2 = $this->y+117;                                 
+                                 }else if($size == 2){
+                                   $custom_y1 = $this->y+50;
+                                   $custom_y2 = $this->y+129;
+                                 }else{}
+                                }
+                                else if($c_options['options'] && $c_options['additional_options']){
+                                   $custom_y1 = $this->y+35;
+                                   $custom_y2 = $this->y+115; 
+                                }
+                                else if($c_options['options']){
+                                   $custom_y1 = $this->y+35;
+                                   $custom_y2 = $this->y+115;
+                                }                                
+                                else{
                                    $custom_y1 = $this->y+25;
                                    $custom_y2 = $this->y+105;
                                 }
-
+                                
+                                
                                 //x-axis                        //bottom height   //width     //top height
 				$this->insertImage($image, 35, (int)($custom_y1), 95, (int)($custom_y2), $width, $height, $page);				
 				
