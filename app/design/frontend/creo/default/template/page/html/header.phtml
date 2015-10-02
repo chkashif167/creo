@@ -96,7 +96,7 @@ if(Mage::registry('current_product')) {
             <?php echo $this->getChildHtml('currency_switcher') ?>
             <?php $islogedin = Mage::getSingleton('customer/session')->isLoggedIn() ?>
             <?php if (!$islogedin): ?>
-               <a class="headerLogin" href="<?php echo Mage::getBaseUrl(); ?>customer/account/login/">LOGIN</a>
+               <a class="headerLogin ajaxlogin-login" href="<?php echo Mage::getBaseUrl(); ?>customer/account/login/">LOGIN</a>
 
 <!--               <a class="headerLogin ajaxlogin-login" href="<?php echo Mage::getBaseUrl(); ?>customer/account/login/">LOGIN</a>
 -->            <?php else: ?>
