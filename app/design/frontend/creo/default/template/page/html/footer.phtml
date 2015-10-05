@@ -71,7 +71,15 @@
 
 
         
-       <?php // echo $this->getCopyright() ?>
+       <?php // echo $this->getCopyright() 
+	   
+	   // check if user is logged in and already subscribed.
+		$customerEmail = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
+		$subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($customerEmail);
+		if($subscriber->subscriber_email!=''){
+			setcookie('newsletter', 'hide-news-letter', time()+7200,'/');
+		}
+	   ?>
 
 <script type="text/javascript">
 var hdata = jQuery(".messages").text();
