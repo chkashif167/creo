@@ -167,6 +167,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         
         $data['total_pages'] = $total_pages;
         $data['current_page'] = $page;
+        $data['filters'] = $filters;
         
 
 //        header('Access-Control-Allow-Origin: *');
