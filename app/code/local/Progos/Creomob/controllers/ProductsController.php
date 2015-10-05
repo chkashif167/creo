@@ -109,7 +109,10 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
 
             if (!empty($category_filters_ids)) {
 //                $collection->addCategoryFilter(Mage::getModel('catalog/category')->load(array(implode(',', $category_filters_ids))), true);
-                
+                $collection->joinField(
+                    'category_id', 'catalog/category_product', 'category_id', 
+                    'product_id = entity_id', null, 'left'
+                );
                 $collection->addAttributeToFilter('category_id',array('in'=>$category_filters_ids));
             }
             
