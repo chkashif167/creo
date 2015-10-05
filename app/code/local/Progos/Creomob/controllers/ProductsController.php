@@ -59,6 +59,9 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                         if ($val == true)
                             $category_filters_ids[] = $key;
                     }
+                    if($categoryId){
+                        $category_filters_ids[] = $categoryId;
+                    }
                 }
             }
             
