@@ -27,7 +27,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
             'cc_cid' => $payment_data->cc_ccid,
             'cc_owner' => $payment_data->cc_owner,
             'cc_number' => $payment_data->cc_number,
-            'cc_type' => $payment_data->cc_type,
+            'cc_type' => 'VI',//$payment_data->cc_type,
             'cc_exp_year' => $payment_data->cc_exp_year,
             'cc_exp_month' => $payment_data->cc_exp_month
         );
