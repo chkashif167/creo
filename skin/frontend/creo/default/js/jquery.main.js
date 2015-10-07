@@ -2557,17 +2557,24 @@ jQuery(document).ready(function (e) {
 	    getcategory == 'skull-flags.html' ||
 	    getcategory == 'cartoon.html'
 	){
-		jQuery('#gender-24').find('span').trigger('click');
-		jQuery('.fme_loading_filters').show();
-		jQuery('#styles-20').find('span').trigger('click');
+		if(jQuery('#gender-24').length ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute men fme_layered_attribute_selected_men' )){
+				jQuery('#gender-24').find('span').trigger('click');
+				jQuery('.fme_loading_filters').show();
+				jQuery('#styles-20').find('span').trigger('click');
+			}
+		}
 	}
 	
 	if( getcategory == 'clothing.html'
 	){
-		jQuery('#gender-24').find('span').trigger('click');
-		jQuery('.fme_loading_filters').show();
-		jQuery('#styles-20').find('span').trigger('click');
-		
+		if(jQuery('#gender-24').length ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute men fme_layered_attribute_selected_men' )){
+				jQuery('#gender-24').find('span').trigger('click');
+				jQuery('.fme_loading_filters').show();
+				jQuery('#styles-20').find('span').trigger('click');
+			}
+		}
 	}
 
 	if( getcategory == 'tshirt.html' ||
@@ -2575,7 +2582,10 @@ jQuery(document).ready(function (e) {
 	    getcategory == 'men.html' ||
 	    getcategory == 'women.html'
 	){
-		jQuery('#styles-20').find('span').trigger('click');
-		
+		if(jQuery('#styles-20').length ){		
+			if(!(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape')){
+				jQuery('#styles-20').find('span').trigger('click');
+			}
+		}
 	}
 });
