@@ -48,7 +48,8 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                   <?php echo $this->__($_filter->getName()) ?>
                                   </dt><?php */ ?>
                                 <?php
-								if($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == '3'){// men = 57, women = 58
+								if($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == 
+								'3' || ($current_category_p_id == '2' && $current_category_id == '3')){// men = 57, women = 58
 								if ($_filter->getVar() == 'gender') {
 								}else if ($_filter->getVar() == 'styles') {
                                     ?>
