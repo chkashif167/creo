@@ -1,9 +1,13 @@
 <?php if (!Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+
+    
+        
     <div id="ajaxlogin-login-window" style="display: none;">
-        <div class="page-title">
-            <span><?php echo $this->__('Login into your Account') ?></span>
+        <div class="modal-holder">
+        <div class="heading-holder">
+            <h3><?php echo $this->__('Login') ?></h3>
         </div>
-        <form action="<?php echo $this->getUrl('ajaxlogin/index/login', array('_secure'=>(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on'))) ?>" method="post" id="ajaxlogin-login-form">
+        <form  class="login-form login-popup-form" action="<?php echo $this->getUrl('ajaxlogin/index/login', array('_secure'=>(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on'))) ?>" method="post" id="ajaxlogin-login-form">
             <div class="content">
                 <ul class="form-list">
                     <li>
@@ -22,7 +26,7 @@
                 </ul>
             </div>
             <div class="buttons-set">
-                <button type="button" class="button" title="<?php echo $this->__('Register') ?>" name="noaccount" id="noaccount" onclick="window.location = '<?php echo $this->getUrl('customer/account/create') ?>'"><span><span><?php echo $this->__('Register') ?></span></span></button>
+                <!-- <button type="button" class="button" title="<?php echo $this->__('Register') ?>" name="noaccount" id="noaccount" onclick="window.location = '<?php echo $this->getUrl('customer/account/create') ?>'"><span><span><?php echo $this->__('Register') ?></span></span></button> -->
                 <button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
 				<div class="progress-indicator">
                     <span class="please-wait" id="login-please-wait" style="display:none;">
@@ -40,6 +44,7 @@
           </div>
             </div>
         </form>
+        </div>
         <script type="text/javascript">
             //<![CDATA[
             var ajaxLoginForm = new VarienForm('ajaxlogin-login-form', true);
@@ -148,6 +153,7 @@
                     ?></p>
             </div>
         </div>
+
 
         <script type="text/javascript">
             //<![CDATA[

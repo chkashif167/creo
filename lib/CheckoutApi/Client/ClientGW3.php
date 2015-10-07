@@ -322,9 +322,31 @@ class CheckoutApi_Client_ClientGW3 extends CheckoutApi_Client_Client
 
     public function  refundCharge($param)
     {
+        $chargeHistory = $this->getChargeHistory($param);
+        $charges = $chargeHistory->getCharges();
+        $chargesArray = $charges->toArray();
+        $toRefund = false;
+        $toRefundData = false;
+
+        foreach ($chargesArray as $key=> $charge) {
+
+            if(strtolower($charge['status'])==strtolower(CheckoutApi_Client_Constant::STATUS_CAPTURE)) {
+                $toRefund = true;
+                $toRefundData = $charge;
+                break;
+            }
+        }
+
+        if($toRefund) {
+            $refundChargeId = $toRefundData['id'];
+        }
+
         $hasError = false;
         $param['postedParam']['type'] = CheckoutApi_Client_Constant::CHARGE_TYPE;
+
+        $param['method'] = CheckoutApi_Client_Adapter_Constant::API_POST;
         $postedParam = $param['postedParam'];
+        $param['chargeId'] = $refundChargeId;
         $this->flushState();
         $isAmountValid = CheckoutApi_Client_Validation_GW3::isValueValid($postedParam);
         $isChargeIdValid = CheckoutApi_Client_Validation_GW3::isChargeIdValid($param);
@@ -337,6 +359,7 @@ class CheckoutApi_Client_ClientGW3 extends CheckoutApi_Client_Client
         } else {
 
             $uri = "$uri/{$param['chargeId']}/refund";
+
         }
          if(!$isAmountValid) {
              $this->throwException('Please provide a amount (in cents)',array('param'=>$param),false);
@@ -518,6 +541,30 @@ class CheckoutApi_Client_ClientGW3 extends CheckoutApi_Client_Client
 
         return $this->request( $uri ,$param,!$hasError);
     }
+    
+        /**
+     * Update PaymentToken Charge.
+     * Updates the specified Card Charge by setting the values of the parameters passed.
+     * @param array $param payload param
+     * @return CheckoutApi_Lib_RespondObj
+     * @throws Exception
+     *  Simple usage:
+     *      
+     *      $updatePaymentToken = $Api->updatePaymentToken($paymentToken);
+     */
+
+    public function  updatePaymentToken($param)
+    {
+        $hasError = false;
+        $param['postedParam']['type'] = CheckoutApi_Client_Constant::CHARGE_TYPE;
+        $param['method'] = CheckoutApi_Client_Adapter_Constant::API_PUT;
+
+        $this->flushState();
+            
+        $uri = $this->getUriToken()."/payment/{$param['paymentToken']}";
+        
+        return $this->request($uri ,$param,!$hasError);
+    }
 
     /**
      * Get   Charge.
@@ -552,6 +599,30 @@ class CheckoutApi_Client_ClientGW3 extends CheckoutApi_Client_Client
 
         return  $this->_responseUpdateStatus($this->request($uri ,$param,!$hasError));
     }
+
+    public  function getChargeHistory($param) {
+
+        $hasError = false;
+        $param['postedParam']['type'] = CheckoutApi_Client_Constant::CHARGE_TYPE;
+        $param['method'] = CheckoutApi_Client_Adapter_Constant::API_GET;
+
+        $this->flushState();
+
+        $isChargeIdValid = CheckoutApi_Client_Validation_GW3::isChargeIdValid($param);
+        $uri = $this->getUriCharge();
+
+        if(!$isChargeIdValid) {
+            $hasError = true;
+            $this->throwException('Please provide a valid charge id',array('param'=>$param));
+
+        } else {
+
+            $uri = "$uri/{$param['chargeId']}/history";
+        }
+
+        return  $this->request($uri ,$param,!$hasError);
+    }
+
     /**
      * Create LocalPayment Charge.
      * Creates a LocalPayment Charge using a Session Token and
@@ -1447,27 +1518,104 @@ class CheckoutApi_Client_ClientGW3 extends CheckoutApi_Client_Client
     {
          if($charge) {
             $response = $this->_responseUpdateStatus($this->getParser()->parseToObj($charge));
-            if($response->getMessage()) {
-                return $response->getMessage();
-            }else {
-                return $response;
-            }
+
+           return $response;
+
         }
         return null;
     }
 
+
+
     private function _responseUpdateStatus($response)
     {
-       // Zend_Debug::dump($response->getAutoCapture());
-        if($response->getStatus()) {
-            $response->setCaptured ( $response->getStatus () == 'Captured' );
-            $response->setAuthorised ( $response->getStatus () == 'Authorised' );
-            $response->setRefunded ( $response->getStatus () == 'Refunded' );
-            $response->setVoided ( $response->getStatus () == 'Voided' );
-            $response->setExpired ( $response->getStatus () == 'Expired' );
-            $response->setDecline ( $response->getStatus () == 'Decline' );
-        }
+
+            if($response->hasStatus() && $response->hasHttpStatus() && $response->hasHttpStatus() ==200) {
+                $response->setCaptured ( $response->getStatus () == 'Captured' );
+                $response->setAuthorised ( $response->getStatus () == 'Authorised' );
+                $response->setRefunded ( $response->getStatus () == 'Refunded' );
+                $response->setVoided ( $response->getStatus () == 'Voided' );
+                $response->setExpired ( $response->getStatus () == 'Expired' );
+                $response->setDecline ( $response->getStatus () == 'Decline' );
+            }elseif( $response->hasMessage() &&  !$response->hasErrorCode()) {
+               $responseMessage =   $response->getMessage();
+               $responseMessage->setCaptured ($responseMessage->getStatus () == 'Captured' );
+               $responseMessage->setAuthorised ($responseMessage->getStatus () == 'Authorised' );
+               $responseMessage->setRefunded ($responseMessage->getStatus () == 'Refunded' );
+               $responseMessage->setVoided ($responseMessage->getStatus () == 'Voided' );
+               $responseMessage->setExpired ($responseMessage->getStatus () == 'Expired' );
+               $responseMessage->setDecline ($responseMessage->getStatus () == 'Decline' );
+                return $responseMessage;
+            }
+     
 
         return $response;
+    }
+    
+    public static function validateRequest($validationFields,$chargeObject)
+    {
+
+        $result = array('status'=>true,'message'=>array());
+        if(isset($validationFields['currency']) && strtolower($validationFields['currency']) != strtolower($chargeObject->getCurrency()) ) {
+            $result['status'] = false;
+            $result['message'][] = 'Currency mismatch'. ' Charge currency: '.$chargeObject->getCurrency(). ' and order currency: '.$validationFields['currency'];
+        }
+
+        if(isset($validationFields['value']) && $validationFields['value'] != $chargeObject->getValue() ) {
+            $result['status'] = false;
+            $result['message'][] = 'Amount mismatch '. ' Charge Amount:'.$chargeObject->getValue(). ' and order amount: '.$validationFields['value'];
+
+        }
+
+        if(isset($validationFields['trackId']) && $validationFields['trackId'] != $chargeObject->getTrackId() ) {
+            $result['status'] = false;
+            $result['message'][] = 'Track id mismatch'. ' Charge Track id:'.$chargeObject->getTrackId(). ' and order Track id: '.$validationFields['trackId'];
+
+        }
+
+        return $result;
+
+    }
+    
+    public function valueToDecimal($amount, $currencySymbol)
+    {
+      $currency = strtoupper($currencySymbol);
+      $threeDecimalCurrencyList = array('BHD', 'LYD', 'JOD', 'IQD', 'KWD', 'OMR', 'TND');
+      $zeroDecimalCurencyList = array('BYR', 'XOF', 'BIF', 'XAF', 'KMF', 'XOF', 'DJF', 'XPF', 'GNF', 'JPY', 'KRW', 'PYG', 'RWF', 'VUV', 'VND');
+
+      if (in_array($currency, $threeDecimalCurrencyList)) { 
+        $value = (int) ($amount * 1000);
+        
+      } elseif (in_array($currency, $zeroDecimalCurencyList)){
+         $value = floor ($amount);   
+         
+      } else {
+        $value = (int) ($amount * 100);
+        
+      }
+      
+      return $value;
+      
+    }
+    
+    public function decimalToValue($amount, $currencySymbol)
+    {
+      $currency = strtoupper($currencySymbol);
+      $threeDecimalCurrencyList = array('BHD', 'LYD', 'JOD', 'IQD', 'KWD', 'OMR', 'TND');
+      $zeroDecimalCurencyList = array('BYR', 'XOF', 'BIF', 'XAF', 'KMF', 'XOF', 'DJF', 'XPF', 'GNF', 'JPY', 'KRW', 'PYG', 'RWF', 'VUV', 'VND');
+
+      if (in_array($currency, $threeDecimalCurrencyList)) { 
+        $value =  $amount / 1000;
+        
+      } elseif (in_array($currency, $zeroDecimalCurencyList)){
+         $value = $amount;   
+         
+      } else {
+        $value = $amount / 100;
+        
+      }
+      
+      return $value;
+      
     }
 }
