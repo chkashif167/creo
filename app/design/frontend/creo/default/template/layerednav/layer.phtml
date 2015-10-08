@@ -49,8 +49,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                   </dt><?php */ ?>
                                 <?php
 								if($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == 
-								'3' || ($current_category_p_id == '2' && $current_category_id == '3')){// men = 57, women = 58
-								if ($_filter->getVar() == 'gender') {
+								'3' ){ //|| ($current_category_p_id == '2' && $current_category_id == '3')){// men = 57, women = 								if ($_filter->getVar() == 'gender') {
 								}else if ($_filter->getVar() == 'styles') {
                                     ?>
                                     <label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>

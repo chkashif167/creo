@@ -2556,9 +2556,9 @@ jQuery(document).ready(function (e) {
 	    getcategory == 'coco-skull.html' ||
 	    getcategory == 'skull-flags.html' ||
 	    getcategory == 'cartoon.html'
-	){
+){
 		if(jQuery('#gender-24').length ){
-			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute men fme_layered_attribute_selected_men' )){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') ){
 				jQuery('#gender-24').find('span').trigger('click');
 				jQuery('.fme_loading_filters').show();
 				jQuery('#styles-20').find('span').trigger('click');
@@ -2569,7 +2569,7 @@ jQuery(document).ready(function (e) {
 	if( getcategory == 'clothing.html'
 	){
 		if(jQuery('#gender-24').length ){
-			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute men fme_layered_attribute_selected_men' )){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') ){
 				jQuery('#gender-24').find('span').trigger('click');
 				jQuery('.fme_loading_filters').show();
 				jQuery('#styles-20').find('span').trigger('click');
