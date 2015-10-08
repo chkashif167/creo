@@ -2536,7 +2536,7 @@ jQuery(document).ready(function (e) {
 });
 
 // select filter by default
-jQuery(document).ready(function (e) {
+jQuery(window).load(function() {
     var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
 	if( getcategory == 'categories.html' || 
 	    getcategory == 'skull-collection.html' ||
