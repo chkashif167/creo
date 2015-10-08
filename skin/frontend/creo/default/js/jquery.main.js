@@ -2534,3 +2534,58 @@ jQuery(document).ready(function (e) {
         });
     })
 });
+
+// select filter by default
+jQuery(document).ready(function (e) {
+    var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
+	if( getcategory == 'categories.html' || 
+	    getcategory == 'skull-collection.html' ||
+	    getcategory == 'x-city-love-collection.html' ||
+	    getcategory == 'celebrity-hush-collection.html' ||
+	    getcategory == 'creo.html' ||
+	    getcategory == 'minion-collection.html' ||
+	    getcategory == 'pug-life-collection.html' ||
+	    getcategory == 'funny-typography-collection.html' ||
+	    getcategory == 'motivational-typography-collection.html' ||
+	    getcategory == 'retro-collection.html' ||
+	    getcategory == 'lips-collection.html' ||
+	    getcategory == 'typography-collection.html' ||
+	    getcategory == 'bikers-collection.html' ||
+	    getcategory == 'geometric-city-collection.html' ||
+	    getcategory == 'bikers.html' ||
+	    getcategory == 'coco-skull.html' ||
+	    getcategory == 'skull-flags.html' ||
+	    getcategory == 'cartoon.html'
+	){
+		if(jQuery('#gender-24').length ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute men fme_layered_attribute_selected_men' )){
+				jQuery('#gender-24').find('span').trigger('click');
+				jQuery('.fme_loading_filters').show();
+				jQuery('#styles-20').find('span').trigger('click');
+			}
+		}
+	}
+	
+	if( getcategory == 'clothing.html'
+	){
+		if(jQuery('#gender-24').length ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute men fme_layered_attribute_selected_men' )){
+				jQuery('#gender-24').find('span').trigger('click');
+				jQuery('.fme_loading_filters').show();
+				jQuery('#styles-20').find('span').trigger('click');
+			}
+		}
+	}
+
+	if( getcategory == 'tshirt.html' ||
+	    getcategory == 'polo.html' ||
+	    getcategory == 'men.html' ||
+	    getcategory == 'women.html'
+	){
+		if(jQuery('#styles-20').length ){		
+			if(!(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape')){
+				jQuery('#styles-20').find('span').trigger('click');
+			}
+		}
+	}
+});
