@@ -17,6 +17,11 @@ div.fme-filter a.fme_layered_attribute_selected {padding-left:25px; background-p
   background: #000;
   color: #fff !important;
 }
+#fme_layered_gender a.fme_layered_attribute_selected_Men, #fme_layered_gender a.fme_layered_attribute_selected_Women {  
+  text-decoration: none;
+  background: #000;
+  color: #fff !important;
+}
 div.fme-filter a.fme_layered_swatches {padding:0px 0px 5px 0px;}
 div.fme-filter a.fme_layered_swatches_selected {opacity:0.5}
 
