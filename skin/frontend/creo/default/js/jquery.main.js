@@ -2536,7 +2536,7 @@ jQuery(document).ready(function (e) {
 });
 
 // select filter by default
-jQuery(document).ready(function (e) {
+jQuery(window).load(function() {
     var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
 	if( getcategory == 'categories.html' || 
 	    getcategory == 'skull-collection.html' ||
@@ -2558,10 +2558,9 @@ jQuery(document).ready(function (e) {
 	    getcategory == 'cartoon.html'
 ){
 		if(jQuery('#gender-24').length ){
-			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') && !(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape') ){
 				jQuery('#gender-24').find('span').trigger('click');
-				jQuery('.fme_loading_filters').show();
-				jQuery('#styles-20').find('span').trigger('click');
+				jQuery('#styles-20').find('img').trigger('click');
 			}
 		}
 	}
@@ -2569,10 +2568,9 @@ jQuery(document).ready(function (e) {
 	if( getcategory == 'clothing.html'
 	){
 		if(jQuery('#gender-24').length ){
-			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') && !(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape') ){
 				jQuery('#gender-24').find('span').trigger('click');
-				jQuery('.fme_loading_filters').show();
-				jQuery('#styles-20').find('span').trigger('click');
+				jQuery('#styles-20').find('img').trigger('click');
 			}
 		}
 	}
@@ -2584,7 +2582,7 @@ jQuery(document).ready(function (e) {
 	){
 		if(jQuery('#styles-20').length ){		
 			if(!(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape')){
-				jQuery('#styles-20').find('span').trigger('click');
+				jQuery('#styles-20').find('img').trigger('click');
 			}
 		}
 	}
