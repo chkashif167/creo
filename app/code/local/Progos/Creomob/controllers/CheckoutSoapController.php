@@ -8,8 +8,12 @@ require_once dirname(__FILE__).'/SoapController.php';
 
 class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapController {
     
-    protected $checkout_endpoint = "https://sandbox.checkout.com/api2/v2/";
-    protected $private_key = "sk_test_f89deda7-f8df-4fe0-88af-0027b863a345";
+    
+    protected $checkout_endpoint = "https://api2.checkout.com/v2/";
+    protected $private_key = "sk_103764da-6f8b-443d-8bef-66454522b6b0";
+    protected $checkout_endpoint_sandbox = "https://sandbox.checkout.com/api2/v2/";
+    protected $private_key_sandbox = "sk_test_f89deda7-f8df-4fe0-88af-0027b863a345";
+    protected $payment_mode = 'live'; //test/live
 
     public function indexAction(){
 
@@ -31,7 +35,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
             'cc_cid' => $payment_data->cc_cid,
             'cc_owner' => $payment_data->cc_owner,
             'cc_number' => $payment_data->cc_number,
-            'cc_type' => 'VI',//$payment_data->cc_type,
+            'cc_type' => $payment_data->cc_type,//'VI',//
             'cc_exp_year' => $payment_data->cc_exp_year,
             'cc_exp_month' => $payment_data->cc_exp_month
         );
@@ -39,7 +43,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
         // add payment method
         $proxy->shoppingCartPaymentMethod($sessionId, $cartId, $paymentMethod);
         
-        if($payment_method=='creditcardpci_ignorethis'){
+        if($payment_method=='creditcardpci_ignore'){
             //place order manually
             $cc_process_res = $this->creditCardPciCharge($sessionId,$cartId,$payment_data->customer[0],
                     $payment_data->cc_checkout_card_token);
@@ -49,7 +53,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
             $response_message = $cc_process_res_json->responseMessage;
             
             
-            $response['res'] = $cc_process_res_json;
+            $response['checkout_res'] = $cc_process_res_json;
             
             if($response_code==10000){
                 //payment is approved
@@ -63,8 +67,8 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
                 $service->submitAll();
                 $order = $service->getOrder();
                 
-                $response['success'] = 0; //set to 1 when process is complete
-                $response['message'] = 'Payment approved, processing underway ';
+                $response['success'] = 1; //set to 1 when process is complete
+                $response['message'] = 'Payment approved, order processed ';
                 $response['quote_id'] = $quote_id;
                 //$response['order'] = $order;
             } else {
@@ -199,16 +203,23 @@ var_dump($result);
         $value = round($cart_info->grand_total,2);
         $currency = $cart_info->quote_currency_code;
         
+        $url = $this->checkout_endpoint;
+        $key = $this->private_key;
+        if($this->payment_mode=='test'){
+            $url = $this->checkout_endpoint_sandbox;
+            $key = $this->private_key_sandbox;
+        }
+        
         $req_data = array('email'=>$customer_email,'value'=>$value,'currency'=>$currency,
             'cardToken'=>$card_token);
         $req_data_json = json_encode($req_data);
         
 //        return $req_data;
-        $header[] = 'Authorization: '.$this->private_key;
+        $header[] = 'Authorization: '.$key;
         $header[] = 'Content-type: application/json; charset=utf-8';
         $header[] = 'Content-Length: '.  strlen($req_data_json);
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $this->checkout_endpoint.'charges/token');
+        curl_setopt($curl, CURLOPT_URL, $url.'charges/token');
         curl_setopt($curl, CURLOPT_HTTPHEADER,$header);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $req_data_json);
