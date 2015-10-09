@@ -39,7 +39,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
         // add payment method
         $proxy->shoppingCartPaymentMethod($sessionId, $cartId, $paymentMethod);
         
-        if($payment_method=='creditcardpci'){
+        if($payment_method=='creditcardpci_ignorethis'){
             //place order manually
             $cc_process_res = $this->creditCardPciCharge($sessionId,$cartId,$payment_data->customer[0],
                     $payment_data->cc_checkout_card_token);

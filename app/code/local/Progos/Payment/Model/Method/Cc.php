@@ -12,20 +12,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@magento.com so we can send you a copy immediately.
  *
- * DISCLAIMER
  *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magento.com for more information.
- *
- * @category    Mage
- * @package     Mage_Payment
- * @copyright  Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @category    Progos
+ * @package     Progos_Payment
+ * @author      Danish Satti  
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
 
-class Mage_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
+class Progos_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
 {
     protected $_formBlockType = 'payment/form_cc';
     protected $_infoBlockType = 'payment/info_cc';
@@ -59,7 +54,11 @@ class Mage_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
 
     /**
      * Prepare info instance for save
-     *
+     * 
+     * updated by Danish to enable saving cid
+     * also add below line on top of credit card handling model class 
+     * protected $_canSaveCc = true;
+     * 
      * @return Mage_Payment_Model_Abstract
      */
     public function prepareSave()
@@ -68,7 +67,9 @@ class Mage_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
         if ($this->_canSaveCc) {
             $info->setCcNumberEnc($info->encrypt($info->getCcNumber()));
         }
-        //$info->setCcCidEnc($info->encrypt($info->getCcCid()));
+        //enable saving credit card cid
+        $info->setCcCidEnc($info->encrypt($info->getCcCid()));
+        
         $info->setCcNumber(null)
             ->setCcCid(null);
         return $this;

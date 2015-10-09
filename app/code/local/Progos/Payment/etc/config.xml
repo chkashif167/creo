@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Progos_Payment>
+            <version>0.1.0</version>    <!-- Version number of your module -->
+        </Progos_Payment>
+    </modules>
+    <global>
+        <models>
+            <payment>
+                <method>
+                    <rewrite>
+                        <cc>Progos_Payment_Model_Method_Cc</cc>
+                    </rewrite>
+                </method>
+            </payment>
+        </models>
+    </global>
+</config>
