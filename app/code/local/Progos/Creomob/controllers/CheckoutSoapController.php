@@ -51,7 +51,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
             $cc_process_res_json = json_decode($cc_process_res);
             $response_code = (int)$cc_process_res_json->responseCode;
             $response_message = $cc_process_res_json->responseMessage;
-            
+            $message = $cc_process_res_json->message;
             
             $response['checkout_res'] = $cc_process_res_json;
             
@@ -73,7 +73,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
                 //$response['order'] = $order;
             } else {
                 $response['success'] = 0;
-                $response['message'] = 'Payment was not successful';
+                $response['message'] = 'Payment was not successful because '.$message;
             }
             
             
