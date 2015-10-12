@@ -13,7 +13,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
     protected $private_key = "sk_103764da-6f8b-443d-8bef-66454522b6b0";
     protected $checkout_endpoint_sandbox = "https://sandbox.checkout.com/api2/v2/";
     protected $private_key_sandbox = "sk_test_f89deda7-f8df-4fe0-88af-0027b863a345";
-    protected $payment_mode = 'live'; //test/live
+    protected $payment_mode = 'test'; //test/live
 
     public function indexAction(){
 

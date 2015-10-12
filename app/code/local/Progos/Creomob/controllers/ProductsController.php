@@ -53,14 +53,28 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $category_filters = $filters['category'];
             $category_filters_ids = array();
             
-            foreach ($category_filters as $sub_category) {
+            //foreach ($category_filters as $sub_category) {
+            $sub_category = $category_filters['Categories'];
                 if (is_array($sub_category)) {
                     foreach ($sub_category as $key => $val) {
                         if ($val == true)
                             $category_filters_ids[] = $key;
                     }
                 }
-            }
+            //}
+            $currnt_category_id = $category_filters['currenct_category_id'];
+            
+//            print_r($category_filters_ids);
+//            echo 'Current category ',$currnt_category_id;
+            
+            $clothing = array(3,57,58,17,18,59,60);
+            $accessories = array(5,40,42);
+            $caps = array(54,55,56);
+            $categories_categories = array(6,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39);
+            $color_categories = array_merge($clothing,$categories_categories);
+            $size_categories = array_merge($clothing);
+            $styles_categories = array_merge($clothing,$categories_categories);
+            $gender_categories = array_merge($categories_categories);
             
             $color_filters = $filters['attr']['color'];
             $colors = array();
@@ -116,16 +130,16 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 $collection->addAttributeToFilter('category_id',array('in'=>$category_filters_ids));
             }
             
-            if (!empty($colors)) {
+            if (!empty($colors) && in_array($currnt_category_id, $color_categories)) {
                 $collection->addAttributeToFilter('color', array('in' => $colors));
             }
-            if (!empty($sizes)) {
+            if (!empty($sizes) && in_array($currnt_category_id, $size_categories)) {
                 $collection->addAttributeToFilter('size', array('in' => $sizes));
             }
-            if (!empty($gender)) {
+            if (!empty($gender) && in_array($currnt_category_id,$gender_categories)) {
                 $collection->addAttributeToFilter('gender', array('in' => $gender));
             }
-            if (!empty($styles)) {
+            if (!empty($styles) && in_array($currnt_category_id,$styles_categories)) {
                 $collection->addAttributeToFilter('style', array('in' => $styles));
             }
             if($prices['min']!=-1){
