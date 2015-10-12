@@ -2535,8 +2535,10 @@ jQuery(document).ready(function (e) {
     })
 });
 
+
+
 // select filter by default
-jQuery(window).load(function() {
+jQuery(document).ready(function (e) {
     var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
 	if( getcategory == 'categories.html' || 
 	    getcategory == 'skull-collection.html' ||
