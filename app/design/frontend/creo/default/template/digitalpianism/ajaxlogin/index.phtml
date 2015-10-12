@@ -33,7 +33,7 @@
                         <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" class="v-middle" alt=""/>
                     </span>
                 </div>
-                <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left ajaxlogin-forgot"><?php echo $this->__('Forgot Your Password?') ?></a>
+                <a href="<?php echo Mage::getUrl('customer/account/forgotpassword') ?>" class="f-left ajaxlogin-forgot"><?php echo $this->__('Forgot Your Password?') ?></a>
                 <div class="row">
           	<div class="col-xs-12 text-center">
 				<a class="text-center" href="<?php echo Mage::getUrl('customer/account/create'); ?>">Create account</a>
@@ -185,7 +185,7 @@
                     maxWidth: 300
                 }
             },
-            forgot: {
+/*            forgot: {
                 el    : $$('.ajaxlogin-forgot'),
                 event : 'click',
                 window: $('ajaxlogin-forgot-window'),
@@ -193,7 +193,7 @@
                     maxWidth: 300
                 }
             },
-/*            logout: {
+            logout: {
                 el    : $$('.ajaxlogin-logout'),
                 event : 'click',
                 window: $('ajaxlogin-logout-window'),
