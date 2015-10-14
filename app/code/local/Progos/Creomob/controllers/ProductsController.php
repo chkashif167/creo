@@ -8,96 +8,6 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         
     }
 
-
-//    public function productsAction() {
-//        $categoryId = $this->getRequest()->getParam('cid');
-//        $search = $this->getRequest()->getParam('s');
-//        $filter = $this->getRequest()->getParam('filter');
-//        $page = (int)$this->getRequest()->getParam('page');
-//        $total_pages = 0;
-//
-//
-//
-//        $products = null;
-//        if ($filter && $filter == 1) {
-//            $filters = json_decode(file_get_contents("php://input"), true);
-//            $products = $this->getFilteredProducts($filters);
-//        } else {
-//            if ($categoryId) {
-//                $category = Mage::getModel('catalog/category')->load($categoryId);
-//                $category_name = $category->getName();
-//                $data['category_id'] = $categoryId;
-//                $data['category_name'] = $category_name;
-//                
-//                $sub_categories = Mage::getModel('catalog/category')->getCategories($categoryId);
-//
-//                foreach ($sub_categories as $c) {
-//                    $sc = Mage::getModel('catalog/category')->load($c->getId());
-//                    $cat['id'] = $sc->getId();
-//                    $cat['name'] = $sc->getName();
-//                    $cat['img'] = $sc->getImageUrl();
-//                    $data['sub_categories'][] = $cat;
-//                }
-//
-//                $collection = Mage::getModel('catalog/category')->load($categoryId)->getProductCollection();
-//                
-//                $collection->addAttributeToFilter("visibility",array("gt"=>1));
-//                if ($search) {
-//                    $collection->addAttributeToFilter("name", array("like" => "%$search%"));
-//                }
-//                $products = $collection
-//                        ->addAttributeToSelect('*')
-//                        ->setPageSize($page_size)->setCurPage($page)
-//                        ->load();
-//                $total_pages = $collection->getLastPageNumber();
-//            } else {
-//                $collection = Mage::getModel('catalog/product')->getCollection();
-//                $collection->addAttributeToFilter("visibility",array("gt"=>1));
-//                if ($search) {
-//                    $collection->addAttributeToFilter("name", array("like" => "%$search%"));
-//                }
-//                $products = $collection->addAttributeToSelect('*')
-//                        ->setPageSize($page_size)->setCurPage($page);
-//                $total_pages = $collection->getLastPageNumber();
-//            }
-//        }
-//
-//
-//
-//        $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
-//        foreach ($products as $p2) {//print_r($p2);echo "<hr>";
-//            //$p2 = Mage::getModel('catalog/product')->load($p->getId());
-//            //$img = (string)Mage::helper('catalog/image')->init($p2, 'small_image')->resize(200,200);
-//            
-//            $image = (string)Mage::helper('catalog/image')->init($p2,'small_image');//->resize(600,600);
-//            $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p2);
-//            $prod['id'] = $p2->getId();
-//            $prod['name'] = $p2->getName();
-//            $prod['img'] = $image;
-//            $prod['img2'] = $p2->getImageUrl();
-//            $prod['price'] = $p2->getPrice();
-//            $prod['stock_qty'] = $stock->getQty();
-//            $prod['stock_qty_min'] = $stock->getMinQty();
-//            $prod['stock_qty_min_sales'] = $stock->getMinSaleQty();
-//            $prod['status'] = $p2->getStatus();
-//            $prod['currency'] = $currency_code;
-//            $prod['category_id'] = $p2->getCategoryIds(); //$categoryId;
-//            $prod['category_name'] = $category_name;
-//            
-//
-//            $data['products'][] = $prod;
-//        }
-//        
-//        $data['total_pages'] = $total_pages;
-//        $data['current_page'] = $page;
-//        
-//
-////        header('Access-Control-Allow-Origin: *');
-//        header("Content-Type: application/json");
-//        print_r(json_encode($data));
-//        die;
-//    }
-    
     
     public function productsAction() {
         $categoryId = $this->getRequest()->getParam('cid');
@@ -143,14 +53,28 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $category_filters = $filters['category'];
             $category_filters_ids = array();
             
-            foreach ($category_filters as $sub_category) {
+            //foreach ($category_filters as $sub_category) {
+            $sub_category = $category_filters['Categories'];
                 if (is_array($sub_category)) {
                     foreach ($sub_category as $key => $val) {
                         if ($val == true)
                             $category_filters_ids[] = $key;
                     }
                 }
-            }
+            //}
+            $currnt_category_id = $category_filters['currenct_category_id'];
+            
+//            print_r($category_filters_ids);
+//            echo 'Current category ',$currnt_category_id;
+            
+            $clothing = array(3,57,58,17,18,59,60);
+            $accessories = array(5,40,42);
+            $caps = array(54,55,56);
+            $categories_categories = array(6,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39);
+            $color_categories = array_merge($clothing,$categories_categories);
+            $size_categories = array_merge($clothing);
+            $styles_categories = array_merge($clothing,$categories_categories);
+            $gender_categories = array_merge($categories_categories);
             
             $color_filters = $filters['attr']['color'];
             $colors = array();
@@ -198,19 +122,24 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             
 
             if (!empty($category_filters_ids)) {
-                $collection->addCategoryFilter(Mage::getModel('catalog/category')->load(array(implode(',', $category_filters_ids))), true);
+//                $collection->addCategoryFilter(Mage::getModel('catalog/category')->load(array(implode(',', $category_filters_ids))), true);
+                $collection->joinField(
+                    'category_id', 'catalog/category_product', 'category_id', 
+                    'product_id = entity_id', null, 'left'
+                );
+                $collection->addAttributeToFilter('category_id',array('in'=>$category_filters_ids));
             }
             
-            if (!empty($colors)) {
+            if (!empty($colors) && in_array($currnt_category_id, $color_categories)) {
                 $collection->addAttributeToFilter('color', array('in' => $colors));
             }
-            if (!empty($sizes)) {
+            if (!empty($sizes) && in_array($currnt_category_id, $size_categories)) {
                 $collection->addAttributeToFilter('size', array('in' => $sizes));
             }
-            if (!empty($gender)) {
+            if (!empty($gender) && in_array($currnt_category_id,$gender_categories)) {
                 $collection->addAttributeToFilter('gender', array('in' => $gender));
             }
-            if (!empty($styles)) {
+            if (!empty($styles) && in_array($currnt_category_id,$styles_categories)) {
                 $collection->addAttributeToFilter('style', array('in' => $styles));
             }
             if($prices['min']!=-1){
@@ -257,6 +186,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         
         $data['total_pages'] = $total_pages;
         $data['current_page'] = $page;
+        $data['filters'] = $filters;
         
 
 //        header('Access-Control-Allow-Origin: *');

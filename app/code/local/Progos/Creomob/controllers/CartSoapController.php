@@ -278,7 +278,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
             
             if(count($address_customer_data['customer']) && !empty((array) $address_customer_data['customer'])){
                 $this->setCustomer($sessionId,$qid,$address_customer_data['customer'][0]);
-            }else {
+            } else {
                 $this->setGuestCustomer($sessionId,$qid,$address_customer_data['shipping']);
             }
             
@@ -371,4 +371,41 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         die;
     }
     
+    public function getCurrencyRates(){
+        $currencyModel = Mage::getModel('directory/currency');
+        $currencies = $currencyModel->getConfigAllowCurrencies();
+        $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode();
+        $defaultCurrencies = $currencyModel->getConfigBaseCurrencies();
+        $rates=$currencyModel->getCurrencyRates($defaultCurrencies, $currencies);
+        $currency_data = array('allowed_currencies'=>$currencies,'base_currency'=>$baseCurrencyCode,
+            'currency_rates'=>$rates);
+        return $currency_data;
+    }
+    
+    public function getCurrencyRatesAction(){
+        $currency_data = $this->getCurrencyRates();
+        
+        header("Content-Type: application/json");
+        echo json_encode($currency_data);
+        die;
+    }
+    
+    public function getShippingAddress($sessionId, $quoteId){
+        
+        $cart = (array)$this->getCart($sessionId,$quoteId);
+        $address = $cart['billing_address'];
+        return $address;
+    }
+    
+    public function getShippingAddressAction(){
+        $sessionId = $this->getRequest()->getParam('sid');
+        $qid = $this->getRequest()->getParam('qid');
+        
+        $data = $this->getShippingAddress($sessionId,$qid);
+        
+//        header('Access-Control-Allow-Origin: *');
+        header("Content-Type: application/json");
+        print_r(json_encode($data));
+        die;
+    }
 }
