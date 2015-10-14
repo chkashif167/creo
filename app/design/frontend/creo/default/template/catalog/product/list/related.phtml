@@ -41,7 +41,7 @@
 <div class="slideset">
 <?php foreach($this->getItems() as $_item): ?>
 <div class="slide">
-<a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(275) ?>" width="" height="" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" /></a>
+<a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize() ?>" width="" height="" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" /></a>
 <div class="product-descr">
 <h4><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h4>
 <span class="price"> <?php echo $this->getPriceHtml($_item, true, '-related') ?></span>

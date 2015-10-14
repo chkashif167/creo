@@ -5013,7 +5013,7 @@ textarea {
 #ajaxlogin-login-window .modal-holder {padding: 20px 0 0;}
 .modal {z-index: 999999;}
 .modal-backdrop {z-index: 99999;}
-
+.slide .product-image{z-index: auto;}
 
 
 
