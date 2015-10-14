@@ -2150,7 +2150,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .carousel-creo.carousel4 .mask {
     position: relative;
     overflow: hidden;
-    height: 273px !important;
+    /*height: 273px !important;*/
 }
 .carousel-creo.carousel4 .slideset {
     width: 99999px;
@@ -2545,7 +2545,7 @@ div.fme-filter dd li{overflow: visible !important;}
     text-align: left;
     padding-left: 55px;
 }
-.cart-table-area tr{/*border-bottom: 2px dotted #2e2e2e;*/background: url('images/border-slice.png') repeat-x bottom }
+/*.cart-table-area tr{/*border-bottom: 2px dotted #2e2e2e;*/background: url('images/border-slice.png') repeat-x bottom }*/
 .cart-table-area .alignleft{
     float: left;
     width: 78px;
