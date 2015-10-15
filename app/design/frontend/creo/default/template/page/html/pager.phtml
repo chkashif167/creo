@@ -42,7 +42,7 @@
         <?php if($this->getShowAmounts()): ?>
             <?php if($this->getLastPageNum()>1): ?>
             <p class="amount amount--has-pages">
-                <?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+                <?php //echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
             </p>
             <?php else: ?>
             <p class="amount amount--no-pages">
@@ -52,7 +52,7 @@
         <?php endif ?>
 
         <?php if($this->getShowPerPage()): ?>
-        <div class="limiter">
+<!--        <div class="limiter">
             <label><?php echo $this->__('Show') ?></label>
             <select onchange="setLocation(this.value)" title="<?php echo $this->__('Results per page'); ?>">
             <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
@@ -62,6 +62,7 @@
             <?php endforeach; ?>
             </select>
         </div>
+-->
         <?php endif ?>
     </div>
     <?php endif; ?>
