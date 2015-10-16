@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Progos_Payment>
+        <active>true</active>
+        <codePool>local</codePool>
+        </Progos_Payment>
+    </modules>
+</config>

@@ -7,6 +7,7 @@ class CheckoutApi_ChargePayment_Model_Method_Creditcardpci extends CheckoutApi_C
     protected $_isGateway = true;
     protected $_canUseInternal = true;
     protected $_code = 'creditcardpci';
+    protected $_canSaveCc = true;
 
     protected $_formBlockType = 'checkoutapi_chargePayment/form_creditcardpci';
    // protected $_infoBlockType = 'checkoutapi_chargePayment/info_creditcard';

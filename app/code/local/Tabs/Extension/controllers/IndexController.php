@@ -3,7 +3,7 @@ class Tabs_Extension_IndexController extends Mage_Core_Controller_Front_Action{
     
     public function IndexAction() {
       
-	 echo "Hello tuts+ World"; 
+	 //echo "Hello tuts+ World"; 
 	  
     }
 

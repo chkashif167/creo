@@ -1646,13 +1646,19 @@ $j(window).load(function () {
             setCookie("newsletter", "hide-news-letter", 60);
         }
     });
+	
+	jQuery('.closebtn').click(function(){
+		
+			setCookie("newsletter", "hide-news-letter", 60);
+		
+	});
 });
 
 function checkNewsletterCookie() {
     //console.log("here");
     var seeit = getCookie("newsletter");
     //console.log(seeit);
-    if (seeit == 'undefined' || seeiit == "") {
+    if (seeit == 'undefined' || seeit == "") {
         console.log("triggered 1");
         //console.log("here1");
         if(newsletter_popup_called == false) {//do not allow multiple calls if popup is already shown
@@ -2527,4 +2533,59 @@ jQuery(document).ready(function (e) {
             content: "Customizing your Cap is not yet ready, Please check back very soon. This will be cool. 															#keepitcreo :) ",
         });
     })
+});
+
+
+
+// select filter by default
+jQuery(document).ready(function (e) {
+    var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
+	if( getcategory == 'categories.html' || 
+	    getcategory == 'skull-collection.html' ||
+	    getcategory == 'x-city-love-collection.html' ||
+	    getcategory == 'celebrity-hush-collection.html' ||
+	    getcategory == 'creo.html' ||
+	    getcategory == 'minion-collection.html' ||
+	    getcategory == 'pug-life-collection.html' ||
+	    getcategory == 'funny-typography-collection.html' ||
+	    getcategory == 'motivational-typography-collection.html' ||
+	    getcategory == 'retro-collection.html' ||
+	    getcategory == 'lips-collection.html' ||
+	    getcategory == 'typography-collection.html' ||
+	    getcategory == 'bikers-collection.html' ||
+	    getcategory == 'geometric-city-collection.html' ||
+	    getcategory == 'bikers.html' ||
+	    getcategory == 'coco-skull.html' ||
+	    getcategory == 'skull-flags.html' ||
+	    getcategory == 'cartoon.html'
+){
+		if(jQuery('#gender-24').length ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') && !(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape') ){
+				jQuery('#gender-24').find('span').trigger('click');
+				jQuery('#styles-20').find('img').trigger('click');
+			}
+		}
+	}
+	
+	if( getcategory == 'clothing.html'
+	){
+		if(jQuery('#gender-24').length ){
+			if( !(jQuery('#gender-24').attr('class') == 'fme_layered_attribute Men fme_layered_attribute_selected_Men') && !(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape') ){
+				jQuery('#gender-24').find('span').trigger('click');
+				jQuery('#styles-20').find('img').trigger('click');
+			}
+		}
+	}
+
+	if( getcategory == 'tshirt.html' ||
+	    getcategory == 'polo.html' ||
+	    getcategory == 'men.html' ||
+	    getcategory == 'women.html'
+	){
+		if(jQuery('#styles-20').length ){		
+			if(!(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape')){
+				jQuery('#styles-20').find('img').trigger('click');
+			}
+		}
+	}
 });

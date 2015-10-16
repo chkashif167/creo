@@ -157,7 +157,10 @@ $_helper = $this->helper('catalog/output');
         <?php endif; ?>
 
         <div class="toolbar-bottom">
-            <?php //echo $this->getToolbarHtml() ?>
+            <?php //echo $this->getToolbarHtml() ;
+			
+				echo $this->getToolbarBlock()->setTemplate('catalog/product/list/toolbar-bottom.phtml')->toHtml() ;
+			?>
         </div>
     </div>
 <?php endif; ?>

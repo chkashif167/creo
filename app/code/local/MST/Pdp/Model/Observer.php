@@ -13,7 +13,7 @@ class MST_Pdp_Model_Observer extends Varien_Object
     {
         // set the additional options on the product
         $action = Mage::app()->getFrontController()->getAction();
-        if ($action->getFullActionName() == 'checkout_cart_add')
+        if (is_object($action) && $action->getFullActionName() == 'checkout_cart_add')
         {
             // assuming you are posting your custom form values in an array called extra_options...
             $extraOption = $action->getRequest()->getParam('extra_options');
