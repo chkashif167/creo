@@ -1,17 +1,47 @@
 <?php
-// app/code/local/Envato/Recentproducts/Block/Recentproducts.php
 class Tabs_Extension_Block_Seller extends Mage_Core_Block_Template {
    protected $_defaultToolbarBlock = 'catalog/product_list_toolbar';
+   protected $getLoadedProductCollection;
    
    public function getLoadedProductCollection()
     { 
-        
+		$time = time();
+		$to = date('Y-m-d H:i:s', $time);
+		$lastTime = $time - 2592000; // 30*60*60*24
+		$from = date('Y-m-d H:i:s', $lastTime);
+		$storeId    = Mage::app()->getStore()->getId(); 
+        $categoryId = $this->getRequest()->getParam('id');
+		$category = Mage::getModel('catalog/category')->load($categoryId);
+		$collection = Mage::getResourceModel('sales/order_item_collection')
+					    ->addAttributeToSelect('*')
+						->addAttributeToFilter('store_id', '1')
+						->addAttributeToFilter('created_at', array('from' => $from, 'to' => $to));
+
+		$this->_productCollection = $collection;
+        return parent::getLoadedProductCollection();
+
+/*
+		foreach($collection as $o  ){
+		echo    $product_id = $o->product_id;
+		echo "<br />";
+		echo     $product_sku = $o->sku;
+		echo "<br />";
+		echo     $product_name = $o->getName();
+		echo "<br />";
+			$_product = Mage::getModel('catalog/product')->load($product_id);
+			$cats = $_product->getCategoryIds();
+			$category_id = $cats[0]; // just get the first id
+			echo "<br />";
+			print_r($category_id);
+			echo "<br />";
+*/	
+/*
        $id = $this->getRequest()->getParam('id');
        // benchmarking
         $memory = memory_get_usage();
         $time = microtime();
         $catId = $id;
-        /** @var $collection Mage_Catalog_Model_Resource_Product_Collection */
+        /** @var $collection Mage_Catalog_Model_Resource_Product_Collection 
         $collection = Mage::getResourceModel('catalog/product_collection');
         // join sales order items column and count sold products
         $expression = new Zend_Db_Expr("SUM(oi.qty_ordered)");
@@ -47,14 +77,13 @@ class Tabs_Extension_Block_Seller extends Mage_Core_Block_Template {
         // so all sorting work lays on php
         $result = array();
         foreach ($collection as $product) {
-            /** @var $product Mage_Catalog_Model_Product */
+            /** @var $product Mage_Catalog_Model_Product 
             if (isset($result[$product->getCatId()])) {
                 continue;
             }
             $result[$product->getCatId()] = 'Category:' . $product->getCatName() . '; Product:' . $product->getName() . '; Sold Times:'. $product->getSalesCount();
         }
-       
-        return $collection;
+*/       
 
         
     }

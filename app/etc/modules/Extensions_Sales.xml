@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Extensions
+ * @package     Extensions_Sales
+ * @author     Jawad Nisar - Extensions <jawwad.nissar@gmail.com>
+ */
+-->
+<config>
+    <modules>
+        <Extensions_Sales>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Extensions_Sales>
+    </modules>
+</config>

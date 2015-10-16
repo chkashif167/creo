@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Extensions_Sales>
+      <version>0.1.0</version>
+    </Extensions_Sales>
+  </modules>
+  <frontend>
+    <routers>
+      <sales>
+        <use>standard</use>
+          <args>
+            <module>Extensions_Sales</module>
+            <frontName>sales</frontName>
+          </args>
+      </sales>
+    </routers>
+    <layout>
+      <updates>
+      <sales>
+        <file>extensionssales.xml</file>
+      </sales>
+      </updates>
+    </layout>
+  </frontend>
+  <global>
+  <blocks>
+    <sales>
+    <class>Extensions_Sales_Block</class>
+    </sales>
+  </blocks>
+  </global>
+</config> 
