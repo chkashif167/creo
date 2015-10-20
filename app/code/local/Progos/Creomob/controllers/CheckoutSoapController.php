@@ -13,7 +13,7 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
     protected $private_key = "sk_103764da-6f8b-443d-8bef-66454522b6b0";
     protected $checkout_endpoint_sandbox = "https://sandbox.checkout.com/api2/v2/";
     protected $private_key_sandbox = "sk_test_f89deda7-f8df-4fe0-88af-0027b863a345";
-    protected $payment_mode = 'test'; //test/live
+    protected $payment_mode = 'live'; //test/live
 
     public function indexAction(){
 
@@ -58,14 +58,16 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
             if($response_code==10000){
                 //payment is approved
                 // now load cart from cart id
-                
+               
                 $quote = Mage::getModel('sales/quote')->load($cartId);
                 $quote_id = $quote->getId();
+                echo "Quote object is -> ";
                 
                 $quote->collectTotals()->save();
                 $service = Mage::getModel('sales/service_quote', $quote);
                 $service->submitAll();
-                $order = $service->getOrder();
+//                $order = $service->getOrder();
+//                 $quotePaymentObj = $quote->getPayment();
                 
                 $response['success'] = 1; //set to 1 when process is complete
                 $response['message'] = 'Payment approved, order processed ';
@@ -73,9 +75,9 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
                 //$response['order'] = $order;
             } else {
                 $response['success'] = 0;
+                $response['error_code_cc'] = $response_code;
                 $response['message'] = 'Payment was not successful because '.$message;
             }
-            
             
             
             header("Content-Type: application/json");
@@ -123,10 +125,14 @@ class Progos_Creomob_CheckoutSoapController extends Progos_Creomob_SoapControlle
             $res = $this->processPayment($sessionId,$cartId,$payment_data);
             
             $cart = Mage::getModel('sales/quote')->load($cartId);
-            $cart->removeAllItems();
-            //$cart->truncate();
+            
+            foreach ($cart->getAllItems() as $item) {
+                $itemId = $item->getId();
+                $cart->removeItem($itemId);
+            }
+            
+            
             $cart->save();
-            //$cart->getItems()->clear()->save();
             
             $response['success'] = 1;
             $response['message'] = 'Order processed successfully';
