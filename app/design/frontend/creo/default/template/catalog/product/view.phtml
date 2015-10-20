@@ -106,11 +106,17 @@
                 <div class="text-area">
                     <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                     <div class="price-area"> 
-                        <span class="price">
-                            <?php if($_product->getSpecialPrice() > 0.0):?>
-                                <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
-                            <?php endif;?>
-                            <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
+<div class="price-info">
+<?php /*?><?php if($_product->getSpecialPrice() > 0.0):?>
+<i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
+<?php endif;?>
+<?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?><?php */?>
+
+<?php echo $this->getPriceHtml($_product); ?>
+<?php echo $this->getChildHtml('bundle_prices') ?>
+<?php echo $this->getTierPriceHtml() ?>
+
+ </div>
                         <span class="availability">Availability:  
                             <?php echo $this->getChildHtml('product_type_availability'); ?>
                         </span> 
