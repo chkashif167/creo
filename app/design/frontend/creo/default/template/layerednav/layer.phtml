@@ -37,9 +37,11 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                     <dl id="fme_filters_list">
 
 
-                        <?php $_filters = $this->getFilters() ?>
+                        <?php $_filters = $this->getFilters(); 
+                        
+                        ?>
                         <?php // $_filters = array_reverse($_filters); ?>
-                        <?php foreach ($_filters as $_filter): ?>
+                        <?php foreach ($_filters as $_filter):?>
                             <?php if ($_filter->getItemsCount()): ?>
                                 <?php /* ?><dt class="fme_layered_dt">
                                   <?php if ($clearUrl = $_filter->getClearUrl()): ?>
@@ -48,31 +50,37 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                   <?php echo $this->__($_filter->getName()) ?>
                                   </dt><?php */ ?>
                                 <?php
-								if($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == 
-								'3' ){ //|| ($current_category_p_id == '2' && $current_category_id == '3')){// men = 57, women = 								
-								if ($_filter->getVar() == 'gender') {
-								}else if ($_filter->getVar() == 'styles') {
-                                    ?>
-                                    <label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
-                                    <?php
-                                
-                                ?>
-                                <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
-
-                            <?php }	
-								}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
-                                                                
-								if ($_filter->getVar() == 'styles') {
-                                    ?>
-                                    <label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
-                                    <?php
-                                }
-                                ?>
-                                <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
-
-                            <?php }
-								
-                                endif; ?>
+                                // hide men women filter in clothing category
+				if($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == '3' ){ 					
+					if ($_filter->getVar() == 'styles') {
+					?>
+						<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
+						<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
+					
+					<?php } else if ($_filter->getVar() == 'universal_categories') {
+					?>
+						<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label>
+						<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd>
+					<?php }
+				}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
+					if ($_filter->getVar() == 'gender') {
+					?>
+						<label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Gender: </label>
+						<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
+					<?php
+					}
+					else if ($_filter->getVar() == 'styles') {
+					?>
+						<label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
+						<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
+					<?php }
+					else if ($_filter->getVar() == 'universal_categories') {
+					?>
+						<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label>
+						<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd>
+					<?php }
+					}
+					endif;?>
                         <?php endforeach; ?>
 
                         <?php //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option 

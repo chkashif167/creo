@@ -2536,7 +2536,7 @@ jQuery(document).ready(function (e) {
 });
 
 
-
+/*
 // select filter by default
 jQuery(document).ready(function (e) {
     var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
@@ -2589,3 +2589,4 @@ jQuery(document).ready(function (e) {
 		}
 	}
 });
+*/
