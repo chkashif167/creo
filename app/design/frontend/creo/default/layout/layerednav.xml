@@ -27,8 +27,9 @@
     <remove name="left"/>
     <block type="layerednav/search_layer" name="layer"  template="layerednav/layer.phtml"/>
     <block type="layerednav/list" name="root">
-        <!--<block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">-->
-		  <block type="catalog/product_list" name="product_list" template="magpassion_quickview/quickview/catalog/product/list.phtml">
+        <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
+<!--		  <block type="catalog/product_list" name="product_list" template="magpassion_quickview/quickview/catalog/product/list.phtml">
+-->
             <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
                 <block type="page/html_pager" name="product_list_toolbar_pager"/>
             </block>
