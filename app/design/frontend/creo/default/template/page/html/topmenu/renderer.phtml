@@ -191,7 +191,7 @@
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/trending/?id=3" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/seller/?id=3" ?>">Best Seller</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller/?id=3" ?>">Best Seller</a></li>
                     <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/new/?id=3" ?>">NEW</a></li>
 
                 </ul>
@@ -349,7 +349,7 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if (in_array("categories",$parent_cat_array)) {
+<!--<li <?php if (in_array("categories",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">CATEGORIES</a>
 
@@ -402,6 +402,7 @@ endforeach;
 
 
 </li>
+-->
 <li <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), 'create.html') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/create/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/account/') == false) {
                     echo'class="active"';
                 } ?>><a href="<?php echo Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>

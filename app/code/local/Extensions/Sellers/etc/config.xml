@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Extensions_Sellers>
+      <version>0.1.0</version>
+    </Extensions_Sellers>
+  </modules>
+  <frontend>
+    <routers>
+      <sellers>
+        <use>standard</use>
+          <args>
+            <module>Extensions_Sellers</module>
+            <frontName>sellers</frontName>
+          </args>
+      </sellers>
+    </routers>
+    <layout>
+      <updates>
+      <sellers>
+        <file>extensionssellers.xml</file>
+      </sellers>
+      </updates>
+    </layout>
+  </frontend>
+  <global>
+  <blocks>
+    <sellers>
+    <class>Extensions_Sellers_Block</class>
+    </sellers>
+  </blocks>
+  </global>
+</config> 

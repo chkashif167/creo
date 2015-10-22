@@ -134,6 +134,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                     $extra['color_value'] = $product->getAttributeText('color');
                     $extra['size_id'] = $product->getSize();
                     $extra['size_value'] = $product->getAttributeText('size');
+                    $extra['in_stock_qty'] = (int)$product->getStockItem()->getQty();
                     $extra['min_sale_qty'] = $product->getStockItem()->getMinSaleQty();
                     $extra['max_sale_qty'] = $product->getStockItem()->getMaxSaleQty();
                     

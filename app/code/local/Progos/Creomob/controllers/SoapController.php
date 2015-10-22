@@ -5,11 +5,11 @@ class Progos_Creomob_SoapController extends Mage_Core_Controller_Front_Action{
     
     
     
-//    protected $soapURLv1 = "http://localhost/creo/index.php/api/soap/?wsdl";
-    protected $soapURLv1 = "https://beta.creoroom.com/api/soap/?wsdl";
+    protected $soapURLv1 = "http://localhost/creo/index.php/api/soap/?wsdl";
+//    protected $soapURLv1 = "https://creoroom.com/api/soap/?wsdl";
     
-//    protected $soapURLv2 = "http://localhost/creo/index.php/api/v2_soap/?wsdl";
-    protected $soapURLv2 = "https://beta.creoroom.com/api/v2_soap/?wsdl";
+    protected $soapURLv2 = "http://localhost/creo/index.php/api/v2_soap/?wsdl";
+//    protected $soapURLv2 = "https://creoroom.com/api/v2_soap/?wsdl";
     
     
     private $API_USER = "creomob"; //webservice user login
@@ -32,10 +32,22 @@ class Progos_Creomob_SoapController extends Mage_Core_Controller_Front_Action{
     public function verifyTokenAction(){
         $sessionId = $this->getRequest()->getParam('sid');
         $proxy = new SoapClient($this->soapURLv2);
-        
+        //use filters to minimize data
+        $complexFilter = array(
+            'complex_filter' => array(
+                array(
+                    'key' => 'type',
+                    'value' => array('key' => 'in', 'value' => 'configurable')
+                ),
+                array(
+                    'key' => 'category_ids',
+                    'value' => array('key' => '', 'value' => array(3,57,58,17,59))
+                )
+            )
+        );
         $valid = false;
         try{
-            $result = $proxy->catalogProductList($sessionId);
+            $result = $proxy->catalogProductList($sessionId,$complexFilter);
             // no exception means token is valid
             $valid = true;
         } catch (Exception $e){
