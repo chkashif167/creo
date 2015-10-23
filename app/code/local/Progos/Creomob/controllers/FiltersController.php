@@ -86,31 +86,39 @@ class Progos_Creomob_FiltersController extends Mage_Core_Controller_Front_Action
         foreach ($categories as $category) {
             $data['categories'][] = $category;
         }
+        $attrs = array();
         
         $attributeCode = "color";
         $attributeOptions = $this->getAttribute($attributeCode);
-        $attrs = array();
+//        $attribute = Mage::getModel('catalog/resource_eav_attribute')
+//            ->loadByCode(Mage_Catalog_Model_Product::ENTITY, $attributeCode);
+//        $attributeOptions = $attribute ->getSource()->getAllOptions(false); 
         foreach ($attributeOptions AS $attributeOption) {
-            //$attrs['color'][] = array('code'=>$attributeOption['value'],'label'=>$attributeOption['label']);
             $attrs['color'][] = $attributeOption;
         }
         
         $attributeCode = "size";
-        $attributeOptions = $this->getAttribute($attributeCode);
+//        $attributeOptions = $this->getAttribute($attributeCode);
+        $attribute = Mage::getModel('catalog/resource_eav_attribute')
+            ->loadByCode(Mage_Catalog_Model_Product::ENTITY, $attributeCode);
+        $attributeOptions = $attribute ->getSource()->getAllOptions(false); 
         foreach ($attributeOptions AS $attributeOption) {
-            //$attrs['size'][] = array('code'=>$attributeOption['value'],'label'=>$attributeOption['label']);
             $attrs['size'][] = $attributeOption;
         }
         
         $attributeCode = "gender";
-        $attributeOptions = $this->getAttribute($attributeCode);
+        $attribute = Mage::getModel('catalog/resource_eav_attribute')
+            ->loadByCode(Mage_Catalog_Model_Product::ENTITY, $attributeCode);
+        $attributeOptions = $attribute ->getSource()->getAllOptions(false); 
         foreach ($attributeOptions AS $attributeOption) {
-            //$attrs['gender'][] = array('code'=>$attributeOption['value'],'label'=>$attributeOption['label']);
             $attrs['gender'][] = $attributeOption;
         }
         
         $attributeCode = "styles";
-        $attributeOptions = $this->getAttribute($attributeCode);
+//        $attributeOptions = $this->getAttribute($attributeCode);
+        $attribute = Mage::getModel('catalog/resource_eav_attribute')
+            ->loadByCode(Mage_Catalog_Model_Product::ENTITY, $attributeCode);
+        $attributeOptions = $attribute ->getSource()->getAllOptions(false); 
         foreach ($attributeOptions AS $attributeOption) {
             //$attrs['gender'][] = array('code'=>$attributeOption['value'],'label'=>$attributeOption['label']);
             $attrs['styles'][] = $attributeOption;

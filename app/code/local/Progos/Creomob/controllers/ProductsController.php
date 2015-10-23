@@ -45,7 +45,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         }
         
 //                ->addAttributeToFilter('type_id','configurable');
-        
+                
         //applying filters
         if ($filter && $filter == 1) {
             $filters = json_decode(file_get_contents("php://input"), true);
@@ -62,17 +62,18 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                     }
                 }
             //}
-            $currnt_category_id = $category_filters['currenct_category_id'];
+            $currnt_category_id = $filters['category_meta']['currenct_category_id'];
             
 //            print_r($category_filters_ids);
-//            echo 'Current category ',$currnt_category_id;
+//            echo 'Current category ',$currnt_category_id;die;
             
-            $clothing = array(3,57,58,17,18,59,60);
+            $clothing = array(3,57,58,17,59);
+            $polos = array(18,60);
             $accessories = array(5,40,42);
             $caps = array(54,55,56);
             $categories_categories = array(6,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39);
             $color_categories = array_merge($clothing,$categories_categories);
-            $size_categories = array_merge($clothing);
+            $size_categories = array_merge($clothing,$polos);
             $styles_categories = array_merge($clothing,$categories_categories);
             $gender_categories = array_merge($categories_categories);
             
@@ -94,7 +95,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 if ($val == '1')
                     $gender[] = $key;
             }
-            $styles_filters = $filters['attr']['styles'];
+            $styles_filters = $filters['attr']['style'];
             $styles = array();
             foreach ($styles_filters as $key => $val) {
                 if ($val == '1')
@@ -140,7 +141,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 $collection->addAttributeToFilter('gender', array('in' => $gender));
             }
             if (!empty($styles) && in_array($currnt_category_id,$styles_categories)) {
-                $collection->addAttributeToFilter('style', array('in' => $styles));
+                
+                $collection->addAttributeToFilter('styles', array('in' => $styles));
             }
             if($prices['min']!=-1){
                 $collection->addAttributeToFilter('price', array('gteq' => $prices['min']));
@@ -155,21 +157,43 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         
         
         //load products from collection
-        $products = $collection->addAttributeToSelect('*')
+        $products = $collection->addAttributeToSelect('id')
+                ->addAttributeToSelect('type')->addAttributeToSelect('name')
+                ->addAttributeToSelect('image')->addAttributeToSelect('price')
+                ->addAttributeToSelect('qty')->addAttributeToSelect('min_qty')
+                ->addAttributeToSelect('min_sale_qty')->addAttributeToSelect('status')
+                ->addAttributeToSelect('category_ids')->addAttributeToSelect('small_image')
                 ->setPageSize($this->page_size)->setCurPage($page);//->load();
         $total_pages = $collection->getLastPageNumber();
         
         //Assign data to each product
         $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+        $product_ids = array(); //keeps track of existing product to handle duplicate
+        
         foreach ($products as $p2) {//print_r($p2);echo "<hr>";
-            //$p2 = Mage::getModel('catalog/product')->load($p->getId());
+//            $p2 = Mage::getModel('catalog/product')->load($p->getId());
             //$img = (string)Mage::helper('catalog/image')->init($p2, 'small_image')->resize(200,200);
             
-            $image = (string)Mage::helper('catalog/image')->init($p2,'small_image');//->resize(600,600);
+            $img_to_show = '';
+            if($p2->getTypeId()=='simple'){
+                $parentIds = Mage::getResourceSingleton('catalog/product_type_configurable')->getParentIdsByChild($p2->getId());
+                $img_to_show = (string)Mage::helper('catalog/image')->init($p2,'small_image');
+                if (isset($parentIds[0])) {
+                    $p2 = Mage::getModel('catalog/product')->load($parentIds[0]);
+                }
+            } else {
+                $img_to_show = (string)Mage::helper('catalog/image')->init($p2,'small_image');
+            }
+            
+            $id = $p2->getId();
+            if(in_array($id,$product_ids)) continue;
+            array_push($product_ids, $id);
+            
+//            $image = (string)Mage::helper('catalog/image')->init($p2,'small_image');//->resize(600,600);
             $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p2);
             $prod['id'] = $p2->getId();
             $prod['name'] = $p2->getName();
-            $prod['img'] = $image;
+            $prod['img'] = $img_to_show;//$image;
             $prod['img2'] = $p2->getImageUrl();
             $prod['price'] = $p2->getPrice();
             $prod['stock_qty'] = $stock->getQty();
@@ -183,6 +207,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
 
             $data['products'][] = $prod;
         }
+        
         
         $data['total_pages'] = $total_pages;
         $data['current_page'] = $page;

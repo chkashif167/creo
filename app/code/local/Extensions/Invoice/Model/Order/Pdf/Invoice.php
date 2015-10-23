@@ -260,7 +260,8 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
 			$page->drawLine(25, 10, 570, 10);
 			$page->drawText(Mage::helper('sales')->__('Thank you, Creo'), 510, 60, 'UTF-8');
-			$page->drawText(Mage::helper('sales')->__('Creo, +971 4 331 0717, 9:00am to 9:00pm, Rand Almaeeni, Grosvenor Business Tower, Office 1211 Dubai - United Arab Emirates'), 70, 17, 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Creo, +971 4 331 0717, 9:00am to 9:00pm, SIT Tower,
+ Dubai Silicon Oasis, P.O. Box 34135, Dubai, UAE'), 70, 17, 'UTF-8');
 			$this->_setFontRegular($page, 8);
 			$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
 			$page->drawLine(25, 30, 570, 30);
@@ -310,7 +311,8 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
 			$page->drawLine(25, 10, 570, 10);
 			//$page->drawText(Mage::helper('sales')->__('Thank you, Creo'), 510, 60, 'UTF-8');
-			$page->drawText(Mage::helper('sales')->__('Creo, +971 4 331 0717, 9:00am to 9:00pm, Rand Almaeeni, Grosvenor Business Tower, Office 1211 Dubai - United Arab Emirates'), 70, 17, 'UTF-8');
+			$page->drawText(Mage::helper('sales')->__('Creo, +971 4 331 0717, 9:00am to 9:00pm, SIT Tower,
+ Dubai Silicon Oasis, P.O. Box 34135, Dubai, UAE'), 70, 17, 'UTF-8');
 			$this->_setFontRegular($page, 8);
 			$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
 			$page->drawLine(25, 30, 570, 30);
