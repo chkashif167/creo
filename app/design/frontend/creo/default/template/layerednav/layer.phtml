@@ -38,7 +38,6 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 
 
                         <?php $_filters = $this->getFilters(); 
-                        
                         ?>
                         <?php // $_filters = array_reverse($_filters); ?>
                         <?php foreach ($_filters as $_filter):?>
@@ -56,8 +55,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 								if($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == '3' ){ 					
 									if ($_filter->getVar() == 'styles') {
 									?>
-										<label style="float:left !important;right:0px !important;" class="styles-lable" 
-										id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
+										<label style="float:left !important;right:0px !important;" class="styles-lable" id="styles_label">Styles: </label>
 										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd><br />
 									<?php } else if ($_filter->getVar() == 'tshirt_color') {
 									?>
@@ -71,13 +69,13 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 								}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
 									if ($_filter->getVar() == 'gender') {
 									?>
-										<label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Gender: </label>
+										<label class="styles-lable" id="styles_label">Gender: </label>
 										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd><br /><br />
 									<?php
 									}
 									else if ($_filter->getVar() == 'styles') {
 									?>
-										<label class="styles-lable" id="styles_label" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>>Styles: </label>
+										<label class="styles-lable" id="styles_label">Styles: </label>
 										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd><br /><br />
 									<?php } else if ($_filter->getVar() == 'acc_phone_model') {
 									?>
@@ -86,6 +84,10 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 									<?php } else if ($_filter->getVar() == 'acc_notebook_color') {
 									?>
 										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Color(s): </label>
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+									<?php } else if ($_filter->getVar() == 'tshirt_color') {
+									?>
+										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
 										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
                                     <?php }
 									else if ($_filter->getVar() == 'acc_notebook_material') {
