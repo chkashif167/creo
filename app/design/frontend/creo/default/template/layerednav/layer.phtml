@@ -56,53 +56,63 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 									if ($_filter->getVar() == 'styles') {
 									?>
 										<label style="float:left !important;right:0px !important;" class="styles-lable" id="styles_label">Styles: </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd><br />
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
 									<?php } else if ($_filter->getVar() == 'tshirt_color') {
 									?>
+                                        <div class="tshirt-colors-area">
 										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
 									<?php } else if ($_filter->getVar() == 'universal_categories') {
 									?>
-										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+                                        <div class="open-close cate-open-close">
+                                        <a class="opener" href="#">Categories</a>
+										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label> -->
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
                                     <?php }
 								}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
 									if ($_filter->getVar() == 'gender') {
 									?>
 										<label class="styles-lable" id="styles_label">Gender: </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd><br /><br />
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
 									<?php
 									}
 									else if ($_filter->getVar() == 'styles') {
 									?>
 										<label class="styles-lable" id="styles_label">Styles: </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd><br /><br />
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
 									<?php } else if ($_filter->getVar() == 'acc_phone_model') {
 									?>
-										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Phone Model(s): </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+                                        <div class="open-close cate-open-close">
+                                        <a class="opener" href="#">Phone Models</a>
+										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Phone Model(s): </label> -->
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
 									<?php } else if ($_filter->getVar() == 'acc_notebook_color') {
 									?>
+                                        <div class="tshirt-colors-area">
 										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Color(s): </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
 									<?php } else if ($_filter->getVar() == 'tshirt_color') {
 									?>
+                                        <div class="tshirt-colors-area">
 										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
                                     <?php }
 									else if ($_filter->getVar() == 'acc_notebook_material') {
 									?>
-										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Material: </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+                                        <div class="open-close cate-open-close">
+                                        <a class="opener" href="#">Material</a>
+										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Material: </label> -->
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
 									<?php } else if ($_filter->getVar() == 'universal_categories') {
 									?>
-										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label>
-										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+                                        <div class="open-close cate-open-close">
+                                        <a class="opener" href="#">Categories</a>
+										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
 									<?php }
 									}
 									endif;?>
                         <?php endforeach; ?>
-						<br /><br />
                         <?php //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option 
                               //if(!($current_category_p_id == '5')){
 ?>
