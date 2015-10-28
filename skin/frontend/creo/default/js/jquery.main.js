@@ -2612,3 +2612,15 @@ jQuery(document).ready(function (e) {
 	}
 });
 */
+/*jQuery(document).ready(function(e) {
+   var getitem = jQuery("#fme_layered_universal_categories li a").attr("class");
+  // console.log(getitem);
+   
+    jQuery(document).on("click",".opener",function() {
+	   alert("dd");
+	 var getitem = jQuery("#fme_layered_universal_categories li").attr("class");
+		console.log(getitem);
+    });
+
+  
+});*/

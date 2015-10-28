@@ -5343,3 +5343,5 @@ div.fme-filter dd a{padding: 0 !important;}
 .input-text.required-entry.validate-email.email {
 	box-shadow:none;
 }
+#fme_layered_universal_categories a[class*="_selected_"] {background: black !important; color: #fff !important;}
+
