@@ -96,8 +96,11 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
 									<?php } else if ($_filter->getVar() == 'universal_categories') {
 									?>
+                                    <div class="categories_filtes_custom">
 										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label>
 										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd><br /><br />
+                                          </div>
+                                        
 									<?php }
 									}
 									endif;?>
