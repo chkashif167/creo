@@ -2481,7 +2481,7 @@ function popupValidation()
 		// size
         if (jQuery('#swatches-options-132').find('li').find('a.selected').length <= 0) {
             if (errors.length >= 1) {
-                errors = errors + " and size";
+                errors = errors + " and size"; 
             }
             else {
                 errors = "Please make sure to select size";
