@@ -2479,23 +2479,36 @@ function popupValidation()
         //check all required elements size/style and color. 
         
 		// size
-        if (jQuery('#swatches-options-132').find('li').find('a.selected').length <= 0) {
-            if (errors.length >= 1) {
-                errors = errors + " and size"; 
-            }
-            else {
-                errors = "Please make sure to select size";
-            }
-        }else if (jQuery('#swatches-options-134').find('li').find('a.selected').length <= 0) { 
+		if(jQuery("#swatches-options-132").length > 0) {
+			if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+				if (errors.length >= 1) {
+					errors = errors + " and size";
+				}
+				else {
+					errors = "Please make sure to select size";
+				}
+			}
+		}
+		if(jQuery("#swatches-options-134").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
             errors = "Please make sure to select style";
-        }else if (jQuery('#swatches-options-159').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select tshirt color";
-        }else if (jQuery('#swatches-options-160').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select polo color";
-        }else if (jQuery('#swatches-options-156').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select print color";
-        }else{
-			errors = '';	
+			}
+        }
+		if(jQuery("#swatches-options-159").length > 0) {
+			if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+           		 errors = "Please make sure to select tshirt color";
+        	}
+		}
+		
+		if(jQuery("#swatches-options-160").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select polo color";
+			}
+		}
+		if(jQuery("#swatches-options-156").length > 0) {
+        	if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select polo color";
+			}
 		}
 		
 
