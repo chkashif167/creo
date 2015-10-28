@@ -2507,7 +2507,7 @@ function popupValidation()
 		}
 		if(jQuery("#swatches-options-156").length > 0) {
         	if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            	errors = "Please make sure to select polo color";
+            	errors = "Please make sure to select print color";
 			}
 		}
 		
