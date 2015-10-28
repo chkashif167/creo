@@ -2498,7 +2498,7 @@ function popupValidation()
 					 errors = "Please make sure to select tshirt color";
 				}
 		}
-		}
+		
 		
 		if(jQuery("#swatches-options-160").length > 0) {
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
