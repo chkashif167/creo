@@ -32,7 +32,7 @@
  * @package    Extensions_Sellers
  * @author     Jawwad Nissar <jawwad.nissar@progos.org>
  */
-class Extensions_Sellers_Block_Bestseller extends Mage_Core_Block_Template {
+class Extensions_Sellers_Block_Trending extends Mage_Core_Block_Template {
 
     /**
      * Default toolbar block name
@@ -49,46 +49,34 @@ class Extensions_Sellers_Block_Bestseller extends Mage_Core_Block_Template {
     protected $_productCollection;
 
     /**
-     * Retrieve Best Selling Products By Category Collection
+     * Retrieve Trending Products By Category Collection
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
 	protected function _getProductCollection()	
     {
 		if (is_null($this->_productCollection)) {
-	       $catId = $this->getRequest()->getParam('id');
-			/** @var $collection Mage_Catalog_Model_Resource_Product_Collection */
-			$collection = Mage::getResourceModel('catalog/product_collection');
-			// join sales order items column and count sold products
-			$expression = new Zend_Db_Expr("SUM(oi.qty_ordered)");
-			$condition = new Zend_Db_Expr("e.entity_id = oi.product_id AND oi.parent_item_id IS NULL");
-			$collection->addAttributeToSelect('*')->getSelect()
-				->join(array('oi' => $collection->getTable('sales/order_item')),
-				$condition,
-				array('sales_count' => $expression))
-				->group('e.entity_id')
-				->order('sales_count' . ' ' . 'desc');
-			// join category
-			$condition = new Zend_Db_Expr("e.entity_id = ccp.product_id");
-			$condition2 = new Zend_Db_Expr("c.entity_id = ccp.category_id");
-			$collection->getSelect()->join(array('ccp' => $collection->getTable('catalog/category_product')),
-				$condition,
-				array())->join(array('c' => $collection->getTable('catalog/category')),
-				$condition2,
-				array('cat_id' => 'c.entity_id'));
-			$condition = new Zend_Db_Expr("c.entity_id = cv.entity_id AND ea.attribute_id = cv.attribute_id");
-			// cutting corners here by hardcoding 3 as Category Entiry_type_id
-			$condition2 = new Zend_Db_Expr("ea.entity_type_id = 3 AND ea.attribute_code = 'name'");
-			$collection->getSelect()->join(array('ea' => $collection->getTable('eav/attribute')),
-				$condition2,
-				array())->join(array('cv' => $collection->getTable('catalog/category') . '_varchar'),
-				$condition,
-				array('cat_name' => 'cv.value'));
-			// if Category filter is on
-			if ($catId) {
-//				$collection->getSelect()->where('c.entity_id', array('in' => $catArray));
-				$collection->getSelect()->where('c.entity_id = ? ', $catId);
+			$productIds = Mage::getStoreConfig('sellers_options/trending'); 
+			$clothingProductIdsArray = explode(',',$productIds['clothing']);
+			$accessoriesProductIdsArray = explode(',',$productIds['accessories']);
+			$capsProductIdsArray = explode(',',$productIds['caps']);
+ 	        $catId = $this->getRequest()->getParam('id');
+			if( $catId == '3' ){
+				$productIdsArray = 	$clothingProductIdsArray;			
+			}elseif( $catId == '5' ){
+				$productIdsArray = 	$accessoriesProductIdsArray;			
+			}elseif( $catId == '54' ){
+				$productIdsArray = 	$capsProductIdsArray;			
 			}
+			$collection = Mage::getModel('catalog/product')
+							->getCollection()
+							->addAttributeToFilter('entity_id', array('in' => $productIdsArray))
+							->joinField(
+									'category_id', 'catalog/category_product', 'category_id', 
+									'product_id = entity_id', null, 'left'
+								)
+								->addAttributeToSelect('*')
+								->addAttributeToFilter('category_id', array($catId));			
 			$this->_productCollection = $collection;
 		}
 //		echo $collection->getSelect()->__toString();
@@ -101,7 +89,7 @@ class Extensions_Sellers_Block_Bestseller extends Mage_Core_Block_Template {
     }
 
     /**
-     * Retrieve Best Selling Products By Category Collection
+     * Retrieve Trending Products By Category Collection
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */

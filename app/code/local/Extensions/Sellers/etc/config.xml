@@ -24,10 +24,41 @@
     </layout>
   </frontend>
   <global>
+  <helpers>
+	<sellers>
+	<class>Extensions_Sellers_Helper</class>
+	</sellers>
+  </helpers>  
+  <models>
+	<sellers>
+	<class>Extensions_Sellers_Model</class>
+	</sellers>
+  </models>  
   <blocks>
     <sellers>
     <class>Extensions_Sellers_Block</class>
     </sellers>
   </blocks>
   </global>
+  <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <sellers_options>
+                                            <title>Extensions Sellers Configuration Section</title>
+                                        </sellers_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+  </adminhtml>
 </config> 
