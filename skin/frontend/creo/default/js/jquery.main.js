@@ -2493,19 +2493,18 @@ function popupValidation()
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
             errors = "Please make sure to select style";
 			}
-        }
-		if(jQuery("#swatches-options-159").length > 0) {
-			if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-           		 errors = "Please make sure to select tshirt color";
-        	}
+        }else if(jQuery("#swatches-options-159").length > 0) {
+				if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+					 errors = "Please make sure to select tshirt color";
+				}
+		}
 		}
 		
 		if(jQuery("#swatches-options-160").length > 0) {
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select polo color";
 			}
-		}
-		if(jQuery("#swatches-options-156").length > 0) {
+		}else if(jQuery("#swatches-options-156").length > 0) {
         	if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select print color"; 
 			}
