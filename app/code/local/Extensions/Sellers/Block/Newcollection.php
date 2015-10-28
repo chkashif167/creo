@@ -49,7 +49,7 @@ class Extensions_Sellers_Block_Newcollection extends Mage_Core_Block_Template {
     protected $_productCollection;
 
     /**
-     * Retrieve Trending Products By Category Collection
+     * Retrieve New Products By Category Collection
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
@@ -67,6 +67,7 @@ class Extensions_Sellers_Block_Newcollection extends Mage_Core_Block_Template {
 								)
 								->addAttributeToSelect('*')
 								->addAttributeToFilter('category_id', array($catId))			
+								->addAttributeToSort('created_at', 'desc')
 								->addFieldToFilter('created_at', array('gt' => date("Y-m-d H:i:s", strtotime('- "'.$getdays.'" day'))));
 			$this->_productCollection = $collection;
 		}
@@ -80,7 +81,7 @@ class Extensions_Sellers_Block_Newcollection extends Mage_Core_Block_Template {
     }
 
     /**
-     * Retrieve Trending Products By Category Collection
+     * Retrieve New Products By Category Collection
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
