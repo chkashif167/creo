@@ -5046,13 +5046,13 @@ textarea {
 
 
 
-#fme_filters_list .open-close {
+#fme_filters_list .cate-open-close {
     float: left;
     position: relative;
     margin: 0 25px 0 0;
     z-index: 22;
 }
-#fme_filters_list .open-close .opener {
+#fme_filters_list .cate-open-close .opener {
     display: inline-block;
     vertical-align: top;
     padding: 0 13px 0 7px;
@@ -5061,12 +5061,12 @@ textarea {
     text-transform: uppercase;
     font: 14px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
-#fme_filters_list .open-close.active .opener,
-#fme_filters_list .open-close .opener:hover {
+#fme_filters_list .cate-open-close.active .opener,
+#fme_filters_list .cate-open-close:hover .opener {
     text-decoration: none;
     background: #f5f5f5;
 }
-#fme_filters_list .open-close .opener:before {
+#fme_filters_list .cate-open-close .opener:before {
     font-family: 'fontello';
     font-size: 8px;
     line-height: 19px;
@@ -5077,7 +5077,8 @@ textarea {
     right: 2px;
     content: '\e812';
 }
-#fme_filters_list .open-close ul {
+#fme_filters_list .cate-open-close:hover ul{display: block;}
+#fme_filters_list .cate-open-close ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -5088,14 +5089,16 @@ textarea {
     text-transform: uppercase;
     box-shadow: 0 1px 2px #ccc;
     font: 10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+    display: none;
 }
-#fme_filters_list .open-close .slide li{display: block;}
-#fme_filters_list .open-close li a {
+#fme_filters_list .cate-open-close .slide li{display: block;}
+#fme_filters_list .cate-open-close li a {
     display: block;
     color: #666;
     padding: 5px 10px;
 }
-#fme_filters_list .open-close li a:hover {
+#fme_filters_list .cate-open-close li .fme_layered_attribute_selected_MOTIVATIONAL,
+#fme_filters_list .cate-open-close li a:hover {
     color: #fff;
     background: #000;
     text-decoration: none;

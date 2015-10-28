@@ -75,8 +75,8 @@ function initOpenClose() {
         opener: '.opener',
         slider: '.slide',
         animSpeed: 200,
-        event: 'over',
-        effect: 'fade'
+        effect: 'fade',
+        event: 'over'
     });
 }
 
