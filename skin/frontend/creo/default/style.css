@@ -5077,6 +5077,14 @@ textarea {
     right: 2px;
     content: '\e812';
 }
+#fme_filters_list .cate-open-close ul:before {
+    bottom: 100%;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
 #fme_filters_list .cate-open-close:hover ul{display: block;}
 #fme_filters_list .cate-open-close ul {
     margin: 0;
