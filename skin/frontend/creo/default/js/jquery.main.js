@@ -2479,17 +2479,21 @@ function popupValidation()
         //check all required elements size/style and color. 
         
 		// size
-        if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+        if (jQuery('.option-container:eq(0)').find('#swatches-options-132').find('li').find('a.selected').length <= 0) {
             if (errors.length >= 1) {
                 errors = errors + " and size";
             }
             else {
                 errors = "Please make sure to select size";
             }
-        }else if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
+        }else if (jQuery('.option-container:eq(1)').find('#swatches-options-134').find('li').find('a.selected').length <= 0) { 
             errors = "Please make sure to select style";
-        }else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select color";
+        }else if (jQuery('.option-container:eq(2)').find('#swatches-options-159').find('li').find('a.selected').length <= 0) {
+            errors = "Please make sure to select tshirt color";
+        }else if (jQuery('.option-container:eq(1)').find('#swatches-options-160').find('li').find('a.selected').length <= 0) {
+            errors = "Please make sure to select polo color";
+        }else if (jQuery('.option-container:eq(2)').find('#swatches-options-156').find('li').find('a.selected').length <= 0) {
+            errors = "Please make sure to select print color";
         }else{
 			errors = '';	
 		}
