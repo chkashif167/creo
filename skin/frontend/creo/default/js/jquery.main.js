@@ -2476,17 +2476,25 @@ function popupValidation()
     var errors = "";
     //only apply this validation if it has swatches
     if (jQuery('.option-container').find('.has-swatches').length > 0) {
-        //check all required elements color/size 
+        //check all required elements size/style and color. 
+        
+		// size
         if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select color";
-        }
-        if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             if (errors.length >= 1) {
                 errors = errors + " and size";
             }
             else {
                 errors = "Please make sure to select size";
             }
+        }
+		
+		//style
+		if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            errors = "Please make sure to select style";
+        }
+		// color
+		if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            errors = "Please make sure to select color";
         }
 
         if (errors != "") {
