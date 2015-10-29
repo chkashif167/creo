@@ -2486,16 +2486,14 @@ function popupValidation()
             else {
                 errors = "Please make sure to select size";
             }
-        }
-		
-		//style
-		if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+        }else if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
             errors = "Please make sure to select style";
-        }
-		// color
-		if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+        }else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             errors = "Please make sure to select color";
-        }
+        }else{
+			errors = '';	
+		}
+		
 
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
