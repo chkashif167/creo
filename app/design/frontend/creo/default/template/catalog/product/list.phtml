@@ -49,8 +49,6 @@ $_helper = $this->helper('catalog/output');
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
                         <div class="list_product_img">
                             <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
-                                <a  rel="nofollow" href="<?php echo Mage::getBaseUrl() . 'quickview/index/view?pid=' . $_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId() ?>"> <span class="quick-view"><i class="icon-search"></i> quick view</span></a>
-                            </a>
                         </div>
                         <div class="text-area">
                             <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
