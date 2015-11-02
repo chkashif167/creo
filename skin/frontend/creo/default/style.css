@@ -5156,9 +5156,10 @@ div.fme-filter dd a{padding: 0 !important;}
     margin-bottom: 6px;
     height: 24px !important;
     width: 30px !important;
+    opacity: 0.7;
 }
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a.selected {
-    opacity: 0.7;
+    opacity: 1;
 }
 .product-swatches-container ul:after {
     clear: both;
