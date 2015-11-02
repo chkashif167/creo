@@ -5146,6 +5146,32 @@ div.fme-filter dd a{padding: 0 !important;}
     text-transform: uppercase;
     margin: 0 !important;
 }
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: medium none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 6px;
+    height: 24px !important;
+    width: 30px !important;
+}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a.selected {
+    opacity: 0.7;
+}
+.product-swatches-container ul:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+
+
+
+
+
+
 
 
 
