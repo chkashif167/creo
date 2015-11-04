@@ -2506,10 +2506,13 @@ function popupValidation()
 			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select print color"; 
 			}
-		}/*else if(jQuery("#swatches-options-156").length > 0) {
-        	
-		}*/
+		}
 		
+		if(jQuery("#swatches-options-149").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select phone model";
+			}
+		}
 
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
