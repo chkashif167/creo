@@ -2509,7 +2509,6 @@ function popupValidation()
 		}/*else if(jQuery("#swatches-options-156").length > 0) {
         	
 		}*/
-		
 
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
