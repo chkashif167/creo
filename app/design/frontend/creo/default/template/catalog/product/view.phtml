@@ -470,7 +470,7 @@ function loadPriceWithAjax()
             jQuery('.price-box .regular-price .price').html(' <span class="loader-orange"></span>');
             // jQuery('.price-box .regular-price .price').hide();
             //console.log(jQuery("[name*='super_attribute']"));
-            request = jQuery.post( "<?php echo Mage::getUrl()?>wts_ajaxpriceloader/ajax/getAssociatedProductPrice/", jQuery('#product_addtocart_form').serialize())
+            request = jQuery.post( "<?php echo Mage::getUrl('wts_ajaxpriceloader/ajax/getAssociatedProductPrice/',array('_secure'=>true));?>", jQuery('#product_addtocart_form').serialize())
                 .done(function( data ) {
                 //console.log( "Data Loaded: " + data );
                 //console.log(data.price);
