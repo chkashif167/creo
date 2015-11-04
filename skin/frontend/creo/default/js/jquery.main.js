@@ -2476,18 +2476,43 @@ function popupValidation()
     var errors = "";
     //only apply this validation if it has swatches
     if (jQuery('.option-container').find('.has-swatches').length > 0) {
-        //check all required elements color/size 
-        if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select color";
-        }
-        if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            if (errors.length >= 1) {
-                errors = errors + " and size";
-            }
-            else {
-                errors = "Please make sure to select size";
-            }
-        }
+        //check all required elements size/style and color. 
+        
+		// size
+		if(jQuery("#swatches-options-132").length > 0) {
+			if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+				if (errors.length >= 1) {
+					errors = errors + " and size";
+				}
+				else {
+					errors = "Please make sure to select size";
+				}
+			}
+		}
+		if(jQuery("#swatches-options-134").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
+            errors = "Please make sure to select style";
+			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+					 errors = "Please make sure to select tshirt color";
+				}
+        }/*else if(jQuery("#swatches-options-159").length > 0) {
+				
+		}*/
+		
+		
+		if(jQuery("#swatches-options-160").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select polo color";
+			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select print color"; 
+			}
+		}
+		
+		if(jQuery("#swatches-options-149").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select phone model";
+			}
+		}
 
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
@@ -2590,3 +2615,15 @@ jQuery(document).ready(function (e) {
 	}
 });
 */
+/*jQuery(document).ready(function(e) {
+   var getitem = jQuery("#fme_layered_universal_categories li a").attr("class");
+  // console.log(getitem);
+   
+    jQuery(document).on("click",".opener",function() {
+	   alert("dd");
+	 var getitem = jQuery("#fme_layered_universal_categories li").attr("class");
+		console.log(getitem);
+    });
+
+  
+});*/

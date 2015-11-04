@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Extensions_Sortbydate>
+            <version>1.0</version>
+        </Extensions_Sortbydate>
+    </modules>
+    <global>
+        <blocks>
+            <sortbydate>
+                <class>Extensions_Sortbydate_Block</class>
+            </sortbydate>
+            <catalog>
+                <rewrite>
+                    <product_list_toolbar>Extensions_Sortbydate_Block_Product_List_Toolbar</product_list_toolbar>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <models>
+            <catalog>
+                <rewrite>
+                    <config>Extensions_Sortbydate_Model_Catalog_Config</config>
+                </rewrite>
+            </catalog>
+        </models>
+    </global>
+</config>
