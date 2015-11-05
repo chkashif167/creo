@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Plate_CustomPlate>
+            <version>0.0.1</version>
+        </Plate_CustomPlate>
+    </modules>
+    <global>
+        <models>
+            <deletecustsyncyoneall>
+                <class>CustomPlate_Model</class>
+            </deletecustsyncyoneall>
+        </models>
+        <events>
+            <catalog_product_load_after>
+                <observers>
+                    <plate_customplate_model_observer>
+                        <type>model</type>
+                        <class>Plate_CustomPlate_Model_Observer</class>
+                        <method>addPostData</method>
+                    </plate_customplate_model_observer>
+                </observers>
+            </catalog_product_load_after>
+        </events>
+    </global>
+</config>

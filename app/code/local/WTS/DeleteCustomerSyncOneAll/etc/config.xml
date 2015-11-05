@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <WTS_DeleteCustomerSyncOneAll>
+            <version>0.0.1</version>
+        </WTS_DeleteCustomerSyncOneAll>
+    </modules>
+    <global>
+        <models>
+            <deletecustsyncyoneall>
+                <class>DeleteCustomerSyncOneAll_Model</class>
+            </deletecustsyncyoneall>
+        </models>
+        <events>
+            <customer_delete_commit_after>
+                <observers>
+                    <wts_deletecustomersynconeall_model_observer>
+                        <type>singleton</type>
+                        <class>WTS_DeleteCustomerSyncOneAll_Model_Observer</class>
+                        <method>deleteCustSyncOneAll</method>
+                    </wts_deletecustomersynconeall_model_observer>
+                </observers>
+            </customer_delete_commit_after>
+        </events>
+    </global>
+</config>
