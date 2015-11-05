@@ -97,6 +97,11 @@ $_swatches_height = (int) $_settings['swatch_height'];
             </div>
         <?php endforeach; ?>
     </dl>
+<div class="saudi">
+    <label class="required"><em>*</em>Arabic Code</label>
+    <input type="text" style="margin:0;" value="" name="customplate" class="input-text required-entry  product-custom-option" id="customplate">
+    <label style="font-size:10px;">This field only applies to Saudi Plate Numbers</label>
+</div>
     <script type="text/javascript">
         function out_of_stock_string() {
             return "<?php echo $this->__(" (Out of Stock)"); ?>";
@@ -118,5 +123,21 @@ $_swatches_height = (int) $_settings['swatch_height'];
                 }
             });
         });
+        
+        jQuery(document).ready(function(){
+    jQuery("select").change(function(){
+        jQuery(this).find("option:selected").each(function(){
+            if(jQuery(this).attr("value")=="216"){
+				
+                jQuery(".box").not(".saudi").hide();
+                jQuery(".saudi").show();
+            }
+
+            else{
+                jQuery(".saudi").hide();
+            }
+        });
+    }).change();
+});
     </script>
 <?php endif; ?>

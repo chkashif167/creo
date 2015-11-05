@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Plate_CustomPlate>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends />
+        </Plate_CustomPlate>
+    </modules>
+</config>
