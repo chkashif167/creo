@@ -5383,5 +5383,5 @@ dl:after{
 .loader-price{
 			height:48px;
 			width:48px;
-			background-image:url(images/opc-ajax-loader.gif); background-repeat:no-repeat;
+			background-image:url('images/opc-ajax-loader.gif'); background-repeat:no-repeat;
 		}
