@@ -6,17 +6,6 @@
     </Page_404>
   </modules>
   <global>
-      <events>
-   <catalog_product_load_after>
-                <observers>
-                    <tabs_extension_model_observer>
-                        <type>model</type>
-                        <class>Tabs_Extension_Model_Observer</class>
-                        <method>addPostData</method>
-                    </tabs_extension_model_observer>
-                </observers>
-    </catalog_product_load_after>
-  </events>
     <page>
       <layouts>
         <Page_404_Page translate="label">
