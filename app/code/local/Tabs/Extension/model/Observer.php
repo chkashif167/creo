@@ -4,7 +4,7 @@
  *
  * @author uzair
  */
-class Tabs_Extension_Model_Observer {
+class Tabsaaaa_Extensionaaaa_Model_Observer {
 
 
 public function addPostData(Varien_Event_Observer $observer) {
