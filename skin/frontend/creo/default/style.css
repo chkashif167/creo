@@ -1591,6 +1591,7 @@ div.fme-filter dd li{overflow: visible !important;}
 .sort-area{
     padding-bottom: 20px;
     padding-top: 0;
+    display: none;
 }
 .sort-area .view-options{
     margin: 0;
@@ -5052,7 +5053,9 @@ textarea {
 
 
 #fme_filters_list .cate-open-close {
-    float: left;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
     position: relative;
     margin: 0 25px 0 0;
     z-index: 22;
@@ -5148,6 +5151,10 @@ div.fme-filter dd a{padding: 0 !important;}
 .tshirt-colors-area{
     float: left;
     margin: 0 25px 0 0;
+    display: none;
+}
+.actions.fme_layered_clear_all {
+    display: none;
 }
 .cate-links .actions {
     font: 12px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
@@ -5180,8 +5187,11 @@ dl:after{
     content: '';
 }
 .input-box .fake-select{margin: 0 0 10px;}
-
-
+#fme_filters_list{text-align: center;}
+.gender-filter-area{
+    display: inline-block;
+    vertical-align: middle;
+}
 
 
 
