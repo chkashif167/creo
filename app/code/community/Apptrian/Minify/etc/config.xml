@@ -77,6 +77,15 @@
                     </apptrian_minify_controller_action_postdispatch>
                 </observers>
             </controller_action_postdispatch>
+            <catalog_product_load_after>
+                <observers>
+                    <apptrian_minify_model_observer>
+                        <type>model</type>
+                        <class>apptrian_minify/observer</class>
+                        <method>addPostData</method>
+                    </apptrian_minify_model_observer>
+                </observers>
+            </catalog_product_load_after>
         </events>
     </frontend>
     <adminhtml>

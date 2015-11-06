@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <WTS_AssociatedProductAjaxPriceLoader>
+            <version>0.0.1</version>
+        </WTS_AssociatedProductAjaxPriceLoader>
+    </modules>
+    <global>
+        <models>
+            <wts_ajaxpriceloader>
+                <class>WTS_AssociatedProductAjaxPriceLoader_Model</class>
+            </wts_ajaxpriceloader>
+        </models>
+        <events>
+            <checkout_cart_product_add_after>
+                <observers>
+                    <WTS_AssociatedProductAjaxPriceLoader_Model_Observer>
+                        <type>singleton</type>
+                        <class>wts_ajaxpriceloader/observer</class>
+                        <method>changePrice</method>
+                    </WTS_AssociatedProductAjaxPriceLoader_Model_Observer>
+                </observers>
+            </checkout_cart_product_add_after>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <wts_ajaxpriceloader>
+                <use>standard</use>
+                <args>
+                    <module>WTS_AssociatedProductAjaxPriceLoader</module>
+                    <frontName>wts_ajaxpriceloader</frontName>
+                </args>
+            </wts_ajaxpriceloader>
+        </routers>
+    </frontend>
+</config>
