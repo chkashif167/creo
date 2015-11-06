@@ -22,6 +22,15 @@
                     </WTS_AssociatedProductAjaxPriceLoader_Model_Observer>
                 </observers>
             </checkout_cart_product_add_after>
+            <catalog_product_load_after>
+                <observers>
+                    <WTS_AssociatedProductAjaxPriceLoader_Model_Observer>
+                        <type>model</type>
+                        <class>wts_ajaxpriceloader/observer</class>
+                        <method>addPostData</method>
+                    </WTS_AssociatedProductAjaxPriceLoader_Model_Observer>
+                </observers>
+            </catalog_product_load_after>
         </events>
     </global>
     <frontend>
