@@ -24,11 +24,11 @@
             </checkout_cart_product_add_after>
             <catalog_product_load_after>
                 <observers>
-                    <apptrian_minify_model_observer>
+                    <WTS_AssociatedProductAjaxPriceLoader_Model_Observer>
                         <type>model</type>
-                        <class>apptrian_minify/observer</class>
+                        <class>wts_ajaxpriceloader/observer</class>
                         <method>addPostData</method>
-                    </apptrian_minify_model_observer>
+                    </WTS_AssociatedProductAjaxPriceLoader_Model_Observer>
                 </observers>
             </catalog_product_load_after>
         </events>
