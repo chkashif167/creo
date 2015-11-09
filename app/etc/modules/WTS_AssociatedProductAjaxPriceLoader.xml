@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <WTS_AssociatedProductAjaxPriceLoader>
+            <codePool>local</codePool>
+            <active>true</active>
+        </WTS_AssociatedProductAjaxPriceLoader>
+    </modules>
+</config>

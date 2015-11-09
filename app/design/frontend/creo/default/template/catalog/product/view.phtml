@@ -425,3 +425,89 @@
             z-index: 900;
         }
     </style>
+    
+    
+    
+<script type="application/javascript">    
+    //Get associated product price
+<?php if($_product->isConfigurable()):?>
+function isValidPrice(price)
+{
+    if(typeof price !== 'undefined' && (price > 0 || price < 0)) {
+        return true;
+    }
+    return false;
+}
+function attrsHasPrice()
+{
+    var attrs = jQuery("select[name*='super_attribute']");
+    var hasPrice = false;
+    jQuery(attrs).find("option").each(function(k, attr){//for select
+        var price = parseInt(jQuery(attr).attr('price'));
+        if(hasPrice === false) {
+            hasPrice = isValidPrice(price);
+        }
+    });
+    attrs = jQuery("input[name*='super_attribute']");
+    jQuery(attrs).each(function(k, attr){//for input
+        var price = parseInt(jQuery(attr).attr('price'));
+        if(hasPrice === false) {
+            hasPrice = isValidPrice(price);
+        }
+    });
+    return hasPrice;
+}
+
+var request;//to stop duplicate/multiple ajax calls
+
+function loadPriceWithAjax()
+{
+    //send request only if attribute don't have price
+    var hasPrice = attrsHasPrice();
+    if(hasPrice === false) {
+        if(!request) {
+            //show slider on price
+            jQuery('.price-box .regular-price .price').html(' <span class="loader-price"></span>');
+            // jQuery('.price-box .regular-price .price').hide();
+            //console.log(jQuery("[name*='super_attribute']"));
+            request = jQuery.post( "<?php echo Mage::getUrl('wts_ajaxpriceloader/ajax/getAssociatedProductPrice/',array('_secure'=>true));?>", jQuery('#product_addtocart_form').serialize())
+                .done(function( data ) {
+                //console.log( "Data Loaded: " + data );
+                //console.log(data.price);
+                if(data.price.length > 0){
+                    jQuery('.price-box .regular-price .price').text(data.price);
+                    //hide slider on price.
+                    jQuery('.price-box .regular-price .price').show();
+                }
+                request = null;//release the request
+            });
+        }
+    }
+}
+
+function hasDefaultSelection()
+{
+    var hasSelection = false;
+    jQuery("[name*='super_attribute'], [name*='options']").each(function(k,v){
+        if(jQuery(v).val().length > 0) {
+            if(hasSelection === false) {
+                hasSelection = true;
+            }
+        }
+    });
+    return hasSelection;
+}
+
+jQuery(document).ready(function(){
+    jQuery("[name*='super_attribute'], [name*='options']").on('change', function(){
+        loadPriceWithAjax();
+    });
+    
+    //if any of the default attribute or option is selected do send the ajax request
+    if(hasDefaultSelection()) {
+        loadPriceWithAjax();
+    }
+});
+<?php endif;?>
+//associated price module code ends here
+</script>
