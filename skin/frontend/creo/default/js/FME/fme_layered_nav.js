@@ -80,11 +80,11 @@ function fme_layered_show_products(transport)
     if (typeof (fme_slider) != 'undefined')
         fme_slider.setEnabled();
 
+	// jawad work
 	var params = $('fme_layered_params').value.parseQuery();
 	if(params['universal_categories']){
 		var currentCategory = params['universal_categories'];
 	}
-//	alert(currentCategory);
 	var currentelement = $('universal_categories-'+currentCategory).innerHTML;
 	$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
 
@@ -116,7 +116,7 @@ function fme_layered_add_params(k, v, isSingleVal)
             if (isSingleVal)
                 values = [v];
             else
-				// remove multiselect from categories
+				// remove multiselect from categories , done by jawad 
 				if(k == 'universal_categories'){	
 	                values = [v];
 				}
@@ -347,7 +347,6 @@ function fme_layered_init()
         n = items.length;
         for (i = 0; i < n; ++i) {
             Event.observe(items[i], 'click', eval('fme_layered_' + classes[j] + '_listener'));
-//            Event.observe(items[i], 'click', single_select(this.id));
         }
     }
 
