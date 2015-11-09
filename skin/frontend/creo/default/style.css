@@ -5186,12 +5186,18 @@ dl:after{
     clear: both;
     content: '';
 }
-.input-box .fake-select{margin: 0 0 10px;}
 #fme_filters_list{text-align: center;}
 .gender-filter-area{
     display: inline-block;
     vertical-align: middle;
 }
+.attributeItem.custom-select {width: 100%;}
+dl {margin: 0 0 10px;}
+
+
+
+
+
 
 
 
