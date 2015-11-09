@@ -153,5 +153,5 @@ class Apptrian_Minify_Model_Observer
 		}
 		
 	}
-	
+        	
 }

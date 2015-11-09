@@ -7,11 +7,6 @@
         </Plate_CustomPlate>
     </modules>
     <global>
-        <models>
-            <deletecustsyncyoneall>
-                <class>CustomPlate_Model</class>
-            </deletecustsyncyoneall>
-        </models>
         <events>
             <catalog_product_load_after>
                 <observers>

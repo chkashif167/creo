@@ -88,9 +88,11 @@ $_swatches_height = (int) $_settings['swatch_height'];
                 /* Eof MAIN SWATCHES CODE */
                 ?>
                 <div class="input-box">
+                    <span class="fake-select">
                     <select name="super_attribute[<?php echo $_attribute["id"] ?>]" id="attribute<?php echo $_attribute["id"] ?>" class="configurable-option-select required-entry super-attribute-select  swatches-type-<?php echo $_attribute["swatch_type"]; ?> <?php echo (($_attribute["hideselect"]) ? "hideselect" : ""); ?> <?php echo (($_attribute["switchgallery"]) ? "switch-gallery" : ""); ?>">
                         <option value=""><?php echo $this->__('Choose an Option...') ?></option>
                     </select>
+                    </span>
                 </div>
                 <div class="clearer">&nbsp;</div>
             </dd>
@@ -141,3 +143,8 @@ $_swatches_height = (int) $_settings['swatch_height'];
 });
     </script>
 <?php endif; ?>
+<script>
+jQuery(document).ready(function(){
+    jQuery(':hidden').closest('span.fake-select').removeClass('fake-select');
+});
+</script>
