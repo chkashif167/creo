@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Grid container block
@@ -26,3 +27,7 @@ class Clarion_FeaturedProduct_Block_Adminhtml_Featuredproduct extends Mage_Admin
     $this->_removeButton('add');
   }
 }
+
+
+
+
