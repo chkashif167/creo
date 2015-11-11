@@ -4649,7 +4649,7 @@ textarea {
     border-radius: 0;
     background:#fff;
 }
-.input-box .fake-select:before,
+.option-container .input-box .fake-select:before,
 .bulk-order-form .fake-select:before{
     content:"";
     position:absolute;
@@ -5191,7 +5191,6 @@ dl:after{
     display: inline-block;
     vertical-align: middle;
 }
-.attributeItem.custom-select {width: 100%;}
 dl {margin: 0 0 10px;}
 
 
