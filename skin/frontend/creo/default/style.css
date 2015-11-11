@@ -5198,10 +5198,53 @@ dl {margin: 0 0 10px;}
 }
 .credit-card > li{margin-bottom: 0;}
 .fme_loading_filters{z-index: 9999 !important;}
-
-
-
-
+.attributeItem.fake-select-custom{width: 100%;}
+#header .header-icons {
+    display: block;
+    height: auto;
+    position: absolute;
+    right: 112px;
+    top: 6px;
+    width: 56%;
+}
+#nav ol > li:last-child {
+    background: #ef4f61;
+    transform: skewX(-30deg);
+    -moz-transform: skewX(-30deg);
+    -o-transform: skewX(-30deg);
+    -ms-transform: skewX(-30deg);
+    -webkit-transform: skewX(-30deg);
+}
+#nav ol > li:last-child a{
+    color: #fff;
+    transform: skewX(30deg);
+    -moz-transform: skewX(30deg);
+    -o-transform: skewX(30deg);
+    -ms-transform: skewX(30deg);
+    -webkit-transform: skewX(30deg);
+}
+#nav ol > li:last-child a:before{
+    background: #fff;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    left: -7px;
+    right: 5px;
+    position: absolute;
+    border-bottom: 1px solid #eee;
+    transform: skewX(-30deg);
+    -moz-transform: skewX(-30deg);
+    -o-transform: skewX(-30deg);
+    -ms-transform: skewX(-30deg);
+    -webkit-transform: skewX(-30deg);
+}
+#nav ol > li.active:last-child > a:before, #nav ol > li:last-child:hover > a:before{
+    left: -6px;
+    right: 6px;
+    background: #000;
+    border: none;
+    height: 5px;
+}
 
 
 
