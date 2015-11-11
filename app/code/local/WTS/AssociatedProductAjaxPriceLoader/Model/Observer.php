@@ -44,6 +44,7 @@ class WTS_AssociatedProductAjaxPriceLoader_Model_Observer
     public function addPostData(Varien_Event_Observer $observer) {
 
       $action = Mage::app()->getFrontController()->getAction();
+      if($action->getRequest()->getParam('attribute165') && $action->getRequest()->getParam('attribute165')=='244') { 
       if ($action->getFullActionName() == 'checkout_cart_add') {
          if($action->getRequest()->getParam('customplate')) {
              // ID IS PRESENT, SO LETS ADD IT
@@ -55,6 +56,7 @@ class WTS_AssociatedProductAjaxPriceLoader_Model_Observer
             );
              $item->addCustomOption('additional_options', serialize($additionalOptions));
          }
+      }
       }
 
    }
