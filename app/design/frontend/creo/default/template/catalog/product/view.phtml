@@ -158,35 +158,22 @@
                         </div>
                     </div>
                     <div class="options-area">
-                        <?php if ($_product->isSaleable()): ?>
+                <?php if ($_product->isSaleable()):?>
                             <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                         <?php endif; ?>
                     </div>
-
-                    <?php $_product = $this->getProduct(); ?>
-                    <?php $buttonTitle = $this->__(' Add to Cart'); ?>
-                    <?php /* if($_product->isSaleable()): ?>
-                      <div class="add-to-cart">
-                      <?php if(!$_product->isGrouped()): ?>
+                    <?php  if(!$_product->isSaleable()): ?>
+						<?php echo $this->getChildHtml('addto') ?>                      
                       <?php endif; ?>
-                      <div class="btn-holder">
-
-                      <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
-                      <span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span>
-                      </button>
-                      <a class="link-wishlist" href="<?php echo $this->getUrl('wishlist') ?>"><i class="icon-heart-empty"></i></a>
-                      </div>
 
 
-                      </div>
-                      <?php endif; */ ?>
-
-                    <?php // j.work starts  ?>
+                    <?php // jawwad.nissar work starts  ?>
                     <div class="shipping-area"> 
                         <h4 st> Shipping Information  </h4>
                         <!--<a class="shipping-info" href="#">Shipping Information</a>-->
                         <p><?php print $_product->getShippingDetails(); ?> </p>
-                    </div>                      
+                    </div> 
+                    <?php // jawwad.nissar work ends  ?>                     
                     <!--                    <div class="shipping-area"> 
                     <?php
 //                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
@@ -214,16 +201,6 @@
                     <?php //Ghost code ends?>
                                         </div>
                     -->                    
-                    <?php // j.work ends  ?>
-
-                    <!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
-       <ul>
-         <li><a href="#">Shipping within next day</a></li>
-         <li class="active"><a href="#">Shipping within 2 days</a></li>
-         <li><a href="#">Shipping within 3 days</a></li>
-         <li><a href="#">Shipping within 4 days</a></li>
-       </ul>
-    </div>-->
                 </div>
             <?php } ?>
             <?php //endif;*/  ?>
