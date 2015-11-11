@@ -53,7 +53,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
             $this->_forward('defaultIndex');
         }
     }
-	
+
 	public function postAction()
     {
 		$post = $this->getRequest()->getPost();
@@ -78,7 +78,7 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			$emailTemplateVariables['country'] = $country;
 			$emailTemplateVariables['city'] = $city;
 			$emailTemplateVariables['message'] = $message;
-			//$emailTemplateVariables = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'phone' => $phone, 'country' => $country, 'message' => $message);
+			//$emailTemplateVariables = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'phone' => $phone, 'country' => $country, 'city' => $city,'message' => $message);
 			//echo "<pre>";print_r($emailTemplateVariables);echo "</pre>";
 			$processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
 			 //print_r($processedTemplate);exit;
@@ -86,19 +86,32 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 
 			//Getting the Store General E-Mail.
 			//$toEmail = Mage::getStoreConfig('trans_email/ident_general/email');
-			$toEmail = 'talktous@creoroom.com';
+			$toEmail = 'sales@creoroom.com';
+
 			$toName = 'Creo support';
 			$mail = Mage::getModel('core/email')
 					 ->setToName($toName)
 					 ->setToEmail($toEmail)
 					 ->setBody($processedTemplate)
 					 ->setSubject('Subject : Bulk Order')
-					 ->setFromEmail($email)
+					 ->setFromEmail($toEmail)
 					 ->setFromName($first_name)
 					 ->setType('html');
 			try{
 			//Confimation E-Mail Send
 			$mail->send();
+//$subject = 'CREO:Bulk Order';
+//$from = $email;
+//$toEmail ='sales@creoroom.com';
+//$headers = "From: " .$from. "\r\n";
+			//$headers .= "Reply-To: ".$from. "\r\n";
+			
+			//$headers .= "MIME-Version: 1.0\r\n";
+			//$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+//$headers .= "X-Priority: 1\r\n"; 
+//$headers .= 'Return-Path: '.$from."\n";
+
+//mail($toEmail, $subject,$processedTemplate,$headers);
 			
 			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your bulk order was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
                 $this->_redirect('bulk-orders');
@@ -113,14 +126,12 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
            } 
     }
 
-
-
+	
 	public function customeremailAction()
     {
 		
 		$post = $this->getRequest()->getPost();
-		//echo "<pre>";print_r($post);exit;
-		//echo  $emailTemplate = Mage::getModel('core/email_template')->loadDefault('bulk_order');exit;
+		
 		if($post){
              
 			$first_name = $post['first_name'];
@@ -143,22 +154,30 @@ class Mage_Cms_IndexController extends Mage_Core_Controller_Front_Action
 			 //print_r($processedTemplate);exit;
 			$toName = Mage::getStoreConfig('trans_email/ident_general/name');
 
-			//Getting the Store General E-Mail.
+			 //Getting the Store General E-Mail.
 			//$toEmail = Mage::getStoreConfig('trans_email/ident_general/email');
-			$toEmail = 'talktous@creoroom.com';
+			$toEmail = 'wecare@creoroom.com';
 			$toName = 'Creo support';
 			$mail = Mage::getModel('core/email')
 					 ->setToName($toName)
 					 ->setToEmail($toEmail)
 					 ->setBody($processedTemplate)
 					 ->setSubject('Subject : Customer Service')
-					 ->setFromEmail($email)
+					 ->setFromEmail($toEmail)
 					 ->setFromName($first_name)
 					 ->setType('html');
 			try{ 
 			//Confimation E-Mail Send
-			$mail->send();
+			$mail->send();			
+//$subject = 'CREO:Customer Service';
+//$from = $email;
+//$headers = "From: " .$from. "\r\n";
+//$headers .= "Reply-To: ".$from. "\r\n";
 			
+//$headers .= "MIME-Version: 1.0\r\n";
+//$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+//mail($toEmail, $subject,$processedTemplate,$headers);
+
 			 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
                 $this->_redirect('customer-service');
 				return;

@@ -29,7 +29,7 @@
  * Product list
  *
  * @category   Mage
- * @package    Extensions_Sales
+ * @package    Extensions_Sellers
  * @author     Jawwad Nissar <jawwad.nissar@progos.org>
  */
 class Extensions_Sellers_Block_Bestseller extends Mage_Core_Block_Template {
@@ -54,13 +54,9 @@ class Extensions_Sellers_Block_Bestseller extends Mage_Core_Block_Template {
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
 	protected function _getProductCollection()	
-    { 
+    {
 		if (is_null($this->_productCollection)) {
-	       $id = $this->getRequest()->getParam('id');
-		   // benchmarking
-			$memory = memory_get_usage();
-			$time = microtime();
-			$catId = $id;
+	       $catId = $this->getRequest()->getParam('id');
 			/** @var $collection Mage_Catalog_Model_Resource_Product_Collection */
 			$collection = Mage::getResourceModel('catalog/product_collection');
 			// join sales order items column and count sold products
@@ -90,11 +86,16 @@ class Extensions_Sellers_Block_Bestseller extends Mage_Core_Block_Template {
 				array('cat_name' => 'cv.value'));
 			// if Category filter is on
 			if ($catId) {
-				$collection->getSelect()->where('c.entity_id = ?', $catId);
+//				$collection->getSelect()->where('c.entity_id', array('in' => $catArray));
+				$collection->getSelect()->where('c.entity_id = ? ', $catId);
 			}
 			$this->_productCollection = $collection;
 		}
-
+//		echo $collection->getSelect()->__toString();
+//		echo "<pre>";
+//		print_r($this->_productCollection->getData());
+//		echo "</pre>";
+//		exit;
         return $this->_productCollection;
         
     }
