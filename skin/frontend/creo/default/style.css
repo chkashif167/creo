@@ -4320,6 +4320,7 @@ p.availability{margin: 0;}
 .form-list li{
     float: none;
     margin: 0 0 12px;
+    overflow: hidden;
 }
 textarea {
     background: #fff;
@@ -5192,9 +5193,11 @@ dl:after{
     vertical-align: middle;
 }
 dl {margin: 0 0 10px;}
-
-
-
+.credit-card ul.inner-form {
+    padding: 0 15px;
+}
+.credit-card > li{margin-bottom: 0;}
+.fme_loading_filters{z-index: 9999 !important;}
 
 
 

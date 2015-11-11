@@ -1157,7 +1157,7 @@
 #payment_form_creditcardpci .credit-card { padding-bottom: 20px;}
 #payment_form_creditcardpci input { background: #fff; height: 27px;}
 #payment_form_creditcardpci #creditcardnumbercn, #payment_form_creditcardpci #creditcardpci_cc_type_cvv_div { margin: 0;}
-#creditcardNamecn { margin: 12px 0 0 0;}
+#creditcardNamecn { margin: 12px 0;}
 #payment_form_creditcardpci  .validation-advice { margin: 0;}
 
 .categorypath-create-phone-covers-html .get_photo_upload, .categorypath-create-notebooks-html .get_photo_upload,
