@@ -2,7 +2,7 @@
 
 class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Action {
     
-    protected $page_size = 20;
+    protected $page_size = 50;
 
     public function indexAction() {
         
@@ -22,6 +22,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         if($search){
             $collection = Mage::getModel('catalog/product')->getCollection();
             $collection->addAttributeToFilter("name", array("like" => "%$search%"));
+            
+
         }
         else if($categoryId){
             $category = Mage::getModel('catalog/category')->load($categoryId);
@@ -43,9 +45,17 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         } else {
             $collection = Mage::getModel('catalog/product')->getCollection();
         }
-        
+        $collection->addAttributeToFilter('status',array('eq' => 1));
 //                ->addAttributeToFilter('type_id','configurable');
-                
+        
+            /*$collection->joinField(
+                'category_id', 'catalog/category_product', 'category_id', 
+                'product_id = entity_id', null, 'left'
+            );*/
+            
+            //$collection->addAttributeToFilter('category_id',array('nin'=>$exc));
+        
+        
         //applying filters
         if ($filter && $filter == 1) {
             $filters = json_decode(file_get_contents("php://input"), true);
@@ -117,8 +127,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             } 
             
 //           $collection = Mage::getModel('catalog/product')->getCollection();
-//           
-//            $collection->addAttributeToFilter("visibility",array("gt"=>1));
+           
             
             
 
@@ -169,8 +178,11 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         //Assign data to each product
         $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
         $product_ids = array(); //keeps track of existing product to handle duplicate
-        
-        foreach ($products as $p2) {//print_r($p2);echo "<hr>";
+//         print_r($products->getData());die();
+//        echo $collection->getSelect();die();
+//        print_r($products);die();
+        foreach ($products as $p2) {//print_r($p2);echo "<hr>";die;
+            if(in_array(42,$p2->getCategoryIds())) continue;
 //            $p2 = Mage::getModel('catalog/product')->load($p->getId());
             //$img = (string)Mage::helper('catalog/image')->init($p2, 'small_image')->resize(200,200);
             
@@ -189,6 +201,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             if(in_array($id,$product_ids)) continue;
             array_push($product_ids, $id);
             
+       
 //            $image = (string)Mage::helper('catalog/image')->init($p2,'small_image');//->resize(600,600);
             $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p2);
             $prod['id'] = $p2->getId();
@@ -207,7 +220,6 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
 
             $data['products'][] = $prod;
         }
-        
         
         $data['total_pages'] = $total_pages;
         $data['current_page'] = $page;
