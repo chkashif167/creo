@@ -31,8 +31,9 @@
     display: block;
     font-weight: normal;
 }
-
-.checkout-form .form-group input, .checkout-form .form-group select {
+.checkout-form .form-group input,
+.checkout-form .inner-form select,
+.checkout-form .form-group select {
     display: block;
     border: 1px solid #eee;
     outline: none;
@@ -66,7 +67,7 @@
     margin-top: 6px;
     text-align: center;
 }
-
+.credit-card span.fake-select,
 .checkout-form .form-group span {
     background: url(../images/checkoutpage/custom-dd.png) no-repeat;
     width: 30px;

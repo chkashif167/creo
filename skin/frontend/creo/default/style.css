@@ -2258,6 +2258,7 @@ div.fme-filter dd li{overflow: visible !important;}
     text-align: center;
     padding: 20px 0;
 }
+.add-to-links .link-wishlist,
 .product-detail .btn-holder a {
     display: inline-block;
     vertical-align: top;
@@ -2270,6 +2271,14 @@ div.fme-filter dd li{overflow: visible !important;}
     position: relative;
     font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
+.product-detail .btn-holder { text-align: left;}
+.add-to-links .link-wishlist { width: 100%; display:block;}
+
+.add-to-links .link-wishlist:hover:before { border-color: transparent transparent #000;}
+.add-to-links .link-wishlist:hover {border-color: transparent transparent #000; background: #000; color: #fff;}
+
+
+.add-to-links .link-wishlist:before,
 .product-detail .btn-holder a:before {
     position: absolute;
     top: -4px;
@@ -2280,6 +2289,10 @@ div.fme-filter dd li{overflow: visible !important;}
     border-width: 0 0 36px 17px;
     border-color: transparent transparent #f16167;
     content: '';
+}
+
+.product-detail .btn-holder a:hover:before {
+    border-color: transparent transparent #000;
 }
 .product-detail .btn-holder a:first-child:before { display: none; }
 .product-detail .btn-holder a:hover:before { border-color: transparent transparent #000; }
@@ -2301,6 +2314,7 @@ div.fme-filter dd li{overflow: visible !important;}
     padding: 0;
     width: 79.5%;
 }
+
 .product-detail .btn-holder a:first-child .span1 {
     transform: skewX(-25deg);
     -moz-transform: skewX(-25deg);
@@ -4320,6 +4334,7 @@ p.availability{margin: 0;}
 .form-list li{
     float: none;
     margin: 0 0 12px;
+    overflow: hidden;
 }
 textarea {
     background: #fff;
@@ -5192,13 +5207,84 @@ dl:after{
     vertical-align: middle;
 }
 dl {margin: 0 0 10px;}
+.credit-card ul.inner-form {
+    padding: 0 15px;
+}
+.credit-card > li{margin-bottom: 0;}
+.fme_loading_filters{z-index: 9999 !important;}
+.attributeItem.fake-select-custom{width: 100%;}
+#header .header-icons {
+    display: block;
+    height: auto;
+    position: absolute;
+    right: 112px;
+    top: 6px;
+    width: 56%;
+}
+#nav ol > li:last-child {
+    background: #ef4f61;
+    transform: skewX(-30deg);
+    -moz-transform: skewX(-30deg);
+    -o-transform: skewX(-30deg);
+    -ms-transform: skewX(-30deg);
+    -webkit-transform: skewX(-30deg);
+}
+#nav ol > li:last-child a{
+    color: #fff;
+    transform: skewX(30deg);
+    -moz-transform: skewX(30deg);
+    -o-transform: skewX(30deg);
+    -ms-transform: skewX(30deg);
+    -webkit-transform: skewX(30deg);
+}
+#nav ol > li:last-child a:before{
+    background: #fff;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    left: -7px;
+    right: 5px;
+    position: absolute;
+    border-bottom: 1px solid #eee;
+    transform: skewX(-30deg);
+    -moz-transform: skewX(-30deg);
+    -o-transform: skewX(-30deg);
+    -ms-transform: skewX(-30deg);
+    -webkit-transform: skewX(-30deg);
+}
+#nav ol > li.active:last-child > a:before, #nav ol > li:last-child:hover > a:before{
+    left: -6px;
+    right: 6px;
+    background: #000;
+    border: none;
+    height: 5px;
+}
+.add-to-links {
+    bottom: 10px;
+    clear: both;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 10.5%;
+}
+.product-options-bottom::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.product-options-bottom {
 
-
-
-
-
-
-
+    position: relative;
+    width: 100%;
+}
+.product-options {
+    position: relative;
+    z-index: 99999;
+}
+.add-to-links > li {
+    float: none;
+}
 
 
 
