@@ -2258,6 +2258,7 @@ div.fme-filter dd li{overflow: visible !important;}
     text-align: center;
     padding: 20px 0;
 }
+.add-to-links .link-wishlist,
 .product-detail .btn-holder a {
     display: inline-block;
     vertical-align: top;
@@ -2270,6 +2271,14 @@ div.fme-filter dd li{overflow: visible !important;}
     position: relative;
     font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
+.product-detail .btn-holder { text-align: left;}
+.add-to-links .link-wishlist { width: 100%; display:block;}
+
+.add-to-links .link-wishlist:hover:before { border-color: transparent transparent #000;}
+.add-to-links .link-wishlist:hover {border-color: transparent transparent #000; background: #000; color: #fff;}
+
+
+.add-to-links .link-wishlist:before,
 .product-detail .btn-holder a:before {
     position: absolute;
     top: -4px;
@@ -2280,6 +2289,10 @@ div.fme-filter dd li{overflow: visible !important;}
     border-width: 0 0 36px 17px;
     border-color: transparent transparent #f16167;
     content: '';
+}
+
+.product-detail .btn-holder a:hover:before {
+    border-color: transparent transparent #000;
 }
 .product-detail .btn-holder a:first-child:before { display: none; }
 .product-detail .btn-holder a:hover:before { border-color: transparent transparent #000; }
@@ -2301,6 +2314,7 @@ div.fme-filter dd li{overflow: visible !important;}
     padding: 0;
     width: 79.5%;
 }
+
 .product-detail .btn-holder a:first-child .span1 {
     transform: skewX(-25deg);
     -moz-transform: skewX(-25deg);
@@ -5244,6 +5258,32 @@ dl {margin: 0 0 10px;}
     background: #000;
     border: none;
     height: 5px;
+}
+.add-to-links {
+    bottom: 10px;
+    clear: both;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 10.5%;
+}
+.product-options-bottom::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.product-options-bottom {
+
+    position: relative;
+    width: 100%;
+}
+.product-options {
+    position: relative;
+    z-index: 99999;
+}
+.add-to-links > li {
+    float: none;
 }
 
 
