@@ -371,4 +371,23 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
         die;
     }
     
+    public function getCurrencyRates(){
+        $currencyModel = Mage::getModel('directory/currency');
+        $currencies = $currencyModel->getConfigAllowCurrencies();
+        $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode();
+        $defaultCurrencies = $currencyModel->getConfigBaseCurrencies();
+        $rates=$currencyModel->getCurrencyRates($defaultCurrencies, $currencies);
+        $currency_data = array('allowed_currencies'=>$currencies,'base_currency'=>$baseCurrencyCode,
+            'currency_rates'=>$rates);
+        return $currency_data;
+    }
+    
+    public function getCurrencyRatesAction(){
+        $currency_data = $this->getCurrencyRates();
+        
+        header("Content-Type: application/json");
+        echo json_encode($currency_data);
+        die;
+    }
+    
 }

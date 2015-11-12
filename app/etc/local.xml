@@ -42,14 +42,8 @@
                 <connection>
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
-
                     <password><![CDATA[]]></password>
-<<<<<<< HEAD
-                    <dbname><![CDATA[creodbmage_bk]]></dbname>
-=======
-                    <dbname><![CDATA[creo]]></dbname>
-
->>>>>>> 7f5aaf269969e54a599c5eb832505377fa7957d8
+                    <dbname><![CDATA[creodbmage]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>

@@ -61,7 +61,7 @@
             </div>
 
 
-            <div class="sort-by sortbyCustom">
+<!--            <div class="sort-by sortbyCustom">
                 <?php /* ?> <label><?php echo $this->__('Sort By:') ?></label>
                   <select onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By:') ?>">
                   <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
@@ -70,22 +70,10 @@
                   </option>
                   <?php endforeach; ?>
                   </select><?php */ ?>
-                <label><?php echo $this->__('Sort By:') ?></label>
-                <div class=" sortbycontainer open-close"> <a id="sortbyopener" class="" href="javascript:void(0)">
-                        <?php if ($_GET['order']) {
-                            echo ucfirst($_GET['order']);
-                        } else {
-                            echo "Name";
-                        } ?>
-                    </a>
-                    <ul onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By:') ?>" class="slide sortbyUl js-slide-hidden" style="display: none;">
-    <?php foreach ($this->getAvailableOrders() as $_key => $_order): ?>
-                            <li<?php if ($this->isOrderCurrent($_key)): ?> class="selected"<?php endif; ?>> <a href="<?php echo $this->getOrderUrl($_key, 'asc') ?>" > <?php echo $this->__($_order) ?> </a> </li>
-                <?php endforeach; ?>
-                    </ul>
-                </div>
+                <label><?php //echo $this->__('Sort By:') ?></label>
+                
 
-    <!--<a class="sort-by-switcher" href="#"><i class="icon-sort-alt-down"></i></a>-->
+    <!--<a class="sort-by-switcher" href="#"><i class="icon-sort-alt-down"></i></a>
                 <?php if ($this->getCurrentDirection() == 'desc'): ?>
                     <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo $this->__('Set Ascending Direction') ?>">
                         <?php //echo $this->__('Set Ascending Direction') ?>
@@ -96,7 +84,7 @@
                     </a>
                 <?php endif; ?>
             </div>
-
+-->
             <ul class="sort-items">
     <?php foreach ($this->getAvailableLimit() as $_key => $_limit): ?>
                     <li <?php if ($this->isLimitCurrent($_key) == $_limit): ?> class="active" <?php endif ?>> <a href="<?php echo $this->getLimitUrl($_key) ?>" onClick="setLocation(this.value)"><?php echo $_limit ?> </a> </li>
@@ -170,19 +158,9 @@
   </div>
   </div> -->
 
-  <?php //echo $this->getPagerHtml() ?>
+  <?php echo $this->getPagerHtml() ?>
 
   </div>
   </div>
   <?php endif ?>
   <?php  ?>
-<script>
-    jQuery('#sortbyopener').click(function () {
-        var sort_by_menu = jQuery(".slide.sortbyUl");
-        if (sort_by_menu.hasClass("js-slide-hidden")) {
-            sort_by_menu.removeClass("js-slide-hidden").css('display', 'block');
-        } else {
-            sort_by_menu.addClass("js-slide-hidden").css('display', 'hidden');
-        }
-    });
-</script>

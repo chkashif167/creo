@@ -1646,13 +1646,19 @@ $j(window).load(function () {
             setCookie("newsletter", "hide-news-letter", 60);
         }
     });
+	
+	jQuery('.closebtn').click(function(){
+		
+			setCookie("newsletter", "hide-news-letter", 60);
+		
+	});
 });
 
 function checkNewsletterCookie() {
     //console.log("here");
     var seeit = getCookie("newsletter");
     //console.log(seeit);
-    if (seeit == 'undefined' || seeiit == "") {
+    if (seeit == 'undefined' || seeit == "") {
         console.log("triggered 1");
         //console.log("here1");
         if(newsletter_popup_called == false) {//do not allow multiple calls if popup is already shown
