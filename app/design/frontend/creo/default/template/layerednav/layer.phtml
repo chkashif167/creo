@@ -68,7 +68,9 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         <div class="cate-open-close">
                                         <a id="currentvalue" class="opener" href="javascript:;"> Categories</a>
 										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label> -->
-										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?>
+                                        <li><a class="fme_layered_clearall" style="font-size:14px" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Categories') ?></a></li>
+                                        </ul></div>
                                     <?php }
 								}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
 									if ($_filter->getVar() == 'gender') {
@@ -111,7 +113,9 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         <div class="cate-open-close">
                                         <a id="currentvalue" class="opener" href="javascript:;"> Categories</a>
 										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
-										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?>
+                                        <li><a class="fme_layered_clearall" style="font-size:14px" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Categories') ?></a></li>
+                                        </ul></div>
 									<?php }
 									}
 									endif;?>
