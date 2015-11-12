@@ -1193,4 +1193,13 @@
 .categories_filtes_custom:hover >  #fme_layered_universal_categories { display: block !important;}
 #fme_layered_universal_categories > li {    float: left;    padding: 3px 0;    width: 100%;}
 #fme_layered_universal_categories > li a { padding: 0 !important;}
+#ajaxlogin-login-window  .messages {
+   display: inline-block;
+    width: 100%;
+}
+.customer-address-form select#country {
+    font-size: 11px !important;
+    height: 32px !important;
+ 
+}
 
