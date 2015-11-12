@@ -5268,6 +5268,7 @@ dl {margin: 0 0 10px;}
     text-align: center;
     width: 10.5%;
 }
+.outofstockclass .add-to-links {bottom: auto;    margin-right: 15px;    margin-top: -39px;}
 .product-options-bottom::after {
     clear: both;
     content: "";
