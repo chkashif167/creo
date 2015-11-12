@@ -146,5 +146,6 @@ $_swatches_height = (int) $_settings['swatch_height'];
 <script>
 jQuery(document).ready(function(){
     jQuery(':hidden').closest('span.fake-select').removeClass('fake-select');
+    jQuery('.fake-select').closest('.attributeItem').addClass("fake-select-custom");
 });
 </script>
