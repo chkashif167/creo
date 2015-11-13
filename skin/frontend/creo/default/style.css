@@ -5288,6 +5288,9 @@ dl {margin: 0 0 10px;}
 .add-to-links > li {
     float: none;
 }
+.cart-table thead tr,
+.cart-table tbody tr{background: url("images/border-slice.png") repeat-x 0 100%;}
+
 
 
 
