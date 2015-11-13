@@ -57,10 +57,9 @@
         <?php if($_isCustomizeProduct) : ?>
             <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="var ret = designYourOwnPopupValidation(); if(ret == false){return false;}else{PDC_Actions.saveDesignBeforeAddToCart(); /*productAddToCartForm.submit(this)*/}"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
         <?php else : ?>
-        
-            <button type="button" style="margin-top:10px;" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
-        <?php endif ?>
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
             <?php echo $this->getChildHtml('', true, true) ?>
+			<?php endif ?>
         </div>
     </div>
 <?php endif; ?>
