@@ -2585,12 +2585,15 @@ div.fme-filter dd li{overflow: visible !important;}
 	color: #000;
 	font:11px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
+
 .cart-table-area dl{
 	margin: 0;
 	padding: 0;
 	display: block;
 	color: #000;
 	font:9px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	float: right;
+	width:73px;
 }
 .cart-table-area dl dt,
 .cart-table-area dl dd{
