@@ -5323,17 +5323,18 @@ dl {margin: 0 0 10px;}
 .page-print dl.item-options dt {
 	font-weight: bold;
 }
-
-@media print {
-	.page-print .subtitle {margin-bottom: 99px;}
-	.page-print .buttons-set button {display: none;}
+.onestepcheckout-index-index #checkout-review-table tr td:first-child {
+    width: 40%;
 }
 
 
 
 
 
-
+@media print {
+	.page-print .subtitle {margin-bottom: 99px;}
+	.page-print .buttons-set button {display: none;}
+}
 @media only screen and (max-width: 1199px) {
 	#nav ol > li > a{padding: 0 12px 5px;}
 	.search-form{width: 130px;}
