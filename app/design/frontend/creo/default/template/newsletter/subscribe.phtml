@@ -81,7 +81,9 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
 <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail1" class="subscribe-form footer-form">
 		  <span class="title">Join us for 20% off your first order</span>
           <div class="form-row">
+          <div class="footer_newsletter">
             <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email email" placeholder="<?php echo $this->__('Email Address') ?>" />
+            </div>
             <input type="submit" value="JOIN" class="button newslettersubscribe ">
           </div>
           
@@ -99,5 +101,11 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
         <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/'); ?>
     }
     </script>
+    
+    <style>
+	
+	.footer_newsletter .validation-advice { float: left;}
+	
+	</style>
 
 
