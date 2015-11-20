@@ -5235,10 +5235,10 @@ dl {margin: 0 0 10px;}
 .credit-card > li{margin-bottom: 0;}
 .fme_loading_filters{z-index: 9999 !important;}
 .attributeItem.fake-select-custom{
-	width:35%;
-	margin-right:40px;
-	
+	width:100%;
+	margin: 0;
 }
+.attributeItem.fake-select-custom .input-box select, .bulk-order-form select{width: 100%;}
 #header .header-icons {
 	display: block;
 	height: auto;
