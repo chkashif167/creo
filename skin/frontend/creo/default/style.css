@@ -5238,6 +5238,10 @@ dl {margin: 0 0 10px;}
 	width:100%;
 	margin: 0;
 }
+.attributeItem.fake-select-custom:first-child {
+    margin-right: 8%;
+    width: 40%;
+}
 .attributeItem.fake-select-custom .input-box select, .bulk-order-form select{width: 100%;}
 #header .header-icons {
 	display: block;
