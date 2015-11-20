@@ -5353,7 +5353,10 @@ dl {margin: 0 0 10px;}
 .onestepcheckout-index-index #checkout-review-table tr td:first-child {
     width: 40%;
 }
-
+.option-container ul {
+    margin: 0;
+    padding: 0;
+}
 
 
 
