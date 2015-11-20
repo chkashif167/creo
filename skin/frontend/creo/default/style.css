@@ -4663,12 +4663,12 @@ textarea {
 	-webkit-border-radius:6px;
 	-moz-border-radius:6px;
 	appearance:none;
-	width:100%;
+	width:97%;
 	position: relative;
 	left: 0 !important;
 	bottom: 0 !important;
-	height: 18px !important;
-	font-size: 10px;
+	height: 20px !important;
+	font-size: 12px;
 	line-height: 12px;
 	text-transform: uppercase;
 	color: #949494;
@@ -5234,7 +5234,11 @@ dl {margin: 0 0 10px;}
 }
 .credit-card > li{margin-bottom: 0;}
 .fme_loading_filters{z-index: 9999 !important;}
-.attributeItem.fake-select-custom{width: 100%;}
+.attributeItem.fake-select-custom{
+	width:35%;
+	margin-right:40px;
+	
+}
 #header .header-icons {
 	display: block;
 	height: auto;
