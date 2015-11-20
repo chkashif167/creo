@@ -2562,7 +2562,6 @@ div.fme-filter dd li{overflow: visible !important;}
 	left: 0;
 	border-left: 2px solid #f3f3f3;
 	content: '';
-	min-height: 96px;
 }
 .sales-order-view .cart-table-area th:before,
 .sales-order-view .cart-table-area td:before{top: 0;}
