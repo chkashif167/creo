@@ -2609,6 +2609,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	float: right !important;
 	width:73px;
 }
+.checkout-cart-index .cart-table-area dl{float: left !important;}
 .sales-order-view .cart-table-area dl{
 	float: none !important;
 	width: 100%;
@@ -5307,7 +5308,7 @@ dl {margin: 0 0 10px;}
 }
 .product-options {
 	position: relative;
-	z-index: auto;
+	z-index: 99;
 }
 .add-to-links > li {
 	float: none;
@@ -5318,6 +5319,7 @@ dl {margin: 0 0 10px;}
 .sales-order-view .cart-table-area th,
 .sales-order-view .cart-table-area td {
 	padding: 5px 0;
+	position: relative;
 }
 .sales-order-view .subtotal .price {
 	font-size: 15px !important;
