@@ -1134,7 +1134,7 @@
 .products-grid { z-index: 9; position: relative;}
 #product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}
 #product-options-wrapper { float: left; width: 75%;}
-#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top: !important; height: 25px; width: 25px;}
+#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top: !important; height: 25px; width: 25px; line-height: 25px; background-position: 50% 50%;}
 .attributeItem { float: left; width:50%;}
 .catalog-product-view .bx-controls.bx-has-controls-direction { display: none;}
 .bx-wrapper  { background: #fff none repeat scroll 0 0;
