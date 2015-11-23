@@ -2562,7 +2562,6 @@ div.fme-filter dd li{overflow: visible !important;}
 	left: 0;
 	border-left: 2px solid #f3f3f3;
 	content: '';
-	min-height: 96px;
 }
 .sales-order-view .cart-table-area th:before,
 .sales-order-view .cart-table-area td:before{top: 0;}
@@ -2609,6 +2608,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	float: right !important;
 	width:73px;
 }
+.checkout-cart-index .cart-table-area dl{float: left !important;}
 .sales-order-view .cart-table-area dl{
 	float: none !important;
 	width: 100%;
@@ -5235,10 +5235,14 @@ dl {margin: 0 0 10px;}
 .credit-card > li{margin-bottom: 0;}
 .fme_loading_filters{z-index: 9999 !important;}
 .attributeItem.fake-select-custom{
-	width:35%;
-	margin-right:40px;
-	
+	width:100%;
+	margin: 0;
 }
+.attributeItem.fake-select-custom:first-child {
+    margin-right: 8%;
+    width: 40%;
+}
+.attributeItem.fake-select-custom .input-box select, .bulk-order-form select{width: 100%;}
 #header .header-icons {
 	display: block;
 	height: auto;
@@ -5307,7 +5311,7 @@ dl {margin: 0 0 10px;}
 }
 .product-options {
 	position: relative;
-	z-index: auto;
+	z-index: 99;
 }
 .add-to-links > li {
 	float: none;
@@ -5318,6 +5322,7 @@ dl {margin: 0 0 10px;}
 .sales-order-view .cart-table-area th,
 .sales-order-view .cart-table-area td {
 	padding: 5px 0;
+	position: relative;
 }
 .sales-order-view .subtotal .price {
 	font-size: 15px !important;
@@ -5352,7 +5357,10 @@ dl {margin: 0 0 10px;}
 .onestepcheckout-index-index #checkout-review-table tr td:first-child {
     width: 40%;
 }
-
+.option-container ul {
+    margin: 0;
+    padding: 0;
+}
 
 
 
