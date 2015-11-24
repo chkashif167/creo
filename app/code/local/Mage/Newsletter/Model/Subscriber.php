@@ -306,13 +306,14 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
      */
     public function subscribe($email)
     {
+    
         $this->loadByEmail($email);
+        
         $customerSession = Mage::getSingleton('customer/session');
 
         if(!$this->getId()) {
             $this->setSubscriberConfirmCode($this->randomSequence());
         }
-
         $isConfirmNeed   = (Mage::getStoreConfig(self::XML_PATH_CONFIRMATION_FLAG) == 1) ? true : false;
         $isOwnSubscribes = false;
         $ownerId = Mage::getModel('customer/customer')
