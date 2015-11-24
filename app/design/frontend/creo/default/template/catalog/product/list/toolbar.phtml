@@ -72,8 +72,13 @@
                   </select><?php */ ?>
                 <label><?php echo $this->__('Sort By:') ?></label>
                 <div class=" sortbycontainer open-close"> <a id="sortbyopener" class="" href="javascript:void(0)">
-                        <?php if ($_GET['order']) {
-                            echo ucfirst($_GET['order']);
+                        <?php 
+						if ($_GET['order']) {
+						  	if($_GET['order'] == 'created_at'){										
+	                           	echo ucfirst('new');
+							}else{
+	                           	echo ucfirst($_GET['order']);
+							}
                         } else {
                             echo "Name";
                         } ?>
@@ -146,7 +151,6 @@
   </div>
 -->  </div>
   <?php endif; ?>
-  <div class="pager1">
   <!-- <div class="count-container">
   <?php if($this->getLastPageNum()>1): ?>
   <p class="amount amount--has-pages">
@@ -172,7 +176,6 @@
 
   <?php //echo $this->getPagerHtml() ?>
 
-  </div>
   </div>
   <?php endif ?>
   <?php  ?>

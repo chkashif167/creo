@@ -36,7 +36,14 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);</script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 <div class="row">
-    <div class="product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+<?php 
+
+if($_product->stock_item->is_in_stock == 0){
+	$outofstockclass = "outofstockclass ";
+ } ?>
+
+    <div class=" <?php if(isset($outofstockclass)) {echo $outofstockclass ;} ?>product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> validation_status="">
             <?php echo $this->getBlockHtml('formkey') ?>
             <div class="no-display">
@@ -106,11 +113,17 @@
                 <div class="text-area">
                     <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                     <div class="price-area"> 
-                        <span class="price">
-                            <?php if($_product->getSpecialPrice() > 0.0):?>
-                                <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
-                            <?php endif;?>
-                            <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
+<div class="price-info">
+<?php /*?><?php if($_product->getSpecialPrice() > 0.0):?>
+<i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
+<?php endif;?>
+<?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?><?php */?>
+
+<?php echo $this->getPriceHtml($_product); ?>
+<?php echo $this->getChildHtml('bundle_prices') ?>
+<?php echo $this->getTierPriceHtml() ?>
+
+ </div>
                         <span class="availability">Availability:  
                             <?php echo $this->getChildHtml('product_type_availability'); ?>
                         </span> 
@@ -152,35 +165,22 @@
                         </div>
                     </div>
                     <div class="options-area">
-                        <?php if ($_product->isSaleable()): ?>
+                <?php if ($_product->isSaleable()):?>
                             <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                         <?php endif; ?>
                     </div>
-
-                    <?php $_product = $this->getProduct(); ?>
-                    <?php $buttonTitle = $this->__(' Add to Cart'); ?>
-                    <?php /* if($_product->isSaleable()): ?>
-                      <div class="add-to-cart">
-                      <?php if(!$_product->isGrouped()): ?>
+                    <?php  if(!$_product->isSaleable()): ?>
+						<?php echo $this->getChildHtml('addto') ?>                      
                       <?php endif; ?>
-                      <div class="btn-holder">
-
-                      <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
-                      <span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span>
-                      </button>
-                      <a class="link-wishlist" href="<?php echo $this->getUrl('wishlist') ?>"><i class="icon-heart-empty"></i></a>
-                      </div>
 
 
-                      </div>
-                      <?php endif; */ ?>
-
-                    <?php // j.work starts  ?>
+                    <?php // jawwad.nissar work starts  ?>
                     <div class="shipping-area"> 
                         <h4 st> Shipping Information  </h4>
                         <!--<a class="shipping-info" href="#">Shipping Information</a>-->
                         <p><?php print $_product->getShippingDetails(); ?> </p>
-                    </div>                      
+                    </div> 
+                    <?php // jawwad.nissar work ends  ?>                     
                     <!--                    <div class="shipping-area"> 
                     <?php
 //                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
@@ -208,16 +208,6 @@
                     <?php //Ghost code ends?>
                                         </div>
                     -->                    
-                    <?php // j.work ends  ?>
-
-                    <!-- <div class="shipping-area"> <a class="shipping-info" href="#">SHIPPING INFORMATION</a>
-       <ul>
-         <li><a href="#">Shipping within next day</a></li>
-         <li class="active"><a href="#">Shipping within 2 days</a></li>
-         <li><a href="#">Shipping within 3 days</a></li>
-         <li><a href="#">Shipping within 4 days</a></li>
-       </ul>
-    </div>-->
                 </div>
             <?php } ?>
             <?php //endif;*/  ?>
@@ -419,3 +409,89 @@
             z-index: 900;
         }
     </style>
+    
+    
+    
+<script type="application/javascript">    
+    //Get associated product price
+<?php if($_product->isConfigurable()):?>
+function isValidPrice(price)
+{
+    if(typeof price !== 'undefined' && (price > 0 || price < 0)) {
+        return true;
+    }
+    return false;
+}
+function attrsHasPrice()
+{
+    var attrs = jQuery("select[name*='super_attribute']");
+    var hasPrice = false;
+    jQuery(attrs).find("option").each(function(k, attr){//for select
+        var price = parseInt(jQuery(attr).attr('price'));
+        if(hasPrice === false) {
+            hasPrice = isValidPrice(price);
+        }
+    });
+    attrs = jQuery("input[name*='super_attribute']");
+    jQuery(attrs).each(function(k, attr){//for input
+        var price = parseInt(jQuery(attr).attr('price'));
+        if(hasPrice === false) {
+            hasPrice = isValidPrice(price);
+        }
+    });
+    return hasPrice;
+}
+
+var request;//to stop duplicate/multiple ajax calls
+
+function loadPriceWithAjax()
+{
+    //send request only if attribute don't have price
+    var hasPrice = attrsHasPrice();
+    if(hasPrice === false) {
+        if(!request) {
+            //show slider on price
+            jQuery('.price-box .regular-price .price').html(' <span class="loader-price"></span>');
+            // jQuery('.price-box .regular-price .price').hide();
+            //console.log(jQuery("[name*='super_attribute']"));
+            request = jQuery.post( "<?php echo Mage::getUrl('wts_ajaxpriceloader/ajax/getAssociatedProductPrice/',array('_secure'=>true));?>", jQuery('#product_addtocart_form').serialize())
+                .done(function( data ) {
+                //console.log( "Data Loaded: " + data );
+                //console.log(data.price);
+                if(data.price.length > 0){
+                    jQuery('.price-box .regular-price .price').text(data.price);
+                    //hide slider on price.
+                    jQuery('.price-box .regular-price .price').show();
+                }
+                request = null;//release the request
+            });
+        }
+    }
+}
+
+function hasDefaultSelection()
+{
+    var hasSelection = false;
+    jQuery("[name*='super_attribute'], [name*='options']").each(function(k,v){
+        if(jQuery(v).val().length > 0) {
+            if(hasSelection === false) {
+                hasSelection = true;
+            }
+        }
+    });
+    return hasSelection;
+}
+
+jQuery(document).ready(function(){
+    jQuery("[name*='super_attribute'], [name*='options']").on('change', function(){
+        loadPriceWithAjax();
+    });
+    
+    //if any of the default attribute or option is selected do send the ajax request
+    if(hasDefaultSelection()) {
+        loadPriceWithAjax();
+    }
+});
+<?php endif;?>
+//associated price module code ends here
+</script>

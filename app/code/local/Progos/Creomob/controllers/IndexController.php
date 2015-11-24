@@ -43,6 +43,29 @@ class Progos_Creomob_IndexController extends Mage_Core_Controller_Front_Action {
         die;
     }
     
+    public function testAction(){
+//        $collection = Mage::getModel('catalog/product')->getCollection();
+//        $collection->addAttributeToSelect('name')
+//                ->addAttributeToSelect('size')
+//                ->addAttributeToSelect('gender');
+//        $products = $collection->load();
+//        $data = array();
+//        
+//        foreach($products as $p){
+//            $data[] = array("name"=>$p->getName(),"gender"=>$p->getGender());
+//        }
+        
+        $attributeCode = "color";
+        $attribute = Mage::getModel('catalog/resource_eav_attribute')
+            ->loadByCode(Mage_Catalog_Model_Product::ENTITY, $attributeCode);
+        $attributeOptions = $attribute ->getSource()->getAllOptions(false); 
+        print_r($attributeOptions);die();
+        
+        
+        header("Content-Type: application/json");
+        print_r(json_encode($data));
+        die;
+    }
 
 
 }

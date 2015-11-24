@@ -234,7 +234,7 @@
     margin: 0;
     overflow: hidden;
     padding: 0;
-    width: 81%;
+    width: 89%;
 }
 .product-detail .btn-holder button:first-child .span1 {
     border: 4px solid #eee;
@@ -1157,7 +1157,7 @@
 #payment_form_creditcardpci .credit-card { padding-bottom: 20px;}
 #payment_form_creditcardpci input { background: #fff; height: 27px;}
 #payment_form_creditcardpci #creditcardnumbercn, #payment_form_creditcardpci #creditcardpci_cc_type_cvv_div { margin: 0;}
-#creditcardNamecn { margin: 12px 0 0 0;}
+#creditcardNamecn { margin: 12px 0;}
 #payment_form_creditcardpci  .validation-advice { margin: 0;}
 
 .categorypath-create-phone-covers-html .get_photo_upload, .categorypath-create-notebooks-html .get_photo_upload,
@@ -1188,3 +1188,13 @@
 #fme_filters_list #styles_label { display: inline-block !important;}
 #fme_filters_list #fme_layered_styles { display:block !important;} 
 #fme_filters_list #fme_layered_clear_all_btn { display:inline-block !important;}*/
+#fme_layered_universal_categories { display: none; position: absolute; left: 0; top: 22px; background: #fff; float: left;}
+.categories_filtes_custom { position: relative; z-index: 999;}
+.categories_filtes_custom:hover >  #fme_layered_universal_categories { display: block !important;}
+#fme_layered_universal_categories > li {    float: left;    padding: 3px 0;    width: 100%;}
+#fme_layered_universal_categories > li a { padding: 0 !important;}
+#ajaxlogin-login-window  .messages {
+   display: inline-block;
+    width: 100%;
+}
+

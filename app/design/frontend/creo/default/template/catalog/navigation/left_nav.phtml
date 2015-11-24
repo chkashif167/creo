@@ -27,12 +27,12 @@ if (isset($ids[2])) { //you should add some more complex lookout
 //topParent is the ralph loren category even if you are in one of its children cat
 }
 $subcategories = Mage::getModel('catalog/category')->getCategories($ids[2]);
-if(!($clothingCat == 'Accessories')){
+//if(!($clothingCat == 'Accessories')){
 ?>
-<nav class="cate1">
+<!--<nav class="cate1">
 <ul>
 <?php
-foreach ($subcategories as $cat) {
+/*foreach ($subcategories as $cat) {
     if ($cat->getName() == $current_cat) {
         echo '<li class="active"><a href="'.$_helper->getCategoryUrl($cat).'"><span>'.$cat->getName()."</span></a></li>\n";
 
@@ -41,8 +41,10 @@ foreach ($subcategories as $cat) {
     	 echo '<li><a href="'.$_helper->getCategoryUrl($cat).'"><span>'.$cat->getName()."</span></a></li>\n";
     }
 }
+*/
 ?>
 </ul>
 </nav>
-
-<?php } }?>
+-->
+<?php //}
+}?>

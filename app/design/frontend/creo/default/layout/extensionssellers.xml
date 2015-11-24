@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <sellers_index_bestseller>
+	<!-- set title -->
+	<reference name="head">
+		<action method="setTitle">
+			<title>Best Seller</title>
+		</action>
+	</reference>
+	<!-- Switch root template to 1 column -->
+	 <reference name="root">
+		<action method="setTemplate"><template>page/1column.phtml</template></action>
+	</reference>
+        <reference name="content">
+                <block type="sellers/bestseller" name="bestseller" as="bestseller"  template="extensions/sellers/bestseller.phtml">
+            <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                <block type="page/html_pager" name="product_list_toolbar_pager"/>
+            </block>
+<!--            <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+-->            <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+        </block>		
+        </reference>
+    </sellers_index_bestseller>
+	<sellers_index_trending>
+	<!-- set title -->
+	<reference name="head">
+		<action method="setTitle">
+			<title>Trending</title>
+		</action>
+	</reference>
+	<!-- Switch root template to 1 column -->
+	 <reference name="root">
+		<action method="setTemplate"><template>page/1column.phtml</template></action>
+	</reference>
+        <reference name="content">
+                <block type="sellers/trending" name="trending" as="trending"  template="extensions/sellers/trending.phtml">
+            <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                <block type="page/html_pager" name="product_list_toolbar_pager"/>
+            </block>
+<!--            <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+-->            <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+        </block>		
+        </reference>
+    </sellers_index_trending>
+	<sellers_index_newcollection>
+	<!-- set title -->
+	<reference name="head">
+		<action method="setTitle">
+			<title>New Collection</title>
+		</action>
+	</reference>
+	<!-- Switch root template to 1 column -->
+	 <reference name="root">
+		<action method="setTemplate"><template>page/1column.phtml</template></action>
+	</reference>
+        <reference name="content">
+                <block type="sellers/newcollection" name="newcollection" as="newcollection"  template="extensions/sellers/newcollection.phtml">
+            <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                <block type="page/html_pager" name="product_list_toolbar_pager"/>
+            </block>
+<!--            <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+            <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+-->            <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+        </block>		
+        </reference>
+    </sellers_index_newcollection>
+</layout>
