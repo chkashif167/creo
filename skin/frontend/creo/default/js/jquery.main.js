@@ -2476,18 +2476,43 @@ function popupValidation()
     var errors = "";
     //only apply this validation if it has swatches
     if (jQuery('.option-container').find('.has-swatches').length > 0) {
-        //check all required elements color/size 
-        if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select color";
-        }
-        if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            if (errors.length >= 1) {
-                errors = errors + " and size";
-            }
-            else {
-                errors = "Please make sure to select size";
-            }
-        }
+        //check all required elements size/style and color. 
+        
+		// size
+		if(jQuery("#swatches-options-132").length > 0) {
+			if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+				if (errors.length >= 1) {
+					errors = errors + " and size";
+				}
+				else {
+					errors = "Please make sure to select size";
+				}
+			}
+		}
+		if(jQuery("#swatches-options-134").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
+            errors = "Please make sure to select style";
+			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+					 errors = "Please make sure to select tshirt color";
+				}
+        }/*else if(jQuery("#swatches-options-159").length > 0) {
+				
+		}*/
+		
+		
+		if(jQuery("#swatches-options-160").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select polo color";
+			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select print color"; 
+			}
+		}
+		
+		if(jQuery("#swatches-options-152").length > 0) {
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+            	errors = "Please make sure to select case color";
+			}
+		}
 
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
@@ -2536,7 +2561,7 @@ jQuery(document).ready(function (e) {
 });
 
 
-
+/*
 // select filter by default
 jQuery(document).ready(function (e) {
     var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
@@ -2589,3 +2614,63 @@ jQuery(document).ready(function (e) {
 		}
 	}
 });
+*/
+/*jQuery(document).ready(function(e) {
+   var getitem = jQuery("#fme_layered_universal_categories li a").attr("class");
+  // console.log(getitem);
+   
+    jQuery(document).on("click",".opener",function() {
+	   alert("dd");
+	 var getitem = jQuery("#fme_layered_universal_categories li").attr("class");
+		console.log(getitem);
+    });
+
+  
+});*/
+/*jQuery(document).ready(function(e) {
+    jQuery('.my-account').on('keydown', '#telephone', function(e){
+-1!==jQuery.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault();
+ });
+ 
+		var maxLen = 16;
+        jQuery('.my-account #telephone').keydown(function(event){
+            var Length = jQuery(".my-account #telephone").val().length;
+			//alert(Length);
+            if(Length >= maxLen){
+                if(event.which != 14) {
+                    return false;
+                }
+				else
+				{
+				return true;	
+				}
+            }
+        });
+ });
+*/
+jQuery(document).ready(function(e) {
+	jQuery('.my-account #telephone').attr('maxlength', '16');
+	jQuery('.my-account #telephone').attr('onkeypress', 'return isNumeric(event)');
+	jQuery('.my-account #telephone').attr('oninput', 'maxLengthCheck(this)');
+	jQuery('.my-account #telephone').attr('max', '16'); 
+	jQuery('.my-account #telephone').attr('min', '1');
+});
+
+  function maxLengthCheck(object) {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+    
+  function isNumeric (evt) {
+    if(evt.keyCode==8 || evt.keyCode==46 || evt.keyCode==37 || evt.keyCode==38|| evt.keyCode==39 || evt.keyCode==40 ){
+    return true;
+    }
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode (key);
+    var regex = /[0-9]|\./;
+    if ( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }

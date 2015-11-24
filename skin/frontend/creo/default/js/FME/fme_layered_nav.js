@@ -80,16 +80,25 @@ function fme_layered_show_products(transport)
     if (typeof (fme_slider) != 'undefined')
         fme_slider.setEnabled();
 
+	// jawad work
+	var params = $('fme_layered_params').value.parseQuery();
+	if(params['universal_categories']){
+		var currentCategory = params['universal_categories'];
+	}
+	var currentelement = $('universal_categories-'+currentCategory).innerHTML;
+	$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
+
 //reinitialize infinite ajax scroll
 jQuery.ias('destroy');
 SgyIAS.init();
+
+
 }
 
 function fme_layered_add_params(k, v, isSingleVal)
 {
     var el = $('fme_layered_params');
     var params = el.value.parseQuery();
-
     var strVal = params[k];
     if (typeof strVal == 'undefined' || !strVal.length) {
         params[k] = v;
@@ -97,7 +106,7 @@ function fme_layered_add_params(k, v, isSingleVal)
     else if ('clear' == v) {
         params[k] = 'clear';
     }
-    else {
+    else {		
         if (k == 'price')
             var values = strVal.split(',');
         else
@@ -107,27 +116,36 @@ function fme_layered_add_params(k, v, isSingleVal)
             if (isSingleVal)
                 values = [v];
             else
-                values.push(v);
+				// remove multiselect from categories , done by jawad 
+				if(k == 'universal_categories'){	
+	                values = [v];
+				}
+				else
+                	values.push(v);
         }
         else {
             values = values.without(v);
         }
-
         params[k] = values.join('-');
     }
-
     el.value = Object.toQueryString(params).gsub('%2B', '+');
 }
-
-
 
 function fme_layered_make_request()
 {
     fme_layered_hide_products();
-
-    var params = $('fme_layered_params').value.parseQuery();
-
-    if (!params['dir'])
+    
+	var params = $('fme_layered_params').value.parseQuery();
+//	if(params['universal_categories']){
+//		var cats = params['universal_categories'];
+//		var getlastdash = cats . lastIndexOf('-');
+//		if(getlastdash != '-1'){
+//			var onlylastid = cats.substr(getlastdash + 1);
+//		}
+//		params['universal_categories'] = onlylastid;
+		//alert($('fme_layered_params').value);
+//	}
+	if (!params['dir'])
     {
         $('fme_layered_params').value += '&dir=' + 'desc';
     }
@@ -139,6 +157,7 @@ function fme_layered_make_request()
                 onSuccess: fme_layered_show_products
             }
     );
+
 }
 
 
@@ -146,7 +165,6 @@ function fme_layered_update_links(evt, className, isSingleVal)
 {
     var link = Event.findElement(evt, 'A'),
             sel = className + '-selected';
-
     if (link.hasClassName(sel))
         link.removeClassName(sel);
     else
@@ -294,11 +312,35 @@ function price_input_listener(evt) {
     fme_layered_make_request();
 }
 
+function single_select(id){
+//	alert(id);
+//	var abca = $('fme_layered_universal_categories');
+//        var ajaxUrl = $('fme_layered_params').value.parseQuery();
+//		 if (ajaxUrl['universal_categories'])
+  //  	{
+			
+//alert(ajaxUrl['universal_categories']);
+		
+	//	}else{alert('abc');}
+//$('requests').insert(ajaxUrl);
+	
+}
+
+
 function fme_layered_init()
 {
 
+
+			   
     var items, i, j, n,
             classes = ['category', 'attribute', 'icon', 'price', 'clear', 'dt', 'clearall'];
+			
+//	Event.on('fme_layered_universal_categories', 'click', 'a', single_select);
+	//var c_ids =  $('fme_layered_universal_categories').select('li a');
+//	Event.observe('fme_layered_attribute','click', single_select);
+//	jQuery('fme_layered_attribute').observe('click', single_select);
+//	$('fme_layered_attribute').observe('click', single_select);	
+//	Element.observe('fme_layered_universal_categories', 'click', single_select);
 
     for (j = 0; j < classes.length; ++j) {
         items = $('fme_filters_list').select('.fme_layered_' + classes[j]);

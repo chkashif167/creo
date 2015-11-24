@@ -397,7 +397,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
             <?php $_minimalPriceDisplayValue = $_minimalPrice + $_weeeTaxAmount; ?>
         <?php endif; ?>
 
-        <?php if ($this->getUseLinkForAsLowAs()): ?>
+        <?php /* if ($this->getUseLinkForAsLowAs()): ?>
             <a href="<?php echo $_product->getProductUrl(); ?>" class="minimal-price-link">
         <?php else: ?>
             <span class="minimal-price-link">
@@ -410,7 +410,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
             </a>
         <?php else: ?>
             </span>
-        <?php endif ?>
+        <?php endif  */?>
     <?php endif; /* if ($this->getDisplayMinimalPrice() && $_minimalPrice && $_minimalPrice < $_finalPrice): */ ?>
     </div>
 

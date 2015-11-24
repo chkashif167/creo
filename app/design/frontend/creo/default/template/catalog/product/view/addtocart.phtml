@@ -64,11 +64,6 @@
             <?php else : ?>
 			<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
 			<?php endif; ?>
-            <?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
-		<?php if ($this->helper('wishlist')->isAllow()) : ?>
-      <a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist"> <i class="icon-heart-empty"></i> <?php //echo $this->__('Add to Wishlist') ?></a>
-      <?php /*?><a class="link-wishlist" href="#"><i class="icon-heart-empty"></i></a><?php */?>
-		<?php endif; ?>
             
 				<?php echo $this->getChildHtml('', true, true) ?>
         </div>
