@@ -27,14 +27,14 @@ class WTS_AssociatedProductAjaxPriceLoader_Model_Observer
               echo " Extra: ".$extra_price;
               echo "final price:".$item->getProduct()->getFinalPrice().", price:".$item->getProduct()->getPrice().", Passed:".($extra_price + $price);die(); */
             //only apply the associated price if extra_price don't exist (means values are not being set with attributes)
-            if($extra_price == 0) {
+            /*if($extra_price == 0) {
                 $item->setCustomPrice($extra_price + $price);
                 $item->setOriginalCustomPrice($extra_price + $price);
-            }else {
+            }else {*/
                 //if the attributes are defined, use the parent product price instead (base product price)
                 $item->setCustomPrice($item->getProduct()->getFinalPrice());
                 $item->setOriginalCustomPrice($item->getProduct()->getFinalPrice());
-            }
+            //}
             // Enable super mode on the product.
             $item->getProduct()->setIsSuperMode(true);
         }
@@ -44,6 +44,7 @@ class WTS_AssociatedProductAjaxPriceLoader_Model_Observer
     public function addPostData(Varien_Event_Observer $observer) {
 
       $action = Mage::app()->getFrontController()->getAction();
+      if($action->getRequest()->getParam('attribute165') && $action->getRequest()->getParam('attribute165')=='244') { 
       if ($action->getFullActionName() == 'checkout_cart_add') {
          if($action->getRequest()->getParam('customplate')) {
              // ID IS PRESENT, SO LETS ADD IT
@@ -55,6 +56,7 @@ class WTS_AssociatedProductAjaxPriceLoader_Model_Observer
             );
              $item->addCustomOption('additional_options', serialize($additionalOptions));
          }
+      }
       }
 
    }

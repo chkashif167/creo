@@ -40,7 +40,21 @@ class WTS_AssociatedProductAjaxPriceLoader_AjaxController extends Mage_Core_Cont
             $childPrice = Mage::getModel('catalog/product')->load($childProduct->getEntityId())->getPrice();
             $finalPrice += $childPrice;
         }
-        $finalPrice = Mage::app()->getStore()->getCurrentCurrencyCode() . number_format($finalPrice, 2, '.', ',');//change in this format 1234.54
+		
+		
+		
+		// convert currency
+		$baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode();
+    	$currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+		$priceTemp = Mage::helper('directory')->currencyConvert($finalPrice, $baseCurrencyCode, $currentCurrencyCode);
+		
+		$currency_symbol = Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+		if($currency_symbol ==''){
+			$currency_sign = Mage::app()->getStore()->getCurrentCurrencyCode();
+		}else{
+			$currency_sign = $currency_symbol;
+		}
+        $finalPrice = $currency_sign . number_format($priceTemp, 2, '.', ',');//change in this format 1234.54
         $priceArray = array('price' => $finalPrice);
         $this->getResponse()->setHeader('Content-type', 'application/json');
         $this->getResponse()->setBody(json_encode($priceArray));
