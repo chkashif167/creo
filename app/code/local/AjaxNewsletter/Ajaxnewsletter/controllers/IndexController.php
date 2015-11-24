@@ -41,6 +41,7 @@ class AjaxNewsletter_Ajaxnewsletter_IndexController extends Mage_Core_Controller
                    echo "Confirmation request has been sent.&&1";
                     return;
                 }
+        
                 else {
                    echo "Thank you for your subscription.&&1";
             }
