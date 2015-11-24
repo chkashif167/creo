@@ -37,11 +37,12 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
       * New subscription action
       */
     public function newAction()
-    {
+    {   
         if ($this->getRequest()->isPost() && $this->getRequest()->getPost('email')) {
             $session            = Mage::getSingleton('core/session');
             $customerSession    = Mage::getSingleton('customer/session');
             $email              = (string) $this->getRequest()->getPost('email');
+
 
             try {
                 if (!Zend_Validate::is($email, 'EmailAddress')) {
@@ -61,10 +62,21 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                     Mage::throwException($this->__('This email address is already assigned to another user.'));
                 }
 
+                $emailExist = Mage::getModel('newsletter/subscriber')->load($email, 'subscriber_email');
+                if ($emailExist->getId()) {
+                Mage::throwException($this->__('This email address is already exist.'));
+                }
                 $status = Mage::getModel('newsletter/subscriber')->subscribe($email);
+                
+
+                
                 if ($status == Mage_Newsletter_Model_Subscriber::STATUS_NOT_ACTIVE) {
                     $session->addSuccess($this->__('Confirmation request has been sent.'));
                 }
+
+                // if ($status == Mage_Newsletter_Model_Subscriber::STATUS_SUBSCRIBED) {
+                //     $session->addSuccess($this->__('You have already subscribed to the newsletter.'));
+                // }
                 else {
                     $session->addSuccess($this->__('Thank you for your subscription.'));
                     //Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/');
