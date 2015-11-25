@@ -28,12 +28,13 @@ else{
 $class = "";
 }
 ?>
-<?php if($currentCatId == 52) { ?>
+<?php /*?><?php if($currentCatId == 52) { ?>
 <li class="item <?=$class . " category".$currentCatId ?>">
 <a href="javascript:void(0)" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><img src="<?php echo $_category->getImageUrl() ?>" width="100" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" /></a>
 <h2><a href="javascript:void(0)" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a></h2>
 </li>
-<?php } elseif ($currentCatId == 53) {?>
+<?php } elseif ($currentCatId == 53) {?><?php */?>
+<?php if($currentCatId == 53) { ?>
 
 <li class="item <?=$class?>"> 
 <a href="<?php echo $baseurl."bulk-orders/" ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><img src="<?php echo $_category->getImageUrl() ?>" width="100" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" /></a>
