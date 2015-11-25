@@ -5101,7 +5101,7 @@ textarea {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0 18px 0 7px;
-	margin: 0 0 0 10px;
+	margin: 0;
 	position: relative;
 	color: #222;
 	text-transform: uppercase;
@@ -5361,7 +5361,13 @@ dl {margin: 0 0 10px;}
     margin: 0;
     padding: 0;
 }
-
+#fme_filters_list .search-by {
+    background: #ef4f61 ;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3px 10px;
+}
 
 
 @media print {

@@ -64,8 +64,8 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
 									<?php } else if ($_filter->getVar() == 'universal_categories') {
 									?>
-                                        <span>Search By Design: </span>
-                                        <div class="cate-open-close">
+                                        <span id="search-by" class="search-by">Search By Design</span>
+                                        <div for="search-by" class="cate-open-close">
                                         <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
 										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label> -->
 										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">
