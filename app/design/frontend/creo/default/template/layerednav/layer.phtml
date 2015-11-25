@@ -35,7 +35,21 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                     <input type="hidden" id="fme_layered_params" value="<?php echo $this->htmlEscape($state[1]) ?>"/> 
                     <input type="hidden" id="fme_layered_ajax" value="<?php echo $this->htmlEscape($state[2]) ?>"/> 
                     <dl id="fme_filters_list">
-
+<script>
+jQuery(document).ready(function(){
+    var changeFrom = getQueryVar('design').toLowerCase();
+    jQuery('#fme_layered_universal_categories li a').each(function(k,v){
+      cat_attrs[k] = v.text.toLowerCase();
+      jQuery(v).attr('href','javascript:void(0);');
+      var changeTo = jQuery(this).text().toLowerCase();
+      if(changeFrom.indexOf(changeTo) !== 0 && changeTo.indexOf("view all") <= -1) {//do not trigger onclick on the passed param and not on view all as well
+        jQuery(v).attr('onclick', 'changeUrl(\'?design='+changeFrom+'\', \'?design='+changeTo+'\')');
+      }
+      //console.log(jQuery(v).attr('href'));
+    });
+    //jQuery.query.set("design", "3araby");
+});
+</script>
 
                         <?php $_filters = $this->getFilters(); 
                         ?>
