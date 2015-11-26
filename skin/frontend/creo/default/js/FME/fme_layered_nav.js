@@ -81,6 +81,7 @@ function fme_layered_show_products(transport)
         fme_slider.setEnabled();
 
 	// jawad work
+/*
 	var params = $('fme_layered_params').value.parseQuery();
 	if(params['universal_categories']){
 		var currenturl = document.URL;
@@ -96,16 +97,16 @@ function fme_layered_show_products(transport)
 			var preurl = currenturl.substr(0, getlastdash + 1);
 		}		
 		var updateurl = preurl + currentcat;
-		window.history.pushState("", "Title", updateurl);
-		$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
+		//window.history.pushState("", "Title", updateurl);
+		//$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
 	}else{
-		var clearelementtext = $('fme_layered_clearall').innerHTML;
-		var clearurl = $('fme_layered_url').value;
-		window.history.pushState("", "Title", clearurl);
-		$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+clearelementtext+'</a>');
+//		var clearelementtext = $('fme_layered_clearall').innerHTML;
+//		var clearurl = $('fme_layered_url').value;
+		//window.history.pushState("", "Title", clearurl);
+		//$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+clearelementtext+'</a>');
 	}
 	// jawad work ends
-
+*/
 //reinitialize infinite ajax scroll
 jQuery.ias('destroy');
 SgyIAS.init();
