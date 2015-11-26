@@ -69,7 +69,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
 										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label> -->
 										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">
-                                        <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
+                                        <li><a id="fme_layered_clearall" class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
 										<?php echo $_filter->getHtml() ?>
                                         </ul></div>
                                     <?php }
@@ -115,7 +115,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
 										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
 										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">            
-                                        <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
+                                        <li><a id="fme_layered_clearall" class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
 										<?php echo $_filter->getHtml() ?>
 
                                         </ul></div>

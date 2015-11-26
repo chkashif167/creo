@@ -83,10 +83,28 @@ function fme_layered_show_products(transport)
 	// jawad work
 	var params = $('fme_layered_params').value.parseQuery();
 	if(params['universal_categories']){
+		var currenturl = document.URL;
 		var currentCategory = params['universal_categories'];
+		var currentelement = $('universal_categories-'+currentCategory).innerHTML;
+		var currentcat = currentelement.replace(/\s+/g, '-').toLowerCase()+'.html';
+		var findcat = currenturl.indexOf("categories/");
+		if (findcat < 0){
+			currentcat = 'categories/'+currentcat;
+		}
+		var getlastdash = currenturl . lastIndexOf('/');
+		if(getlastdash != '-1'){
+			var preurl = currenturl.substr(0, getlastdash + 1);
+		}		
+		var updateurl = preurl + currentcat;
+		window.history.pushState("", "Title", updateurl);
+		$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
+	}else{
+		var clearelementtext = $('fme_layered_clearall').innerHTML;
+		var clearurl = $('fme_layered_url').value;
+		window.history.pushState("", "Title", clearurl);
+		$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+clearelementtext+'</a>');
 	}
-	var currentelement = $('universal_categories-'+currentCategory).innerHTML;
-	$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
+	// jawad work ends
 
 //reinitialize infinite ajax scroll
 jQuery.ias('destroy');
@@ -312,28 +330,12 @@ function price_input_listener(evt) {
     fme_layered_make_request();
 }
 
-function single_select(id){
-//	alert(id);
-//	var abca = $('fme_layered_universal_categories');
-//        var ajaxUrl = $('fme_layered_params').value.parseQuery();
-//		 if (ajaxUrl['universal_categories'])
-  //  	{
-			
-//alert(ajaxUrl['universal_categories']);
-		
-	//	}else{alert('abc');}
-//$('requests').insert(ajaxUrl);
-	
-}
-
-
 function fme_layered_init()
 {
 
 
-			   
     var items, i, j, n,
-            classes = ['category', 'attribute', 'icon', 'price', 'clear', 'dt', 'clearall'];
+    classes = ['category', 'attribute', 'icon', 'price', 'clear', 'dt', 'clearall'];
 			
 //	Event.on('fme_layered_universal_categories', 'click', 'a', single_select);
 	//var c_ids =  $('fme_layered_universal_categories').select('li a');
