@@ -50,3 +50,27 @@ if(Mage::helper('mobiledetect')->isMobile() && !Mage::helper('mobiledetect')->is
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
+
+<script>
+function getQueryVar(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return "";
+}
+
+function changeUrl(page, url) {
+  if (typeof (history.pushState) != "undefined") {
+    var obj = { Page: page, Url: url };
+    history.pushState(obj, obj.Page, obj.Url);
+  } else {
+    alert("Browser does not support HTML5.");
+  }
+}
+
+var cat_attrs = [];
+</script>
