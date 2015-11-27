@@ -99,7 +99,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                     if (changeTo.indexOf("view all") <= -1) {//do not trigger onclick on the passed param and not on view all as well
                                         //jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\')');
                                         var text = jQuery('#universal_categories-'+changeTo).text();
-                                        console.log("TEXT:"+text);
+                                        //console.log("TEXT:"+text);
                                         jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
                                     }
 

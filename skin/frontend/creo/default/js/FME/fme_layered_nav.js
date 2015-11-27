@@ -56,7 +56,7 @@ function fme_layered_show_products(transport)
                     c.removeChild(c.lastChild);
                 }
             }
-            console.log("1.3>>>"+$('tmp_current_val').value);
+            //console.log("1.3>>>"+$('tmp_current_val').value);
             $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
             var div = document.createElement('div');
             div.setAttribute('id', 'fme_layered_container');
@@ -114,14 +114,14 @@ function fme_layered_show_products(transport)
 //		var updateurl = preurl + currentcat;
 //		window.history.pushState("", "Title", updateurl);
 		//$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
-                console.log(">>>"+$('tmp_current_val').value);
+                //console.log(">>>"+$('tmp_current_val').value);
                 $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
 	}else{
 		var clearelementtext = $('fme_layered_clearall').value;
 //		var clearurl = $('fme_layered_url').value;
 //		window.history.pushState("", "Title", clearurl);
 		//$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+clearelementtext+'</a>');
-                console.log("<<<"+$('tmp_current_val').value);
+                //console.log("<<<"+$('tmp_current_val').value);
                 $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
 	}
 	
