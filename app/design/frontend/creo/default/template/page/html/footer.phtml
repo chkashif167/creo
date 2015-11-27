@@ -125,3 +125,36 @@ jQuery( document ).ready( function($){
 		});
 		}
 </script>
+
+<script>
+
+jQuery(window).load(function(){
+    var design = decodeURIComponent(getQueryVar('universal_categories'));
+    var changeFrom = getQueryVar('universal_categories');
+    console.log('here1'+design);
+	
+	var currentelement = jQuery("#universal_categories-"+design).text();
+	
+    console.log('here2'+currentelement);
+    if(changeFrom.indexOf("view all") <= -1) {
+		$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
+	}
+    //var search2 = getQueryVar('design').toLowerCase();
+    //console.log(search2);
+    //location.href.replace("design="+design, "design=3araby");
+//    var index = cat_attrs.indexOf(design);
+//    console.log(cat_attrs[index]);
+//    console.log(index);
+//    console.log(cat_attrs);
+//    var nthChild = index+1;
+//    //alert(nthChild);
+//    //setTimeout(function() {
+//    if(changeFrom.indexOf("view all") <= -1) {
+//        var target = jQuery('#fme_layered_universal_categories li:nth-child('+nthChild+')').find('a');
+//        //jQuery(target).simulate('click');
+//        console.log("tar:"+target.text());
+//        //ensure that current one is selected as well
+//    }
+}); 
+
+</script>

@@ -315,7 +315,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $product_ids = array(); //keeps track of existing product to handle duplicate
 
         foreach ($products as $p2) {//print_r($p2);echo "<hr>";die;
-            if(in_array(42,$p2->getCategoryIds())) continue;
+            //do not bring products from create category
+            if(in_array(47,$p2->getCategoryIds())) continue;
        
             $img_to_show = '';
             if($p2->getTypeId()=='simple'){
@@ -383,6 +384,14 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             $size_options = $size_attribute->getSource()->getAllOptions(false);
         }
 
+        $productAttributeOptions = $product->getTypeInstance(true)->getConfigurableAttributesAsArray($product);
+        // $attributeOptions = array();
+        // foreach ($productAttributeOptions as $productAttribute) {
+        //     foreach ($productAttribute['values'] as $attribute) {
+        //         $attributeOptions[$productAttribute['label']][$attribute['value_index']] = $attribute['store_label'];
+        //     }
+        // }
+
 
 
 
@@ -399,8 +408,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         
         //Get product Options
         $options = $product->getOptions();
-        if($options)
-        {
+        if($options){
 
             foreach ($options as $option) {
 
@@ -428,7 +436,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $prod['stock_qty_min'] = $stock->getMinQty();
         $prod['stock_qty_min_sales'] = $stock->getMinSaleQty();
         $prod['attribute_set'] = $attributeSetName;
-        //$prod['attributes'] = $attributes;
+        // $prod['attributes'] = $attributeOptions;
         $prod['color_options'] = $color_options;
         $prod['size_options'] = $size_options;
         $prod['currency'] = $currency_code;
@@ -447,6 +455,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             foreach ($configurableOptions as $option_row) {
                 //$configurable_options[] = array($option_row['label']=>$option_row['values']);
                 $configurable_options[$option_row['label']] = array('id' => $option_row['id'],
+                    'attribute_id' => $option_row['attribute_id'],
+                    'code' => $option_row['attribute_code'],
                     'values' => $option_row['values']);
             }
         }
@@ -481,6 +491,82 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 $simpleCollection = $configurable->getUsedProductCollection();
                 if($color) $simpleCollection->addAttributeToFilter("Color", array("eq" => $color));
                 if($size) $simpleCollection->addAttributeToFilter("Size", array("eq" => $size));
+                
+                $simpleCollection ->addAttributeToSelect('*')
+                        ->addFilterByRequiredOptions();
+
+                //echo $simpleCollection->getSelect(),'<br>';
+                if (count($simpleCollection)) {
+
+
+                    $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+                    $currency_symbol = Mage::app()->getLocale()->currency($currency_code)->getSymbol();
+
+                    foreach ($simpleCollection as $product) {
+                        $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product->getId());
+                        $image = (string)Mage::helper('catalog/image')->init($product,'small_image');//->resize(600,600);
+
+                        $prod['id'] = $product->getId();
+                        $prod['type_id'] = $product->getTypeId();
+                        $prod['name'] = $product->getName();
+                        $prod['img'] = $image;
+                        $prod['img2'] = $product->getImageUrl();
+                        $prod['price'] = $product->getPrice();
+                        $prod['status'] = $product->getStatus();
+                        $prod['stock_qty'] = (int) $stock->getQty();
+                        $prod['stock_qty_min'] = $stock->getMinQty();
+                        $prod['stock_qty_min_sales'] = $stock->getMinSaleQty();
+                        $prod['currency'] = $currency_code;
+                        $prod['currency_symbol'] = $currency_symbol;
+
+                        $response['product'][] = $prod;
+                    }
+
+                    $response['success'] = 1;
+                    $response['message'] = 'Associated products found';
+                } else {
+                    $response['success'] = 0;
+                    $response['message'] = 'Associated products not found';
+                }
+            } else {
+                $response['success'] = 0;
+                $response['message'] = 'Product id not configurable';
+            }
+        } else {
+            $response['success'] = 0;
+            $response['message'] = 'Product id not provided';
+        }
+
+//        header('Access-Control-Allow-Origin: *');
+        header("Content-Type: application/json");
+        print_r(json_encode($response));
+        die;
+    }
+
+    public function associatedProductsV2Action() {
+
+        $confProdId = (int) $this->getRequest()->getParam('pid');
+        $response = array();
+
+        if ($confProdId) {
+            //get all associalted products
+
+            $request_data = json_decode(file_get_contents('php://input'), true);
+            // print_r($request_data);die;
+            $productId = $confProdId; //config product id
+            $product = Mage::getModel('catalog/product')->load($productId);
+
+            if ($product->getTypeId() == "configurable") {
+                //product is configurable
+
+                $configurable = Mage::getModel('catalog/product_type_configurable')->setProduct($product);
+
+                $simpleCollection = $configurable->getUsedProductCollection();
+                // if($color) $simpleCollection->addAttributeToFilter("Color", array("eq" => $color));
+                // if($size) $simpleCollection->addAttributeToFilter("Size", array("eq" => $size));
+                foreach ($request_data as $key => $value) {
+                    $simpleCollection->addAttributeToFilter($key, array('eq' => $value ));
+                }
                 
                 $simpleCollection ->addAttributeToSelect('*')
                         ->addFilterByRequiredOptions();

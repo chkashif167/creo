@@ -188,8 +188,11 @@ class Progos_Creomob_FiltersController extends Mage_Core_Controller_Front_Action
                 $attribute = Mage::getModel('catalog/resource_eav_attribute')
                     ->loadByCode(Mage_Catalog_Model_Product::ENTITY, $attribute_code);
                 $attributeOptions = $attribute ->getSource()->getAllOptions(false); 
+                $attributeLabel = $attribute->getStoreLabel();
                 foreach ($attributeOptions AS $attributeOption) {
-                    $attrs[$attribute_code][] = $attributeOption;
+                    //$attrs[$attribute_code][] = $attributeOption;
+                    $attrs[$attribute_code]['label'] = $attributeLabel;
+                    $attrs[$attribute_code]['options'][] = $attributeOption;
                 }
             }
             header("Content-Type: application/json");
