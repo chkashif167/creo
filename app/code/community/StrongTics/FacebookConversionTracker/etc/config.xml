@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    StrongTics
+ * @package     FacebookConversionTracker
+ * @author      Issa BERTHE <issaberthet@gmail.com>
+ * @copyright   Copyright (c) StrongTics
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <StrongTics_FacebookConversionTracker>
+            <version>0.1.5</version>
+        </StrongTics_FacebookConversionTracker>
+    </modules>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <sticsfbtracker>
+                                            <title>StrongTics Facebook Conversion Tracker</title>
+                                        </sticsfbtracker>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <sticsfbtracker>
+                    <file>sticsfbtracker.xml</file>
+                </sticsfbtracker>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <sticsfbtracker>
+                <class>StrongTics_FacebookConversionTracker_Block</class>
+            </sticsfbtracker>
+        </blocks>
+
+        <events>
+            <controller_action_postdispatch_contacts_index_post>
+                <observers>
+                    <sticsfbtracker_aftercontactsubmitform_observer>
+                        <class>sticsfbtracker/observer</class>
+                        <method>afterContactSubmitObserver</method>
+                    </sticsfbtracker_aftercontactsubmitform_observer>
+                </observers>
+            </controller_action_postdispatch_contacts_index_post>
+            <customer_register_success>
+                <observers>
+                    <sticsfbtracker_register_success>
+                        <class>sticsfbtracker/observer</class>
+                        <method>trackCustomerRegister</method>
+                    </sticsfbtracker_register_success>
+                </observers>
+            </customer_register_success>
+        </events>
+
+        <helpers>
+            <sticsfbtracker>
+                <class>StrongTics_FacebookConversionTracker_Helper</class>
+            </sticsfbtracker>
+        </helpers>
+
+        <models>
+            <sticsfbtracker>
+                <class>StrongTics_FacebookConversionTracker_Model</class>
+            </sticsfbtracker>
+        </models>
+    </global>
+
+    <default>
+        <sticsfbtracker>
+			<facebook_retargeting>
+                <enabled>0</enabled>
+                <retargeting_pixel_id></retargeting_pixel_id>			
+			</facebook_retargeting>
+            <facebook_cart_conversion>
+                <enabled>0</enabled>
+                <cart_pixel_id></cart_pixel_id>
+            </facebook_cart_conversion>
+            <facebook_checkout_conversion>
+                <enabled>0</enabled>
+                <checkout_pixel_id></checkout_pixel_id>
+            </facebook_checkout_conversion>
+            <facebook_keypage_view_conversion>
+                <enabled>0</enabled>
+                <key_page_pixel_id></key_page_pixel_id>
+                <key_page>home</key_page>
+            </facebook_keypage_view_conversion>
+            <facebook_lead_conversion>
+                <enabled>0</enabled>
+                <leads_pixel_id></leads_pixel_id>
+            </facebook_lead_conversion>
+            <facebook_other_conversion>
+                <enabled>0</enabled>
+                <other_website_pixel_id></other_website_pixel_id>
+                <other_page>no-route</other_page>
+            </facebook_other_conversion>
+            <facebook_registration_conversion>
+                <enabled>0</enabled>
+                <registration_pixel_id></registration_pixel_id>
+            </facebook_registration_conversion>       
+        </sticsfbtracker>
+    </default>
+</config>
