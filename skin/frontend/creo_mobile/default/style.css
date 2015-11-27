@@ -3865,7 +3865,8 @@ div.fme-filter dd li{overflow: visible !important;}
 	width: 75px;
 	font:13px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
 }
-#nav .links-area .links li{margin: 0 0 3px;}
+
+#nav .links-area .links li{margin: 5px 0 3px;}
 #nav .links-area .links a{color: #000;}
 #nav .links-area .links a:hover{color: #f16a79;}
 #nav .featured-items{display:block;vertical-align: top;width:100%;}
@@ -3878,7 +3879,8 @@ div.fme-filter dd li{overflow: visible !important;}
 #nav .featured-items .heading-holder h2:after {
 	height: 1px;
 	background: #d7d7d7;
-	top: auto;
+	top: auto
+	;
 	bottom: 5px;
 }
 #nav .featured-items .featured-products{
