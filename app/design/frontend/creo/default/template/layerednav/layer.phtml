@@ -71,19 +71,42 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                     <input type="hidden" id="fme_layered_ajax" value="<?php echo $this->htmlEscape($state[2]) ?>"/> 
                     <dl id="fme_filters_list">
                         <script>
-//                            jQuery(document).ready(function () {
-//                                var changeFrom = getQueryVar('design').toLowerCase();
-//                                jQuery('#fme_layered_universal_categories li a').each(function (k, v) {
+                            jQuery(document).ready(function () {
+								 var changeidss;
+								 var abc;
+                                var changeFrom = getQueryVar('universal_categories').toLowerCase();
+                                jQuery('#fme_layered_universal_categories li a').each(function (k, v) {
+                                   var changeid = v.id;
+									var getlastdash = changeid . lastIndexOf('-');
+									if(getlastdash != '-1'){
+										var onlyid = changeid.substr(getlastdash + 1);
+									}		
+                                    cat_attrs[k] = onlyid;									
 //                                    cat_attrs[k] = v.text.toLowerCase();
-//                                    jQuery(v).attr('href', 'javascript:void(0);');
-//                                    var changeTo = jQuery(this).text().toLowerCase();
-//                                    if (changeFrom.indexOf(changeTo) !== 0 && changeTo.indexOf("view all") <= -1) {//do not trigger onclick on the passed param and not on view all as well
-//                                        jQuery(v).attr('onclick', 'changeUrl(\'?design=' + changeFrom + '\', \'?design=' + changeTo + '\')');
-//                                    }
+                                    jQuery(v).attr('href', 'javascript:void(0);');
+                                    var changeTo = jQuery(this).text().toLowerCase();
+                                    var changeidss = jQuery(this).attr('id');
+									if( changeidss ){
+										var getlastdash2 = changeidss.lastIndexOf('-');									
+										if(getlastdash2 != '-1'){
+											abc = changeidss.substr(getlastdash2 + 1);
+										}		
+										changeTo = abc;
+									}
+
+
+                                    if (changeFrom.indexOf(changeTo) !== 0 && changeTo.indexOf("view all") <= -1) {			//do not trigger onclick on the passed param and not on view all as well
+                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\')');
+                                    }
+
+                                    if (changeTo.indexOf("view all") >= 0) {			//do not trigger onclick on the passed param and not on view all as well
+                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'\')');
+                                    }
+
 //                                    //console.log(jQuery(v).attr('href'));
-//                                });
+                                });
 //                                //jQuery.query.set("design", "3araby");
-//                            });
+                            });
                         </script>
 
                         <?php $_filters = $this->getFilters();

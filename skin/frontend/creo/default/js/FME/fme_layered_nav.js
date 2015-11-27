@@ -82,30 +82,30 @@ function fme_layered_show_products(transport)
 
 	// jawad work
 	var params = $('fme_layered_params').value.parseQuery();
-/*
+
 	if(params['universal_categories']){
-		var currenturl = document.URL;
+//		var currenturl = document.URL;
 		var currentCategory = params['universal_categories'];
-		var currentelement = $('universal_categories-'+currentCategory).innerHTML;
+		var currentelement = $('universal_categories-'+currentCategory).value;
 		var currentcat = currentelement.replace(/\s+/g, '-').toLowerCase()+'.html';
-		var findcat = currenturl.indexOf("categories/");
-		if (findcat < 0){
-			currentcat = 'categories/'+currentcat;
-		}
-		var getlastdash = currenturl . lastIndexOf('/');
-		if(getlastdash != '-1'){
-			var preurl = currenturl.substr(0, getlastdash + 1);
-		}		
-		var updateurl = preurl + currentcat;
-		window.history.pushState("", "Title", updateurl);
+//		var findcat = currenturl.indexOf("categories/");
+//		if (findcat < 0){
+//			currentcat = 'categories/'+currentcat;
+//		}
+//		var getlastdash = currenturl . lastIndexOf('/');
+//		if(getlastdash != '-1'){
+//			var preurl = currenturl.substr(0, getlastdash + 1);
+//		}		
+//		var updateurl = preurl + currentcat;
+//		window.history.pushState("", "Title", updateurl);
 		$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
 	}else{
-		var clearelementtext = $('fme_layered_clearall').innerHTML;
-		var clearurl = $('fme_layered_url').value;
-		window.history.pushState("", "Title", clearurl);
+		var clearelementtext = $('fme_layered_clearall').value;
+//		var clearurl = $('fme_layered_url').value;
+//		window.history.pushState("", "Title", clearurl);
 		$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+clearelementtext+'</a>');
 	}
-*/	
+	
 	// jawad work ends
 //reinitialize infinite ajax scroll
 jQuery.ias('destroy');
@@ -333,7 +333,6 @@ function price_input_listener(evt) {
 
 function fme_layered_init()
 {
-
 
     var items, i, j, n,
     classes = ['category', 'attribute', 'icon', 'price', 'clear', 'dt', 'clearall'];
