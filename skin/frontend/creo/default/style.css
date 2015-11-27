@@ -5368,6 +5368,28 @@ dl {margin: 0 0 10px;}
     vertical-align: middle;
     padding: 3px 10px;
 }
+.top-black-bar{
+	display: none;
+	margin: 0 0 10px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	font: 14px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.top-black-bar p{
+	margin: 0;
+	background: #000;
+	padding: 5px 10px;
+}
+.category-polo .top-black-bar,
+.category-tshirt .top-black-bar{display: block;}
+
+
+
+
+
+
+
 
 
 @media print {
