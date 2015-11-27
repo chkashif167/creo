@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+<default>
+
+<reference name="head">
+
+ <action method="addCss"><stylesheet>jquery.mCustomScrollbar.css</stylesheet></action>
+  <action method="setText"><text><![CDATA[<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed">]]></text></action>
+  <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
+  <action method="addItem"><type>skin_js</type><script>js/jquery.mCustomScrollbar.js</script></action>
+	<action method="addItem"><type>skin_js</type><script>bootstrap/js/bootstrap.min.js</script></action>
+   <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
+   <action method="addCss"><stylesheet>style.css</stylesheet></action>
+  <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+   <action method="addCss"><stylesheet>custom.css</stylesheet></action>
+	 <action method="addCss"><stylesheet>css/custom.sami.css</stylesheet></action>
+	 <action method="addCss"><stylesheet>css/jquery-confirm.min.css</stylesheet></action>
+	 <action method="addItem"><type>skin_js</type><script>js/jquery-confirm.min.js</script></action>
+  <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
+   <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
+   
+    <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action>
+	<action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.js</script></action>
+	
+</reference>
+
+
+	<reference name="footer">
+			 <remove name="footer_currency" /> 
+			 <remove name="footer_links" />
+			 <remove name="footer_links2" /> 
+			 <remove name="store_switcher" /> 
+			 <remove name="cms_footer_links" />
+			<!-- <remove name="footer.newsletter" />-->
+			<!--<block type="cms/block" name="help_footer" as="help_footer">
+			<action method="setBlockId"><block_id>help_footer</block_id></action>
+			</block>
+			 -->
+<!--	  <block type="core/template" name="loginpopup" as="loginpopup" template="page/template/loginpopup.phtml"/>
+-->	  <block type="newsletter/subscribe" name="footer.newsletter" as="newsletter" before="footer_store_language" template="newsletter/subscribe.phtml"/>
+	 
+		<!--<block ifconfig="youamaajaxlogin/settings/power" type="youama_ajaxlogin/ajaxlogin"   name="youamaajaxlogin"   as="youamaajaxlogin">
+		<action ifconfig="youamaajaxlogin/settings/power"
+		method="setTemplate">
+		<template>youama/ajaxlogin/ajaxlogin.phtml</template>
+		</action>
+		</block>-->
+		<block type="customer/form_login" name="customer_form_login"  before="footer_store_language" template="customer/form/loginpopup.phtml" />
+	 </reference>
+	 
+</default>
+
+
+<cms_index_index>
+	
+	<reference name="head">
+	<action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
+	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
+	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
+	</reference>
+	
+	<reference name="content">
+	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	
+	</reference>
+	
+	<reference name="content">
+	<block type="cms/block" name="main_content-top">
+      <action method="setBlockId"><block_id>cutomecategories</block_id></action>
+    </block>
+	
+	
+	<!--<block type="cms/block" name="featuredproducts_mid">
+      <action method="setBlockId"><block_id>featuredproducts</block_id></action>
+    </block>
+	
+	
+	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
+	
+	
+<block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
+<action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+<action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
+<action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+<action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+<action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+<action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+<action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+<block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+</block>
+	
+	
+	<block type="cms/block" name="main_content-bottom">
+      <action method="setBlockId"><block_id>about-area</block_id></action>
+    </block>
+	<!--<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
+	<action method="setData"><name>category_title</name><value>featured_category</value></action>
+	<action method="setData"><name>category_id</name><value>7</value></action>
+	</block>-->
+	
+	<!--<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
+	<action method="setData"><name>title</name><value>Styles</value></action>
+	<action method="setData"><name>category_title</name><value>style_category</value></action>
+	<action method="setData"><name>category_id</name><value>12</value></action>
+	</block>-->
+	</reference>
+		
+</cms_index_index>
+ <catalog_category_default>
+  <reference name="root">
+    <action method="setTemplate"><template>page/1column.phtml</template></action>
+  </reference>
+ 
+  <reference name="content">
+  	
+    <block type="cms/block" name="footer_contents">
+      <action method="setBlockId"><block_id>footer_contents</block_id></action>
+    </block>
+  </reference>
+  
+</catalog_category_default>
+
+
+ <catalog_product_view translate="label">
+ <reference name="head">
+  <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+ </reference>
+  </catalog_product_view>
+
+
+<!--<catalog_category_layered>
+        <reference name="left">
+            <action method="unsetChild"><alias>catalog.leftnav</alias></action>
+        </reference>
+        <reference name="product_list">
+            <action method="insert"><blockName>catalog.leftnav</blockName></action>
+        </reference>
+    </catalog_category_layered> -->
+
+  
+   <catalog_product_view> 
+  <reference name="product.info.options.wrapper.bottom"> 
+   <action method="unsetChild"><name>product.info.sharing</name></action>
+	<!-- <action method="unsetChild"><name>product.info.addto</name></action> -->
+	<remove name="product.clone_prices" />
+	<!-- <remove name="product.info.options.wrapper.bottom" />--> 
+	<remove name="product.info.additional" />
+	</reference>
+	
+	<reference name="content">
+	<block type="catalog/product_list_related" name="catalog.product.related" as="related" template="catalog/product/list/related.phtml"/>
+	</reference>
+		
+  </catalog_product_view>
+  <catalog_category_layered>
+        <reference name="root">
+            <action method="setTemplate"><template>page/filters.phtml</template></action>
+        </reference>
+        <reference name="left_first">
+        	<block type="core/template" name="leftnav" before="catalog.leftnav" template="catalog/navigation/left_nav.phtml" />
+        </reference>
+        
+    </catalog_category_layered>
+
+ <checkout_cart_index translate="label">
+ <remove name="checkout.cart.coupon" />
+   <remove name="checkout.cart.shipping" />
+ </checkout_cart_index>
+ 
+ 
+ <customer_account_index>
+ <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+ </reference>
+ <reference name="head">
+
+ </reference>
+ 
+  
+	 <reference name="my.account.wrapper">
+	 </reference>
+	 <reference name="customer_account_dashboard">
+  <!--<block type="wishlist/customer_wishlist" name="customer.wishlist" as="wishlist" template="wishlist/view.phtml">
+                <action method="setTitle" translate="title">
+                    <title>My Wishlist</title>
+                </action>
+                <block type="wishlist/customer_wishlist_items" name="customer.wishlist.items" as="items" template="wishlist/item/list.phtml">
+                    <block type="wishlist/customer_wishlist_item_column_image" name="customer.wishlist.item.image" template="wishlist/item/column/image.phtml" />
+                    <block type="wishlist/customer_wishlist_item_column_comment" name="customer.wishlist.item.info" template="wishlist/item/column/info.phtml">
+                       <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                        <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" /> 
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.quantity" template="wishlist/item/column/quantity.phtml">
+                        <action method="setTitle" translate="title">
+                            <title>Qty</title>
+                        </action>
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" /> 
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.price" template="wishlist/item/column/price.phtml">
+                        <action method="setTitle" translate="title">
+                            <title>Price</title>
+                        </action>
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.cart" template="wishlist/item/column/cart.phtml">
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_remove" name="customer.wishlist.item.remove" template="wishlist/item/column/remove.phtml" />
+                </block>
+                <block type="core/text_list" name="customer.wishlist.buttons" as="control_buttons">
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.share" template="wishlist/button/share.phtml" />
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.toCart" template="wishlist/button/tocart.phtml" />
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
+                </block>
+            </block>-->
+    </reference>
+ 
+ </customer_account_index>
+
+  <customer_account translate="label">
+        <label>Customer My Account (All Pages)</label>
+        <!--remove name="catalog.compare.sidebar"/>
+        <remove name="sale.reorder.sidebar"/-->
+        <!-- Mage_Customer -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="addBodyClass"><class>customer-account</class></action>
+        </reference>
+		  </customer_account>
+		  
+		    <onestepcheckout_index_success translate="label">
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <!--<block type="checkout/onepage_success" name="checkout.success" template="checkout/success.phtml"/>-->
+        </reference>
+    </onestepcheckout_index_success>
+	
+ <customer_account_login translate="label">
+	  <label>Customer Account Registration Form</label>
+	  <!-- Mage_Customer 
+	  <remove name="right"/>
+	  <remove name="left"/>-->
+	  <update handle="customer_account_create"/> 
+	  <update handle="customer_account_forgotpassword"/>   
+ </customer_account_login>
+ 
+ <cms_index_noroute>
+    <reference name="head">
+        <action method="addCss"><stylesheet>style404.css</stylesheet></action>
+    </reference>
+ </cms_index_noroute>
+
+</layout>

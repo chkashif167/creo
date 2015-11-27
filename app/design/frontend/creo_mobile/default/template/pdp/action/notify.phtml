@@ -1,0 +1,15 @@
+<?php if(Mage::getStoreConfig('pdp/design/is_notify')){ ?>
+<div class="modal fade" id="noticePopup" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title"><?php echo $this->__('Adjusting Screen Resolution'); ?></h4>
+	  </div>
+	  <div class="modal-body">
+		<p><?php echo $this->__('You are customizing product on small screen size device. We are recommend to start your design by swicth to a large screen size (>600 pixel) or <strong>Landscape Mode</strong> then <strong>Reload</strong> page.'); ?></p>
+	  </div>
+	</div>
+  </div>
+</div>
+<?php } ?>

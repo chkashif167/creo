@@ -1,0 +1,14 @@
+<?php $style_array = array('largevshape','round','vshape')?>
+<?php $gender_array = array('men','women');?>
+<?php // $gender_array = array('men','children','women');?>
+<?php 
+$items        = $this->getFiltersArray();
+$displayStyle = $this->getColumnsNum(); 
+?>
+<?php if ($displayStyle <=1): // one column ?>
+    <?php foreach ($items as $_item): ?>
+        <li><?php echo $_item?></li>
+    <?php endforeach ?>
+<?php endif ?>
+
+

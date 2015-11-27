@@ -1,0 +1,4 @@
+<?php $hideThumbnail=''; if(Mage::getStoreConfig('pdp/design/hide_thumbnail')){ $hideThumbnail = 'hide-thumbnail'; } ?>
+<div class="sides-tab <?php echo $hideThumbnail; ?>" id="pdc_sides">
+	<?php echo $sidesHtml = Mage::helper('pdp')->getDesignSides($this->getCurrentProductId(),35, 'auto'); ?>
+</div><!-- EOSide-tab-->

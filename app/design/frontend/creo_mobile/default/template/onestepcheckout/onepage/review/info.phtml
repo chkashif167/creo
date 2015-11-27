@@ -1,0 +1,48 @@
+<?php echo $this->getChildHtml('items_before'); ?>
+<div class="cart-table-area checkout-table">
+    <table class="order-products-table" id="checkout-review-table" cellpadding="10" cellspacing="10">
+        <?php /*?><col />
+        <col width="1" />
+        <col width="1" />
+        <?php
+        $colspan	= 1; 
+        if ($this->helper('tax')->displayCartBothPrices()):
+        	$colspan	= 2; 
+        ?>
+        <col width="1" />
+        <?php endif; ?>      <?php */?>  
+       <?php /*?> <thead>
+            <tr>
+            
+                <th><?php echo $this->__('Product Name') ?></th>
+                <th rowspan="<?php echo $rowspan ?>">&nbsp;</th><!-- Here's the empty col for the image -->
+                <th class="a-center"><?php echo $this->__('Qty') ?></th>
+                <th class="a-right" colspan="<?php echo $colspan ?>"><?php echo $this->__('Subtotal') ?></th>
+            </tr>
+        </thead><?php */?>
+       
+        <tbody>
+        <?php foreach($this->getItems() as $_item): ?>
+            <?php echo $this->getItemHtml($_item)?>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+    
+    
+    
+      <div class="cart-btn-area checkout-payment-total clearfix">
+        <div class="btn-holder"> 
+         <?php echo $this->getChildHtml('totals'); ?>
+        
+        </div>
+      </div>
+    
+    
+    
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    decorateTable('checkout-review-table');
+    truncateOptions();
+//]]>
+</script>

@@ -1,0 +1,208 @@
+<?php
+/**
+ * YouAMA.com
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA that is bundled with this package
+ * on http://youama.com/freemodule-license.txt.
+ *
+ *******************************************************************************
+ *                          MAGENTO EDITION USAGE NOTICE
+ *******************************************************************************
+ * This package designed for Magento Community edition. Developer(s) of
+ * YouAMA.com does not guarantee correct work of this extension on any other
+ * Magento edition except Magento Community edition. YouAMA.com does not
+ * provide extension support in case of incorrect edition usage.
+ *******************************************************************************
+ *                                  DISCLAIMER
+ *******************************************************************************
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future.
+ *******************************************************************************
+ * @category   Youama
+ * @package    Youama_Ajaxlogin
+ * @copyright  Copyright (c) 2012-2014 YouAMA.com (http://www.youama.com)
+ * @license    http://youama.com/freemodule-license.txt
+ */
+
+/**
+ * @author doveid
+ * @see Youama_Ajaxlogin_Block_Ajaxlogin
+ */
+?>
+
+<?php // If user is not logged in ?>
+<?php if (Mage::helper('customer')->isLoggedIn() != true) : ?>
+
+    <?php // Loader animation ?>
+    <div class="youama-ajaxlogin-loader">
+    </div>
+
+    <?php // Login window ?>
+    <div class="youama-login-window">
+        <div class="youama-window-outside">
+            <span class="close">×</span>
+
+            <div class="youama-window-inside">
+                <div class="youama-window-title">
+                    <h3>
+                        <?php echo $this->__('Login') ?>
+                    </h3>
+                </div>
+                
+                <div class="youama-window-box first">
+                    <div class="youama-window-content">
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-email"><?php echo $this->__('E-mail address') ?> <span>*</span></label>
+                            <input type="text" placeholder="<?php echo $this->__('E-mail address') ?>" id="youama-email" name="youama-email" value="" />
+                            <div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-wronglogin"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-password"><?php echo $this->__('Password') ?> <span>*</span></label>
+                            <input type="password" placeholder="<?php echo $this->__('Password') ?>" id="youama-password" name="youama-password" value="" />
+                            <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-longpassword"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="youama-window-box last">
+                    <div class="youama-window-content box-contents box-contents-button youama-showhideme">
+                        <span class="youama-forgot-password">
+                            <a href="<?php echo Mage::getBaseUrl() ?>customer/account/forgotpassword/"><?php echo $this->__('Forgot Password') ?></a>
+                        </span>
+                        <button type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
+                            <span>
+                                <span>
+                                    <?php echo $this->__('Login') ?>
+                                </span>
+                            </span>
+                        </button>
+                        <p id="y-to-register" class="yoauam-switch-window">
+                            <?php echo $this->__('or registration') ?>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <?php // Register window ?>
+    <div class="youama-register-window">
+        <div class="youama-window-outside">
+            <span class="close">×</span>
+
+            <div class="youama-window-inside">
+                <div class="youama-window-title">
+                    <h3>
+                        <?php echo $this->__('Registration') ?>
+                    </h3>
+                </div>
+
+                <div class="youama-window-box first">
+                    <div class="youama-window-subtitle youama-showhideme">
+                        <p><?php echo $this->__('Profile Informations') ?></p>
+                    </div>
+                    <div class="youama-window-content">
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-firstname"><?php echo $this->__('First Name') ?> <span>*</span></label>
+                            <input type="text" placeholder="<?php echo $this->__('First Name') ?>" id="youama-firstname" name="youama-firstname" value="" />
+                            <div class="youama-ajaxlogin-error err-firstname err-nofirstname err-dirtyfirstname"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-lastname"><?php echo $this->__('Last Name') ?> <span>*</span></label>
+                            <input type="text" placeholder="<?php echo $this->__('Last Name') ?>" id="youama-lastname" name="youama-lastname" value="" />
+                            <div class="youama-ajaxlogin-error err-lastname err-nolastname err-dirtylastname"></div>
+                        </div>
+                        <div class="input-fly input-fly-checkbox youama-showhideme">
+                            <input type="checkbox" id="youama-newsletter" name="youama-newsletter" value="ok" />
+                            <label for="youama-newsletter"><?php echo $this->__('Subscribe to Newsletter') ?></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="youama-window-box second">
+                    <div class="youama-window-subtitle youama-showhideme">
+                        <p><?php echo $this->__('Login Datas') ?></p>
+                    </div>
+                    <div class="youama-window-content">
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-email"><?php echo $this->__('E-mail address') ?> <span>*</span></label>
+                            <input type="text" placeholder="<?php echo $this->__('E-mail address') ?>" id="youama-email" name="youama-email" value="" />
+                            <div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-emailisexist"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-password"><?php echo $this->__('Password') ?> <span>*</span></label>
+                            <input type="password" placeholder="<?php echo $this->__('Password') ?>" id="youama-password" name="youama-password" value="" />
+                            <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-shortpassword err-longpassword"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-passwordsecond"><?php echo $this->__('Password confirmation') ?> <span>*</span></label>
+                            <input type="password" placeholder="<?php echo $this->__('Password confirmation') ?>" id="youama-passwordsecond" name="youama-passwordsecond" value="" />
+                            <div class="youama-ajaxlogin-error err-passwordsecond err-nopasswordsecond err-notsamepasswords"></div>
+                        </div>
+                        <div class="input-fly input-fly-checkbox youama-showhideme">
+                            <input type="checkbox" id="youama-licence" name="youama-licence" value="ok" />
+                            <label for="youama-licence"><?php echo $this->__('I accept the') ?> <a href="#" target="_blank"><?php echo $this->__('Terms and Coditions') ?></a></label>
+                            <div class="youama-ajaxlogin-error err-nolicence"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="youama-window-box last">
+                    <div class="youama-window-content box-contents youama-showhideme">
+                        <button type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
+                            <span>
+                                <span>
+                                    <?php echo $this->__('Register') ?>
+                                </span>
+                            </span>
+                        </button>
+                        <p id="y-to-login" class="yoauam-switch-window">
+                            <?php echo $this->__('or login') ?>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <?php // Error messages ?>
+    <div class="youama_ajaxlogin-temp-error" style="display:none !important;">
+        <div class="ytmpa-nofirstname"><?php echo $this->__('First name is required!') ?></div>
+        <div class="ytmpa-nolastname"><?php echo $this->__('Last name is required!') ?></div>
+        <div class="ytmpa-dirtyfirstname"><?php echo $this->__('First name is not valid!') ?></div>
+        <div class="ytmpa-dirtylastname"><?php echo $this->__('Last name is not valid!') ?></div>
+
+        <div class="ytmpa-wrongemail"><?php echo $this->__('This is not an email address!') ?></div>
+        <div class="ytmpa-noemail"><?php echo $this->__('Email address is required!') ?></div>
+        <div class="ytmpa-emailisexist"><?php echo $this->__('This email is already registered!') ?></div>
+
+        <div class="ytmpa-nopassword"><?php echo $this->__('Password is required!') ?></div>
+        <div class="ytmpa-dirtypassword"><?php echo $this->__('Enter a valid password!') ?></div>
+        <div class="ytmpa-shortpassword"><?php echo $this->__('Please enter 6 or more characters!') ?></div>
+        <div class="ytmpa-longpassword"><?php echo $this->__('Please enter 16 or less characters!') ?></div>
+        <div class="ytmpa-notsamepasswords"><?php echo $this->__('Passwords are not same!') ?></div>
+        <div class="ytmpa-nolicence"><?php echo $this->__('Terms and Conditions are required!') ?></div>
+        
+        <div class="ytmpa-wronglogin"><?php echo $this->__('Email or Password is wrong!') ?></div>
+    </div>
+
+    <?php // Youama jQuery plugin for ajax call and windows ?>
+    <script type="text/javascript">
+        //<![CDATA[
+            jQuery(document).ready(function(){
+                jQuery().youamaAjaxLogin({
+                    redirection : '<?php echo $this->isRedirectToProfile() ?>',
+                    profileUrl : '<?php echo Mage::getBaseUrl() ?>customer/account/',
+                    autoShowUp : '<?php echo $autoShowUp = (isset($_GET['yregister'])) ? 'yes' : 'no' ?>',
+                    controllerUrl : '<?php echo $this->getUrl('youama_ajaxlogin/ajax/index') ?>'
+                });
+            });
+        //]]>
+    </script>
+
+<?php endif ?>

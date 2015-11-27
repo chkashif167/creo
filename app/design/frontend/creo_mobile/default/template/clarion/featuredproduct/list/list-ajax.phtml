@@ -1,0 +1,91 @@
+<?php
+/**
+ * Featured product list ajax previous next template
+ *
+ * @category    design
+ * @package     base_default
+ * @author      Clarion Magento Team <magento@clariontechnologies.co.in>
+ */
+/* @var $this Clarion_FeaturedProduct_Block_List_List */
+?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<table border="0" id="featured-product-list-table1">
+    <tr>
+        <td><h2 class="title"><?php echo $this->getBlockTitle(); ?></h2></td><td class="previousnext"> <?php echo $this->getPager() ?></td>
+    </tr>
+    <!-- For layout dependent Columns -->
+    <?php $layoutDepColCount = $this->getLayoutDependColumnCount();?>
+    <?php $featuredPrdoctsOnPage = $this->getFeaturedPrdoctsOnPage();?>
+    <?php $_columnCount = empty($layoutDepColCount) ? $this->getColumnCount() : $layoutDepColCount;?>
+    <input type="hidden" name="columnCount" id="columnCount" value="<?php echo $_columnCount; ?>" />
+    <!-- Ajax show different product on category and home page -->
+    <input type="hidden" name="featuredPrdoctsOnPage" id="featuredPrdoctsOnPage" value="<?php echo $featuredPrdoctsOnPage; ?>" />
+    <tr>
+        <td colspan="2">
+            <table border="0" id="featured-product-list-table2">
+                <tr>
+                    <?php $i=0; foreach ($_products->getItems() as $_product): ?>
+                    <td>
+                    <table border="0" id="featured-product-list-table3">
+                    <tr>
+                        <td>
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>" class="product-image">
+                            <?php $_imgSize = 135; ?>
+                            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" width="135" height="135" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                             <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                             <?php if($_product->isSaleable()): ?>
+                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <?php else: ?>
+                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                             <?php echo $this->getPriceHtml($_product, true, '-featured') ?>
+                        </td>
+                    </tr>
+                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                    <tr>
+                       <td>
+                           <a href="<?php echo $this->getAddToWishlistUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
+                       </td>
+                   </tr>
+                   <?php endif; ?>
+                     <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
+                    <tr>
+                       <td>
+                           <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a>
+                       </td>
+                   </tr>
+                   <?php endif; ?>
+                   <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    </table>
+                    </td>
+                    <?php if (++$i%$_columnCount==0): ?></tr><tr><?php endif ?>
+                    <?php endforeach; ?>
+                    <?php for($i; $i%$_columnCount!=0; $i++): ?>
+                    <td>&nbsp;</td>
+                    <?php endfor ?>
+                </tr>
+            </table>
+             <script type="text/javascript">decorateTable('featured-product-list-table2')</script>
+        </td>
+
+    </tr>
+</table>
+<?php endif; ?>

@@ -1,0 +1,33 @@
+<?php
+$productId = $this->getProductId();
+$baseUrl = Mage::helper("pdp")->getPdpBaseUrl();
+$pdpDesignInfo = $this->getPdpDesignInfo(); 
+//If redesign request, pass the redesign id to iframe
+$redesign = "";
+if(isset($this->_params["redesign"]) && $this->_params["redesign"]) {
+    $redesign = "redesign/" . $this->_params["redesign"] . "/";
+} 
+//For share request
+$shareParam = "";
+if(isset($this->_params["share"]) && $this->_params["share"]) {
+    $shareParam = "share/" . $this->_params["share"] . "/";
+}
+$iframeUrl = $baseUrl . "pdp/view/getIframe/product-id/" . $productId . "/json/" . $pdpDesignInfo['extra_options'] . "/" . $redesign . $shareParam;
+?>
+<style type="text/css">
+#pdc_iframe {
+	background: transparent; 
+	border: 0px solid transparent;
+	margin: auto; 
+	position: absolute; 
+	top: -100000px;
+	z-index: 100000;
+}
+</style>
+<iframe id="pdc_iframe" src="<?php echo $iframeUrl ?>"></iframe>
+<script type="text/javascript">		
+	var pdcIframe = document.getElementById("pdc_iframe");
+	document.getElementById("design_product_<?php echo $this->getProductId() ?>").addEventListener("click", function(){
+		pdcIframe.contentDocument.getElementById('get_design_content').click();
+	});
+</script>
