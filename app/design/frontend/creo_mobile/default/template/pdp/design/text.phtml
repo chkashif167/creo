@@ -1,0 +1,37 @@
+<?php $js_pdp = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'pdp/'; ?>
+<div class="txt-buttons">
+	<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Bold'); ?>" pdc-text="bold" class="pdc-format-bold" ></button>
+	<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Italic'); ?>" pdc-text="italic" class="pdc-format-ital" ></button>
+	<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Underline'); ?>" pdc-text="underline" class="pdc-format-underline" ></button>
+	<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Line Through'); ?>" pdc-text="line-through" class="pdc-format-strikethrough" ></button>
+	<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Overline'); ?>" pdc-text="overline" class="pdc-panorama-fisheye" ></button>
+	<div class="alignment">
+		<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Text Align Left'); ?>" pdc-text-align="left" class="pdc-format-align-left" ></button>
+		<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Text Align Center'); ?>" pdc-text-align="center" class="pdc-format-align-center" ></button>
+		<button type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Text Align Right'); ?>" pdc-text-align="right" class="pdc-format-align-right" ></button>
+	</div>
+</div>
+<div class="txt-textarea">
+	<textarea name="" pdc-data="text" placeholder="<?php echo $this->__('Add Text'); ?>"></textarea>
+	<!--button type="button" name="" pdc-action="add-text" class="addText-btn"><?php echo $this->__('Add Text'); ?></button-->
+</div>
+<?php echo $this->getChildHtml('load_fonts'); ?> 
+<div class="txt-fonts">
+	<h3><?php echo $this->__('Choose Font'); ?></h3>
+	<ul id="select_font" class="item-font-list">
+		<?php foreach ( $this->getFonts() as $font) : ?>
+		<li pdc-font="<?php echo $font->getName() ?>"><a style="font-family:<?php echo $font->getName() ?>;"><?php echo $font->getName() ?></a></li>
+		<?php endforeach; ?>
+	</ul>
+</div>
+<?php if(Mage::getStoreConfig('pdp/design/is_quote_lib')){ ?>
+<div class="txt-library">
+	<button type="button" data-toggle="modal" data-target="#textLibrary"><?php echo $this->__('Choose Text from library'); ?> <span class="pdc-playlist-add"></span></button>
+</div>
+<?php } ?>
+<div><button type="button" id="pdc_ctext_convert"><?php echo $this->__('Convert Text/Curved') ?></button></div>
+<div pdc-box="curved"  style="display:none;" id="pdc_text_curved_control">
+    <div><label><?php echo $this->__('Reverse :') ?></label><input type="checkbox" name="reverce" name="reverse" id="pdc_ctext_reverse" /></div>
+    <div><label><?php echo $this->__('Radius :') ?></label><input type="range"  name="radius" min="0" max="100" value="50" id="pdc_ctext_radius" /></div>
+    <div><label><?php echo $this->__('Spacing :') ?></label><input type="range" name="spacing"  min="5" max="40" value="20" id="pdc_ctext_spacing" /></div>
+</div>

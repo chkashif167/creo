@@ -1,0 +1,85 @@
+<?php 
+$categoryOptions = Mage::getModel('pdp/shapecate')->getCategoryOptions();
+$shapePath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'pdp/shapes/';
+$limit = $this->_default_page_size_shape;
+?>
+<!-- Modal Shape Plugin-->
+<div class="modal fade" id="shapeLibrary" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<div class="modal-holder">
+            <div class="modal-header">
+                <div class="heading-holder"><h3 class="modal-title"><i class="pdc-star"></i> <?php echo $this->__('Shape Plugin');?> </h3></div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                            <div class="col-md-5">
+                                <label for="shape_category"><?php echo $this->__("Shape Category") ?></label>
+                                <select class="form-control" id="shape_category" pdc-action="change-shape-category">
+                                <?php 
+                                $options = $categoryOptions;
+                                $check_first = 0;
+                                if (!empty($options)) {
+                                    foreach ($options as $key => $value) {
+                                        if($check_first++==0){$act='class="active cat_loaded" cr_act="2"';}else{$act='';}
+                                        echo "<option value='". $key ."' ".$act."> <span id='". $key ."'>{$value}</span></option>";
+                                    }
+                                }			
+                                ?>
+                                </select>
+                            </div>
+                            <div class="col-md-7">
+                                <label for="search_shape"><?php echo $this->__("Search Shapes") ?></label>
+                                <input type="text" class="form-control" id="search_shape">
+                                <button class="btn-primary" pdc-action="search-shape" cr_act="0" type="button"><?php echo $this->__("Search") ?></button>
+                                <button class="btn-info" pdc-action="reset-search-shape" cr_act="0" type="button"><i class="pdc-autorenew"></i><?php echo $this->__("") ?></button>
+
+                            </div>
+							</div>
+							<div class="row">
+                    <div class="col-md-12">
+                        <div class="selected_shape_photo">
+                            <ul id="shape_list" pdc-data="shape-list" class="shape-list shape-list1">
+                                <?php $defaultArtCate = Mage::getModel('pdp/shapecate')->getDefaultArtCate() ?>
+                                <?php $clipartCollection = $this->pagingShapeCollection(1, $defaultArtCate, $limit);?>
+                                <?php if ($clipartCollection) : ?>
+                                    <?php foreach ($clipartCollection as $image) : ?>
+                                    <li cat="<?php echo $image->getCategory(); ?>">
+                                        <a rel="clover" class="selection_img">
+                                            <img src="<?php echo $shapePath . $image->getFilename()  ?>" id="shape_<?php echo $image->getId(); ?>" color=""  price="0" />
+                                        </a>
+                                    </li>
+                                    <?php endforeach;   ?>
+                                <?php endif;?>
+                            </ul>
+                            <!--Search result will append to this list. Not touch to category filter-->
+                            <ul id="search_shape_list" class="shape-list">
+                            </ul>
+                            <div pdc-data="no-shape-found" class="alert alert-warning" style="text-align: center; display: none;">
+                                <?php echo $this->__("Sorry. No shape found!") ?>
+                            </div>
+                        </div>
+                        <div class="add-more">
+                            <input type="hidden" value='<?php echo $limit; ?>' name='default_page_size_shape' id="default_page_size_shape" />
+                            <button class="btn btn-primary " id="load_more_shape" pdc-action="load-more-shape" type="button" <?php echo ($clipartCollection && $clipartCollection->count() >= $limit) ? "" : "style='display: none;'"?>><i class="pdc-autorenew"></i> <?php echo $this->__("More shapes")?></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+function stopRKey(evt) {
+  var evt = (evt) ? evt : ((event) ? event : null);
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+}
+
+document.onkeypress = stopRKey;
+
+</script> 

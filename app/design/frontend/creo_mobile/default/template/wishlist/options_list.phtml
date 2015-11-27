@@ -1,0 +1,101 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/* @var $this Mage_Wishlist_Block_Customer_Wishlist_Item_Options */
+?>
+
+
+ <div class="options-area">
+<?php $options = $this->getOptionList(); ?>
+<?php if ($options): ?>
+	<?php 
+		foreach ($options as $option){    
+			if($option['label'] == "Color")
+			{  
+				$color = $option['value'];		
+			}else  if($option['label'] == "Size"){ 
+				$size = $option['value'];
+			}
+			?>
+    <?php }?>
+
+<?php
+$item = $this->getItem();
+$product = $item->getProduct();
+// Collect options applicable to the configurable product
+if($product->isConfigurable()){
+
+$productAttributeOptions = $product->getTypeInstance(true)->getConfigurableAttributesAsArray($product);
+$attributeOptions = array();
+foreach ($productAttributeOptions as $productAttribute) {
+    foreach ($productAttribute['values'] as $attribute) {
+        $attributeOptions[$productAttribute['label']][$attribute['value_index']] = $attribute['store_label'];
+    }
+}
+?>
+<div class="column color-area">
+    <h4>Color:</h4>
+    <ul>
+<?php
+foreach( $attributeOptions['Color'] as $ao ){
+	if(strtolower($ao) == strtolower($color) ){
+		$txt [] = '<li class="active '.strtolower($ao).'"><img width="21" height="21" alt="'.$ao.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.strtolower($ao).'.png" ></li>';
+		}else{
+	$txt [] = '<li class="'.str_replace(" ","_",strtolower($ao)).'"><img width="21" height="21" alt="'.$ao.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.strtolower($ao).'.png"></li>';
+		}
+		
+}
+echo implode(' ',$txt);
+?>
+	</ul>
+</div>
+<div class="column size-area">
+    <h4>Size:</h4>
+    <ul>
+<?php
+foreach( $attributeOptions['Size'] as $ao ){
+	if(strtolower($ao) == strtolower($size) ){
+		$txt2 [] = '<li class="active">'.$ao.'</li>';
+		}else{
+	$txt2 [] = '<li>'.$ao.'</li>';
+		}
+		
+}
+echo implode(' ',$txt2);
+?>
+	</ul>
+</div>
+<?php }
+else{
+	if($color){
+	echo '<div class="column color-area"> <h4>Color:</h4><ul><li class="active '.strtolower($color).'"><img width="21" height="21" alt="'.$color.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/'.strtolower($color).'.png" style="border:1px solid black; transform:skew(-15deg)"></li></ul></div>';
+	}
+	if($size){
+		echo '<div class="column size-area"> <h4>Size:</h4><ul><li class="active"><a href="#">'.$size.'</a></li></ul></div>';
+	}
+}
+?>
+<?php endif ?>
+</div>

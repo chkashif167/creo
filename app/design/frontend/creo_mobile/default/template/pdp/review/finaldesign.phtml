@@ -1,0 +1,123 @@
+<?php 
+$jsonFilename = $this->getData('pdpdesign');
+$fileContent = Mage::helper('pdp')->getPDPJsonContent($jsonFilename);
+$sidesData = json_decode($fileContent, true);
+//Zend_Debug::dump($sidesData);
+$itemId = $this->getRequest()->getParam('item-id');
+$productId = $this->getRequest()->getParam('product-id');
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "pdp/images/";
+$orderId = $this->getRequest()->getParam('order-id');
+$orderIncrement = Mage::getModel("sales/order")->load($orderId)->getIncrementId();
+$downloadTxtUrl = Mage::helper("pdp")->getPdpBaseUrl() . "pdp/index/downloadTxt/order-id/" . $orderId . "/jsonfile/" . $jsonFilename;
+?>
+<html>
+	<head>
+		<title><?php echo 'Order #' . $orderIncrement; echo $this->__(' - Design') ?></title>
+		<link type="text/css" rel="stylesheet" href="<?php echo $this->getJsUrl('pdp/bootstrap/3.3.4/css/bootstrap.min.css') ?>" />
+        <link type="text/css" rel="stylesheet" href="<?php echo $this->getJsUrl('pdp/pace/dataurl.css') ?>" />
+	</head>
+	<body>
+		<div class="reference_fonts" style="display: none">
+			<?php echo $this->getLayout()->createBlock("core/template")->setTemplate("pdp/design/default_setting.phtml")->toHtml();?>
+		</div>
+		<input type="hidden" value="<?php echo htmlentities($fileContent)?>" id="final_design_json"/>
+        <input type="hidden" value="<?php echo $jsonFilename ?>" id="json_filename"/>
+		<input type="hidden" value="<?php echo Mage::helper('pdp')->getPdpBaseUrl(); ?>" id="base_url"/>
+		<input type="hidden" value="<?php echo $productId ?>" id="product_id"/>
+		<input type="hidden" value="<?php echo $orderId ?>" id="order_id"/>
+		<input type="hidden" value="<?php echo $itemId ?>" id="item_id"/>
+        <input type="hidden" value="<?php echo $orderIncrement ?>" id="increment_id"/>
+        
+		<div class="container">
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul id="canvas_list" class="nav nav-tabs" role="tablist">
+                    <?php $counter = 0; ?>
+                    <?php foreach($sidesData as $side) : ?>
+                        <?php $tabId = "side_" . $side['side_id']; ?>
+                        <li role="presentation" <?php echo ($counter == 0) ? 'class="active"' : ''; ?>><a href="#<?php echo $tabId ?>" aria-controls="<?php echo $tabId ?>" role="tab" data-toggle="tab"><?php echo $side['side_name'] ?></a></li>
+                        <?php $counter++ ?>
+                    <?php endforeach; ?>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <?php $counter = 0; ?>
+                    <?php foreach($sidesData as $side) : ?>
+                        <?php 
+                        $tabId = "side_" . $side['side_id']; 
+                        $sizeInfo = explode(",", $side['side_inlay']); 
+                        ?>
+                        <div role="tabpanel" class="tab-pane <?php echo ($counter == 0) ? 'active' : ''; ?>" id="<?php echo $tabId ?>">
+                            <div class="row">
+                                <div class="col-md-12 download-btns" style="margin-top: 10px;">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <?php echo $this->__("DOWNLOAD PDF") ?> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#" pdc-data="pdc-export-btn" pdc-action="DOWNLOAD_PDF_PNG"><?php echo $this->__("PDF contain PNG") ?></a></li>
+                                            <li><a href="#" pdc-data="pdc-export-btn" pdc-action="DOWNLOAD_PDF_SVG"><?php echo $this->__("PDF contain SVG") ?></a></li>
+                                        </ul>
+                                    </div>
+                                    <a class="btn btn-primary" pdc-data="pdc-export-btn" pdc-action="DOWNLOAD_SVG"><?php echo $this->__("Download SVG") ?></a>
+                                    <a class="btn btn-primary" pdc-data="pdc-export-btn" pdc-action="DOWNLOAD_PNG"><?php echo $this->__("Download PNG") ?></a>
+                                    <a class="btn btn-primary" href="<?php echo $downloadTxtUrl ?>"><?php echo $this->__("Download TXT") ?></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 canvas-wrapper">
+                                    <canvas style="border: 1px solid #006699; margin: 10px 0px;" id="canvas_<?php echo $tabId ?>" width="<?php echo $sizeInfo[0] ?>px" height="<?php echo $sizeInfo[1] ?>px" pdc-data='final-canvas'></canvas>
+                                </div>
+                                <div class="col-md-2 export-options-control" style="text-align: center;">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <span><?php echo $this->__("Include Background") ?></span>
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-success btn-xs active" pdc-data="export-option">
+                                                    <input type="radio" name="include_background" value="1" autocomplete="off" checked> <?php echo $this->__("Yes") ?>
+                                                </label>
+                                                <label class="btn btn-success btn-xs" pdc-data="export-option">
+                                                    <input type="radio" name="include_background" value="0" autocomplete="off"> <?php echo $this->__("No") ?>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span><?php echo $this->__("Include Overlay") ?></span>
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-success btn-xs active" pdc-data="export-option">
+                                                    <input type="radio" name="include_overlay" value="1" autocomplete="off" checked> <?php echo $this->__("Yes") ?>
+                                                </label>
+                                                <label class="btn btn-success btn-xs" pdc-data="export-option">
+                                                <input type="radio" name="include_overlay" value="0" autocomplete="off"> <?php echo $this->__("No") ?>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span><?php echo $this->__("Edit Design") ?></span>
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-success btn-xs" pdc-data="export-option">
+                                                    <input type="radio" name="edit_design" value="1" autocomplete="off"> <?php echo $this->__("Yes") ?>
+                                                </label>
+                                                <label class="btn btn-success btn-xs active" pdc-data="export-option">
+                                                    <input type="radio" name="edit_design" value="0" autocomplete="off" checked> <?php echo $this->__("No") ?>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-warning" onclick="window.location.reload();"><?php echo $this->__("Reset") ?></a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php $counter++ ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+		<script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/jquery/jquery-1.10.2.min.js') ?>"></script>
+        <script src="<?php echo $this->getJsUrl('pdp/bootstrap/3.3.4/js/bootstrap.min.js') ?>"></script>
+        <script src="<?php echo $this->getJsUrl('pdp/pace/pace.min.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/fabricjs/fabric-1.5.0.min.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/pdc/js/productsdesignercanvas-1.0.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->getJsUrl('pdp/pdc/js/final_design.js') ?>"></script>
+	</body>
+</html>

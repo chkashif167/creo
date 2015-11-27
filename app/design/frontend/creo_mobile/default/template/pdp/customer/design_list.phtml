@@ -1,0 +1,74 @@
+<?php $collection = $this->getCollection(); ?>
+<style>
+    #pdc_design_list td, th {
+        text-align: center;
+    }
+    #pdc_design_list td img {
+        margin: auto;
+    }
+    #pdc_design_list td .design-title {
+        font-weight: bold;
+    }
+    #pdc_design_list td a {
+        cursor: pointer;
+    }
+</style>
+<div class="page-title">
+    <h1><?php echo $this->__('My customized design') ?></h1>
+</div>
+<?php if($collection->getSize()): ?>
+<table class="data-table" id="pdc_design_list">
+    <thead>
+        <tr>
+            <th><?php echo $this->__('Design Preview') ?></th>
+            <th><?php echo $this->__('Design Note') ?></th>
+            <th><span class="nobr"><?php echo $this->__('Created Time') ?></span></th>
+            <th><?php echo $this->__('Action') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php $_odd = ''; ?>
+        <?php foreach ($collection as $_obj): ?>
+        <tr>
+            <?php
+            $thumbnails = Mage::helper("pdp")->getThumbnailImage($_obj->getFilename());
+            $productId = $_obj->getProductId();
+            $designLink = $this->getDesignLink($_obj->getId(), $productId);
+            ?>
+            <td>
+                <span class="design-title"><?php echo $_obj->getDesignTitle() ?></span>
+                <div class="design-preview">
+                    <ul>
+                        <?php foreach($thumbnails as $thumbnail) : ?>
+                        <li>
+                            <img src="<?php echo $thumbnail['image'] ?>" width="100px" alt="<?php echo $thumbnail['name'] ?>"/>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+			</td>
+			<td><?php echo nl2br($_obj->getDesignNote()) ?></td>
+            <td><?php echo $_obj->getCreatedTime() ?></td>
+			<td>
+                <a target="_blank" href="<?php echo $designLink ?>"><?php echo $this->__("Edit") ?></a> |
+                <a id="delete_<?php echo $_obj->getId() ?>" onclick="deleteDesign(this)"><?php echo $this->__("Delete") ?></a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<script type="text/javascript">decorateTable('pdc_design_list');</script>
+<?php echo $this->getPagerHtml(); ?>
+<?php else: ?>
+    <p><?php echo $this->__('You have no customized product!'); ?></p>
+<?php endif ?>
+<script>
+	var deleteLink = "<?php echo Mage::helper("pdp")->getPdpBaseurl() . "pdp/customerdesign/delete/id/" ?>";
+	function deleteDesign(item) {
+		if(!confirm("<?php echo $this->__("Are you sure?") ?>")) {
+			return false;
+		}
+		var itemId = item.id.replace("delete_", "");
+		window.location = deleteLink + itemId;
+	}
+</script>

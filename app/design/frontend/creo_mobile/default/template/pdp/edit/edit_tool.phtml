@@ -1,0 +1,82 @@
+<?php 
+$paramTooltip = 'data-toggle="tooltip" data-placement="bottom"';
+/* if($enableTooltip){
+	$paramTooltip = 'data-toggle="tooltip" data-placement="right"';
+} */
+if(Mage::getStoreConfig('pdp/design/is_quick_tool')){ 
+?>
+<div pdc-box="toolbox" class="edit-tools">
+	<div class="tools-panel">
+		<ul class="tools-list">
+			<?php if(Mage::getStoreConfig('pdp/design/is_frame_alignment')){ ?>
+			<li class="first">
+				<button id="pdc_alignment" type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Alignment'); ?>"  style="padding:0px;">
+				<i class="pdc-fullscreen" style="font-size:34px;"></i></button>
+				 
+				<div id="move_item">
+					<span class="m_tl">TL</span>
+					<span class="m_tc">TC</span>
+					<span class="m_tr">TR</span>
+					<span class="m_cl">CL</span>
+					<span class="m_cc">CC</span>
+					<span class="m_cr">CR</span>
+					<span class="m_bl">BL</span>
+					<span class="m_bc">BC</span>
+					<span class="m_br">BR</span>
+				</div>
+			</li>
+			<?php } ?>
+			<?php if(Mage::getStoreConfig('pdp/design/is_swap')){ ?>
+			<li>
+				<button type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Bring Front'); ?>" pdc-action="move_to_front" class="">
+					<i class="pdc-flip-to-front"></i> <?php //echo $this->__('Bring Front'); ?>
+				</button>
+			</li>
+			<li>
+				<button type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Move Back'); ?>" pdc-action="move_to_back" class="">
+					<i class="pdc-flip-to-back"></i> <?php //echo $this->__('Move Back'); ?>
+				</button>
+			</li>
+			<?php } ?>
+			<?php if(Mage::getStoreConfig('pdp/design/is_duplicate')){ ?>
+			<li>
+				<button type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Duplicate Object'); ?>" id="duplicate_item">
+					<i class="pdc-my-library-add"></i> <?php //echo $this->__('Duplicate'); ?>
+				</button>
+			</li>
+			<?php } ?>
+			<?php if(Mage::getStoreConfig('pdp/design/is_flip')){ ?>
+			<li>
+				<button type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Flip Horizontal'); ?>" class="flip_x">
+					<i class="pdc-swap-horiz"></i> <?php //echo $this->__('Flip Horizontal'); ?>
+				</button>
+			</li>
+			<li>
+				<button type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Flip Vertical'); ?>" class="flip_y">
+					<i class="pdc-swap-vert"></i> <?php //echo $this->__('Flip Vertical'); ?>
+				</button>
+			</li>
+			<?php } ?>
+			<?php if(Mage::getStoreConfig('pdp/design/is_opacity')){ ?>
+			<li>
+				<button id="opacityBtn" type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Opacity'); ?>" class="">
+					<i class="pdc-tonality"></i> <?php //echo $this->__('Opacity'); ?>
+				</button>
+				<div class="opacity_tool">
+					<div id="opacitySlider"></div>
+					<span id="opacity-span"></span>
+					<input type="text" id="opacity-input" name="opacity-input" />
+				</div>
+			</li>
+			<?php } ?>
+			<?php if(Mage::getStoreConfig('pdp/design/is_delete')){ ?>
+			<li class="last">
+				<button type="button" <?php echo $paramTooltip; ?> title="<?php echo $this->__('Delete Object') ;?>" id="delete_item">
+					<i class="pdc-trash-o"></i> <?php //echo $this->__('Delete') ;?>
+				</button>
+			</li>
+			<?php } ?>
+		</ul>
+	</div>
+</div><!-- EOEdit-tools-->
+<?php } ?>
