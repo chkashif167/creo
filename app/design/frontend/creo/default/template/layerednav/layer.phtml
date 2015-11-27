@@ -69,43 +69,62 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                     <input type="hidden" id="fme_layered_url" value="<?php echo $this->htmlEscape($state[0]) ?>"/>
                     <input type="hidden" id="fme_layered_params" value="<?php echo $this->htmlEscape($state[1]) ?>"/> 
                     <input type="hidden" id="fme_layered_ajax" value="<?php echo $this->htmlEscape($state[2]) ?>"/> 
+                    <input type="hidden" id="tmp_current_val" value="View All" />
                     <dl id="fme_filters_list">
                         <script>
                             jQuery(document).ready(function () {
-								 var changeidss;
-								 var abc;
+                                var changeidss;
+                                var abc;
                                 var changeFrom = getQueryVar('universal_categories').toLowerCase();
                                 jQuery('#fme_layered_universal_categories li a').each(function (k, v) {
                                    var changeid = v.id;
-									var getlastdash = changeid . lastIndexOf('-');
-									if(getlastdash != '-1'){
-										var onlyid = changeid.substr(getlastdash + 1);
-									}		
-                                    cat_attrs[k] = onlyid;									
-//                                    cat_attrs[k] = v.text.toLowerCase();
+                                    var getlastdash = changeid . lastIndexOf('-');
+                                    if(getlastdash != '-1'){
+                                            var onlyid = changeid.substr(getlastdash + 1);
+                                    }		
+                                    //cat_attrs[k] = onlyid;									
+                                    cat_attrs[k] = v.text;
+                                    console.log("+++"+v.text.toLowerCase());
                                     jQuery(v).attr('href', 'javascript:void(0);');
                                     var changeTo = jQuery(this).text().toLowerCase();
                                     var changeidss = jQuery(this).attr('id');
-									if( changeidss ){
-										var getlastdash2 = changeidss.lastIndexOf('-');									
-										if(getlastdash2 != '-1'){
-											abc = changeidss.substr(getlastdash2 + 1);
-										}		
-										changeTo = abc;
-									}
-
-
-                                    if (changeFrom.indexOf(changeTo) !== 0 && changeTo.indexOf("view all") <= -1) {			//do not trigger onclick on the passed param and not on view all as well
-                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\')');
+                                    if( changeidss ){
+                                            var getlastdash2 = changeidss.lastIndexOf('-');									
+                                            if(getlastdash2 != '-1'){
+                                                    abc = changeidss.substr(getlastdash2 + 1);
+                                            }		
+                                            changeTo = abc;
                                     }
 
-                                    if (changeTo.indexOf("view all") >= 0) {			//do not trigger onclick on the passed param and not on view all as well
-                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'\')');
+                                    if (changeTo.indexOf("view all") <= -1) {//do not trigger onclick on the passed param and not on view all as well
+                                        //jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\')');
+                                        var text = jQuery('#universal_categories-'+changeTo).text();
+                                        console.log("TEXT:"+text);
+                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
                                     }
 
-//                                    //console.log(jQuery(v).attr('href'));
+                                    if (changeTo.indexOf("view all") >= 0) {                    //do not trigger onclick on the passed param and not on view all as well
+                                        //jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'\')');
+                                        //$this->helper('core/url')->getCurrentUrl();
+                                        <?php 
+                                        $currentUrl = Mage::helper('core/url')->getCurrentUrl();
+                                        $currentUrl = preg_replace("/(&)?universal_categories=\d+(&)?/i", "", $currentUrl);
+                                        $splitUrlArray = explode("?", $currentUrl);
+                                        //window.history.pushState('','',target);
+                                        ?>
+                                        //reset url
+                                        var url = window.location.href;
+                                        var array = url.split('?');
+                                        var target = array[0];
+
+                                        jQuery(v).attr('href', '<?php echo $currentUrl?>');
+                                        var onclickev = 'window.history.pushState(\'\',\'\',\''+target+'\')';
+                                        jQuery(v).attr('onclick',onclickev);
+                                        //reset url ends here.
+                                    }
                                 });
 //                                //jQuery.query.set("design", "3araby");
+                            console.log(cat_attrs);
                             });
                         </script>
 
