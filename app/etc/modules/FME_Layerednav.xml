@@ -13,7 +13,7 @@
 <config>
     <modules>
         <FME_Layerednav>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
     	</FME_Layerednav>
     </modules>
