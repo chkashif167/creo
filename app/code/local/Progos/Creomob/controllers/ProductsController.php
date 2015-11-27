@@ -315,7 +315,8 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
         $product_ids = array(); //keeps track of existing product to handle duplicate
 
         foreach ($products as $p2) {//print_r($p2);echo "<hr>";die;
-            //if(in_array(42,$p2->getCategoryIds())) continue;
+            //do not bring products from create category
+            if(in_array(47,$p2->getCategoryIds())) continue;
        
             $img_to_show = '';
             if($p2->getTypeId()=='simple'){
