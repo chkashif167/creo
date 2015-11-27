@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <block type="sticsfbtracker/retargeting"
+                   name="sticsfbtracker_retargeting"
+                   as="sticsfbtracker.retargeting"
+                   template="sticsfbtracker/retargeting.phtml">
+            </block>		   
+		   
+            <block type="sticsfbtracker/keypage"
+                   name="sticsfbtracker_keypage"
+                   as="sticsfbtracker.keypage"
+                   template="sticsfbtracker/keypage.phtml">
+            </block>
+
+            <block type="sticsfbtracker/other"
+                   name="sticsfbtracker_other"
+                   as="sticsfbtracker.other"
+                   template="sticsfbtracker/other.phtml">
+            </block>
+        </reference>
+
+    </default>
+    
+    <checkout_cart_index>
+        <reference name="head">
+            <block type="sticsfbtracker/checkout_cart"
+                   name="sticsfbtracker_checkout_cart"
+                   as="sticsfbtracker.checkout.cart"
+                   template="sticsfbtracker/checkout/cart.phtml">
+            </block>
+        </reference>
+    </checkout_cart_index>
+
+    <checkout_onepage_success>
+        <reference name="head">
+            <block type="sticsfbtracker/checkout_success"
+                   name="sticsfbtracker_checkout_success"
+                   as="sticsfbtracker.checkout.success"
+                   template="sticsfbtracker/checkout/success.phtml">
+            </block>
+        </reference>
+    </checkout_onepage_success>
+ 
+    <contacts_index_index>
+        <reference name="head">
+            <block type="sticsfbtracker/lead"
+                   name="sticsfbtracker_lead"
+                   as="sticsfbtracker.lead"
+                   template="sticsfbtracker/lead.phtml"/>
+        </reference>
+    </contacts_index_index>
+
+    <customer_account_index>
+        <reference name="head">
+            <block type="sticsfbtracker/customer_registration"
+                   name="sticsfbtracker_customer_registration"
+                   as="sticsfbtracker.customer.registration"
+                   template="sticsfbtracker/customer/registration.phtml"/>
+        </reference>
+    </customer_account_index>
+
+	<!-- For those will need to remove tags on some references	
+    <sticsfbtracker_handle_remove_facebook_trackers>
+        <reference name="head">
+            <remove name="sticsfbtracker_keypage"/>
+            <remove name="sticsfbtracker_other"/>
+        </reference>
+    </sticsfbtracker_handle_remove_facebook_trackers>
+	-->
+</layout>

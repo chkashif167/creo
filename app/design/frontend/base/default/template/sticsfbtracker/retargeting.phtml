@@ -1,0 +1,26 @@
+<?php /* @var $this StrongTics_FacebookConversionTracker_Block_Retargeting */?>
+<script type="text/javascript">
+    //<![CDATA[
+	(function() {
+	  var _fbq = window._fbq || (window._fbq = []);
+	  if (!_fbq.loaded) {
+		var fbds = document.createElement('script');
+		fbds.async = true;
+		fbds.src = '<?php echo $this->getFacebookScriptSrc(); ?>';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(fbds, s);
+		_fbq.loaded = true;
+	  }
+	_fbq.push(['addPixelId', '<?php echo $this->getRetargetingPixelId(); ?>']);	  
+	})();
+	window._fbq = window._fbq || [];
+	window._fbq.push(['track', 'PixelInitialized', {}]); 
+    //]]>
+</script>
+<noscript>
+<img height="1" 
+	 width="1" 
+	 alt="" 
+	 style="display:none" 
+	 src="<?php echo $this->getFacebookOffsiteEventSrc();?>?id=<?php echo $this->getRetargetingPixelId(); ?>&amp;ev=PixelInitialized" />
+</noscript>
