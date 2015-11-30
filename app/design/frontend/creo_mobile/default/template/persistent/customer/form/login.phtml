@@ -1,0 +1,123 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Customer login form template
+ *
+ * @see app/design/frontend/base/default/template/customer/form/login.phtml
+ */
+/** @var $this Mage_Customer_Block_Form_Login */
+?>
+<div class="row">
+	<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <nav class="breadcrumb1">
+            <ul>
+                <!--<li><a href="#">Home</a></li>
+                <li>Register</li>-->
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="row">
+<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h2 class="form-header"><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
+                <?php echo $this->__('Login or Create an Account') ?>
+            <?php else: ?>
+                <?php echo $this->__('Login'); ?>
+            <?php endif; ?></h2>
+	
+<?php echo $this->getMessagesBlock()->toHtml() ?>
+  <div class="form-holder login-sec col-sm-6 no-padding-left">
+   <div class="form-frame">
+    
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="scaffold-form">
+        <?php echo $this->getBlockHtml('formkey'); ?>
+        
+            <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
+ 
+                <?php /*?>
+                    <h3><?php echo $this->__('New Here?') ?></h3>
+                    <p class="form-instructions"><?php echo $this->__('Registration is free and easy!') ?></p>
+                    <p>
+                      <?php echo $this->__('Faster checkout <br> Save multiple shipping addresses <br>View and track orders and more') ?>      
+                    </p>
+                    <div class="submit-holder">
+                    <button type="submit" class="button" onClick="window.location='<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>'"  title="<?php echo $this->__('Create an Account') ?>" ><span><span><?php echo $this->__('Create an Account') ?></span></span></button>
+                </div>
+                <?php */?>
+           
+            <?php endif; ?>
+            <?php // This column should be col-1 if the registration column is not displayed ?>
+           
+              
+                    <h3><?php echo $this->__('Already registered?') ?></h3>
+                    <p class="form-instructions"><?php echo $this->__('If you have an account with us, please log in.') ?></p>
+                    
+                            <label for="email" class="required "><span class="red marg-right">*</span><?php echo $this->__('Email Address') ?></label>
+                            
+                                <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="input-text validate-emailAdress validate-email email" title="<?php echo $this->__('Email Address') ?>" />
+                            
+                        
+                            <label for="pass" class="required"><em class="red marg-right">*</em><?php echo $this->__('Password') ?></label>
+                           
+                                <input type="password" name="login[password]" class="input-text validate-passwordlogin validate-password email" id="pass" title="<?php echo $this->__('Password') ?>" />
+                         
+                        
+                        <?php echo $this->getChildHtml('form.additional.info'); ?>
+                        
+                        <?php echo $this->getChildHtml('persistent.remember.me'); ?>
+                    
+                    <?php // echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
+                    
+				 <?php /*?><p class="required red"><?php echo $this->__('* Required Fields') ?></p><?php */?>
+                 
+                 <?php /*?><a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a><?php */?>
+                 
+                <div class="submit-holder btn-holder">
+                <button type="button" class="pull-left" onclick="window.location.href='<?php echo $this->getForgotPasswordUrl() ?>'"><span class="span1"><span class="span2">Forgot password?</span></span></button>
+                    <button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
+                </div>
+
+        
+       
+        <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
+            <input name="context" type="hidden" value="checkout" />
+        <?php endif; ?>
+    </form>
+<?php ?>    <div class="login-fb">
+				<?php echo $this->getLayout()->createBlock('fblogin/fblogin')->setTemplate('fblogin/bt_fblogin.phtml')->toHtml() ; ?>
+    </div><?php ?>
+    <?php echo $this->getChildHtml('form_register');?>
+</div>
+<?php //echo $this->getMessagesBlock()->toHtml() ?>
+</div>
+    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('login-form', true);
+    //]]>
+    </script>
+

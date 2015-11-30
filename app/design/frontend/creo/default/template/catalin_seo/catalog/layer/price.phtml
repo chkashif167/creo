@@ -1,0 +1,36 @@
+<?php if ($this->getMaxPriceFloat() != $this->getMinPriceFloat()) : ?>
+    <div id="price-range" class="filter-track price-slider">
+        <span id="price-min" class="filter-handle price-slider-from" title="Scroll to set your minimum value"></span>
+        <span id="price-max" class="filter-handle price-slider-to" title="Scroll to set your maximum value"></span>
+    </div>
+    <ul>
+        <li class="range-price">
+    <div class="a-right">
+    <button id="button-price-slider" class="button btn1"
+                onclick="javascript: CatalinSeoHandler.handlePriceEvent(this.value)" value="">
+            <span><span><?php echo $this->__('Filter') ?></span></span></button>
+            &nbsp;
+            <span>
+            <i id="price-min-display"><?php echo $this->getCurrentMinPriceFilter(); ?></i>
+             - 
+            <i id="price-max-display"><?php echo $this->getCurrentMaxPriceFilter(); ?></i>
+            <?php echo $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+            </span>
+    </div>
+        </li>
+    </ul>
+
+    <script type="text/javascript">
+        <?php if ($this->helper('catalin_seo')->isAjaxEnabled()): ?>
+        CatalinSeoHandler.isAjaxEnabled = true;
+        <?php endif; ?>
+        CatalinSeoHandler.priceSlider.urlTemplate = '<?php echo $this->getUrlPattern(); ?>';
+        CatalinSeoHandler.priceSlider.maxPrice = <?php echo $this->getMaxPriceFloat(); ?>;
+        CatalinSeoHandler.priceSlider.minPrice = <?php echo $this->getMinPriceFloat(); ?>;
+        CatalinSeoHandler.priceSlider.currentMinPrice = <?php echo $this->getCurrentMinPriceFilter(); ?>;
+        CatalinSeoHandler.priceSlider.currentMaxPrice = <?php echo $this->getCurrentMaxPriceFilter(); ?>;
+        CatalinSeoHandler.bindPriceSlider();
+    </script>
+<?php else: ?>
+    <span><?php echo $this->__('Price filter not available.'); ?></span>
+<?php endif; ?>

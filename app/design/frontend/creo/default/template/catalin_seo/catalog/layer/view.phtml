@@ -1,0 +1,128 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category layered navigation
+ *
+ * @see Mage_Catalog_Block_Layer_View
+ */
+?>
+
+
+<?php
+$displaySize = 2;
+$hiddenFilters = array();
+?>
+
+<?php if ($this->canShowBlock()): ?>
+    <div class="block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
+        <div class="filters">
+            <a class="heading" data-id="activeFilters"><h2><?php echo $this->__('Active Filters') ?></h2><span><i class="fa fa-minus-square-o"></i><i class="fa fa-plus-square-o"></i></span></a>
+            <ul id="activeFilters">
+                <li><?php echo $this->getStateHtml() ?></li>
+                <!--<li class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></li>-->
+            </ul>
+        </div>
+        <div class="toggle-content">
+        <?php if ($this->getLayer()->getState()->getFilters()): ?>
+            <?php endif; ?>
+            <?php if ($this->canShowOptions()): ?>
+                <!-- <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p> -->
+                <div id="narrow-by-list">
+                        <?php $_filters = $this->getFilters() ?>
+                        <?php foreach ($_filters as $_filter): ?>
+                            <div class="filters">
+                            <?php
+                            if ($_filter->getItemsCount() > $displaySize)
+                                $hiddenFilters[] = strtolower($_filter->getName());
+                            ?>
+                            <?php if ($_filter->getItemsCount()): ?>
+                                <a class="heading" data-id="<?php echo $this->__($_filter->getName()) ?>"><h2><?php echo $this->__($_filter->getName()) ?></h2><span><i class="fa fa-minus-square-o"></i><i class="fa fa-plus-square-o"></i></span></a>
+                                <ul id="<?php echo $this->__($_filter->getName()) ?>"><?php echo $_filter->getHtml() ?></ul>
+                            <div id="<?php echo $this->__($_filter->getName()) ?>ML" style="display:none;" class="buttons-set"><a class="showmoreless" id="<?php echo $this->__($_filter->getName()) ?>SMT">More/less</a></div>
+                <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    var CNT = jQuery("#<?php echo $this->__($_filter->getName()) ?> li").length;
+                    console.log(CNT);
+                    if(CNT > 10){
+                    jQuery("#<?php echo $this->__($_filter->getName()) ?>").addClass('more');
+                    jQuery("#<?php echo $this->__($_filter->getName()) ?>ML").show().find('a').text('Show More');
+                    }
+                    jQuery("#<?php echo $this->__($_filter->getName()) ?>SMT").click(function(){
+                        jQuery("#<?php echo $this->__($_filter->getName()) ?>").toggleClass('more');
+                        if (jQuery("#<?php echo $this->__($_filter->getName()) ?>").hasClass('more')){
+                            jQuery("#<?php echo $this->__($_filter->getName()) ?>ML").show().find('a').text('Show More');
+                        }
+                        else{
+                            jQuery("#<?php echo $this->__($_filter->getName()) ?>ML").show().find('a').text('Show Less');
+                        }
+                    });
+                });
+                </script>
+                            <?php endif; ?>
+                        </div>
+                        <?php endforeach; ?>
+                </div>
+                <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>
+
+<script>
+    document.observe("dom:loaded", function() {
+        // initially hide all containers for tab content
+        <?php
+        foreach ($hiddenFilters as $v) {
+            echo "jQuery('cont-" . $v . "').hide();";
+        }
+        ?>
+    });
+
+// Register event 'click' and associated call back.
+    Event.observe(document, 'click', respondToClick);
+
+// Callback function to handle the event.
+    function respondToClick(event) {
+        var element = event.element();
+
+<?php
+foreach ($hiddenFilters as $p) {
+    echo "if(element.up('div').id=='more-" . $p . "')
+{
+jQuery('cont-" . $p . "').show();
+jQuery('more-" . $p . "').hide();
+}
+if(element.up('div').id=='less-" . $p . "')
+{
+jQuery('cont-" . $p . "').hide();
+jQuery('more-" . $p . "').show();
+}";
+}
+?>
+}
+</script>

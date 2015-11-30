@@ -1,0 +1,232 @@
+<?php 
+$request = $this->getRequest()->getParams();
+$ajaxParams = "";
+if (isset($request['json']) && $request['json'] != "") {
+	$ajaxParams .= "json/" . $request['json'] . "/";
+}
+if (isset($request['redesign']) && $request['redesign'] != "") {
+	$ajaxParams .= "redesign/" . $request['redesign'] . "/";
+}
+if (isset($request['share']) && $request['share'] != "") {
+	$ajaxParams .= "share/" . $request['share'] . "/";
+}
+$js_pdp = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'pdp/';
+?>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="<?php echo $js_pdp;?>bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>jquery/nouislider/7.1.0/jquery.nouislider.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>jquery/nouislider/7.1.0/jquery.nouislider.pips.min.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>jquery/mcustomscrollbar/jquery.mcustomscrollbar.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>material-icons/style.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>pace/dataurl.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>jquery/jcrop/jquery.jcrop.min.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>pdc/css/pdc.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>pdc/css/iframe.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>pdc/css/pdc.layer.css" rel="stylesheet"/>
+<link href="<?php echo $js_pdp;?>jquery/colorpicker/css/colorpicker.css" rel="stylesheet"/>
+<script src="<?php echo $js_pdp;?>jquery/jquery-1.10.2.min.js"></script>
+<script src="<?php echo $js_pdp;?>bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="<?php echo $js_pdp;?>pace/pace.min.js"></script>
+<script src="<?php echo $js_pdp;?>jquery/nouislider/7.1.0/jquery.nouislider.all.min.js"></script>
+<script src="<?php echo $js_pdp;?>jquery/mcustomscrollbar/jquery.mcustomscrollbar.min.js"></script>
+<script src="<?php echo $js_pdp;?>jquery/jcrop/jquery.jcrop.min.js"></script>
+<script src="<?php echo $js_pdp;?>pdc/js/draggabilly.js"></script>
+<script src="<?php echo $js_pdp;?>jquery/ui/jquery-ui.min.js"></script>
+<script src="<?php echo $js_pdp;?>jquery/colorpicker/colorpicker.js"></script>
+<script src="<?php echo $js_pdp;?>fabricjs/fabric-1.5.0.min.js"></script>
+</head>
+<body>
+<div class="iframe-container" style="display: none;">
+	<button style="display: none;" id="get_design_content">Get Design Page</button>
+	<span id="close_iframe" class="close pdc-close"></span>
+	<div class="pdc-wrapper" id="pdcwrapper">
+		<div class="pdc-container">
+			<div class="pdc-center">
+				<div class="pdc_design_panel">
+				[DON'T CHANGE THIS FILE]
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	jQuery(function($) {
+		var mainWindow = top.document;
+		var baseUrl = $("#base_url", mainWindow).val(),
+			_ifMarginTop = "10px", 
+			productId = "<?php echo $request['product-id']?>";
+		LoadDesign = {
+			pendingTime : 0,
+			baseUrl : null,
+			init : function() {
+				setTimeout(function() {
+					LoadDesign.getDesignPage();
+				}, LoadDesign.pendingTime);
+			},
+			getDesignPage : function() {
+				var designUrl = baseUrl + "pdp/view/getDesignPage/product-id/" + productId + "/area/customize/" + "<?php echo $ajaxParams?>";
+				LoadDesign.sendRequest(designUrl, function(response) {
+					if (response != "") {
+						$(".pdc_design_panel").html(response);
+						LoadDesign.resizeIframe();
+					}
+				});
+			},
+			sendRequest : function(url, callback) {
+				$.ajax({
+					type : "GET",
+					url : url,
+					beforeSend : function () {
+						//console.log("Sending request...");
+						$(".pdp_loading").show();
+					},
+					success : function(data) {
+						callback(data);
+						$(".pdp_loading").hide();
+					}
+				});
+			},
+			resizeIframe : function() {
+				$("#pdc_iframe", mainWindow).css({
+					"width": "100%",
+					"height" : "100%",
+					"left" : "0",
+					"top" : "0",
+					"right" : "0"
+				});
+				LoadDesign.readyToDesign();
+			},
+			closeIframe : function() {
+				$("#close_iframe").click(function() {
+					$("#pdc_iframe", mainWindow).css({"top" : "-100000px"});
+					$(".catalog-product-view", mainWindow).css({"overflow" : "inherit"});
+				});
+			}(),
+			readyToDesign : function() {
+				$(".loader").hide();
+				$(".iframe-container").show();
+				top.document.body.scrollTop = top.document.documentElement.scrollTop = 0;
+			},
+            //Custom theme might has different selector to main image box of product
+			showSampleImage : function(mainImgBox) {
+				if($("#sample_images", mainWindow).length) {
+					var sampleImageStr = $("#sample_images", mainWindow).val();
+					if (sampleImageStr) {
+						var sampleImageJson = JSON.parse(sampleImageStr),
+                            mainImgBox = mainImgBox || '.product-img-box .product-image'; 
+						if (sampleImageJson[0].image_result) {
+                            $(mainImgBox + ' img', mainWindow).attr('src', sampleImageJson[0].image_result);
+							//Magento 1.9.1 rwd packgae - zoom elevateZoom
+							if(top.window.ProductMediaManager !== undefined) {
+								top.window.ProductMediaManager.init();
+							}
+						}
+						if (sampleImageJson.length > 1) {
+                            $('.more-views', mainWindow).remove();
+							if($(mainImgBox + ' .pdp_more_view', mainWindow).length == 0){
+								$(mainImgBox, mainWindow).append('<div class="more-views" style="clear: both; float: left;"><h2><?php echo $this->__('More Views');?></h2><ul class="pdp_more_view"></ul></div>');
+							}else{
+								$('.pdp_more_view', mainWindow).html('');
+							}
+							$.each(sampleImageJson, function(index, image) {
+                                console.log(image.image);
+								$('.pdp_more_view', mainWindow).append('<li style="padding: 0px 3px; float: left; cursor: pointer;"><img class="pdc-thumbnail" title="' + image.side_name + '" width="56" height="56" src="'+ image.image_result +'" /></li>');
+							});
+							$('.pdp_more_view li img', mainWindow).click(function(){
+								$(mainImgBox + ' img:not(".pdc-thumbnail")', mainWindow).attr('src',$(this).attr('src')); 
+								//Magento 1.9.1 rwd packgae - zoom elevateZoom
+								if(top.window.ProductMediaManager !== undefined) {
+									top.window.ProductMediaManager.init();
+								}
+							});
+						} else {
+                            //Make sure thumbnail same as main image
+                            if($('.more-views img', mainWindow).length) {
+                                var thumbnail = $('.more-views img', mainWindow).attr("src");
+                                if(sampleImageJson[0].image_result !== thumbnail) {
+                                    //Update current thumabnail
+                                    $('.more-views img', mainWindow).attr("src", sampleImageJson[0].image_result);
+                                }
+                            }
+                        }
+					}
+				}
+			},
+			reloadPrice : function() {
+				/********************************** RELOAD PRICE **********************************/
+				if ($("#product_price_config", mainWindow).length) {
+					var productPriceConfig = JSON.parse($("#product_price_config", mainWindow).val());
+					if (productPriceConfig.productId === undefined) {
+						return false;
+					}
+					var extraPrice = 0;
+					if ($("#extra_options_value", mainWindow).length && $("#extra_options_value", mainWindow).val() != "") {
+						var extraOptionsValue = JSON.parse($("#extra_options_value", mainWindow).val()),
+                            sampleCost = 0;
+                        if(extraOptionsValue !== undefined) {
+                            $.each(extraOptionsValue, function() {
+                                sampleCost += parseFloat(this.final_price);
+                            });
+                        }
+						if (sampleCost) {
+                            extraPrice = parseFloat(sampleCost); 
+						}
+					}
+					productPriceConfig.productPrice = productPriceConfig.productPrice + extraPrice;
+					productPriceConfig.productOldPrice = productPriceConfig.productOldPrice + extraPrice;
+					parent.optionsPrice = new parent.Product.OptionsPrice(productPriceConfig);
+					try {
+                        //Reload price for configurable product
+						parent.optionsPrice.reload();
+                        //Reload price for simple product has custom options
+                        parent.opConfig.reloadPrice();
+					} catch(error) {
+						console.log(error);
+					}
+				}
+				/********************************** End RELOAD PRICE **********************************/
+			},
+			getDesignPageClick : function() {
+				$("#get_design_content").click(function() {
+					top.document.body.scrollTop = top.document.documentElement.scrollTop = 0;
+					$(".catalog-product-view", mainWindow).css({"overflow" : "hidden"});
+					if($(this).hasClass("loaded")) {
+						//Show iframe
+						$("#pdc_iframe", mainWindow).css({
+							"top" : "0"
+						});
+						return false;
+					} else {
+						var _initIframeW = 300;
+						$("#pdc_iframe", mainWindow).css({
+							"top" : ($(top.window).height() / 3) + "px",
+							"left" : ($(top.window).width() - _initIframeW) / 2 + "px"
+						});
+					}
+					$(this).addClass("loaded");
+					LoadDesign.init();
+				});
+			}(),
+			autoClickCustomBtn : function() {
+				if($("#pdp_design_action", mainWindow).val() == "design") {
+					$("#get_design_content").click();
+				}
+			}
+ 		}
+ 		LoadDesign.autoClickCustomBtn();
+        //Auto replace base image or not
+        if($("input[name='extra_options']", mainWindow).val() != "") {
+            //Check config
+            var pdcConfig = JSON.parse($("#pdc_product_config", mainWindow).val());
+            var productConfig = JSON.parse(pdcConfig.note);
+            var isAutoReplace = productConfig.auto_replace_pattern || 2;
+            if(isAutoReplace === 1) {
+                LoadDesign.showSampleImage();
+            }
+        }
+        LoadDesign.reloadPrice();
+	});
+</script>
+</body>

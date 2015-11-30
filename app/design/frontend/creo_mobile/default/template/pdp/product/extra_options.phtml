@@ -1,0 +1,8 @@
+<!--Add this hidden field inside cart form-->
+<?php
+if (!$this->isDesignAble()) {
+    return false;
+}
+$pdpDesignInfo = $this->getPdpDesignInfo();
+?>
+<input type="hidden" name="extra_options" value="<?php echo $pdpDesignInfo['extra_options'] ?>"/>

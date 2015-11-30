@@ -1,0 +1,42 @@
+<?php
+$helper = Mage::helper('pdp');
+$fonts = $helper->getFonts();
+?>
+<style type="text/css">
+    <?php foreach ( $fonts as $font) : ?>
+    @font-face {
+        font-family: '<?php echo $font->getName() ?>';
+        src: url('<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA); ?>pdp/fonts/<?php echo $font->getName() ?>.<?php echo $font->getExt() ?>');
+    }
+    <?php endforeach; ?>
+</style> 
+<?php //Preload fonts ?>
+<div class="fonts-container" style="display: none;">
+	<?php foreach ( $fonts as $font) : ?>
+	<span style="font-family: <?php echo $font->getName() ?>"><?php echo $this->__('Preload Font');?></span>
+    <?php endforeach; ?>
+</div>
+<input type="hidden" id="base_dir" name="base_dir" value="<?php echo Mage::getBaseDir('base'); ?>" />
+<input type="hidden" id="is_editable" name="is_editable" value="yes" />
+<input type="hidden" id="pdp_media_url" name="pdp_media_url" value="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'pdp/images/'; ?>" />
+<input type="hidden" value="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK).Mage::getStoreConfig('pdp/setting/urlkey'); ?>" id="pdp_uri_key" />
+<div class="nodisplay color_content">
+    <div class="inlay_div color"></div>
+    <div class="color_content_wrap">
+        <ul class="pdp_color_ul">
+			<?php 
+				$colors = Mage::getSingleton('pdp/color')->getColors(); 
+				$colors->addFieldToFilter('status', 1);
+			?>
+			<?php foreach ($colors as $color) : ?>
+            <li><a style="background-color: #<?php echo $color->getColorCode() ?>" title="<?php echo $color->getColorName() ?>"><?php echo $color->getColorName() ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+        <div>
+            <ul class="pdp_color_act">
+                <li><label><?php echo $this->__('Selected Color:'); ?></label><input maxlength="6" id="selected_color" type="text" value="" readonly="" /><a style="background-color: #FFF" class="selected_color" title="Wheat">Wheat</a></li></li>
+                <li class="last"><a class="bt_done"><?php echo $this->__('Done') ?></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

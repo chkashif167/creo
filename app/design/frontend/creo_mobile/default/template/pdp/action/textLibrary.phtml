@@ -1,0 +1,29 @@
+<?php if(Mage::getStoreConfig('pdp/design/is_quote_lib')){ ?>
+<div class="modal fade" id="textLibrary" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+	<div class="modal-content">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<div class="modal-holder">
+	  <div class="modal-header">
+		<div class="heading-holder"><h3 class="modal-title"><i class="pdc-format-align-center"></i> <?php echo $this->__('Quotes Library &amp; Sample text'); ?> </h3></div>
+	  	<div class="search-text"><label>Search Text</label><input type="text" id="pdc_search_text" class="" placeholder="<?php echo $this->__(''); ?>" /></div>
+	  </div>
+	  <div class="modal-body">
+		<div class="clear"></div>
+           <?php
+              $texts = Mage::getModel('pdp/text')->getCollection();
+            ?>
+			<div class="clear"></div>
+			<div class="pdc_text_list">
+				<ul>
+				 <?php foreach($texts as $text)  : ?>
+					<li tag="<?php echo $text->getTags(); ?>"><i class="pdc-add-box"></i> <?php echo $text->getText(); ?></li>
+				 <?php endforeach; ?>
+				</ul>
+			</div>
+	  </div>
+	</div>
+	</div>
+  </div>
+</div>
+<?php } ?>

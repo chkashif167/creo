@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+ 
+<layout version="0.1.0">
+       
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>fancybox/lib/jquery.mousewheel-3.0.6.pack.js</name></action>
+            <!--<action method="addItem"><type>skin_js</type><name>fancybox/source/jquery.fancybox.pack.js"</name></action>-->
+            <action method="addItem"><type>skin_css</type><name>fancybox/source/jquery.fancybox.css</name></action>
+        </reference>
+
+       <!-- <reference name="root">
+            <remove name="global_messages" />
+        </reference>
+        
+        <reference name="before_body_end">
+            <block type="core/template" name="AjaxNewsletter_Ajaxnewsletter" as="newsletter_popup" template="AjaxNewsletter/newsletter-popup.phtml" >
+               <block type="core/messages" name="global_messages" as="global_messages"/>
+               <block type="core/messages" name="messages" as="messages"/>
+            </block>
+        </reference>-->
+    </default>
+ 
+</layout>
