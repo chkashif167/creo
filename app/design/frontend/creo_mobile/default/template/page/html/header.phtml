@@ -37,10 +37,14 @@ is_product_details_page = true;
 }
 ?>
 </script>
-<header id="header" class="row">
-<div class="col-xs-12">
+<header id="header" class="clearfix">
+<div class="col-xs-12 clearfix">
+<div class="row">
 <div class="col-xs-3">
-	<?php echo $this->getChildHtml('topMenu') ?>
+	<div class="main-menu">
+	<a data-id="main-menu-content" class="bgr-icon glyphicon glyphicon-align-justify"></a>
+	<div id="main-menu-content" class="main-menu-content"><?php echo $this->getChildHtml('topMenu') ?></div>
+	</div>
 </div>
 <div class="col-xs-6">
 	<strong class="logo">
@@ -49,17 +53,18 @@ is_product_details_page = true;
 	</a>
 	</strong>
 </div>
-<div class="col-xs-3">
+<div class="col-xs-3 paddingr-zero" align="right">
 <div id="open-close-minicart" class="cart">
 	<a href="javascript:void(0)" class="opener"><span class="count">
 		<?php
 		$_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
 		echo $_cartQty;
 		?>
-	</span>My Cart</a>
+	</span></a>
 	<?php echo $this->getChildHtml('minicart_head'); ?>
 </div>
 </div>
 <?php //echo $this->getChildHtml('topLinks') ?>
+</div>
 </div>
 </header>
