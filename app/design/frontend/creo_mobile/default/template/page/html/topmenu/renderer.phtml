@@ -188,7 +188,7 @@
 } ?>> <a href="javascript:void(0)">CLOTHING</a>
     <div class="drop">
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=3" ?>">Trending</a></li>
@@ -221,40 +221,7 @@ endforeach;
                 </ul>
             </div>
         </div>
-        <div class="featured-items">
-            <div class="heading-holder">
-                <h2>Featured</h2>
-            </div>
-            <ul class="featured-products">
-                <!--		<li>
-                                                                                                <a href="#">
-                                                                                                        <img alt="" src="images/img18.jpg">
-                                                                                                        <span class="title">CLasSIC POLO</span>
-                                                                                                </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                                <a href="#">
-                                                                                                        <img alt="" src="images/img19.jpg">
-                                                                                                        <span class="title">VINTAGE/COOL</span>
-                                                                                                </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                                <a href="#">
-                                                                                                        <img alt="" src="images/img20.jpg">
-                                                                                                        <span class="title">TANK TOPS</span>
-                                                                                                </a>
-                                                                                        </li>-->
-<?php
-$Featured_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
-foreach ($Featured_category as $category):
-    $_category = Mage::getModel('catalog/category')->load($category->getId());
-    if ($_category->featured_category == 1) {
-        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
-    }
-endforeach;
-?>
-            </ul>
-        </div>
+        
     </div>
 </li>
 <li <?php if (in_array("accessories",$parent_cat_array) || $_GET['id']==5) {
@@ -262,7 +229,7 @@ endforeach;
                 } ?>> <a href="javascript:void(0)">ACCESSORIES</a>
     <div class="drop"> 
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=5" ?>">Trending</a></li>
@@ -285,22 +252,7 @@ endforeach;
                 </ul>
             </div>
         </div>
-        <div class="featured-items">
-            <div class="heading-holder">
-                <h2>Featured</h2>
-            </div>
-            <ul class="featured-products">
-                <?php
-                $Featured_category = Mage::getModel('catalog/category')->load('5')->getChildrenCategories();
-                foreach ($Featured_category as $category):
-                    $_category = Mage::getModel('catalog/category')->load($category->getId());
-                    if ($_category->featured_category == 1) {
-                        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
-                    }
-                endforeach;
-                ?>
-            </ul>
-        </div>
+        
 
     </div>
 </li>
@@ -309,7 +261,7 @@ endforeach;
                 } ?>><a href="javascript:void(0)">CAPS</a>
     <div class="drop">
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=54" ?>">Trending</a></li>
@@ -332,22 +284,7 @@ endforeach;
                 </ul>
             </div>
         </div>
-        <div class="featured-items">
-            <div class="heading-holder">
-                <h2>Featured</h2>
-            </div>
-            <ul class="featured-products">
-                <?php
-                $Featured_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
-                foreach ($Featured_category as $category):
-                    $_category = Mage::getModel('catalog/category')->load($category->getId());
-                    if ($_category->featured_category == 1) {
-                        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
-                    }
-                endforeach;
-                ?>
-            </ul>
-        </div>
+        
     </div>
 </li>
 <!--<li <?php if (in_array("categories",$parent_cat_array)) {
@@ -357,7 +294,7 @@ endforeach;
 
     <div class="drop">
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/trending/?id=6" ?>">Trending</a></li>
@@ -392,7 +329,7 @@ endforeach;
                 foreach ($Featured_category as $category):
                     $_category = Mage::getModel('catalog/category')->load($category->getId());
                     if ($_category->featured_category == 1) {
-                        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+                        echo '<li><a href="' . $category->getUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
                     }
                 endforeach;
                 ?>
