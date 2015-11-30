@@ -39,14 +39,17 @@ is_product_details_page = true;
 </script>
 <header id="header" class="row">
 <div class="col-xs-12">
-<div class="sticky-holder">
+<div class="col-xs-3">
+	<?php echo $this->getChildHtml('topMenu') ?>
+</div>
+<div class="col-xs-6">
 	<strong class="logo">
 	<a href="<?php echo Mage::getBaseUrl(); ?>">
 	 <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
 	</a>
 	</strong>
-	<?php echo $this->getChildHtml('topMenu') ?>
 </div>
+<div class="col-xs-3">
 <div id="open-close-minicart" class="cart">
 	<a href="javascript:void(0)" class="opener"><span class="count">
 		<?php
@@ -56,6 +59,7 @@ is_product_details_page = true;
 	</span>My Cart</a>
 	<?php echo $this->getChildHtml('minicart_head'); ?>
 </div>
-<?php echo $this->getChildHtml('topLinks') ?>
+</div>
+<?php //echo $this->getChildHtml('topLinks') ?>
 </div>
 </header>

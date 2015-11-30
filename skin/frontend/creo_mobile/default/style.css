@@ -395,15 +395,9 @@ p.style1 {
 	position: relative;
 	background: #fff;
 }
-#wrapper > .container {
-	padding: 0 30px;
-}
-#header {
-	margin-bottom: 26px;
-	position: relative;
-	z-index: 9999;
-}
-#header:before {
+#wrapper > .container{padding:0;}
+#header {margin-bottom: 26px;position: relative;z-index: 9999;}
+#header:before{
 	display: block;
 	position: absolute;
 	bottom: 0;
@@ -418,7 +412,7 @@ p.style1 {
 	content: '';
 	clear: both;
 }
-.logo {display: block;width: auto;margin:22px 0 16px;max-width:100%;}
+.logo {display: block;width: auto;margin:10px 0 10px;max-width:100%;}
 .logo img {display: block;width: 100%;height: auto;}
 #nav:after {
 	display: block;
