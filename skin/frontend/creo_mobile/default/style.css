@@ -118,12 +118,13 @@ p.style1 { font-family: 'Roboto Condensed', sans-serif; font-size: 19px; color: 
 #header { margin-bottom: 26px; position: relative; z-index: 9999; }
 #header:before { display: block; position: absolute; bottom: 0; left: 15px; right: 15px; background: #eee; height: 1px; content: ''; }
 #header { display: block; content: ''; clear: both; }
+#header .col-xs-12,#header .col-xs-3{position:inherit;}
 .logo { display: block; width: auto; margin: 15px auto; max-width: 100px; }
 .logo img { display: block; width: 100%; height: auto; }
 .main-menu { height: 80px; }
 .main-menu .bgr-icon {font-size:30px;color:#ed5164;padding:6px 8px;border:1px solid #ed5164;top:25px;cursor:pointer;}
-.main-menu .main-menu-content { display: none; position: relative; }
-.main-menu .main-menu-content #nav { position: fixed; top: 88px; left: 0; width: 100%; background-color: #fff; z-index: 555; }
+.main-menu .main-menu-content { display: none;}
+.main-menu .main-menu-content #nav {position:absolute; top: 88px; left: 0; width: 100%; background-color: #fff; z-index: 555; }
 #nav:after { display: block; content: ''; clear: both; }
 #nav ol { margin: 0; padding: 0; list-style: none;/*	letter-spacing: -1px;*/ text-transform: uppercase; font: 15px/21px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #nav ol > li { display: block; margin: 0; }
@@ -707,8 +708,8 @@ font: bold 15px/20px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #nav .drop { text-align: center; text-transform: uppercase; }
 #nav .links-area { display: block; vertical-align: top; text-align: left; }
 #nav .links-area h2 { margin: 0 0 18px; letter-spacing: 0.3px; text-transform: uppercase; color: #222; font: bold 18px/20px "Roboto Condensed", Helvetica, Arial, sans-serif; }
-#nav .links-area .links-frame { overflow: hidden; }
-#nav .links-area .sorting-items { margin: 0 10px 0 0; padding: 0; list-style: none; float: left; width: 80px; font: bold 16px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; }
+#nav .links-area .links-frame { overflow: hidden;padding:10px 15px; }
+#nav .links-area .sorting-items {margin:0 10px 0 0;padding: 0;list-style:none;width:100%; font: bold 16px/18px "Roboto Condensed", Helvetica, Arial, sans-serif;display:block; }
 #nav .links-area .sorting-items li { margin: 0 0 5px; }
 #nav .links-area .sorting-items a { color: #f16a79; }
 #nav .links-area .sorting-items a:hover { color: #000; }
@@ -826,7 +827,7 @@ textarea { background: #fff; border: 1px solid #ddd; display: block; height: 99p
 .two-column-category .col { margin-bottom: 13px; padding: 0 10px; }
 .row.two-column-category { margin: 0 -10px; }
 .two-column-category a { display: block; position: relative; }
-.two-column-category img { display: block; width: 100%; height: 583px; }
+.two-column-category img { display: block; width: 100%; }
 .two-column-category .category-title { position: absolute; top: 0; bottom: 0; right: 0; padding: 0 15px; min-width: 102px; text-align: center; text-transform: uppercase; background: rgba(255, 255, 255, 0.7); color: #000; font: bold 26px/30px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .two-column-category a:hover .category-title { background: #ef4f61; color: #fff; }
 .two-column-category .category-title strong { display: table; width: 100%; }
