@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<!-- <div class="row">
+						<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <?php echo $this->getMessagesBlock()->toHtml() ?>
+							<div class="tab-links">
+								<strong class="user-name"><?php 
+								$user=$this->__(Mage::getSingleton('customer/session')->getCustomer()->getName());
+								echo $user;
+								 ?></strong>
+								<ul class="tabset tabset2">
+									<li class="active"><a href="#tab1"><span>MY ACCOUNT</span></a></li>
+									<li class=""><a href="#tab2"><span>WISHLIST</span></a></li>
+									<li class=""><a href="#tab3"><span>MY ORDERS</span></a></li>
+								</ul>
+							</div>
+							<div class="tab-content2">
+								<div id="tab1" style="display: block;" class="">
+									<h2>MY ACCOUNT</h2>
+									
+										<?php echo $this->getChildHtml('hello') ?>
+                          
+									<h3 class="dark-heading"><span>ACCOUNT INFORMATION</span></h3>
+									<div class="column-holder">
+                           <?php echo $this->getChildHtml('info') ?>
+										
+                              <?php echo $this->getChildHtml('address') ?>
+									
+									</div>
+								</div>
+								<div id="tab2" style="display: none; width: 422px;" class="js-tab-hidden">
+									
+                            <?php echo $this->getChildHtml('wishlist'); ?> 
+									
+									<div class="btn-holder">
+										<a href="#"><span class="span1"><span class="span2">UPDATE WISHLIST</span></span></a>
+										<a href="#">ADD ALL TO CART</a>
+									</div>
+								</div>
+								<div id="tab3" style="display: none; width: 128px;" class="js-tab-hidden">
+								<?php echo $this->getChildHtml('top') ?>
+                           
+								</div>
+							</div>
+						</div>
+					</div>  -->
+
+
+<div class="tab-content2">
+								<div id="tab1">
+<?php ?><div class="dashboard">
+ 
+        <h1><?php echo $this->__('My Dashboard') ?></h1>
+   
+    <?php echo $this->getMessagesBlock()->toHtml() ?>
+    <?php echo $this->getChildHtml('hello') ?>
+    <?php echo $this->getChildHtml('top') ?>
+    <h3 class="dark-heading">
+           <span><?php echo $this->__('Account Information') ?></span></h3>
+       
+       <div class="column-holder">
+       	
+        <?php echo $this->getChildHtml('customer.account.dashboard.extra') ?>
+        <?php echo $this->getChildHtml('info') ?>
+   
+    
+    <?php echo $this->getChildHtml('address') ?>
+    <?php echo $this->getChildHtml('info1') ?>
+    <?php echo $this->getChildHtml('info2') ?>
+</div><?php ?>
+</div>
+</div>
+</div>

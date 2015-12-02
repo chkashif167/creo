@@ -1,0 +1,21 @@
+<?php if(Mage::getStoreConfig('pdp/design/is_filling')){ ?>
+<?php 
+	$colors = Mage::getModel('pdp/color')->getColors();
+?>
+<div class="color_fill_tool">
+	<div class="drag-panel"><span class="pdc-arrows"></span> <?php echo $this->__('DRAG TO MOVE');?> </div>
+	<ul id="color_fill_list" class="color_fill_list">
+		<?php $i = 0; foreach($colors as $color)  :?>
+		 <li><a style="background-color:#<?php echo $color->getColor_code(); ?>; color:#<?php echo $color->getColor_code(); ?>" title="<?php echo $color->getColor_name(); ?>"><!--span class="pdc-brightness-1"></span--></a></li>
+		<?php $i++; endforeach;  ?>
+	</ul>
+<?php if(Mage::getStoreConfig('pdp/design/custom_color')){ ?>
+	<div class="custom_color">
+		<label><?php echo $this->__('Custom color');?></label>
+		<div pdc-data="color" id="pdc_color_picker">
+			<div class="result"></div>
+		</div>
+	</div>
+<?php } ?>
+</div>
+<?php } ?>

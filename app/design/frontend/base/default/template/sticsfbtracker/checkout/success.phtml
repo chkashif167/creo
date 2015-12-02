@@ -1,0 +1,25 @@
+<?php /* @var $this StrongTics_FacebookConversionTracker_Block_Checkout_Success */?>
+<script type="text/javascript">
+    //<![CDATA[
+	(function() {
+	  var _fbq = window._fbq || (window._fbq = []);
+	  if (!_fbq.loaded) {
+		var fbds = document.createElement('script');
+		fbds.async = true;
+		fbds.src = '<?php echo $this->getFacebookScriptSrc();?>';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(fbds, s);
+		_fbq.loaded = true;
+	  }
+	})();
+	window._fbq = window._fbq || [];
+	window._fbq.push(['track', '<?php echo $this-> getCheckoutConversionPixelId(); ?>', {'value':'<?php echo $this->getOrderAmount(); ?>','currency':'<?php echo $this->getStoreCurrency(); ?>'}]);
+	//]]>
+</script>
+<noscript>
+<img height="1" 
+	 width="1" 
+	 alt="" 
+	 style="display:none" 
+	 src="<?php echo $this->getFacebookOffsiteEventSrc();?>?ev=<?php echo $this->getCheckoutConversionPixelId(); ?>&amp;cd[value]=<?php echo $this->getOrderAmount(); ?>&amp;cd[currency]=<?php echo $this->getStoreCurrency(); ?>&amp;noscript=1" />
+</noscript>

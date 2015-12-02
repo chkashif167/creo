@@ -1,0 +1,7 @@
+<layout version="0.1.0">
+	<default>
+		<reference name="after_body_start">
+			<block type="fenomics_gtm/gtmcode" name="google_tag_manager" as="google_tag_manager" template="fenomics/gtm/default.phtml" />
+		</reference>
+	</default>
+</layout>

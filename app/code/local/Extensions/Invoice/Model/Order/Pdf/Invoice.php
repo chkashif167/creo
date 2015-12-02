@@ -24,7 +24,10 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$baseurl =  Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
 			$mediaurl = Mage::getBaseDir('media');
 			$imageLocation = str_replace($baseurl,'',$image);
+<<<<<<< HEAD
 			//echo $imageLocation;die();
+=======
+>>>>>>> a235f36375ebb15bc5e0c5b863501332067f75fb
 			//echo $mediaurl.$imageLocation;die();
 			$image = Zend_Pdf_Image::imageWithPath($imageLocation);
 			$page->drawImage($image, $x1, $y1, $x2, $y2);
@@ -102,6 +105,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 				$productSku = $item->getOrderItem()->getSku();
 				
 				
+<<<<<<< HEAD
 				$_options = $item->getOrderItem()->getProductOptions();
    				$jsonFilename = $_options['info_buyRequest']['extra_options'];
 				if($jsonFilename){
@@ -115,6 +119,13 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 					//print_r($images);die();
 					$image = $images[0]['image'];
 					}
+=======
+				$productModel =Mage::getModel('catalog/product'); 
+				$_prod = $productModel->loadByAttribute('sku', $productSku); 
+				$image = $_prod->getImageUrl();
+				//echo $image;die();
+				
+>>>>>>> a235f36375ebb15bc5e0c5b863501332067f75fb
 				//$image = Mage::getModel('catalog/product')->load($productId);	
 				
                                 $c_options = $item->getOrderItem()->getProductOptions();
