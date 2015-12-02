@@ -350,6 +350,80 @@ endforeach;
         </div>
     </div>
 </li>
+<li <?php if (in_array("clothing",$parent_cat_array) || $_GET['id']==3) {
+    echo'class="active"';
+} ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
+    <div class="drop">
+        <div class="links-area">
+            <h2>MEN &amp; WOMEN</h2>
+            <div class="links-frame">
+                <ul class="sorting-items">
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=3" ?>">Trending</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller/?id=3" ?>">Best Seller</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection/?id=3" ?>">NEW</a></li>
+
+                </ul>
+
+
+ <ul class="links">
+ <li> <strong> Men </strong> </li>
+<?php
+
+$children_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
+foreach ($children_category as $category):
+    $_category = Mage::getModel('catalog/category')->load($category->getId());
+    echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+endforeach;
+?>
+                </ul>
+   <ul class="links">
+   <li> <strong> Women </strong> </li>
+<?php
+$children_category = Mage::getModel('catalog/category')->load('58')->getChildrenCategories();
+foreach ($children_category as $category):
+    $_category = Mage::getModel('catalog/category')->load($category->getId());
+    echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+endforeach;
+?>
+                </ul>
+            </div>
+        </div>
+        <div class="featured-items">
+            <div class="heading-holder">
+                <h2>Featured</h2>
+            </div>
+            <ul class="featured-products">
+                <!--		<li>
+                                                                                                <a href="#">
+                                                                                                        <img alt="" src="images/img18.jpg">
+                                                                                                        <span class="title">CLasSIC POLO</span>
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                                <a href="#">
+                                                                                                        <img alt="" src="images/img19.jpg">
+                                                                                                        <span class="title">VINTAGE/COOL</span>
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                                <a href="#">
+                                                                                                        <img alt="" src="images/img20.jpg">
+                                                                                                        <span class="title">TANK TOPS</span>
+                                                                                                </a>
+                                                                                        </li>-->
+<?php
+$Featured_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
+foreach ($Featured_category as $category):
+    $_category = Mage::getModel('catalog/category')->load($category->getId());
+    if ($_category->featured_category == 1) {
+        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+    }
+endforeach;
+?>
+            </ul>
+        </div>
+    </div>
+</li>
 <!--<li <?php if (in_array("categories",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">CATEGORIES</a>
