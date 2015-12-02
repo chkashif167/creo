@@ -12,13 +12,20 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 {
 	protected function insertImage($image, $x1, $y1, $x2, $y2, $width, $height, &$page)
 	{
-	     if (!is_null($image)) {
+	    //echo $x1.",".$x2."=>".$y1.",".$y2;die();
+		//print_r($image);die();
+		if (!is_null($image)) {
 		try{
 			$width = (int) $width;
 			$height = (int) $height;
 			//echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);			
-			$imageurl = Mage::helper('catalog/image')->init($image, 'small_image');//->keepAspectRatio(true)
-			$imageLocation = substr($imageurl,strlen(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)));
+			//$imageurl = Mage::helper('catalog/image')->init($image, 'small_image');//->keepAspectRatio(true)
+			//$imageLocation = substr($imageurl,strlen(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)));
+			$baseurl =  Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+			$mediaurl = Mage::getBaseDir('media');
+			$imageLocation = str_replace($baseurl,'',$image);
+			//echo $imageLocation;die();
+			//echo $mediaurl.$imageLocation;die();
 			$image = Zend_Pdf_Image::imageWithPath($imageLocation);
 			$page->drawImage($image, $x1, $y1, $x2, $y2);
 		}
@@ -48,7 +55,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$pdf->pages[] = $page;
 			
 			$order = $invoice->getOrder();
-			
+			//print_r($order);die();
 			/* Add image */
 			$this->insertLogo($page, $invoice->getStore());
 			
@@ -89,27 +96,48 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
                                    continue;
 
 				}
-	
-   				/* Draw product image */
+				
+				/* Draw product image */
 				$productId = $item->getOrderItem()->getProductId();
 				$productSku = $item->getOrderItem()->getSku();
-				$image = Mage::getModel('catalog/product')->load($productId);	
+				
+				
+				$_options = $item->getOrderItem()->getProductOptions();
+   				$jsonFilename = $_options['info_buyRequest']['extra_options'];
+				if($jsonFilename){
+					$images = Mage::helper('pdp')->getThumbnailImage($jsonFilename);
+				}
+				if(empty($images)) {
+					$productModel =Mage::getModel('catalog/product'); 
+					$_prod = $productModel->loadByAttribute('sku', $productSku); 
+					$image = $_prod->getImageUrl();
+				}else{
+					//print_r($images);die();
+					$image = $images[0]['image'];
+					}
+				//$image = Mage::getModel('catalog/product')->load($productId);	
+				
                                 $c_options = $item->getOrderItem()->getProductOptions();
-                                if($this->y > 200){
-				/* Draw item */
-				$page = $this->_drawItem($item, $page, $order);
+if($this->y > 200){
+
+				/* Draw item */				
+
+$page = $this->_drawItem($item, $page, $order);
 				$this->_setFontRegular($page, 8);
 				$this->y = $this->y - 60;
 
                                 if($c_options['attributes_info']){
-                                 $size = sizeof($c_options['attributes_info']);
-                                 if($size == 1){
+				$size = sizeof($c_options['attributes_info']);
+                                if($size == 1){
                                    $custom_y1 = $this->y+36;
                                    $custom_y2 = $this->y+117;                                 
                                  }else if($size == 2){
                                    $custom_y1 = $this->y+50;
                                    $custom_y2 = $this->y+129;
-                                 }else{}
+                                 }else{
+									 $custom_y1 = $this->y+64;
+                                   $custom_y2 = $this->y+141;
+									 }
                                 }
                                 else if($c_options['options'] && $c_options['additional_options']){
                                    $custom_y1 = $this->y+35;
@@ -125,6 +153,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
                                 }
 
                                 //x-axis                        //bottom height   //width     //top height
+				//echo $custom_y1.','.$custom_y2;die();
 				$this->insertImage($image, 35, (int)($custom_y1), 95, (int)($custom_y2), $width, $height, $page);				
 				
 				/* Start Barcode */

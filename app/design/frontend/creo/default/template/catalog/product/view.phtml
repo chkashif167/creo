@@ -282,10 +282,39 @@ if($_product->stock_item->is_in_stock == 0){
                                         event: 'over',
                                         effect: 'fade'
                                 });
-                                        jQuery('#ajaxModalTitle').html(data.status);
-                                        jQuery('#ajaxModalContent').html(data.message);
-                                        jQuery('.ajaxAddToCartModal').modal('show');
-                                
+								jQuery('#ajaxModalTitle').html(data.status);
+								jQuery('#ajaxModalContent').html(data.message);
+								jQuery('.ajaxAddToCartModal').modal('show');
+								
+                                        //refresh minicart
+										var data = jQuery('#product_addtocart_form').serialize();
+										data += '&isRefresh=1';
+										try {
+										jQuery.ajax({
+										url: url,
+												dataType: 'json',
+												type : 'post',
+												data: data,
+												success: function(data){
+										if(data.status != "ERROR"){
+										jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+										}
+												if (jQuery('#header-cart')) {
+												/*initialize the minicart dropdown again*/
+												jQuery('#open-close-minicart').openClose({
+												activeClass: 'active',
+														opener: '.opener',
+														slider: '.slide',
+														animSpeed: 400,
+														event: 'over',
+														effect: 'fade'
+												});
+														}
+												}
+										});
+										} catch (e) {
+								}
+										//refresh minicart
 										}
 								}
                         });
@@ -451,7 +480,7 @@ function loadPriceWithAjax()
     if(hasPrice === false) {
         if(!request) {
             //show slider on price
-            jQuery('.price-box .regular-price .price').html(' <span class="loader-price"></span>');
+            //jQuery('.price-box .regular-price .price').html(' <span class="loader-price"></span>');
             // jQuery('.price-box .regular-price .price').hide();
             //console.log(jQuery("[name*='super_attribute']"));
             request = jQuery.post( "<?php echo Mage::getUrl('wts_ajaxpriceloader/ajax/getAssociatedProductPrice/',array('_secure'=>true));?>", jQuery('#product_addtocart_form').serialize())

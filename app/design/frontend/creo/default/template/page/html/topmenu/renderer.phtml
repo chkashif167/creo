@@ -172,6 +172,7 @@
      $parent = Mage::getModel('catalog/category')->load($parentId);
  }
  }
+ $currentUrl = Mage::helper('core/url')->getCurrentUrl()
  //$parentname = $this->getCurrentCategory()->getParentCategory()->getName(); echo $parentname."SHANI"; ?>
  <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
@@ -182,7 +183,7 @@
 <?php
 }
 ?>
-<li <?php if (in_array("clothing",$parent_cat_array)) {
+<li <?php if (in_array("clothing",$parent_cat_array) || $_GET['id']==3) {
     echo'class="active"';
 } ?>> <a href="javascript:void(0)">CLOTHING</a>
     <div class="drop">
@@ -256,7 +257,7 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if (in_array("accessories",$parent_cat_array)) {
+<li <?php if (in_array("accessories",$parent_cat_array) || $_GET['id']==5) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">ACCESSORIES</a>
     <div class="drop"> 
@@ -303,7 +304,7 @@ endforeach;
 
     </div>
 </li>
-<li <?php if(in_array("caps",$parent_cat_array)) {
+<li <?php if(in_array("caps",$parent_cat_array) || $_GET['id']==54) {
                     echo'class="active"';
                 } ?>><a href="javascript:void(0)">CAPS</a>
     <div class="drop">
