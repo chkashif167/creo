@@ -200,23 +200,38 @@ $_helper = $this->helper('catalog/output');
     </div>
 </div>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-<ol>
+
+<div class="design_categories_attributes shipping-methods">
+<h3><span>DESIGN CATEGORIES</span></h3>
+<ul>
     <?php foreach ($_attrbiuteCollection as $a): ?>
-        <li>
+
             <?php if ($a['value']): ?>
+        <li>
 	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
-				<a href="<?php echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>"><?php if ($_img): ?>
+				<a href="<?php // echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>">
+				<?php if ($_img): ?>
                     <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $a['label']; ?>" />
                 <?php endif; ?>
                 
-                <?php echo $a['label']; ?></a>
+                <?php // echo $a['label']; ?></a>
+                
             <?php else: 
 			?>
-            <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a>
-            <?php endif; ?>
+           <?php /*?> <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a><?php */?>
+         
         </li>
+            <?php endif; ?> 
     <?php endforeach ?>
-</ol>
+</ul>
+</div>
+<style>
+.design_categories_attributes {}
+.design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
+.design_categories_attributes ul li { width: 24%; display: inline-block; margin: 0 1% 20px 0;}
+.design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}
+.design_categories_attributes ul li img { width: 100%;}
+
+</style>
 
 
