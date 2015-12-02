@@ -5383,7 +5383,16 @@ dl {margin: 0 0 10px;}
 }
 .category-polo .top-black-bar,
 .category-tshirt .top-black-bar{display: block;}
-
+.category-products h2.cph{position: relative;}
+.category-products h2.cph:before {
+    background: #eee;
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+}
 
 
 
