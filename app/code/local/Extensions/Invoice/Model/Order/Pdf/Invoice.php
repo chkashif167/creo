@@ -54,7 +54,7 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
 			$pdf->pages[] = $page;
 			
 			$order = $invoice->getOrder();
-			
+			//print_r($order);die();
 			/* Add image */
 			$this->insertLogo($page, $invoice->getStore());
 			
@@ -95,17 +95,25 @@ class Extensions_Invoice_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_
                                    continue;
 
 				}
-	
-   				/* Draw product image */
+				
+				/* Draw product image */
 				$productId = $item->getOrderItem()->getProductId();
 				$productSku = $item->getOrderItem()->getSku();
 				
 				
-				$productModel =Mage::getModel('catalog/product'); 
-				$_prod = $productModel->loadByAttribute('sku', $productSku); 
-				$image = $_prod->getImageUrl();
-				//echo $image;die();
-				
+				$_options = $item->getOrderItem()->getProductOptions();
+   				$jsonFilename = $_options['info_buyRequest']['extra_options'];
+				if($jsonFilename){
+					$images = Mage::helper('pdp')->getThumbnailImage($jsonFilename);
+				}
+				if(empty($images)) {
+					$productModel =Mage::getModel('catalog/product'); 
+					$_prod = $productModel->loadByAttribute('sku', $productSku); 
+					$image = $_prod->getImageUrl();
+				}else{
+					//print_r($images);die();
+					$image = $images[0]['image'];
+					}
 				//$image = Mage::getModel('catalog/product')->load($productId);	
 				
                                 $c_options = $item->getOrderItem()->getProductOptions();

@@ -35,8 +35,11 @@
 $_attrbiuteCollection = $this->getLoadedAttributeCollection();
 
 ?>
-
-<ol>
+<div class="cate-drop-holder">
+<span class="search-by">Search By Design</span>
+<div class="cate-drop-frame">
+<a href="javascript:;" class="opener"> View All</a>
+<ul>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
             <?php if ($a['value']): ?>
@@ -47,8 +50,9 @@ $_attrbiuteCollection = $this->getLoadedAttributeCollection();
             <?php endif; ?>
         </li>
     <?php endforeach ?>
-</ol>
-
+</ul>
+</div>
+</div>
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 <?php
