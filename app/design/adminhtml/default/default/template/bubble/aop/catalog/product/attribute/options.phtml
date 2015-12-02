@@ -1,0 +1,258 @@
+<?php
+/**
+ * @category    Bubble
+ * @package     Bubble_AttributeOptionPro
+ * @version     1.1.4
+ * @copyright   Copyright (c) 2015 BubbleShop (https://www.bubbleshop.net)
+ *
+ * @var $this Bubble_AttributeOptionPro_Block_Adminhtml_Catalog_Product_Attribute_Edit_Tab_Options
+ */
+?>
+<div>
+<ul class="messages">
+    <li class="notice-msg">
+        <ul>
+            <li><?php echo Mage::helper('catalog')->__('If you do not specify an option value for a specific store view then the default (Admin) value will be used.') ?></li>
+            <?php if (count($this->getHiddenStoreIds())): ?>
+                <li><?php echo $this->__('The following stores are deliberately hidden: %s.', implode(', ', $this->getHiddenStoresCollection()->toOptionHash())); ?></li>
+                <li><?php echo $this->__('Go to "System > Configuration > Bubble AttributeOptionPro" to display them.'); ?></li>
+            <?php endif; ?>
+        </ul>
+    </li>
+</ul>
+</div>
+
+<div class="entity-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('catalog')->__('Manage Titles (Size, Color, etc.)') ?></h4>
+    </div>
+    <div class="box">
+        <div class="hor-scroll">
+            <table class="dynamic-grid" cellspacing="0" id="attribute-labels-table">
+                <tr>
+                <?php foreach ($this->getStores() as $_store): ?>
+                    <?php if ($this->canShowStore($_store->getId())): ?>
+                        <th><?php echo $_store->getName() ?></th>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                </tr>
+                <tr>
+                    <?php $_labels = $this->getLabelValues() ?>
+                    <?php foreach ($this->getStores() as $_store): ?>
+                    <?php if ($this->canShowStore($_store->getId())): ?>
+                        <td>
+                            <input class="input-text<?php if ($_store->getId() == 0): ?> required-option<?php endif; ?>" type="text" name="frontend_label[<?php echo $_store->getId() ?>]" value="<?php echo $this->htmlEscape($_labels[$_store->getId()]) ?>"<?php if ($this->getReadOnly()): ?> disabled="disabled"<?php endif;?>/>
+                        </td>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<br/>
+<div class="entity-edit" id="matage-options-panel">
+    <div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('catalog')->__('Manage Options (values of your attribute)') ?></h4>
+    </div>
+    <div class="box">
+        <div class="hor-scroll">
+            <table class="dynamic-grid" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr id="attribute-options-table-row">
+                        <?php foreach ($this->getStores() as $_store): ?>
+                            <?php if ($this->canShowStore($_store->getId())): ?>
+                                <th><a href="#" class="sortable" title="<?php echo $this->escapeHtml($this->__('Sort By')); ?>"><?php echo $_store->getName() ?></a></th>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        <th><?php echo Mage::helper('catalog')->__('Position') ?></th>
+                        <th class="nobr a-center"><?php echo Mage::helper('catalog')->__('Is Default') ?></th>
+                        <th class="nobr"><?php echo Mage::helper('catalog')->__('Image') ?></th>
+                        <?php if ($this->helper('bubble_aop')->isAdditionalImageEnabled()): ?>
+                            <th class="nobr"><?php echo Mage::helper('bubble_aop')->__('Additional Image') ?></th>
+                        <?php endif; ?>
+                        <th>
+                            <?php if (!$this->getReadOnly()): ?>
+                                <?php echo $this->getAddNewButtonHtml(); ?>
+                            <?php endif;?>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="attribute-options-tbody">
+                </tbody>
+            </table>
+        </div>
+        <input type="hidden" id="option-count-check" value="" />
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+var optionDefaultInputType = 'radio';
+
+// IE removes quotes from element.innerHTML whenever it thinks they're not needed, which breaks html.
+var templateText =
+'<tr id="item_{{id}}" class="option-row">'+
+<?php foreach ($this->getStores() as $_store): ?>
+    <?php if ($this->canShowStore($_store->getId())): ?>
+        '<td><input name="option[value][{{id}}][<?php echo $_store->getId() ?>]" value="{{store<?php echo $_store->getId() ?>}}" class="input-text<?php if ($_store->getId() == 0): ?> required-option<?php endif; ?>" type="text" <?php if ($this->getReadOnly()): ?> disabled="disabled"<?php endif;?>/><\/td>'+
+    <?php endif; ?>
+<?php endforeach; ?>
+    '<td class="nobr"><input class="input-text input-order" type="text" name="option[order][{{id}}]" value="{{sort_order}}" <?php if ($this->getReadOnly()): ?> disabled="disabled"<?php endif;?> style="width:50px;" />'+
+    '<img src="<?php echo $this->getSkinUrl('images/arrow_sort_move.gif'); ?>" class="move-handler" alt="<?php echo $this->escapeHtml($this->__('Move')); ?>" title="<?php echo $this->escapeHtml($this->__('Move')); ?>" style="cursor:move;margin-left:6px;vertical-align:middle;" /></td>'+
+    '<td class="a-center"><input class="input-radio" type="{{intype}}" name="default[]" value="{{id}}" {{checked}} <?php if ($this->getReadOnly()): ?> disabled="disabled"<?php endif;?> style="width:auto;" /><\/td>'+
+    '<td class="nobr"><input id="option_image_{{id}}" type="text" name="option[image][{{id}}]" value="{{image}}" class="attribute_option_image input-text" style="width:200px;" /><button id="add_image_{{id}}" style="vertical-align:middle;" class="scalable" type="button" onclick="MediabrowserUtility.openDialog(\'<?php echo Mage::getSingleton('adminhtml/url')->getUrl('*/cms_wysiwyg_images/index', array('static_urls_allowed' => 1)) ?>target_element_id/option_image_{{id}}/\');"><span><span>...</span></span></button></td>'+
+    <?php if ($this->helper('bubble_aop')->isAdditionalImageEnabled()): ?>
+        '<td class="nobr"><input id="option_additional_image_{{id}}" type="text" name="option[additional_image][{{id}}]" value="{{additional_image}}" class="attribute_option_image input-text" style="width:200px;" /><button id="add_additional_image_{{id}}" style="vertical-align:middle;" class="scalable" type="button" onclick="MediabrowserUtility.openDialog(\'<?php echo Mage::getSingleton('adminhtml/url')->getUrl('*/cms_wysiwyg_images/index', array('static_urls_allowed' => 1)) ?>target_element_id/option_additional_image_{{id}}/\');"><span><span>...</span></span></button></td>'+
+    <?php endif; ?>
+    '<td class="a-left">'+
+        '<input type="hidden" class="delete-flag" name="option[delete][{{id}}]" value="" />'+
+        <?php if (!$this->getReadOnly()): ?>
+            '<?php echo $this->getDeleteButtonHtml() ?>'+
+        <?php endif;?>
+    '<\/td>'+
+'<\/tr>';
+
+var attributeOption = {
+    table: $('attribute-options-tbody'),
+    templateSyntax: /(^|.|\r|\n)({{(\w+)}})/,
+    templateText: templateText,
+    itemCount: 0,
+    totalItems: 0,
+    timeout: null,
+    add: function(data) {
+        this.template = new Template(this.templateText, this.templateSyntax);
+        if (!data.id) {
+            data = {};
+            data.id  = 'option_'+this.itemCount;
+        }
+        if (!data.intype) {
+            data.intype = optionDefaultInputType;
+        }
+
+        Element.insert(this.table, { top: this.template.evaluate(data) });
+        this.bindRemoveButtons();
+        this.itemCount++;
+        this.totalItems++;
+        this.updateItemsCountField();
+    },
+    onAdd: function(event) {
+        this.add(this);
+        this.initOptionsSorting();
+    },
+    remove: function(event) {
+        var element = $(Event.findElement(event, 'tr')); // !!! Button already
+                                                               // have table parent in safari
+        // Safari workaround
+        element.ancestors().each(function(parentItem) {
+            if (parentItem.hasClassName('option-row')) {
+                element = parentItem;
+                throw $break;
+            } else if (parentItem.hasClassName('box')) {
+                throw $break;
+            }
+        });
+
+        if (element) {
+            var elementFlags = element.getElementsByClassName('delete-flag');
+            if (elementFlags[0]) {
+                elementFlags[0].value = 1;
+            }
+
+            element.addClassName('no-display');
+            element.addClassName('template');
+            element.hide();
+            this.totalItems--;
+            this.updateItemsCountField();
+        }
+    },
+    updateItemsCountField: function() {
+        if (this.totalItems > 0) {
+            $('option-count-check').value = '1';
+        } else {
+            $('option-count-check').value = '';
+        }
+    },
+    bindRemoveButtons: function() {
+        var buttons = $$('.delete-option');
+        for(var i = 0; i < buttons.length; i++) {
+            if (!$(buttons[i]).binded) {
+                $(buttons[i]).binded = true;
+                Event.observe(buttons[i], 'click', this.remove.bind(this));
+            }
+        }
+    },
+    initOptionsSorting: function() {
+        Sortable.create('attribute-options-tbody', {
+            tag: 'tr',
+            elements: $$('#attribute-options-tbody tr'),
+            handles: $$('#attribute-options-tbody td .move-handler'),
+            onUpdate: this.fillRowsOrder
+        });
+    },
+    fillRowsOrder: function() {
+        var i = 1;
+        $$('#attribute-options-tbody .input-order').each(function(input) {
+            if (!input.up('tr').hasClassName('no-display')) {
+                input.value = i++;
+                new Effect.Highlight(input, {
+                    restorecolor: 'white',
+                    duration: 0.4
+                });
+            }
+        });
+    },
+    initSortableColumns: function() {
+        $$('#attribute-options-table-row a.sortable').each(function (col) {
+            Event.observe(col, 'click', this.onColumnClick.bindAsEventListener(this));
+        }.bind(this));
+    },
+    onColumnClick: function(e) {
+        e.stop();
+        var col = e.element().up('th');
+        this.sortTable(col);
+    },
+    sortTable: function(col) {
+        var tbody = $('attribute-options-tbody');
+        var index = $A(col.parentNode.cells).indexOf(col);
+        var order = col.hasClassName('desc') ? 1 : -1;
+        var rows = $A(tbody.rows);
+        rows.sort(function (a, b) {
+            a = a.cells[index].down('input').value;
+            b = b.cells[index].down('input').value;
+            var compare = a < b ? -1 : (a == b ? 0 : 1);
+
+            return order * compare;
+        });
+        rows.each(function (r) {
+            tbody.appendChild(r);
+        });
+        if (col.hasClassName('desc')) {
+            col.removeClassName('desc').addClassName('asc');
+        } else {
+            col.removeClassName('asc').addClassName('desc');
+        }
+        this.fillRowsOrder();
+    }
+}
+
+attributeOption.bindRemoveButtons();
+
+if ($('add_new_option_button')) {
+    Event.observe('add_new_option_button', 'click', attributeOption.onAdd.bind(attributeOption));
+}
+Validation.addAllThese([
+    ['required-option', '<?php echo Mage::helper('catalog')->__('Failed') ?>', function(v) {
+        return !Validation.get('IsEmpty').test(v);
+}]]);
+Validation.addAllThese([
+    ['required-options-count', '<?php echo Mage::helper('catalog')->__('Options is required') ?>', function(v) {
+        return !Validation.get('IsEmpty').test(v);
+}]]);
+<?php foreach ($this->getOptionValues() as $_value): ?>
+    attributeOption.add(<?php echo $_value->toJson() ?>);
+<?php endforeach; ?>
+
+attributeOption.initOptionsSorting();
+attributeOption.initSortableColumns();
+//]]>
+</script>

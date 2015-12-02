@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalog_product_view>
+        <reference name="product.attributes">
+            <action method="setTemplate"><template>bubble/aop/catalog/product/view/attributes.phtml</template></action>
+        </reference>
+    </catalog_product_view>
+</layout>
