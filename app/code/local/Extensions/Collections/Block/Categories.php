@@ -79,7 +79,7 @@ class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
-    public function getLoadedAttributeCollection()
+    protected function getLoadedAttributeCollection()
     {
         return $this->_getAttributeCollection();
     }
@@ -89,7 +89,7 @@ class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
-    public function getLoadedProductCollection()
+    protected function getLoadedProductCollection()
     {
         return $this->_getTrendingProductCollection();
     }
@@ -101,7 +101,7 @@ class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
      */
 	protected function _getTrendingProductCollection()	
     {
-		if (is_null($this->_trendingProductCollection)) {
+		if (is_null($this->_productCollection)) {
 			$productIds = Mage::getStoreConfig('sellers_options/trending'); 
 			$clothingProductIdsArray = explode(',',$productIds['clothing']);
 			$catId = '3';
@@ -117,9 +117,7 @@ class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
 			$this->_productCollection = $collection;
 
 		}
-		
-        return $this->_productCollection;
-      
+        return $this->_productCollection;      
     }
 
 }

@@ -73,24 +73,10 @@ $_helper = $this->helper('catalog/output');
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
                         <div class="list_product_img">
                             <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
-                                <a  rel="nofollow" href="<?php echo Mage::getBaseUrl() . 'quickview/index/view?pid=' . $_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId() ?>"> <span class="quick-view"><i class="icon-search"></i> quick view</span></a>
-                            </a>
                         </div>
                         <div class="text-area">
                             <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
                             <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-
-                            <div class="btn-holder"> 
-            <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                    <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
-                                <?php endif; ?>
-                                <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a> 
-                            </div>
-
-                            <div class="description">
-                                <p><?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                                </p>
-                            </div>
 
                         </div>
                     </li>
@@ -113,7 +99,6 @@ $_helper = $this->helper('catalog/output');
                                 if (jQuery('#header-cart')) {
                                     jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
                                 }
-
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
                                     activeClass: 'active',
@@ -204,23 +189,41 @@ $_helper = $this->helper('catalog/output');
     </div>
 </div>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-<ol>
+<div class="row">
+<div class="col-xs-12">
+<div class="design_categories_attributes shipping-methods">
+<h3><span>DESIGN CATEGORIES</span></h3>
+<ul>
     <?php foreach ($_attrbiuteCollection as $a): ?>
-        <li>
+
             <?php if ($a['value']): ?>
+        <li>
 	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
-				<a href="<?php echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>"><?php if ($_img): ?>
+				<a href="<?php // echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>">
+				<?php if ($_img): ?>
                     <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $a['label']; ?>" />
                 <?php endif; ?>
                 
-                <?php echo $a['label']; ?></a>
+                <?php // echo $a['label']; ?></a>
+                
             <?php else: 
 			?>
-            <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a>
-            <?php endif; ?>
+           <?php /*?> <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a><?php */?>
+         
         </li>
+            <?php endif; ?> 
     <?php endforeach ?>
-</ol>
+</ul>
+</div>
+</div>
+</div>
+<style>
+.design_categories_attributes {}
+.design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
+.design_categories_attributes ul li { width: 24.25%; display: inline-block; margin: 0 1% 16px 0;}
+.design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}
+.design_categories_attributes ul li img { width: 100%;}
+
+</style>
 
 
