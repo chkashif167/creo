@@ -6,5 +6,15 @@ class Extensions_Collections_IndexController extends Mage_Core_Controller_Front_
         $this->loadLayout();    
         $this->renderLayout();      
     }
+    public function MenAction() 
+	{
+        $this->loadLayout();    
+        $this->renderLayout();      
+    }
+    public function WomenAction() 
+	{
+        $this->loadLayout();    
+        $this->renderLayout();      
+    }
 
 }

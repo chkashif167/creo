@@ -77,7 +77,6 @@ $_helper = $this->helper('catalog/output');
                         <div class="text-area">
                             <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
                             <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-
                         </div>
                     </li>
         <?php endforeach; ?>

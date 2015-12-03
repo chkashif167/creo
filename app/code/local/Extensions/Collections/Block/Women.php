@@ -32,7 +32,7 @@
  * @package    Extensions_Collections
  * @author     Jawwad Nissar <jawwad.nissar@progos.org>
  */
-class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
+class Extensions_Collections_Block_Women extends Mage_Core_Block_Template {
 
     /**
      * Default toolbar block name
@@ -93,7 +93,7 @@ class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
     {
         return $this->_getTrendingProductCollection();
     }
-
+	
     /**
      * Retrieve Attribute Collection
      *
@@ -108,14 +108,14 @@ class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
 			$collection = Mage::getModel('catalog/product')
 							->getCollection()
 							->addAttributeToFilter('entity_id', array('in' => $clothingProductIdsArray))
+						->addAttributeToFilter('gender', 25)			
 							->joinField(
 									'category_id', 'catalog/category_product', 'category_id', 
 									'product_id = entity_id', null, 'left'
 								)
 								->addAttributeToSelect('*')
-								->addAttributeToFilter('category_id', array($catId));			
+								->addAttributeToFilter('category_id', array($catId));
 			$this->_productCollection = $collection;
-
 		}
         return $this->_productCollection;      
     }
