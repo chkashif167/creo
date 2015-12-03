@@ -1,16 +1,38 @@
 <?php
 require_once 'app/Mage.php';
 Mage::app();
-$collection = Mage::getResourceModel('catalog/product_collection');
-//->joinField('category_id','catalog/category_product','category_id','product_id=entity_id',null,'left')
-//->addAttributeToFilter('category_id', '22');
-$collection->addAttributeToSelect('*');
-$collection->addAttributeToFilter('universal_categories', '155');
-$collection->addAttributeToFilter('gender', '25');
-//$collection->getSelect()->limit(10);
+
+$productIds = Mage::getStoreConfig('sellers_options/trending'); 
+$clothingProductIdsArray = explode(',',$productIds['clothing']);
+echo "<pre>";
+print_r($clothingProductIdsArray);
+echo "</pre>";
+$catId = '3';
+$collection = Mage::getModel('catalog/product')
+				->getCollection()
+				->addAttributeToFilter('entity_id', array('in' => $clothingProductIdsArray))
+				->addAttributeToFilter('gender',25)			
+				->joinField(
+						'category_id', 'catalog/category_product', 'category_id', 
+						'product_id = entity_id', null, 'left'
+					)
+					->addAttributeToSelect('*')
+					->addAttributeToFilter('category_id', array($catId));
+
 echo "<pre>";
 print_r($collection->getData());
 echo "</pre>";
+
+//$collection = Mage::getResourceModel('catalog/product_collection');
+//->joinField('category_id','catalog/category_product','category_id','product_id=entity_id',null,'left')
+//->addAttributeToFilter('category_id', '22');
+//$collection->addAttributeToSelect('*');
+//$collection->addAttributeToFilter('universal_categories', '155');
+//$collection->addAttributeToFilter('gender', '25');
+//$collection->getSelect()->limit(10);
+//echo "<pre>";
+//print_r($collection->getData());
+//echo "</pre>";
 
 /*
 foreach($collection as $c){
