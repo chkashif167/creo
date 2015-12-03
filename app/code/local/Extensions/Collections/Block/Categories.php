@@ -117,9 +117,7 @@ class Extensions_Collections_Block_Categories extends Mage_Core_Block_Template {
 			$this->_productCollection = $collection;
 
 		}
-		
-        return $this->_productCollection;
-      
+        return $this->_productCollection;      
     }
 
 }
