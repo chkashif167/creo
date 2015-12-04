@@ -5537,8 +5537,11 @@ h3.inline-h span:before{
     overflow: hidden;
     padding: 0;
 }
+.collections-index-men .shipping-methods:before,
+.collections-index-women .shipping-methods:before,
 .collections-index-categories .shipping-methods:before{display: none;}
-
+.carousel-creo.carousel4.trends-carousel .btn-next,
+.carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
 
 
 @media print {
