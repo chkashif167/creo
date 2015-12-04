@@ -73,9 +73,9 @@
 <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
 <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
 </block>
-	<block type="cms/block" name="main_content-bottom">
+	<!-- <block type="cms/block" name="main_content-bottom">
       <action method="setBlockId"><block_id>about-area</block_id></action>
-    </block>
+    </block> -->
 	<!--<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
 	<action method="setData"><name>category_title</name><value>featured_category</value></action>
 	<action method="setData"><name>category_id</name><value>7</value></action>
