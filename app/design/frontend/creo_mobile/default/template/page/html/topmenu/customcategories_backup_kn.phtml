@@ -1,0 +1,47 @@
+progos
+<ul class="nav navmenu-nav floatmenu">
+          <li><a href="<?php echo $this->getUrl('');?>"><span><img src="<?php echo $this->getSkinUrl('images/shelter.png'); ?>" alt=""></span> Home</a></li>
+          <li class="__categories__container">
+               <a href="#" data-id="__categories" class="__dropdown">
+                <span><img src="<?php echo $this->getSkinUrl('images/line-bars.png'); ?>" alt=""></span>
+                Categories
+               </a>
+               <ol class="__categories" id="__categories" style="display:none">
+                    <?php
+                         $_helper = Mage::helper('catalog/category');
+                         $_categories = $_helper->getStoreCategories();
+                         if (count($_categories) > 0){
+                              foreach($_categories as $_category){
+                                   $_category = Mage::getModel('catalog/category')->load($_category->getId());
+                                   $_subcategories = $_category->getChildrenCategories();
+                                   if (count($_subcategories) > 0){
+                    ?>
+                    <li>
+                         <a href="<?php echo $_category->getUrl(); ?>"><?php echo $_category->getName(); ?></a>
+                         <ul class="__sub__categories">
+                    <?php $_category->getId();
+                        foreach($_subcategories as $_subcategory){
+                    ?>
+                        <li><a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a></li>
+                    <?php $_subcategory->getId();
+                        } ?>
+                      </ul>
+                    <?php
+                       }
+                     }
+                    ?>
+                    </li>
+                    <?php
+                         }
+                    ?>
+               </ol>
+          </li>
+         <?php
+          if( $islogedin){
+          ?>
+               <li><a href="<?php echo Mage::getUrl('customer/account/logout'); ?>"><span><i class="fa fa-star-o"></i></span> Logout</a></li>
+         <?php
+          }
+          ?>
+
+  </ul>
