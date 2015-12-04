@@ -56,31 +56,13 @@
 	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
 	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
 	</reference>
-	
 	<reference name="content">
 	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
-	</reference>
-
-  <reference name="content">
-<block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
-    <block type="page/html_topmenu_renderer" name="catalog.topnav.customcategories" template="page/html/topmenu/customcategories.phtml"/>
-</block>
-  </reference>
-	
-	<reference name="content">
-	<block type="cms/block" name="main_content-top">
-      <action method="setBlockId"><block_id>cutomecategories</block_id></action>
-    </block>
-	
-	
 	<!--<block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
     </block>
-	
-	
-	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
-	
-	
+	<block type="clarion_featuredproduct/list_list" name="featuredproducts" 		template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
+<block type="core/template" name="categories" template="page/html/topmenu/customcategories.phtml"/>
 <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
 <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
 <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
@@ -91,8 +73,6 @@
 <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
 <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
 </block>
-	
-	
 	<block type="cms/block" name="main_content-bottom">
       <action method="setBlockId"><block_id>about-area</block_id></action>
     </block>

@@ -1203,3 +1203,7 @@
  
 }
 
+.homepage_navigation_middle {} 
+.homepage_navigation_middle .panel-heading { background: #000; color: #fff; float 100%;} 
+.homepage_navigation_middle .panel-title a { display:inline-block; width: 100%;}
+
