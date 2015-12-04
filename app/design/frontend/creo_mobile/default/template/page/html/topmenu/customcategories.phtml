@@ -40,7 +40,7 @@
         $_subcategories = $_category->getChildrenCategories();
         if (count($_subcategories) > 0){
        foreach($_subcategories as $_subcategory){
-		   ?>
+		 ?>
         <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a>
          <?php $_subcategory->getId();
        }

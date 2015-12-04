@@ -57,14 +57,20 @@
 	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
 	</reference>
 	<reference name="content">
-	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	
+	
+	<block type="cms/block" name="mobilewebsite_top_banner">
+		<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
+		</block> 
+	
+	<!--<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>-->
 	<!--<block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
     </block>
 	<block type="clarion_featuredproduct/list_list" name="featuredproducts" 		template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
 <block type="core/template" name="categories" template="page/html/topmenu/customcategories.phtml"/>
 <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
-<action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+<!--<action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>-->
 <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
 <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
 <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
@@ -73,19 +79,9 @@
 <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
 <!--<block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>-->
 </block>
-	<!--<block type="cms/block" name="main_content-bottom">
-      <action method="setBlockId"><block_id>about-area</block_id></action>
-    </block>-->
-	<!--<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
-	<action method="setData"><name>category_title</name><value>featured_category</value></action>
-	<action method="setData"><name>category_id</name><value>7</value></action>
-	</block>-->
-	
-	<!--<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
-	<action method="setData"><name>title</name><value>Styles</value></action>
-	<action method="setData"><name>category_title</name><value>style_category</value></action>
-	<action method="setData"><name>category_id</name><value>12</value></action>
-	</block>-->
+<block type="cms/block" name="mobilewebsite_bottom_categories">
+		<action method="setBlockId"><block_id>mobilewebsite_bottom_categories</block_id></action>
+		</block> 
 	</reference>
 		
 </cms_index_index>
