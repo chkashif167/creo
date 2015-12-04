@@ -71,8 +71,8 @@
 <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
 <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
 <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
-<!--<block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
-</block>-->
+<!--<block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>-->
+</block>
 	<!--<block type="cms/block" name="main_content-bottom">
       <action method="setBlockId"><block_id>about-area</block_id></action>
     </block>-->
