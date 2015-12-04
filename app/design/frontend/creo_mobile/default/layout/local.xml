@@ -82,6 +82,7 @@
 <block type="cms/block" name="mobilewebsite_bottom_categories">
 		<action method="setBlockId"><block_id>mobilewebsite_bottom_categories</block_id></action>
 		</block> 
+
 	</reference>
 		
 </cms_index_index>
