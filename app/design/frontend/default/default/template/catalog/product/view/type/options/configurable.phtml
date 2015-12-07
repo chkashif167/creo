@@ -1,0 +1,35 @@
+<?php
+/**
+ * @category    Bubble
+ * @package     Bubble_AttributeOptionPro
+ * @version     1.1.4
+ * @copyright   Copyright (c) 2015 BubbleShop (https://www.bubbleshop.net)
+ */
+?>
+<?php
+$_product    = $this->getProduct();
+$_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
+?>
+<?php if ($_product->isSaleable() && count($_attributes)):?>
+    <dl>
+        <?php foreach($_attributes as $_attribute): ?>
+            <?php if ($_img = $this->helper('bubble_aop')->getAttributeImage($_attribute->getProductAttribute())): ?>
+                <dt style="background: url(<?php echo $_img; ?>) no-repeat left center;height: 32px;line-height: 32px;padding: 0 0 0 34px;">
+            <?php else: ?>
+                <dt>
+            <?php endif; ?>
+            <label class="required" style="vertical-align: middle;"><em>*</em>&nbsp;<?php echo $_attribute->getLabel() ?></label>
+            </dt>
+            <dd<?php if ($_attribute->decoratedIsLast){?> class="last"<?php }?>>
+                <div class="input-box">
+                    <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="required-entry super-attribute-select">
+                        <option><?php echo $this->__('Choose an Option...') ?></option>
+                    </select>
+                </div>
+            </dd>
+        <?php endforeach; ?>
+    </dl>
+    <script type="text/javascript">
+        var spConfig = new Product.Config(<?php echo $this->getJsonConfig() ?>);
+    </script>
+<?php endif;?>

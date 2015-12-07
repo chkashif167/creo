@@ -1,0 +1,32 @@
+<?php
+/**
+ * @category    Bubble
+ * @package     Bubble_AttributeOptionPro
+ * @version     1.1.4
+ * @copyright   Copyright (c) 2015 BubbleShop (https://www.bubbleshop.net)
+ */
+?>
+<?php
+/**
+ * Template for filter items block
+ *
+ * @see Mage_Catalog_Block_Layer_Filter_Abstract
+ */
+?>
+<ol>
+    <?php foreach ($this->getItems() as $_item): ?>
+        <li>
+            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($_item->getValue()); ?>
+            <?php if ($_img): ?>
+                <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $_item->getLabel(); ?>" />
+            <?php endif; ?>
+            <?php if ($_item->getCount() > 0): ?>
+                <a href="<?php echo $this->urlEscape($_item->getUrl()); ?>"><?php echo $_item->getLabel(); ?></a>
+            <?php else: echo $_item->getLabel(); ?>
+            <?php endif; ?>
+            <?php if ($this->shouldDisplayProductCount()): ?>
+                (<?php echo $_item->getCount(); ?>)
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>

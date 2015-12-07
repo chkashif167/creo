@@ -188,7 +188,7 @@
 } ?>> <a href="javascript:void(0)">CLOTHING</a>
     <div class="drop">
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=3" ?>">Trending</a></li>
@@ -262,7 +262,7 @@ endforeach;
                 } ?>> <a href="javascript:void(0)">ACCESSORIES</a>
     <div class="drop"> 
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=5" ?>">Trending</a></li>
@@ -309,7 +309,7 @@ endforeach;
                 } ?>><a href="javascript:void(0)">CAPS</a>
     <div class="drop">
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=54" ?>">Trending</a></li>
@@ -350,6 +350,22 @@ endforeach;
         </div>
     </div>
 </li>
+<li <?php if(in_array("collections",$parent_cat_array)) {
+                    echo'class="active"';
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
+    <div class="drop">
+        <div class="links-area">
+            <div class="links-frame">
+ 				<ul class="links">
+ <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>"><strong> Men </strong> </a></li>
+                </ul>
+			    <ul class="links">
+   <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>"><strong> Women </strong> </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
 <!--<li <?php if (in_array("categories",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">CATEGORIES</a>
@@ -357,7 +373,7 @@ endforeach;
 
     <div class="drop">
         <div class="links-area">
-            <h2>MEN &amp; WOMEN</h2>
+           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/trending/?id=6" ?>">Trending</a></li>
