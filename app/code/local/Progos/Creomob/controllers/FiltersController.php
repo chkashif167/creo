@@ -147,8 +147,8 @@ class Progos_Creomob_FiltersController extends Mage_Core_Controller_Front_Action
         $attributeSet_attributes = array(   
             'ClothingMen' => array('universal_categories','tshirt_color','polo_color','size','styles'),
             'ClothingWomen' => array('universal_categories','tshirt_color','polo_color','size','styles'),
-            'ClothingTshirt' => array('universal_categories','gender','size','styles','tshirt_color'),
-            'ClothingPolo' => array('universal_categories','size','polo_color','polo_print_color','gender'),
+            'ClothingTshirt' => array('universal_categories','size','styles','tshirt_color'),
+            'ClothingPolo' => array('universal_categories','size','polo_color','polo_print_color'),
             'CapsMesh' => array('universal_categories','cap_mesh_color'),
             'CapsBacks' => array('universal_categories','cap_snap_color'),
             'AccessoriesCases' => array('universal_categories','acc_phone_model','acc_phone_color',
