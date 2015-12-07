@@ -1206,4 +1206,10 @@
 .homepage_navigation_middle {} 
 .homepage_navigation_middle .panel-heading { background: #000; color: #fff; float 100%;} 
 .homepage_navigation_middle .panel-title a { display:inline-block; width: 100%;}
+.mobilewebsite_top_banner { float: left; width: 100%;}
+.mobilewebsite_top_banner a { float: left; width: 50%;}
+.mobilewebsite_top_banner a img{ width: 100%;}
+.mobilewebsite_bottom_categories { float: left; width: 100%}
+.mobilewebsite_bottom_categories a { float: left; width: 33%}
+.mobilewebsite_bottom_categories a img { width: 100%}
 
