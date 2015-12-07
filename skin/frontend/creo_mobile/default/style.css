@@ -1095,6 +1095,7 @@ dl { margin: 0 0 10px; }
 	padding: 3px 32px 3px;
 }
 .homepage_navigation_middle .panel-collapse a:first-child{border-top: 0;}
+.sorter{overflow: hidden; display: none;}
 .sorter .view-mode {
     overflow: hidden;
     width: 100%;
