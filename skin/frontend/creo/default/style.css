@@ -5383,13 +5383,165 @@ dl {margin: 0 0 10px;}
 }
 .category-polo .top-black-bar,
 .category-tshirt .top-black-bar{display: block;}
-
-
-
-
-
-
-
+.category-products h2.cph{position: relative;}
+.category-products h2.cph:before {
+    background: #eee;
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+}
+.cate-drop-holder:after{
+	display: block;
+	content: '';
+	clear: both;
+}
+.cate-drop-holder{
+	margin: 0 0 10px;
+	text-align: center;
+}
+.cate-drop-holder .search-by {
+    background: #ef4f61;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3px 10px;
+}
+.cate-drop-holder .cate-drop-frame {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin: 0 25px 0 0;
+    position: relative;
+    z-index: 22;
+}
+.cate-drop-holder .cate-drop-frame .opener {
+    border: 1px solid #ccc;
+    color: #222;
+    display: inline-block;
+    font: 13px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0;
+    padding: 0 18px 0 7px;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 130px;
+}
+.cate-drop-holder .cate-drop-frame .opener{text-decoration: none;}
+.cate-drop-holder .cate-drop-frame .opener:before{
+	border-color: #888 transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0;
+    content: "";
+    height: 19px;
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    width: 9px;
+}
+.cate-drop-holder .cate-drop-frame ul {
+    background: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    font: 13px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    left: auto;
+    list-style: outside none none;
+    margin: -1px 0 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    width: 130px;
+}
+.cate-drop-holder .cate-drop-frame:hover ul{display: block;}
+.cate-drop-holder .cate-drop-frame:hover ul a{
+    border-top: 1px solid #ccc;
+    color: #222;
+    display: block;
+    padding: 5px 7px;
+}
+.cate-drop-holder .cate-drop-frame:hover ul a:hover{
+	text-decoration: none;
+	color: #000;
+}
+.cate-drop-holder .cate-drop-frame:hover ul li:first-child a {border:none;}
+.carousel-creo.carousel4.trends-carousel .slide{
+	width: 267px !important;
+	margin: 0 0 0 10px;
+}
+.carousel-creo.carousel4.trends-carousel{border: none;}
+.carousel-creo.carousel4.trends-carousel .slide:first-child{margin: 0;}
+.carousel-creo.carousel4.trends-carousel .slideset{margin-right: -7px;}
+.carousel-creo.carousel4.trends-carousel .slideset::before {
+    background: #fff;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2px;
+    z-index: 22;
+}
+.carousel-creo.carousel4.trends-carousel .text-area {
+    padding: 15px 0 0;
+    position: relative;
+}
+.carousel-creo.carousel4.trends-carousel .text-area h3 {
+    color: #222;
+    float: left;
+    font: 13px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0;
+    text-transform: capitalize;
+    width: 65%;
+}
+.carousel-creo.carousel4.trends-carousel .text-area h3 a{color: #222;}
+.carousel-creo.carousel4.trends-carousel .text-area .price {
+    color: #000;
+    display: block;
+    float: right;
+    font: 15px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0 0 0 2%;
+    text-align: right;
+    width: 33%;
+}
+h3.inline-h{
+    border-color: #eee;
+    border-style: solid;
+    border-width: 0 0 2px;
+    color: #fff;
+    font: 17px/30px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0 0 8px;
+}
+h3.inline-h span{
+	background: #000;
+    display: inline-block;
+    min-width: 150px;
+    padding: 0 15px;
+    position: relative;
+    vertical-align: bottom;
+}
+h3.inline-h span:before{
+	border-color: transparent transparent transparent #000;
+    border-style: solid;
+    border-width: 30px 0 0 6px;
+    content: "";
+    height: 0;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.collections-index-categories .shipping-methods {
+    overflow: hidden;
+    padding: 0;
+}
+.collections-index-men .shipping-methods:before,
+.collections-index-women .shipping-methods:before,
+.collections-index-categories .shipping-methods:before{display: none;}
+.carousel-creo.carousel4.trends-carousel .btn-next,
+.carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
 
 
 @media print {

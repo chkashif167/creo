@@ -37,25 +37,37 @@ is_product_details_page = true;
 }
 ?>
 </script>
-<header id="header" class="row">
-<div class="col-xs-12">
-<div class="sticky-holder">
+<header id="header" class="clearfix">
+<div class="col-xs-12 clearfix">
+<div class="row">
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation">
+<div class="main-menu-content"><?php echo $this->getChildHtml('topMenu') ?></div>
+</nav>
+<div id="disable_view"></div>
+<div class="col-xs-3">
+<div class="main-menu">
+  <a class="navbar-toggle bgr-icon glyphicon glyphicon-align-justify" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"></a>
+</div>
+</div>
+<div class="col-xs-6">
 	<strong class="logo">
 	<a href="<?php echo Mage::getBaseUrl(); ?>">
 	 <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
 	</a>
 	</strong>
-	<?php echo $this->getChildHtml('topMenu') ?>
 </div>
+<div class="col-xs-3 paddingr-zero" align="right">
 <div id="open-close-minicart" class="cart">
 	<a href="javascript:void(0)" class="opener"><span class="count">
 		<?php
 		$_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
 		echo $_cartQty;
 		?>
-	</span>My Cart</a>
+	</span></a>
 	<?php echo $this->getChildHtml('minicart_head'); ?>
 </div>
-<?php echo $this->getChildHtml('topLinks') ?>
+</div>
+<?php //echo $this->getChildHtml('topLinks') ?>
+</div>
 </div>
 </header>
