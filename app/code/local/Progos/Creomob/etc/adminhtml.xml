@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <menu>
-        <creomob_menu1 translate="title" module="progos_creomob">
+        <creomob_menu1 translate="title" module="creomob">
             <title>Creomob</title>
             <sort_order>60</sort_order>
             <children>

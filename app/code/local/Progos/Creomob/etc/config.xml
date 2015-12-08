@@ -32,9 +32,9 @@
             </progos_creomob_setup>
         </resources>
         <helpers>
-            <progos_creomob>
+            <creomob>
                 <class>Progos_Creomob_Helper</class>
-            </progos_creomob>
+            </creomob>
         </helpers>
         <blocks>
             <progos_creomob>

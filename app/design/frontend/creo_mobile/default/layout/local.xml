@@ -92,7 +92,7 @@
   </reference>
  
   <reference name="content">
-  	
+  	<action method="setColumnCount"><count>1</count></action>
     <block type="cms/block" name="footer_contents">
       <action method="setBlockId"><block_id>footer_contents</block_id></action>
     </block>
