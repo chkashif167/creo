@@ -126,6 +126,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                     $product = Mage::getModel('catalog/product')->load($product_id);
                     $image = (string)Mage::helper('catalog/image')->init($product,'small_image');
                     $product_attributes = array();
+                    $attributes = $product->getAttributes();
                     foreach ($attributes as $attribute) {
                     if ($attribute->getIsVisibleOnFront()) {
                             $value = $attribute->getFrontend()->getValue($product);
@@ -144,6 +145,7 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                     $extra['in_stock_qty'] = (int)$product->getStockItem()->getQty();
                     $extra['min_sale_qty'] = $product->getStockItem()->getMinSaleQty();
                     $extra['max_sale_qty'] = $product->getStockItem()->getMaxSaleQty();
+                    $extra['attributes'] = $product_attributes;
                     
                     $extended_items = array_merge((array)$item,$extra);
                     $data['items'][$i] = $extended_items;
