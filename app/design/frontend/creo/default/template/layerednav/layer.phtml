@@ -77,11 +77,11 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                 var abc;
                                 var changeFrom = getQueryVar('universal_categories').toLowerCase();
                                 jQuery('#fme_layered_universal_categories li a').each(function (k, v) {
-                                   var changeid = v.id;
+                                    var changeid = v.id;
                                     var getlastdash = changeid . lastIndexOf('-');
                                     if(getlastdash != '-1'){
-                                            var onlyid = changeid.substr(getlastdash + 1);
-                                    }		
+                                        var onlyid = changeid.substr(getlastdash + 1);
+                                    }
                                     //cat_attrs[k] = onlyid;									
                                     cat_attrs[k] = v.text;
                                     //console.log("+++"+v.text.toLowerCase());
