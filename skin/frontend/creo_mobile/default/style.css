@@ -400,7 +400,8 @@ margin: 0; text-transform: capitalize; color: #222; font: 13px/18px "Roboto Cond
 .options-area .column.size-area a { display: block; min-width: auto !important; width: 16px !important; height: 16px !important; background: #fff; color: #000; border: 1px solid #c2c2c2; text-align: center; font: 10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif; transform: skewX(-15deg); -moz-transform: skewX(-15deg); -ms-transform: skewX(-15deg); -webkit-transform: skewX(-15deg); }
 .options-area .column.size-area li.active a, .options-area .column.size-area li a:hover { text-decoration: none; color: #fff; background: #000; }
 /* single-product-page carousel styles */
-.carousel-creo.carousel3 { position: relative; float: left; width: 390px; margin: 0 30px 0 0; }
+.carousel-creo.carousel3 { position: relative; float: none; width: 100%; margin: 0 0 10px; display: block; }
+.carousel-creo.carousel3 .product-img-box{padding: 0;}
 .carousel-creo.carousel3 .mask { position: relative; overflow: hidden; }
 .carousel-creo.carousel3 .slideset { width: 99999px; float: left; }
 .carousel-creo.carousel3 .slide { float: left; }
@@ -426,7 +427,7 @@ margin: 0; text-transform: capitalize; color: #222; font: 13px/18px "Roboto Cond
 .carousel-creo.carousel4 h4 { margin: 0 0 8px; color: #000; font: 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .carousel-creo.carousel4 .price { display: block; color: #000; font: 18px/24px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .product-detail { padding-top: 10px; padding-bottom: 30px; }
-.product-detail .text-area { overflow: hidden; }
+.product-detail .text-area { overflow: hidden; width: 100%; }
 .product-detail h2 { margin: 0 0 20px; text-transform: uppercase; color: #222; font: 38px/32px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .product-detail .price-area { padding: 10px 50px 10px 0; overflow: hidden; border-width: 1px 0; border-style: solid; border-bottom: none; border-color: #515151; }
 .product-detail .price-area .price { float: left; color: #000; font: 25px/28px "Roboto Condensed", Helvetica, Arial, sans-serif; }
@@ -440,7 +441,7 @@ margin: 0; text-transform: capitalize; color: #222; font: 13px/18px "Roboto Cond
 .add-to-links .link-wishlist { width: 100%; display: block; }
 .add-to-links .link-wishlist:hover:before { border-color: transparent transparent #000; }
 .add-to-links .link-wishlist:hover { border-color: transparent transparent #000; background: #000; color: #fff; }
-.add-to-links .link-wishlist:before, .product-detail .btn-holder a:before { position: absolute; top: -4px; left: -21px; width: 0; height: 0; border-style: solid; border-width: 0 0 36px 17px; border-color: transparent transparent #f16167; content: ''; }
+.add-to-links .link-wishlist:before, .product-detail .btn-holder a:before { position: absolute; top: -4px; left: -20px; width: 0; height: 0; border-style: solid; border-width: 0 0 36px 17px; border-color: transparent transparent #f16167; content: ''; }
 .product-detail .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .product-detail .btn-holder a:first-child:before { display: none; }
 .product-detail .btn-holder a:hover:before { border-color: transparent transparent #000; }
@@ -1117,3 +1118,16 @@ dl { margin: 0 0 10px; }
 }
 .products-grid li.item:hover .btn-holder{display: none;}
 .main{padding: 0 5px;}
+.tab-content .tshirtsize{width: 100% !important;}
+.tab-content .tshirtsize table{border-collapse: collapse;}
+
+
+
+
+
+
+
+
+
+
+

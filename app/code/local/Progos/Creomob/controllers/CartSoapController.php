@@ -125,6 +125,13 @@ class Progos_Creomob_CartSoapController extends Progos_Creomob_SoapController {
                     $product_id = $item->product_id;
                     $product = Mage::getModel('catalog/product')->load($product_id);
                     $image = (string)Mage::helper('catalog/image')->init($product,'small_image');
+                    $product_attributes = array();
+                    foreach ($attributes as $attribute) {
+                    if ($attribute->getIsVisibleOnFront()) {
+                            $value = $attribute->getFrontend()->getValue($product);
+                            $product_attributes[$attribute->getAttributeCode()] = $value;
+                        }
+                    }
 //                    
                     $extra['product_id'] = $product_id;
                     $extra['img'] = $image;
