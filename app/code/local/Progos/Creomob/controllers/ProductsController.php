@@ -328,7 +328,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 $img_to_show = (string)Mage::helper('catalog/image')->init($p2,'small_image');
                 if (isset($parentIds[0])) {
                     $p2 = Mage::getModel('catalog/product')->load($parentIds[0]);
-                }
+                } else continue;
             } else {
                 $img_to_show = (string)Mage::helper('catalog/image')->init($p2,'small_image');
             }
