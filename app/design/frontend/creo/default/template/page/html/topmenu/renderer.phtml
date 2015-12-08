@@ -162,6 +162,7 @@
   </li>
   <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
  <?php 
+ $ccurrentUrl = Mage::helper('core/url')->getCurrentUrl();
  $parent_cat_array = array();
  if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
  $parentId = Mage::registry('current_category')->getParentId();
@@ -350,7 +351,7 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if(in_array("collections",$parent_cat_array)) {
+<li <?php if(strstr($ccurrentUrl,"collections")) {
                     echo'class="active"';
                 } ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
     <div class="drop">
