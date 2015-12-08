@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <creomob_menu1 translate="title" module="creomob">
+            <title>Creomob</title>
+            <sort_order>60</sort_order>
+            <children>
+                <configuration>
+                    <title>Configuration</title>
+                    <sort_order>1</sort_order>
+                    <action>creomob/configuration</action>
+                </configuration>
+                <show>
+                    <title>Show</title>
+                    <sort_order>2</sort_order>
+                    <action>creomob/configuration/show</action>
+                </show>
+            </children>
+        </creomob_menu1>
+    </menu>
+
+</config>
