@@ -2,9 +2,48 @@
 <config>
     <modules>
         <Progos_Creomob>
-            <version>0.1.0</version>    <!-- Version number of your module -->
+            <version>0.1.1</version>    <!-- Version number of your module -->
         </Progos_Creomob>
     </modules>
+    <global>
+        <models>
+            <progos_creomob>
+                <class>Progos_Creomob_Model</class>
+                <resourceModel>progos_creomob_resource</resourceModel>
+            </progos_creomob>
+            <progos_creomob_resource>
+                <class>Progos_Creomob_Model_Resource</class>
+                <entities>
+                    <configuration>
+                        <table>progos_creomob_configuration</table>
+                    </configuration>
+                </entities>
+            </progos_creomob_resource>
+        </models>
+        <resources>
+            <progos_creomob_setup>
+                <setup>
+                    <module>Progos_Creomob</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </progos_creomob_setup>
+        </resources>
+        <helpers>
+            <creomob>
+                <class>Progos_Creomob_Helper</class>
+            </creomob>
+        </helpers>
+        <blocks>
+            <progos_creomob>
+                <configuration>
+                    <class>Progos_Creomob_Block</class>
+                </configuration>
+            </progos_creomob>
+        </blocks>
+    </global>
     <frontend>
         <routers>
             <creomob>
@@ -16,4 +55,15 @@
             </creomob>
         </routers>
     </frontend>
+    <admin>
+        <routers>
+            <creomob>
+                <use>admin</use>
+                <args>
+                    <module>Progos_Creomob</module>
+                    <frontName>creomob</frontName>
+                </args>
+            </creomob>
+        </routers>
+    </admin>
 </config>

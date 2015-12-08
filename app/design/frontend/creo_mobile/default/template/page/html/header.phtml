@@ -40,11 +40,14 @@ is_product_details_page = true;
 <header id="header" class="clearfix">
 <div class="col-xs-12 clearfix">
 <div class="row">
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation">
+<div class="main-menu-content"><?php echo $this->getChildHtml('topMenu') ?></div>
+</nav>
+<div id="disable_view"></div>
 <div class="col-xs-3">
-	<div class="main-menu">
-	<a data-id="main-menu-content" class="bgr-icon glyphicon glyphicon-align-justify"></a>
-	<div id="main-menu-content" class="main-menu-content"><?php echo $this->getChildHtml('topMenu') ?></div>
-	</div>
+<div class="main-menu">
+  <a class="navbar-toggle bgr-icon glyphicon glyphicon-align-justify" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"></a>
+</div>
 </div>
 <div class="col-xs-6">
 	<strong class="logo">

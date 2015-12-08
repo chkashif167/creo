@@ -1,0 +1,108 @@
+<div class="container homepage_navigation_middle">
+  <div class="panel-group" id="accordion">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  href="<?php echo $this->getUrl('');?>">
+          Home</a>
+        </h4>
+      </div>
+  
+    </div>
+		<?php
+        $_helper = Mage::helper('catalog/category');
+        $_categories = $_helper->getStoreCategories();
+        if (count($_categories) > 0){
+			$i  = 0;
+        foreach($_categories as $_category){
+			if(strtolower($_category->getName()) == 'categories'){
+				continue;
+				}
+			$i++;
+        ?>
+      <?php 
+	  
+	  ?>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapse<?php echo $i; ?>">
+		  <?php echo $_category->getName(); ?>
+          </a>
+        </h4>
+      </div>
+      
+      <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse">
+      <?php $_category->getId();
+	   $_category = Mage::getModel('catalog/category')->load($_category->getId());
+        $_subcategories = $_category->getChildrenCategories();
+        if (count($_subcategories) > 0){
+       foreach($_subcategories as $_subcategory){
+		 ?>
+        <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a>
+         <?php $_subcategory->getId();
+       }
+		}
+	    ?>
+      </div>
+      
+     
+    </div>
+    <?php
+          } }
+          ?>
+  </div> 
+</div>
+    
+</body>
+</html>
+
+
+
+
+
+
+<?php /*?><div class="homepage_categories">
+<ul class="root_categories">
+          <li><a href="<?php echo $this->getUrl('');?>"> Home</a></li>
+                    <?php
+                         $_helper = Mage::helper('catalog/category');
+                         $_categories = $_helper->getStoreCategories();
+                         if (count($_categories) > 0){
+                              foreach($_categories as $_category){
+                                   $_category = Mage::getModel('catalog/category')->load($_category->getId());
+                                   $_subcategories = $_category->getChildrenCategories();
+                                   if (count($_subcategories) > 0){
+                    ?>
+                    <li>
+                         <a href="<?php echo $_category->getUrl(); ?>"><?php echo $_category->getName(); ?></a>
+                         <ul class="__sub__categories">
+                    <?php $_category->getId();
+                        foreach($_subcategories as $_subcategory){
+                    ?>
+                        <li><a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a></li>
+                    <?php $_subcategory->getId();
+                        } ?>
+                      </ul>
+                    <?php
+                       }
+                     }
+                    ?>
+                    </li>
+                    <?php
+                         }
+                    ?>
+            
+      
+         <?php
+          if( $islogedin){
+          ?>
+               <li><a href="<?php echo Mage::getUrl('customer/account/logout'); ?>"><span><i class="fa fa-star-o"></i></span> Logout</a></li>
+         <?php
+          }
+          ?>
+
+  </ul>
+  </div><?php */?>

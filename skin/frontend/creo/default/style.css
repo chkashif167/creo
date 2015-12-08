@@ -5467,6 +5467,82 @@ dl {margin: 0 0 10px;}
 	color: #000;
 }
 .cate-drop-holder .cate-drop-frame:hover ul li:first-child a {border:none;}
+.carousel-creo.carousel4.trends-carousel .slide{
+	width: 267px !important;
+	margin: 0 0 0 10px;
+}
+.carousel-creo.carousel4.trends-carousel{border: none;}
+.carousel-creo.carousel4.trends-carousel .slide:first-child{margin: 0;}
+.carousel-creo.carousel4.trends-carousel .slideset{margin-right: -7px;}
+.carousel-creo.carousel4.trends-carousel .slideset::before {
+    background: #fff;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2px;
+    z-index: 22;
+}
+.carousel-creo.carousel4.trends-carousel .text-area {
+    padding: 15px 0 0;
+    position: relative;
+}
+.carousel-creo.carousel4.trends-carousel .text-area h3 {
+    color: #222;
+    float: left;
+    font: 13px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0;
+    text-transform: capitalize;
+    width: 65%;
+}
+.carousel-creo.carousel4.trends-carousel .text-area h3 a{color: #222;}
+.carousel-creo.carousel4.trends-carousel .text-area .price {
+    color: #000;
+    display: block;
+    float: right;
+    font: 15px/18px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0 0 0 2%;
+    text-align: right;
+    width: 33%;
+}
+h3.inline-h{
+    border-color: #eee;
+    border-style: solid;
+    border-width: 0 0 2px;
+    color: #fff;
+    font: 17px/30px "Roboto Condensed",Helvetica,Arial,sans-serif;
+    margin: 0 0 8px;
+}
+h3.inline-h span{
+	background: #000;
+    display: inline-block;
+    min-width: 150px;
+    padding: 0 15px;
+    position: relative;
+    vertical-align: bottom;
+}
+h3.inline-h span:before{
+	border-color: transparent transparent transparent #000;
+    border-style: solid;
+    border-width: 30px 0 0 6px;
+    content: "";
+    height: 0;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.collections-index-categories .shipping-methods {
+    overflow: hidden;
+    padding: 0;
+}
+.collections-index-men .shipping-methods:before,
+.collections-index-women .shipping-methods:before,
+.collections-index-categories .shipping-methods:before{display: none;}
+.carousel-creo.carousel4.trends-carousel .btn-next,
+.carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
+
 
 @media print {
 	.page-print .subtitle {margin-bottom: 99px;}

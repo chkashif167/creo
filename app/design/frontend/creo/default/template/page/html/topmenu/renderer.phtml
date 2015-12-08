@@ -350,9 +350,9 @@ endforeach;
         </div>
     </div>
 </li>
-<li <?php if (in_array("clothing",$parent_cat_array) || $_GET['id']==3) {
-    echo'class="active"';
-} ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
+<li <?php if(in_array("collections",$parent_cat_array)) {
+                    echo'class="active"';
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
     <div class="drop">
         <div class="links-area">
             <div class="links-frame">
