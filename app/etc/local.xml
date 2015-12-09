@@ -41,8 +41,8 @@
             <default_setup>
                 <connection>
                     <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[root123]]></username>
-                    <password><![CDATA[root1]]></password>
+                    <username><![CDATA[root]]></username>
+                    <password><![CDATA[root]]></password>
                     <dbname><![CDATA[creobeta_magedb]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
