@@ -1,17 +1,5 @@
 .gitignore
 .htaccess
-app/etc/local.xml
-cron.php
-cron.sh
-downloader
-errors/
-includes
-index.php
-index.php.sample
-install.php
-LICENSE*
-media php.ini.sample
-RELEASE_NOTES.txt
-robots.txt
+/app/etc/local.xml
 var
 nbproject/private/
