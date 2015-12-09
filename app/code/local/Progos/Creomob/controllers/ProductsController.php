@@ -289,7 +289,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
             }
 
             $helper = Mage::helper('creomob/data');
-             $attributes = $helper->getAttributesFromCategoryId($categoryId);
+            $attributes = $helper->getAttributesFromCategoryId($categoryId);
             
             foreach ($attr_filters_cleaned as $attr_key=>$vals){
                 if(!in_array($attr_key, $attributes)) continue;
