@@ -287,8 +287,12 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                     }
                 }
             }
+
+            $helper = Mage::helper('creomob/data');
+            $attributes = $helper->getAttributesFromCategoryId($categoryId);
             
             foreach ($attr_filters_cleaned as $attr_key=>$vals){
+                if(!in_array($attr_key, $attributes)) continue;
                 if(is_array($vals) && !empty($vals)){
                     $collection->addAttributeToFilter($attr_key, array('in' => $vals));
                 }
@@ -324,7 +328,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
                 $img_to_show = (string)Mage::helper('catalog/image')->init($p2,'small_image');
                 if (isset($parentIds[0])) {
                     $p2 = Mage::getModel('catalog/product')->load($parentIds[0]);
-                }
+                } else continue;
             } else {
                 $img_to_show = (string)Mage::helper('catalog/image')->init($p2,'small_image');
             }

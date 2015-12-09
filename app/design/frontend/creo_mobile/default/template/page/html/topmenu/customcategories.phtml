@@ -1,12 +1,95 @@
-progos
-<ul class="nav navmenu-nav floatmenu">
-          <li><a href="<?php echo $this->getUrl('');?>"><span><img src="<?php echo $this->getSkinUrl('images/shelter.png'); ?>" alt=""></span> Home</a></li>
-          <li class="__categories__container">
-               <a href="#" data-id="__categories" class="__dropdown">
-                <span><img src="<?php echo $this->getSkinUrl('images/line-bars.png'); ?>" alt=""></span>
-                Categories
-               </a>
-               <ol class="__categories" id="__categories" style="display:none">
+<div class="container homepage_navigation_middle">
+  <div class="panel-group" id="accordion">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  href="<?php echo $this->getUrl('');?>">
+          Home</a>
+        </h4>
+      </div>
+  
+    </div>
+		<?php
+        $_helper = Mage::helper('catalog/category');
+        $_categories = $_helper->getStoreCategories();
+        if (count($_categories) > 0){
+			$i  = 0;
+        foreach($_categories as $_category){
+			if(strtolower($_category->getName()) == 'categories'){
+				continue;
+				}
+			$i++;
+        ?>
+      <?php 
+	  
+	  ?>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapse<?php echo $i; ?>">
+		  <?php echo $_category->getName(); ?>
+          </a>
+        </h4>
+      </div>
+      
+      <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse">
+      <?php $_category->getId();
+	   $_category = Mage::getModel('catalog/category')->load($_category->getId());
+        $_subcategories = $_category->getChildrenCategories();
+        if (count($_subcategories) > 0){
+       foreach($_subcategories as $_subcategory){
+		 ?>
+        <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a>
+         <?php $_subcategory->getId();
+       }
+		}
+	    ?>
+      </div>
+      
+     
+    </div>
+    <?php
+	if( $_category->getName() == 'Caps' ){
+	?> 
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapse5">
+		  Collections
+          </a>
+        </h4>
+      </div>
+      
+      <div id="collapse5" class="panel-collapse collapse">
+        <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>">men</a>
+        <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>">women</a>
+      </div>
+      
+     
+    </div>
+    <?php
+		}
+          } }
+          ?>
+          
+	          
+  </div> 
+</div>
+    
+</body>
+</html>
+
+
+
+
+
+
+<?php /*?><div class="homepage_categories">
+<ul class="root_categories">
+          <li><a href="<?php echo $this->getUrl('');?>"> Home</a></li>
                     <?php
                          $_helper = Mage::helper('catalog/category');
                          $_categories = $_helper->getStoreCategories();
@@ -34,8 +117,8 @@ progos
                     <?php
                          }
                     ?>
-               </ol>
-          </li>
+            
+      
          <?php
           if( $islogedin){
           ?>
@@ -45,3 +128,4 @@ progos
           ?>
 
   </ul>
+  </div><?php */?>

@@ -56,8 +56,7 @@
 	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
 	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
 	</reference>
-	
-	<reference name="content">
+	<!-- <reference name="content">
 	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
 	</reference>
 
@@ -65,47 +64,31 @@
 <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
     <block type="page/html_topmenu_renderer" name="catalog.topnav.customcategories" template="page/html/topmenu/customcategories.phtml"/>
 </block>
-</reference>
+</reference> -->
+	<block type="cms/block" name="mobilewebsite_top_banner">
+		<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
+		</block> 
 	
-	<reference name="content">
-	<block type="cms/block" name="main_content-top">
-      <action method="setBlockId"><block_id>cutomecategories</block_id></action>
-    </block>
-	
-	
+	<!--<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>-->
 	<!--<block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
     </block>
-	
-	
-	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
-	
-	
+	<block type="clarion_featuredproduct/list_list" name="featuredproducts" 		template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
+<block type="core/template" name="categories" template="page/html/topmenu/customcategories.phtml"/>
 <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
-<action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
+<!--<action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>-->
 <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
 <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
 <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
 <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
 <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
 <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
-<block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+<!--<block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>-->
 </block>
-	
-	
-	<block type="cms/block" name="main_content-bottom">
-      <action method="setBlockId"><block_id>about-area</block_id></action>
-    </block>
-	<!--<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
-	<action method="setData"><name>category_title</name><value>featured_category</value></action>
-	<action method="setData"><name>category_id</name><value>7</value></action>
-	</block>-->
-	
-	<!--<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
-	<action method="setData"><name>title</name><value>Styles</value></action>
-	<action method="setData"><name>category_title</name><value>style_category</value></action>
-	<action method="setData"><name>category_id</name><value>12</value></action>
-	</block>-->
+<block type="cms/block" name="mobilewebsite_bottom_categories">
+		<action method="setBlockId"><block_id>mobilewebsite_bottom_categories</block_id></action>
+		</block> 
+
 	</reference>
 		
 </cms_index_index>
@@ -115,7 +98,7 @@
   </reference>
  
   <reference name="content">
-  	
+  	<action method="setColumnCount"><count>1</count></action>
     <block type="cms/block" name="footer_contents">
       <action method="setBlockId"><block_id>footer_contents</block_id></action>
     </block>
@@ -131,16 +114,6 @@
   </catalog_product_view>
 
 
-<!--<catalog_category_layered>
-        <reference name="left">
-            <action method="unsetChild"><alias>catalog.leftnav</alias></action>
-        </reference>
-        <reference name="product_list">
-            <action method="insert"><blockName>catalog.leftnav</blockName></action>
-        </reference>
-    </catalog_category_layered> -->
-
-  
    <catalog_product_view> 
   <reference name="product.info.options.wrapper.bottom"> 
    <action method="unsetChild"><name>product.info.sharing</name></action>
@@ -183,39 +156,6 @@
 	 <reference name="my.account.wrapper">
 	 </reference>
 	 <reference name="customer_account_dashboard">
-  <!--<block type="wishlist/customer_wishlist" name="customer.wishlist" as="wishlist" template="wishlist/view.phtml">
-                <action method="setTitle" translate="title">
-                    <title>My Wishlist</title>
-                </action>
-                <block type="wishlist/customer_wishlist_items" name="customer.wishlist.items" as="items" template="wishlist/item/list.phtml">
-                    <block type="wishlist/customer_wishlist_item_column_image" name="customer.wishlist.item.image" template="wishlist/item/column/image.phtml" />
-                    <block type="wishlist/customer_wishlist_item_column_comment" name="customer.wishlist.item.info" template="wishlist/item/column/info.phtml">
-                       <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
-                        <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" /> 
-                    </block>
-                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.quantity" template="wishlist/item/column/quantity.phtml">
-                        <action method="setTitle" translate="title">
-                            <title>Qty</title>
-                        </action>
-                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" /> 
-                    </block>
-                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.price" template="wishlist/item/column/price.phtml">
-                        <action method="setTitle" translate="title">
-                            <title>Price</title>
-                        </action>
-                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
-                    </block>
-                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.cart" template="wishlist/item/column/cart.phtml">
-                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
-                    </block>
-                    <block type="wishlist/customer_wishlist_item_column_remove" name="customer.wishlist.item.remove" template="wishlist/item/column/remove.phtml" />
-                </block>
-                <block type="core/text_list" name="customer.wishlist.buttons" as="control_buttons">
-                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.share" template="wishlist/button/share.phtml" />
-                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.toCart" template="wishlist/button/tocart.phtml" />
-                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
-                </block>
-            </block>-->
     </reference>
  
  </customer_account_index>
