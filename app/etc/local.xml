@@ -41,7 +41,7 @@
             <default_setup>
                 <connection>
                     <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[root1]]></username>
+                    <username><![CDATA[root]]></username>
                     <password><![CDATA[root]]></password>
                     <dbname><![CDATA[creobeta_magedb]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
