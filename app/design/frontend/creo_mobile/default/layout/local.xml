@@ -56,9 +56,15 @@
 	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
 	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
 	</reference>
-	<reference name="content">
-	
-	
+	<!-- <reference name="content">
+	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	</reference>
+
+<reference name="content">
+<block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
+    <block type="page/html_topmenu_renderer" name="catalog.topnav.customcategories" template="page/html/topmenu/customcategories.phtml"/>
+</block>
+</reference> -->
 	<block type="cms/block" name="mobilewebsite_top_banner">
 		<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
 		</block> 
