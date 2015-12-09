@@ -1,6 +1,16 @@
-var/*
+.gitignore
+.htaccess
 app/etc/local.xml
-/nbproject/private/
-app/design/frontend/ecart/default/layout/local.xml
-var/cache/
-var/log/system.log
+cron.php
+cron.sh
+downloader
+errors/
+includes
+index.php
+index.php.sample
+install.php
+LICENSE*
+media php.ini.sample
+RELEASE_NOTES.txt
+robots.txt
+var
