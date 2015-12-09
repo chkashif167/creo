@@ -1120,7 +1120,11 @@ dl { margin: 0 0 10px; }
 .main{padding: 0 5px;}
 .tab-content .tshirtsize{width: 100% !important;}
 .tab-content .tshirtsize table{border-collapse: collapse;}
-
+.category-notebooks #fme_filters_list span,
+.category-cases #fme_filters_list span {
+    display: block;
+    margin: 0 0 10px;
+}
 
 
 
