@@ -61,11 +61,11 @@
 	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
 	</reference>
 
-  <reference name="content">
+<reference name="content">
 <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
     <block type="page/html_topmenu_renderer" name="catalog.topnav.customcategories" template="page/html/topmenu/customcategories.phtml"/>
 </block>
-  </reference>
+</reference>
 	
 	<reference name="content">
 	<block type="cms/block" name="main_content-top">
