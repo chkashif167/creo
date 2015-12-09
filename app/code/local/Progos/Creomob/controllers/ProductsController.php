@@ -292,7 +292,7 @@ class Progos_Creomob_ProductsController extends Mage_Core_Controller_Front_Actio
              $attributes = $helper->getAttributesFromCategoryId($categoryId);
             
             foreach ($attr_filters_cleaned as $attr_key=>$vals){
-                if(!in_array($attr_key, $attributes)){} continue;
+                if(!in_array($attr_key, $attributes)) continue;
                 if(is_array($vals) && !empty($vals)){
                     $collection->addAttributeToFilter($attr_key, array('in' => $vals));
                 }
