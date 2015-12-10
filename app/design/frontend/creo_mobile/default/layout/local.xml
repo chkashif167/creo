@@ -69,11 +69,11 @@
 		<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
 		</block> 
 	
-	<!--<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>-->
-	<!--<block type="cms/block" name="featuredproducts_mid">
+	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	<!-- <block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
-    </block>
-	<block type="clarion_featuredproduct/list_list" name="featuredproducts" 		template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
+    </block> -->
+	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>
 <block type="core/template" name="categories" template="page/html/topmenu/customcategories.phtml"/>
 <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
 <!--<action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>-->

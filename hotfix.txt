@@ -1,0 +1,15 @@
+####Test hotfix complete
+1- git checkout -b hotfix-test-#002 master
+#Edit the files and add the changes
+2- vi test-dev-brnch.txt 
+3- git add .
+4- git commit -m "Test change for hotfox-test#002."
+#Switch to master and pull
+5- git checkout master
+6- git pull
+#Merge the hotfix branch to master
+7- git merge hotfix-test-002
+#Now push, and do remember to repeat the command (5 to 8) for develop branch as well.
+8 git push
+#For branch deletion
+9 git branch -d hotfix-test-002
