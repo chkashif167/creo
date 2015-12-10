@@ -57,8 +57,6 @@
 	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
 	</reference>
 	<reference name="content">
-	
-	
 	<block type="cms/block" name="mobilewebsite_top_banner">
 		<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
 		</block> 
@@ -67,7 +65,7 @@
 	<!-- <block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
     </block> -->
-	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>
+<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>
 <block type="core/template" name="categories" template="page/html/topmenu/customcategories.phtml"/>
 <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
 <!--<action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>-->
@@ -81,8 +79,7 @@
 </block>
 <block type="cms/block" name="mobilewebsite_bottom_categories">
 		<action method="setBlockId"><block_id>mobilewebsite_bottom_categories</block_id></action>
-		</block> 
-
+</block>
 	</reference>
 		
 </cms_index_index>
