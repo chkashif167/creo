@@ -223,4 +223,5 @@ jQuery(document).ready(function($){
        var id = jQuery(this).attr('data-id');
        jQuery("#" + id).slideToggle();
     });
+    jQuery('.data-table').stacktable();
 });

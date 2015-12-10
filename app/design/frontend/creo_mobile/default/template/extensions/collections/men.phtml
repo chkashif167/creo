@@ -35,11 +35,11 @@
 $_attrbiuteCollection = $this->getLoadedAttributeCollection();
 
 ?>
-<div class="cate-drop-holder">
+<div class="cate-drop-holder" id="fme_filters_list">
 <span class="search-by">Search By Design</span>
-<div class="cate-drop-frame">
+<div class="cate-open-close">
 <a href="javascript:;" class="opener"> View All</a>
-<ul>
+<ul class="slide" id="fme_layered_universal_categories">
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
             <?php if ($a['value']): ?>
@@ -70,7 +70,7 @@ $_helper = $this->helper('catalog/output');
             <?php $_iterator = 0; ?>
             <div class="row">
             <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h3 class="inline-h"><span>DESIGN CATEGORIES</span></h3>
+            <h3 class="inline-h"><span>Top Trends</span></h3>
             <div class="carousel-creo carousel4 trends-carousel">
             <div class="mask">
             <div class="slideset" id="products-list">
@@ -232,10 +232,7 @@ $_helper = $this->helper('catalog/output');
 <style>
 .design_categories_attributes {}
 .design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
-.design_categories_attributes ul li { width: 24.25%; display: inline-block; margin: 0 1% 16px 0;}
-.design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}
+.design_categories_attributes ul li { width: 49.45%; display:inline-block; margin: 0 1% 1% 0;vertical-align:top;}
+.design_categories_attributes ul li:nth-child(2n) { margin-right: 0;}
 .design_categories_attributes ul li img { width: 100%;}
-
 </style>
-
-

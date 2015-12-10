@@ -10,6 +10,7 @@
 <action method="addItem"><type>skin_js</type><script>js/jquery.mCustomScrollbar.js</script></action>
 <action method="addItem"><type>skin_js</type><script>bootstrap/js/bootstrap.min.js</script></action>
 <action method="addItem"><type>skin_js</type><name>js/bootstrpjPushMenu.js</name></action>
+<action method="addItem"><type>skin_js</type><name>js/stacktable.js</name></action>
 <action method="addCss"><stylesheet>bootstrap/css/bootstrap.min.css</stylesheet></action>
 <action method="addCss"><stylesheet>style.css</stylesheet></action>
 <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
