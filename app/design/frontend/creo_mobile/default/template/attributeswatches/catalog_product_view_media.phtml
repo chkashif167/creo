@@ -58,42 +58,42 @@ $_zoom_image_height = (int) $_settings['zoom_image_height'];
     jQuery(document).ready(function() {
 <?php
 /* if fancybox plugin is enabled */
-if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
+//if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
     ?>
     
         //<![CDATA[
         // Check if fancybox is actually installed
-            if (jQuery.fancybox != undefined) {
-                jQuery("#main-image-link, a#fancybox-link").on("click", function() {
+           // if (jQuery.fancybox != undefined) {
+                //jQuery("#main-image-link, a#fancybox-link").on("click", function() {
                     //console.debug("sdfsd");
                     /* create array of images */
-                    _images = new Array();
-                    _first_image = jQuery("a#main-image-link").attr("href");
-                    _images.push({
-                        "href": _first_image,
-                        "title": jQuery("a#main-image-link").attr("title")
-                    });
-                    jQuery("#product-gallery-container li.product-image-thumbs").not(".bx-clone, .hidden-gallery-item").find("a.fancybox-gallery").each(function() {
-                        if (jQuery(this).attr("rel") !== _first_image) {
-                            _images.push({
-                                "href": jQuery(this).attr("rel"),
-                                "title": jQuery(this).attr("title")
-                            });
-                        }
-                    });
-                    jQuery.fancybox.open(
-                            _images,
-                            {
-                                "openEffect": "none",
-                                "closeEffect": "none",
-                                "nextEffect": "fade",
-                                "prevEffect": "fade"
-                            });
-                    return false;
-                });
-            }
+                   // _images = new Array();
+                   // _first_image = jQuery("a#main-image-link").attr("href");
+                   // _images.push({
+                    //    "href": _first_image,
+                    //    "title": jQuery("a#main-image-link").attr("title")
+                   // });
+                    //jQuery("#product-gallery-container li.product-image-thumbs").not(".bx-clone, .hidden-gallery-item").find("a.fancybox-gallery").each(function() {
+                        //if (jQuery(this).attr("rel") !== _first_image) {
+                        //    _images.push({
+                          //      "href": jQuery(this).attr("rel"),
+                          //      "title": jQuery(this).attr("title")
+                           // });
+                      // }
+                   // });
+                    //jQuery.fancybox.open(
+                    //        _images,
+                     //       {
+                         //       "openEffect": "none",
+                          //      "closeEffect": "none",
+                          //      "nextEffect": "fade",
+                          //      "prevEffect": "fade"
+                          //  });
+                   // return false;
+               //});
+           // }
     
-<?php endif; ?>
+<?php // endif; ?>
     <?php
 /* if cloudzoom plugin is enabled */
 $_cloudzoom_options = "";
@@ -127,7 +127,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     <div id="product-media-container">
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
         <p class="product-image">
-            <a class="fancybox-main cloud-zoom" id="main-image-link1" href="#<?php /*?><?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_zoom_image_width, $_zoom_image_height); ?><?php */?>" rel="<?php echo $_cloudzoom_options; ?>">
+            <a class="fancybox-main cloud-zoom" id="main-image-link" href="#<?php /*?><?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_zoom_image_width, $_zoom_image_height); ?><?php */?>" rel="<?php echo $_cloudzoom_options; ?>">
         <?php
         $_img = '<img class="cloudzoom" id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
