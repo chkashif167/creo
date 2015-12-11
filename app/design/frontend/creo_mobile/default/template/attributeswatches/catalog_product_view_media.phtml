@@ -58,42 +58,42 @@ $_zoom_image_height = (int) $_settings['zoom_image_height'];
     jQuery(document).ready(function() {
 <?php
 /* if fancybox plugin is enabled */
-//if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
+if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
     ?>
     
         //<![CDATA[
         // Check if fancybox is actually installed
-           // if (jQuery.fancybox != undefined) {
-                //jQuery("#main-image-link, a#fancybox-link").on("click", function() {
+            if (jQuery.fancybox != undefined) {
+                jQuery("#main-image-link, a#fancybox-link").on("click", function() {
                     //console.debug("sdfsd");
                     /* create array of images */
-                   // _images = new Array();
-                   // _first_image = jQuery("a#main-image-link").attr("href");
-                   // _images.push({
-                    //    "href": _first_image,
-                    //    "title": jQuery("a#main-image-link").attr("title")
-                   // });
-                    //jQuery("#product-gallery-container li.product-image-thumbs").not(".bx-clone, .hidden-gallery-item").find("a.fancybox-gallery").each(function() {
-                        //if (jQuery(this).attr("rel") !== _first_image) {
-                        //    _images.push({
-                          //      "href": jQuery(this).attr("rel"),
-                          //      "title": jQuery(this).attr("title")
-                           // });
-                      // }
-                   // });
-                    //jQuery.fancybox.open(
-                    //        _images,
-                     //       {
-                         //       "openEffect": "none",
-                          //      "closeEffect": "none",
-                          //      "nextEffect": "fade",
-                          //      "prevEffect": "fade"
-                          //  });
-                   // return false;
-               //});
-           // }
+                    _images = new Array();
+                    _first_image = jQuery("a#main-image-link").attr("href");
+                    _images.push({
+                        "href": _first_image,
+                        "title": jQuery("a#main-image-link").attr("title")
+                    });
+                    jQuery("#product-gallery-container li.product-image-thumbs").not(".bx-clone, .hidden-gallery-item").find("a.fancybox-gallery").each(function() {
+                        if (jQuery(this).attr("rel") !== _first_image) {
+                            _images.push({
+                                "href": jQuery(this).attr("rel"),
+                                "title": jQuery(this).attr("title")
+                            });
+                        }
+                    });
+                    jQuery.fancybox.open(
+                            _images,
+                            {
+                                "openEffect": "none",
+                                "closeEffect": "none",
+                                "nextEffect": "fade",
+                                "prevEffect": "fade"
+                            });
+                    return false;
+                });
+            }
     
-<?php // endif; ?>
+<?php endif; ?>
     <?php
 /* if cloudzoom plugin is enabled */
 $_cloudzoom_options = "";
