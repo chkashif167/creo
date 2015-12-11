@@ -676,24 +676,6 @@
     font:bold 12px/12px Arial, Helvetica, sans-serif;
     white-space: nowrap;
 }
-.checkout-cart-index .btn-holder .btn-proceed-checkout:before {
-    position: absolute;
-    top: -4px;
-    left: -22px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 42px 20px;
-    border-color: transparent transparent #000;
-    content: '';
-}
-.checkout-cart-index .btn-holder .btn-proceed-checkout:hover:before { border-color: transparent transparent #f16167; }
-.checkout-cart-index .btn-holder .btn-proceed-checkout:hover {
-    background: #f16167;
-    color: #000;
-    border-color: #f16167;
-    text-decoration: none;
-}
 .checkoutshipingaddressState { position: static; width: 100%; left:0;} 
 .billingadressselect { position: static; width: 100%;} 
 .checkoutshippingslectboxes select {  position: static; width: 100%;}
