@@ -422,7 +422,7 @@ margin: 0; text-transform: capitalize; color: #222; font: 13px/18px "Roboto Cond
 .carousel-creo.carousel4 .slide img { display: block; width: 100%; height: auto; }
 .carousel-creo.carousel4 .btn-next, .carousel-creo.carousel4 .btn-prev { position: absolute; top: 30%; left: 0; width: 40px; height: 40px; line-height: 40px; font-size: 22px; text-align: center; color: #404040; }
 .carousel-creo.carousel4 .btn-next { left: auto; right: 0; }
-.carousel-creo.carousel4 .btn-next:hover, .carousel-creo.carousel4 .btn-prev:hover { text-decoration: none; background: #000; color: #fff; }
+.carousel-creo.carousel4 .btn-next:hover, .carousel-creo.carousel4 .btn-prev:hover {text-decoration:none;background:#000;color:#fff;}
 .carousel-creo.carousel4 .product-descr { overflow: hidden; padding: 8px 0 0; }
 .carousel-creo.carousel4 h4 { margin: 0 0 8px; color: #000; font: 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .carousel-creo.carousel4 .price { display: block; color: #000; font: 18px/24px "Roboto Condensed", Helvetica, Arial, sans-serif;
