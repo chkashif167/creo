@@ -62,7 +62,7 @@
 		<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
 		</block> 
 	
-	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	<!--<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>-->
 	<!-- <block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
     </block> -->
