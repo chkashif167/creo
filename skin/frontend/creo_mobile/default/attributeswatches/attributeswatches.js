@@ -251,7 +251,7 @@ jQuery(document).ready(function() {
         jQuery("a#main-image-link").attr("href", jQuery(this).attr("rel"));
         jQuery("a#main-image-link img#image").attr("alt", jQuery(this).attr("title"));
         jQuery("a#main-image-link img#image").attr("title", jQuery(this).attr("title"));
-       // jQuery("a#main-image-link img#image").attr("src", jQuery(this).attr("href"));
+        jQuery("a#main-image-link img#image").attr("src", jQuery(this).attr("href"));
         if (jQuery.fn.CloudZoom !== undefined) {
             jQuery('#main-image-link').CloudZoom();
         }
