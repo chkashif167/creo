@@ -73,7 +73,7 @@ $_helper = $this->helper('catalog/output');
             <h3 class="inline-h"><span>DESIGN CATEGORIES</span></h3>
             <div class="carousel-creo carousel4 trends-carousel">
             <div class="mask">
-            <div class="slideset" id="products-list">
+            <div class="slideset products-grid" id="products-list">
             <!-- <ol class="products-list products-grid" id="products-list"> -->
             <?php foreach ($_productCollection as $_product): ?>
                     <div class="slide item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
@@ -83,7 +83,12 @@ $_helper = $this->helper('catalog/output');
                         <div class="text-area">
                             <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
                             <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-
+                            <div class="btn-holder">
+                            <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                    <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
+                                <?php endif; ?>
+                                <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a> 
+                            </div>
                         </div>
                     </div>
         <?php endforeach; ?>

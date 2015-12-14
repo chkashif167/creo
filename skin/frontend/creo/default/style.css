@@ -1696,7 +1696,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	padding: 0;
 	list-style: none;
 	width: 102%;
-	letter-spacing: -4px;
+	letter-spacing: -0.5px;
 }
 .products-grid li{
 	display: inline-block;
