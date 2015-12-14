@@ -1159,8 +1159,8 @@ border-color: transparent transparent transparent #000;
 .st-head-row.st-head-row-main {font-size:1.5em; padding-top:0;background-color:#000;color: #fff;line-height:1;margin:0;padding:10px;}
 .st-key { width: 49%; text-align: right; padding-right: 1%; }
 .st-val { width: 49%; padding-left: 1%; }
-
-
+.pdc-design-view .buttons{position:relative;top:0;right:0;}
+.pdp-style .carousel-creo.carousel3{width:100%;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only { display: table; }
 .stacktable.small-only { display: none; }
