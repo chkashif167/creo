@@ -209,6 +209,13 @@ $_helper = $this->helper('catalog/output');
     <?php foreach ($_attrbiuteCollection as $a): ?>
 
             <?php if ($a['value']): ?>
+            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
+            <?php
+			$imgurl =  $this->escapeHtml($_img);
+			if(!$_img){
+				continue;
+				}
+			?>
         <li>
 	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
 				<a href="<?php // echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>">
@@ -229,10 +236,3 @@ $_helper = $this->helper('catalog/output');
 </div>
 </div>
 </div>
-<style>
-.design_categories_attributes {}
-.design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
-.design_categories_attributes ul li { width: 49.45%; display:inline-block; margin: 0 1% 1% 0;vertical-align:top;}
-.design_categories_attributes ul li:nth-child(2n) { margin-right: 0;}
-.design_categories_attributes ul li img { width: 100%;}
-</style>

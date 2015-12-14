@@ -208,6 +208,17 @@ $_helper = $this->helper('catalog/output');
     <?php foreach ($_attrbiuteCollection as $a): ?>
 
             <?php if ($a['value']): ?>
+            
+            
+            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
+            <?php
+			$imgurl =  $this->escapeHtml($_img);
+			if(!$_img){
+				continue;
+				}
+			?>
+            
+            
         <li>
 	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
 				<a href="<?php // echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>">
