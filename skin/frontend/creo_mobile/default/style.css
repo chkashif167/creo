@@ -420,7 +420,8 @@ margin: 0; text-transform: capitalize; color: #222; font: 13px/18px "Roboto Cond
 .carousel-creo.carousel4 .slide { width: 180px !important; margin: 0 0 0 10px; float: left; }
 .carousel-creo.carousel4 .slide:first-child { margin-left: 0; }
 .carousel-creo.carousel4 .slide img { display: block; width: 100%; height: auto; }
-.carousel-creo.carousel4 .btn-next, .carousel-creo.carousel4 .btn-prev { position: absolute; top: 30%; left: 0; width: 40px; height: 40px; line-height: 40px; font-size: 22px; text-align: center; color: #404040; }
+.carousel-creo.carousel4 .btn-next, .carousel-creo.carousel4 .btn-prev { position: absolute; top: 30%; left: 0; width: 40px; height: 40px;
+line-height: 40px; font-size: 22px; text-align: center;color:#404040;z-index:999;}
 .carousel-creo.carousel4 .btn-next { left: auto; right: 0; }
 .carousel-creo.carousel4 .btn-next:hover, .carousel-creo.carousel4 .btn-prev:hover {text-decoration:none;background:#000;color:#fff;}
 .carousel-creo.carousel4 .product-descr { overflow: hidden; padding: 8px 0 0; }
@@ -1006,16 +1007,17 @@ dl:after { display: block; clear: both; content: ''; }
 #fme_filters_list { text-align: center; }
 .gender-filter-area { display: inline-block; vertical-align: middle;margin-top:10px; }
 dl { margin: 0 0 10px; }
-.credit-card ul.inner-form { padding: 0 15px; }
-.credit-card > li { margin-bottom: 0; }
+.credit-card ul.inner-form{padding:0 15px;}
+.credit-card > li{margin-bottom:0;}
 .fme_loading_filters { z-index: 9999 !important; }
 .attributeItem.fake-select-custom { width: 100%; margin: 0; }
-.attributeItem.fake-select-custom:first-child { margin-right: 8%; width: 40%; }
+.attributeItem.fake-select-custom:first-child { margin-right:8%;width:40%; }
 .attributeItem.fake-select-custom .input-box select, .bulk-order-form select { width: 100%; }
 #header .header-icons { display: block; height: auto; position: absolute; right: 112px; top: 6px; width: 56%; }
 #nav ol > li:last-child { background: #ef4f61; }
 #nav ol > li:last-child a { color: #fff; }
-#nav ol > li.active:last-child > a:before, #nav ol > li:last-child:hover > a:before { left: -6px; right: 6px; background: #000; border: none; height: 5px; }
+#nav ol > li.active:last-child > a:before, #nav ol > li:last-child:hover > a:before{left:-6px;right:6px;background:#000; border: none;
+height:5px;}
 .add-to-links { bottom: 10px; clear: both; padding: 0; position: absolute; right: 0; text-align: center; width: 10.5%; }
 .outofstockclass .add-to-links { bottom: auto; margin-right: 15px; margin-top: -39px; }
 .product-options-bottom::after { clear: both; content: ""; display: block; }

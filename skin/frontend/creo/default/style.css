@@ -2179,6 +2179,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	font-size: 22px;
 	text-align: center;
 	color: #404040;
+	z-index:999;
 }
 .carousel-creo.carousel4 .btn-next{
 	left: auto;
@@ -5468,7 +5469,7 @@ dl {margin: 0 0 10px;}
 }
 .cate-drop-holder .cate-drop-frame:hover ul li:first-child a {border:none;}
 .carousel-creo.carousel4.trends-carousel .slide{
-	width: 267px !important;
+	width: 268px !important;
 	margin: 0 0 0 10px;
 }
 .carousel-creo.carousel4.trends-carousel{border: none;}
