@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Grid  extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersGrid
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+<config>
+    <menu>
+         <sales>
+            <children>
+                <order>
+                    <depends>
+                        <config>mageworx_ordersmanagement/ordersgrid/enabled_menu_orders</config>
+                    </depends>
+                </order>
+                <mageworx_ordersgrid translate="title" module="mageworx_ordersgrid">
+                    <title>Extended Orders</title>
+                    <action>adminhtml/sales_order</action>                        
+                    <depends>
+                        <config>mageworx_ordersmanagement/ordersgrid/enabled</config>
+                    </depends>
+                    <sort_order>11</sort_order>
+                </mageworx_ordersgrid>
+            </children>
+         </sales>         
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <mageworx_ordersgrid translate="title" module="mageworx_ordersgrid">
+                                <title>Extended Orders</title>
+                                <children>
+                                    <actions translate="title">
+                                        <title>Actions</title>
+                                        <children>
+                                            <invoice translate="title"><title>Invoice</title></invoice>
+                                            <ship translate="title"><title>Ship</title></ship>
+                                            <invoice_and_ship translate="title"><title>Invoice+Ship</title></invoice_and_ship>
+                                            <archive translate="title"><title>Archive</title></archive>
+                                            <delete translate="title"><title>Delete</title></delete>
+                                            <delete_completely translate="title"><title>Delete Completely</title></delete_completely>
+                                        </children>
+                                    </actions>
+                                </children>
+                                <sort_order>10</sort_order>
+                            </mageworx_ordersgrid>
+                        </children>
+                    </sales>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mageworx_ordersmanagement translate="title" module="mageworx_ordersgrid">
+                                        <title>MageWorx &gt; Order Management</title>
+                                        <sort_order>600</sort_order>
+                                        <children>
+                                            <ordersgrid translate="title" module="mageworx_ordersgrid">
+                                                <title>Admin Order Grid</title>
+                                            </ordersgrid>
+                                        </children>
+                                    </mageworx_ordersmanagement>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

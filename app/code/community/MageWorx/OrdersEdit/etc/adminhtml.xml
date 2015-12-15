@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mageworx_ordersmanagement translate="title" module="mageworx_ordersedit">
+                                        <title>MageWorx &gt; Order Management</title>
+                                        <sort_order>600</sort_order>
+                                        <children>
+                                            <ordersedit translate="title" module="mageworx_ordersedit">
+                                                <title>Admin Order Editor</title>
+                                            </ordersedit>
+                                        </children>
+                                    </mageworx_ordersmanagement>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <sales>
+                        <children>
+                            <mageworx_ordersedit translate="title" module="mageworx_ordersedit">
+                                <title>Edit Orders</title>
+                                <sort_order>10</sort_order>
+                            </mageworx_ordersedit>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

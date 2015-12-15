@@ -122,7 +122,6 @@
 .subtotal .price {
     color: #000 !important;
     display: inline-block;
-    font: bold 33px/35px "Roboto Condensed", Helvetica, Arial, sans-serif;
     font-weight: bold !important;
     font-size: 32px !important;
 }
@@ -596,13 +595,7 @@
 .checkout-cart-index .subtotal .price {
     font-size: 15px !important;
 }
-.cart-btn-area .btn-holder {
-    overflow: hidden;
-    text-align: center;
-    float: right;
-    max-width: 48%;
-    margin: 15px 0;
-}
+.cart-btn-area .btn-holder{overflow:hidden;text-align:center;float:none;max-width:100%;margin:10px 0;display:block;}
 .cart-btn-area .btn-holder .button2 {
     display: inline-block;
     vertical-align: top;
@@ -667,32 +660,14 @@
     display: inline-block;
     vertical-align: top;
     padding: 6px;
-    border: 2px solid #000;
+    border:0px solid #000;
     background: #000;
     text-transform: uppercase;
     text-align: center;
     color: #fff;
     position: relative;
-    font:bold 12px/12px Arial, Helvetica, sans-serif;
     white-space: nowrap;
-}
-.checkout-cart-index .btn-holder .btn-proceed-checkout:before {
-    position: absolute;
-    top: -4px;
-    left: -22px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 42px 20px;
-    border-color: transparent transparent #000;
-    content: '';
-}
-.checkout-cart-index .btn-holder .btn-proceed-checkout:hover:before { border-color: transparent transparent #f16167; }
-.checkout-cart-index .btn-holder .btn-proceed-checkout:hover {
-    background: #f16167;
-    color: #000;
-    border-color: #f16167;
-    text-decoration: none;
+    width:49%;
 }
 .checkoutshipingaddressState { position: static; width: 100%; left:0;} 
 .billingadressselect { position: static; width: 100%;} 
@@ -1010,16 +985,8 @@
 .tab-content p {
     font: 14px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
-
-.page-header.checkout-form-headings {
-    margin-top:9px;
-}
-
-
-.page-header.checkout-form-headings > h1 {
-    margin-top:0;
-}
-
+.page-header.checkout-form-headings {margin-top:0px;border:0;}
+.page-header.checkout-form-headings > h1 {margin-top:0;}
 .pagination.paginationlistpage { display: none;}
 
 /*.jconfirm white, .jconfirm-box-container.span6.offset3.col-md-5.col-md-offset-3 {
@@ -1202,6 +1169,12 @@
     height: 32px !important;
  
 }
+
+.design_categories_attributes {}
+.design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
+.design_categories_attributes ul li { width: 24.25%; display: inline-block; margin: 0 1% 16px 0;}
+.design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}
+.design_categories_attributes ul li img { width: 100%;}
 
 .homepage_navigation_middle {} 
 .homepage_navigation_middle .panel-heading { background: #000; color: #fff; float 100%;} 
