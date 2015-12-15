@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+<layout>    
+    <adminhtml_sales_order_view>
+        <reference name="head">
+            <action method="addCss" ifconfig="mageworx_ordersmanagement/ordersedit/enabled"><name>css/mageworx/ordersedit/styles.css</name></action>
+
+            <action method="addItem" ifconfig="mageworx_ordersmanagement/ordersedit/show_thumbnails"><type>js_css</type><name>mageworx/lightbox/css/lightbox.css</name><params/></action>
+            <action method="addItem" ifconfig="mageworx_ordersmanagement/ordersedit/show_thumbnails"><type>js_css</type><name>mageworx/lightbox/css/lightbox-ie.css</name><params/><if>lt IE 8</if></action>
+            <action method="addItem" ifconfig="mageworx_ordersmanagement/ordersedit/show_thumbnails"><type>js</type><name>mageworx/lightbox/js/lightbox.js</name><params/><if/></action>
+
+            <action method="addItem"><type>js</type><name>mageworx/ordersedit/order_edit.js</name><params/><if/></action>
+
+            <action method="addJs"><file>mage/adminhtml/product/composite/configure.js</file></action>
+            <action method="addJs"><file>varien/configurable.js</file></action>
+        </reference>
+
+        <!--  Replace standard "Order History" block  -->
+        <block type="mageworx_ordersedit/adminhtml_sales_order_history" name="order_history" template="mageworx/ordersedit/sales-order-view-history.phtml" />
+        <reference name="order_tab_info">
+            <action method="unsetChild"><name>order_history</name></action>
+            <action method="append"><block>order_history</block></action>
+        </reference>
+        <!--//  Replace standard "Order History" block  -->
+
+        <reference name="order_items">
+            <action method="addColumnRender" ifconfig="mageworx_ordersmanagement/ordersedit/show_thumbnails"><column>name</column><block>adminhtml/sales_items_column_name</block><template>mageworx/ordersedit/sales-items-column-name.phtml</template></action>
+            <action method="addColumnRender" ifconfig="mageworx_ordersmanagement/ordersedit/show_thumbnails"><column>name</column><block>adminhtml/sales_items_column_name_grouped</block><template>mageworx/ordersedit/sales-items-column-name.phtml</template><type>grouped</type></action>
+        </reference>
+
+        <reference name="content">
+            <block type="mageworx_ordersedit/adminhtml_sales_order_edit_wrapper" name="oredrspro_js" template="mageworx/ordersedit/edit/wrapper.phtml" />
+        </reference>
+
+    </adminhtml_sales_order_view>
+
+    <mageworx_ordersedit_order_history>
+        <block type="mageworx_ordersedit/adminhtml_sales_order_history" name="order_history" template="mageworx/ordersedit/sales-order-view-history.phtml" output="toHtml"/>
+    </mageworx_ordersedit_order_history>
+    
+    <adminhtml_mageworx_ordersedit_history_addcomment>
+        <update handle="mageworx_ordersedit_order_history" />
+    </adminhtml_mageworx_ordersedit_history_addcomment>
+    
+    <adminhtml_mageworx_ordersedit_history_deletehistory>
+        <update handle="mageworx_ordersedit_order_history" />
+    </adminhtml_mageworx_ordersedit_history_deletehistory>
+
+    <adminhtml_mageworx_ordersedit_history_saveeditcomment>
+        <update handle="mageworx_ordersedit_order_history" />
+    </adminhtml_mageworx_ordersedit_history_saveeditcomment>
+    
+    <adminhtml_sales_order_invoice_new>
+        <reference name="invoice_totals">
+            <block type="adminhtml/sales_order_totals_item" name="ordersedit" template="mageworx/ordersedit/invoice_totals.phtml" />
+        </reference>
+    </adminhtml_sales_order_invoice_new>
+</layout>

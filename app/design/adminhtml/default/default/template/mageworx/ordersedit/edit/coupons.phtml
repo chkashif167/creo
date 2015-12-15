@@ -1,0 +1,16 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+?>
+<div class="content">
+    <p><input type="text" class="input-text" id="coupons:code" value="" name="coupon_code" style="width:200px" /> </p>
+    <?php if($this->getCouponCode()): ?>
+        <p><strong><?php echo $this->escapeHtml($this->getCouponCode()) ?></strong> [<a href="#" onclick="orderEdit.removeCoupon(); return false;" title="<?php echo Mage::helper('sales')->__('Remove Coupon Code') ?>"><?php echo Mage::helper('sales')->__('Remove') ?></a>]</p>
+    <?php endif; ?>
+</div>

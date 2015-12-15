@@ -1,0 +1,24 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+?>
+<div class="box-left mw_coupons">
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-coupons"><?php echo $this->__('Coupon Code') ?></h4>
+        </div>
+        <fieldset class="">
+            <div class="content">
+                <?php if($this->getCouponCode()): ?>
+                    <p><strong><?php echo $this->escapeHtml($this->getCouponCode()) ?></strong></p>
+                <?php endif; ?>
+            </div>
+        </fieldset>
+    </div>
+</div>
