@@ -1010,9 +1010,9 @@ dl { margin: 0 0 10px; }
 .attributeItem.fake-select-custom:first-child { margin-right:8%;width:40%; }
 .attributeItem.fake-select-custom .input-box select, .bulk-order-form select { width: 100%; }
 #header .header-icons { display: block; height: auto; position: absolute; right: 112px; top: 6px; width: 56%; }
-#nav ol > li:last-child { background: #ef4f61; }
-#nav ol > li:last-child a { color: #fff; }
-#nav ol > li.active:last-child > a:before, #nav ol > li:last-child:hover > a:before{left:-6px;right:6px;background:#000; border: none;
+#nav ol > li.create_li { background: #ef4f61; }
+#nav ol > li.create_li a { color: #fff; }
+#nav ol > li.create_li.active > a:before, #nav ol > li:last-child:hover > a:before{left:-6px;right:6px;background:#000; border: none;
 height:5px;}
 .add-to-links { bottom: 10px; clear: both; padding: 0; position: absolute; right: 0; text-align: center; width: 10.5%; }
 .outofstockclass .add-to-links { bottom: auto; margin-right: 15px; margin-top: -39px; }
