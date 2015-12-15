@@ -44,7 +44,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title" >
-          <a data-toggle="collapse" data-parent="#footer-accordion" href="#collapse7"><?php  echo $customer->getTitle(); ?></a>
+          <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse7"><?php  echo $customer->getTitle(); ?></a>
         </h4>
       </div>
       <div id="collapse7" class="panel-collapse collapse">
@@ -56,7 +56,7 @@
     <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#footer-accordion" href="#collapse8"><?php  echo $acount->getTitle(); ?></a>
+          <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse8"><?php  echo $acount->getTitle(); ?></a>
         </h4>
       </div>
       <div id="collapse8" class="panel-collapse collapse">
@@ -68,7 +68,8 @@
 <?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#footer-accordion" href="#collapse9"><?php  echo $about->getTitle(); ?></a>
+          <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse9">
+          <?php  echo $about->getTitle(); ?></a>
         </h4>
       </div>
       <div id="collapse9" class="panel-collapse collapse">
