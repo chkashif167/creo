@@ -1,0 +1,55 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+?>
+<div class="box-right">
+    <div class="entry-edit new-totals">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-coupons"><?php echo Mage::helper('mageworx_ordersedit')->__('New Totals') ?></h4>
+        </div>
+        <div class="content">
+            <table cellspacing="0" width="100%">
+                <col />
+                <col width="1" />
+                <?php $_totals = $this->getTotals();?>
+                <?php if ($_totals):?>
+                    <tbody>
+                    <?php foreach ($_totals as $_code => $_total): ?>
+                        <?php if ($_total->getBlockName()): ?>
+                            <?php echo $this->getChildHtml($_total->getBlockName(), false); ?>
+                        <?php else:?>
+                            <tr class="<?php echo $_code?>">
+                                <td <?php echo $this->getLabelProperties()?> class="label">
+                                    <?php if ($_total->getStrong()):?>
+                                        <strong><?php echo $this->escapeHtml($_total->getTitle()); ?></strong>
+                                    <?php else:?>
+                                        <?php echo $this->escapeHtml($_total->getTitle()); ?>
+                                    <?php endif?>
+                                </td>
+                                <?php if ($_total->getStrong()):?>
+                                <td <?php echo $this->getValueProperties()?> class="emph">
+                                    <strong><?php echo $this->formatValue($_total) ?></strong>
+                                    <?php else:?>
+                                <td <?php echo $this->getValueProperties()?>>
+                                    <?php echo $this->formatValue($_total) ?>
+                                    <?php endif?>
+                                </td>
+                            </tr>
+                        <?php endif?>
+                    <?php endforeach?>
+                    </tbody>
+                <?php endif?>
+            </table>
+            <?php
+            echo $this->getButtonHtml($this->__('Cancel'), 'orderEdit.cancelChangedOrder(\'' . Mage::helper('mageworx_ordersedit/edit')->getCancelChangesUrl() . '\');', 'mw_floater mw_br');
+            echo $this->getButtonHtml($this->__('Apply'), 'orderEdit.applyChangedOrder();', 'mw_floater-right mw_br');
+            ?>
+        </div>
+    </div>
+</div>

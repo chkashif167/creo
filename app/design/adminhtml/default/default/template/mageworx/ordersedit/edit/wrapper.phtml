@@ -1,0 +1,44 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+?>
+<script type="text/javascript">
+
+    <?php
+    /** @var MageWorx_OrdersEdit_Helper_Edit $helper */
+    $helper = Mage::helper('mageworx_ordersedit/edit');
+    ?>
+    var orderEdit = new OrdersEditEdit(
+        '<?php echo $helper->getEditUrlTemplate() ?>',
+        '<?php echo $helper->getProductGridUrl() ?>',
+        '<?php echo $helper->getCustomersGridUrl() ?>',
+        '<?php echo $helper->getSubmitCustomerUrl() ?>',
+        '<?php echo $helper->getApplyChangesUrl() ?>',
+        <?php echo $this->getBlocksJson(); ?>,
+        '<?php echo $this->__('The order has pending changes. Are you sure you want to skip them?') ?>',
+        '<?php echo $helper->getSaveChangesUrl() ?>',
+        '<?php echo $helper->getCancelChangesUrl() ?>'
+    );
+
+    var orderEditItems = new OrdersEditEditItems(
+        '<?php echo $this->getCurrencySymbol(); ?>',
+        <?php echo Zend_Json::encode($this->getQuoteItemIds()); ?>
+    );
+
+    Event.observe(window, 'load',  function() {
+        if (window.productConfigure) {
+            productConfigure.addListType('product_to_add', {
+                urlFetch: '<?php echo $this->getUrl('*/sales_order_create/configureProductToAdd') ?>'
+            });
+            productConfigure.addListType('quote_items', {
+                urlFetch: '<?php echo $this->getUrl('*/sales_order_create/configureQuoteItems') ?>'
+            });
+        }
+    });
+</script>

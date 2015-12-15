@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Grid extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersGrid
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+<layout>    
+    <adminhtml_sales_order_index>
+        <reference name="head">
+            <action method="addCss" ifconfig="mageworx_ordersmanagement/ordersgrid/enabled"><name>css/mageworx/ordersgrid/styles.css</name></action>
+        </reference>
+    </adminhtml_sales_order_index>
+    <adminhtml_customer_edit>
+        <reference name="head">
+            <action method="addCss" ifconfig="mageworx_ordersmanagement/ordersgrid/enabled"><name>css/mageworx/ordersgrid/styles.css</name></action>
+        </reference>
+    </adminhtml_customer_edit>
+</layout>

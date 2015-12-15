@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+<config>
+    <modules>
+        <MageWorx_OrdersEdit>
+            <version>2.0.2</version>
+        </MageWorx_OrdersEdit>
+    </modules>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <MageWorx_OrdersEdit after="Mage_Adminhtml">MageWorx_OrdersEdit_Adminhtml</MageWorx_OrdersEdit>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <global>
+
+        <events>
+            <sales_convert_order_item_to_quote_item>
+                <observers>
+                    <mageworx_ordersedit_convert_order_item_to_quote_item>
+                        <class>mageworx_ordersedit/observer</class>
+                        <method>convertOrderItemToQuoteItem</method>
+                    </mageworx_ordersedit_convert_order_item_to_quote_item>
+                </observers>
+            </sales_convert_order_item_to_quote_item>
+            <sales_convert_order_to_quote>
+                <observers>
+                    <mageworx_ordersedit_convert_order_to_quote>
+                        <class>mageworx_ordersedit/observer</class>
+                        <method>convertOrderToQuote</method>
+                    </mageworx_ordersedit_convert_order_to_quote>
+                </observers>
+            </sales_convert_order_to_quote>            
+            <sales_quote_collect_totals_after>
+                <observers>
+                    <mageworx_ordersedit_quote_collect_totals_after>
+                        <class>mageworx_ordersedit/observer</class>
+                        <method>quoteCollectTotalsAfter</method>
+                    </mageworx_ordersedit_quote_collect_totals_after>
+                </observers>
+            </sales_quote_collect_totals_after>
+            <adminhtml_sales_order_create_process_data>
+                <observers>
+                    <mageworx_ordersedit_order_create_process_data>
+                        <class>mageworx_ordersedit/observer</class>
+                        <method>orderCreateProcessData</method>
+                    </mageworx_ordersedit_order_create_process_data>
+                </observers>
+            </adminhtml_sales_order_create_process_data>
+            <core_collection_abstract_load_before>
+                <observers>
+                    <amflags>
+                        <type>disabled</type>
+                    </amflags>
+                </observers>
+            </core_collection_abstract_load_before>
+        </events>
+
+        <blocks>
+            <mageworx_ordersedit>
+                <class>MageWorx_OrdersEdit_Block</class>
+            </mageworx_ordersedit>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_view>MageWorx_OrdersEdit_Block_Adminhtml_Sales_Order_View</sales_order_view>
+                </rewrite>                
+            </adminhtml>
+        </blocks>
+        
+        <models>
+            <sales_mysql4>
+                <rewrite>
+                    <order_status_history_collection>MageWorx_OrdersEdit_Model_Resource_Order_Status_History_Collection</order_status_history_collection>
+                </rewrite>
+            </sales_mysql4>
+            <salesrule>
+                <rewrite>                    
+                    <quote_discount>MageWorx_OrdersEdit_Model_SalesRule_Quote_Discount</quote_discount>
+                </rewrite>
+            </salesrule>
+            <payment>
+                <rewrite>
+                    <method_ccsave>MageWorx_OrdersEdit_Model_Payment_Method_Ccsave</method_ccsave>
+                </rewrite>
+            </payment>
+            <paypal>
+                <rewrite>
+                    <payflowpro>MageWorx_OrdersEdit_Model_Paypal_Payflowpro</payflowpro>
+                    <direct>MageWorx_OrdersEdit_Model_Paypal_Direct</direct>
+                    <api_nvp>MageWorx_OrdersEdit_Model_Paypal_Api_Nvp</api_nvp>
+                </rewrite>
+            </paypal>
+            <paygate>
+                <rewrite>
+                    <authorizenet>MageWorx_OrdersEdit_Model_Paygate_Authorizenet</authorizenet>
+                </rewrite>
+            </paygate>
+            <sales>
+                <rewrite>
+                    <order_payment>MageWorx_OrdersEdit_Model_Sales_Order_Payment</order_payment>
+                </rewrite>
+            </sales>
+            <ordertags>
+                <rewrite>
+                    <observer>MageWorx_OrdersEdit_Model_AwOrdertags_Observer</observer>
+                </rewrite>
+            </ordertags>
+
+            <mageworx_ordersedit>
+                <class>MageWorx_OrdersEdit_Model</class>
+                <resourceModel>mageworx_ordersedit_resource</resourceModel>
+            </mageworx_ordersedit>
+            
+            <mageworx_ordersedit_resource>
+                <class>MageWorx_OrdersEdit_Model_Resource</class>
+                <entities>
+                    <upload_files>
+                        <table>mageworx_ordersedit_upload_files</table>
+                    </upload_files>                    
+                </entities>
+            </mageworx_ordersedit_resource>
+        </models>
+        
+        <helpers>
+            <mageworx_ordersedit>
+                <class>MageWorx_OrdersEdit_Helper</class>
+            </mageworx_ordersedit>
+        </helpers>
+        
+        <resources>
+            <mageworx_ordersedit_setup>
+                <setup>
+                    <module>MageWorx_OrdersEdit</module>
+                    <class>MageWorx_OrdersEdit_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </mageworx_ordersedit_setup>
+            <mageworx_ordersedit_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </mageworx_ordersedit_write>
+            <mageworx_ordersedit_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </mageworx_ordersedit_read>
+        </resources>
+        
+        <template>
+            <email>               
+               <mageworx_ordersedit_email_order_comment_template translate="label" module="mageworx_ordersedit">
+                   <label>Order Edit</label>
+                   <file>mageworx/ordersedit/mageworx_order_edited.html</file>
+                   <type>html</type>
+               </mageworx_ordersedit_email_order_comment_template>
+               <mageworx_ordersedit_email_order_comment_guest_template translate="label" module="mageworx_ordersedit">
+                   <label>Order Edit for Guest</label>
+                   <file>mageworx/ordersedit/mageworx_order_edited_guest.html</file>
+                   <type>html</type>
+               </mageworx_ordersedit_email_order_comment_guest_template>
+            </email>
+        </template>
+        
+        <sales>            
+           <order_invoice>
+                <totals>
+                    <mageworx_ordersedit>
+                        <class>mageworx_ordersedit/sales_order_invoice_total</class>
+                        <after>tax,grand_total</after>
+                    </mageworx_ordersedit>
+                    <subtotal>
+                        <class>mageworx_ordersedit/sales_order_invoice_subtotal</class>
+                    </subtotal>
+                    <mageworx_ordersedit_shipping>
+                        <class>mageworx_ordersedit/sales_order_invoice_shipping</class>
+                        <after>shipping</after>
+                    </mageworx_ordersedit_shipping>
+                </totals>
+            </order_invoice>       
+        </sales>
+    </global>
+    
+    <adminhtml>        
+        <layout>
+            <updates>
+                <mageworx_ordersedit>
+                    <file>mageworx_ordersedit.xml</file>
+                </mageworx_ordersedit>
+            </updates>
+        </layout>
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <mw_add_coupon_block>
+                        <type>singleton</type>
+                        <class>mageworx_ordersedit/observer</class>
+                        <method>insertCouponBlock</method>
+                    </mw_add_coupon_block>
+                </observers>
+            </core_block_abstract_to_html_after>
+        </events>
+        <translate>
+            <modules>
+                <MageWorx_OrdersEdit>
+                    <files>
+                        <default>MageWorx_OrdersEdit.csv</default>
+                    </files>
+                </MageWorx_OrdersEdit>
+            </modules>
+        </translate>
+    </adminhtml>
+    
+    <default>
+        <mageworx_ordersmanagement>
+            <ordersedit>
+                <enabled>1</enabled>
+                <enable_shipping_price_edition>1</enable_shipping_price_edition>
+                <show_thumbnails>1</show_thumbnails>
+                <thumbnail_height>50</thumbnail_height>
+                <send_update_email>0</send_update_email>
+                <hide_edit_button>1</hide_edit_button>
+                <show_all_states_in_history>0</show_all_states_in_history>
+            </ordersedit>
+        </mageworx_ordersmanagement>
+    </default>
+    
+</config>

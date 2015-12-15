@@ -1,0 +1,133 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+?>
+<div id="order_history_block">
+    <form enctype="multipart/form-data" method="post" action="<?php echo $this->getSubmitUrl(); ?>" id="order_history_form">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <?php if ($this->canAddComment()):?>
+    <div id="history_form" class="order-history-form">
+        <div><?php echo Mage::helper('sales')->__('Add Order Comments') ?></div>
+        <span class="field-row">
+            <label class="normal" for="history_status"><?php echo Mage::helper('sales')->__('Status') ?></label><br/>
+            <select name="history[status]" class="select" id="history_status">
+            <?php foreach ($this->getStatuses() as $_code=>$_label): ?>
+                <option value="<?php echo $_code ?>"<?php if($_code==$this->getOrder()->getStatus()): ?> selected="selected"<?php endif; ?>><?php echo $_label ?></option>
+            <?php endforeach; ?>
+            </select>            
+            <?php if ($this->helper('mageworx_ordersedit')->isEnabled()): ?><input type="file" value="" name="send_file" id="send_file" style="float:right" /><?php endif; ?>
+        </span>
+        <span class="field-row">
+            <label class="normal" for="history_comment"><?php echo Mage::helper('sales')->__('Comment') ?></label>
+            <textarea name="history[comment]" rows="3" cols="5" style="height:6em; width:99%;" id="history_comment"></textarea>
+        </span>
+        <div class="f-left">
+            <?php if ($this->canSendCommentEmail()): ?>
+                <input name="history[is_customer_notified]" type="checkbox" id="history_notify" value="1" /><label class="normal" for="history_notify"> <?php echo Mage::helper('sales')->__('Notify Customer by Email') ?></label><br />
+            <?php endif; ?>
+            <input name="history[is_visible_on_front]" type="checkbox" id="history_visible" value="1" /><label class="normal" for="history_visible"> <?php echo Mage::helper('sales')->__('Visible on Frontend') ?></label>                                    
+        </div>
+        <div class="f-right">
+            <?php echo $this->getChildHtml('submit_button') ?>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </form>    
+    <div class="divider"></div>
+    <?php endif;?>
+    <ul class="note-list">
+    <?php foreach ($this->getOrder()->getStatusHistoryCollection(true) as $_item): ?>
+        <li>
+            <strong><?php echo $this->helper('core')->formatDate($_item->getCreatedAtDate(), 'medium') ?></strong>
+            <?php echo $this->helper('core')->formatTime($_item->getCreatedAtDate(), 'medium') ?><span class="separator">|</span><strong><?php echo $_item->getStatusLabel() ?></strong>
+            <?php if ($_item->getComment()): ?>
+                <a href="" onclick="deleteHistory('<?php echo  $this->getUrl('adminhtml/mageworx_ordersedit_history/deleteHistory', array('id'=>$_item->getEntityId())) ?>'); return false;" title="<?php echo $this->helper('mageworx_ordersedit')->__('Delete') ?>" class="ordersedit-delete"><?php echo $this->helper('mageworx_ordersedit')->__('Delete') ?></a>
+                <a href="" onclick="orderEdit.editComment('<?php echo $_item->getEntityId() ?>'); return false;" title="<?php echo $this->helper('mageworx_ordersedit')->__('Edit') ?>" class="ordersedit-edit"><?php echo $this->helper('mageworx_ordersedit')->__('Edit') ?></a>
+            <?php endif; ?>
+            <br/>
+            <small><?php echo $this->helper('sales')->__('Customer') ?>                
+            <strong class="subdue">
+                <?php if ($this->isCustomerNotificationNotApplicable($_item)): ?>
+                <?php echo $this->helper('sales')->__('Notification Not Applicable') ?>
+                <?php elseif ($_item->getIsCustomerNotified()): ?>
+                <?php echo $this->helper('sales')->__('Notified') ?>
+                <img src="<?php echo $this->getSkinUrl('images/ico_success.gif') ?>" width="16" height="16" alt="" />
+                <?php else: ?>
+                <?php echo $this->helper('sales')->__('Not Notified') ?>
+                <?php endif; ?>
+            </strong></small>
+            <?php if ($_item->getComment()): ?>
+                <br/>
+                <p id="order_comment_<?php echo $_item->getEntityId() ?>"><?php echo $this->escapeHtml($_item->getComment(), array('b','br','strong','i','u')) ?></p>
+
+                <form action="<?php echo $this->getSubmitEditUrl() ?>" id="edit_comment_<?php echo $_item->getEntityId() ?>" style="display:none;">
+                    <input type="hidden" name="comment_id" value="<?php echo $_item->getEntityId() ?>" />
+                    <textarea rows="5" cols="100" name="comment"><?php echo $this->escapeHtml($_item->getComment(), array('b','br','strong','i','u')) ?></textarea>
+                    <div class="ordersedit-buttons">
+                        <button class="f-left" type="button" title="<?php echo $this->__('Cancel') ?>" onclick="orderEdit.cancelCommentEdit()">
+                            <span><span><?php echo $this->__('Cancel') ?></span></span>
+                        </button>
+                        <button class="f-right" type="button" title="<?php echo $this->__('Submit') ?>" onclick="orderEdit.saveCommentEdit(<?php echo $_item->getEntityId() ?>)">
+                            <span><span><?php echo $this->__('Submit') ?></span></span>
+                        </button>
+                    </div>
+                </form>
+
+            <?php endif; ?>         
+            <?php if ($fileId=$_item->getFileId()): ?>
+                <br/>
+                <a href="<?php echo $this->helper('mageworx_ordersedit')->getUploadFilesUrl($fileId, $_item->getFileName()) ?>" class="subdue ordersedit-file"><?php echo $_item->getFileName() ?></a> (<?php echo $this->helper('mageworx_ordersedit')->__('Size:') ?> <?php echo $this->helper('mageworx_ordersedit')->prepareFileSize($_item->getFileSize()) ?>)
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <script type="text/javascript">
+        if($('order_status'))$('order_status').update('<?php echo $this->getOrder()->getStatusLabel() ?>');
+        
+        function submitHistoryAndReload(area, url) {
+            if ($('send_file').value) {
+                $('order_history_form').submit();
+            } else {
+                submitAndReloadArea(area, url);
+            }                        
+        }
+        
+        function deleteHistory(itemUrl) {
+            if (confirm("<?php echo $this->helper('mageworx_ordersedit')->__('Are you sure want to delete the comment?') ?>")) {
+                url = itemUrl + '?order_id=<?php echo $this->getOrder()->getId() ?>&isAjax=true';                
+                new Ajax.Request(url, {
+                    onSuccess: function(transport) {                        
+                        try {
+                            if (transport.responseText.isJSON()) {
+                                var response = transport.responseText.evalJSON()
+                                if (response.error) {
+                                    alert(response.message);
+                                }
+                                if(response.ajaxExpired && response.ajaxRedirect) {
+                                    setLocation(response.ajaxRedirect);
+                                }
+                            } else {
+                                $('order_history_block').update(transport.responseText);
+                            }
+                        }
+                        catch (e) {
+                            $('order_history_block').update(transport.responseText);
+                        }
+                    }
+                });                
+            }
+        }
+
+        function showEditForm(commentId)
+        {
+
+        }
+    
+    </script>
+</div>
