@@ -1764,6 +1764,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	overflow: hidden;
 	text-align: center;
 	clear: both;
+	display: block;
 }
 .products-grid .btn-holder a {
 	float: left;
@@ -2181,10 +2182,9 @@ div.fme-filter dd li{overflow: visible !important;}
 	color: #404040;
 	z-index:999;
 }
-.carousel-creo.carousel4 .btn-next{
-	left: auto;
-	right: 0;
-}
+.carousel-creo.carousel4 .btn-next{left: auto;right: 0;}
+.carousel-creo.carousel4 .btn-next,
+.carousel-creo.carousel4 .btn-prev,
 .carousel-creo.carousel4 .btn-next:hover,
 .carousel-creo.carousel4 .btn-prev:hover{
 	text-decoration: none;
@@ -5468,11 +5468,10 @@ dl {margin: 0 0 10px;}
 	color: #000;
 }
 .cate-drop-holder .cate-drop-frame:hover ul li:first-child a {border:none;}
-.carousel-creo.carousel4.trends-carousel .slide{
-	width: 268px !important;
-	margin: 0 0 0 10px;
-}
-.carousel-creo.carousel4.trends-carousel{border: none;}
+.carousel-creo.carousel4.trends-carousel .slide{width: 268px !important;	margin: 0 0 0 10px;}
+.carousel-creo.carousel4.trends-carousel .slide .text-area .btn-holder{visibility:hidden;}
+.carousel-creo.carousel4.trends-carousel .slide:hover .text-area .btn-holder{visibility:visible;}
+.carousel-creo.carousel4.trends-carousel{border: none;min-height:468px;}
 .carousel-creo.carousel4.trends-carousel .slide:first-child{margin: 0;}
 .carousel-creo.carousel4.trends-carousel .slideset{margin-right: -7px;}
 .carousel-creo.carousel4.trends-carousel .slideset::before {
@@ -5496,6 +5495,7 @@ dl {margin: 0 0 10px;}
     margin: 0;
     text-transform: capitalize;
     width: 65%;
+    height:38px;
 }
 .carousel-creo.carousel4.trends-carousel .text-area h3 a{color: #222;}
 .carousel-creo.carousel4.trends-carousel .text-area .price {
