@@ -243,7 +243,6 @@ body.canvas-slid #disable_view{position: fixed;z-index: 9998;background-color: r
 .modal-content .close:hover { color: #000; opacity: 1; }
 .modal-holder { transform: skewY(5deg); -moz-transform: skewY(5deg); -ms-transform: skewY(5deg); -webkit-transform: skewY(5deg); backface-visibility: hidden; text-align: center; color: #888; font: 16px/26px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .modal-holder h2 { margin: 0 0 10px; text-transform: uppercase; color: #222; font: 40px/42px "Roboto Condensed", Helvetica, Arial, sans-serif; }
-.modal-holder .btn-holder a,.modal-holder .btn-holder .btn-proceed-checkout{display:block;}
 .modal-holder p { margin: 0 0 10px; }
 .subscribe-form { display: block; margin: 0; padding: 0; background: none; border: none; }
 input[type="text"], input[type="password"], input.email { display: block; background: none; border: 1px solid #ddd; width: 100%; height: 28px; line-height: 20px; margin: 0 0 10px; padding: 4px 10px; text-align: left; }
@@ -548,7 +547,8 @@ font: bold 15px/20px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .cart-bottom-area .btn-holder a:first-child:before { display: none; }
 .cart-bottom-area .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .cart-bottom-area .btn-holder a:hover { opacity: 0.8; background: #000; color: #fff; border-color: #000; text-decoration: none; }
-.cart-bottom-area .btn-holder a:first-child { margin: 0 2px 0 0; color: #aaa; background: #fff; border-width: 0 0 0 2px; border-style: solid; border-color: #eee; overflow: hidden; padding: 0; }
+.cart-bottom-area .btn-holder a:first-child { margin: 0 2px 0 0; color: #aaa; background: #fff; border-width: 0 0 0 2px; border-style: solid;
+border-color: #eee; overflow: hidden; padding: 0;width:49%;}
 .cart-bottom-area .btn-holder a:first-child .span1 {border: 2px solid #eee; padding: 6px; display: block; width: 100%;}
 .cart-bottom-area .btn-holder a:first-child .span2 {display:inline-block;color: #000; }
 .cart-bottom-area .btn-holder a:first-child:hover .span1 { background: #f16167; border-color: #f16167; }

@@ -2674,3 +2674,11 @@ jQuery(document).ready(function(e) {
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
   }
+
+jQuery(document).ready(function($){
+    jQuery(".bgr-icon").click(function() {
+       var id = jQuery(this).attr('data-id');
+       jQuery("#" + id).slideToggle();
+    });
+    jQuery('.data-table,.order-products-table').stacktable();
+});

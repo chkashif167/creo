@@ -669,6 +669,8 @@
     white-space: nowrap;
     width:49%;
 }
+.modal-holder .btn-holder a,.modal-holder .btn-holder .btn-proceed-checkout{display:block !important;width:100% !important;
+padding: 0;}
 .checkoutshipingaddressState { position: static; width: 100%; left:0;} 
 .billingadressselect { position: static; width: 100%;} 
 .checkoutshippingslectboxes select {  position: static; width: 100%;}

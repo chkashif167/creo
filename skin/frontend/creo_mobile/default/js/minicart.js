@@ -218,10 +218,3 @@ cart.showError(cart.defaultErrorMessage);
         $j(this.selectors.success).text(message).fadeIn('slow');
     }
 };
-jQuery(document).ready(function($){
-    jQuery(".bgr-icon").click(function() {
-       var id = jQuery(this).attr('data-id');
-       jQuery("#" + id).slideToggle();
-    });
-    jQuery('.data-table,.order-products-table').stacktable();
-});
