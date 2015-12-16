@@ -1,0 +1,69 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+
+$_order = $this->getOrder();
+$orderAdminDate = $this->formatDate($_order->getCreatedAtDate(), 'medium', true);
+$orderStoreDate = $this->formatDate($_order->getCreatedAtStoreDate(), 'medium', true);
+?>
+<table cellspacing="0" class="form-list">
+    <tr>
+        <td class="label"><label><?php echo Mage::helper('sales')->__('Order Date') ?></label></td>
+        <td class="value"><strong><?php echo $orderAdminDate ?></strong></td>
+    </tr>
+    <?php if ($orderAdminDate != $orderStoreDate):?>
+        <tr>
+            <td class="label"><label><?php echo Mage::helper('sales')->__('Order Date (%s)', $_order->getCreatedAtStoreDate()->getTimezone()) ?></label></td>
+            <td class="value"><strong><?php echo $orderStoreDate ?></strong></td>
+        </tr>
+    <?php endif;?>
+    <tr>
+        <td class="label"><label><?php echo Mage::helper('sales')->__('Order Status') ?></label></td>
+        <td class="value"><strong><span id="order_status"><?php echo $_order->getStatusLabel() ?></span></strong></td>
+    </tr>
+    <tr>
+        <td class="label"><label><?php echo Mage::helper('sales')->__('Purchased From') ?></label></td>
+        <td class="value"><strong><?php echo $this->getOrderStoreName() ?></strong></td>
+    </tr>
+    <?php if($_order->getRelationChildId()): ?>
+        <tr>
+            <td class="label"><label><?php echo Mage::helper('sales')->__('Link to the New Order') ?></label></td>
+            <td class="value"><a href="<?php echo $this->getViewUrl($_order->getRelationChildId()) ?>">
+                    <?php echo $_order->getRelationChildRealId() ?>
+                </a></td>
+        </tr>
+    <?php endif; ?>
+    <?php if($_order->getRelationParentId()): ?>
+        <tr>
+            <td class="label"><label><?php echo Mage::helper('sales')->__('Link to the Previous Order') ?></label></td>
+            <td class="value"><a href="<?php echo $this->getViewUrl($_order->getRelationParentId()) ?>">
+                    <?php echo $_order->getRelationParentRealId() ?>
+                </a></td>
+        </tr>
+    <?php endif; ?>
+    <?php if($_order->getRemoteIp() && $this->shouldDisplayCustomerIp()): ?>
+        <tr>
+            <td class="label"><label><?php echo Mage::helper('sales')->__('Placed from IP') ?></label></td>
+            <td class="value"><strong><?php echo $_order->getRemoteIp(); echo ($_order->getXForwardedFor())?' (' . $this->escapeHtml($_order->getXForwardedFor()) . ')':''; ?></strong></td>
+        </tr>
+    <?php endif; ?>
+    <?php if($_order->getGlobalCurrencyCode() != $_order->getBaseCurrencyCode()): ?>
+        <tr>
+            <td class="label"><label><?php echo Mage::helper('sales')->__('%s / %s rate:', $_order->getGlobalCurrencyCode(), $_order->getBaseCurrencyCode()) ?></label></td>
+            <td class="value"><strong><?php echo $_order->getBaseToGlobalRate() ?></strong></td>
+        </tr>
+    <?php endif; ?>
+    <?php if($_order->getBaseCurrencyCode() != $_order->getOrderCurrencyCode()): ?>
+        <tr>
+            <td class="label"><label><?php echo Mage::helper('sales')->__('%s / %s rate:', $_order->getOrderCurrencyCode(), $_order->getBaseCurrencyCode()) ?></label></td>
+            <td class="value"><strong><?php echo $_order->getBaseToOrderRate() ?></strong></td>
+        </tr>
+    <?php endif; ?>
+</table>
+</div>

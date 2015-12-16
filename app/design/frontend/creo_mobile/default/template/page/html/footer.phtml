@@ -24,58 +24,64 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<footer id="footer" class="clearfix">
+<div class="row">
+<div class="col-xs-12">
+	<!-- <div class="right-area">
+             <?php // echo $this->getChildHtml('newsletter'); ?>
+                            <?php //echo $this->getChildHtml() ?>
+                            <form class="footer-form" action="#">
+		<span class="title">Join us for 20% off your first order</span>
+		<div class="form-row">
+		nn	<input type="text" placeholder="Email Address">
+			<input type="submit" value="JOIN">
+		</div>
+	</form>
+	</div> -->
+<div class="center-area footer_navigation">
+<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
+ <div class="panel-group" id="footer-accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title" >
+          <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse7"><?php  echo $customer->getTitle(); ?></a>
+        </h4>
+      </div>
+      <div id="collapse7" class="panel-collapse collapse">
+      <?php echo $customer->getContent(); ?>
+      </div>
+    </div>
 
+    <div class="panel panel-default">
+    <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse8"><?php  echo $acount->getTitle(); ?></a>
+        </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse">
+      <?php echo $acount->getContent(); ?>
+      </div>
+    </div>
+
+<div class="panel panel-default">
+<?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse9">
+          <?php  echo $about->getTitle(); ?></a>
+        </h4>
+      </div>
+      <div id="collapse9" class="panel-collapse collapse">
+      <?php echo $about->getContent(); ?>
+      </div>
+    </div>
+</div>
+</div></div>
+</div>
+</footer>
 <div class="footer_termsconditions"> Terms & conditions @ creo-room </div>
-<style>
-.footer_termsconditions { float: left; width: 100%; text-align: center; padding: 10px 0;}
-</style>
-
-<?php /*?><footer id="footer">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="right-area">
-                            <?php // echo $this->getChildHtml('newsletter'); ?>
-                            <?php echo $this->getChildHtml() ?>
-<!--								<form class="footer-form" action="#">
-									<span class="title">Join us for 20% off your first order</span>
-									<div class="form-row">
-									nn	<input type="text" placeholder="Email Address">
-										<input type="submit" value="JOIN">
-									</div>
-								</form>-->
-                               
-                                
-								<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social')->toHtml() ?>
-							</div>
-							<div class="left-area">
-								<div class="logo-holder">
-									<strong class="logo"><a href="#"><img alt="CREO" src="<?php echo $this->getSkinUrl() ?>/images/logo02.png"></a></strong>
-									<span class="copyright"><?php echo $this->getCopyright() ?></span>
-								</div>
-								<div class="column column1">
-									<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
-									<h3><?php  echo $customer->getTitle(); ?></h3>
-									<?php echo $customer->getContent(); ?>
-								</div>
-								<div class="column">
-									 <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
-									<h3><?php  echo $acount->getTitle(); ?></h3>
-									<?php echo $acount->getContent(); ?>
-								</div>
-								<div class="column">
-                                <?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
-									<h3><?php  echo $about->getTitle(); ?></h3>
-									<?php echo $about->getContent(); ?>
-								</div>
-							</div>
-						</div>
-					</div>
-				</footer><?php */?>
-
-
-        
-       <?php // echo $this->getCopyright() 
-	   
+       <?php // echo $this->getCopyright()
 	   // check if user is logged in and already subscribed.
 		$customerEmail = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
 		$subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($customerEmail);

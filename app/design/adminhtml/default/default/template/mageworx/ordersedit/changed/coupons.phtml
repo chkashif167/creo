@@ -1,0 +1,28 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+?>
+<?php
+if ($message = Mage::getSingleton('adminhtml/session')->getCouponMessage()):
+?>
+    <ul class="messages">
+        <li class="notice-msg">
+            <ul>
+                <li><?php echo $message;?></li>
+            </ul>
+        </li>
+    </ul>
+<?php
+endif;
+?>
+<div class="content mw-has-changes">
+    <?php if($this->getCouponCode()): ?>
+        <p><strong><?php echo $this->escapeHtml($this->getCouponCode()) ?></strong></p>
+    <?php endif; ?>
+</div>

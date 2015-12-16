@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Grid  extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersGrid
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+<config>
+    <modules>
+        <MageWorx_OrdersGrid>
+            <version>2.0.2</version>
+        </MageWorx_OrdersGrid>
+    </modules>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <MageWorx_OrdersGrid after="Mage_Adminhtml">MageWorx_OrdersGrid_Adminhtml</MageWorx_OrdersGrid>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <global>
+        <blocks>
+            <mageworx_ordersgrid>
+                <class>MageWorx_OrdersGrid_Block</class>
+            </mageworx_ordersgrid>
+        </blocks>
+
+        <models>
+
+            <mageworx_ordersgrid>
+                <class>MageWorx_OrdersGrid_Model</class>
+                <resourceModel>mageworx_ordersgrid_resource</resourceModel>
+            </mageworx_ordersgrid>
+
+            <mageworx_ordersgrid_resource>
+                <class>MageWorx_OrdersGrid_Model_Resource</class>
+                <entities>
+                    <order_group>
+                        <table>mageworx_ordersgrid_order_group</table>
+                    </order_group>
+                </entities>
+            </mageworx_ordersgrid_resource>
+        </models>
+
+        <helpers>
+            <mageworx_ordersgrid>
+                <class>MageWorx_OrdersGrid_Helper</class>
+            </mageworx_ordersgrid>
+        </helpers>
+
+        <resources>
+            <mageworx_ordersgrid_setup>
+                <setup>
+                    <module>MageWorx_OrdersGrid</module>
+                    <class>MageWorx_OrdersGrid_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </mageworx_ordersgrid_setup>
+            <mageworx_ordersgrid_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </mageworx_ordersgrid_write>
+            <mageworx_ordersgrid_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </mageworx_ordersgrid_read>
+        </resources>
+    </global>
+
+    <frontend>
+        <translate>
+            <modules>
+                <MageWorx_OrdersGrid>
+                    <files>
+                        <default>MageWorx_OrdersGrid.csv</default>
+                    </files>
+                </MageWorx_OrdersGrid>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <mageworx_ordersgrid>
+                    <file>mageworx_ordersgrid.xml</file>
+                </mageworx_ordersgrid>
+            </updates>
+        </layout>
+        <events>
+            <sales_order_collection_load_before>
+                <observers>
+                    <mageworx_hide_deleted_orders>
+                        <type>singleton</type>
+                        <class>mageworx_ordersgrid/observer</class>
+                        <method>hideDeletedOrders</method>
+                    </mageworx_hide_deleted_orders>
+                </observers>
+            </sales_order_collection_load_before>
+        </events>
+    </frontend>
+
+    <adminhtml>
+        <events>
+            <sales_order_grid_collection_load_before>
+                <observers>
+                    <enterprise_salesarchive>
+                        <type>disabled</type>
+                    </enterprise_salesarchive>
+                    <mageworx_add_custom_columns_select>
+                        <type>singleton</type>
+                        <class>mageworx_ordersgrid/observer</class>
+                        <method>addCustomColumnsSelect</method>
+                    </mageworx_add_custom_columns_select>
+                </observers>
+            </sales_order_grid_collection_load_before>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <mageworx_add_mass_actions>
+                        <type>singleton</type>
+                        <class>mageworx_ordersgrid/observer</class>
+                        <method>addMassActionToSalesOrdersGrid</method>
+                    </mageworx_add_mass_actions>
+                </observers>
+            </core_block_abstract_to_html_before>
+            <core_layout_block_create_after>
+                <observers>
+                    <mageworx_add_custom_columns>
+                        <type>singleton</type>
+                        <class>mageworx_ordersgrid/observer</class>
+                        <method>addCustomColumnsToSalesOrdersGrid</method>
+                    </mageworx_add_custom_columns>
+                    <mageworx_add_custom_columns_for_customer>
+                        <type>singleton</type>
+                        <class>mageworx_ordersgrid/observer</class>
+                        <method>addCustomColumnsToCustomerOrdersGrid</method>
+                    </mageworx_add_custom_columns_for_customer>
+                </observers>
+            </core_layout_block_create_after>
+        </events>
+        <layout>
+            <updates>
+                <mageworx_ordersgrid>
+                    <file>mageworx_ordersgrid.xml</file>
+                </mageworx_ordersgrid>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <MageWorx_OrdersGrid>
+                    <files>
+                        <default>MageWorx_OrdersGrid.csv</default>
+                    </files>
+                </MageWorx_OrdersGrid>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <mageworx_ordersmanagement>
+            <ordersgrid>
+                <enabled>1</enabled>
+                <enable_shipping_price_edition>1</enable_shipping_price_edition>
+                <enable_invoice_orders>1</enable_invoice_orders>
+                <send_invoice_email>0</send_invoice_email>
+                <enable_ship_orders>1</enable_ship_orders>
+                <send_shipment_email>0</send_shipment_email>
+                <enable_archive_orders>1</enable_archive_orders>
+                <days_before_orders_get_archived>0</days_before_orders_get_archived>
+                <archive_orders_status>canceled,closed,complete</archive_orders_status>
+                <enable_delete_orders>1</enable_delete_orders>
+                <hide_deleted_orders_for_customers>1</hide_deleted_orders_for_customers>
+                <enable_delete_orders_completely>1</enable_delete_orders_completely>
+                <grid_columns>
+                    real_order_id,store_id,created_at,billing_name,shipping_name,base_grand_total,grand_total,status,order_group,action
+                </grid_columns>
+                <customer_grid_columns>increment_id,created_at,billing_name,shipping_name,grand_total,store_id,action
+                </customer_grid_columns>
+                <number_comments>3</number_comments>
+                <show_thumbnails>1</show_thumbnails>
+                <thumbnail_height>50</thumbnail_height>
+            </ordersgrid>
+        </mageworx_ordersmanagement>
+    </default>
+
+    <crontab>
+        <jobs>
+            <mageworx_ordersgrid_archive>
+                <schedule>
+                    <cron_expr>0 0 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>mageworx_ordersgrid/observer::scheduledArchiveOrders</model>
+                </run>
+            </mageworx_ordersgrid_archive>
+        </jobs>
+    </crontab>
+
+</config>
