@@ -1185,4 +1185,15 @@
 .mobilewebsite_bottom_categories { float: left; width: 100%}
 .mobilewebsite_bottom_categories a { float: left; width: 33%}
 .mobilewebsite_bottom_categories a img { width: 100%}
+.customer-account .tab-links ul li { width: 100%; padding: 5px 0;}
+.customer-account .tab-links ul li a { transform: skew(0deg)} 
+.customer-account .tab-links ul li a span { transform: skew(0deg); font-size: 14px;} 
+.customer-account .dashboard .column, .customer-account .dashboard .column.large { width: 100%;}
+.customer-account .my-account .form-frame { width: 100%;}
+.customer-account  .form-holder .submit-holder button { width: 100%; float: left;}
+.customer-account #wishlist-view-form .product-area { border-bottom: 3px solid #ddd; margin-bottom: 10px;}
+.customer-account #wishlist-view-form .product-area .cart-area { width: auto; min-height: 204px; border: none;}
+.customer-account #wishlist-view-form .tab-content2 .alignleft { margin: 0 5px;}
+.customer-account #wishlist-view-form .product-area .edit { color: #ddd; font-size: 14px; position: absolute; right: 340px; top: 61px;}
+.customer-account #wishlist-view-form .product-area .cancel { color: #ddd; font-size: 16px; position: absolute; right: 324px; top: 58px;}
 
