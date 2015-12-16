@@ -354,8 +354,7 @@ a.alignleft.checkout-items {
 }
 
 .form-holder.login-sec {
-    padding-bottom:20px;
-    padding-top:20px;
+    padding:20px 0;
 }
 
 #footer .list li {
