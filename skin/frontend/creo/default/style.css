@@ -5214,6 +5214,15 @@ div.fme-filter dd a{padding: 0 !important;}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a.selected {
 	opacity: 1;
 }
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
+	background-image: url("http://localhost/creo/project/media/attributeswatches/v-neck-active.png") !important;
+	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
+	background-image: url("http://localhost/creo/project/media/attributeswatches/round-neck-active.png")!important;
+	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
+	background-image: url("http://localhost/creo/project/media/attributeswatches/tank-top-active.png")!important;
+	}
 .product-swatches-container ul:after {
 	clear: both;
 	content: "";
