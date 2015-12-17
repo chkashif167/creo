@@ -2509,7 +2509,9 @@ function popupValidation()
 		}
 		
 		if(jQuery("#swatches-options-152").length > 0) {
-			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+			if(jQuery("#attribute149").val()===''){
+				errors = "Please make sure to select phone model";
+			}else if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select case color";
 			}
 		}
