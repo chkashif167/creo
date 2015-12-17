@@ -684,6 +684,7 @@ padding: 0;}
 #bill_form label, #ship_form label { margin: 8px 0 0 0; float: left;}
 #bill_form sup, #ship_form sup { margin: 22px 0 0 0;  float: left;} 
 #bill_form .validation-advice, #ship_form .validation-advice { font-size:10px; color: red;}
+#bill_form .form-group,#ship_form .form-group{padding:0;}
 .checkoutcreatNewAccount label { margin: 0px 0 0 0 !important;} 
 
 
@@ -733,19 +734,19 @@ padding: 0;}
 
 /*checkout_bottom_area*/
 
-.onestepcheckout-index-index .checkout_bottom_area { width:60%; float: left; text-transform: uppercase;}
+.onestepcheckout-index-index .checkout_bottom_area { width:100%; text-transform: uppercase;}
+.onestepcheckout-index-index .checkout_bottom_area .subtotal { width:50%;float: left; border: 2px solid #eee;  display: block;
+padding: 5px 8px;}
+.onestepcheckout-index-index .checkout_bottom_area .subtotal .title { float: left; }
+.onestepcheckout-index-index .checkout_bottom_area .subtotal span { float: right; font-size:14px !important; line-height: 18px !important; font-size:14px; font-weight: normal !important ; }
 
-.onestepcheckout-index-index .checkout_bottom_area .subtotal { width: 45%; float: left;   border: 2px solid #eee;  display: block;   padding: 5px 8px;}
-.onestepcheckout-index-index .checkout_bottom_area .subtotal .title { float: left; } 
-.onestepcheckout-index-index .checkout_bottom_area .subtotal span { float: right; font-size:14px !important; line-height: 18px !important; font-size:14px; font-weight: normal !important ; } 
-
-.onestepcheckout-index-index .checkout_bottom_area .total { width: 45%; float: left;   border: 2px solid #eee;  display: block;   padding: 5px 8px; margin: 0 0 0 10px;}
+.onestepcheckout-index-index .checkout_bottom_area .total { width:50%;float:left;border:2px solid #eee; display: block;
+padding: 5px 8px; margin:0;}
 .onestepcheckout-index-index .checkout_bottom_area .total .title { float: left; } 
 .onestepcheckout-index-index .checkout_bottom_area .total span { float: right; font-size:14px !important; line-height: 18px !important; font-size:14px; font-weight: normal ; } 
 
 
-
-.onestepcheckout-index-index .checkout_applyCoupon { float: right; width:30%;}
+.onestepcheckout-index-index .checkout_applyCoupon { /*float: right; width:30%;*/}
 .onestepcheckout-index-index .discount-form .leftSide { float: left; width:50%;}
 .onestepcheckout-index-index .discount-form .leftSide label, .onestepcheckout-index-index .discount-form .leftSide input { float: left; width:100%; text-align:left;}
 .onestepcheckout-index-index .discount-form .buttons-set { float: right; width:45%;}
@@ -763,17 +764,18 @@ padding: 0;}
                                                                  margin: 20px 0 0 0;
 }
 #review-buttons-container { display: inline-block; width: 100%;}
-#review-buttons-container button {   background: #f16167 none repeat scroll 0 0;
-                                     color: #fff;
-                                     font-size: 16px;
-                                     font-weight: bold;
-                                     height: auto;
-                                     padding: 5px 100px;
-                                     width: auto;
-                                     float: right;
-                                     margin-top:20px;
-                                     text-transform: uppercase;
-                                     border: 3px solid #ef4f61;
+#review-buttons-container button {
+    background: #f16167 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    padding: 5px 100px;
+    width:100%;
+    float: none;
+    margin-top:0px;
+    text-transform: uppercase;
+    border: 3px solid #ef4f61;
 }
 #review-buttons-container button:hover{border-color: #000;}
 .cate2.cate:nth-child(2) { }
@@ -1123,7 +1125,7 @@ padding: 0;}
 #payment_form_creditcardpci .v-fix2 { float: right;  width: 48%;} 
 #payment_form_creditcardpci .cvv-what-is-this {  font-size: 11px;    margin: 4px 0;    padding: 0; text-transform: capitalize; background: none;}
 #payment_form_creditcardpci .form-group { margin-bottom: 0;}
-#payment_form_creditcardpci .credit-card { padding-bottom: 20px;}
+#payment_form_creditcardpci .credit-card { padding-bottom: 20px;margin-bottom:10px;}
 #payment_form_creditcardpci input { background: #fff; height: 27px;}
 #payment_form_creditcardpci #creditcardnumbercn, #payment_form_creditcardpci #creditcardpci_cc_type_cvv_div { margin: 0;}
 #creditcardNamecn { margin: 12px 0;}

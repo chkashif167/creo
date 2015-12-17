@@ -1,31 +1,30 @@
 <?php echo $this->getChildHtml('items_before'); ?>
 <div class="cart-table-area checkout-table">
 <script type="text/javascript">
-// jQuery(document).ready(function(){
-//     jQuery("#checkout-review-table").stacktable();
-// });
+jQuery(document).ready(function(){
+    jQuery("#checkout-review-table").stacktable();
+});
 </script>
     <table class="order-products-table" id="checkout-review-table" cellpadding="10" cellspacing="10">
-        <?php /*?><col />
+        <col />
         <col width="1" />
         <col width="1" />
         <?php
-        $colspan	= 1; 
+        $colspan	= 1;
         if ($this->helper('tax')->displayCartBothPrices()):
-        	$colspan	= 2; 
+        	$colspan= 2;
         ?>
         <col width="1" />
-        <?php endif; ?>      <?php */?>  
-       <?php /*?> <thead>
+        <?php endif; ?>
+      <thead>
             <tr>
-            
                 <th><?php echo $this->__('Product Name') ?></th>
-                <th rowspan="<?php echo $rowspan ?>">&nbsp;</th><!-- Here's the empty col for the image -->
+                <th><?php echo $this->__('Image') ?></th>
                 <th class="a-center"><?php echo $this->__('Qty') ?></th>
                 <th class="a-right" colspan="<?php echo $colspan ?>"><?php echo $this->__('Subtotal') ?></th>
+                <th><?php echo $this->__('Remove') ?></th>
             </tr>
-        </thead><?php */?>
-       
+        </thead>
         <tbody>
         <?php foreach($this->getItems() as $_item): ?>
             <?php echo $this->getItemHtml($_item)?>
