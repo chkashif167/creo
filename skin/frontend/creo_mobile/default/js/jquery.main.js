@@ -2674,6 +2674,7 @@ jQuery(document).ready(function(e) {
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
   }
+
   
   /** Select first style by default on product detail page **/
 jQuery(window).load(function(){
@@ -2683,3 +2684,13 @@ jQuery(window).load(function(){
     }
 });
 /** Selection of the first style ends here **/
+
+
+jQuery(document).ready(function($){
+    jQuery(".bgr-icon").click(function() {
+       var id = jQuery(this).attr('data-id');
+       jQuery("#" + id).slideToggle();
+    });
+    jQuery('.data-table,.order-products-table').stacktable();
+});
+

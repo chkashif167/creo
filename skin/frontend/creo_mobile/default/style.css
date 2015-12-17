@@ -345,7 +345,7 @@ margin: 0; text-transform: capitalize; color: #222; font: 13px/18px "Roboto Cond
 .products-grid .text-area h3 a { color: #222; }
 .products-grid .text-area .price { display: block; margin: 0 0 0 2%; color: #f16167; float: right; text-align: right; width: 33%; font: 13px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .products-grid .btn-holder { overflow: hidden; text-align: center; clear: both; }
-.products-grid .btn-holder a { float: left; width: 70%; border: 4px solid #f16167; background: #f16167; text-transform: uppercase; color: #000; position: relative; font: bold 14px/24px Arial, Helvetica, sans-serif; }
+.products-grid .btn-holder a { float: left; width: 70%; border: 4px solid #f16167; background: #f16167; text-transform: uppercase; color: #000; position: relative; font: bold 12px/24px Arial, Helvetica, sans-serif; }
 .products-grid .btn-holder a:before { position: absolute; top: -4px; right: -24px; width: 0; height: 0; border-style: solid; border-width: 44px 20px 0 0; border-color: #f16167 transparent transparent; content: ''; }
 .products-grid .btn-holder a:first-child:before { display: none; }
 .products-grid .btn-holder a:hover:before { border-color: #000 transparent transparent; }
@@ -547,7 +547,8 @@ font: bold 15px/20px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .cart-bottom-area .btn-holder a:first-child:before { display: none; }
 .cart-bottom-area .btn-holder a:hover:before { border-color: transparent transparent #000; }
 .cart-bottom-area .btn-holder a:hover { opacity: 0.8; background: #000; color: #fff; border-color: #000; text-decoration: none; }
-.cart-bottom-area .btn-holder a:first-child { margin: 0 2px 0 0; color: #aaa; background: #fff; border-width: 0 0 0 2px; border-style: solid; border-color: #eee; overflow: hidden; padding: 0; }
+.cart-bottom-area .btn-holder a:first-child { margin: 0 2px 0 0; color: #aaa; background: #fff; border-width: 0 0 0 2px; border-style: solid;
+border-color: #eee; overflow: hidden; padding: 0;width:49%;}
 .cart-bottom-area .btn-holder a:first-child .span1 {border: 2px solid #eee; padding: 6px; display: block; width: 100%;}
 .cart-bottom-area .btn-holder a:first-child .span2 {display:inline-block;color: #000; }
 .cart-bottom-area .btn-holder a:first-child:hover .span1 { background: #f16167; border-color: #f16167; }
