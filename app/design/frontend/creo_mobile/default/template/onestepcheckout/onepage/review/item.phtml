@@ -1,8 +1,6 @@
 <?php $_item = $this->getItem()?>
 <tr>
- 
     <td>
-    <img src="<?php echo $this->getProductThumbnail()->resize(100); ?>" width="55" height="55" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" />
     <h3 class="product-name"><?php echo $this->htmlEscape($this->getProductName()) ?></h3>   
           <?php if ($_options = $this->getOptionList()):?>
         <dl>
@@ -26,6 +24,7 @@
             <?php echo $addtInfoBlock->setItem($_item)->toHtml() ?>
         <?php endif;?>
     </td>
+    <td class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(100); ?>" width="55" height="55" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></td>
     <td class="a-center"><?php echo $_item->getQty() ?></td>
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-right">

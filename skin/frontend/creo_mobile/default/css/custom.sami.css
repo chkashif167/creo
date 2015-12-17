@@ -201,7 +201,7 @@ a.alignleft.checkout-items {
 .cart-table-area.checkout-table table {
     border-top:none;
 }
-
+.cart-table-area.checkout-table table .st-head-row.st-head-row-main{display:none;}
 .span2.pull-left.no-padding {
     padding-left: 0 !important;
 }
@@ -443,17 +443,13 @@ form select#country {
     font-size: 11px !important;
 }
 
-#checkout-review-table tr {
-    width:32%;
-    display:inline-block;
-}
-
+#checkout-review-table tr{width:100%;display:block;}
 #checkout-review-table tr td.last:after {
     border-right: 2px solid #f3f3f3;
     bottom: 12px;
     content: "";
     right: 0;
-    position: absolute;
+    /*position: absolute;*/
     top: 12px;
 }
 
