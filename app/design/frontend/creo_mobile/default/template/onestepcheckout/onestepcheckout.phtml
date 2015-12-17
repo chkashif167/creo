@@ -31,10 +31,9 @@ $mod_version	= Mage::helper('onestepcheckout')->getOPCVersion();
 ?>
 <script type="text/javascript">
 	var http_type	= '<?php if($seq_http){echo 'https';}else{echo 'http';}?>';
-	
 	var mag_ver	= '<?php echo $mag_version;?>';
 	var mod_ver	= '<?php echo $mod_version;?>';
-</script> 
+</script>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/onestepcheckout.js') ?>"></script> 
 <script type="text/javascript">countryRegions = <?php echo $this->helper('directory')->getRegionJson() ?></script>
 <form action="" id="onestepcheckout_orderform" class="form-inline checkout-form">
