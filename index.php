@@ -24,6 +24,10 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
+ini_set('max_execution_time', 6000000);
+ini_set('max_file_uploads', 25);
+ini_set('memory_limit', '3072M');
+
 if (version_compare(phpversion(), '5.3.0', '<')===true) {
     echo  '<div style="font:12px/1.35em arial, helvetica, sans-serif;">
 <div style="margin:0 0 25px 0; border-bottom:1px solid #ccc;">
