@@ -2683,3 +2683,17 @@ jQuery(window).load(function(){
     }
 });
 /** Selection of the first style ends here **/
+
+jQuery(document).ready(function() { 
+    //pure javascript
+    var pathname = window.location.href;
+    if (pathname.indexOf("universal_categories") > 0){
+		jQuery(".fme_layered_clearall").removeClass("_selected_");
+	
+    }
+	else
+	{
+		jQuery(".fme_layered_clearall").addClass("_selected_");
+	}
+    
+});

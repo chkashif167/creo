@@ -1216,7 +1216,7 @@ a[class*='_selected_']{
     color: #fff !important;
 	background: #000;
 }
-.defaultSelect{
+._selected_{
     color: #fff !important;
 	background: #000;
 }
