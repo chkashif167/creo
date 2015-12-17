@@ -2674,3 +2674,37 @@ jQuery(document).ready(function(e) {
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
   }
+
+  
+  /** Select first style by default on product detail page **/
+jQuery(window).load(function(){
+    //check if the style id exist
+    if(jQuery('#attribute-134-container').length >= 1){
+        jQuery('#attribute-134-container').find('li:first').find('a').trigger('click');//this id only exists for styles
+    }
+});
+/** Selection of the first style ends here **/
+
+
+jQuery(document).ready(function($){
+    jQuery(".bgr-icon").click(function() {
+       var id = jQuery(this).attr('data-id');
+       jQuery("#" + id).slideToggle();
+    });
+    jQuery('.data-table,.order-products-table').stacktable();
+});
+
+
+jQuery(document).ready(function() { 
+    //pure javascript
+
+    var pathname = window.location.href;
+    if (pathname.indexOf("universal_categories") > 0){
+		jQuery(".fme_layered_clearall").removeClass("progos");
+    }
+	else
+	{
+		jQuery(".fme_layered_clearall").addClass("progos");
+	}
+    
+});

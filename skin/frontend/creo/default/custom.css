@@ -1211,3 +1211,12 @@
 .design_categories_attributes ul li img { width: 100%;}
 
 .collections-index-men h3.inline-h span, .collections-index-women h3.inline-h span, .collections-index-categories h3.inline-h span { min-width: auto;}
+
+a[class*='_selected_']{
+    color: #fff !important;
+	background: #000;
+}
+._selected_{
+    color: #fff !important;
+	background: #000;
+}

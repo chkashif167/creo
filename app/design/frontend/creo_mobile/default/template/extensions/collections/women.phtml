@@ -32,20 +32,18 @@
  */
 ?>
 <?php
-$_attrbiuteCollection = $this->getLoadedAttributeCollection();
-
-?>
-<div class="cate-drop-holder">
+$_attrbiuteCollection = $this->getLoadedAttributeCollection(); ?>
+<div class="cate-drop-holder" id="fme_filters_list">
 <span class="search-by">Search By Design</span>
-<div class="cate-drop-frame">
+<div class="cate-open-close">
 <a href="javascript:;" class="opener"> View All</a>
-<ul>
+<ul class="slide" id="fme_layered_universal_categories">
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
             <?php if ($a['value']): ?>
                 <a href="<?php echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
             <?php else: 
-			?>
+            ?>
             <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a>
             <?php endif; ?>
         </li>
@@ -70,7 +68,7 @@ $_helper = $this->helper('catalog/output');
             <?php $_iterator = 0; ?>
             <div class="row">
             <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h3 class="inline-h"><span>DESIGN CATEGORIES</span></h3>
+           <?php /* ?><h3 class="inline-h"><span>DESIGN CATEGORIES</span></h3>
             <div class="carousel-creo carousel4 trends-carousel">
             <div class="mask">
             <div class="slideset" id="products-list">
@@ -91,7 +89,7 @@ $_helper = $this->helper('catalog/output');
             </div>
             <a class="btn-prev" href="#"><i class="icon-angle-left"></i></a>
             <a class="btn-next" href="#"><i class="icon-angle-right"></i></a>
-            </div>
+            </div><?php */ ?>
             </div>
             <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 

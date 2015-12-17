@@ -2509,7 +2509,9 @@ function popupValidation()
 		}
 		
 		if(jQuery("#swatches-options-152").length > 0) {
-			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+			if(jQuery("#attribute149").val()===''){
+				errors = "Please make sure to select phone model";
+			}else if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select case color";
 			}
 		}
@@ -2683,3 +2685,15 @@ jQuery(window).load(function(){
     }
 });
 /** Selection of the first style ends here **/
+
+jQuery(document).ready(function() { 
+    //pure javascript
+    var pathname = window.location.href;
+    if (pathname.indexOf("universal_categories") > 0){
+		jQuery(".fme_layered_clearall").removeClass("_selected_");
+    }
+	else
+	{
+		jQuery(".fme_layered_clearall").addClass("_selected_");
+	}
+});
