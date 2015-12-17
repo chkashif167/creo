@@ -1199,3 +1199,5 @@ padding: 0;}
 .customer-account #wishlist-view-form .product-area .edit { color: #ddd; font-size: 14px; position: absolute; right: 340px; top: 61px;}
 .customer-account #wishlist-view-form .product-area .cancel { color: #ddd; font-size: 16px; position: absolute; right: 324px; top: 58px;}
 
+.modal-dialog .checkout-cart-index .btn-holder .btn-proceed-checkout { padding: 0px; font-size: 12px;}
+
