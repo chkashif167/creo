@@ -102,6 +102,16 @@ function fme_layered_show_products(transport)
 //		var currenturl = document.URL;
 		var currentCategory = params['universal_categories'];
 		var currentelement = $('universal_categories-'+currentCategory).value;
+		var pathname = window.location.href;
+//		alert(pathname);
+//		if (pathname.indexOf("universal_categories") > 0){
+//			$("fme_layered_clearall").removeClass("_selected_");
+//		}
+//		else
+//		{
+//			jQuery(".fme_layered_clearall").addClass("_selected_");
+//		}
+
 		var currentcat = currentelement.replace(/\s+/g, '-').toLowerCase()+'.html';
 //		var findcat = currenturl.indexOf("categories/");
 //		if (findcat < 0){
