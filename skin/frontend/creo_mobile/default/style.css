@@ -500,12 +500,14 @@ width:49%;display:inline-block;vertical-align:top;}
 .cart-table-area td:first-child { border: none; }
 .sales-order-view .cart-table-area td:first-child { text-align: left; }
 /*.cart-table-area tr{border-bottom: 2px dotted #2e2e2e; background: url('images/border-slice.png') repeat-x bottom }*/
-.cart-table-area .alignleft { float: left; width: 78px; margin: 0 10px 0 0; }
+.cart-table-area .alignleft { float: left; width: 78px; margin: 0 10px 0 -1px; }
 .cart-table-area .alignleft img { display: block; width: 100%; height: auto; }
 .cart-table-area .text-area { overflow: hidden; }
-.cart-table-area h3 { margin:0 0 5px; text-transform: uppercase;font: 16px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; text-align:center;font-weight:bold;background-color:#000;color:#fff;line-height:1.8; }
+.cart-table-area h3{ margin:0 0 5px; text-transform: uppercase;font: 16px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+text-align:center;font-weight:bold;background-color:#000;color:#fff;line-height:1.8; }
+.cart-table-area h3 a{color:#fff;}
 .cart-table-area dl{margin:10px 0;padding:0;display:block;color:#000;font:14px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;}
-.checkout-cart-index .cart-table-area dl { float: left !important; }
+.checkout-cart-index .cart-table-area dl { float: left !important;width:70%}
 .sales-order-view .cart-table-area dl { float: none !important; width: 100%; }
 .cart-table-area dl dt, .cart-table-area dl dd { display: inline-block; margin: 0; padding: 0; margin: 0 0 2px; text-align: left; width:48%;
 vertical-align:top;}
