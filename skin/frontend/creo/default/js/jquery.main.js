@@ -2698,3 +2698,14 @@ jQuery(window).load(function(){
 //		jQuery(".fme_layered_clearall").addClass("_selected_");
 //	}
 //});
+jQuery(window).load(function(){
+	
+	var pathname = window.location.href;
+	if (pathname.indexOf("universal_categories") > 0){
+		if (pathname.indexOf("=") > 0){
+			var equalsto = pathname.search("=");	
+			var id = pathname.substring(equalsto + 1);
+			jQuery('#universal_categories-'+id).simulate('click');
+		}
+	}
+});
