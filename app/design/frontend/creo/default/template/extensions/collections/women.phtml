@@ -43,10 +43,10 @@ $_attrbiuteCollection = $this->getLoadedAttributeCollection();
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
             <?php if ($a['value']): ?>
-                <a href="<?php echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
+                <a href="<?php echo Mage::getBaseUrl() . "clothing.html/women.html?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
             <?php else: 
 			?>
-            <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a>
+            <a href="<?php echo Mage::getBaseUrl() . "clothing.html/women.html" ?>">View All</a>
             <?php endif; ?>
         </li>
     <?php endforeach ?>
@@ -210,7 +210,7 @@ $_helper = $this->helper('catalog/output');
             <?php if ($a['value']): ?>
         <li>
 	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
-				<a href="<?php // echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>">
+				<a href="<?php echo Mage::getBaseUrl() . "clothing.html/women.html?universal_categories=".$a['value']."" ?>">
 				<?php if ($_img): ?>
                     <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $a['label']; ?>" />
                 <?php endif; ?>
