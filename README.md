@@ -6,6 +6,9 @@ Release Notes
 - Style image color changed for Selected item on product detail page
 - Selected item highlighted for category dropdown
 
+==2.4.1==
+- Selected style image changed
+
 ===2.3===
 - Missing links were added on collection page
 - Removed add to cart button on collection page
