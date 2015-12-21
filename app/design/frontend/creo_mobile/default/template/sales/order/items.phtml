@@ -24,8 +24,8 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="row">
-                        <div class="cart-table-area order-details-table col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="">
+<div class="cart-table-area order-details-table col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <?php  $_order = $this->getOrder() ?>
 <table class="data-table linearize-table-large" id="my-orders-table" summary="<?php echo $this->__('Items Ordered') ?>">
     
@@ -59,7 +59,6 @@
                 </td>
             </tr>
             <?php endif ?>
-        
         <?php endforeach; ?>
 </table>
 <script type="text/javascript">decorateTable('my-orders-table', {'tbody' : ['odd', 'even'], 'tbody tr' : ['first', 'last']})</script>
