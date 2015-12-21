@@ -2701,7 +2701,8 @@ jQuery(window).load(function(){
 jQuery(window).load(function(){
 	
 	var pathname = window.location.href;
-	if (pathname.indexOf("universal_categories") > 0){
+	var getvalue = jQuery('#fme_layered_params').val();
+	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
 		if (pathname.indexOf("=") > 0){
 			var equalsto = pathname.search("=");	
 			var id = pathname.substring(equalsto + 1);
