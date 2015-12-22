@@ -2684,6 +2684,7 @@ jQuery(window).load(function(){
     }
 });
 /** Selection of the first style ends here **/
+
 jQuery(document).ready(function($){
    jQuery(".bgr-icon").click(function() {
       var id = jQuery(this).attr('data-id');
@@ -2691,3 +2692,4 @@ jQuery(document).ready(function($){
    });
    jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
 });
+
