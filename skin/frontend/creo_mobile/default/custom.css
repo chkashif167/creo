@@ -194,7 +194,7 @@
     color: #3ebd00;
 }
 .availability p.availability {
-    width: 75px;
+    /*width: 75px;*/
     text-align: left;
     margin-left: 6px;
 }

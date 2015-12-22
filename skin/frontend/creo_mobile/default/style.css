@@ -460,7 +460,7 @@ font-size:100%; }
 .product-detail .options-area { border-width: 1px 0; border-style: solid; border-color: #515151; padding: 20px 0 20px 2px; }
 .tabset.tabset1 { overflow: hidden; margin: 20px 0 20px -4px; padding: 0; list-style: none; text-transform: uppercase; font: 15px/15px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tabset.tabset1 li { float: left; margin: 0 3px 0 0; }
-.tabset.tabset1 a { display: block; min-width: 30px; padding: 6px 15px; background: #ddd; color: #aaa; transform: skewX(-15deg); -moz-transform: skewX(-15deg); -ms-transform: skewX(-15deg); -webkit-transform: skewX(-15deg); }
+.tabset.tabset1 a { display: block; min-width: 30px; padding:6px; background: #ddd; color: #aaa; transform: skewX(-15deg); -moz-transform: skewX(-15deg); -ms-transform: skewX(-15deg); -webkit-transform: skewX(-15deg); }
 .tabset.tabset1 a span { display: block; transform: skewX(15deg); -moz-transform: skewX(15deg); -ms-transform: skewX(15deg); -webkit-transform: skewX(15deg); }
 .tabset.tabset1 li.active a, .tabset.tabset1 a:hover { color: #000; background: #f16167; text-decoration: none; }
 .tab-content1 { overflow: hidden; min-height: 99px; color: #888; font: 15px/25px "Roboto Condensed", Helvetica, Arial, sans-serif; }
@@ -744,7 +744,7 @@ border: 1px solid #959595; color: #000; background: none; cursor: pointer; font:
 #nav .featured-items .featured-products .title { background: rgba(255, 255, 255, 0.8); position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 10px; color: #000; font: 12px/14px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #nav .featured-items .featured-products a:hover .title { background: #f16a79; text-decoration: none; color: #fff; }
 #footer {position:relative;padding:15px 0 5px;}
-.navmenu-fixed-left{background:#F3F3F5;display:none;}
+.navmenu-fixed-left{background:#F3F3F5;display:none;z-index:99999;}
 .floatmenu li a{display: block;color: rgb(240, 240, 240) !important;font-size:1.1em;font-weight:300;
 border-bottom: 1px solid rgb(61, 62, 66);padding: 1em;text-transform: uppercase;}
 .floatmenu li a:hover {background: rgb(27, 29, 34) !important;}
@@ -1186,6 +1186,17 @@ display:block;}
 line-height:1.5;text-transform:uppercase;}
 .customer-account .my-account ol{padding-left:15px;}
 .my-account address{font-size:1em;}
+.cms-index-index #accordion.panel-group{margin-bottom:0;}
+.cms-index-index .col-main .std{display:none;}
+.cms-index-index .main{padding:0;}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;
+}
+
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
@@ -1194,6 +1205,7 @@ line-height:1.5;text-transform:uppercase;}
 .stacktable.large-only { display: none; }
 .stacktable.small-only { display: table; }
 }
+
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
 	background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
@@ -1259,3 +1271,10 @@ line-height:1.5;text-transform:uppercase;}
 	.cartPage_custome_responsive .item-options dd { width: 45%; text-align: left; padding-left: 5%;}
 	.cartPage_custome_responsive .sales-order-view .cart-table-area th:before, .cart-table-area td:before { border: 0 !important;}
 	
+
+
+@media (max-width:359px){
+.products-grid .btn-holder a{font-size:10px;}
+.products-grid .text-area .price,.products-grid .text-area h3{font-size:11px;}
+}
+
