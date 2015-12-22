@@ -1188,6 +1188,14 @@ line-height:1.5;text-transform:uppercase;}
 .my-account address{font-size:1em;}
 .cms-index-index #accordion.panel-group{margin-bottom:0;}
 .cms-index-index .col-main .std{display:none;}
+.cms-index-index .main{padding:0;}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;
+}
 
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
@@ -1197,9 +1205,8 @@ line-height:1.5;text-transform:uppercase;}
 .stacktable.large-only { display: none; }
 .stacktable.small-only { display: table; }
 }
-#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
-#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
-#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;	}
+
+@media (max-width:359px){
+.products-grid .btn-holder a{font-size:10px;}
+.products-grid .text-area .price,.products-grid .text-area h3{font-size:11px;}
+}
