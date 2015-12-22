@@ -2686,25 +2686,13 @@ jQuery(window).load(function(){
 /** Selection of the first style ends here **/
 
 
-jQuery(document).ready(function($){
+/*jQuery(document).ready(function($){
     jQuery(".bgr-icon").click(function() {
        var id = jQuery(this).attr('data-id');
        jQuery("#" + id).slideToggle();
     });
     jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
-});
+});*/
 
 
-jQuery(document).ready(function() { 
-    //pure javascript
 
-    var pathname = window.location.href;
-    if (pathname.indexOf("universal_categories") > 0){
-		jQuery(".fme_layered_clearall").removeClass("progos");
-    }
-	else
-	{
-		jQuery(".fme_layered_clearall").addClass("progos");
-	}
-    
-});
