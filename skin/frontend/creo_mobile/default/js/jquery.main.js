@@ -2684,9 +2684,3 @@ jQuery(window).load(function(){
     }
 });
 /** Selection of the first style ends here **/
-
-
- 
-
-
-
