@@ -493,8 +493,8 @@ width:49%;display:inline-block;vertical-align:top;}
 .cart-top-area .btn-holder a:first-child:hover { background: none; color: #000; opacity: 1; border-color: #f16167; }
 .cart-top-area { padding-bottom: 10px; padding-top: 10px;border-bottom:3px solid #eee;}
 .cart-table-area table { /*border-top: 3px solid #eee;*/ width: 100%; }
-.cart-table-area th { text-transform: uppercase; /*color: #fff;*/ font: 14px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
-/*background-color:#000;*/border-bottom:1px solid #fff;}
+.cart-table-area th { text-transform: uppercase; color: #fff; font: 14px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+background-color:#000;border-bottom:1px solid #fff;}
 .cart-table-area th, .cart-table-area td { padding: 12px 5px; text-align: center; }
 .cart-table-area td { position: relative; }
 .sales-order-view .cart-table-area th:before, .cart-table-area td:before { position: absolute; top: 12px; bottom: 12px; left: 0; border-left: 2px solid #f3f3f3; content: ''; }
@@ -743,7 +743,7 @@ border: 1px solid #959595; color: #000; background: none; cursor: pointer; font:
 #nav .featured-items .featured-products img { display: block; width: 100%; height: auto; }
 #nav .featured-items .featured-products .title { background: rgba(255, 255, 255, 0.8); position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 10px; color: #000; font: 12px/14px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #nav .featured-items .featured-products a:hover .title { background: #f16a79; text-decoration: none; color: #fff; }
-#footer {position:relative;padding:15px 0 5px;}
+#footer {position:relative;padding:0px 0 5px;}
 .navmenu-fixed-left{background:#F3F3F5;display:none;z-index:99999;}
 .floatmenu li a{display: block;color: rgb(240, 240, 240) !important;font-size:1.1em;font-weight:300;
 border-bottom: 1px solid rgb(61, 62, 66);padding: 1em;text-transform: uppercase;}
@@ -1239,17 +1239,18 @@ Label the data
 .cartPage_custome_responsive .qty-area { height: 22px;}
 .cartPage_custome_responsive .cart-btn-area td { padding-left: 0;}
 .cartPage_custome_responsive tfoot { display: inline-block; width: 100%;}
-.cartPage_custome_responsive .product-name { float: left; width: 100%; background: none; color: #000;}
+.cartPage_custome_responsive .product-name { width: 100%; background: none; color: #000;text-align:center;}
 .cartPage_custome_responsive .product-name a { color: #000;}
 .cartPage_custome_responsive .text-area .product-image { display: inline-block; float: none;}
 .cartPage_custome_responsive .edititem { position: absolute; right: 10px; top: 10px;}
 .cartPage_custome_responsive .btn-remove { position: absolute; right: 35px; top: 10px;}
 .cartPage_custome_responsive .item-options { display: inline-block !important; float: none; width: 100% !important;}
 
-.cartPage_custome_responsive .item-options dt { width: 45%; text-align: right; padding-right: 5%;}
-.cartPage_custome_responsive .item-options dd { width: 45%; text-align: left; padding-left: 5%;}
+.cartPage_custome_responsive .item-options dt { width: 45%; text-align: right; padding-right: 5%;display:inline-block;vertical-align:top;}
+.cartPage_custome_responsive .item-options dd { width: 45%; text-align: left; padding-left: 5%;display: inline-block;vertical-align:top;}
 .cartPage_custome_responsive .sales-order-view .cart-table-area th:before, .cart-table-area td:before { border: 0 !important;}
-
+.tool-tip-content img{max-width:100%;}
+.st-head-row dl{color:#fff;}
 
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
@@ -1265,4 +1266,5 @@ Label the data
 @media (max-width:359px){
 .products-grid .btn-holder a,.form-holder .submit-holder button{font-size:10px;}
 .products-grid .text-area .price,.products-grid .text-area h3{font-size:11px;}
+.checkout-form .form-group label{font-size:12px;}
 }
