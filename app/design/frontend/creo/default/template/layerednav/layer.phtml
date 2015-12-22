@@ -101,6 +101,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         var text = jQuery('#universal_categories-'+changeTo).text();
                                         //console.log("TEXT:"+text);
                                         jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
+
                                     }
 
                                     if (changeTo.indexOf("view all") >= 0) {                    //do not trigger onclick on the passed param and not on view all as well
@@ -121,6 +122,22 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         var onclickev = 'window.history.pushState(\'\',\'\',\''+target+'\')';
                                         jQuery(v).attr('onclick',onclickev);
                                         //reset url ends here.
+										var pathname = window.location.href;
+										if (pathname.indexOf("universal_categories") > 0){
+											jQuery(".fme_layered_clearall").removeClass("_selected_");
+											if (pathname.indexOf("=") > 0){
+												var equalsto = pathname.search("=");	
+												var id = pathname.substring(equalsto + 1);
+												jQuery("#universal_categories-"+id).addClass("dont_click_it");
+											}
+											
+										}
+										else
+										{
+											jQuery(".fme_layered_clearall").addClass("_selected_");
+											jQuery(".fme_layered_clearall").addClass("dont_click_it");
+											
+										}
                                     }
                                 });
 //                                //jQuery.query.set("design", "3araby");

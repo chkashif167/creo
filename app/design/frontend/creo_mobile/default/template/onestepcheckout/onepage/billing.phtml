@@ -18,7 +18,7 @@ $has_addr	= $this->customerHasAddresses();
     </div>
     <?php } ?>
   
-    <div class="row" id="bill_form"<?php if ($has_addr) {echo ' style="display:none;" ';} ?>>
+    <div id="bill_form"<?php if ($has_addr) {echo ' style="display:none;" ';} ?>>
       <input type="hidden" name="billing[address_id]" id="billing:address_id" value="<?php echo $this->getBillAddress()->getId() ?>" />
       <?php echo $this->getLayout()->createBlock('onestepcheckout/widget_name')->setObject($this->getBillAddress())->setFieldIdFormat('billing:%s')->setFieldNameFormat('billing[%s]')->toHtml() ?>
       <div class="form-group col-lg-2 col-sm-4">

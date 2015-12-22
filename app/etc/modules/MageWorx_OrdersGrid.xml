@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Grid extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersGrid
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+<config>
+    <modules>
+        <MageWorx_OrdersGrid>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Sales />
+                <MageWorx_All />
+            </depends>
+            <extension_name>Admin Order Grid</extension_name>
+        </MageWorx_OrdersGrid>
+    </modules>
+</config> 

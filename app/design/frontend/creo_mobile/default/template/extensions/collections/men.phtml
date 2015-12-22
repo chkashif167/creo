@@ -70,7 +70,7 @@ $_helper = $this->helper('catalog/output');
             <?php $_iterator = 0; ?>
             <div class="row">
             <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h3 class="inline-h"><span>Top Trends</span></h3>
+            <?php /* ?><h3 class="inline-h"><span>Top Trends</span></h3>
             <div class="carousel-creo carousel4 trends-carousel">
             <div class="mask">
             <div class="slideset" id="products-list">
@@ -92,7 +92,7 @@ $_helper = $this->helper('catalog/output');
             </div>
             <a class="btn-prev" href="#"><i class="icon-angle-left"></i></a>
             <a class="btn-next" href="#"><i class="icon-angle-right"></i></a>
-            </div>
+            </div><?php */ ?>
             </div>
             <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
@@ -209,9 +209,16 @@ $_helper = $this->helper('catalog/output');
     <?php foreach ($_attrbiuteCollection as $a): ?>
 
             <?php if ($a['value']): ?>
+            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
+            <?php
+			$imgurl =  $this->escapeHtml($_img);
+			if(!$_img){
+				continue;
+				}
+			?>
         <li>
 	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
-				<a href="<?php // echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>">
+				<a href="<?php echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>">
 				<?php if ($_img): ?>
                     <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $a['label']; ?>" />
                 <?php endif; ?>
@@ -229,10 +236,3 @@ $_helper = $this->helper('catalog/output');
 </div>
 </div>
 </div>
-<style>
-.design_categories_attributes {}
-.design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
-.design_categories_attributes ul li { width: 49.45%; display:inline-block; margin: 0 1% 1% 0;vertical-align:top;}
-.design_categories_attributes ul li:nth-child(2n) { margin-right: 0;}
-.design_categories_attributes ul li img { width: 100%;}
-</style>

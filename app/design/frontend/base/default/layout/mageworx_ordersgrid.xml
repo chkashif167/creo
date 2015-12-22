@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * MageWorx
+ * Admin Order Grid  extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersGrid
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+-->
+
+<layout version="0.1.0">    
+    
+    <sales_order_view>
+        <reference name="sales.order.view">
+            <action method="setTemplate" ifconfig="mageworx_ordersmanagement/ordersgrid/enabled"><template>mageworx/ordersgrid/sales-order-view.phtml</template></action>
+        </reference>
+
+        <!--add thumbnails-->
+        <reference name="head">
+            <action method="addItem" ifconfig="mageworx_ordersmanagement/ordersgrid/show_thumbnails"><type>js_css</type><name>mageworx/lightbox/css/lightbox.css</name><params/></action>
+            <action method="addItem" ifconfig="mageworx_ordersmanagement/ordersgrid/show_thumbnails"><type>js_css</type><name>mageworx/lightbox/css/lightbox-ie.css</name><params/><if>lt IE 8</if></action>
+            <action method="addItem" ifconfig="mageworx_ordersmanagement/ordersgrid/show_thumbnails"><type>js</type><name>mageworx/lightbox/js/lightbox.js</name><params/><if/></action>
+        </reference>
+        <reference name="order_items">
+            <action method="addItemRender" ifconfig="mageworx_ordersmanagement/ordersgrid/show_thumbnails"><type>default</type><block>sales/order_item_renderer_default</block><template>mageworx/ordersgrid/sales-order-items-renderer-default.phtml</template></action>
+            <action method="addItemRender" ifconfig="mageworx_ordersmanagement/ordersgrid/show_thumbnails"><type>grouped</type><block>sales/order_item_renderer_grouped</block><template>mageworx/ordersgrid/sales-order-items-renderer-default.phtml</template></action>
+        </reference>
+    </sales_order_view>
+    
+</layout>

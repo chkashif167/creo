@@ -1,11 +1,9 @@
 <?php $_item = $this->getItem()?>
 <tr>
- 
     <td>
-    <img style=" float: left; margin: 0 14px 0 0;" src="<?php echo $this->getProductThumbnail()->resize(100); ?>" width="55" height="55" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" />
     <h3 class="product-name"><?php echo $this->htmlEscape($this->getProductName()) ?></h3>   
           <?php if ($_options = $this->getOptionList()):?>
-        <dl class="" style="float:left">
+        <dl>
             <?php foreach ($_options as $_option) : ?>
             <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
             <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
@@ -26,7 +24,8 @@
             <?php echo $addtInfoBlock->setItem($_item)->toHtml() ?>
         <?php endif;?>
     </td>
-    <td class="a-center"><?php echo $_item->getQty() ?></td>    
+    <td class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(100); ?>" width="55" height="55" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></td>
+    <td class="a-center"><?php echo $_item->getQty() ?></td>
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-right">
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
@@ -71,7 +70,7 @@
             <?php endif; ?>
         <?php endif; ?>
     </td>
-    <td width="10%"><a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('') ?>" class="btn-remove btn-remove2 cancel"><?php echo $this->__('x') ?></a></td>
+    <td><a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('') ?>" class="btn-remove btn-remove2 cancel"><?php echo $this->__('x') ?></a></td>
     <?php endif; ?>
     <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-right">
@@ -120,6 +119,5 @@
             <?php endif; ?>
         <?php endif; ?>
     </td>
-    
     <?php endif; ?>    
 </tr>

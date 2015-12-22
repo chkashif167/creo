@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Raveinfosys_Exporter>
+            <version>1.0.5</version>
+        </Raveinfosys_Exporter>
+    </modules>
+    <frontend>
+        <routers>
+            <exporter>
+                <use>standard</use>
+                <args>
+                    <module>Raveinfosys_Exporter</module>
+                    <frontName>exporter</frontName>
+                </args>
+            </exporter>
+        </routers>
+        <layout>
+            <updates>
+                <exporter>
+                    <file>exporter.xml</file>
+                </exporter>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<adminhtml>
+				<args>
+                    <modules>
+                        <raveinfosys_exporter before="Mage_Adminhtml">Raveinfosys_Exporter_Adminhtml</raveinfosys_exporter>
+                    </modules>
+				</args>
+			</adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+		<menu>
+			<exporter module="exporter">
+				<title>Exporter</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<export module="exporter">
+						<title>Export Orders</title>
+						<sort_order>1</sort_order>
+						<action>*/exporter</action>
+					</export>
+					<import module="exporter">
+						<title>Import Orders</title>
+						<sort_order>2</sort_order>
+						<action>*/importer</action>
+					</import>
+
+
+				</children>
+			</exporter>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<exporter>
+							<title>Exporter Module</title>
+							<sort_order>10</sort_order>
+							<children>
+								<export>
+									<title>Export Orders</title>
+								</export>
+								<import>
+									<title>Import Orders</title>
+								</import>
+							</children>
+						</exporter>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<raveinfosys_exporter>
+					<file>exporter.xml</file>
+				</raveinfosys_exporter>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <exporter>
+                <class>Raveinfosys_Exporter_Model</class>
+                <resourceModel>exporter_mysql4</resourceModel>
+            </exporter>
+            <exporter_mysql4>
+                <class>Raveinfosys_Exporter_Model_Mysql4</class>
+                <entities>
+                    <exporter>
+                        <table>exporter</table>
+                    </exporter>
+                </entities>
+            </exporter_mysql4>
+        </models>
+        <resources>
+            <exporter_setup>
+                <setup>
+                    <module>Raveinfosys_Exporter</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </exporter_setup>
+            <exporter_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </exporter_write>
+            <exporter_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </exporter_read>
+        </resources>
+        <blocks>
+            <exporter>
+                <class>Raveinfosys_Exporter_Block</class>
+            </exporter>
+			
+			<adminhtml>
+                <rewrite>
+                    <sales_order_shipment_view_form>Raveinfosys_Exporter_Block_Sales_Order_Form_Form</sales_order_shipment_view_form>
+                </rewrite>
+            </adminhtml>
+			
+			<adminhtml>
+                <rewrite>
+                    <sales_order_shipment_create_items>Raveinfosys_Exporter_Block_Sales_Order_Items</sales_order_shipment_create_items>
+                </rewrite>
+            </adminhtml>
+			
+        </blocks>
+        <helpers>
+            <exporter>
+                <class>Raveinfosys_Exporter_Helper</class>
+            </exporter>
+        </helpers>
+    </global>
+</config>

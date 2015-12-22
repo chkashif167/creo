@@ -1,0 +1,50 @@
+<?php
+/**
+ * MageWorx
+ * Admin Order Editor extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_OrdersEdit
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+
+if ($_item = $this->getItem()) {
+    // add img thumbnail
+    if ($this->helper('mageworx_ordersedit')->isEnabled()) {
+        $imgHelper = $this->helper('mageworx_ordersedit')->getImgByItem($_item);
+        if($imgHelper){ ?>
+            <a href="<?php echo $imgHelper ?>" rel="mageworxLightbox[]">
+                <img src="<?php echo $imgHelper->resize(90, 90); ?>" height="90" alt="" align="left" style="padding-right:2px;" />
+            </a>
+        <?php } else { ?>
+            <img src="<?php echo Mage::getDesign()->getSkinUrl('images/placeholder/thumbnail.jpg'); ?>" height="90" width="90" alt="" align="left" style="padding-right:2px;" />
+        <?php }
+    } ?>    
+
+    <h5 class="title"><span id="order_item_<?php echo $_item->getId() ?>_title"><?php echo $this->htmlEscape($_item->getName()) ?></span></h5>
+    <div><strong><?php echo $this->helper('sales')->__('SKU') ?>:</strong> <?php echo implode('<br />', Mage::helper('catalog')->splitSku($this->htmlEscape($this->getSku()))); ?></div>
+    <?php if ($this->getOrderOptions()): ?>
+        <dl class="item-options">
+        <?php foreach ($this->getOrderOptions() as $_option): ?>
+            <dt><?php echo $_option['label'] ?></dt>
+            <dd>
+            <?php if (isset($_option['custom_view']) && $_option['custom_view']): ?>
+                <?php echo $this->getCustomizedOptionValue($_option); ?>
+            <?php else: ?>
+                <?php echo nl2br($this->escapeHtml($_option['value'])); ?>
+                <?php Mage::helper('core/string')->truncate($_option['value'], 55, '', $_remainder);?>
+                <?php if ($_remainder):?>
+                    ... <span id="<?php echo $_id = 'id' . uniqid()?>"><?php echo $_remainder ?></span>
+                    <script type="text/javascript">
+                    $('<?php echo $_id ?>').hide();
+                    $('<?php echo $_id ?>').up().observe('mouseover', function(){$('<?php echo $_id ?>').show();});
+                    $('<?php echo $_id ?>').up().observe('mouseout',  function(){$('<?php echo $_id ?>').hide();});
+                    </script>
+                <?php endif;?>
+            <?php endif;?>
+            </dd>
+        <?php endforeach; ?>
+        </dl>
+    <?php endif; ?>
+    <?php echo $this->htmlEscape($_item->getDescription()) ?>
+<?php } ?>

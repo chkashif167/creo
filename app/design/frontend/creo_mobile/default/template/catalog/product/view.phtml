@@ -129,7 +129,11 @@ if($_product->stock_item->is_in_stock == 0){
                         </span> 
                     </div>
 
-
+<div class="options-area">
+                <?php if ($_product->isSaleable()):?>
+                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                        <?php endif; ?>
+                    </div>
                     <!-- tabs structure example -->
                     <ul class="tabset tabset1">
                         <li class="active"><a href="#tab1"><span>
@@ -164,11 +168,7 @@ if($_product->stock_item->is_in_stock == 0){
                             <p><?php print $_product->getDesign(); ?> </p>
                         </div>
                     </div>
-                    <div class="options-area">
-                <?php if ($_product->isSaleable()):?>
-                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                        <?php endif; ?>
-                    </div>
+                    
                     <?php  if(!$_product->isSaleable()): ?>
 						<?php echo $this->getChildHtml('addto') ?>                      
                       <?php endif; ?>
@@ -418,7 +418,7 @@ if($_product->stock_item->is_in_stock == 0){
             </div>
         </div>
     </div>   
-    <div class="fme_loading_filters" style="display:none;"><img id="loading-image" src="<?php echo $this->getSkinUrl(); ?>images/FME/ajax-loader.gif" /></div>
+    <div class="fme_loading_filters" style="display:none;"><img id="loading-image" src="<?php echo $this->getSkinUrl('images/FME/ajax-loader.gif'); ?>" /></div>
     <style>
         .fme_loading_filters {
             background-color: #d8d8d8;
