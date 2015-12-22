@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-
 <default>
 <reference name="head">
-
 <action method="addCss"><stylesheet>jquery.mCustomScrollbar.css</stylesheet></action>
 <action method="setText"><text><![CDATA[<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed">]]></text></action>
 <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
@@ -23,7 +21,6 @@
 <!-- <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action>
 <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.js</script></action> -->
 </reference>
-
 	<reference name="footer">
 			 <remove name="footer_currency" />
 			 <remove name="footer_links" />
@@ -37,7 +34,6 @@
 			 -->
 <!--	  <block type="core/template" name="loginpopup" as="loginpopup" template="page/template/loginpopup.phtml"/>
 -->	  <block type="newsletter/subscribe" name="footer.newsletter" as="newsletter" before="footer_store_language" template="newsletter/subscribe.phtml"/>
-	 
 		<!--<block ifconfig="youamaajaxlogin/settings/power" type="youama_ajaxlogin/ajaxlogin"   name="youamaajaxlogin"   as="youamaajaxlogin">
 		<action ifconfig="youamaajaxlogin/settings/power"
 		method="setTemplate">
@@ -46,12 +42,10 @@
 		</block>-->
 		<block type="customer/form_login" name="customer_form_login"  before="footer_store_language" template="customer/form/loginpopup.phtml" />
 	 </reference>
-	 
 </default>
 
 
 <cms_index_index>
-	
 	<reference name="head">
 	<action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
 	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
@@ -59,8 +53,8 @@
 	</reference>
 	<reference name="content">
 	<block type="cms/block" name="mobilewebsite_top_banner">
-		<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
-		</block> 
+	<action method="setBlockId"><block_id>mobilewebsite_top_banner</block_id></action>
+	</block> 
 	
 	<!--<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>-->
 	<!-- <block type="cms/block" name="featuredproducts_mid">
