@@ -561,7 +561,7 @@ div.fme-filter a.fme_layered_attribute {
 .Vshape:hover {background:url(../images/largevshape-hover.png) no-repeat !important;}
 
 #fme_layered_styles > ol {padding: 0 0 0 56px;}
-.col.col-lg-12.col-md-12.col-sm-12.col-xs-12 > h2 {text-transform: uppercase;}
+.col.col-lg-12.col-md-12.col-sm-12.col-xs-12 > h2 {text-transform: uppercase;font-size:26px;}
 
 /*****************************  product detail page  *********************************/
 
@@ -616,9 +616,9 @@ div.fme-filter a.fme_layered_attribute {
 }
 
 .catalog-category-view.categorypath-create-html.category-create .products-grid li h2 a {
-    border: 2px solid #ececec;
+    border:2px solid #ececec;
     display: block;
-    font-size: 21px;
+    font-size:16px;
     line-height: 2;
     text-align: center;
     text-decoration: none;
