@@ -1186,6 +1186,9 @@ display:block;}
 line-height:1.5;text-transform:uppercase;}
 .customer-account .my-account ol{padding-left:15px;}
 .my-account address{font-size:1em;}
+.cms-index-index #accordion.panel-group{margin-bottom:0;}
+.cms-index-index .col-main .std{display:none;}
+
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}

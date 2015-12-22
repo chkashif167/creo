@@ -2685,26 +2685,30 @@ jQuery(window).load(function(){
 });
 /** Selection of the first style ends here **/
 
-
 jQuery(document).ready(function($){
     jQuery(".bgr-icon").click(function() {
        var id = jQuery(this).attr('data-id');
        jQuery("#" + id).slideToggle();
     });
-  //  jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
-});
+  jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
 
 
-jQuery(document).ready(function() { 
-    //pure javascript
+if ( jQuery( "table" ).is( ".responsiveTable" ) ) {
+var headertext = [],
+headers = document.querySelectorAll(".responsiveTable th"),
+tablerows = document.querySelectorAll(".responsiveTable th"),
+tablebody = document.querySelector(".responsiveTable tbody");
 
-    var pathname = window.location.href;
-    if (pathname.indexOf("universal_categories") > 0){
-		jQuery(".fme_layered_clearall").removeClass("progos");
-    }
-	else
-	{
-		jQuery(".fme_layered_clearall").addClass("progos");
-	}
-    
+for(var i = 0; i < headers.length; i++) {
+ var current = headers[i];
+ headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+ for (var j = 0, col; col = row.cells[j]; j++) {
+   col.setAttribute("data-th", headertext[j]);
+ }
+}
+}
+
+
 });
