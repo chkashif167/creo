@@ -2691,6 +2691,20 @@ jQuery(document).ready(function($){
        var id = jQuery(this).attr('data-id');
        jQuery("#" + id).slideToggle();
     });
-    jQuery('.data-table,.order-products-table').stacktable();
+    jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
 });
 
+
+jQuery(document).ready(function() { 
+    //pure javascript
+
+    var pathname = window.location.href;
+    if (pathname.indexOf("universal_categories") > 0){
+		jQuery(".fme_layered_clearall").removeClass("progos");
+    }
+	else
+	{
+		jQuery(".fme_layered_clearall").addClass("progos");
+	}
+    
+});

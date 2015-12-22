@@ -1216,7 +1216,11 @@ a[class*='_selected_']{
     color: #fff !important;
 	background: #000;
 }
-.defaultSelect{
+._selected_{
     color: #fff !important;
 	background: #000;
+}
+.dont_click_it {
+   pointer-events: none;
+   cursor: default;
 }
