@@ -18,19 +18,19 @@
 <action method="addItem"><type>skin_js</type><script>js/jquery-confirm.min.js</script></action>
 <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
 <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
-<!-- <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action>
-<action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.js</script></action> -->
+<action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action>
+<action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.js</script></action>
 </reference>
-	<reference name="footer">
-			 <remove name="footer_currency" />
-			 <remove name="footer_links" />
-			 <remove name="footer_links2" />
-			 <remove name="store_switcher" />
-			 <remove name="cms_footer_links" />
-			<!-- <remove name="footer.newsletter" />-->
-			<!--<block type="cms/block" name="help_footer" as="help_footer">
-			<action method="setBlockId"><block_id>help_footer</block_id></action>
-			</block>
+<reference name="footer">
+ <remove name="footer_currency" />
+ <remove name="footer_links" />
+ <remove name="footer_links2" />
+ <remove name="store_switcher" />
+ <remove name="cms_footer_links" />
+<!-- <remove name="footer.newsletter" />-->
+<!--<block type="cms/block" name="help_footer" as="help_footer">
+<action method="setBlockId"><block_id>help_footer</block_id></action>
+</block>
 			 -->
 <!--	  <block type="core/template" name="loginpopup" as="loginpopup" template="page/template/loginpopup.phtml"/>
 -->	  <block type="newsletter/subscribe" name="footer.newsletter" as="newsletter" before="footer_store_language" template="newsletter/subscribe.phtml"/>
