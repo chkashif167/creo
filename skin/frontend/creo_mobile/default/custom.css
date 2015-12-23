@@ -1022,7 +1022,8 @@ padding: 5px 8px; margin:0;}
     text-align: center;
     width: 175px;
     color: #fef7f8;
-    font-size: 15.87px;
+    font-size: 12px;
+    text-transform: capitalize;
 }
 .tshirtsize{
     width:400px;

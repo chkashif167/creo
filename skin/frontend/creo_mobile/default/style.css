@@ -1257,6 +1257,8 @@ Label the data
 .navmenu,.navbar-offcanvas{width:250px;}
 .cartPage_custome_responsive td.product-cart-actions .qty-area{margin:0;}
 .cartPage_custome_responsive td.product-cart-actions .size-area_outer{margin-left:0;}
+body.customer-account-login #footer,body.customer-account-login .footer_termsconditions{margin:0 -15px;width:auto;}
+body.customer-account-login #footer{padding-bottom:0;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}

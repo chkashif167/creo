@@ -29,7 +29,7 @@
 <?php $_wishlistSubmitUrl = $this->helper('wishlist')->getUpdateUrl($_wishlistItem); ?>
 <ul class="add-to-links">
 <?php if ($this->helper('wishlist')->isAllow()) : ?>
-    <li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-compare"><?php echo $this->__('Update Wishlist') ?></a></li>
+    <li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist" title="<?php echo $this->__('Update Wishlist') ?>"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a></li>
 <?php endif; ?>
 <?php $_product = $this->getProduct(); ?>
 <?php $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product); ?>
