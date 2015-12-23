@@ -1212,7 +1212,6 @@ padding: 5px 8px; margin:0;}
 .dashboar_whishlist_addtocartArea h3 { display: none;}
 .bottom-area { position: relative; top: 50px;}
 .dashboar_whishlist_addtocartArea .price { position: relative; top: 27px; left: -9px;}
-
 a[class*='_selected_']{
     color: #fff !important;
 	background: #000;
