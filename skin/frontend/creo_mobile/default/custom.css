@@ -1226,11 +1226,13 @@ a[class*='_selected_']{
    cursor: default;
 }
 
-@media (max-width:359px){
+@media only screen and (max-device-width:359px){
 .cart-btn-area .btn-holder .button2,
 .checkout-cart-index .btn-holder .btn-proceed-checkout,
 .cart-top-area .btn-holder a:first-child,
 .cart-bottom-area .btn-holder a:first-child{font-size:10px;}
-.onestepcheckout-index-index .checkout_bottom_area .total .title{font-size: 12px;}
-.onestepcheckout-index-index .checkout_bottom_area .total span{font-size: 12px !important;}
+.onestepcheckout-index-index .checkout_bottom_area .total .title,
+.onestepcheckout-index-index .checkout_bottom_area .subtotal .title{font-size: 11px;}
+.onestepcheckout-index-index .checkout_bottom_area .total span,
+.onestepcheckout-index-index .checkout_bottom_area .subtotal span{font-size:11px !important;}
 }
