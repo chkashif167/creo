@@ -1,6 +1,11 @@
 Release Notes
 -----------------
 
+===3.0===
+- First Responsive Version
+- "The Crazy Ones" feature added for mobile and desktop version
+- Charismas popup for desktop  version
+
 ===2.4===
 - Top Trends section removed from Collections
 - Style image color changed for Selected item on product detail page
