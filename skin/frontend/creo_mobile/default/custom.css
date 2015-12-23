@@ -1194,8 +1194,10 @@ padding: 5px 8px; margin:0;}
 .mobilewebsite_bottom_categories a { float: left; width: 33%}
 .mobilewebsite_bottom_categories a img { width: 100%}
 .customer-account .tab-links ul li { width: 100%; padding: 5px 0;}
-.customer-account .tab-links ul li a { transform: skew(0deg)}
-.customer-account .tab-links ul li a span { transform: skew(0deg); font-size:18px;line-height:1.8;}
+.customer-account .tab-links ul li a {transform: skewX(0deg); -moz-transform: skewX(0deg); -ms-transform: skewX(0deg);
+-webkit-transform: skewX(0deg);}
+.customer-account .tab-links ul li a span { font-size:18px;line-height:1.8;
+transform: skewX(0deg); -moz-transform: skewX(0deg); -ms-transform: skewX(0deg); -webkit-transform: skewX(0deg);}
 .customer-account .tab-links ul li.active a span{color:#fff;}
 .customer-account .dashboard .column, .customer-account .dashboard .column.large { width: 100%;}
 .customer-account .my-account .form-frame { width: 100%;}
@@ -1214,18 +1216,9 @@ padding: 5px 8px; margin:0;}
 .dashboar_whishlist_addtocartArea h3 { display: none;}
 .dashboar_whishlist_addtocartArea .bottom-area { position: relative; top: 50px;}
 .dashboar_whishlist_addtocartArea .price { position: relative; top: 27px; left: -9px;}
-a[class*='_selected_']{
-    color: #fff !important;
-	background: #000;
-}
-._selected_{
-    color: #fff !important;
-	background: #000;
-}
-.dont_click_it {
-   pointer-events: none;
-   cursor: default;
-}
+a[class*='_selected_']{color: #fff !important;background: #000;}
+._selected_{color: #fff !important;background: #000;}
+.dont_click_it {pointer-events: none;cursor: default;}
 .cartPage_custome_responsive .qty-area { margin: 0 !important;}
 .cartPage_custome_responsive .text-area { text-align: center;}
 .categorypath-clothing-html #fme_filters_list img  { width: 100%;}
