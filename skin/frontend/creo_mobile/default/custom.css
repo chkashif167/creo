@@ -571,8 +571,10 @@
     margin: auto;
 }
 .checkout-cart-index .size-area_outer .size-area li {
-    float: none !important;
+float: none;display: inline-block;padding:3px 5px;
 }
+.checkout-cart-index .size-area_outer .size-area li.active{background-color:#000;color:#fff;}
+.checkout-cart-index .size-area_outer .size-area li.active a{color:#fff;}
 .checkout-cart-index .size-area_outer .size-area li a {
     cursor: auto;
 }

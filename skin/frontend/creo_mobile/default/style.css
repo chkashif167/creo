@@ -434,7 +434,8 @@ font-size:100%; }
 .carousel-creo.carousel4 .slide .text-area h3{font-size:100%;font-weight:700;margin-bottom:5px;}
 .product-detail { padding-top: 10px; padding-bottom: 30px; }
 .product-detail .text-area { overflow: hidden; width: 100%; }
-.product-detail h2 { margin: 0 0 20px; text-transform: uppercase; color: #222; font: 38px/32px "Roboto Condensed", Helvetica, Arial, sans-serif; }
+.product-detail h2{margin:0 0 20px;text-transform:uppercase;color: #222;
+font: 28px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;}
 .product-detail .price-area { padding: 10px 50px 10px 0; overflow: hidden; border-width: 1px 0; border-style: solid; border-bottom: none; border-color: #515151; }
 .product-detail .price-area .price { float: left; color: #000; font: 25px/28px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .product-detail .price-area .old-price { display: inline-block; vertical-align: middle; color: #f16167; font-size: 18px; font-style: normal; display: inline-block; text-decoration: line-through; float: left; margin: 0; }
@@ -1085,6 +1086,7 @@ border-color: transparent transparent transparent #000;
 	border-color: #fff;
 	border-style: solid;
 }
+.homepage_navigation_middle .panel.panel-default:nth-child(5){display:none;}
 .homepage_navigation_middle .panel-heading{
 	border-radius: 0;
 	padding: 0;
@@ -1213,7 +1215,7 @@ border-top: 1px solid #eee;
 position: relative;
 
 }
-.cartPage_custome_responsive td.product-cart-actions { /*padding-left: 50%;*/ }
+.cartPage_custome_responsive td.product-cart-actions { /*padding-left: 50%;*/ height:30px;}
 .cartPage_custome_responsive td.product-cart-image, .cartPage_custome_responsive td.cart-footer-actions  { padding-left: 0;}
 .cartPage_custome_responsive td { padding-left: 50%; }
 .cartPage_custome_responsive td:before { 
@@ -1231,17 +1233,17 @@ white-space: nowrap;
 Label the data
 */
 .cartPage_custome_responsive td:nth-of-type(1):before { content: "";  }
-.cartPage_custome_responsive td:nth-of-type(2):before { content: "Unite Price"; margin-top: 10px; }
-.cartPage_custome_responsive td:nth-of-type(3):before { content: " Size"; margin-top: 10px; }
-.cartPage_custome_responsive td:nth-of-type(4):before { content: "Quantity"; margin-top: 10px;}
-.cartPage_custome_responsive td:nth-of-type(5):before { content: "Subtotal    "; margin-top: 10px;}
+.cartPage_custome_responsive td:nth-of-type(2):before { content: "Unite Price"; margin-top: 0px; }
+.cartPage_custome_responsive td:nth-of-type(3):before { content: " Size"; margin-top: 0px; }
+.cartPage_custome_responsive td:nth-of-type(4):before { content: "Quantity"; margin-top: 0px;}
+.cartPage_custome_responsive td:nth-of-type(5):before { content: "Subtotal    "; margin-top: 0px;}
 
 .cartPage_custome_responsive .qty-area { height: 22px;}
 .cartPage_custome_responsive .cart-btn-area td { padding-left: 0;}
 .cartPage_custome_responsive tfoot { display: inline-block; width: 100%;}
 .cartPage_custome_responsive .product-name { width: 100%; background: none; color: #000;text-align:center;}
 .cartPage_custome_responsive .product-name a { color: #000;}
-.cartPage_custome_responsive .text-area .product-image { display: inline-block; float: none;}
+.cartPage_custome_responsive .text-area .product-image { display: inline-block; float: none;padding-left:7px;}
 .cartPage_custome_responsive .edititem { position: absolute; right: 10px; top: 10px;}
 .cartPage_custome_responsive .btn-remove { position: absolute; right: 35px; top: 10px;}
 .cartPage_custome_responsive .item-options { display: inline-block !important; float: none; width: 100% !important;}
@@ -1251,6 +1253,7 @@ Label the data
 .cartPage_custome_responsive .sales-order-view .cart-table-area th:before, .cart-table-area td:before { border: 0 !important;}
 .tool-tip-content img{max-width:100%;}
 .st-head-row dl{color:#fff;}
+.navmenu,.navbar-offcanvas{width:250px;}
 
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
