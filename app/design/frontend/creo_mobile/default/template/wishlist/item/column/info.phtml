@@ -36,9 +36,10 @@ $simple_product = $item_s['simple_product']->getData();
 $simple_product_id = $simple_product['product_id'];
 $simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_id);
 ?>
+<div class="dashboard_whishlit_img">
 <img class="alignleft" src="<?php echo $this->helper('catalog/image')
     ->init($simple_product_attr ,'small_image')->resize(113,113);  ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
-
+</div>
 <div class="product-details">
 
     <h3>PRODUCT DETAILS</h3>
