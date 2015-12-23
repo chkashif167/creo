@@ -367,6 +367,13 @@ endforeach;
         </div>
     </div>
 </li>
+
+<li <?php if(strstr($ccurrentUrl,"black & white")) {
+                    echo'class="active"';
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=227" ?>">Black & White</a>
+</li>
+
+
 <!--<li <?php if (in_array("categories",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">CATEGORIES</a>
