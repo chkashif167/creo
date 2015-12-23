@@ -175,7 +175,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     <?php if ($_carousel_direction!='vertical' ): ?>
         <?php /*?><h2><?php echo $this->__('More Views') ?></h2><?php */?>
     <?php endif;?>
-        <div class="<?php echo $_container_class; ?>" id="product-gallery-container">
+        <div class="<?php echo $_container_class; ?>" id="product-gallery-container" style="display:none;">
             <ul class="<?php echo $_list_class; ?>">
                 <?php foreach ($this->getGalleryImages() as $_image): ?>
                     <li  class="<?php echo $_image->getAssociatedAttributes(); ?> product-image-thumbs" <?php if ($_image->getDisabled()): ?>style="display:none;"<?php endif; ?>>

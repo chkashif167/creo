@@ -36,14 +36,12 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);</script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 <div class="row">
-
-<?php 
-
+<?php
 if($_product->stock_item->is_in_stock == 0){
 	$outofstockclass = "outofstockclass ";
  } ?>
 
-    <div class=" <?php if(isset($outofstockclass)) {echo $outofstockclass ;} ?>product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="<?php if(isset($outofstockclass)) {echo $outofstockclass ;} ?>product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> validation_status="">
             <?php echo $this->getBlockHtml('formkey') ?>
             <div class="no-display">
@@ -105,13 +103,13 @@ if($_product->stock_item->is_in_stock == 0){
                     </div>
                 </div>
             <?php }else { ?>
+            <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                 <div class="carousel-creo carousel3">
                     <div class="product-img-box">
                         <?php echo $this->getChildHtml('media') ?>
                     </div>
                 </div>
                 <div class="text-area">
-                    <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                     <div class="price-area"> 
 <div class="price-info">
 <?php /*?><?php if($_product->getSpecialPrice() > 0.0):?>
@@ -124,7 +122,7 @@ if($_product->stock_item->is_in_stock == 0){
 <?php echo $this->getTierPriceHtml() ?>
 
  </div>
-                        <span class="availability">Availability:  
+                        <span class="availability">Availability:
                             <?php echo $this->getChildHtml('product_type_availability'); ?>
                         </span> 
                     </div>
@@ -207,7 +205,7 @@ if($_product->stock_item->is_in_stock == 0){
                     ?>
                     <?php //Ghost code ends?>
                                         </div>
-                    -->                    
+                    -->
                 </div>
             <?php } ?>
             <?php //endif;*/  ?>
@@ -268,10 +266,9 @@ if($_product->stock_item->is_in_stock == 0){
                                 success: function(data){
                                 jQuery('.fme_loading_filters').hide();
                                         //alert(data.status + ": " + data.message);
-                                        if (jQuery('#header-cart')) {
-                                
-								if(data.status != "ERROR"){
-								jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+                                       if (jQuery('#header-cart')) {
+			if(data.status != "ERROR"){
+			jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -282,41 +279,41 @@ if($_product->stock_item->is_in_stock == 0){
                                         event: 'over',
                                         effect: 'fade'
                                 });
-								jQuery('#ajaxModalTitle').html(data.status);
-								jQuery('#ajaxModalContent').html(data.message);
-								jQuery('.ajaxAddToCartModal').modal('show');
-								
-                                        //refresh minicart
-										var data = jQuery('#product_addtocart_form').serialize();
-										data += '&isRefresh=1';
-										try {
-										jQuery.ajax({
-										url: url,
-												dataType: 'json',
-												type : 'post',
-												data: data,
-												success: function(data){
-										if(data.status != "ERROR"){
-										jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
-										}
-												if (jQuery('#header-cart')) {
-												/*initialize the minicart dropdown again*/
-												jQuery('#open-close-minicart').openClose({
-												activeClass: 'active',
-														opener: '.opener',
-														slider: '.slide',
-														animSpeed: 400,
-														event: 'over',
-														effect: 'fade'
-												});
-														}
-												}
-										});
-										} catch (e) {
-								}
-										//refresh minicart
-										}
-								}
+		jQuery('#ajaxModalTitle').html(data.status);
+		jQuery('#ajaxModalContent').html(data.message);
+		jQuery('.ajaxAddToCartModal').modal('show');
+
+        //refresh minicart
+		var data = jQuery('#product_addtocart_form').serialize();
+		data += '&isRefresh=1';
+		try {
+		jQuery.ajax({
+		url: url,
+				dataType: 'json',
+				type : 'post',
+				data: data,
+				success: function(data){
+		if(data.status != "ERROR"){
+		jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+		}
+				if (jQuery('#header-cart')) {
+				/*initialize the minicart dropdown again*/
+				jQuery('#open-close-minicart').openClose({
+				activeClass: 'active',
+						opener: '.opener',
+						slider: '.slide',
+						animSpeed: 400,
+						event: 'over',
+						effect: 'fade'
+				});
+						}
+				}
+		});
+		} catch (e) {
+}
+		//refresh minicart
+		}
+}
                         });
                         } catch (e) {
                 }
