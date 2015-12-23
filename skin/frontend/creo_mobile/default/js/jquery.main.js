@@ -2708,7 +2708,6 @@ jQuery(document).ready(function($){
 //	}
 //});
 jQuery(window).load(function(){
-	
 	var pathname = window.location.href;
 	var getvalue = jQuery('#fme_layered_params').val();
 	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
