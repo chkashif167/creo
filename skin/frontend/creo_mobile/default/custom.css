@@ -1022,7 +1022,8 @@ padding: 5px 8px; margin:0;}
     text-align: center;
     width: 175px;
     color: #fef7f8;
-    font-size: 15.87px;
+    font-size: 12px;
+    text-transform: capitalize;
 }
 .tshirtsize{
     width:400px;
@@ -1044,7 +1045,7 @@ padding: 5px 8px; margin:0;}
     padding:5px;
     width: 133px;
     text-align: center;
-    font-size: 15.87px;
+    font-size: 11px;
     font-weight: 400;
     color: #251c1d;
 }
@@ -1073,7 +1074,7 @@ padding: 5px 8px; margin:0;}
     text-align: center;
     width: 175px;
     color: #fef7f8;
-    font-size: 15.87px;
+    font-size: 11px;
 }
 .tshirtsize{
     width:400px;
@@ -1094,7 +1095,7 @@ padding: 5px 8px; margin:0;}
 .womentable td{
     padding:3px;
     text-align: center;
-    font-size: 15.87px;
+    font-size: 9px;
     font-weight: 400;
     color: #251c1d;
 }
@@ -1194,8 +1195,10 @@ padding: 5px 8px; margin:0;}
 .mobilewebsite_bottom_categories a { float: left; width: 33%}
 .mobilewebsite_bottom_categories a img { width: 100%}
 .customer-account .tab-links ul li { width: 100%; padding: 5px 0;}
-.customer-account .tab-links ul li a { transform: skew(0deg)}
-.customer-account .tab-links ul li a span { transform: skew(0deg); font-size:18px;line-height:1.8;}
+.customer-account .tab-links ul li a {transform: skewX(0deg); -moz-transform: skewX(0deg); -ms-transform: skewX(0deg);
+-webkit-transform: skewX(0deg);}
+.customer-account .tab-links ul li a span { font-size:18px;line-height:1.8;
+transform: skewX(0deg); -moz-transform: skewX(0deg); -ms-transform: skewX(0deg); -webkit-transform: skewX(0deg);}
 .customer-account .tab-links ul li.active a span{color:#fff;}
 .customer-account .dashboard .column, .customer-account .dashboard .column.large { width: 100%;}
 .customer-account .my-account .form-frame { width: 100%;}
@@ -1206,14 +1209,14 @@ padding: 5px 8px; margin:0;}
 .customer-account #wishlist-view-form .product-area .edit { color: #ddd; font-size: 14px; position: absolute; right:10px; top: 12px;}
 .customer-account #wishlist-view-form .product-area .cancel { color: #ddd; font-size: 16px; position: absolute; right:30px; top: 12px;}
 .modal-dialog .checkout-cart-index .btn-holder .btn-proceed-checkout { padding: 0px; font-size: 12px;}
-.dashboard_whishlit_img { float: left; width: 100%; text-align: center; padding: 7px 0; position: relative;
- top: -125px; display: inline-block;}
+.dashboard_whishlit_img { float: left; width: 100%; text-align: center; padding: 7px 0; position:absolute;top:0;left:0;
+margin-top:0; display: inline-block;}
 .dashboard_whishlit_img img { margin: auto !important; float: none !important;}
 .dashboar_whishlit_productdetail { float: left; width: 100%;}
 .dashboar_whishlist_addtocartArea { float: left !important; width: 100% !important; min-height: auto !important;}
 .dashboar_whishlist_addtocartArea h3 { display: none;}
-.dashboar_whishlist_addtocartArea .bottom-area { position: relative; top: 50px; }
-.dashboar_whishlist_addtocartArea .price { position: relative;  top: 30px; width: 100%; display: inline-block !important;}
+.dashboar_whishlist_addtocartArea .bottom-area { position:relative;margin-top: 0px; }
+.dashboar_whishlist_addtocartArea .price { position:relative;top:16px; width: 100%; display: inline-block !important;}
 a[class*='_selected_']{
     color: #fff !important;
 	background: #000;
