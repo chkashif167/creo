@@ -185,6 +185,9 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 
                                             </ul></div>
                                     <?php
+											}elseif(strpos($currentUrl,'custom=1') ==  true){
+											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
+												
 											}
                                     }
                                 } else if ($current_category_p_id != '57' || $current_category_p_id != '58') {
@@ -237,6 +240,9 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 
                                             </ul></div>
                                     <?php
+											}elseif(strpos($currentUrl,'custom=1') ==  true){
+											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
+												
 											}
                                     }
                                 }
