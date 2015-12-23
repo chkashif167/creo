@@ -2720,4 +2720,9 @@ jQuery(window).load(function(){
 });
 
 
-
+jQuery(document).ready(function() {
+   jQuery('.swatch-type-image a').on('touchend', function(e) {
+      var el = jQuery(this);
+      el.simulate('click');
+   });
+});
