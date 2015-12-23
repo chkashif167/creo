@@ -461,8 +461,10 @@ font: 28px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;}
 .product-detail .options-area { border-width: 1px 0; border-style: solid; border-color: #515151; padding: 20px 0 20px 2px; }
 .tabset.tabset1 { overflow: hidden; margin: 20px 0 20px -4px; padding: 0; list-style: none; text-transform: uppercase; font: 15px/15px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tabset.tabset1 li { float: left; margin: 0 3px 0 0; }
-.tabset.tabset1 a { display: block; min-width: 30px; padding:6px; background: #ddd; color: #aaa; transform: skewX(-15deg); -moz-transform: skewX(-15deg); -ms-transform: skewX(-15deg); -webkit-transform: skewX(-15deg); }
-.tabset.tabset1 a span { display: block; transform: skewX(15deg); -moz-transform: skewX(15deg); -ms-transform: skewX(15deg); -webkit-transform: skewX(15deg); }
+.tabset.tabset1 a { display: block; min-width: 30px; padding:6px 10px;background: #ddd; color: #aaa; transform: skewX(-15deg);
+-moz-transform: skewX(-15deg); -ms-transform: skewX(-15deg); -webkit-transform: skewX(-15deg);font-size:12px; }
+.tabset.tabset1 a span { display: block; transform: skewX(15deg); -moz-transform: skewX(15deg);
+-ms-transform: skewX(15deg); -webkit-transform: skewX(15deg); }
 .tabset.tabset1 li.active a, .tabset.tabset1 a:hover { color: #000; background: #f16167; text-decoration: none; }
 .tab-content1 { overflow: hidden; min-height: 99px; color: #888; font: 15px/25px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tab-content1 p { margin: 0 0 10px; }
@@ -1259,6 +1261,8 @@ Label the data
 .cartPage_custome_responsive td.product-cart-actions .size-area_outer{margin-left:0;}
 body.customer-account-login #footer,body.customer-account-login .footer_termsconditions{margin:0 -15px;width:auto;}
 body.customer-account-login #footer{padding-bottom:0;}
+.christmas{padding:10px  0;}
+.christmas img{max-width:100%;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
