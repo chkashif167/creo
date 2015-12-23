@@ -87,7 +87,10 @@ $simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_i
 if(!($item_s)){
 ?>
 <!--<a class="product-image" href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>">
--->    <img class="alignleft" src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail')->resize(113, 113); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
+-->    
+<div class="dashboard_whishlit_img">
+<img class="alignleft" src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail')->resize(113, 113); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
+</div>
 <!--</a>
 -->
 <div class="product-details">
