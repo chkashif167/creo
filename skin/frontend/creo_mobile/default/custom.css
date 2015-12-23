@@ -1204,22 +1204,31 @@ transform: skewX(0deg); -moz-transform: skewX(0deg); -ms-transform: skewX(0deg);
 .customer-account .my-account .form-frame { width: 100%;}
 .customer-account  .form-holder .submit-holder button { width: 100%; float: left;}
 .customer-account #wishlist-view-form .product-area { border-top: 3px solid #ddd; margin-bottom: 10px;}
-.customer-account #wishlist-view-form .product-area .cart-area { width: auto; min-height: 204px; border: none;}
+.customer-account #wishlist-view-form .product-area .cart-area { width: auto; min-height: 204px; border: none; padding: 0; margin: 0;}
 .customer-account #wishlist-view-form .tab-content2 .alignleft { margin: 0 5px;}
 .customer-account #wishlist-view-form .product-area .edit { color: #ddd; font-size: 14px; position: absolute; right:10px; top: 12px;}
 .customer-account #wishlist-view-form .product-area .cancel { color: #ddd; font-size: 16px; position: absolute; right:30px; top: 12px;}
 .modal-dialog .checkout-cart-index .btn-holder .btn-proceed-checkout { padding: 0px; font-size: 12px;}
 .dashboard_whishlit_img { float: left; width: 100%; text-align: center; padding: 7px 0; position: relative;
- top: -92px;}
+ top: -125px; display: inline-block;}
 .dashboard_whishlit_img img { margin: auto !important; float: none !important;}
 .dashboar_whishlit_productdetail { float: left; width: 100%;}
 .dashboar_whishlist_addtocartArea { float: left !important; width: 100% !important; min-height: auto !important;}
 .dashboar_whishlist_addtocartArea h3 { display: none;}
-.dashboar_whishlist_addtocartArea .bottom-area { position: relative; top: 50px; left: -25px;}
-.dashboar_whishlist_addtocartArea .price { position: relative; top: 27px; left: -9px;}
-a[class*='_selected_']{color: #fff !important;background: #000;}
-._selected_{color: #fff !important;background: #000;}
-.dont_click_it {pointer-events: none;cursor: default;}
+.dashboar_whishlist_addtocartArea .bottom-area { position: relative; top: 50px; }
+.dashboar_whishlist_addtocartArea .price { position: relative;  top: 30px; width: 100%; display: inline-block !important;}
+a[class*='_selected_']{
+    color: #fff !important;
+	background: #000;
+}
+._selected_{
+    color: #fff !important;
+	background: #000;
+}
+.dont_click_it {
+   pointer-events: none;
+   cursor: default;
+}
 .cartPage_custome_responsive .qty-area { margin: 0 !important;}
 .cartPage_custome_responsive .text-area { text-align: center;}
 .categorypath-clothing-html #fme_filters_list img  { width: 100%;}
