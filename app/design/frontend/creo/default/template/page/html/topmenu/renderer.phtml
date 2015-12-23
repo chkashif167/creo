@@ -367,67 +367,12 @@ endforeach;
         </div>
     </div>
 </li>
-
-<li <?php if(strstr($ccurrentUrl,"black & white")) {
+<li <?php if(strstr($ccurrentUrl,"custom")) {
                     echo'class="active"';
-                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=227" ?>">Black & White</a>
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=231&custom=1" ?>">Black & White</a>
 </li>
 
 
-<!--<li <?php if (in_array("categories",$parent_cat_array)) {
-                    echo'class="active"';
-                } ?>> <a href="javascript:void(0)">CATEGORIES</a>
-
-
-    <div class="drop">
-        <div class="links-area">
-           
-            <div class="links-frame">
-                <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/trending/?id=6" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/seller/?id=6" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/new/?id=6" ?>">NEW</a></li>
-
-                </ul>
-                <ul class="links">
-
-                    <?php
-                    $children_category = Mage::getModel('catalog/category')->load('6')->getChildrenCategories();
-                    $i = 0;
-                    foreach ($children_category as $category):
-                        if ($i % 6 == 0) {
-                            echo "</ul> <ul class=\"links\">";
-                        }
-                        $i++;
-                        $_category = Mage::getModel('catalog/category')->load($category->getId());
-                        echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
-                    endforeach;
-                    ?>
-                </ul>
-            </div>
-        </div>
-        <div class="featured-items">
-            <div class="heading-holder">
-                <h2>Featured</h2>
-            </div>
-            <ul class="featured-products">
-                <?php
-                $Featured_category = Mage::getModel('catalog/category')->load('6')->getChildrenCategories();
-                foreach ($Featured_category as $category):
-                    $_category = Mage::getModel('catalog/category')->load($category->getId());
-                    if ($_category->featured_category == 1) {
-                        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
-                    }
-                endforeach;
-                ?>
-            </ul>
-        </div>
-    </div>
-
-
-
-</li>
--->
 <li <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), 'create.html') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/create/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/account/') == false) {
                     echo'class="active"';
                 } ?>><a href="<?php echo Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
