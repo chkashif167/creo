@@ -2693,3 +2693,31 @@ jQuery(document).ready(function($){
    jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
 });
 
+
+//jQuery(document).ready(function() { 
+//    //pure javascript
+//    var pathname = window.location.href;
+//	alert(pathname);
+//    if (pathname.indexOf("universal_categories") > 0){
+//		jQuery(".fme_layered_clearall").removeClass("_selected_");
+//    }
+//	else
+//	{
+//		jQuery(".fme_layered_clearall").addClass("_selected_");
+//	}
+//});
+jQuery(window).load(function(){
+	
+	var pathname = window.location.href;
+	var getvalue = jQuery('#fme_layered_params').val();
+	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
+		if (pathname.indexOf("=") > 0){
+			var equalsto = pathname.search("=");	
+			var id = pathname.substring(equalsto + 1);
+			jQuery('#universal_categories-'+id).simulate('click');
+		}
+	}
+});
+
+
+

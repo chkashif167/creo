@@ -1211,6 +1211,19 @@ padding: 5px 8px; margin:0;}
 .bottom-area { position: relative; top: 50px;}
 .price { position: relative; top: 27px; left: -9px;}
 
+a[class*='_selected_']{
+    color: #fff !important;
+	background: #000;
+}
+._selected_{
+    color: #fff !important;
+	background: #000;
+}
+.dont_click_it {
+   pointer-events: none;
+   cursor: default;
+}
+
 @media (max-width:359px){
 .cart-btn-area .btn-holder .button2,
 .checkout-cart-index .btn-holder .btn-proceed-checkout,
