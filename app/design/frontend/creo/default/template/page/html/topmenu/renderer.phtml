@@ -351,6 +351,10 @@ endforeach;
         </div>
     </div>
 </li>
+<li <?php if(strstr($ccurrentUrl,"custom")) {
+                    echo'class="active"';
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=231&custom=1" ?>">The Crazy Ones</a>
+</li>
 <li <?php if(strstr($ccurrentUrl,"collections")) {
                     echo'class="active"';
                 } ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
@@ -366,10 +370,6 @@ endforeach;
             </div>
         </div>
     </div>
-</li>
-<li <?php if(strstr($ccurrentUrl,"custom")) {
-                    echo'class="active"';
-                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=164&custom=1" ?>">Black & White</a>
 </li>
 
 
