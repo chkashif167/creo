@@ -1256,7 +1256,7 @@ Label the data
 .st-head-row dl{color:#fff;}
 .navmenu,.navbar-offcanvas{width:250px;}
 .cartPage_custome_responsive td.product-cart-actions .qty-area{margin:0;}
-.cartPage_custome_responsive td.product-cart-actions .size-area_outer{margin-left: -35%;}
+.cartPage_custome_responsive td.product-cart-actions .size-area_outer{margin-left:0;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
@@ -1269,7 +1269,6 @@ Label the data
 .stacktable.small-only { display: table; }
 }
 @media (max-width:359px){
-.cartPage_custome_responsive td.product-cart-actions .size-area_outer{margin-left: -32%;}
 .products-grid .btn-holder a,.form-holder .submit-holder button{font-size:10px;}
 .products-grid .text-area .price,.products-grid .text-area h3{font-size:11px;}
 .checkout-form .form-group label{font-size:12px;}
