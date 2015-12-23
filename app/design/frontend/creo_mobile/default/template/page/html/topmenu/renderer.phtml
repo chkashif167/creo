@@ -287,6 +287,10 @@ endforeach;
         
     </div>
 </li>
+<li <?php if(strstr($ccurrentUrl,"custom")) {
+                    echo'class="active"';
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=231&custom=1" ?>">The Crazy Ones</a>
+</li>
 <li <?php if(in_array("collections",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>>
