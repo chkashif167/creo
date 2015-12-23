@@ -2688,6 +2688,7 @@ jQuery(window).load(function(){
 jQuery(document).ready(function($){
    jQuery(".bgr-icon").click(function() {
       var id = jQuery(this).attr('data-id');
+      console.log(id);
       jQuery("#" + id).slideToggle();
    });
    jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
@@ -2707,7 +2708,6 @@ jQuery(document).ready(function($){
 //	}
 //});
 jQuery(window).load(function(){
-	
 	var pathname = window.location.href;
 	var getvalue = jQuery('#fme_layered_params').val();
 	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
