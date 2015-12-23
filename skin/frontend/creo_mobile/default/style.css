@@ -130,7 +130,7 @@ position:absolute;border-radius:0;left:5px;}
 body.canvas-slid #disable_view{position: fixed;z-index: 9998;background-color: rgba(0, 0, 0, 0.35);height: 100%;width: 100%;display: block;}
 #nav:after { display: block; content: ''; clear: both; }
 #nav ol { margin: 0; padding: 0; list-style: none;/*	letter-spacing: -1px;*/ text-transform: uppercase; font: 15px/21px "Roboto Condensed", Helvetica, Arial, sans-serif; }
-#nav ol > li { display: block; margin: 0; }
+#nav ol > li { display: block; margin: 0;border-bottom:1px solid #333;}
 #nav ol > li > a { display: block; padding:10px 20px; position: relative;font-size:17px; }
 #nav ol > li a:hover { text-decoration: none;color:#fff;background-color:#333;}
 #nav ol > li.active .drop{display: block;}
@@ -460,7 +460,7 @@ font-size:100%; }
 .product-detail .options-area { border-width: 1px 0; border-style: solid; border-color: #515151; padding: 20px 0 20px 2px; }
 .tabset.tabset1 { overflow: hidden; margin: 20px 0 20px -4px; padding: 0; list-style: none; text-transform: uppercase; font: 15px/15px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tabset.tabset1 li { float: left; margin: 0 3px 0 0; }
-.tabset.tabset1 a { display: block; min-width: 30px; padding: 6px 15px; background: #ddd; color: #aaa; transform: skewX(-15deg); -moz-transform: skewX(-15deg); -ms-transform: skewX(-15deg); -webkit-transform: skewX(-15deg); }
+.tabset.tabset1 a { display: block; min-width: 30px; padding:6px; background: #ddd; color: #aaa; transform: skewX(-15deg); -moz-transform: skewX(-15deg); -ms-transform: skewX(-15deg); -webkit-transform: skewX(-15deg); }
 .tabset.tabset1 a span { display: block; transform: skewX(15deg); -moz-transform: skewX(15deg); -ms-transform: skewX(15deg); -webkit-transform: skewX(15deg); }
 .tabset.tabset1 li.active a, .tabset.tabset1 a:hover { color: #000; background: #f16167; text-decoration: none; }
 .tab-content1 { overflow: hidden; min-height: 99px; color: #888; font: 15px/25px "Roboto Condensed", Helvetica, Arial, sans-serif; }
@@ -493,8 +493,8 @@ width:49%;display:inline-block;vertical-align:top;}
 .cart-top-area .btn-holder a:first-child:hover { background: none; color: #000; opacity: 1; border-color: #f16167; }
 .cart-top-area { padding-bottom: 10px; padding-top: 10px;border-bottom:3px solid #eee;}
 .cart-table-area table { /*border-top: 3px solid #eee;*/ width: 100%; }
-.cart-table-area th { text-transform: uppercase; /*color: #fff;*/ font: 14px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
-/*background-color:#000;*/border-bottom:1px solid #fff;}
+.cart-table-area th { text-transform: uppercase; color: #fff; font: 14px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+background-color:#000;border-bottom:1px solid #fff;}
 .cart-table-area th, .cart-table-area td { padding: 12px 5px; text-align: center; }
 .cart-table-area td { position: relative; }
 .sales-order-view .cart-table-area th:before, .cart-table-area td:before { position: absolute; top: 12px; bottom: 12px; left: 0; border-left: 2px solid #f3f3f3; content: ''; }
@@ -743,8 +743,8 @@ border: 1px solid #959595; color: #000; background: none; cursor: pointer; font:
 #nav .featured-items .featured-products img { display: block; width: 100%; height: auto; }
 #nav .featured-items .featured-products .title { background: rgba(255, 255, 255, 0.8); position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 10px; color: #000; font: 12px/14px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #nav .featured-items .featured-products a:hover .title { background: #f16a79; text-decoration: none; color: #fff; }
-#footer {position:relative;padding:15px 0 5px;}
-.navmenu-fixed-left{background:#F3F3F5;display:none;}
+#footer {position:relative;padding:0px 0 5px;}
+.navmenu-fixed-left{background:#F3F3F5;display:none;z-index:99999;}
 .floatmenu li a{display: block;color: rgb(240, 240, 240) !important;font-size:1.1em;font-weight:300;
 border-bottom: 1px solid rgb(61, 62, 66);padding: 1em;text-transform: uppercase;}
 .floatmenu li a:hover {background: rgb(27, 29, 34) !important;}
@@ -1075,10 +1075,6 @@ border-color: transparent transparent transparent #000;
     top: 0;
     width: 0;
 }
-@media print {
-.page-print .subtitle { margin-bottom: 99px; }
-.page-print .buttons-set button { display: none; }
-}
 
 /*creo mobile styling*/
 .homepage_navigation_middle{padding: 0;}
@@ -1186,17 +1182,89 @@ display:block;}
 line-height:1.5;text-transform:uppercase;}
 .customer-account .my-account ol{padding-left:15px;}
 .my-account address{font-size:1em;}
+.cms-index-index #accordion.panel-group{margin-bottom:0;}
+.cms-index-index .col-main .std{display:none;}
+.cms-index-index .main{padding:0;}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
+#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
+background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;	}
+
+/* Force table to not be like tables anymore */
+.cartPage_custome_responsive table, .cartPage_custome_responsive thead, .cartPage_custome_responsive tbody, .cartPage_custome_responsive th, .cartPage_custome_responsive td, .cartPage_custome_responsive tr { 
+display: block; 
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+.cartPage_custome_responsive thead tr { 
+position: absolute;
+top: -9999px;
+left: -9999px;
+}
+
+.cartPage_custome_responsive tr { border: 1px solid #ccc; }
+
+.cartPage_custome_responsive td { 
+/* Behave  like a "row" */
+border: none;
+border-top: 1px solid #eee; 
+position: relative;
+
+}
+.cartPage_custome_responsive td.product-cart-actions { /*padding-left: 50%;*/ }
+.cartPage_custome_responsive td.product-cart-image, .cartPage_custome_responsive td.cart-footer-actions  { padding-left: 0;}
+.cartPage_custome_responsive td { padding-left: 50%; }
+.cartPage_custome_responsive td:before { 
+/* Now like a table header */
+position: absolute;
+/* Top/left values mimic padding */
+top: 6px;
+left: 6px;
+width: 45%; 
+padding-right: 10px; 
+white-space: nowrap;
+}
+
+/*
+Label the data
+*/
+.cartPage_custome_responsive td:nth-of-type(1):before { content: "";  }
+.cartPage_custome_responsive td:nth-of-type(2):before { content: "Unite Price"; margin-top: 10px; }
+.cartPage_custome_responsive td:nth-of-type(3):before { content: " Size"; margin-top: 10px; }
+.cartPage_custome_responsive td:nth-of-type(4):before { content: "Quantity"; margin-top: 10px;}
+.cartPage_custome_responsive td:nth-of-type(5):before { content: "Subtotal    "; margin-top: 10px;}
+
+.cartPage_custome_responsive .qty-area { height: 22px;}
+.cartPage_custome_responsive .cart-btn-area td { padding-left: 0;}
+.cartPage_custome_responsive tfoot { display: inline-block; width: 100%;}
+.cartPage_custome_responsive .product-name { width: 100%; background: none; color: #000;text-align:center;}
+.cartPage_custome_responsive .product-name a { color: #000;}
+.cartPage_custome_responsive .text-area .product-image { display: inline-block; float: none;}
+.cartPage_custome_responsive .edititem { position: absolute; right: 10px; top: 10px;}
+.cartPage_custome_responsive .btn-remove { position: absolute; right: 35px; top: 10px;}
+.cartPage_custome_responsive .item-options { display: inline-block !important; float: none; width: 100% !important;}
+
+.cartPage_custome_responsive .item-options dt { width: 45%; text-align: right; padding-right: 5%;display:inline-block;vertical-align:top;}
+.cartPage_custome_responsive .item-options dd { width: 45%; text-align: left; padding-left: 5%;display: inline-block;vertical-align:top;}
+.cartPage_custome_responsive .sales-order-view .cart-table-area th:before, .cart-table-area td:before { border: 0 !important;}
+.tool-tip-content img{max-width:100%;}
+.st-head-row dl{color:#fff;}
+
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
-
+@media print {
+.page-print .subtitle { margin-bottom: 99px; }
+.page-print .buttons-set button { display: none; }
+}
 @media (max-width: 800px) {
 .stacktable.large-only { display: none; }
 .stacktable.small-only { display: table; }
 }
-#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
-#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
-#product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;	}
+@media (max-width:359px){
+.products-grid .btn-holder a,.form-holder .submit-holder button{font-size:10px;}
+.products-grid .text-area .price,.products-grid .text-area h3{font-size:11px;}
+.checkout-form .form-group label{font-size:12px;}
+}
