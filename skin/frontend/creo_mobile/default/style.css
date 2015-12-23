@@ -572,7 +572,7 @@ border-color: #eee; overflow: hidden; padding: 0;width:49%;}
 .tab-content2 h2 { margin: 0 0 20px; padding: 20px 10px 8px; text-transform: uppercase; border-bottom: 2px solid #eee; color: #000; font: 17px/22px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tab-content2 .product-area { overflow: hidden; }
 .tab-content2 .alignleft { float: left; width: 54px; height: auto; margin: 25px 28px 0 12px; }
-.tab-content2 .product-details { overflow: hidden; margin: 0 0 10px; border-width: 0 1px 2px; border-style: solid; border-color: #d7d7d7 #eee; min-height: 155px; }
+.tab-content2 .product-details { overflow: hidden; margin: 0 0 10px; border-width: 0 1px 2px; border-style: solid; border-color: #d7d7d7 #eee;  }
 .tab-content2 h3 { margin: 0 0 4px; border-width: 2px 1px; border-style: solid; border-color: #d7d7d7; text-transform: uppercase; color: #251709; text-align: center; font: bold 12px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tab-content2 .title { display: block; margin: 0 0 5px; padding: 0 18px; color: #000; font: 12px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tab-content2 .title a { color: #000; }

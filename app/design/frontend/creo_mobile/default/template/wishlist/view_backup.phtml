@@ -19,13 +19,13 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     base_default
+ * @package     rwd_default
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 /* @var $this Mage_Wishlist_Block_Customer_Wishlist */
 ?>
-<?php if ($this->helper('wishlist')->isAllow()) : ?>
+<?php ?><?php if ($this->helper('wishlist')->isAllow()) : ?>
     <div class="my-wishlist">
         <div class="page-title title-buttons">
             <?php if ($this->helper('wishlist')->isRssAllow() && $this->hasWishlistItems()): ?>
@@ -35,9 +35,9 @@
         </div>
         <?php echo $this->getMessagesBlock()->toHtml() ?>
 
-        <form id="wishlist-view-form" action="<?php echo $this->getUrl('*/*/update', array('wishlist_id' => $this->getWishlistInstance()->getId())) ?>" method="post">
+        <form id="wishlist-view-form" action="<?php echo $this->getUrl('*/update', array('wishlist_id' => $this->getWishlistInstance()->getId())) ?>" method="post">
             <?php echo $this->getChildHtml('top'); ?>
-            <fieldset>
+            <div class="fieldset">
                 <?php if ($this->hasWishlistItems()): ?>
                         <?php echo $this->getBlockHtml('formkey');?>
                         <?php $this->getChild('items')->setItems($this->getWishlistItems()); ?>
@@ -47,12 +47,12 @@
                     <p class="wishlist-empty"><?php echo $this->__('You have no items in your wishlist.') ?></p>
                 <?php endif ?>
                 <div class="buttons-set buttons-set2">
-                    <?php echo $this->getChild('control_buttons')->toHtml();?>
+                    <?php echo $this->getChildHtml('control_buttons');?>
                 </div>
-            </fieldset>
+            </div>
         </form>
 
-        <form id="wishlist-allcart-form" action="<?php echo $this->getUrl('*/*/allcart') ?>" method="post">
+        <form id="wishlist-allcart-form" action="<?php echo $this->getUrl('*/allcart') ?>" method="post">
             <?php echo $this->getBlockHtml('formkey') ?>
             <div class="no-display">
                 <input type="hidden" name="wishlist_id" id="wishlist_id" value="<?php echo $this->getWishlistInstance()->getId() ?>" />
@@ -79,8 +79,12 @@
             }
 
             function addAllWItemsToCart() {
-                calculateQty();
+                //calculateQty();
                 wishlistAllCartForm.form.submit();
+            }
+            function updateWishList() {
+
+                document.getElementById('wishlist-view-form').submit();
             }
         //]]>
         </script>
@@ -89,4 +93,5 @@
     <div class="buttons-set">
         <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
     </div>
-<?php endif ?>
+
+<?php endif ?><?php ?>
