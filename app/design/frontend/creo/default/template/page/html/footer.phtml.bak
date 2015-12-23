@@ -1,0 +1,167 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<footer id="footer">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="right-area">
+                            <?php // echo $this->getChildHtml('newsletter'); ?>
+                            <?php echo $this->getChildHtml() ?>
+<!--								<form class="footer-form" action="#">
+									<span class="title">Join us for 20% off your first order</span>
+									<div class="form-row">
+									nn	<input type="text" placeholder="Email Address">
+										<input type="submit" value="JOIN">
+									</div>
+								</form>-->
+                               
+                                
+								<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social')->toHtml() ?>
+							</div>
+							<div class="left-area">
+								<div class="logo-holder">
+									<strong class="logo"><a href="#"><img alt="CREO" src="<?php echo $this->getSkinUrl() ?>/images/logo02.png"></a></strong>
+									<span class="copyright"><?php echo $this->getCopyright() ?></span>
+								</div>
+								<div class="column column1">
+									<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
+									<h3><?php  echo $customer->getTitle(); ?></h3>
+									<?php echo $customer->getContent(); ?>
+								</div>
+								<div class="column">
+									 <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
+									<h3><?php  echo $acount->getTitle(); ?></h3>
+									<?php echo $acount->getContent(); ?>
+								</div>
+								<div class="column">
+                                <?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
+									<h3><?php  echo $about->getTitle(); ?></h3>
+									<?php echo $about->getContent(); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+
+
+        
+       <?php // echo $this->getCopyright() 
+	   
+	   // check if user is logged in and already subscribed.
+		$customerEmail = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
+		$subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($customerEmail);
+		if($subscriber->subscriber_email!=''){
+			setcookie('newsletter', 'hide-news-letter', time()+7200,'/');
+		}
+	   ?>
+
+<script type="text/javascript">
+var hdata = jQuery(".messages").text();
+var hdata ='';
+var hdata = jQuery(".messages li:first").text();
+var msgType = jQuery(".messages>li").attr("class");
+if(msgType=='error-msg'){
+	var msgTitle = 'Error';	
+}else{
+	var msgTitle = 'Success';	
+}
+			
+jQuery( document ).ready( function($){
+	if(hdata){
+
+		jQuery.confirm({
+			title: msgTitle,
+			confirmButtonClass: 'btn-info',
+			content: hdata, // You can also LOAD the html data using LOAD FROM URL feature,
+			
+		});
+	}
+	
+	jQuery('#tools-button').find('li').find('a').click(function(){
+	setTimeout(function(){
+	jQuery('#tools-button').find('li').find('a').show();
+	},2);
+	});
+
+});
+	autoClose: 'cancel|6000',
+	jQuery(".messages").hide();
+	
+	function removeProd(){
+		jQuery.confirm({
+			title: msgTitle,
+			confirmButtonClass: 'btn-info',
+			content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
+			    confirm: function(){
+					return true;
+				}
+			
+		});
+		}
+</script>
+
+<script>
+jQuery(window).load(function(){
+    //jQuery('#currentvalue').text('View All');
+    var url = window.location.href;
+    var array = url.split('?');
+    var paramStr = array[1];
+    var params = paramStr.split("universal_categories=");
+    console.log(params);
+    var design = getQueryVar('universal_categories').trim();
+    if(design) {
+        console.log('here1'+design);
+        var currentEl = jQuery("#universal_categories-"+design).text();
+        if(currentEl) {
+            $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentEl+'</a>');
+        }
+    }
+    //var search2 = getQueryVar('design').toLowerCase();
+    //console.log(search2);
+    //location.href.replace("design="+design, "design=3araby");
+//    var index = cat_attrs.indexOf(design);
+//    console.log(cat_attrs[index]);
+//    console.log(index);
+//    console.log(cat_attrs);
+//    var nthChild = index+1;
+//    //alert(nthChild);
+//    //setTimeout(function() {
+//    if(changeFrom.indexOf("view all") <= -1) {
+//        var target = jQuery('#fme_layered_universal_categories li:nth-child('+nthChild+')').find('a');
+//        //jQuery(target).simulate('click');
+//        console.log("tar:"+target.text());
+//        //ensure that current one is selected as well
+//    }
+}); 
+/*setTimeout(function(){
+    //alert("test");
+    var currentval = jQuery('#currentvalue').text().trim();
+    if(currentval == "") {
+        jQuery('#currentvalue').text('View All');
+    }
+    console.log("test");
+}, 1170);*/
+</script>
