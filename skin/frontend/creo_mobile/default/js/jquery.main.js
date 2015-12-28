@@ -2712,12 +2712,9 @@ jQuery(window).load(function(){
 	var getvalue = jQuery('#fme_layered_params').val();
 	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
 		if (pathname.indexOf("=") > 0){
-			var equalsto = pathname.search("=");	
+			var equalsto = pathname.search("=");
 			var id = pathname.substring(equalsto + 1);
 			jQuery('#universal_categories-'+id).simulate('click');
 		}
 	}
 });
-
-
-
