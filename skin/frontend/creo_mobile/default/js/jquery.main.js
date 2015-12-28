@@ -2720,7 +2720,7 @@ jQuery(window).load(function(){
 });
 
 jQuery(document).ready(function() {
-   jQuery('.swatch-type-image a').on('touchend', function(e) {
+   jQuery('.swatch-type-image a,.products-grid .btn-holder a').on('touchend', function(e) {
       var el = jQuery(this);
       el.simulate('click');
    });

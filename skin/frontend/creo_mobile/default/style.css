@@ -1089,6 +1089,7 @@ border-color: transparent transparent transparent #000;
 	border-color: #fff;
 	border-style: solid;
 }
+.homepage_navigation_middle .panel.panel-default:nth-child(4) .panel-title a:before{border:0;}
 .homepage_navigation_middle .panel.panel-default:nth-child(6){display:none;}
 .homepage_navigation_middle .panel-heading{
 	border-radius: 0;
