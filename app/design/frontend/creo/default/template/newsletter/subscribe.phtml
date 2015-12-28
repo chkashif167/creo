@@ -47,28 +47,35 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     <div class="modal-content block-subscribe">
       <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-holder">
-        <h2><?php echo $this->__('Newsletter') ?></h2>
-       
-        <p>Subscribe to the Black & White mailing list to receive updates on new arrivals, special offers and other discount information.</p>
+        <!-- <h2><?php //echo $this->__('Newsletter') ?></h2>
+        <p>Subscribe to the Black & White mailing list to receive updates on new arrivals, special offers and other discount information.</p> -->
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
-          <div class="block-content">
+          <div class="block-content"> <?php /* ?>
             <div class="input-box">
               <input required="required" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email email"  />
             </div>
             <div class="actions">
               <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button newslettersubscribe "><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
-            </div>
+            </div><?php */ ?>
             <div class="row dontshowagain" onclick="checkcookie()">
               <input type="checkbox" value="" name="checkbox1" id="checkbox1">
               <label for="checkbox1">Don’t show this popup again</label>
             </div>
           </div>
         </form>
+
         <script type="text/javascript">
     //<![CDATA[
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
     //]]>
-    </script> 
+    </script>
+    <div class="christmas">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('christmas')->toHtml(); ?>
+    </div>
+    <style type="text/css" media="screen">
+    .christmas{padding:15px 15px 40px;}
+    .christmas img{max-width:100%;}
+    </style>
       </div>
     </div>
   </div>
