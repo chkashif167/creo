@@ -460,7 +460,8 @@ p.style1 {
 	right: 0;
 }
 #nav ol > li.active > a:before,
-#nav ol > li:hover > a:before {
+#nav ol > li:hover > a:before,
+#nav ol > li:nth-child(5) a:before{
 	position: absolute;
 	bottom: 0;
 	left: 0;
