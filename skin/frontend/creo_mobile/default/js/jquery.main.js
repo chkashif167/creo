@@ -2675,8 +2675,7 @@ jQuery(document).ready(function(e) {
     }
   }
 
-  
-  /** Select first style by default on product detail page **/
+/** Select first style by default on product detail page **/
 jQuery(window).load(function(){
     //check if the style id exist
     if(jQuery('#attribute-134-container').length >= 1){
@@ -2694,7 +2693,6 @@ jQuery(document).ready(function($){
    jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
 });
 
-
 //jQuery(document).ready(function() { 
 //    //pure javascript
 //    var pathname = window.location.href;
@@ -2707,6 +2705,7 @@ jQuery(document).ready(function($){
 //		jQuery(".fme_layered_clearall").addClass("_selected_");
 //	}
 //});
+
 jQuery(window).load(function(){
 	
 	var pathname = window.location.href;
@@ -2730,9 +2729,8 @@ jQuery(window).load(function(){
 	}
 });
 
-
 jQuery(document).ready(function() {
-   jQuery('.swatch-type-image a').on('touchend', function(e) {
+   jQuery('.swatch-type-image a,.products-grid .btn-holder a').on('touchend', function(e) {
       var el = jQuery(this);
       el.simulate('click');
    });
