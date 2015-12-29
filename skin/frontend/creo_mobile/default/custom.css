@@ -507,10 +507,7 @@
 	z-index:9999;
 }
 
-.products-grid li.item:hover .btn-holder {
-    display:block;
-}
-
+.products-grid li.item:hover .btn-holder {/*display:block;*/}
 
 .products-list {
     padding: 0;
