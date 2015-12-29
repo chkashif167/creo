@@ -109,7 +109,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 											custom = '';
 										}
 										
-                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + custom + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
+                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + custom + '\', \'?universal_categories=' + changeTo + custom + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
 
                                     }
 
