@@ -126,7 +126,8 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     
     <div id="product-media-container">
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
-        <p class="product-image">
+    <div class="owl-slider1">
+        <div class="product-image">
             <a class="fancybox-main cloud-zoom" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_zoom_image_width, $_zoom_image_height); ?>" rel="<?php echo $_cloudzoom_options; ?>"onclick="this.href ='javascript: void(0)'">
         <?php
         $_img = '<img class="cloudzoom" id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
@@ -134,7 +135,8 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
         ?></a><a id='fancybox-link' href='#'><img src="<?php echo $this->getSkinUrl("attributeswatches/img/zoom-in.png");?>" class="product-image-zoom-in" /><?php echo $this->__("Enlarge"); ?></a>
         <a id="product-image-gallery-prev" href="#"><span>&laquo;</span></a>
         <a id="product-image-gallery-next" href="#"><span>&raquo;</span></a>
-        </p>
+        </div>
+</div>
 <?php else: ?>
         <p class="product-image">
             <a class="fancybox-main" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>" title="<?php echo $this->htmlEscape($this->getImageLabel()); ?>">
