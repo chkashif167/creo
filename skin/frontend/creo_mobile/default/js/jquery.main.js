@@ -2729,7 +2729,6 @@ jQuery(window).load(function(){
 });
 
 jQuery(document).ready(function() {
-   jQuery(".owl-slider1").owlCarousel({items:1,nav:true,});
    jQuery('.swatch-type-image a,.products-grid .btn-holder a').on('touchend', function(e) {
       var el = jQuery(this);
       el.simulate('click');
