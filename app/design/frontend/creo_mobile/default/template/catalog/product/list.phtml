@@ -41,7 +41,7 @@ $pdpProducts->addFieldToSelect('product_id');
 $excludeProductIds = array();
 foreach($pdpProducts as $pdpProduct) {
    $excludeProductIds[] = $pdpProduct->getProductId();
-
+}
 //remove PDP products from the mobile product listing.
 $_productCollection->clear()
     ->addAttributeToFilter("entity_id", array('nin' => $excludeProductIds))
