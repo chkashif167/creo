@@ -34,6 +34,18 @@
 <?php
 $_productCollection = $this->getLoadedProductCollection();
 $_helper = $this->helper('catalog/output');
+
+//get all PDP products
+$pdpProducts = Mage::getModel("pdp/productstatus")->getCollection();
+$pdpProducts->addFieldToSelect('product_id');
+$excludeProductIds = array();
+foreach($pdpProducts as $pdpProduct) {
+   $excludeProductIds[] = $pdpProduct->getProductId();
+
+//remove PDP products from the mobile product listing.
+$_productCollection->clear()
+    ->addAttributeToFilter("entity_id", array('nin' => $excludeProductIds))
+    ->load();
 ?>
 
 <?php if (!$_productCollection->count()): ?>
