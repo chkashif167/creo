@@ -356,16 +356,16 @@ a.product-image:hover img.catalog-hover-image {
     cursor: pointer;
 }
 
-#product-image-gallery-prev{
-    background-image: url(img/chevron-left.png);
+#product-image-gallery-prev,.bx-wrapper .bx-prev{
+    background: url(img/chevron-left.png);
     left:0px;
 }
 
-#product-image-gallery-next{
-    background-image: url(img/chevron-right.png);
+#product-image-gallery-next,.bx-wrapper .bx-next{
+    background: url(img/chevron-right.png);
     right:0px;
 }
-
+.bx-wrapper .bx-controls-direction a{margin-top:-15px;width:15px;height:22px;}
 #product-gallery-container.more-views-container ul li.hidden-gallery-item{
     display:none !important;
 }

@@ -1107,25 +1107,26 @@ padding: 5px 8px; margin:0;}
 .products-grid { z-index: 9; position: relative;}
 /*#product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}*/
 #product-options-wrapper { float:none; width:100%;}
-#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top: !important; height: 25px; width: 25px; line-height: 25px; background-position: 50% 50%;}
+#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top: !important;
+height: 25px; width: 25px; line-height: 25px; background-position: 50% 50%;}
 .attributeItem {width:49%;display:inline-block;vertical-align:top;}
-.catalog-product-view .bx-controls.bx-has-controls-direction { display: none;}
-.bx-wrapper  { background: #fff none repeat scroll 0 0;
-    border: 0px solid #fff !important;
-    box-shadow: 0 0 0px #ccc !important;}
+.catalog-product-view .bx-controls.bx-has-controls-direction { /*display: none;*/}
+.bx-wrapper{background: #fff none repeat scroll 0 0;border: 0px solid #fff !important;box-shadow: 0 0 0px #ccc !important;
+margin:0 !important;}
+.bx-wrapper .bx-next,.bx-wrapper .bx-prev{}
 .catalog-product-view li.product-image-thumbs { margin-right: 1px !important;}
 .categorypath-clothing-women-tshirt-html #fme_filters_list #styles_label { display:inline-block !important;}
 .categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}
-.previousnext { display: none;}
+.previousnext{display:none;}
 
 #creditcardnumbercn { width: 58%; float: left;}
 #creditcardpci_cc_type_cvv_div { width: 40%; float: right;}
 #payment_form_creditcardpci { margin: 14px 0 0 0;}
-#payment_form_creditcardpci .v-fix { position: relative;} 
-#payment_form_creditcardpci .v-fix .fake-select { right: 0;    top: 0px;    width: 25px;  }
-#payment_form_creditcardpci .v-fix1 { float: left;  width: 50%;} 
-#payment_form_creditcardpci .v-fix2 { float: right;  width: 48%;} 
-#payment_form_creditcardpci .cvv-what-is-this {  font-size: 11px;    margin: 4px 0;    padding: 0; text-transform: capitalize; background: none;}
+#payment_form_creditcardpci .v-fix { position: relative;}
+#payment_form_creditcardpci .v-fix .fake-select { right: 0;top: 0px; width: 25px;  }
+#payment_form_creditcardpci .v-fix1 { float: left;  width: 50%;}
+#payment_form_creditcardpci .v-fix2 { float: right;  width: 48%;}
+#payment_form_creditcardpci .cvv-what-is-this {font-size:11px;margin:4px 0;padding:0;text-transform:capitalize;background:none;}
 #payment_form_creditcardpci .form-group { margin-bottom: 0;}
 #payment_form_creditcardpci .credit-card { padding-bottom: 20px;margin-bottom:10px;}
 #payment_form_creditcardpci input { background: #fff; height: 27px;}
