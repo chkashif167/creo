@@ -2682,6 +2682,7 @@ jQuery(window).load(function(){
         jQuery('#attribute-134-container').find('li:first').find('a').trigger('click');//this id only exists for styles
     }
 });
+
 /** Selection of the first style ends here **/
 
 jQuery(document).ready(function($){
