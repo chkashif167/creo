@@ -68,8 +68,12 @@ For checkout/onepage/shipping.phtml:
             <input type="text" id="<?php echo $this->getFieldId('firstname')?>" name="<?php echo $this->getFieldName('firstname')?>" value="<?php echo $this->escapeHtml($this->getObject()->getFirstname()) ?>" title="<?php echo $this->getStoreLabel('firstname') ?>" maxlength="255" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('firstname') ?>" <?php echo $this->getFieldParams() ?> />
         </div>
     </div>
-<?php if ($this->showMiddlename()):?>
-<?php $isMiddlenameRequired = $this->isMiddlenameRequired(); ?>
+
+
+<!--validation changes done . -->
+<?php if ($this->showMiddlename()): ?>
+<?php $isMiddlenameRequired = $this->isMiddlenameRequired();?>
+
     <div class="field name-middlename">
         <label for="<?php echo $this->getFieldId('middlename')?>"<?php echo $isMiddlenameRequired ? ' class="required"' : '' ?>><?php echo $isMiddlenameRequired ? '<em class="red marg-right">*</em>' : '' ?><?php echo $this->getStoreLabel('middlename') ?></label>
         <div class="input-box">
