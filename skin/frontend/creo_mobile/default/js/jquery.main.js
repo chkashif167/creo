@@ -2675,8 +2675,7 @@ jQuery(document).ready(function(e) {
     }
   }
 
-  
-  /** Select first style by default on product detail page **/
+/** Select first style by default on product detail page **/
 jQuery(window).load(function(){
     //check if the style id exist
     if(jQuery('#attribute-134-container').length >= 1){
@@ -2685,26 +2684,53 @@ jQuery(window).load(function(){
 });
 /** Selection of the first style ends here **/
 
-
 jQuery(document).ready(function($){
-    jQuery(".bgr-icon").click(function() {
-       var id = jQuery(this).attr('data-id');
-       jQuery("#" + id).slideToggle();
-    });
-    jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
+   jQuery(".bgr-icon").click(function() {
+      var id = jQuery(this).attr('data-id');
+      console.log(id);
+      jQuery("#" + id).slideToggle();
+   });
+   jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
 });
 
+//jQuery(document).ready(function() {
+//    //pure javascript
+//    var pathname = window.location.href;
+//	alert(pathname);
+//    if (pathname.indexOf("universal_categories") > 0){
+//		jQuery(".fme_layered_clearall").removeClass("_selected_");
+//    }
+//	else
+//	{
+//		jQuery(".fme_layered_clearall").addClass("_selected_");
+//	}
+//});
 
-jQuery(document).ready(function() { 
-    //pure javascript
-
-    var pathname = window.location.href;
-    if (pathname.indexOf("universal_categories") > 0){
-		jQuery(".fme_layered_clearall").removeClass("progos");
-    }
-	else
-	{
-		jQuery(".fme_layered_clearall").addClass("progos");
+jQuery(window).load(function(){
+	var pathname = window.location.href;
+	var getvalue = jQuery('#fme_layered_params').val();
+	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
+		if (pathname.indexOf("=") > 0){
+			var and = '';
+			var length = '';
+			var id = '';
+			var equalsto = '';
+			equalsto = pathname.search("=");
+			if (pathname.indexOf("&") > 0){
+				and = pathname.search("&");
+				length = and - equalsto;
+				id = pathname.substr(equalsto + 1, length - 1);
+			}else{
+				id = pathname.substring(equalsto + 1);
+			}
+			jQuery('#universal_categories-'+id).simulate('click');
+		}
 	}
-    
+});
+
+jQuery(document).ready(function() {
+   jQuery('.swatch-type-image a,.products-grid .btn-holder a').on('touchend', function(e) {
+      var el = jQuery(this);
+      el.simulate('click');
+   });
 });

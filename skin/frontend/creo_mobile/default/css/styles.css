@@ -191,22 +191,13 @@
 
 .product-view .product-shop,
 .product-view .add-to-cart-wrapper,
-.product-view .block-related {
-  padding-left: 15px;
-}
-
-.product-img-box {
-  padding-right: 15px;
-}
-
+.product-view .block-related {padding-left: 15px;}
+.product-img-box {/*padding-right: 15px;*/}
 .product-view .product-shop,
 .product-img-box,
 .product-collateral,
 .product-view .block-related,
-.box-collateral {
-  margin-bottom: 10px;
-}
-
+.box-collateral {margin-bottom: 10px;}
 .product-view {
   /* Set a min-height so that the floated elements break appropriately */
 }
