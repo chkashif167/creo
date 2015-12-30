@@ -341,19 +341,8 @@ a.product-image:hover img.catalog-hover-image {
 /* previous - next buttons on main image container */
 
 #product-image-gallery-prev,
-#product-image-gallery-next{
-    position: absolute;
-    top: 50%;
-    margin-top: -20px;
-    outline: 0;
-    width: 32px;
-    height: 40px;
-    text-indent: -9999px;
-    z-index: 999;
-    display:block;
-    background-repeat: no-repeat;
-    background-position:center;
-    cursor: pointer;
+#product-image-gallery-next{position: absolute;top: 50%;margin-top: -20px;outline: 0;width: 32px;height: 40px;text-indent: -9999px;
+z-index: 999;display:block;background-repeat: no-repeat;background-position:center;cursor: pointer;
 }
 
 #product-image-gallery-prev,.bx-wrapper .bx-prev{

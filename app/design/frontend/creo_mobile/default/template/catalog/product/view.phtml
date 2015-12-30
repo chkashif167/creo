@@ -38,7 +38,7 @@
 <div class="row">
 <?php
 if($_product->stock_item->is_in_stock == 0){
-	$outofstockclass = "outofstockclass ";
+    $outofstockclass = "outofstockclass ";
  } ?>
 
 <div class="<?php if(isset($outofstockclass)) {echo $outofstockclass ;} ?>product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -168,7 +168,7 @@ if($_product->stock_item->is_in_stock == 0){
                     </div>
 
                     <?php  if(!$_product->isSaleable()): ?>
-		<?php echo $this->getChildHtml('addto') ?>
+                        <?php echo $this->getChildHtml('addto') ?>
                       <?php endif; ?>
 
 
@@ -267,8 +267,8 @@ if($_product->stock_item->is_in_stock == 0){
                                 jQuery('.fme_loading_filters').hide();
                                         //alert(data.status + ": " + data.message);
                                        if (jQuery('#header-cart')) {
-			if(data.status != "ERROR"){
-			jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+            if(data.status != "ERROR"){
+            jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -279,40 +279,40 @@ if($_product->stock_item->is_in_stock == 0){
                                         event: 'over',
                                         effect: 'fade'
                                 });
-		jQuery('#ajaxModalTitle').html(data.status);
-		jQuery('#ajaxModalContent').html(data.message);
-		jQuery('.ajaxAddToCartModal').modal('show');
+        jQuery('#ajaxModalTitle').html(data.status);
+        jQuery('#ajaxModalContent').html(data.message);
+        jQuery('.ajaxAddToCartModal').modal('show');
 
         //refresh minicart
-		var data = jQuery('#product_addtocart_form').serialize();
-		data += '&isRefresh=1';
-		try {
-		jQuery.ajax({
-		url: url,
-				dataType: 'json',
-				type : 'post',
-				data: data,
-				success: function(data){
-		if(data.status != "ERROR"){
-		jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
-		}
-				if (jQuery('#header-cart')) {
-				/*initialize the minicart dropdown again*/
-				jQuery('#open-close-minicart').openClose({
-				activeClass: 'active',
-						opener: '.opener',
-						slider: '.slide',
-						animSpeed: 400,
-						event: 'over',
-						effect: 'fade'
-				});
-						}
-				}
-		});
-		} catch (e) {
+        var data = jQuery('#product_addtocart_form').serialize();
+        data += '&isRefresh=1';
+        try {
+        jQuery.ajax({
+        url: url,
+                dataType: 'json',
+                type : 'post',
+                data: data,
+                success: function(data){
+        if(data.status != "ERROR"){
+        jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+        }
+                if (jQuery('#header-cart')) {
+                /*initialize the minicart dropdown again*/
+                jQuery('#open-close-minicart').openClose({
+                activeClass: 'active',
+                        opener: '.opener',
+                        slider: '.slide',
+                        animSpeed: 400,
+                        event: 'over',
+                        effect: 'fade'
+                });
+                        }
+                }
+        });
+        } catch (e) {
 }
-		//refresh minicart
-		}
+        //refresh minicart
+        }
 }
                         });
                         } catch (e) {
@@ -514,6 +514,7 @@ jQuery(document).ready(function(){
     });
 
     //if any of the default attribute or option is selected do send the ajax request
+
     if(hasDefaultSelection()) {
         loadPriceWithAjax();
     }

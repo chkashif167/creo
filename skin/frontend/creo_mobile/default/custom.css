@@ -484,7 +484,7 @@
     left: 0;
     opacity: 1;
     padding: 0;
-    /*	position: relative;*/
+    /*  position: relative;*/
     text-decoration: none;
     top: 325px;
     z-index: 10;
@@ -504,7 +504,7 @@
     width:100%;
     bottom:100%;
     display:none;
-	z-index:9999;
+    z-index:9999;
 }
 
 .products-grid li.item:hover .btn-holder {/*display:block;*/}
@@ -566,8 +566,8 @@
 .checkout-cart-index .size-area_outer .size-area {
     text-align: center;
     margin: auto;
-	padding: 0;
-	float: left;
+    padding: 0;
+    float: left;
 }
 .checkout-cart-index .size-area_outer .size-area li {
 float: none;display: inline-block;padding:3px 5px;
@@ -956,7 +956,7 @@ padding: 5px 8px; margin:0;}
                      position: relative;
 }
 
-.sortbycontainer >  a:after 	
+.sortbycontainer >  a:after     
 { width: 0;
   height: 0;
   border-style: solid;
@@ -1174,16 +1174,13 @@ margin:0 !important;}
 .customer-address-form select#country {
     font-size: 11px !important;
     height: 32px !important;
- 
 }
-
 .design_categories_attributes {}
 .design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
 .design_categories_attributes ul li { width: 24.25%; display: inline-block; margin: 0 1% 16px 0;}
 .design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}
 .design_categories_attributes ul li img { width: 100%;}
-
-.homepage_navigation_middle {} 
+.homepage_navigation_middle {}
 .homepage_navigation_middle .panel-heading { background: #000; color: #fff; float 100%;} 
 .homepage_navigation_middle .panel-title a { display:inline-block; width: 100%;}
 .mobilewebsite_top_banner { float: left; width: 100%;}
@@ -1217,11 +1214,11 @@ margin-top:0; display: inline-block;}
 .dashboar_whishlist_addtocartArea .price { position:relative;top:16px; width: 100%; display: inline-block !important;}
 a[class*='_selected_']{
     color: #fff !important;
-	background: #000;
+    background: #000;
 }
 ._selected_{
     color: #fff !important;
-	background: #000;
+    background: #000;
 }
 .dont_click_it {
    pointer-events: none;
