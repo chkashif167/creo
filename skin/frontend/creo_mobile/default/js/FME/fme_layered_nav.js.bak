@@ -376,7 +376,7 @@ function fme_layered_init()
 
 			   
     var items, i, j, n,
-    classes = ['category', 'attribute', 'icon', 'price', 'clear', 'dt', 'clearall'];
+            classes = ['category', 'attribute', 'icon', 'price', 'clear', 'dt', 'clearall'];
 			
 //	Event.on('fme_layered_universal_categories', 'click', 'a', single_select);
 	//var c_ids =  $('fme_layered_universal_categories').select('li a');

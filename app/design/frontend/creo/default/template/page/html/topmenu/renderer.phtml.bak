@@ -162,7 +162,8 @@
   </li>
   <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
  <?php 
- $customId = '255';
+ $ccurrentUrl = Mage::helper('core/url')->getCurrentUrl();
+ $customId = '231';
  $parent_cat_array = array();
  if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
  $parentId = Mage::registry('current_category')->getParentId();
@@ -222,7 +223,40 @@ endforeach;
                 </ul>
             </div>
         </div>
-        
+        <div class="featured-items">
+            <div class="heading-holder">
+                <h2>Featured</h2>
+            </div>
+            <ul class="featured-products">
+                <!--		<li>
+                                                                                                <a href="#">
+                                                                                                        <img alt="" src="images/img18.jpg">
+                                                                                                        <span class="title">CLasSIC POLO</span>
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                                <a href="#">
+                                                                                                        <img alt="" src="images/img19.jpg">
+                                                                                                        <span class="title">VINTAGE/COOL</span>
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                                <a href="#">
+                                                                                                        <img alt="" src="images/img20.jpg">
+                                                                                                        <span class="title">TANK TOPS</span>
+                                                                                                </a>
+                                                                                        </li>-->
+<?php
+$Featured_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
+foreach ($Featured_category as $category):
+    $_category = Mage::getModel('catalog/category')->load($category->getId());
+    if ($_category->featured_category == 1) {
+        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+    }
+endforeach;
+?>
+            </ul>
+        </div>
     </div>
 </li>
 <li <?php if (in_array("accessories",$parent_cat_array) || $_GET['id']==5) {
@@ -253,7 +287,22 @@ endforeach;
                 </ul>
             </div>
         </div>
-        
+        <div class="featured-items">
+            <div class="heading-holder">
+                <h2>Featured</h2>
+            </div>
+            <ul class="featured-products">
+                <?php
+                $Featured_category = Mage::getModel('catalog/category')->load('5')->getChildrenCategories();
+                foreach ($Featured_category as $category):
+                    $_category = Mage::getModel('catalog/category')->load($category->getId());
+                    if ($_category->featured_category == 1) {
+                        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+                    }
+                endforeach;
+                ?>
+            </ul>
+        </div>
 
     </div>
 </li>
@@ -285,18 +334,27 @@ endforeach;
                 </ul>
             </div>
         </div>
-        
+        <div class="featured-items">
+            <div class="heading-holder">
+                <h2>Featured</h2>
+            </div>
+            <ul class="featured-products">
+                <?php
+                $Featured_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
+                foreach ($Featured_category as $category):
+                    $_category = Mage::getModel('catalog/category')->load($category->getId());
+                    if ($_category->featured_category == 1) {
+                        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+                    }
+                endforeach;
+                ?>
+            </ul>
+        </div>
     </div>
 </li>
-<li <?php if(strstr($ccurrentUrl,"custom")) {
+<li <?php if(strstr($ccurrentUrl,"collections")) {
                     echo'class="active"';
-                } ?>> <a href="<?php echo Mage::getBaseUrl(). "clothing.html?universal_categories=".$customId."&custom=1" ?>">The Crazy Ones</a>
-</li>
-<li <?php if(in_array("collections",$parent_cat_array)) {
-                    echo'class="active"';
-                } ?>>
-                <!-- <a href="<?php //echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a> -->
-                <a>COLLECTIONS</a>
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
     <div class="drop">
         <div class="links-area">
             <div class="links-frame">
@@ -352,7 +410,7 @@ endforeach;
                 foreach ($Featured_category as $category):
                     $_category = Mage::getModel('catalog/category')->load($category->getId());
                     if ($_category->featured_category == 1) {
-                        echo '<li><a href="' . $category->getUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+                        echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
                     }
                 endforeach;
                 ?>
@@ -364,22 +422,6 @@ endforeach;
 
 </li>
 -->
-<li class="create_li" <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), 'create.html') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/create/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/account/') == false) {
+<li <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), 'create.html') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/create/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/account/') == false) {
                     echo'class="active"';
                 } ?>><a href="<?php echo Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
-                
-                
-		<?php
-		$sessionCustomer = Mage::getSingleton("customer/session");
-        if($sessionCustomer->isLoggedIn()) {
-        ?>
-        <li class="slide_nav_my_account"> <a href="<?php echo Mage::getUrl('customer/account'); ?>"> My Account </a> </li>
-         <li class="slide_nav_logout"><a href="<?php echo Mage::getUrl('customer/account/logout'); ?>"> Logout</a></li>
-        <?php
-        }else{
-		?>
-        <li class="slide_nav_login"><a href="<?php echo Mage::getUrl('customer/account/login'); ?>"> Login</a></li>
-        <li class="slide_nav_register"><a href="<?php echo Mage::getUrl('customer/account/create'); ?>"> Register</a></li>
-        <?php	
-		}
-        ?>

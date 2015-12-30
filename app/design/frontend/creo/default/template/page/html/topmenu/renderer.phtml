@@ -163,6 +163,7 @@
   <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
  <?php 
  $ccurrentUrl = Mage::helper('core/url')->getCurrentUrl();
+ $customId = '255';
  $parent_cat_array = array();
  if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
  $parentId = Mage::registry('current_category')->getParentId();
@@ -350,6 +351,10 @@ endforeach;
             </ul>
         </div>
     </div>
+</li>
+<li <?php if(strstr($ccurrentUrl,"custom")) {
+                    echo'class="active"';
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=".$customId."&custom=1" ?>">The Crazy Ones</a>
 </li>
 <li <?php if(strstr($ccurrentUrl,"collections")) {
                     echo'class="active"';
