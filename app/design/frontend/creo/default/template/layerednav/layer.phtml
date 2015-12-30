@@ -1,6 +1,6 @@
 <?php $style_array = array('largevshape', 'round', 'vshape') ?>
 <?php $gender_array = array('men', 'children', 'women'); ?>
-<?php $customId = '231';
+<?php $customId = '255';
 /*
  * Adding javascript include
  */
@@ -110,7 +110,6 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 										}
 										
                                         jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + custom + '\', \'?universal_categories=' + changeTo + custom + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
-
                                     }
 
                                     if (changeTo.indexOf("view all") >= 0) {                    //do not trigger onclick on the passed param and not on view all as well
