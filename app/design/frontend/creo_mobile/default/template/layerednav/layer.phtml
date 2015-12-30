@@ -198,11 +198,13 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         <div class="tshirt-colors-area">
                                             <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
                                             <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
-                                    <?php } else if ($_filter->getVar() == 'universal_categories') {
-                                            $currentUrl = Mage::helper('core/url')->getCurrentUrl();
-											if (strpos($currentUrl,'universal_categories="'.$customId.'"&custom=1') ==  false) {
+                                    <?php } else if ($_filter->getVar() == 'universal_categories') {										
+?>
+										<div style="display:<?php echo $block?>">
+                                        <?php
+											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('BlacknWhiteBanner')->toHtml();
                                         ?>
-								
+                                        </div>
                                         <span style="display:<?php echo $custom ?>">Search By Design: </span>
                                         <div class="cate-open-close" style="display:<?php echo $custom ?>">
 
@@ -214,24 +216,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 
                                             </ul></div>
                                     <?php
-											}elseif(strpos($currentUrl,'custom=1') ==  true){
-											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
-?>
-
-                                        <span style="display:<?php echo $custom ?>">Search By Design: </span>
-                                        <div class="cate-open-close" style="display:<?php echo $custom ?>">
-
-                                            <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
-                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
-                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">            
-                                                <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
-                                                <?php echo $_filter->getHtml() ?>
-
-                                            </ul></div>
-
-<?php												
-											}
-									}
+                                    }
 								}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
 									if ($_filter->getVar() == 'gender') {
 									?>
@@ -267,9 +252,12 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                             <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Material: </label> -->
                                             <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
                                     <?php } else if ($_filter->getVar() == 'universal_categories') {										
-									        $currentUrl = Mage::helper('core/url')->getCurrentUrl();
-											if (strpos($currentUrl,'universal_categories="'.$customId.'"&custom=1') ==  false) {
+?>
+										<div style="display:<?php echo $block?>">
+                                        <?php
+											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('BlacknWhiteBanner')->toHtml();
                                         ?>
+                                        </div>
                                         <span style="display:<?php echo $custom ?>">Search By Design: </span>
                                         <div class="cate-open-close" style="display:<?php echo $custom ?>">
 
@@ -281,22 +269,6 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 
                                             </ul></div>
                                     <?php
-											}elseif(strpos($currentUrl,'custom=1') ==  true){
-											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
-?>
-                                        <span style="display:<?php echo $custom ?>">Search By Design: </span>
-                                        <div class="cate-open-close" style="display:<?php echo $custom ?>">
-
-                                            <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
-                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
-                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">            
-                                                <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
-                                                <?php echo $_filter->getHtml() ?>
-
-                                            </ul></div>
-
-<?php												
-											}
                                     }
                                 }
                             endif;
