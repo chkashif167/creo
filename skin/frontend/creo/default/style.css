@@ -449,6 +449,7 @@ p.style1 {
 	display: block;
 	padding: 0 12px 5px;
 	position: relative;
+	cursor: pointer;
 }
 #nav ol > li a:hover { text-decoration: none; }
 #nav ol > li > a:after {
