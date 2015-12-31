@@ -171,8 +171,10 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                         <?php $_filters = $this->getFilters();
 						if($_REQUEST['custom']){
 							$custom = 'none';
+							$block = '';
 						}else{
 							$custom = '';
+							$block = 'none';
 						}
                         ?>
                         <?php // $_filters = array_reverse($_filters); ?>
