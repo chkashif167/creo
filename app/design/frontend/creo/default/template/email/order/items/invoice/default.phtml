@@ -79,12 +79,8 @@ if(empty($images)) {
 
             <div style="width:48%; float:left">
 
-         		 <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())
-
-				  ->load($_item->getProductId()); ?>
-
-		 	<img src="<?php echo $image; ?>" width="130" height="160" alt="" />
-
+<?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())->load($_item->getProductId()); ?>
+	<img src="<?php echo $image; ?>" width="100" style="width:100px;" alt="" />
             </div>
 
             <div style="width:48%;float:left; margin-left:10px">

@@ -55,18 +55,13 @@
 <?php $_order = $this->getItem()->getOrder() ?>
 
 <tbody>
-
     <tr>
-
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;">
-
             <div style="width:48%; float:left">
             <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())->load($_item->getProductId()); ?>
  	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
             </div>
-
             <div style="width:48%;float:left; margin-left:10px">
-
                 <h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase; text-align:left"><?php echo $this->escapeHtml($_item->getName()) ?></h2>
 
                 <p style="text-align:left; "><strong>SKU:</strong> <?php echo $this->escapeHtml($this->getSku($_item)) ?></p>
