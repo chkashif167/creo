@@ -61,13 +61,8 @@
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;">
 
             <div style="width:48%; float:left">
-
-         		 <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())
-
-				  ->load($_item->getProductId()); ?>
-
-		 	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
-
+            <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())->load($_item->getProductId()); ?>
+ 	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
             </div>
 
             <div style="width:48%;float:left; margin-left:10px">
@@ -84,14 +79,10 @@
 
                             <dt><strong><em><?php echo $option['label'] ?></em></strong></dt>
 
-                            <dd style="margin:0; padding:0 0 0 9px;">
-
+                            <dd style="margin:0;padding:0;">
                                 <?php echo nl2br($option['value']) ?>
-
                             </dd>
-
                         <?php endforeach; ?>
-
                     </dl>
 
                 <?php endif; ?>
