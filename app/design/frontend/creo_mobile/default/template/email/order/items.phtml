@@ -58,7 +58,7 @@
                         </th>
                     </tr>
                 </thead>
--->         
+-->
 	<?php $i=0; foreach ($_order->getAllItems() as $_item): ?>
             <?php if($_item->getParentItem()) continue; else $i++; ?>
                <?php echo $this->getItemHtml($_item) ?>
