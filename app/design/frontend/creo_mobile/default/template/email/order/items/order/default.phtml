@@ -61,13 +61,8 @@
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;">
 
             <div style="width:48%; float:left">
-
-         		 <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())
-
-				  ->load($_item->getProductId()); ?>
-
-		 	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
-
+            <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())->load($_item->getProductId()); ?>
+ 	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
             </div>
 
             <div style="width:48%;float:left; margin-left:10px">
@@ -83,9 +78,7 @@
             <?php foreach ($this->getItemOptions() as $option): ?>
 
                             <dt><strong><em><?php echo $option['label'] ?></em></strong></dt>
-
-                            <dd style="margin:0; padding:0 0 0 9px;">
-
+                            <dd style="margin:0;padding:0px;">
                                 <?php echo nl2br($option['value']) ?>
 
                             </dd>
@@ -109,8 +102,7 @@
         	</div>
 
         </td>
-
-		<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQtyOrdered()*1 ?></h2></td>
+        <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQtyOrdered()*1 ?></h2></td>
 
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_order->formatPrice($_item->getRowTotal()) ?></h2></td>
 
