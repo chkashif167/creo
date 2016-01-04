@@ -76,6 +76,27 @@
       <?php echo $about->getContent(); ?>
       </div>
     </div>
+<?php
+$paymentlogos = Mage::getModel('cms/block')->load('footer-payment-logos');
+$paymentlogos2 = $this->getLayout()->createBlock('cms/block')->setBlockId('footer-payment-logos')->toHtml();
+if ($paymentlogos2 != '') { ?>
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse10">
+          <?php  echo $paymentlogos->getTitle(); ?></a>
+        </h4>
+      </div>
+      <div id="collapse10" class="panel-collapse collapse">
+      <div class="panel-body" align="center">
+     <?php echo $paymentlogos2; ?>
+     </div>
+      </div>
+    </div>
+<?php
+}
+?>
+
 </div>
 </div></div>
 </div>

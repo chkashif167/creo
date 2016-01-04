@@ -113,9 +113,17 @@
         </div>
     </li>
     </div>
-</div>   
 </div>
-    <div class="col-sm-4">
+<?php
+$paymentlogos = $this->getLayout()->createBlock('cms/block')->setBlockId('checkout-paymnet-logos')->toHtml();
+if ($paymentlogos != '') { ?>
+<div align="right">
+<?php echo $paymentlogos; ?>
+</div>
+<?php }
+?>
+</div>
+<div class="col-sm-4">
         <?php if ($this->hasSsCardType()): ?>
         <li id="<?php echo $_code ?>_cc_type_ss_div">
             <div class="credit-card clearfix">

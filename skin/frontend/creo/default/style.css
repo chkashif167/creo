@@ -1026,8 +1026,8 @@ p.style1 {
 #footer .column.column1{width: 140px;}
 #footer .column {
 	float: left;
-	width: 80px;
-	margin: 0 10px 0 0;
+	min-width: 80px;
+	margin: 0 15px 0 0;
 	position: relative;
 }
 #footer .column h3 {
