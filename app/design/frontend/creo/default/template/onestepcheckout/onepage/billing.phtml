@@ -73,9 +73,9 @@ $has_addr	= $this->customerHasAddresses();
         <input type="text" name="billing[city]" id="billing:city" title="<?php echo $this->__('City') ?>" value="<?php echo $this->htmlEscape($this->getBillAddress()->getCity()) ?>" class="validate-alpha t1<?php if ($city_r === 'required'){ echo ' required-entry ';}?>" maxlength="20"  />
         <?php endif; ?>
         <div class="short"<?php if($state_r === 'hidden'){ echo ' style="display:none" ';}?>>
-        <label for="billing:region_id"<?php if($state_r === 'required'){ echo ' class="required" ';}?>> <?php echo $this->__('State / Province') ?> </label>
+        <label id="billing:statelabel" for="billing:region_id"<?php if($state_r === 'required'){ echo ' class="required" ';}?>> <?php echo $this->__('State / Province') ?> </label><sup id="billing:staterequired">*</sup>
         <?php if($state_r === 'required'){ echo ' <sup>*</sup> ';}?>
-     	<!--<div class="billingcountryselect">
+     	<div id="billing:statediv" class="billingcountryselect">
         <select id="billing:region_id" name="billing[region_id]" title="<?php echo $this->__('State/Province') ?>" class=" billingadressselect validate-select<?php if($state_r === 'required') { echo ' required-entry';}?>" style="display:none;">
           <option value=""><?php echo $this->__('Select One') ?></option>
         </select>
@@ -89,18 +89,18 @@ $has_addr	= $this->customerHasAddresses();
         <input type="text" id="billing:region" name="billing[region]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="validate-alpha t1<?php if($state_r === 'required'){ echo ' required-entry';}?>" maxlength="20" style="display:none;" />
         
          </div>
-      </div>--> 
+      </div>
         
 		</div>
       </div>
       <div class="form-group col-lg-2 col-sm-4">
         <?php
-			$zip_r	= Mage::getStoreConfig('onestepcheckout/address_form/zip');
+ 			$zip_r	= Mage::getStoreConfig('onestepcheckout/address_form/zip');
 			$phone_r= Mage::getStoreConfig('onestepcheckout/address_form/phone');
 			if ($zip_r !== 'hidden' || $phone_r !== 'hidden') : 
 			?>
         <?php if ($zip_r !== 'hidden') : ?>
-        <label for="billing:postcode"<?php if($zip_r === 'required'){echo ' class="required" ';}?>> <?php echo $this->__('Zip Code') ?> </label>
+        <label id="billing:postcodelabel" for="billing:postcode"<?php if($zip_r === 'required'){echo ' class="required" ';}?>> <?php echo $this->__('Zip Code') ?> </label><sup id="billing:ziprequired">*</sup>
         <?php if($zip_r === 'required'){echo ' <sup>*</sup>';}?>
         <input type="text" title="<?php echo $this->__('Zip/Postal Code') ?>" name="billing[postcode]" id="billing:postcode" value="<?php echo $this->htmlEscape($this->getBillAddress()->getPostcode()) ?>" class="t1 validate-zip-international<?php if($zip_r === 'required'){echo ' required-entry ';}?>" maxlength="20" />
         <?php endif; ?>
