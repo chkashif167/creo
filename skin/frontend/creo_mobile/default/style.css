@@ -1170,8 +1170,8 @@ border-color: transparent transparent transparent #000;
 .pdc-design-area-right{position:relative !important;right:inherit !important;}
 #tools-button li{margin:0;width:auto;display:inline-block;}
 #tools-button li a{padding:4px 8px;}
-.footer_termsconditions {width: 100%; text-align: center; padding:15px 0;background-color:#000;color:#fff;text-transform:uppercase;
-font-size:16px;}
+.footer_termsconditions {width: 100%; text-align: center; padding:10px 0;background-color:#000;color:#fff;text-transform:uppercase;
+font-size:12px;}
 #footer-accordion{margin-bottom:0;}
 .footer_navigation .panel-heading,.footer_navigation .panel{border-radius:0;}
 .footer_navigation .panel-heading{color:#444;}
