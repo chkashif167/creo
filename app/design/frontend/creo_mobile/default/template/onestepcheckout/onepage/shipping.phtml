@@ -26,7 +26,7 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
       <div class="data_area"> <?php echo $this->getCustomerShipAddr() ?> </div>
     </div>
     <?php } ?>
-    <div class="checkout-form row" id="ship_form"<?php if ($has_addr){ echo ' style="display:none;" ';}?>>
+    <div class="checkout-form" id="ship_form"<?php if ($has_addr){ echo ' style="display:none;" ';}?>>
       <input type="hidden" name="shipping[address_id]" id="shipping:address_id" value="<?php echo $this->getShipAddress()->getId() ?>" />
       <div class="two_fields"> <?php echo $this->getLayout()->createBlock('onestepcheckout/widget_name')->setObject($this->getShipAddress())->setFieldIdFormat('shipping:%s')->setFieldNameFormat('shipping[%s]')->setFieldParams('onchange="shipping.setSameAsBilling(false)"')->toHtml() ?> </div>
       <?php

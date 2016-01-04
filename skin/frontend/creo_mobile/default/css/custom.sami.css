@@ -1,8 +1,4 @@
-.checkout-heading {
-    border-bottom:3px solid #eee;
-    padding-bottom: 10px;
-}
-
+.checkout-heading {border-bottom:3px solid #eee;}
 .checkout-form-headings {
     padding-bottom: 0;
 }
@@ -49,9 +45,7 @@
     font-size: 14px;
 } 
 
-.checkout-form .form-group {
-    margin-bottom: 20px;
-}
+.checkout-form .form-group {margin-bottom: 20px;}
 
 .checkout-form .form-group a {
     margin-bottom: 20px;
@@ -207,7 +201,7 @@ a.alignleft.checkout-items {
 .cart-table-area.checkout-table table {
     border-top:none;
 }
-
+.cart-table-area.checkout-table table .st-head-row.st-head-row-main{display:none;}
 .span2.pull-left.no-padding {
     padding-left: 0 !important;
 }
@@ -358,8 +352,7 @@ a.alignleft.checkout-items {
 }
 
 .form-holder.login-sec {
-    padding-bottom:20px;
-    padding-top:20px;
+    padding:20px 0;
 }
 
 #footer .list li {
@@ -450,17 +443,13 @@ form select#country {
     font-size: 11px !important;
 }
 
-#checkout-review-table tr {
-    width:32%;
-    display:inline-block;
-}
-
+#checkout-review-table tr{width:100%;display:block;}
 #checkout-review-table tr td.last:after {
     border-right: 2px solid #f3f3f3;
     bottom: 12px;
     content: "";
     right: 0;
-    position: absolute;
+    /*position: absolute;*/
     top: 12px;
 }
 
@@ -572,7 +561,7 @@ div.fme-filter a.fme_layered_attribute {
 .Vshape:hover {background:url(../images/largevshape-hover.png) no-repeat !important;}
 
 #fme_layered_styles > ol {padding: 0 0 0 56px;}
-.col.col-lg-12.col-md-12.col-sm-12.col-xs-12 > h2 {text-transform: uppercase;}
+.col.col-lg-12.col-md-12.col-sm-12.col-xs-12 > h2 {text-transform: uppercase;font-size:26px;}
 
 /*****************************  product detail page  *********************************/
 
@@ -627,9 +616,9 @@ div.fme-filter a.fme_layered_attribute {
 }
 
 .catalog-category-view.categorypath-create-html.category-create .products-grid li h2 a {
-    border: 2px solid #ececec;
+    border:2px solid #ececec;
     display: block;
-    font-size: 21px;
+    font-size:16px;
     line-height: 2;
     text-align: center;
     text-decoration: none;

@@ -80,11 +80,11 @@
                 <name>jquery-plugins/fancybox/jquery.fancybox.css</name>
             </action>
             
-            <action method="addItem" ifconfig="attributeswatches/cloudzoom/enabled">
+            <action method="removeItem" ifconfig="attributeswatches/cloudzoom/enabled">
                 <type>skin_js</type>
                 <name>jquery-plugins/cloudzoom/cloudzoom.js</name>
             </action>
-            <action method="addItem" ifconfig="attributeswatches/cloudzoom/enabled">
+            <action method="removeItem" ifconfig="attributeswatches/cloudzoom/enabled">
                 <type>skin_css</type>
                 <name>jquery-plugins/cloudzoom/cloudzoom.css</name>
             </action>

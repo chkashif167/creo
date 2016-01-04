@@ -32,9 +32,8 @@
   
 <?php if( sizeof($_orders->getItems()) > 0 ): ?>
  <div class="cart-table-area" style="margin-bottom:35px;">
-                                        <table>
-                                            <tr>
-   
+        <table class="data-table">
+            <tr>
                 <th class="number"><?php echo $this->__('Order #') ?></th>
                 <th class="date"><?php echo $this->__('Date') ?></th>
                 <th class="ship"><?php echo $this->__('Ship To') ?></th>

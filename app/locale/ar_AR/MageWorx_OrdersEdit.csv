@@ -1,0 +1,89 @@
+"%s / %s rate:","%s / %s rate:"
+"%s has been changed from \&quot;%s\&quot; to \&quot;%s\&quot;","%s has been changed from \&quot;%s\&quot; to \&quot;%s\&quot;"
+"%s item(s) of \&quot;%s\&quot; have been added to the order","%s item(s) of \&quot;%s\&quot; have been added to the order"
+"%s item(s) of \&quot;%s\&quot; have been removed from the order","%s item(s) of \&quot;%s\&quot; have been removed from the order"
+"Add Order Comments","Add Order Comments"
+"Admin Only","Admin Only"
+"Admin Order Editor","Admin Order Editor"
+Apply,Apply
+B,B
+"Based on the VAT ID, the customer would belong to the Customer Group %s.","Based on the VAT ID, the customer would belong to the Customer Group %s."
+Billing,Billing
+Cancel,Cancel
+"Cannot add order history.","Cannot add order history."
+Change,Change
+"Click to change shipping method","Click to change shipping method"
+Comment,Comment
+Configure,Configure
+"Coupon Code","Coupon Code"
+"Customer Group","Customer Group"
+"Customer Name","Customer Name"
+"Customer and Admin","Customer and Admin"
+Disable,Disable
+Discount,Discount
+"Discount (%s)","Discount (%s)"
+"Discount for \&quot;%s\&quot; have been applied","Discount for \&quot;%s\&quot; have been applied"
+"Discount of \&quot;%s\&quot; have been removed","Discount of \&quot;%s\&quot; have been removed"
+"Edit Orders","Edit Orders"
+Email,Email
+Enable,Enable
+"Enable Shipping Price Editing","Enable Shipping Price Editing"
+"Excl. Tax","Excl. Tax"
+"File does not exist","File does not exist"
+"Incl. Tax","Incl. Tax"
+KB,KB
+"Link to the New Order","Link to the New Order"
+"Link to the Previous Order","Link to the Previous Order"
+MB,MB
+"MageWorx > Order Management","MageWorx > Order Management"
+"New Totals","New Totals"
+No,No
+"No Payment Methods","No Payment Methods"
+"Note: order's initial Grand Total value to be captured unless credit card info is re-submitted","Note: order's initial Grand Total value to be captured unless credit card info is re-submitted"
+"Notify Customer by Email","Notify Customer by Email"
+"Order Date","Order Date"
+"Order Date (%s)","Order Date (%s)"
+"Order Edit","Order Edit"
+"Order Edit for Guest","Order Edit for Guest"
+"Order Management","Order Management"
+"Order Status","Order Status"
+"Placed from IP","Placed from IP"
+"Please set resource file and link type","Please set resource file and link type"
+Price,Price
+"Price of \&quot;%s\&quot; have been changed from %s to %s","Price of \&quot;%s\&quot; have been changed from %s to %s"
+"Purchased From","Purchased From"
+"Remove Coupon Code') ?&gt;&quot;&gt;&lt;?php echo Mage::helper('sales","Remove Coupon Code') ?&gt;&quot;&gt;&lt;?php echo Mage::helper('sales"
+"Requested file not available now","Requested file not available now"
+"Send Update Email","Send Update Email"
+Shipping,Shipping
+"Shipping method selection is not applicable","Shipping method selection is not applicable"
+"Show Thumbnails","Show Thumbnails"
+"Sorry, no quotes are available for this order at this time.","Sorry, no quotes are available for this order at this time."
+"Sorry, there was an error getting the file","Sorry, there was an error getting the file"
+Status,Status
+Submit,Submit
+"Submit Comment","Submit Comment"
+"The VAT ID entered (%s) is not a valid VAT ID. The customer would belong to Customer Group %s.","The VAT ID entered (%s) is not a valid VAT ID. The customer would belong to Customer Group %s."
+"The VAT ID is valid. The current Customer Group will be used.","The VAT ID is valid. The current Customer Group will be used."
+"The customer is currently assigned to Customer Group %s.","The customer is currently assigned to Customer Group %s."
+"The modified email can be sent to both an admin and a customer, admin only, or neither of the two.","The modified email can be sent to both an admin and a customer, admin only, or neither of the two."
+"The order changes have been canceled","The order changes have been canceled"
+"The order changes have been saved","The order changes have been saved"
+"The order has pending changes. Are you sure you want to skip them?","The order has pending changes. Are you sure you want to skip them?"
+"There was an error validating the VAT ID.","There was an error validating the VAT ID."
+"There was an error validating the VAT ID. The customer would belong to Customer Group %s.","There was an error validating the VAT ID. The customer would belong to Customer Group %s."
+"This product does not have any configurable options","This product does not have any configurable options"
+"Thumbnail Height","Thumbnail Height"
+Total,Total
+"Total incl. tax","Total incl. tax"
+Type,Type
+"Validate VAT Number","Validate VAT Number"
+"Visible on Frontend","Visible on Frontend"
+"Would you like to change the Customer Group for this order?","Would you like to change the Customer Group for this order?"
+Yes,Yes
+"\&quot;%s\&quot; has been added to the order (Qty: %s)","\&quot;%s\&quot; has been added to the order (Qty: %s)"
+"\&quot;%s\&quot; has been removed from the order","\&quot;%s\&quot; has been removed from the order"
+enabled_menu_orders,enabled_menu_orders
+"Hide edit button","Hide edit button"
+"Display All Order Statuses in the Comments","Display All Order Statuses in the Comments"
+"If enabled, all available order statuses will be shown in the status drop-down in the order comments.","If enabled, all available order statuses will be shown in the status drop-down in the order comments."

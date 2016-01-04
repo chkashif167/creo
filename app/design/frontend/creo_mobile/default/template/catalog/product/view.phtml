@@ -36,14 +36,12 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);</script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 <div class="row">
-
-<?php 
-
+<?php
 if($_product->stock_item->is_in_stock == 0){
-	$outofstockclass = "outofstockclass ";
+    $outofstockclass = "outofstockclass ";
  } ?>
 
-    <div class=" <?php if(isset($outofstockclass)) {echo $outofstockclass ;} ?>product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="<?php if(isset($outofstockclass)) {echo $outofstockclass ;} ?>product-detail col col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> validation_status="">
             <?php echo $this->getBlockHtml('formkey') ?>
             <div class="no-display">
@@ -80,18 +78,18 @@ if($_product->stock_item->is_in_stock == 0){
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div class="text-area col-lg-6 col-xs-12">
                         <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
-                        <div class="price-area"> 
+                        <div class="price-area">
                             <span class="price">
                                 <?php if($_product->getSpecialPrice() > 0.0):?>
-                                    <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
+                                    <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i>
                                 <?php endif;?>
                                 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-                            <span class="availability">Availability:  
+                            <span class="availability">Availability:
                                 <?php echo $this->getChildHtml('product_type_availability'); ?>
-                            </span> 
+                            </span>
                         </div>
                         <div class="options-area">
                             <?php if ($_product->isSaleable()): ?>
@@ -105,17 +103,17 @@ if($_product->stock_item->is_in_stock == 0){
                     </div>
                 </div>
             <?php }else { ?>
-                <div class="carousel-creo carousel3">
+            <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+                <div class="">
                     <div class="product-img-box">
                         <?php echo $this->getChildHtml('media') ?>
                     </div>
                 </div>
                 <div class="text-area">
-                    <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
-                    <div class="price-area"> 
+                    <div class="price-area">
 <div class="price-info">
 <?php /*?><?php if($_product->getSpecialPrice() > 0.0):?>
-<i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
+<i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i>
 <?php endif;?>
 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?><?php */?>
 
@@ -124,12 +122,16 @@ if($_product->stock_item->is_in_stock == 0){
 <?php echo $this->getTierPriceHtml() ?>
 
  </div>
-                        <span class="availability">Availability:  
+                        <span class="availability">Availability:
                             <?php echo $this->getChildHtml('product_type_availability'); ?>
-                        </span> 
+                        </span>
                     </div>
 
-
+<div class="options-area">
+                <?php if ($_product->isSaleable()):?>
+                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                        <?php endif; ?>
+                    </div>
                     <!-- tabs structure example -->
                     <ul class="tabset tabset1">
                         <li class="active"><a href="#tab1"><span>
@@ -158,30 +160,26 @@ if($_product->stock_item->is_in_stock == 0){
                             } else {
                                 echo " ";
                             }
-                            ?> 
+                            ?>
                         </div>
                         <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
                             <p><?php print $_product->getDesign(); ?> </p>
                         </div>
                     </div>
-                    <div class="options-area">
-                <?php if ($_product->isSaleable()):?>
-                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                        <?php endif; ?>
-                    </div>
+
                     <?php  if(!$_product->isSaleable()): ?>
-						<?php echo $this->getChildHtml('addto') ?>                      
+                        <?php echo $this->getChildHtml('addto') ?>
                       <?php endif; ?>
 
 
                     <?php // jawwad.nissar work starts  ?>
-                    <div class="shipping-area"> 
+                    <div class="shipping-area">
                         <h4 st> Shipping Information  </h4>
                         <!--<a class="shipping-info" href="#">Shipping Information</a>-->
                         <p><?php print $_product->getShippingDetails(); ?> </p>
-                    </div> 
-                    <?php // jawwad.nissar work ends  ?>                     
-                    <!--                    <div class="shipping-area"> 
+                    </div>
+                    <?php // jawwad.nissar work ends  ?>
+                    <!--                    <div class="shipping-area">
                     <?php
 //                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
 //                        $options = array();
@@ -207,7 +205,7 @@ if($_product->stock_item->is_in_stock == 0){
                     ?>
                     <?php //Ghost code ends?>
                                         </div>
-                    -->                    
+                    -->
                 </div>
             <?php } ?>
             <?php //endif;*/  ?>
@@ -268,10 +266,9 @@ if($_product->stock_item->is_in_stock == 0){
                                 success: function(data){
                                 jQuery('.fme_loading_filters').hide();
                                         //alert(data.status + ": " + data.message);
-                                        if (jQuery('#header-cart')) {
-                                
-								if(data.status != "ERROR"){
-								jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+                                       if (jQuery('#header-cart')) {
+            if(data.status != "ERROR"){
+            jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -282,41 +279,41 @@ if($_product->stock_item->is_in_stock == 0){
                                         event: 'over',
                                         effect: 'fade'
                                 });
-								jQuery('#ajaxModalTitle').html(data.status);
-								jQuery('#ajaxModalContent').html(data.message);
-								jQuery('.ajaxAddToCartModal').modal('show');
-								
-                                        //refresh minicart
-										var data = jQuery('#product_addtocart_form').serialize();
-										data += '&isRefresh=1';
-										try {
-										jQuery.ajax({
-										url: url,
-												dataType: 'json',
-												type : 'post',
-												data: data,
-												success: function(data){
-										if(data.status != "ERROR"){
-										jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
-										}
-												if (jQuery('#header-cart')) {
-												/*initialize the minicart dropdown again*/
-												jQuery('#open-close-minicart').openClose({
-												activeClass: 'active',
-														opener: '.opener',
-														slider: '.slide',
-														animSpeed: 400,
-														event: 'over',
-														effect: 'fade'
-												});
-														}
-												}
-										});
-										} catch (e) {
-								}
-										//refresh minicart
-										}
-								}
+        jQuery('#ajaxModalTitle').html(data.status);
+        jQuery('#ajaxModalContent').html(data.message);
+        jQuery('.ajaxAddToCartModal').modal('show');
+
+        //refresh minicart
+        var data = jQuery('#product_addtocart_form').serialize();
+        data += '&isRefresh=1';
+        try {
+        jQuery.ajax({
+        url: url,
+                dataType: 'json',
+                type : 'post',
+                data: data,
+                success: function(data){
+        if(data.status != "ERROR"){
+        jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+        }
+                if (jQuery('#header-cart')) {
+                /*initialize the minicart dropdown again*/
+                jQuery('#open-close-minicart').openClose({
+                activeClass: 'active',
+                        opener: '.opener',
+                        slider: '.slide',
+                        animSpeed: 400,
+                        event: 'over',
+                        effect: 'fade'
+                });
+                        }
+                }
+        });
+        } catch (e) {
+}
+        //refresh minicart
+        }
+}
                         });
                         } catch (e) {
                 }
@@ -417,8 +414,8 @@ if($_product->stock_item->is_in_stock == 0){
                 </div>
             </div>
         </div>
-    </div>   
-    <div class="fme_loading_filters" style="display:none;"><img id="loading-image" src="<?php echo $this->getSkinUrl(); ?>images/FME/ajax-loader.gif" /></div>
+    </div>
+    <div class="fme_loading_filters" style="display:none;"><img id="loading-image" src="<?php echo $this->getSkinUrl('images/FME/ajax-loader.gif'); ?>" /></div>
     <style>
         .fme_loading_filters {
             background-color: #d8d8d8;
@@ -438,10 +435,10 @@ if($_product->stock_item->is_in_stock == 0){
             z-index: 900;
         }
     </style>
-    
-    
-    
-<script type="application/javascript">    
+
+
+
+<script type="application/javascript">
     //Get associated product price
 <?php if($_product->isConfigurable()):?>
 function isValidPrice(price)
@@ -515,8 +512,9 @@ jQuery(document).ready(function(){
     jQuery("[name*='super_attribute'], [name*='options']").on('change', function(){
         loadPriceWithAjax();
     });
-    
+
     //if any of the default attribute or option is selected do send the ajax request
+
     if(hasDefaultSelection()) {
         loadPriceWithAjax();
     }

@@ -55,9 +55,9 @@
   <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
     <?php echo $this->getBlockHtml('formkey'); ?>
     <div class="row">
-      <div class="cart-table-area col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <table id="shopping-cart-table" class="cart-table data-table">
-          <?php /*?>  <col width="1" />
+      <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12 cartPage_custome_responsive">
+        <table id="shopping-cart-table" class="cart-table">
+          <col width="1" />
       <col width="1" />
       <col width="1" />
       <col width="1" />
@@ -66,45 +66,19 @@
       <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
       <col width="1" />
       <col width="1" />
-      <?php endif; ?><?php */?>
+      <?php endif; ?>
           <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
-          <thead>
-            <tr>
-              <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('PRODUCT DESCRIPTION') ?></span></th>
-              <?php /*?> <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th><?php */?>
-              <th class="a-center cart-price-head" colspan="<?php echo $mergedCells; ?>"> <!--                            <div class="cart-price-placeholder">--> 
-                <span class="nobr"><?php echo $this->__('UNIT PRICE') ?></span> 
-                <!--                            </div>--> </th>
-              <th rowspan="<?php echo $mergedCells; ?>">Size</th>
-              <th rowspan="<?php echo $mergedCells; ?>" class="a-center"> <?php echo $this->__('QUANTITY') ?>
-                <?php /*if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                            <span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span>
-                        <?php endif*/ ?>
-              </th>
-              <th class="a-center cart-total-head" colspan="<?php echo $mergedCells; ?>"> <!--                            <div class="cart-total-placeholder">--> 
-                <?php echo $this->__('Subtotal') ?> 
-                <!--                            </div>--> </th>
-              <th class="a-center" rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
-            </tr>
-            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-            <tr>
-              <th class="a-center cart-price-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-              <th class="a-center cart-price-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-              <th class="a-center cart-total-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-              <th class="a-center cart-total-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-            </tr>
-            <?php endif; ?>
-          </thead>
+          
           <tfoot>
             <tr>
               <td colspan="50" class="a-right cart-footer-actions"><!-- Make this button the first responder rather than empty cart -->
                 
                 <div class="row">
                   <div class="cart-btn-area col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  	<button type="submit" style="visibility:hidden;" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button2 btn-update"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
+                  	<button type="submit" style="display:none;" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button2 btn-update"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
                 
                    <div class="btn-holder"> 
-                   <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('UPDATE SHOPPING BAG'); ?>" class="button2 btn-update"><span class="span1"><span class="span2"><?php echo $this->__('UPDATE SHOPPING BAG'); ?></span></span></button>
+                   <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('update SHOPPING BAG'); ?>" class="button2 btn-update"><span class="span1"><span class="span2"><?php echo $this->__('update SHOPPING BAG'); ?></span></span></button>
                     <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('CLEAR CART'); ?>" class="button2 btn-empty" id="empty_cart_button"><span class="span1"><span class="span2"><?php echo $this->__('CLEAR CART'); ?></span></span></button>
                      </div>
                    
@@ -186,3 +160,4 @@
   </div>
 
   <?php echo $this->getChildHtml('crosssell') ?> </div>
+

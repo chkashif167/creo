@@ -1,6 +1,9 @@
-var/*
-app/etc/local.xml
-/nbproject/private/
-app/design/frontend/ecart/default/layout/local.xml
-var/cache/
+.gitignore
+/.gitignore
+.htaccess
+./app/etc/local.xml
+/app/etc/local.xml
+*app/etc/local.xml
+var
+nbproject/private/*
 var/log/system.log

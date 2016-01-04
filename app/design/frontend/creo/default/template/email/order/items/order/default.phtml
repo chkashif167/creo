@@ -81,7 +81,11 @@ if(empty($images)) {
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;">
             <div style="width:48%; float:left">
             <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())->load($_item->getProductId()); ?>
+<<<<<<< HEAD
  	<img src="<?php echo $image;?>" width="130" height="160" alt="" />
+=======
+ 	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
+>>>>>>> 35555cadf91bc7db7f9360a479f7de41c2e3be3c
             </div>
             <div style="width:48%;float:left; margin-left:10px">
                 <h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase; text-align:left"><?php echo $this->escapeHtml($_item->getName()) ?></h2>

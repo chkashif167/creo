@@ -2509,7 +2509,9 @@ function popupValidation()
 		}
 		
 		if(jQuery("#swatches-options-152").length > 0) {
-			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+			if(jQuery("#attribute149").val()===''){
+				errors = "Please make sure to select phone model";
+			}else if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select case color";
 			}
 		}
@@ -2674,3 +2676,47 @@ jQuery(document).ready(function(e) {
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
   }
+
+/** Select first style by default on product detail page **/
+jQuery(window).load(function(){
+    //check if the style id exist
+    if(jQuery('#attribute-134-container').length >= 1){
+        jQuery('#attribute-134-container').find('li:first').find('a').trigger('click');//this id only exists for styles
+    }
+});
+/** Selection of the first style ends here **/
+
+//jQuery(document).ready(function() { 
+//    //pure javascript
+//    var pathname = window.location.href;
+//	alert(pathname);
+//    if (pathname.indexOf("universal_categories") > 0){
+//		jQuery(".fme_layered_clearall").removeClass("_selected_");
+//    }
+//	else
+//	{
+//		jQuery(".fme_layered_clearall").addClass("_selected_");
+//	}
+//});
+jQuery(window).load(function(){
+	
+	var pathname = window.location.href;
+	var getvalue = jQuery('#fme_layered_params').val();
+	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
+		if (pathname.indexOf("=") > 0){
+			var and = '';
+			var length = '';
+			var id = '';
+			var equalsto = '';
+			equalsto = pathname.search("=");	
+			if (pathname.indexOf("&") > 0){
+				and = pathname.search("&");	
+				length = and - equalsto;
+				id = pathname.substr(equalsto + 1, length - 1);
+			}else{
+				id = pathname.substring(equalsto + 1);												
+			}
+			jQuery('#universal_categories-'+id).simulate('click');
+		}
+	}
+});
