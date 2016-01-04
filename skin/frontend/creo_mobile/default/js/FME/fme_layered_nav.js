@@ -197,9 +197,15 @@ function fme_layered_make_request()
     {
         $('fme_layered_params').value += '&dir=' + 'desc';
     }
-
+	var url = window.location.href;
+	if (url.indexOf("custom") > 0){
+		custom = '&custom=1';
+		jQuery('#current_url').val('custom');
+	}else{
+		custom = '';
+	}
     new Ajax.Request(
-           $('fme_layered_ajax').value + '?' + $('fme_layered_params').value,
+           $('fme_layered_ajax').value + '?' + $('fme_layered_params').value + custom,
             {
                 method: 'get',
                 onSuccess: fme_layered_show_products

@@ -2675,8 +2675,7 @@ jQuery(document).ready(function(e) {
     }
   }
 
-  
-  /** Select first style by default on product detail page **/
+/** Select first style by default on product detail page **/
 jQuery(window).load(function(){
     //check if the style id exist
     if(jQuery('#attribute-134-container').length >= 1){
@@ -2694,7 +2693,6 @@ jQuery(document).ready(function($){
    jQuery('.data-table,.order-products-table,.cart-table-area').stacktable();
 });
 
-
 //jQuery(document).ready(function() { 
 //    //pure javascript
 //    var pathname = window.location.href;
@@ -2707,21 +2705,32 @@ jQuery(document).ready(function($){
 //		jQuery(".fme_layered_clearall").addClass("_selected_");
 //	}
 //});
+
 jQuery(window).load(function(){
+	
 	var pathname = window.location.href;
 	var getvalue = jQuery('#fme_layered_params').val();
 	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
 		if (pathname.indexOf("=") > 0){
-			var equalsto = pathname.search("=");	
-			var id = pathname.substring(equalsto + 1);
+			var and = '';
+			var length = '';
+			var id = '';
+			var equalsto = '';
+			equalsto = pathname.search("=");	
+			if (pathname.indexOf("&") > 0){
+				and = pathname.search("&");	
+				length = and - equalsto;
+				id = pathname.substr(equalsto + 1, length - 1);
+			}else{
+				id = pathname.substring(equalsto + 1);												
+			}
 			jQuery('#universal_categories-'+id).simulate('click');
 		}
 	}
 });
 
-
 jQuery(document).ready(function() {
-   jQuery('.swatch-type-image a').on('touchend', function(e) {
+   jQuery('.swatch-type-image a,.products-grid .btn-holder a').on('touchend', function(e) {
       var el = jQuery(this);
       el.simulate('click');
    });
