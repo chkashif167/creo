@@ -1282,7 +1282,7 @@ animation: animaterotate 1s 1;
 0% {transform:rotate(0deg);}
 100% {transform:rotate(360deg);}
 }
-
+#payment_form_creditcardpci img{max-width:100%;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
