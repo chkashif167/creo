@@ -4,7 +4,7 @@
     <modules>
         <WTS_AssociatedProductAjaxPriceLoader>
             <codePool>local</codePool>
-            <active>true</active>
+            <active>false</active>
         </WTS_AssociatedProductAjaxPriceLoader>
     </modules>
 </config>
