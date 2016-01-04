@@ -134,7 +134,7 @@ body.canvas-slid #disable_view{position: fixed;z-index: 9998;background-color: r
 #nav ol > li > a { display: block; padding:10px 20px; position: relative;font-size:17px; }
 #nav ol > li a:hover { text-decoration: none;color:#fff;background-color:#333;}
 #nav ol > li.active .drop{display: block;}
-#nav ol > li.active a,#nav ol > li:nth-child(5) a{color:#fff;background-color:#ef4f61;}
+#nav ol > li.active a{color:#fff;background-color:#ef4f61;}
 #header .right-area { text-align: right; }
 #header .cart {text-align:center;display:inline-block;vertical-align: top; width: auto; padding: 0px; position: relative; z-index: 33; margin-top: 25px; }
 #header .cart .opener { font: bold 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; color: #fff; text-transform: uppercase; position: relative; display: block; padding: 14px 16px; z-index: 22; width: auto; }

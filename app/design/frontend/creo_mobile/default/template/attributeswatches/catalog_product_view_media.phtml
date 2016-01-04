@@ -189,7 +189,9 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
                 <?php endforeach; ?>
             </ul>
         </div>
-    <?php endif; /* if !$hide_gallery */ ?>
+    <?php endif;
+    /* if !$hide_gallery */
+    ?>
     <script type="text/javascript">
         var _ENABLE_PRODUCT_GALLERY_CAROUSEL = <?php echo (int) $_carousel_enabled; ?>;
         var _PRODUCT_GALLERY_CAROUSEL_MIN_ITEMS = <?php echo (int)$_carousel_settings['min_items'];?>;
@@ -223,7 +225,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
             /*#product-gallery-container.vertical-carousel-container ul.slides > li{
               /*  margin-bottom: 0px !important;/* has to be equal to the itemMargin setting for flexslider */
               /*  margin-top:0px !important;
-            }  */          
+            }  */
             <?php endif;?>
             /* fix adjust images height */
             #product-media-container #product-gallery-container ul.slides li a img{

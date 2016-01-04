@@ -3,9 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/var/www/creo/app/design/frontend/creo/default/template/page/html/topmenu/renderer.phtml</file>
             <file>file:/var/www/creo/app/design/frontend/creo/default/template/page/html/pager.phtml</file>
             <file>file:/var/www/creo/app/design/frontend/creo/default/template/layerednav/layer.phtml</file>
+=======
+            <file>file:/var/www/creo/includes/src/Mage_Catalog_Model_Layer.php</file>
+            <file>file:/var/www/creo/app/design/frontend/creo/default/template/page/html/topmenu/renderer.phtml</file>
+            <file>file:/var/www/creo/includes/src/Mage_Catalog_Block_Product_List.php</file>
+            <file>file:/var/www/creo/includes/src/Mage_CatalogSearch_Block_Result.php</file>
+            <file>file:/var/www/creo/app/code/core/Mage/Catalog/Model/Layer.php</file>
+            <file>file:/var/www/creo/app/code/core/Mage/Catalog/Block/Product/List.php</file>
+            <file>file:/var/www/creo/app/design/frontend/creo/default/template/page/html/pager.phtml</file>
+            <file>file:/var/www/creo/includes/src/FME_Layerednav_Block_Rewrite_RewriteCatalogsearchResult.php</file>
+            <file>file:/var/www/creo/app/design/frontend/creo/default/template/layerednav/layer.phtml</file>
+            <file>file:/var/www/creo/app/code/local/Extensions/Collections/Block/Men.php</file>
+>>>>>>> hotfix-bug-005
             <file>file:/var/www/creo/app/design/frontend/creo_mobile/default/template/page/html/topmenu/customcategories.phtml</file>
             <file>file:/var/www/creo/app/design/frontend/creo_mobile/default/template/page/html/topmenu/renderer.phtml</file>
             <file>file:/var/www/creo/app/design/frontend/creo_mobile/default/template/layerednav/layer.phtml</file>

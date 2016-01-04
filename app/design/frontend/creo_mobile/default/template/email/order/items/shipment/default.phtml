@@ -23,7 +23,7 @@
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-?>        
+?>
 <?php $_item = $this->getItem() ?>
 <?php $_order = $this->getItem()->getOrder() ?>
 <tbody>
@@ -41,7 +41,7 @@
                 <dl style="margin:0; padding:0;">
             <?php foreach ($this->getItemOptions() as $option): ?>
                             <dt><strong><em><?php echo $option['label'] ?></em></strong></dt>
-                            <dd style="margin:0; padding:0 0 0 9px;">
+                            <dd style="margin:0; padding:0;">
                                 <?php echo nl2br($option['value']) ?>
                             </dd>
                         <?php endforeach; ?>
@@ -54,7 +54,7 @@
                 <?php echo $this->escapeHtml($_item->getDescription()) ?>
         	</div>
         </td>
-		<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQty()*1 ?></h2></td>
+        <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQty()*1 ?></h2></td>
         </tr>
     <?php if ($_item->getGiftMessageId() && $_giftMessage = $this->helper('giftmessage/message')->getGiftMessage($_item->getGiftMessageId())): ?>
         <tr>
