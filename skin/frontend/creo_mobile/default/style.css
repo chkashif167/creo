@@ -1283,6 +1283,9 @@ animation: animaterotate 1s 1;
 100% {transform:rotate(360deg);}
 }
 #payment_form_creditcardpci img{max-width:100%;}
+.showShippingAddress label,.address-book-area label{margin:1px 5px 0 10px !important;float: none !important;}
+.showShippingAddress input,.address-book-area input{display: inline-block;}
+.fme_loading_filters img{margin-left:-48px;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}

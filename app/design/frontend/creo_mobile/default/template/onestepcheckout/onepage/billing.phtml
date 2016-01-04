@@ -172,7 +172,7 @@ $has_addr	= $this->customerHasAddresses();
             
             
      
-      <div class="col-lg-12">   
+      <div>   
       <ul class="checkoutcreatNewAccount">
         <li class="options">
           <input type="checkbox" name="billing[register_account]" value="1" title="<?php echo $this->__('Create Account') ?>" id="billing:register_account" onClick="if(window.billing) billing.setCreateAccount(this.checked);"<?php if ($this->getBillAddress()->getRegisterAccount()):?> checked="checked"<?php endif;?> class="checkbox" />
@@ -209,7 +209,7 @@ $has_addr	= $this->customerHasAddresses();
 			endif; 
 			?>
 </div>
-      <div class="col-lg-12">  
+      <div>  
       <ul class="showShippingAddress">
         <?php 
 			if ($logged && $has_addr){

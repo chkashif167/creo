@@ -4065,9 +4065,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	margin: 0;
 	padding: 0;
 }
-.showShippingAddress label {
-	margin: 8px 0 0 10px !important;
-}
+.showShippingAddress label,.address-book-area label{margin:1px 5px 0 10px !important;float: none !important;}
 .checkout-form .form-group input[type="checkbox"] {
 	float: left;
 	width: auto;
@@ -4079,9 +4077,9 @@ div.fme-filter dd li{overflow: visible !important;}
 	overflow: hidden;
 	padding: 0 15px;
 }
-.address-book-area label {
+/*.address-book-area label {
 	margin: 0 0 0 10px !important;
-}
+}*/
 #checkout-shipping-method-load .messages {
 	overflow: hidden;
 }
