@@ -4059,6 +4059,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	padding: 0;
 }
 .showShippingAddress label,.address-book-area label{margin:1px 5px 0 10px !important;float: none !important;}
+.showShippingAddress label{}
 .checkout-form .form-group input[type="checkbox"] {
 	float: left;
 	width: auto;
