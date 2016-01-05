@@ -374,15 +374,8 @@ p.style {
 	left: 11px;
 	font-size: large;
 }
-form select {
-	width: 232px;
-	height: 35px;
-	position: relative;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 19px;
-	color: #222222;
-	border-color: #e6e6e6;
-}
+select {width: 232px;height: 35px;position: relative;font-family: 'Roboto Condensed', sans-serif;font-size: 14px;color: #222222;
+border-color: #e6e6e6;padding:5px;}
 p.style1 {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 19px;
@@ -449,6 +442,7 @@ p.style1 {
 	display: block;
 	padding: 0 12px 5px;
 	position: relative;
+	cursor: pointer;
 }
 #nav ol > li a:hover { text-decoration: none; }
 #nav ol > li > a:after {
@@ -1025,8 +1019,8 @@ p.style1 {
 #footer .column.column1{width: 140px;}
 #footer .column {
 	float: left;
-	width: 80px;
-	margin: 0 10px 0 0;
+	min-width: 80px;
+	margin: 0 15px 0 0;
 	position: relative;
 }
 #footer .column h3 {
@@ -4064,9 +4058,8 @@ div.fme-filter dd li{overflow: visible !important;}
 	margin: 0;
 	padding: 0;
 }
-.showShippingAddress label {
-	margin: 8px 0 0 10px !important;
-}
+.showShippingAddress label,.address-book-area label{margin:1px 5px 0 10px !important;float: none !important;}
+.onestepcheckout-index-index .showShippingAddress label{margin-left: 25px !important;margin-top: 9px !important;}
 .checkout-form .form-group input[type="checkbox"] {
 	float: left;
 	width: auto;
@@ -4078,9 +4071,9 @@ div.fme-filter dd li{overflow: visible !important;}
 	overflow: hidden;
 	padding: 0 15px;
 }
-.address-book-area label {
+/*.address-book-area label {
 	margin: 0 0 0 10px !important;
-}
+}*/
 #checkout-shipping-method-load .messages {
 	overflow: hidden;
 }
