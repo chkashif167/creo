@@ -696,8 +696,8 @@ text-decoration: none;
 .checkoutShippingMethod ul li input, .checkoutShippingMethod ul li label { float: left;}
 .checkoutShippingMethod ul li input { margin: 6px 8px 0 0 !important; }
 .checkoutShippingMethod ul li label { margin: 5px 0 0 0; font-weight: normal;}
-.checkoutShippingMethod .shippingtitle { font-weight: bold; margin: 12px 0 0 0; float: left; width:100%;}
-.onestepcheckout-index-index {}
+.checkoutShippingMethod .shippingtitle { font-weight: bold; margin:0; float: left; width:100%;}
+.onestepcheckout-index-index{}
 /*.BillingStateSelectBoxArrows, .BillingCountrySelectBoxArrows, .shippingStateSelectBoxArrows, .shippingCountrySelectBoxArrows { top: 79px !important;}*/
 .checkoutcreatNewAccount { padding: 0; margin: 0;}
 .checkoutcreatNewAccount input { float: left; margin: 0 10px  0 0;}
@@ -707,29 +707,21 @@ text-decoration: none;
 .showShippingAddressCheckboxDiv img { float: left; margin: 0 14px;}
 .hidddenDiv { padding: 0; margin: 0 !important;}
 .onestepcheckout-index-index label{ font-weight: normal !important;}
-/*.onestepcheckout_block {
-float: left;
-width: 100%;
-}*/
+/*.onestepcheckout_block {float: left;width: 100%;}*/
 .shippingmethod_heading, .paymentmethod-heading { margin-top: 14px !important;}
-.onestepcheckout-index-index .form_fields {
-float: left;
-width: 100%;
-}
+.onestepcheckout-index-index .form_fields {float: left;width: 100%;}
 .paymentradiobutton { float: left; margin: 3px 0 0 0 !important;}
 .paymentradiobuttonlabel { margin: 3px 0 0 6px;}
 .paymenntForm { margin: 14px 0 0 0;}
 .op_block_title { margin:0 !important;}
 .textfix { display:none;}
-.category_top_filters {
-}
+.category_top_filters {}
 .card-date-month { width:115px;}
 .checkout-heading { border: none !important;}
 .onestepcheckout-index-index form select { position: static;}
-#checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load paymentradiobuttonlabel { float: left; margin: 0 5px 0 0;}
-.option-alternate:nth-last-child(2) {
-display: none;
-}
+#checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load .paymentradiobuttonlabel{
+float: left; margin:0 5px 0 0;}
+.option-alternate:nth-last-child(2) {display: none;}
 .checkout-cart-index .checkout_applyCoupon { display: none;}
 #coupon-discount { float: left; width:100%;}
 /*checkout_bottom_area*/
@@ -1066,9 +1058,9 @@ box-shadow: 0 0 0px #ccc !important;}
 .previousnext { display: none;}
 #creditcardnumbercn { width: 58%; float: left;}
 #creditcardpci_cc_type_cvv_div { width: 40%; float: right;}
-#payment_form_creditcardpci { margin: 14px 0 0 0;}
+#payment_form_creditcardpci {margin:14px 0 0 0;}
 #payment_form_creditcardpci .v-fix { position: relative;}
-#payment_form_creditcardpci .v-fix .fake-select { right: 5;top:-2px;width: 25px;  }
+#payment_form_creditcardpci .v-fix .fake-select{right:0;top:0px;width:25px;}
 #payment_form_creditcardpci .v-fix1 { float: left;  width: 50%;}
 #payment_form_creditcardpci .v-fix2 { float: right;  width: 48%;}
 #payment_form_creditcardpci .cvv-what-is-this{font-size:11px;margin:4px 0;padding:0;text-transform:capitalize;background:none;}
