@@ -32,7 +32,9 @@ foreach($categories as $category){
 	foreach($productCollection as $product) 
 	{
 	    $attributeCode = "shipping_details";
+	    if($i%1000==0){
 	    echo "\n".'updating '.$product->getSku()."...".$i."<br>";
+	}
 		//echo $product->getName()."<br>";
 	    $product = Mage::getModel('catalog/product')
 		           ->load($product->getEntityId());
