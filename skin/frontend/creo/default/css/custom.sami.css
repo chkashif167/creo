@@ -4,7 +4,7 @@
 }
 
 .checkout-form-headings {
-    padding-bottom: 0;
+    padding-bottom: 0;margin-bottom:0;
 }
 
 .checkout-form-headings h1 {
@@ -140,9 +140,9 @@
 
 .credit-card span.fake-select {
     background-image: url(../images/checkoutpage/pink-dd-arrow.png);
-    right: 10px;
-    top: 21px;
-} 
+    right:20px;
+    top:19px;
+}
 
 .credit-card .form-group .cc-no {
     width: 78%;

@@ -374,15 +374,8 @@ p.style {
 	left: 11px;
 	font-size: large;
 }
-form select {
-	width: 232px;
-	height: 35px;
-	position: relative;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 19px;
-	color: #222222;
-	border-color: #e6e6e6;
-}
+select {width: 232px;height: 35px;position: relative;font-family: 'Roboto Condensed', sans-serif;font-size: 14px;color: #222222;
+border-color: #e6e6e6;padding:5px;}
 p.style1 {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 19px;
