@@ -56,7 +56,6 @@ function fme_layered_show_products(transport)
                     c.removeChild(c.lastChild);
                 }
             }
-            //console.log("1.3>>>"+$('tmp_current_val').value);
             $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
             var div = document.createElement('div');
             div.setAttribute('id', 'fme_layered_container');
@@ -80,7 +79,6 @@ function fme_layered_show_products(transport)
                 );
 
         $('fme_layered_ajax').value = ajaxUrl;
-        //console.log("1.5>>>"+$('tmp_current_val').value);
         $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
     }
     //console.log("2>>>"+$('tmp_current_val').value);
@@ -197,9 +195,15 @@ function fme_layered_make_request()
     {
         $('fme_layered_params').value += '&dir=' + 'desc';
     }
-
+	var url = window.location.href;
+	if (url.indexOf("custom") > 0){
+		custom = '&custom=1';
+		jQuery('#current_url').val('custom');
+	}else{
+		custom = '';
+	}
     new Ajax.Request(
-           $('fme_layered_ajax').value + '?' + $('fme_layered_params').value,
+           $('fme_layered_ajax').value + '?' + $('fme_layered_params').value + custom,
             {
                 method: 'get',
                 onSuccess: fme_layered_show_products

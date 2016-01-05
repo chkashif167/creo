@@ -29,6 +29,12 @@ function fme_layered_hide_products()
 
 function fme_layered_show_products(transport)
 {
+<<<<<<< HEAD
+=======
+    var selectedVal = $('tmp_current_val').value;//by Imran
+    //console.log("1>>>"+$('tmp_current_val').value);
+    //$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
+>>>>>>> hotfix-bug-005
     var resp = {};
     if (transport && transport.responseText) {
         try {
@@ -52,6 +58,10 @@ function fme_layered_show_products(transport)
                 }
             }
 
+<<<<<<< HEAD
+=======
+            $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
+>>>>>>> hotfix-bug-005
             var div = document.createElement('div');
             div.setAttribute('id', 'fme_layered_container');
             $$('.col-main')[0].appendChild(div);
@@ -70,6 +80,10 @@ function fme_layered_show_products(transport)
                 );
 
         $('fme_layered_ajax').value = ajaxUrl;
+<<<<<<< HEAD
+=======
+        $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
+>>>>>>> hotfix-bug-005
     }
 
     var items = $('fme_filters_list').select('a', 'input');
@@ -83,11 +97,51 @@ function fme_layered_show_products(transport)
 	// jawad work
 	var params = $('fme_layered_params').value.parseQuery();
 	if(params['universal_categories']){
+<<<<<<< HEAD
 		var currentCategory = params['universal_categories'];
 	}
 	var currentelement = $('universal_categories-'+currentCategory).innerHTML;
 	$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
 
+=======
+//		var currenturl = document.URL;
+		var currentCategory = params['universal_categories'];
+		var currentelement = $('universal_categories-'+currentCategory).value;
+		var pathname = window.location.href;
+//		alert(pathname);
+//		if (pathname.indexOf("universal_categories") > 0){
+//			$("fme_layered_clearall").removeClass("_selected_");
+//		}
+//		else
+//		{
+//			jQuery(".fme_layered_clearall").addClass("_selected_");
+//		}
+
+		var currentcat = currentelement.replace(/\s+/g, '-').toLowerCase()+'.html';
+//		var findcat = currenturl.indexOf("categories/");
+//		if (findcat < 0){
+//			currentcat = 'categories/'+currentcat;
+//		}
+//		var getlastdash = currenturl . lastIndexOf('/');
+//		if(getlastdash != '-1'){
+//			var preurl = currenturl.substr(0, getlastdash + 1);
+//		}		
+//		var updateurl = preurl + currentcat;
+//		window.history.pushState("", "Title", updateurl);
+		//$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentelement+'</a>');
+                //console.log(">>>"+$('tmp_current_val').value);
+                $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
+	}else{
+		var clearelementtext = $('fme_layered_clearall').value;
+//		var clearurl = $('fme_layered_url').value;
+//		window.history.pushState("", "Title", clearurl);
+		//$('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+clearelementtext+'</a>');
+                //console.log("<<<"+$('tmp_current_val').value);
+                $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+selectedVal+'</a>');
+	}
+	
+	// jawad work ends
+>>>>>>> hotfix-bug-005
 //reinitialize infinite ajax scroll
 jQuery.ias('destroy');
 SgyIAS.init();
@@ -149,9 +203,21 @@ function fme_layered_make_request()
     {
         $('fme_layered_params').value += '&dir=' + 'desc';
     }
+<<<<<<< HEAD
 
     new Ajax.Request(
             $('fme_layered_ajax').value + '?' + $('fme_layered_params').value,
+=======
+	var url = window.location.href;
+	if (url.indexOf("custom") > 0){
+		custom = '&custom=1';
+		jQuery('#current_url').val('custom');
+	}else{
+		custom = '';
+	}
+    new Ajax.Request(
+           $('fme_layered_ajax').value + '?' + $('fme_layered_params').value + custom,
+>>>>>>> hotfix-bug-005
             {
                 method: 'get',
                 onSuccess: fme_layered_show_products

@@ -163,6 +163,7 @@
   <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
  <?php 
  $ccurrentUrl = Mage::helper('core/url')->getCurrentUrl();
+ $customId = '255';
  $parent_cat_array = array();
  if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
  $parentId = Mage::registry('current_category')->getParentId();
@@ -227,7 +228,7 @@ endforeach;
                 <h2>Featured</h2>
             </div>
             <ul class="featured-products">
-                <!--		<li>
+                <!--    <li>
                                                                                                 <a href="#">
                                                                                                         <img alt="" src="images/img18.jpg">
                                                                                                         <span class="title">CLasSIC POLO</span>
@@ -261,9 +262,8 @@ endforeach;
 <li <?php if (in_array("accessories",$parent_cat_array) || $_GET['id']==5) {
                     echo'class="active"';
                 } ?>> <a href="javascript:void(0)">ACCESSORIES</a>
-    <div class="drop"> 
+    <div class="drop">
         <div class="links-area">
-           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=5" ?>">Trending</a></li>
@@ -310,7 +310,6 @@ endforeach;
                 } ?>><a href="javascript:void(0)">CAPS</a>
     <div class="drop">
         <div class="links-area">
-           
             <div class="links-frame">
                 <ul class="sorting-items">
                     <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=54" ?>">Trending</a></li>
@@ -351,27 +350,27 @@ endforeach;
         </div>
     </div>
 </li>
+<li <?php if(strstr($ccurrentUrl,"custom")) {
+                    echo'class="active"';
+                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=".$customId."&custom=1" ?>">The Crazy Ones</a>
+</li>
+<!-- Menu active class added-->
 <li <?php if(strstr($ccurrentUrl,"collections")) {
                     echo'class="active"';
-                } ?>> <a href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a>
+                } ?>> <?php // echo Mage::getBaseUrl() . "collections/index/categories" ?> <a>COLLECTIONS</a>
     <div class="drop">
         <div class="links-area">
             <div class="links-frame">
- 				<ul class="links">
+        <ul class="links">
  <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>"><strong> Men </strong> </a></li>
                 </ul>
-			    <ul class="links">
+          <ul class="links">
    <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>"><strong> Women </strong> </a></li>
                 </ul>
             </div>
         </div>
     </div>
 </li>
-<li <?php if(strstr($ccurrentUrl,"custom")) {
-                    echo'class="active"';
-                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=231&custom=1" ?>">Black & White</a>
-</li>
-
 
 <li <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), 'create.html') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/create/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/account/') == false) {
                     echo'class="active"';

@@ -9,7 +9,7 @@
       </div>
   
     </div> -->
-		<?php
+<?php
         $_helper = Mage::helper('catalog/category');
         $_categories = $_helper->getStoreCategories();
         if (count($_categories) > 0){
@@ -20,8 +20,7 @@
 				}
 			$i++;
         ?>
-      <?php 
-	  
+      <?php
 	  ?>
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -52,6 +51,16 @@
     <?php
 	if( $_category->getName() == 'Caps' ){
 	?> 
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse7" data-parent="#accordion" 
+          href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=255&custom=1"?>">
+		  The Crazy Ones
+          </a>
+        </h4>
+      </div>
+    </div>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -72,8 +81,6 @@
           ?>
   </div>
 </div>
-</body>
-</html>
 
 <?php /*?><div class="homepage_categories">
 <ul class="root_categories">
