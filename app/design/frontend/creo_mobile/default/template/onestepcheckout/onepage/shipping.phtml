@@ -100,7 +100,7 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
         <?php if($state_r === 'required'){ echo ' <sup>*</sup> ';}?>
 		<div id="shipping:statediv" class="billingcountryselect">
         <div class="checkoutshippingStateslectboxes">
-          <select class="checkoutshipingaddressState" id="shipping:region_id" name="shipping[region_id]" title="<?php echo $this->__('State/Province') ?>" class="validate-select<?php if($state_r === 'required') { echo ' required-entry';}?>" style="display:none;">
+          <select id="shipping:region_id" name="shipping[region_id]" title="<?php echo $this->__('State/Province') ?>" class="checkoutshipingaddressState validate-select<?php if($state_r === 'required') { echo ' required-entry';}?>" style="display:none;">
           <option value=""><?php echo $this->__('Select One') ?></option>
           </select>
           <span class="fake-select shippingStateSelectBoxArrows"></span> </div>
