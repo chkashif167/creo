@@ -706,7 +706,7 @@ padding: 0;}
 .showShippingAddressCheckboxDiv input { float: left;}
 .showShippingAddressCheckboxDiv img { float: left; margin: 0 14px;}
 .hidddenDiv { padding: 0; margin: 0 !important;}
-.onestepcheckout-index-index label{ font-weight: normal !important;}
+.onestepcheckout-index-index label{ font-weight: normal !important;font-size:12px;}
 /*.onestepcheckout_block {
     float: left;
     width: 100%;
