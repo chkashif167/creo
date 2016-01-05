@@ -4097,9 +4097,6 @@ p.availability{margin: 0;}
 	right: 8px;
 }
 #configurable_swatch_color li.selected{position: relative;}
-
-
-
 #configurable_swatch_size li.selected:before {
 	background: #f16167;
 	bottom: -1px; 
@@ -4110,14 +4107,8 @@ p.availability{margin: 0;}
 	right: 5px; 
 }
 #configurable_swatch_size li.selected{position: relative;}
-.hidden-popups .modal-content{
-	transform: skewY(-5deg) !important;
-	-webkit-transform: skewY(-5deg) !important;
-}
-.popup-text01 {
-	color: #222;
-	font: 12px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
-}
+.hidden-popups .modal-content{	transform:skewY(-5deg) !important;-webkit-transform: skewY(-5deg) !important;}
+.popup-text01{color: #222;font: 12px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;}
 .modal-content, .modal-header,
 #facebookPhotos .modal-header,
 #shapeLibrary .modal-header,
