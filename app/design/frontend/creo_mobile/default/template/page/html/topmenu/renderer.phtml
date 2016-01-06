@@ -373,7 +373,7 @@ endforeach;
 		$sessionCustomer = Mage::getSingleton("customer/session");
         if($sessionCustomer->isLoggedIn()) {
         ?>
-        <li class="slide_nav_my_account"> <a href="<?php echo Mage::getUrl('customer/account'); ?>"> My Account </a> </li>
+        <li class="slide_nav_my_account"> <a href="<?php echo Mage::getUrl('customer/account'); ?>"> My Dashboard </a> </li>
          <li class="slide_nav_logout"><a href="<?php echo Mage::getUrl('customer/account/logout'); ?>"> Logout</a></li>
         <?php
         }else{

@@ -253,4 +253,14 @@
     </reference>
  </cms_index_noroute>
 
+<customer_logged_in>
+    <reference name="top.links">
+	<action method="removeLinkByUrl"><url helper="customer/getAccountUrl"></url></action>
+	 <action method="addLink" translate="label title" module="customer">
+		<label>My Dashboard</label><url helper="customer/getAccountUrl"/>
+		<title>My Dashboard</title><prepare/><urlParams/>
+		<position>10</position></action>
+    </reference>
+</customer_logged_in>
+
 </layout>
