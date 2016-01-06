@@ -5078,7 +5078,6 @@ textarea {
 	float: none;
 	display: inline-block;
 	vertical-align: middle;
-	position: relative;
 	margin: 0 25px 0 0;
 	z-index: 22;
 }
@@ -5140,9 +5139,7 @@ textarea {
 	display: block;
 	color: #222;
 	padding: 5px 7px !important;
-	border-top: 1px solid #ccc;
 }
-#fme_filters_list .cate-open-close li:first-child a{border: none;}
 #fme_filters_list .cate-open-close li a:hover {
 	text-decoration: none;
 }
@@ -5216,7 +5213,7 @@ dl:after{
 	clear: both;
 	content: '';
 }
-#fme_filters_list{text-align: center;}
+#fme_filters_list{text-align: center; position: relative;}
 .gender-filter-area{
 	display: inline-block;
 	vertical-align: middle;
@@ -5516,6 +5513,32 @@ h3.inline-h span:before{
 .collections-index-categories .shipping-methods:before{display: none;}
 .carousel-creo.carousel4.trends-carousel .btn-next,
 .carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
+#fme_filters_list .cate-open-close ul {
+    background: #fff;
+    border-bottom: 8px solid #f16a79;
+    display: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: auto;
+    width: 100%;
+    z-index: 9999;
+}
+#fme_filters_list .cate-open-close:hover ul{display: block;}
+#fme_filters_list .cate-open-close .slide li{
+    width: 32.3%;
+    margin: 0 0.5%;
+}
+#fme_filters_list .cate-open-close .slide li:hover a{
+	background: #000;
+	color: #fff;
+}
+
+
+
+
 
 
 
