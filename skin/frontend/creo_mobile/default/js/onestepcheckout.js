@@ -355,8 +355,8 @@ ShippingAddress.prototype = {
 				$('shipping:postcodelabel').show();
 				$('shipping:statediv').show();
 				$('shipping:statelabel').show();						
-				$('shipping:ziprequired').show();		
 				$('shipping:staterequired').show();		
+				$('shipping:ziprequired').show();		
 			}
             if ($('shipping:region_id')) {
                 $('shipping:region_id').value = '';

@@ -1051,6 +1051,7 @@ height:5px;}
 .option-container ul { margin: 0; padding: 0; }
 #fme_filters_list .search-by { background: #ef4f61; color: #fff; display: inline-block; vertical-align: middle; padding: 3px 10px; }
 .paddingr-zero { padding-right: 0; }
+.paddingzero{padding:0 !important;}
 h3.inline-h{
     border-color: #eee;
     border-style: solid;
@@ -1265,6 +1266,7 @@ body.customer-account-login #footer{padding-bottom:0;}
 .christmas{padding:10px  0;}
 .christmas img{max-width:100%;}
 .main-menu .bgr-icon .glyphicon-align-justify:before{}
+.onestepcheckout-index-index .showShippingAddress label{margin-left: 25px !important;margin-top: 9px !important;}
 body.canvas-slid .glyphicon-align-justify:before{content:"\e014";
 -webkit-animation: animaterotate 1s 1;
 -moz-animation: animaterotate 1s 1;
