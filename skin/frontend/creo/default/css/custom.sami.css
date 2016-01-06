@@ -3,10 +3,7 @@
     padding-bottom: 10px;
 }
 
-.checkout-form-headings {
-    padding-bottom: 0;
-}
-
+.checkout-form-headings{padding-bottom:0;}
 .checkout-form-headings h1 {
     margin-bottom: 0;
     text-transform: uppercase;
@@ -123,27 +120,10 @@
     min-height: 160px;
 }
 
-.card-sctn-black {
-    height: 22px;
-    background: #000;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.credit-card label {
-    color: #fff;
-}
-
-.credit-card select {
-    height: 26px !important;
-} 
-
-.credit-card span.fake-select {
-    background-image: url(../images/checkoutpage/pink-dd-arrow.png);
-    right: 10px;
-    top: 21px;
-} 
-
+.card-sctn-black{height: 22px;background: #000;margin-top: 20px;margin-bottom: 10px;}
+.credit-card label {color: #fff;}
+.credit-card select {height: 26px !important;}
+.credit-card span.fake-select {background-image: url(../images/checkoutpage/pink-dd-arrow.png);right:10px;top:21px;}
 .credit-card .form-group .cc-no {
     width: 78%;
     margin-right: 2%;

@@ -17,9 +17,9 @@ ini_set('memory_limit','3048M');
 
 
 $categories = Mage::getModel('catalog/category')
+        ->getCollection()
         ->addAttributeToSelect('id')
-        ->addIsActiveFilter()
-        ->getCollection();
+        ->addIsActiveFilter();
         
 foreach($categories as $category){
 
@@ -32,17 +32,15 @@ foreach($categories as $category){
 	foreach($productCollection as $product) 
 	{
 	    $attributeCode = "shipping_details";
+	    if($i%1000==0){
 	    echo "\n".'updating '.$product->getSku()."...".$i."<br>";
+	}
 		//echo $product->getName()."<br>";
 	    $product = Mage::getModel('catalog/product')
 		           ->load($product->getEntityId());
-	    $product->setData($attributeCode, "<p>
-		FREE Express shipping on all orders over AED 118 (within UAE).<br>
-		FREE Express shipping on all orders over SAR 250 (within Saudi).<br>
-		AED 40 Flat Rate Express shipping (For All GCC countries).<br>
-		USD 12 Flat Rate Express shipping (For US & Europe) <br>
-		Please see Return and Exchange policy.<br></p>")
-	->getResource()->saveAttribute($product, $attributeCode);
+	    $product->setData($attributeCode, "<p>FREE shipping on all orders over AED 118 (within United Arab Emirates).<br>FREE Shipping on all order over SAR 250 (with Saudi Arabia).<br>Flat Rate on All orders within Qatar, Kuwait, Bahrain & Oman of AED 50.<br>
+	Flat Rate on International Shipping of AED 80.<br>
+	Please see Return and Exchange policy.<br>")->getResource()->saveAttribute($product, $attributeCode);
 	$i++;
 	}
 	
