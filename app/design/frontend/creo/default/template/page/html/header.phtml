@@ -41,7 +41,6 @@ if(Mage::registry('current_product')) {
 <header id="header" class="row">
 	<img src="<?php echo $this->getSkinUrl('images/header-icons.png', array('_secure'=>true)); ?>" alt="" class="header-icons">
 		<div class="col col-static col-lg-8 col-md-8 col-sm-9 col-xs-9">
-
 				<div class="sticky-holder">
 						<strong class="logo">
 								<a href="<?php echo Mage::getBaseUrl(); ?>">
@@ -83,14 +82,14 @@ if(Mage::registry('current_product')) {
 														</div>
 										</div>
 										<strong class="total">Total: 149.00 AED</strong>
-										<div class="btn-holder">
+                                          <div class="btn-holder">
 														<a href="#"><span class="span1"><span class="span2">View Cart</span></span></a>
 														<a href="#">Checkout</a>
 										</div>
 						</div>-->
 				</div>
 	<div class="store-language-container">
-	<?php echo $this->getChildHtml('store_language') ?>
+
 	</div>
 <?php echo $this->getChildHtml('topLinks') ?>
 
@@ -138,7 +137,7 @@ if(Mage::registry('current_product')) {
 <div class="header-language-background">
 	<div class="header-language-container">
 	<div class="store-language-container">
-	<?php echo $this->getChildHtml('store_language') ?>
+	
 	</div>
 <?php
 /* ?>
