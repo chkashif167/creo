@@ -24,9 +24,6 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-
-
-
 <footer id="footer">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -59,11 +56,22 @@
 									<h3><?php  echo $acount->getTitle(); ?></h3>
 									<?php echo $acount->getContent(); ?>
 								</div>
-								<div class="column">
-                                <?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
-									<h3><?php  echo $about->getTitle(); ?></h3>
-									<?php echo $about->getContent(); ?>
-								</div>
+<div class="column">
+<?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
+<h3><?php  echo $about->getTitle(); ?></h3>
+<?php echo $about->getContent(); ?>
+</div>
+<?php
+$paymentlogos = Mage::getModel('cms/block')->load('footer-payment-logos');
+$paymentlogos2 = $this->getLayout()->createBlock('cms/block')->setBlockId('footer-payment-logos')->toHtml();
+if ($paymentlogos2 != '') { ?>
+<div class="column">
+<h3><?php  echo $paymentlogos->getTitle(); ?></h3>
+<?php echo $paymentlogos2; ?>
+</div>
+<?php
+}
+?>
 							</div>
 						</div>
 					</div>
@@ -125,7 +133,6 @@ jQuery( document ).ready( function($){
 		});
 		}
 </script>
-
 <script>
 jQuery(window).load(function(){
     //jQuery('#currentvalue').text('View All');

@@ -25,8 +25,6 @@ foreach($productCollection as $product)
 	//echo $product->getName()."<br>";
     $product = Mage::getModel('catalog/product')
                    ->load($product->getEntityId());
-    $product->setData($attributeCode, "<p>FREE shipping on all orders over AED 118 (within United Arab Emirates).<br>FREE Shipping on all order over SAR 250 (with Saudi Arabia).<br>Flat Rate on All orders within Qatar, Kuwait, Bahrain & Oman of AED 50.<br>
-Flat Rate on International Shipping of AED 80.<br>
-Please see Return and Exchange policy.<br>")->getResource()->saveAttribute($product, $attributeCode);
+    $product->setData($attributeCode, "<p>FREE shipping on all orders over AED 140 (within UAE).<br>Flat Rate on All orders within GCC of AED 50.<br>Express International Shipping of USD 22.<br>Standard International Shipping of USD 10.<br>Please see Return and Exchange policy.<br>")->getResource()->saveAttribute($product, $attributeCode);
 $i++;
 }

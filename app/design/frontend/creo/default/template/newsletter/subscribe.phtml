@@ -48,7 +48,6 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
       <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-holder">
         <h2><?php echo $this->__('Newsletter') ?></h2>
-       
         <p>Subscribe to the Black & White mailing list to receive updates on new arrivals, special offers and other discount information.</p>
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
           <div class="block-content">
@@ -64,11 +63,21 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
             </div>
           </div>
         </form>
+
         <script type="text/javascript">
     //<![CDATA[
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
     //]]>
-    </script> 
+    </script>
+<?php /* ?>
+    <div class="christmas">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('christmas')->toHtml(); ?>
+    </div>
+    <style type="text/css" media="screen">
+    .christmas{padding:15px 15px 40px;}
+    .christmas img{max-width:100%;}
+    </style>
+    <?php */ ?>
       </div>
     </div>
   </div>

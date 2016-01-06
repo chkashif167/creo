@@ -19,7 +19,7 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -37,7 +37,7 @@
 
         <form id="wishlist-view-form" action="<?php echo $this->getUrl('*/*/update', array('wishlist_id' => $this->getWishlistInstance()->getId())) ?>" method="post">
             <?php echo $this->getChildHtml('top'); ?>
-            <div class="fieldset">
+            <fieldset>
                 <?php if ($this->hasWishlistItems()): ?>
                         <?php echo $this->getBlockHtml('formkey');?>
                         <?php $this->getChild('items')->setItems($this->getWishlistItems()); ?>
@@ -47,9 +47,9 @@
                     <p class="wishlist-empty"><?php echo $this->__('You have no items in your wishlist.') ?></p>
                 <?php endif ?>
                 <div class="buttons-set buttons-set2">
-                    <?php echo $this->getChildHtml('control_buttons');?>
+                    <?php echo $this->getChild('control_buttons')->toHtml();?>
                 </div>
-            </div>
+            </fieldset>
         </form>
 
         <form id="wishlist-allcart-form" action="<?php echo $this->getUrl('*/*/allcart') ?>" method="post">
@@ -79,12 +79,8 @@
             }
 
             function addAllWItemsToCart() {
-                //calculateQty();
+                calculateQty();
                 wishlistAllCartForm.form.submit();
-            }
-            function updateWishList() {
-
-                document.getElementById('wishlist-view-form').submit();
             }
         //]]>
         </script>
@@ -93,5 +89,4 @@
     <div class="buttons-set">
         <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
     </div>
-
 <?php endif ?>

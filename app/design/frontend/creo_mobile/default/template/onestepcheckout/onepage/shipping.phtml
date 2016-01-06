@@ -96,11 +96,11 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
         <?php endif; ?>
         <?php ?>        <div class="short"<?php if($state_r === 'hidden'){ echo ' style="display:none" ';}?>>
 <?php ?>
-        <label> <?php echo $this->__('State / Province') ?> </label>
+        <label  id="shipping:statelabel" > <?php echo $this->__('State / Province') ?> </label><sup id="shipping:staterequired">*</sup>
         <?php if($state_r === 'required'){ echo ' <sup>*</sup> ';}?>
-		<div class="billingcountryselect">
+		<div id="shipping:statediv" class="billingcountryselect">
         <div class="checkoutshippingStateslectboxes">
-          <select class="checkoutshipingaddressState" id="shipping:region_id" name="shipping[region_id]" title="<?php echo $this->__('State/Province') ?>" class="validate-select<?php if($state_r === 'required') { echo ' required-entry';}?>" style="display:none;">
+          <select id="shipping:region_id" name="shipping[region_id]" title="<?php echo $this->__('State/Province') ?>" class="checkoutshipingaddressState validate-select<?php if($state_r === 'required') { echo ' required-entry';}?>" style="display:none;">
           <option value=""><?php echo $this->__('Select One') ?></option>
           </select>
           <span class="fake-select shippingStateSelectBoxArrows"></span> </div>
@@ -120,7 +120,7 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
 			if ($zip_r !== 'hidden' || $phone_r !== 'hidden') : 
 			?>
         <?php if ($zip_r !== 'hidden') : ?>
-        <label> <?php echo $this->__('Zip Code') ?> </label>
+        <label id="shipping:postcodelabel" > <?php echo $this->__('Zip Code') ?> </label><sup id="shipping:ziprequired">*</sup>
         <?php if($zip_r === 'required'){echo ' <sup>*</sup>';}?>
         <input type="text" name="shipping[postcode]" id="shipping:postcode" title="<?php echo $this->__('Zip/Postal Code') ?>" value="<?php echo $this->htmlEscape($this->getShipAddress()->getPostcode()) ?>" class="t1 validate-zip-international<?php if($zip_r === 'required'){echo ' required-entry ';}?>" maxlength="20" onChange="shipping.setSameAsBilling(false);" />
         <?php endif; ?>

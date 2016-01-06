@@ -79,12 +79,8 @@ if(empty($images)) {
 
             <div style="width:48%; float:left">
 
-         		 <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())
-
-				  ->load($_item->getProductId()); ?>
-
-		 	<img src="<?php echo $image; ?>" width="130" height="160" alt="" />
-
+<?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())->load($_item->getProductId()); ?>
+	<img src="<?php echo $image; ?>" width="100" style="width:100px;" alt="" />
             </div>
 
             <div style="width:48%;float:left; margin-left:10px">
@@ -98,15 +94,10 @@ if(empty($images)) {
                 <dl style="margin:0; padding:0;">
 
             <?php foreach ($this->getItemOptions() as $option): ?>
-
                             <dt><strong><em><?php echo $option['label'] ?></em></strong></dt>
-
-                            <dd style="margin:0; padding:0 0 0 9px;">
-
+                            <dd style="margin:0;padding:0;">
                                 <?php echo nl2br($option['value']) ?>
-
                             </dd>
-
                         <?php endforeach; ?>
 
                     </dl>
@@ -126,8 +117,7 @@ if(empty($images)) {
         	</div>
 
         </td>
-
-		<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQtyOrdered()*1 ?></h2></td>
+        <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQtyOrdered()*1 ?></h2></td>
 
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_order->formatPrice($_item->getRowTotal()) ?></h2></td>
 
@@ -148,10 +138,7 @@ if(empty($images)) {
                 <strong><?php echo $this->__('Message:'); ?></strong><br /><?php echo $this->escapeHtml($_giftMessage->getMessage()) ?>
 
             </td>
-
         </tr>
-
     <?php endif; ?>
-
 </tbody>
 

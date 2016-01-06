@@ -1,0 +1,418 @@
+<?php $style_array = array('largevshape', 'round', 'vshape') ?>
+<?php $gender_array = array('men', 'children', 'women'); ?>
+<<<<<<< HEAD
+<?php
+=======
+<?php $customId = '231';
+>>>>>>> hotfix-bug-005
+/*
+ * Adding javascript include
+ */
+if ($this->getRequest()->getControllerName() != 'result') {
+    $current_category_id = Mage::registry('current_category')->getId();
+    $current_category_p_id = Mage::registry('current_category')->getParentId();
+} else {
+    $current_category_id = '';
+}
+
+if ('front' != Mage::app()->getRequest()->getControllerName()) {
+    ?>
+<<<<<<< HEAD
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/FME/fme_layered_nav.js'); ?>"></script> 
+=======
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl(); ?>js/FME/fme_layered_nav.js"></script> 
+>>>>>>> hotfix-bug-005
+    <?php
+}
+?>
+
+<?php if ($this->canShowBlock()): $state = $this->getStateInfo() ?>
+    <div class="block block-layered-nav">
+        <?php /* ?> <div class="block-title">
+          <strong><span><?php echo $this->__('Shop by') ?></span></strong>
+          </div><?php */ ?>
+        <div class="block-content">
+            <?php echo $this->getStateHtml() ?>
+            <?php if ($this->canShowOptions()): ?>
+                <?php
+<<<<<<< HEAD
+                //Code to handle and manuplate pre-selected design parameter changes
+/*                $design = urldecode(strtolower(Mage::app()->getRequest()->getParam('design')));
+                if ($design) {
+                    $uniCatId = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product', 'universal_categories');
+                    $uniAttOptColl = Mage::getResourceModel('eav/entity_attribute_option_collection')
+                            ->setPositionOrder('asc')
+                            ->setAttributeFilter($uniCatId)
+                            ->setStoreFilter(0)
+                            ->load();
+                    $uniAttOptCols = $uniAttOptColl->toOptionArray();
+                    $uniId = 0;
+                    foreach ($uniAttOptCols as $attr) {
+                        //echo "-" . $attr['label'] . "=" . $attr['value'] . "=" . $design . "<br>";
+                        if (strtolower($attr['label']) == $design) {
+                            echo "ayaa";
+                            $uniId = $attr['value'];
+                            break;
+                        }
+                    }
+                    $changed = false;
+                    if (strpos($state[1], "universal_categories=" . $uniId) === false && $uniId >= 1) {//if unversal_categories exist in empty form
+                        $state[1] = str_replace("universal_categories=", "universal_categories=" . $uniId, $state[1]);
+                        $changed = true;
+                    }
+                    //look if universal_categories don't exist
+                    if (strpos($state[1], "universal_categories") === false) {
+                        $state[1] = $state[1] . "&universal_categories=" . $uniId;
+                        $changed = true;
+                    }
+                    if($changed) {
+                        $ajaxUrlArray = explode("?", $state[2]);
+                        $ajaxUrlArray[1] = $state[1];
+                        $state[2] = implode("?", $ajaxUrlArray);
+                    }
+                }
+*/
+                //code for manuplation ends here.
+=======
+                //echo "<pre>";
+                //print_r($state);
+>>>>>>> hotfix-bug-005
+                ?>
+                <div class="fme-filter">
+                    <input type="hidden" id="fme_layered_url" value="<?php echo $this->htmlEscape($state[0]) ?>"/>
+                    <input type="hidden" id="fme_layered_params" value="<?php echo $this->htmlEscape($state[1]) ?>"/> 
+                    <input type="hidden" id="fme_layered_ajax" value="<?php echo $this->htmlEscape($state[2]) ?>"/> 
+                    <input type="hidden" id="tmp_current_val" value="View All" />
+                    <dl id="fme_filters_list">
+                        <script>
+                            jQuery(document).ready(function () {
+                                var changeidss;
+                                var abc;
+                                var changeFrom = getQueryVar('universal_categories').toLowerCase();
+                                jQuery('#fme_layered_universal_categories li a').each(function (k, v) {
+                                    var changeid = v.id;
+                                    var getlastdash = changeid . lastIndexOf('-');
+                                    if(getlastdash != '-1'){
+                                        var onlyid = changeid.substr(getlastdash + 1);
+                                    }
+                                    //cat_attrs[k] = onlyid;									
+                                    cat_attrs[k] = v.text;
+                                    //console.log("+++"+v.text.toLowerCase());
+                                    jQuery(v).attr('href', 'javascript:void(0);');
+                                    var changeTo = jQuery(this).text().toLowerCase();
+                                    var changeidss = jQuery(this).attr('id');
+                                    if( changeidss ){
+                                            var getlastdash2 = changeidss.lastIndexOf('-');									
+                                            if(getlastdash2 != '-1'){
+                                                    abc = changeidss.substr(getlastdash2 + 1);
+                                            }		
+                                            changeTo = abc;
+                                    }
+
+                                    if (changeTo.indexOf("view all") <= -1) {//do not trigger onclick on the passed param and not on view all as well
+                                        //jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\')');
+                                        var text = jQuery('#universal_categories-'+changeTo).text();
+<<<<<<< HEAD
+                                        //console.log("TEXT:"+text);
+                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
+=======
+										var custom = '';
+                                        //console.log("TEXT:"+text);
+                                        var url = window.location.href;
+										if (url.indexOf("custom") > 0){
+											custom = '&custom=1';
+										}else{
+											custom = '';
+										}
+										
+                                        jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'?universal_categories=' + changeTo + custom + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
+>>>>>>> hotfix-bug-005
+
+                                    }
+
+                                    if (changeTo.indexOf("view all") >= 0) {                    //do not trigger onclick on the passed param and not on view all as well
+                                        //jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'\')');
+                                        //$this->helper('core/url')->getCurrentUrl();
+                                        <?php 
+                                        $currentUrl = Mage::helper('core/url')->getCurrentUrl();
+                                        $currentUrl = preg_replace("/(&)?universal_categories=\d+(&)?/i", "", $currentUrl);
+                                        $splitUrlArray = explode("?", $currentUrl);
+                                        //window.history.pushState('','',target);
+                                        ?>
+                                        //reset url
+                                        var url = window.location.href;
+                                        var array = url.split('?');
+                                        var target = array[0];
+
+                                        jQuery(v).attr('href', '<?php echo $currentUrl?>');
+                                        var onclickev = 'window.history.pushState(\'\',\'\',\''+target+'\')';
+                                        jQuery(v).attr('onclick',onclickev);
+                                        //reset url ends here.
+										var pathname = window.location.href;
+										if (pathname.indexOf("universal_categories") > 0){
+											jQuery(".fme_layered_clearall").removeClass("_selected_");
+											if (pathname.indexOf("=") > 0){
+<<<<<<< HEAD
+												var equalsto = pathname.search("=");	
+												var id = pathname.substring(equalsto + 1);
+												jQuery("#universal_categories-"+id).addClass("dont_click_it");
+=======
+												var and = '';
+												var length = '';
+												var id = '';
+												var equalsto = '';
+												equalsto = pathname.search("=");	
+												if (pathname.indexOf("&") > 0){
+													and = pathname.search("&");	
+													length = and - equalsto;
+													id = pathname.substr(equalsto + 1, length - 1);
+												}else{
+													id = pathname.substring(equalsto + 1);												
+												}
+												jQuery("#universal_categories-"+id).addClass("dont_click_it");
+												if (pathname.indexOf("custom") > 0){
+													jQuery('#current_url').val('custom');
+												}
+>>>>>>> hotfix-bug-005
+											}
+											
+										}
+										else
+										{
+<<<<<<< HEAD
+											jQuery(".fme_layered_clearall").addClass("_selected_");
+											jQuery(".fme_layered_clearall").addClass("dont_click_it");
+=======
+											var getvalue = jQuery('#fme_layered_params').val();
+											if( !(getvalue) ){
+												jQuery(".fme_layered_clearall").addClass("_selected_");
+												jQuery(".fme_layered_clearall").addClass("dont_click_it");
+											}
+>>>>>>> hotfix-bug-005
+											
+										}
+                                    }
+                                });
+//                                //jQuery.query.set("design", "3araby");
+                            //console.log(cat_attrs);
+                            });
+                        </script>
+                        <?php $_filters = $this->getFilters();
+<<<<<<< HEAD
+=======
+						if($_REQUEST['custom']){
+							$custom = 'none';
+						}else{
+							$custom = '';
+						}
+>>>>>>> hotfix-bug-005
+                        ?>
+                        <?php // $_filters = array_reverse($_filters); ?>
+                        <?php foreach ($_filters as $_filter): ?>
+                            <?php if ($_filter->getItemsCount()): ?>
+                                <?php /* ?><dt class="fme_layered_dt">
+                                  <?php if ($clearUrl = $_filter->getClearUrl()): ?>
+                                  <a id="<?php echo $_filter->getVar() ?>-clear" <?php if (!$this->getIsRemoveLinks()): ?>href="<?php echo $this->htmlEscape($clearUrl) ?>" <?php endif; ?> class="btn-remove fme_layered_clear" title="<?php echo $this->__('Remove This Item') ?>"><?php echo $this->__('Remove This Item') ?></a>
+                                  <?php endif ?>
+                                  <?php echo $this->__($_filter->getName()) ?>
+                                  </dt><?php */ ?>
+                                <?php
+                                //print_r($_filter->getVar());
+                                //print_r($_filter->getHtml());
+                                // hide men women filter in clothing category
+                                if ($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == '3') {
+                                    if ($_filter->getVar() == 'styles') {
+                                        ?>
+                                        <label style="float:left !important;right:0px !important;" class="styles-lable" id="styles_label">Styles: </label>
+                                        <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $_filter->getHtml() ?></dd>
+                                    <?php } else if ($_filter->getVar() == 'tshirt_color') {
+                                        ?>
+                                        <div class="tshirt-colors-area">
+                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+                                    <?php } else if ($_filter->getVar() == 'universal_categories') {
+<<<<<<< HEAD
+                                        ?>
+                                        <span id="search-by" class="search-by">Search By Design</span>
+                                        <div for="search-by" class="cate-open-close">
+                                            <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categorie(s): </label> -->
+                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">
+                                                <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
+                                                <?php echo $_filter->getHtml() ?>
+                                            </ul></div>
+                                    <?php
+                                    }
+                                } else if ($current_category_p_id != '57' || $current_category_p_id != '58') {
+                                    if ($_filter->getVar() == 'gender') {
+                                        ?>
+                                        <div class="gender-filter-area">
+                                            <label class="styles-lable" id="styles_label">Gender: </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $_filter->getHtml() ?></dd></div>
+                                        <?php
+                                    } else if ($_filter->getVar() == 'styles') {
+                                        ?>
+                                        <label class="styles-lable" id="styles_label">Styles: </label>
+                                        <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $_filter->getHtml() ?></dd>
+                                    <?php } else if ($_filter->getVar() == 'acc_phone_model') {
+                                        ?>
+                                        <div class="cate-open-close">
+                                            <a class="opener" href="javascript:void(0)">Phone Models</a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Phone Model(s): </label> -->
+                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+                                    <?php } else if ($_filter->getVar() == 'acc_notebook_color') {
+                                        ?>
+                                        <div class="tshirt-colors-area">
+                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Color(s): </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+                                    <?php } else if ($_filter->getVar() == 'tshirt_color') {
+                                        ?>
+                                        <div class="tshirt-colors-area">
+                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+                                    <?php
+                                    } else if ($_filter->getVar() == 'acc_notebook_material') {
+                                        ?>
+                                        <div class="cate-open-close">
+                                            <a class="opener" href="javascript:void(0)">Material</a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Material: </label> -->
+                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+                                    <?php } else if ($_filter->getVar() == 'universal_categories') {
+                                        ?>
+                                        <span>Search By Design: </span>
+                                        <div class="cate-open-close">
+=======
+                                            $currentUrl = Mage::helper('core/url')->getCurrentUrl();
+											if (strpos($currentUrl,'universal_categories="'.$customId.'"&custom=1') ==  false) {
+                                        ?>
+								
+                                        <span style="display:<?php echo $custom ?>">Search By Design: </span>
+                                        <div class="cate-open-close" style="display:<?php echo $custom ?>">
+
+                                            <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
+                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">            
+                                                <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
+                                                <?php echo $_filter->getHtml() ?>
+
+                                            </ul></div>
+                                    <?php
+											}elseif(strpos($currentUrl,'custom=1') ==  true){
+											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
+?>
+
+                                        <span style="display:<?php echo $custom ?>">Search By Design: </span>
+                                        <div class="cate-open-close" style="display:<?php echo $custom ?>">
+>>>>>>> hotfix-bug-005
+
+                                            <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
+                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">            
+                                                <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
+                                                <?php echo $_filter->getHtml() ?>
+
+                                            </ul></div>
+<<<<<<< HEAD
+                                    <?php
+                                    }
+                                }
+                            endif;
+                            ?>
+                        <?php endforeach; ?>
+                        <?php
+                        //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option 
+                        //if(!($current_category_p_id == '5')){
+                        ?>
+                        <div class="actions fme_layered_clear_all" id="fme_layered_clear_all_btn" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><a class="fme_layered_clearall" style="font-size:14px" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>            
+        <?php //} //endif  ?>
+=======
+
+<?php												
+											}
+								}else if($current_category_p_id != '57' || $current_category_p_id != '58'){
+									if ($_filter->getVar() == 'gender') {
+									?>
+                                        <div class="gender-filter-area">
+										<label class="styles-lable" id="styles_label">Gender: </label>
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd></div>
+									<?php
+									}
+									else if ($_filter->getVar() == 'styles') {
+									?>
+										<label class="styles-lable" id="styles_label">Styles: </label>
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><?php echo $_filter->getHtml() ?></dd>
+									<?php } else if ($_filter->getVar() == 'acc_phone_model') {
+									?>
+                                        <div class="cate-open-close">
+                                        <a class="opener" href="javascript:void(0)">Phone Models</a>
+										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Phone Model(s): </label> -->
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+									<?php } else if ($_filter->getVar() == 'acc_notebook_color') {
+									?>
+                                        <div class="tshirt-colors-area">
+										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Color(s): </label>
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+									<?php } else if ($_filter->getVar() == 'tshirt_color') {
+									?>
+                                        <div class="tshirt-colors-area">
+										<label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
+										<dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+                                    <?php }
+									else if ($_filter->getVar() == 'acc_notebook_material') {
+									?>
+                                        <div class="cate-open-close">
+                                        <a class="opener" href="javascript:void(0)">Material</a>
+										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Material: </label> -->
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+									<?php } else if ($_filter->getVar() == 'universal_categories') {
+									?>
+                                        <span>Search By Design: </span>
+                                        <div class="cate-open-close">
+                                        <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
+										<!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
+										<ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">            
+                                        <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
+										<?php echo $_filter->getHtml() ?>
+
+                                        </ul></div>
+									<?php }
+									}
+									endif;?>
+                        <?php endforeach; ?>
+                        <?php //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option 
+                              //if(!($current_category_p_id == '5')){
+?>
+                        <div class="actions fme_layered_clear_all" id="fme_layered_clear_all_btn" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php }?>><a class="fme_layered_clearall" style="font-size:14px" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>            
+                        <?php //} //endif ?>
+>>>>>>> hotfix-bug-005
+
+                    </dl>
+                    <script type="text/javascript">
+                        decorateDataList('narrow-by-list');
+                        fme_layered_init();
+                    </script>
+                </div>
+<<<<<<< HEAD
+    <?php endif; ?>
+=======
+            <?php endif; ?>
+>>>>>>> hotfix-bug-005
+        </div>
+        <div class="fme_loading_filters" style="display:none"></div>
+    </div>
+<?php endif; ?>
+<?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?>
+    <script>
+<<<<<<< HEAD
+        // document.getElementById("fme_layered_styles").style.display = 'none';
+        // document.getElementById("styles_label").style.display = 'none';
+        //document.getElementById("fme_layered_clear_all_btn").style.display = 'none';
+=======
+       // document.getElementById("fme_layered_styles").style.display = 'none';
+       // document.getElementById("styles_label").style.display = 'none';
+		//document.getElementById("fme_layered_clear_all_btn").style.display = 'none';
+>>>>>>> hotfix-bug-005
+    </script>
+    <?php
+}
+?>

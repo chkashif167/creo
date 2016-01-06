@@ -40,7 +40,7 @@ if(Mage::registry('current_product')) {
 </script>
 <header id="header" class="row">
 	<img src="<?php echo $this->getSkinUrl('images/header-icons.png', array('_secure'=>true)); ?>" alt="" class="header-icons">
-		<div class="col col-static col-lg-7 col-md-7 col-sm-8 col-xs-8">
+		<div class="col col-static col-lg-8 col-md-8 col-sm-9 col-xs-9">
 
 				<div class="sticky-holder">
 						<strong class="logo">
@@ -54,7 +54,7 @@ if(Mage::registry('current_product')) {
 
 				</div>
 		</div>
-		<div class="col right-area col-lg-5 col-md-5 col-sm-4 col-xs-4">
+		<div class="col right-area col-lg-4 col-md-4 col-sm-3 col-xs-3">
 				<div id="open-close-minicart" class="cart">
 						<a href="javascript:void(0)" class="opener"><span class="count">
 										<?php
@@ -89,7 +89,9 @@ if(Mage::registry('current_product')) {
 										</div>
 						</div>-->
 				</div>
-
+	<div class="store-language-container">
+	<?php echo $this->getChildHtml('store_language') ?>
+	</div>
 <?php echo $this->getChildHtml('topLinks') ?>
 
 				<div class="bottom-area">
@@ -133,13 +135,13 @@ if(Mage::registry('current_product')) {
 		</div>
 </header>
 
-<?php
-/* ?><div class="header-language-background">
+<div class="header-language-background">
 	<div class="header-language-container">
 	<div class="store-language-container">
 	<?php echo $this->getChildHtml('store_language') ?>
 	</div>
-
+<?php
+/* ?>
 	<?php echo $this->getChildHtml('currency_switcher') ?>
 
 	<p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
