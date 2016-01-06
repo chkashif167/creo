@@ -484,7 +484,7 @@
     left: 0;
     opacity: 1;
     padding: 0;
-    /*	position: relative;*/
+    /*  position: relative;*/
     text-decoration: none;
     top: 325px;
     z-index: 10;
@@ -504,13 +504,10 @@
     width:100%;
     bottom:100%;
     display:none;
-	z-index:9999;
+    z-index:9999;
 }
 
-.products-grid li.item:hover .btn-holder {
-    display:block;
-}
-
+.products-grid li.item:hover .btn-holder {/*display:block;*/}
 
 .products-list {
     padding: 0;
@@ -569,8 +566,8 @@
 .checkout-cart-index .size-area_outer .size-area {
     text-align: center;
     margin: auto;
-	padding: 0;
-	float: left;
+    padding: 0;
+    float: left;
 }
 .checkout-cart-index .size-area_outer .size-area li {
 float: none;display: inline-block;padding:3px 5px;
@@ -709,7 +706,7 @@ padding: 0;}
 .showShippingAddressCheckboxDiv input { float: left;}
 .showShippingAddressCheckboxDiv img { float: left; margin: 0 14px;}
 .hidddenDiv { padding: 0; margin: 0 !important;}
-.onestepcheckout-index-index label{ font-weight: normal !important;}
+.onestepcheckout-index-index label{ font-weight: normal !important;font-size:12px;}
 /*.onestepcheckout_block {
     float: left;
     width: 100%;
@@ -959,7 +956,7 @@ padding: 5px 8px; margin:0;}
                      position: relative;
 }
 
-.sortbycontainer >  a:after 	
+.sortbycontainer >  a:after     
 { width: 0;
   height: 0;
   border-style: solid;
@@ -1108,27 +1105,28 @@ padding: 5px 8px; margin:0;}
 .catalog-product-view #fancybox-link { display: none !important;}
 
 .products-grid { z-index: 9; position: relative;}
-#product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}
+/*#product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}*/
 #product-options-wrapper { float:none; width:100%;}
-#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top: !important; height: 25px; width: 25px; line-height: 25px; background-position: 50% 50%;}
+#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top: !important;
+height: 25px; width: 25px; line-height: 25px; background-position: 50% 50%;}
 .attributeItem {width:49%;display:inline-block;vertical-align:top;}
-.catalog-product-view .bx-controls.bx-has-controls-direction { display: none;}
-.bx-wrapper  { background: #fff none repeat scroll 0 0;
-    border: 0px solid #fff !important;
-    box-shadow: 0 0 0px #ccc !important;}
+.catalog-product-view .bx-controls.bx-has-controls-direction { /*display: none;*/}
+.bx-wrapper{background: #fff none repeat scroll 0 0;border: 0px solid #fff !important;box-shadow: 0 0 0px #ccc !important;
+margin:0 !important;}
+.bx-wrapper .bx-next,.bx-wrapper .bx-prev{}
 .catalog-product-view li.product-image-thumbs { margin-right: 1px !important;}
 .categorypath-clothing-women-tshirt-html #fme_filters_list #styles_label { display:inline-block !important;}
 .categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}
-.previousnext { display: none;}
+.previousnext{display:none;}
 
 #creditcardnumbercn { width: 58%; float: left;}
 #creditcardpci_cc_type_cvv_div { width: 40%; float: right;}
 #payment_form_creditcardpci { margin: 14px 0 0 0;}
-#payment_form_creditcardpci .v-fix { position: relative;} 
-#payment_form_creditcardpci .v-fix .fake-select { right: 0;    top: 0px;    width: 25px;  }
-#payment_form_creditcardpci .v-fix1 { float: left;  width: 50%;} 
-#payment_form_creditcardpci .v-fix2 { float: right;  width: 48%;} 
-#payment_form_creditcardpci .cvv-what-is-this {  font-size: 11px;    margin: 4px 0;    padding: 0; text-transform: capitalize; background: none;}
+#payment_form_creditcardpci .v-fix { position: relative;}
+#payment_form_creditcardpci .v-fix .fake-select { right: 0;top: 0px; width: 25px;  }
+#payment_form_creditcardpci .v-fix1 { float: left;  width: 50%;}
+#payment_form_creditcardpci .v-fix2 { float: right;  width: 48%;}
+#payment_form_creditcardpci .cvv-what-is-this {font-size:11px;margin:4px 0;padding:0;text-transform:capitalize;background:none;}
 #payment_form_creditcardpci .form-group { margin-bottom: 0;}
 #payment_form_creditcardpci .credit-card { padding-bottom: 20px;margin-bottom:10px;}
 #payment_form_creditcardpci input { background: #fff; height: 27px;}
@@ -1176,16 +1174,13 @@ padding: 5px 8px; margin:0;}
 .customer-address-form select#country {
     font-size: 11px !important;
     height: 32px !important;
- 
 }
-
 .design_categories_attributes {}
 .design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
 .design_categories_attributes ul li { width: 24.25%; display: inline-block; margin: 0 1% 16px 0;}
 .design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}
 .design_categories_attributes ul li img { width: 100%;}
-
-.homepage_navigation_middle {} 
+.homepage_navigation_middle {}
 .homepage_navigation_middle .panel-heading { background: #000; color: #fff; float 100%;} 
 .homepage_navigation_middle .panel-title a { display:inline-block; width: 100%;}
 .mobilewebsite_top_banner { float: left; width: 100%;}
@@ -1219,11 +1214,11 @@ margin-top:0; display: inline-block;}
 .dashboar_whishlist_addtocartArea .price { position:relative;top:16px; width: 100%; display: inline-block !important;}
 a[class*='_selected_']{
     color: #fff !important;
-	background: #000;
+    background: #000;
 }
 ._selected_{
     color: #fff !important;
-	background: #000;
+    background: #000;
 }
 .dont_click_it {
    pointer-events: none;

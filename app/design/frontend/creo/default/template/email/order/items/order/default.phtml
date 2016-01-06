@@ -53,25 +53,37 @@
 <?php $_item = $this->getItem() ?>
 
 <?php $_order = $this->getItem()->getOrder() ?>
+<?php
+$productSku = $this->getSku($_item);
+$_options = $this->getItemOptions();
+if($_options){
+	foreach ($_options as $option){
+		if($option['json']){
+			$jsonFilename = $option['json'];
+			}
+		}
+	}
+//echo'<pre>';print_r($_options);die();
 
+//$jsonFilename = $_options['info_buyRequest']['extra_options'];
+if($jsonFilename){
+	$images = Mage::helper('pdp')->getThumbnailImage($jsonFilename);
+}
+if(empty($images)) {
+        $image = Mage::getModel('catalog/product')->loadByAttribute('sku',$_item->getSku())->getImageUrl();	
+}else{
+	//print_r($images);die();
+	$image = $images[0]['image'];
+	}
+?>
 <tbody>
-
     <tr>
-
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;">
-
             <div style="width:48%; float:left">
-
-         		 <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())
-
-				  ->load($_item->getProductId()); ?>
-
-		 	<img src="<?php echo Mage::helper('catalog/image')->init($product, 'image'); ?>" width="130" height="160" alt="" />
-
-            </div>
-
+            <?php $product = Mage::getModel('catalog/product')->setStoreId($_item->getOrder()->getStoreId())->load($_item->getProductId()); ?>
+      	    <img src="<?php echo $image;?>" width="130" height="160" alt="" />
+           </div>
             <div style="width:48%;float:left; margin-left:10px">
-
                 <h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase; text-align:left"><?php echo $this->escapeHtml($_item->getName()) ?></h2>
 
                 <p style="text-align:left; "><strong>SKU:</strong> <?php echo $this->escapeHtml($this->getSku($_item)) ?></p>
@@ -79,19 +91,12 @@
             <?php if ($this->getItemOptions()): ?>
 
                 <dl style="margin:0; padding:0;">
-
             <?php foreach ($this->getItemOptions() as $option): ?>
-
                             <dt><strong><em><?php echo $option['label'] ?></em></strong></dt>
-
-                            <dd style="margin:0; padding:0 0 0 9px;">
-
+                            <dd style="margin:0;padding:0px;">
                                 <?php echo nl2br($option['value']) ?>
-
                             </dd>
-
                         <?php endforeach; ?>
-
                     </dl>
 
                 <?php endif; ?>
@@ -109,8 +114,7 @@
         	</div>
 
         </td>
-
-		<td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQtyOrdered()*1 ?></h2></td>
+        <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_item->getQtyOrdered()*1 ?></h2></td>
 
         <td style="border-bottom: 1px solid #c2c2c2; padding:10px;"><h2  style="font-family: 'Roboto Condensed', sans-serif; font-size: 17px; font-weight: bold; text-transform: uppercase;"><?php echo $_order->formatPrice($_item->getRowTotal()) ?></h2></td>
 

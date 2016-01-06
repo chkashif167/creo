@@ -449,6 +449,7 @@ p.style1 {
 	display: block;
 	padding: 0 12px 5px;
 	position: relative;
+	cursor: pointer;
 }
 #nav ol > li a:hover { text-decoration: none; }
 #nav ol > li > a:after {
@@ -460,8 +461,7 @@ p.style1 {
 	right: 0;
 }
 #nav ol > li.active > a:before,
-#nav ol > li:hover > a:before,
-#nav ol > li:nth-child(5) a:before{
+#nav ol > li:hover > a:before{
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1026,8 +1026,8 @@ p.style1 {
 #footer .column.column1{width: 140px;}
 #footer .column {
 	float: left;
-	width: 80px;
-	margin: 0 10px 0 0;
+	min-width: 80px;
+	margin: 0 15px 0 0;
 	position: relative;
 }
 #footer .column h3 {
@@ -4065,9 +4065,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	margin: 0;
 	padding: 0;
 }
-.showShippingAddress label {
-	margin: 8px 0 0 10px !important;
-}
+.showShippingAddress label,.address-book-area label{margin:1px 5px 0 10px !important;float: none !important;}
 .checkout-form .form-group input[type="checkbox"] {
 	float: left;
 	width: auto;
@@ -4079,9 +4077,9 @@ div.fme-filter dd li{overflow: visible !important;}
 	overflow: hidden;
 	padding: 0 15px;
 }
-.address-book-area label {
+/*.address-book-area label {
 	margin: 0 0 0 10px !important;
-}
+}*/
 #checkout-shipping-method-load .messages {
 	overflow: hidden;
 }
@@ -5259,7 +5257,7 @@ dl {margin: 0 0 10px;}
 	top: 6px;
 	width: 56%;
 }
-#nav ol > li:last-child {
+#nav ol > li:last-child,#nav ol > li:nth-child(5){
 	background: #ef4f61;
 	transform: skewX(-30deg);
 	-moz-transform: skewX(-30deg);
@@ -5267,7 +5265,8 @@ dl {margin: 0 0 10px;}
 	-ms-transform: skewX(-30deg);
 	-webkit-transform: skewX(-30deg);
 }
-#nav ol > li:last-child a{
+#nav ol > li:nth-child(5){background-color:#000;}
+#nav ol > li:last-child a,#nav ol > li:nth-child(5) a{
 	color: #fff;
 	transform: skewX(30deg);
 	-moz-transform: skewX(30deg);
@@ -5275,7 +5274,7 @@ dl {margin: 0 0 10px;}
 	-ms-transform: skewX(30deg);
 	-webkit-transform: skewX(30deg);
 }
-#nav ol > li:last-child a:before{
+#nav ol > li:last-child a:before,#nav ol > li:nth-child(5) a:before{
 	background: #fff;
 	bottom: 0;
 	content: "";

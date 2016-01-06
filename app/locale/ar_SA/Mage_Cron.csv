@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "Cron (Scheduled Tasks) - all the times are in minutes","Cron (Scheduled Tasks) - all the times are in minutes"
 "Daily","يوميا"
 "Failure history lifetime","الفشل في تاريخ عمر"
@@ -16,3 +17,14 @@
 "Unknown error","Unknown error"
 "Weekly","اسبوعيا
 "
+=======
+"Daily","يوميا"
+"Success history lifetime","نجاح عمر التاريخ"
+"Failure history lifetime","الفشل في تاريخ عمر"
+"Schedule ahead for","الجدولة لـ"
+"Missed if not run within","اذا ضاعت لا يتنافى مع حدود"
+"Weekly","اسبوعيا
+"
+"Unable to save Cron expression","خطأ فى حفظ العملية"
+"Monthly","شهريا"
+>>>>>>> 6befb3e5115251dc0dfcceea1be9de3a5d169522
