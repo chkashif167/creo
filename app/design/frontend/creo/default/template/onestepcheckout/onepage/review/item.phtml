@@ -1,8 +1,26 @@
 <?php $_item = $this->getItem()?>
+<?php
+$_options = $this->getOptionList();
+	if($_options){
+	foreach ($_options as $option){
+		if($option['json']){
+			$jsonFilename = $option['json'];
+			}
+		}
+	}
+if($jsonFilename){
+	$images = Mage::helper('pdp')->getThumbnailImage($jsonFilename);
+}
+if(empty($images)) {
+		$image = $this->getProductThumbnail()->resize(100);	
+}else{
+	$image = $images[0]['image'];
+	}
+?>
 <tr>
  
     <td>
-    <img style=" float: left; margin: 0 14px 0 0;" src="<?php echo $this->getProductThumbnail()->resize(100); ?>" width="55" height="55" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" />
+    <img style=" float: left; margin: 0 14px 0 0;" src="<?php echo $image; ?>" width="55" height="55" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" />
     <h3 class="product-name"><?php echo $this->htmlEscape($this->getProductName()) ?></h3>   
           <?php if ($_options = $this->getOptionList()):?>
         <dl class="" style="float:left">
