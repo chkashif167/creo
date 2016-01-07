@@ -6,6 +6,6 @@ jQuery(document).ready(function(){
 			return false;
 		});
 	}else{
-		jQuery('#goback').prop('disabled', true);
+		jQuery('#goback').prop('disabled', 'disabled');
 	}
 });
