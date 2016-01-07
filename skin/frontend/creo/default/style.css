@@ -5537,12 +5537,7 @@ h3.inline-h span:before{
 	background: #000;
 	color: #fff;
 }
-
-
-
-
-
-
+.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
