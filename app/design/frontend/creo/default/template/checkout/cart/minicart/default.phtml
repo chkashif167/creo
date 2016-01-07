@@ -176,10 +176,28 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
 
 <li class="product">
-    <?php if ($this->hasProductUrl()): ?>
-        <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft"><img src="<?php echo $this->getProductThumbnail()->resize(120, 140)->setWatermarkSize('30x10'); ?>" width="" height="" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></a>
+    <?php 
+	$_options = $this->getOptionList();
+	if($_options){
+	foreach ($_options as $option){
+		if($option['json']){
+			$jsonFilename = $option['json'];
+			}
+		}
+	}
+if($jsonFilename){
+	$images = Mage::helper('pdp')->getThumbnailImage($jsonFilename);
+}
+if(empty($images)) {
+		$image = $this->getProductThumbnail()->resize(120, 140)->setWatermarkSize('30x10');	
+}else{
+	$image = $images[0]['image'];
+	}
+	
+	if ($this->hasProductUrl()): ?>
+        <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft"><img src="<?php echo $image; ?>" width="" height="" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></a>
     <?php else: ?>
-        <img class="alignleft" src="<?php echo $this->getProductThumbnail()->resize(120, 140)->setWatermarkSize('30x10'); ?>" width="" height="" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" />
+        <img class="alignleft" src="<?php echo $image; ?>" width="" height="" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" />
     <?php endif; ?>
     <div class="text-area">
         <h2>
