@@ -193,7 +193,6 @@ if(empty($images)) {
 }else{
 	$image = $images[0]['image'];
 	}
-	
 	if ($this->hasProductUrl()): ?>
         <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft"><img src="<?php echo $image; ?>" width="" height="" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></a>
     <?php else: ?>

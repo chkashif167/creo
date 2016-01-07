@@ -5515,12 +5515,12 @@ h3.inline-h span:before{
 .carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
 #fme_filters_list .cate-open-close ul {
     background: #fff;
-    border-color: #ccc #ccc #f16a79;
+    border-color: #eee #eee #f16a79;
     border-style: solid;
     border-width: 1px 0 8px;
     display: none;
     left: 0;
-    margin: -1px 0 0;
+    margin: 0;
     padding: 20px 25%;
     position: absolute;
     right: 0;
