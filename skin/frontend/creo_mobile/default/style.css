@@ -1288,6 +1288,7 @@ animation: animaterotate 1s 1;
 .showShippingAddress label,.address-book-area label{margin:1px 5px 0 10px !important;float: none !important;}
 .showShippingAddress input,.address-book-area input{display: inline-block;}
 .fme_loading_filters img{margin-left:-48px;}
+.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}

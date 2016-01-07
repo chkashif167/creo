@@ -5536,7 +5536,7 @@ h3.inline-h span:before{
 .collections-index-categories .shipping-methods:before{display: none;}
 .carousel-creo.carousel4.trends-carousel .btn-next,
 .carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
-
+.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 
 @media print {
 	.page-print .subtitle {margin-bottom: 99px;}
