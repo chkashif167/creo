@@ -5196,12 +5196,14 @@ div.fme-filter dd a{padding: 0 !important;}
 	opacity: 1;
 }
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
+
 	background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
 	background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
 	background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;	}
 .product-swatches-container ul:after {  
+
 	clear: both;
 	content: "";
 	display: block; 
@@ -5513,11 +5515,13 @@ h3.inline-h span:before{
 .carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
 #fme_filters_list .cate-open-close ul {
     background: #fff;
-    border-bottom: 8px solid #f16a79;
+    border-color: #ccc #ccc #f16a79;
+    border-style: solid;
+    border-width: 1px 0 8px;
     display: none;
     left: 0;
-    margin: 0;
-    padding: 0 20%;
+    margin: -1px 0 0;
+    padding: 20px 25%;
     position: absolute;
     right: 0;
     top: auto;

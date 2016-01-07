@@ -35,7 +35,7 @@ foreach($categories as $category){
 	    if($i%1000==0){
 	    echo "\n".'updating '.$product->getSku()."...".$i."<br>";
 	}
-	    $product = Mage::getModel('catalog/product')
+    $product = Mage::getModel('catalog/product')
 		           ->load($product->getEntityId());
 	    $product->setData($attributeCode, "<p>FREE Express shipping on all orders over AED 118 (within UAE).<br>FREE Express shipping on all orders over SAR 250 (within Saudi)<br>AED 40 Flat Rate Express shipping (For All GCC countries)<br>USD 12 Flat Rate Express shipping (For US & Europe)<br>Please see Return and Exchange policy.<br></p>")->getResource()->saveAttribute($product, $attributeCode);
 
