@@ -1,6 +1,11 @@
 Release Notes
 -----------------
 
+===3.0.1===
+- Payment logos added on footer and onecheckoutpage
+- Checkout page layout fixes
+- Zip/State changes with respect to country
+
 ===3.0===
 - First Responsive Version
 - "The Crazy Ones" feature added for mobile and desktop version

@@ -179,9 +179,9 @@
  <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
     ?>
-<li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
 <?php }else{?>
-<li><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<li><a href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
 <?php
 }
 ?>
@@ -307,7 +307,7 @@ endforeach;
 </li>
 <li <?php if(in_array("caps",$parent_cat_array) || $_GET['id']==54) {
                     echo'class="active"';
-                } ?>><a href="javascript:void(0)">CAPS</a>
+                } ?>><a href="javascript:void(0)"><?php echo $this->__('Caps'); ?></a>
     <div class="drop">
         <div class="links-area">
             <div class="links-frame">

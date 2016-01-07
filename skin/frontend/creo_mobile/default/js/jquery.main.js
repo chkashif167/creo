@@ -2758,3 +2758,8 @@ jQuery(window).load(function(){
 	}
 });
 
+jQuery(document).ready(function(e) {
+	jQuery("#swatches-options-159").closest(".attributeItem").addClass("color_swatches_full_width");
+   //var colorSwatches = jQuery("#swatches-options-159").closest("div").
+   //toggleClass("attributeItem custom-select").;
+   });

@@ -353,3 +353,50 @@
 }
 /*Messages are shifted to popups using these hidden fields, so do not remove*/
 .input-box .validation-advice {visibility:hidden;}/*Disabled visibility because, the messages are now shown in popups*/
+
+
+/* Print version styles */
+
+body.page-print {
+  color: #040707;
+  font: 14px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+  background: #fff;
+  min-width: 320px;
+}
+body.page-print h1 {
+    text-transform: uppercase;
+}
+body.page-print h2 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+body.page-print .logo {
+    display: block;
+    height: auto;
+    width: 200px;
+}
+.page-print table, .page-print th, .page-print td {
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+.page-print table.data-table {
+  max-width: 670px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.page-print .data-table thead {
+  text-align: left;
+}
+.page-print .nobr {
+  display: inline-block;
+  min-width: 86px;
+}
+.page-print dl.item-options dt {
+  font-weight: bold;
+}
+@media print {
+  .page-print .buttons-set button {display: none;}
+}
