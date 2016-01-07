@@ -8,6 +8,7 @@
  <action method="addCss"><stylesheet>jquery.mCustomScrollbar.css</stylesheet></action>
   <action method="setText"><text><![CDATA[<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed">]]></text></action>
   <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
+  <action method="addItem"><type>skin_js</type><script>js/jquery.custom.js</script></action>
   <action method="addItem"><type>skin_js</type><script>js/jquery.mCustomScrollbar.js</script></action>
 	<action method="addItem"><type>skin_js</type><script>bootstrap/js/bootstrap.min.js</script></action>
    <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
@@ -252,5 +253,15 @@
         <action method="addCss"><stylesheet>style404.css</stylesheet></action>
     </reference>
  </cms_index_noroute>
+
+<customer_logged_in>
+    <reference name="top.links">
+	<action method="removeLinkByUrl"><url helper="customer/getAccountUrl"></url></action>
+	 <action method="addLink" translate="label title" module="customer">
+		<label>My Dashboard</label><url helper="customer/getAccountUrl"/>
+		<title>My Dashboard</title><prepare/><urlParams/>
+		<position>10</position></action>
+    </reference>
+</customer_logged_in>
 
 </layout>
