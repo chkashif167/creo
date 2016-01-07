@@ -5537,7 +5537,12 @@ h3.inline-h span:before{
 	background: #000;
 	color: #fff;
 }
-
+.skewbtn1{background:#000;transform: skewX(-30deg);-moz-transform: skewX(-30deg);-ms-transform: skewX(-30deg);
+-webkit-transform: skewX(-30deg);padding:0;display:inline-block;padding:3px 7px;margin-left:5px;float:left;z-index:9999;
+position: relative;}
+.skewbtn1 #goback{color: #fff;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;line-height:1.2;
+transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg);-webkit-transform: skewX(30deg);}
+.skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
 
 
 
