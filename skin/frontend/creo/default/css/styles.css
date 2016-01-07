@@ -374,7 +374,7 @@ body.page-print h2 {
 body.page-print .logo {
     display: block;
     height: auto;
-    width: 200px;
+    width: 170px;
 }
 .page-print table, .page-print th, .page-print td {
   border: 1px solid #000;
