@@ -5196,12 +5196,14 @@ div.fme-filter dd a{padding: 0 !important;}
 	opacity: 1;
 }
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
+
 	background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
 	background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
 	background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;	}
 .product-swatches-container ul:after {  
+
 	clear: both;
 	content: "";
 	display: block; 
@@ -5513,11 +5515,13 @@ h3.inline-h span:before{
 .carousel-creo.carousel4.trends-carousel .btn-prev{top: 40%;}
 #fme_filters_list .cate-open-close ul {
     background: #fff;
-    border-bottom: 8px solid #f16a79;
+    border-color: #eee #eee #f16a79;
+    border-style: solid;
+    border-width: 1px 0 8px;
     display: none;
     left: 0;
     margin: 0;
-    padding: 0;
+    padding: 20px 25%;
     position: absolute;
     right: 0;
     top: auto;
@@ -5533,7 +5537,12 @@ h3.inline-h span:before{
 	background: #000;
 	color: #fff;
 }
-
+.skewbtn1{background:#000;transform: skewX(-30deg);-moz-transform: skewX(-30deg);-ms-transform: skewX(-30deg);
+-webkit-transform: skewX(-30deg);padding:0;display:inline-block;padding:3px 7px;margin-left:5px;float:left;z-index:10;
+position: relative;}
+.skewbtn1 #goback{color: #fff;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;line-height:1.2;
+transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg);-webkit-transform: skewX(30deg);}
+.skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
 
 
 

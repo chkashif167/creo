@@ -1288,6 +1288,9 @@ animation: animaterotate 1s 1;
 .showShippingAddress label,.address-book-area label{margin:1px 5px 0 10px !important;float: none !important;}
 .showShippingAddress input,.address-book-area input{display: inline-block;}
 .fme_loading_filters img{margin-left:-48px;}
+.skewbtn1{background:#000;padding:0;display:block;padding:3px 7px;margin:10px auto;width: 250px;text-align:center;}
+.skewbtn1 #goback{color: #fff;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;line-height:1.2;}
+.skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
