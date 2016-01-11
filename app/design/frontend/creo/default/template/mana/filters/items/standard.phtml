@@ -15,7 +15,9 @@
 /* @var $this Mana_Filters_Block_Filter_Attribute */
 ?>
 <?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'before_items', array('block' => $this)) ?>
-<ol class="m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
+<div class="gender-filter-area">
+<!-- <label class="styles-lable" id="styles_label">Gender: </label> -->
+<dd id="fme_layered_gender" class="m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
 <?php foreach ($this->getItems() as $_item): ?>
     <li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
         <?php // MANA BEGIN ?>
@@ -23,15 +25,16 @@
         	<span class="m-selected-filter-item"><?php echo $this->escapeHtml($_item->getLabel()) ?></span>
         <?php else : ?>
 	        <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-	        <a href="<?php echo $this->urlEscape($_item->getReplaceUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+	        <a class="fme_layered_attribute <?php echo $this->escapeHtml($_item->getLabel()) ?>" href="<?php echo $this->urlEscape($_item->getReplaceUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><span><?php echo $this->escapeHtml($_item->getLabel()) ?></span></a>
 	        <?php else: echo $this->escapeHtml($_item->getLabel()) ?>
 	        <?php endif; ?>
         <?php endif; ?>
         <?php // MANA END ?>
         <?php if (Mage::getStoreConfigFlag('mana_filters/display/count')) : ?>
-            (<?php echo $_item->getCount() ?>)
+          <!--   (<?php echo $_item->getCount() ?>) -->
         <?php endif; ?>
     </li>
 <?php endforeach ?>
-</ol>
+</dd>
+</div>
 <?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'after_items', array('block' => $this)) ?>
