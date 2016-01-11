@@ -12,14 +12,11 @@
  * This template is overridden by copying (template body was pasted from catalog/layer/filter.phtml 
  * and modified as needed). All changes are marked with comments.
  */
-/* @var $this Mana_Filters_Block_Filter_Attribute */
+/* @var $this Mage_Core_Block_Template */
 ?>
-<?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'before_items', array('block' => $this)); ?>
-<div id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="attribure_labels"> <?php echo $this->getFilterOptions()->name; ?> </div>
-<ol id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
-<?php foreach ($this->getItems() as $_item): ?>
+<ol class="m-filter-item-list m-special-filters <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
+<?php foreach ($this->getFilter()->getSpecialItems() as $_item): ?>
     <li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
-        <?php // MANA BEGIN ?>
         <?php if ($_item->getMSelected()): ?>
         	<span class="m-selected-filter-item"><?php echo $this->escapeHtml($_item->getLabel()) ?></span>
         <?php else : ?>
@@ -28,11 +25,9 @@
 	        <?php else: echo $this->escapeHtml($_item->getLabel()) ?>
 	        <?php endif; ?>
         <?php endif; ?>
-        <?php // MANA END ?>
         <?php if (Mage::getStoreConfigFlag('mana_filters/display/count')) : ?>
             (<?php echo $_item->getCount() ?>)
         <?php endif; ?>
     </li>
 <?php endforeach ?>
 </ol>
-<?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'after_items', array('block' => $this)) ?>

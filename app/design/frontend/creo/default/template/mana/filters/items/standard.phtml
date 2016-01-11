@@ -20,26 +20,16 @@
     <li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
         <?php // MANA BEGIN ?>
         <?php if ($_item->getMSelected()): ?>
-        	<span class="m-selected-filter-item"><?php echo $this->escapeHtml($_item->getLabel()) ?>
+        	<span class="m-selected-filter-item"><?php echo $this->escapeHtml($_item->getLabel()) ?></span>
         <?php else : ?>
 	        <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-	        <a href="<?php echo $this->urlEscape($_item->getReplaceUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?>
-	        <?php else: ?>
-	            <span><?php echo $this->escapeHtml($_item->getLabel()) ?>
+	        <a href="<?php echo $this->urlEscape($_item->getReplaceUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+	        <?php else: echo $this->escapeHtml($_item->getLabel()) ?>
 	        <?php endif; ?>
         <?php endif; ?>
         <?php // MANA END ?>
         <?php if (Mage::getStoreConfigFlag('mana_filters/display/count')) : ?>
-            <span class="count">(<?php echo $_item->getCount() ?>)</span>
-        <?php endif; ?>
-        <?php if ($_item->getMSelected()): ?>
-        	</span>
-        <?php else : ?>
-	        <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-	            </a>
-	        <?php else: ?>
-                </span>
-	        <?php endif; ?>
+            (<?php echo $_item->getCount() ?>)
         <?php endif; ?>
     </li>
 <?php endforeach ?>
