@@ -2724,8 +2724,8 @@ jQuery(document).ready(function($) {
     jQuery(".attribure_labels").click(function() {
         var id = jQuery(this).attr('data-id');
         //console.log(id);
-    //jQuery(".m-filter-item-list").hide();
-      jQuery("#" + id).slideToggle();
+   // jQuery(".m-filter-item-list").hide();
+    jQuery("#" + id).slideToggle();
 
       jQuery("body").mouseup(function (e){
       var container = jQuery("#" + id);
@@ -2738,6 +2738,6 @@ jQuery(document).ready(function($) {
       }
      // console.log(e.target);
       });
-    });
+     });
 
 });
