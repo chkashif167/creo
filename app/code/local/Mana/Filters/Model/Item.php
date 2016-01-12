@@ -31,10 +31,18 @@ class Mana_Filters_Model_Item extends Mage_Catalog_Model_Layer_Filter_Item {
 
     	// MANA BEGIN: add multivalue filter handling
     	$values = $this->getFilter()->getMSelectedValues(); // this could fail if called from some kind of standard filter
-    	if (!$values) $values = array();
-    	if (!in_array($this->getValue(), $values)) $values[] = $this->getValue();
+		if($this->getFilter()->getRequestVar() == 'universal_categories'){
+			$values = array();
+			//if (!in_array($this->getValue(), $values)){
+				$values[] = $this->getValue();
+			//}
+		}else{
+			if (!$values) $values = array();
+			if (!in_array($this->getValue(), $values)){
+				$values[] = $this->getValue();
+			}
+		}
     	// MANA END
-        
     	$query = array(
         	// MANA BEGIN: save multiple values in URL as concatenated with '_'
             $this->getFilter()->getRequestVar()=>implode('_', $values),
@@ -47,7 +55,6 @@ class Mana_Filters_Model_Item extends Mage_Catalog_Model_Layer_Filter_Item {
         $params = array('_current'=>true, '_m_escape' => '', '_use_rewrite'=>true, '_query'=>$query, '_secure' => Mage::app()->getFrontController()->getRequest()->isSecure());
         return Mage::helper('mana_filters')->markLayeredNavigationUrl(Mage::getUrl('*/*/*', $params), '*/*/*', $params);
     }
-    
     /**
      * Returns URL which should be loaded if person chooses to add this filter item into active filters
      * @return string
