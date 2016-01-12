@@ -2714,9 +2714,30 @@ jQuery(window).load(function(){
 				length = and - equalsto;
 				id = pathname.substr(equalsto + 1, length - 1);
 			}else{
-				id = pathname.substring(equalsto + 1);												
+				id = pathname.substring(equalsto + 1);
 			}
 			jQuery('#universal_categories-'+id).simulate('click');
 		}
 	}
+});
+jQuery(document).ready(function($) {
+    jQuery(".attribure_labels").click(function() {
+        var id = jQuery(this).attr('data-id');
+        //console.log(id);
+   // jQuery(".m-filter-item-list").hide();
+    jQuery("#" + id).slideToggle();
+
+      jQuery("body").mouseup(function (e){
+      var container = jQuery("#" + id);
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0) // ... nor a descendant of the container
+      {
+         if (!$(e.target).parent().attr('data-id')){
+           container.slideUp();
+         }
+      }
+     // console.log(e.target);
+      });
+     });
+
 });

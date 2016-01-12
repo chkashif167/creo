@@ -31,11 +31,11 @@
     <?php $_items = $_order->getAllItems(); ?>
     <?php $_itemCount = count($_items); ?>
     <tr>
-        <td>
+        <td colspan="3">
             <table class="items" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
             <thead>
                 <tr>
-                <td style="min-width: 80%; overflow: hidden; padding:0px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:4px 10px;"><span style='display: block; ' >Product Description</span></a></td>
+                <td style="min-width:60%; overflow: hidden; padding:0px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:4px 10px;"><span style='display: block; ' >Product Description</span></a></td>
                 <td style="min-width: 20%; overflow: hidden; padding: 4px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:4px 10px;"> <span style='display: block;'>Quantity</span></a></td>
                 <td style="min-width: 20%; overflow: hidden; padding:0px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:4px 10px;"><span style='display: block;' >Price</span></a></td>
                 </tr>
@@ -66,7 +66,7 @@
         </td>
     </tr>
     <tr>
-        <td style="min-width: 20%; overflow: hidden; padding:0px;"><a href="#" style="font:14px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:10px;"> <span style='display: block; ' >
+        <td colspan="3" style="min-width: 20%; overflow: hidden; padding:0px;"><a href="#" style="font:14px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:10px;"> <span style='display: block; ' >
             <?php echo $this->getChildHtml('order_totals') ?></span></a>
         </td>
     </tr>
@@ -80,11 +80,9 @@
                     <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><strong><?php echo $this->__('Gift Message for this Order') ?></strong></th>
                     </tr>
                 </thead>
-
                 <tbody>
-
                     <tr>
-                        <td colspan="4" align="left" style="padding:3px 9px">
+                        <td colspan="3" align="left" style="padding:3px 9px">
                         <strong><?php echo $this->__('From:'); ?></strong> <?php echo $this->escapeHtml($_giftMessage->getSender()) ?>
                         <br /><strong><?php echo $this->__('To:'); ?></strong> <?php echo $this->escapeHtml($_giftMessage->getRecipient()) ?>
                         <br /><strong><?php echo $this->__('Message:'); ?></strong><br /> <?php echo $this->escapeHtml($_giftMessage->getMessage()) ?>
