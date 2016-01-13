@@ -2755,7 +2755,7 @@ if (idCheck == "" && id !== "gender") {
     jQuery("#" + id).slideUp();
 } else if (id === "gender"){
     console.log(id);
-    alert("test");
+   //alert("test");
 };
 
 jQuery("body").mouseup(function (e){
@@ -2777,7 +2777,7 @@ jQuery(document).ready(function($) {
        jQuery( "#options-16-list label").each(function(index) {
        jQuery(this).on("click", function(){
          jQuery( "#options-16-list label").css({"border":"0px solid #000"});
-         jQuery(this).css({"border":"1px solid #000"});
+         jQuery(this).css({"border":"1px solid #ddd"});
        });
     });
 });
