@@ -2526,11 +2526,11 @@ function popupValidation()
                 errors = "Please select font style";
             }else if(jQuery("#options_17_text").val()==''){
                 errors = "Please enter text to box1";
-            }else if(jQuery("#options_17_text").length>1){
+            }else if(jQuery("#options_17_text").val().length>1){
                 errors = "Please enter only one character to box1";
             }else if(jQuery("#options_18_text").val()==''){
                 errors = "Please enter text to box2";
-            }else if(jQuery("#options_18_text").length>1){
+            }else if(jQuery("#options_18_text").val().length>1){
                 errors = "Please enter only one character to box2";
             }
         }
@@ -2740,13 +2740,22 @@ jQuery(window).load(function(){
 	}
 });
 jQuery(document).ready(function($) {
-    jQuery(".attribure_labels").click(function() {
-        var id = jQuery(this).attr('data-id');
-        //console.log(id);
-   // jQuery(".m-filter-item-list").hide();
-    jQuery("#" + id).slideToggle();
+    jQuery(".attribure_labels").bind('click', function(event) {
+        /* Act on the event */
+var id = jQuery(this).attr('data-id');
+var idClick = event.type;
+var idCheck = jQuery("#" + id).hasClass('down');
+//console.log(idCheck);
+if (idCheck =="") {
+    jQuery(".m-filter-item-list").hide();
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).addClass('down').slideDown();
+} else if (idCheck != ""){
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).slideUp();
+};
 
-      jQuery("body").mouseup(function (e){
+jQuery("body").mouseup(function (e){
       var container = jQuery("#" + id);
       if (!container.is(e.target) // if the target of the click isn't the container...
           && container.has(e.target).length === 0) // ... nor a descendant of the container
@@ -2757,6 +2766,6 @@ jQuery(document).ready(function($) {
       }
      // console.log(e.target);
       });
-     });
+});
 
 });
