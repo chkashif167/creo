@@ -1,0 +1,69 @@
+<?php 
+/**
+ * @category    Mana
+ * @package     Mana_Filters
+ * @copyright   Copyright (c) http://www.manadev.com
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+/** 
+ * Template for showing options for filter as a HTML list 
+ * @author Mana Team
+ * Injected instead of standard catalog/layer/filter.phtml in Mana_Filters_Block_Filter_Attribute constructor.
+ * This template is overridden by copying (template body was pasted from catalog/layer/filter.phtml 
+ * and modified as needed). All changes are marked with comments.
+ */
+/* @var $this Mana_Filters_Block_Filter_Attribute */
+?>
+<?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'before_items', array('block' => $this)); ?>
+<div class="cate-open-close">
+<a id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="opener attribure_labels" data-id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
+<?php $catName= $this->getFilterOptions()->name; ?>
+<?php foreach ($this->getItems() as $_item): ?>
+        <?php // MANA BEGIN ?>
+        <?php if ($_item->getMSelected()): ?>
+            <?php $selectedItem = $this->escapeHtml($_item->getLabel()) ?>
+        <?php // MANA END ?>
+        <?php endif; ?>
+<?php endforeach ?>
+<?php
+$labels = str_replace(' ', '_',strtolower($this->getFilterOptions()->name));
+?>
+<?php
+if($labels == 'design_category'){$catName = 'View All';}
+?>
+<?php if ($catName=='true' || $selectedItem == '') {
+echo $catName;
+} elseif($catName!='' || $selectedItem != '') { ?>
+    <span class="m-selected-filter-item"><?php echo $selectedItem; ?></span>
+<?php }?>
+
+</a>
+<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
+<?php
+if($labels == 'design_category'){
+?>
+<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All">View All</a>
+</li>
+<?php
+}
+?>
+<?php foreach ($this->getItems() as $_item): ?>
+    <li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
+        <?php // MANA BEGIN ?>
+        <?php if ($_item->getMSelected()): ?>
+	        <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+        <?php else : ?>
+	        <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
+	        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+	        <?php else: echo $this->escapeHtml($_item->getLabel()) ?>
+	        <?php endif; ?>
+        <?php endif; ?>
+        <?php // MANA END ?>
+        <?php if (Mage::getStoreConfigFlag('mana_filters/display/count')) : ?>
+            <!-- (<?php //echo $_item->getCount() ?>) -->
+        <?php endif; ?>
+    </li>
+<?php endforeach ?>
+</ul>
+</div>
+<?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'after_items', array('block' => $this)) ?>
