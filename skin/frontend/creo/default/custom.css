@@ -1131,7 +1131,7 @@ cursor: default;
 #options-16-list li input {
     display: none;
 }
-#options-16-list li span.label ( margin:  0 ;)
+#options-16-list li span.label { margin:  0; padding:  0 40px 0 0;}
 #options-16-list li label[for="options_16_2"] {
     height: 38px;
     width: 74px;
