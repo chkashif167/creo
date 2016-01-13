@@ -32,11 +32,10 @@ $labels = str_replace(' ', '_',strtolower($this->getFilterOptions()->name));
 if($labels == 'design_category'){$catName = 'View All';}
 ?>
 <?php if ($catName=='true' || $selectedItem == '') {
-echo $catName;
-} elseif($catName!='' || $selectedItem != '') { ?>
+    echo $catName;
+    } elseif($labels=='design_category' && $selectedItem != '') { ?>
     <span class="m-selected-filter-item"><?php echo $selectedItem; ?></span>
-<?php }?>
-
+<?php } else{ echo $catName; } ?>
 </a>
 <ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
 <?php
