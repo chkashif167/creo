@@ -2516,6 +2516,22 @@ function popupValidation()
 			}
 		}
 
+        if(jQuery("#swatches-options-162").length > 0) {
+            if(jQuery('input[name=options[16]]:checked').length<=0){
+                errors = "Please select font style";
+            }else if(jQuery('#options_17_text').val==''){
+                errors = "Please enter text to box1";
+            }else if(jQuery('#options_17_text').length>1){
+                errors = "Please enter only one character to box1";
+            }else if(jQuery('#options_18_text').val==''){
+                errors = "Please enter text to box2";
+            }else if(jQuery('#options_18_text').length>1){
+                errors = "Please enter only one character to box2";
+            }
+        }
+
+
+
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
             jQuery.alert({
