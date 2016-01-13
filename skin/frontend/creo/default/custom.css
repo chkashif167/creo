@@ -1132,27 +1132,35 @@ cursor: default;
     display: none;
 }
 #options-16-list li label[for="options_16_2"] {
-    background: red none repeat scroll 0 0;
     height: 38px;
     width: 74px;
-    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font1.jpg) no-repeat;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font1.jpg)no-repeat
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
 }
 
 #options-16-list li label[for="options_16_3"] {
-    background: red none repeat scroll 0 0;
     height: 38px;
     width: 74px;
-    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font2.jpg) no-repeat;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font2.jpg)no-repeat
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
 }
 #options-16-list li label[for="options_16_4"] {
-    background: red none repeat scroll 0 0;
     height: 38px;
     width: 74px;
-    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font3.jpg) no-repeat;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font3.jpg)no-repeat
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
 }
 #options-16-list li label[for="options_16_5"] {
-    background: red none repeat scroll 0 0;
-    height: 38px;
+       height: 38px;
     width: 74px;
-    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font4.jpg) no-repeat;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font4.jpg)no-repeat
+    cursor:pointer;
+    background-size:  100%;
+    font-size:  0px;
 }
