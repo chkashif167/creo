@@ -2526,11 +2526,11 @@ function popupValidation()
                 errors = "Please select font style";
             }else if(jQuery("#options_17_text").val()==''){
                 errors = "Please enter text to box1";
-            }else if(jQuery("#options_17_text").length>1){
+            }else if(jQuery("#options_17_text").val().length>1){
                 errors = "Please enter only one character to box1";
             }else if(jQuery("#options_18_text").val()==''){
                 errors = "Please enter text to box2";
-            }else if(jQuery("#options_18_text").length>1){
+            }else if(jQuery("#options_18_text").val().length>1){
                 errors = "Please enter only one character to box2";
             }
         }

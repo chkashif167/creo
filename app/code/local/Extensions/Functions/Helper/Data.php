@@ -12,7 +12,11 @@ class Extensions_Functions_Helper_Data extends Mage_Core_Helper_Abstract
 			$lableLink = substr( $currentUrl, 0, $pos - 1);
 			$attribute = Mage::getModel('catalog/resource_eav_attribute')->load(157);
 		    $attributeOptions = $attribute->getSource()->getOptionText($_REQUEST['universal_categories']);
-            return "<a href='$lableLink' title='$label'>$label</a><span></span></li><li><strong>$attributeOptions</strong>";
+			if($attributeOptions){
+	            return "<a href='$lableLink' title='$label'>$label</a><span></span></li><li><strong>$attributeOptions</strong>";
+			}else{
+		        return "<strong>$label</strong>";
+			}
 			}else{
 		        return "<strong>$label</strong>";
 			}
