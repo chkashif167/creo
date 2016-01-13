@@ -2530,8 +2530,6 @@ function popupValidation()
             }
         }
 
-
-
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
             jQuery.alert({
