@@ -1123,3 +1123,36 @@ background: #000;
 pointer-events: none;
 cursor: default;
 }
+#options-16-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+#options-16-list li input {
+    display: none;
+}
+#options-16-list li label[for="options_16_2"] {
+    background: red none repeat scroll 0 0;
+    height: 38px;
+    width: 74px;
+    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font1.jpg) no-repeat;
+}
+
+#options-16-list li label[for="options_16_3"] {
+    background: red none repeat scroll 0 0;
+    height: 38px;
+    width: 74px;
+    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font2.jpg) no-repeat;
+}
+#options-16-list li label[for="options_16_4"] {
+    background: red none repeat scroll 0 0;
+    height: 38px;
+    width: 74px;
+    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font3.jpg) no-repeat;
+}
+#options-16-list li label[for="options_16_5"] {
+    background: red none repeat scroll 0 0;
+    height: 38px;
+    width: 74px;
+    background: urlhttp://beta.creoroom.com/skin/frontend/creo/default/images/font4.jpg) no-repeat;
+}
