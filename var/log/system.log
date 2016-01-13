@@ -5124,3 +5124,309 @@
 2016-01-12T14:32:38+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in C:\wamp\www\creo\lib\Varien\Simplexml\Config.php on line 510
 2016-01-12T14:32:38+00:00 ERR (3): Warning: simplexml_load_string():          ^  in C:\wamp\www\creo\lib\Varien\Simplexml\Config.php on line 510
 >>>>>>> 6885f63063233ff38e1b9e0e6a440ea2ce046ef5
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:17+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:10:33+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:21+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:16:32+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:28+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:20:54+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:01+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:18+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:21:25+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:17+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:31:26+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:32:15+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:19+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:34:32+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:35:34+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:41:39+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:42:30+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:12+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:44:16+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:50:40+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:09+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:52:42+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:36+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T06:56:43+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:21+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:00:37+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:06:50+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:07:46+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Opening and ending tag mismatch: modules line 9 and config  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag modules line 5  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 21: parser error : Premature end of data in tag config line 3  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string(): &lt;/config&gt;  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
+2016-01-13T07:08:28+00:00 ERR (3): Warning: simplexml_load_string():          ^  in D:\xampp\htdocs\creo\lib\Varien\Simplexml\Config.php on line 510
