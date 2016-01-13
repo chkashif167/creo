@@ -2517,7 +2517,7 @@ function popupValidation()
 		}
 
         if(jQuery("#swatches-options-162").length > 0) {
-            if(jQuery('input[name=options[16]]:checked').length<=0){
+            if(jQuery("input[name='options[16]']:checked").length<=0){
                 errors = "Please select font style";
             }else if(jQuery('#options_17_text').val==''){
                 errors = "Please enter text to box1";
