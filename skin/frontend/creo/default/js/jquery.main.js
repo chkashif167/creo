@@ -2521,7 +2521,7 @@ function popupValidation()
             }
 
         }
-        if(jQuery("#soptions-16-list").length > 0){
+        if(jQuery("#options-16-list").length > 0){
             if(jQuery("input[name='options[16]']:checked").length<=0){
                 errors = "Please select font style";
             }else if(jQuery("input[name='options[17]']").val==''){
