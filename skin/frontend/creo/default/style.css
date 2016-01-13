@@ -5073,14 +5073,14 @@ textarea {
 #fme_filters_list .cate-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0 18px 0 7px;
+	padding:1px 20px;
 	margin: 0;
 	position: relative;
 	color: #222;
 	text-transform: uppercase;
 	font: 13px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	border: 1px solid #ccc;
-	width: 130px;
+	width:auto;
 	cursor: pointer;
 }
 #fme_filters_list .cate-open-close.active .opener,
@@ -5131,7 +5131,7 @@ textarea {
 #fme_filters_list .cate-open-close li a {
 	display: block;
 	color: #222;
-	padding: 5px 7px !important;
+	padding: 5px 16px;
 }
 #fme_filters_list .cate-open-close li a:hover {
 	text-decoration: none;
@@ -5522,13 +5522,10 @@ h3.inline-h span:before{
     z-index: 999;
 }
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
-#fme_filters_list .cate-open-close .slide li{
-    width: 32.3%;
-    margin: 0 0.5%;
-}
+#fme_filters_list .cate-open-close .slide li{width:auto;margin:1px;}
 #fme_filters_list .cate-open-close .slide li:hover a,.m-selected-ln-item{background: #000;color: #fff;}
 #fme_filters_list .cate-open-close li.m-selected-ln-item a{color:#fff;}
-.m-selected-ln-item{padding:5px 7px !important;}
+.m-selected-ln-item{padding:0;}
 .skewbtn1{background:#000;transform: skewX(-30deg);-moz-transform: skewX(-30deg);-ms-transform: skewX(-30deg);
 -webkit-transform: skewX(-30deg);padding:0;display:inline-block;padding:3px 7px;margin-left:5px;float:left;z-index:10;
 position: relative;}
