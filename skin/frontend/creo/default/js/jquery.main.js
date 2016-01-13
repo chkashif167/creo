@@ -2745,14 +2745,17 @@ jQuery(document).ready(function($) {
 var id = jQuery(this).attr('data-id');
 var idClick = event.type;
 var idCheck = jQuery("#" + id).hasClass('down');
-//console.log(idCheck);
-if (idCheck =="") {
-    jQuery(".m-filter-item-list").hide();
+console.log(id);
+if (idCheck == "" && id !== "gender") {
+    //jQuery(".m-filter-item-list").hide();
     jQuery(".m-filter-item-list").removeClass('down');
     jQuery("#" + id).addClass('down').slideDown();
-} else if (idCheck != ""){
+} else if (idCheck !== "" && id !== "gender"){
     jQuery(".m-filter-item-list").removeClass('down');
     jQuery("#" + id).slideUp();
+} else if (id === "gender"){
+    console.log(id);
+    alert("test");
 };
 
 jQuery("body").mouseup(function (e){
@@ -2768,4 +2771,13 @@ jQuery("body").mouseup(function (e){
       });
 });
 
+});
+
+jQuery(document).ready(function($) {
+       jQuery( "#options-16-list label").each(function(index) {
+       jQuery(this).on("click", function(){
+         jQuery( "#options-16-list label").css({"border":"0px solid #000"});
+         jQuery(this).css({"border":"1px solid #000"});
+       });
+    });
 });
