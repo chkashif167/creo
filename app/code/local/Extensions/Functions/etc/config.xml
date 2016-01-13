@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Extensions_Functions>
+            <version>0.1.0</version>
+        </Extensions_Functions>
+    </modules>
+    <global>
+        <helpers>
+            <functions>
+                <class>Extensions_Functions_Helper</class>
+            </functions>
+        </helpers>
+    </global>
+</config>
