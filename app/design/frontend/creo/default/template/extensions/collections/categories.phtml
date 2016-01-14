@@ -32,29 +32,13 @@
  */
 ?>
 <div class="row">
-<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <nav class="breadcrumb1">
-        <ul>
-        <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
-            <li class="<?php echo $_crumbName ?>">
-            <?php if($_crumbInfo['link']): ?>
-                <a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->escapeHtml($_crumbInfo['title']) ?>"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></a>
-            <?php elseif($_crumbInfo['last']): ?>
-                <?php 
-                    $currentUrl = Mage::helper('core/url')->getCurrentUrl();
-                    $label = $this->escapeHtml($_crumbInfo['label']);
-                    echo Mage::helper('functions/data')->updateBreadcrumbs($currentUrl, $label);
-                ?>
-            <?php else: ?>
-                <?php echo $this->escapeHtml($_crumbInfo['label']) ?>
-            <?php endif; ?>
-            <?php if(!$_crumbInfo['last']): ?>
-                <span> </span>
-            <?php endif; ?>
-            </li>
-        <?php endforeach; ?>
+<div class="col-xs-12">
+<nav class="breadcrumb1">
+    <ul>
+        <li class="home"><a title="Go to Home Page" href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+        <li class="category17"><strong>Collections</strong></li>
     </ul>
-    </nav>
+</nav>
 </div>
 </div>
 <?php
