@@ -5536,7 +5536,7 @@ transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg)
 .skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 /*#fme_filters_list .cate-open-close #gender{display:inline-block !important;}*/
-#gender li{background-color:#ddd;}
+#gender li{background-color:#ddd;text-align:center !important;}
 #gender li a{transform: skewX(18deg);-moz-transform: skewX(18deg);-webkit-transform: skewX(18deg);
 -ms-transform: skewX(18deg);padding:0 !important;}
 #gender li:hover a{background-color:transparent !important;}
