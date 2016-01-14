@@ -43,11 +43,7 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
                     <password><![CDATA[]]></password>
-<<<<<<< HEAD
-                    <dbname><![CDATA[creo_26_10_2015]]></dbname>
-=======
-                    <dbname><![CDATA[creo_1]]></dbname>
->>>>>>> b6382a0d71aefcc89396de57487f51fd16ab3cea
+                    <dbname><![CDATA[creo]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
