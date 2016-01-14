@@ -1306,6 +1306,7 @@ left:0;margin:0;padding:0;position:relative;right: 0;top: auto;width:100%;z-inde
 .cate-open-close .slide.m-filter-item-list li.m-selected-ln-item{background-color:#000;color:#fff;}
 .cate-open-close .slide.m-filter-item-list li.m-selected-ln-item a{color:#fff;}
 #label_gender{display:none;}
+.size_guide_men_image, .size_guide_women_image{max-width:100%;width: 100%;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
