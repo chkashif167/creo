@@ -3853,7 +3853,7 @@ div.fme-filter dd li{overflow: visible !important;}
 #nav .links-area{
 	display: inline-block;
 	vertical-align: top;
-	width: 35%;
+	width:auto;
 	text-align: left;
 }
 #nav .links-area h2{
