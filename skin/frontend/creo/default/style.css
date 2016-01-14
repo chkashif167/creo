@@ -5524,7 +5524,7 @@ h3.inline-h span:before{
     z-index: 999;
 }
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
-#fme_filters_list .cate-open-close .slide li{width:auto;margin:1px;}
+#fme_filters_list .cate-open-close .slide li{width:24%;margin:1px;text-align:left;}
 #fme_filters_list .cate-open-close .slide li:hover a,.m-selected-ln-item{background: #000;color: #fff;}
 #fme_filters_list .cate-open-close li.m-selected-ln-item a{color:#fff;}
 .m-selected-ln-item{padding:0;}
