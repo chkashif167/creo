@@ -2755,6 +2755,7 @@ if (idCheck == "" && id !== "gender") {
     jQuery("#" + id).slideUp();
 } else if (id === "gender"){
     console.log(id);
+    return false;
    //alert("test");
 };
 
