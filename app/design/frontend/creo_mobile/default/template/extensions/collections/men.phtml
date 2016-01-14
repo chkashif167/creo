@@ -24,16 +24,19 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php
-/**
- * Attributes And Product list template
- *
- * @see Mage_Catalog_Block_Product_List
- */
-?>
+<div class="row">
+<div class="col-xs-12">
+<nav class="breadcrumb1">
+    <ul>
+        <li class="home"><a title="Go to Home Page" href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+        <li class="category3"><a title="Collections" href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">Collections</a></li>
+        <li class="category17"><strong>Men</strong></li>
+    </ul>
+</nav>
+</div>
+</div>
 <?php
 $_attrbiuteCollection = $this->getLoadedAttributeCollection();
-
 ?>
 <div class="cate-drop-holder" id="fme_filters_list">
 <div class="skewbtn1"><button id="goback" onclick="goback()" title="Back">Back</button></div>
