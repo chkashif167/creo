@@ -1475,7 +1475,7 @@ input[type="submit"]:hover {
 	color:#fff;
 	background:#000;
 }
-#fme_layered_gender .fme_layered_attribute {
+#fme_layered_gender .fme_layered_attribute,#gender li{
 	color:#767676;
 	background:#ddd;
 	display:block;
@@ -1489,6 +1489,7 @@ input[type="submit"]:hover {
 	line-height: 18px;
 	text-align: center;
 }
+#gender li{padding:0 !important;}
 div.fme-filter dd li{overflow: visible !important;}
 #fme_layered_gender > ol {
 	padding: 0;
@@ -5108,7 +5109,8 @@ textarea {
 }
 #fme_filters_list #label_tshirt_color,#fme_filters_list ul#tshirt_color{display:none;}
 #fme_filters_list #label_gender{}
-#fme_filters_list ul#gender{}
+#fme_filters_list ul#gender {display: inline-block;left: inherit;right:0;width: auto;padding:0;position:relative;vertical-align:middle;border: 0;\
+margin: 0;}
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
 #fme_filters_list .cate-open-close ul {
 	margin: -1px 0 0;
@@ -5533,7 +5535,14 @@ position: relative;}
 transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg);-webkit-transform: skewX(30deg);}
 .skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
-
+/*#fme_filters_list .cate-open-close #gender{display:inline-block !important;}*/
+#gender li{background-color:#ddd;}
+#gender li a{transform: skewX(18deg);-moz-transform: skewX(18deg);-webkit-transform: skewX(18deg);
+-ms-transform: skewX(18deg);padding:0 !important;}
+#gender li:hover a{background-color:transparent !important;}
+#gender li:hover{background-color:#000;}
+#fme_filters_list .cate-open-close #label_gender{border:0;}
+#fme_filters_list .cate-open-close #label_gender.opener:before{content:':';border:0;top:0;}
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}
