@@ -5074,7 +5074,7 @@ textarea {
 #fme_filters_list .cate-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding:1px 20px;
+	padding:1px 20px 1px 8px;
 	margin: 0;
 	position: relative;
 	color: #222;
@@ -5521,7 +5521,6 @@ h3.inline-h span:before{
     right: 0;
     top: auto;
     width: 100%;
-<<<<<<< HEAD
     z-index: 999;
 }
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
@@ -5544,10 +5543,12 @@ transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg)
 #gender li:hover{background-color:#000;}
 #fme_filters_list .cate-open-close #label_gender{border:0;}
 #fme_filters_list .cate-open-close #label_gender.opener:before{content:':';border:0;top:0;}
-#fme_filters_list .cate-open-close:hover ul{display: block;}
+/*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
 #fme_filters_list .cate-open-close .slide li{width:32.3%;margin:0 0.5%;}
 #fme_filters_list .cate-open-close .slide li:hover a{background: #000;color: #fff;}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
+#product-options-wrapper dl dt:nth-child(2),#product-options-wrapper dl dd:nth-child(2),#product-options-wrapper dl dt:nth-child(3),
+#product-options-wrapper dl dd:nth-child(3){display:inline-block;}
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}
