@@ -5066,7 +5066,7 @@ textarea {
 
 #fme_filters_list .cate-open-close {
 	float: none;
-	display: inline-block;
+	/*display: inline-block;*/
 	vertical-align: middle;
 	margin: 0 5px 0 0;
 	z-index: 22;
@@ -5107,8 +5107,6 @@ textarea {
 	position: absolute;
 	right: 0;
 }
-#fme_filters_list #label_tshirt_color,#fme_filters_list ul#tshirt_color{display:none;}
-#fme_filters_list #label_gender{}
 #fme_filters_list ul#gender {display: inline-block;left: inherit;right:0;width: auto;padding:0;position:relative;vertical-align:middle;border: 0;\
 margin: 0;}
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
@@ -5330,7 +5328,8 @@ dl {margin: 0 0 10px;}
     color: #fff;
     display: inline-block;
     vertical-align: middle;
-    padding: 3px 10px;
+    padding:3px 10px;
+    margin-right:5px;
 }
 .top-black-bar{
 	display: none;
@@ -5373,6 +5372,9 @@ dl {margin: 0 0 10px;}
     vertical-align: middle;
     padding: 3px 10px;
 }
+#fme_filters_list #label_tshirt_color,#fme_filters_list ul#tshirt_color,
+#fme_filters_list .search-by.label_tshirt_color,#fme_filters_list .search-by.label_gender{display:none;}
+#fme_filters_list #label_gender{}
 .cate-drop-holder .cate-drop-frame {
     display: inline-block;
     vertical-align: middle;
@@ -5517,9 +5519,9 @@ h3.inline-h span:before{
     left: 0;
     margin: 0;
     padding: 20px 25%;
-    position: absolute;
+    position: relative;
     right: 0;
-    top: auto;
+    top:0;
     width: 100%;
     z-index: 999;
 }
@@ -5550,6 +5552,7 @@ transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg)
 #product-options-wrapper dl dt:nth-child(3),#product-options-wrapper dl dd:nth-child(4),#product-options-wrapper dl dt:nth-child(5),
 #product-options-wrapper dl dd:nth-child(6){display:inline-block;width:auto;vertical-align:top;padding:3px;}
 #options-16-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
+.cate-open-close.label_gender{position: absolute;right:20%;top:0;}
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}

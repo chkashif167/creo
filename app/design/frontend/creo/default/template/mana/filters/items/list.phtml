@@ -19,7 +19,8 @@
 $labels = str_replace(' ', '_',strtolower($this->getFilterOptions()->name));
 $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 ?>
-<div class="cate-open-close">
+<div class="cate-open-close label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
+<span id="styles_label" class="search-by label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">Search by Design</span>
 <?php 
 if($labels == 'design_category'){
 	if(strpos($currentUrl,'custom') !== false){
