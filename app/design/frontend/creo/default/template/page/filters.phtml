@@ -51,14 +51,16 @@
              <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
-                <div class="category_top_filters cate-links" id="fme_filters_list"><?php echo $_leftContent;   ?></div>
+                <div class="category_top_filters cate-links" id="fme_filters_list">
+                <span id="styles_label">Search by Design: </span>
+                <?php echo $_leftContent;   ?>
+                </div>
                 <?php endif; ?>
                 <div class="col-main">
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
             </div>
-        
         <?php echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('global_cookie_notice') ?>
