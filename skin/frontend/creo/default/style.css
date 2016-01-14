@@ -5366,7 +5366,7 @@ dl {margin: 0 0 10px;}
 	margin: 0 0 10px;
 	text-align: center;
 }
-.cate-drop-holder .search-by {
+.cate-drop-holder .search-by,.category_top_filters .search-by{
     background: #ef4f61;
     color: #fff;
     display: inline-block;
