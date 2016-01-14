@@ -5544,12 +5544,12 @@ transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg)
 #fme_filters_list .cate-open-close #label_gender{border:0;}
 #fme_filters_list .cate-open-close #label_gender.opener:before{content:':';border:0;top:0;}
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
-#fme_filters_list .cate-open-close .slide li{width:32.3%;margin:0 0.5%;}
+/*#fme_filters_list .cate-open-close .slide li{width:32.3%;margin:0 0.5%;}*/
 #fme_filters_list .cate-open-close .slide li:hover a{background: #000;color: #fff;}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 #product-options-wrapper dl dt:nth-child(3),#product-options-wrapper dl dd:nth-child(4),#product-options-wrapper dl dt:nth-child(5),
 #product-options-wrapper dl dd:nth-child(6){display:inline-block;width:auto;vertical-align:top;padding:3px;}
-
+#options-16-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}
