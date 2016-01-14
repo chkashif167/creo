@@ -27,18 +27,87 @@
 <?php endforeach ?>
 <?php
 $labels = str_replace(' ', '_',strtolower($this->getFilterOptions()->name));
+$currentUrl = Mage::helper('core/url')->getCurrentUrl();
 ?>
 <?php
 if($labels == 'design_category'){$catName = 'View All';}
 ?>
 <?php if ($catName=='true' || $selectedItem == '') {
-echo $catName;
-} elseif($catName!='' || $selectedItem != '') { ?>
+    echo $catName;
+    } elseif($labels=='design_category' && $selectedItem != '') { ?>
     <span class="m-selected-filter-item"><?php echo $selectedItem; ?></span>
-<?php }?>
-
+<?php } else{ echo $catName; } ?>
 </a>
-<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
+<?php 
+if($labels == 'design_category'){
+	if(strpos($currentUrl,'custom') !== true){
+	?>
+		<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
+	<?php
+	if($labels == 'design_category'){
+	?>
+	<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All">View All</a>
+	</li>
+	<?php
+	}
+	?>
+	<?php foreach ($this->getItems() as $_item): ?>
+		<li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
+			<?php // MANA BEGIN ?>
+			<?php if ($_item->getMSelected()): ?>
+				<a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+			<?php else : ?>
+				<?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
+				<a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+				<?php else: echo $this->escapeHtml($_item->getLabel()) ?>
+				<?php endif; ?>
+			<?php endif; ?>
+			<?php // MANA END ?>
+			<?php if (Mage::getStoreConfigFlag('mana_filters/display/count')) : ?>
+				<!-- (<?php //echo $_item->getCount() ?>) -->
+			<?php endif; ?>
+		</li>
+	<?php endforeach ?>
+	</ul>
+	<?php
+	}else{
+		echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
+	}
+}elseif($labels == 'gender'){
+	if(strpos($currentUrl,'men') !== true){
+	?>
+		<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
+	<?php
+	if($labels == 'design_category'){
+	?>
+	<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All">View All</a>
+	</li>
+	<?php
+	}
+	?>
+	<?php foreach ($this->getItems() as $_item): ?>
+		<li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
+			<?php // MANA BEGIN ?>
+			<?php if ($_item->getMSelected()): ?>
+				<a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+			<?php else : ?>
+				<?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
+				<a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+				<?php else: echo $this->escapeHtml($_item->getLabel()) ?>
+				<?php endif; ?>
+			<?php endif; ?>
+			<?php // MANA END ?>
+			<?php if (Mage::getStoreConfigFlag('mana_filters/display/count')) : ?>
+				<!-- (<?php //echo $_item->getCount() ?>) -->
+			<?php endif; ?>
+		</li>
+	<?php endforeach ?>
+	</ul>
+	<?php
+	}
+}else{
+?>
+	<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
 <?php
 if($labels == 'design_category'){
 ?>
@@ -65,5 +134,8 @@ if($labels == 'design_category'){
     </li>
 <?php endforeach ?>
 </ul>
+<?php
+}
+?>
 </div>
 <?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'after_items', array('block' => $this)) ?>

@@ -1291,7 +1291,22 @@ animation: animaterotate 1s 1;
 .skewbtn1{background:#000;padding:0;display:block;padding:3px 7px;margin:10px auto;width: 250px;text-align:center;}
 .skewbtn1 #goback{color: #fff;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;line-height:1.2;}
 .skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
-.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
+.size_guide_men_image, .size_guide_women_image{max-width:100%;width: 100%;}
+.cate-open-close .opener{display:block;vertical-align: middle;padding:1px 20px 1px 8px;margin:2px 0;position: relative;
+color: #222;text-transform: uppercase;font: 13px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;border: 1px solid #ccc;
+width:100%;cursor:pointer;}
+.cate-open-close .opener:before{width:9px;height:19px;position:absolute;top:8px;right:5px;border-color:#888 transparent transparent;
+border-style: solid;border-width: 5px 4px 0;content: '';}
+.cate-open-close ul{background: #fff;border-color: #eee #eee #f16a79;border-style: solid;border-width: 1px 1px 5px;display: none;
+left:0;margin:0;padding:0;position:relative;right: 0;top: auto;width:100%;z-index: 999;}
+/*.cate-open-close .opener:hover + .slide.m-filter-item-list{display:block;}*/
+.cate-open-close .slide.m-filter-item-list li{display:block;text-align:center;border-top:1px solid #eee;line-height:2;}
+.cate-open-close .slide.m-filter-item-list li a{font-size:12px;}
+.cate-open-close .slide.m-filter-item-list li:first-child{border:0;}
+.cate-open-close .slide.m-filter-item-list li.m-selected-ln-item{background-color:#000;color:#fff;}
+.cate-open-close .slide.m-filter-item-list li.m-selected-ln-item a{color:#fff;}
+#label_gender{display:none;}
+.size_guide_men_image, .size_guide_women_image{max-width:100%;width: 100%;}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}
