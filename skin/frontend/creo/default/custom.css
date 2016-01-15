@@ -357,7 +357,7 @@ font-family: fontello;
 .options-area label {
 color: #222;
 font: 14px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
-margin: 0 0 6px;
+margin:5px 0 6px;
 text-transform: uppercase;
 }
 .options-area label em {

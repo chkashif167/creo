@@ -20,14 +20,14 @@ $labels = str_replace(' ', '_',strtolower($this->getFilterOptions()->name));
 $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 ?>
 <div class="cate-open-close label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
-<span id="styles_label" class="search-by label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">Search by Design</span>
 <?php 
 if($labels == 'design_category'){
 	if(strpos($currentUrl,'custom') !== false){
 		echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
 	}else{
 	?>
-		<a id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="opener attribure_labels" data-id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
+	<span id="styles_label" class="search-by label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">Search by Design</span>
+	<a id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="opener attribure_labels" data-id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
 <?php $catName= $this->getFilterOptions()->name; ?>
 <?php foreach ($this->getItems() as $_item): ?>
         <?php // MANA BEGIN ?>
