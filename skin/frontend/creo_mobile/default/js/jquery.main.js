@@ -2771,17 +2771,19 @@ var id = jQuery(this).attr('data-id');
 var idClick = event.type;
 var idCheck = jQuery("#" + id).hasClass('down');
 console.log(id);
-if (idCheck == "" && id !== "gender") {
+if (idCheck == "") {
     //jQuery(".m-filter-item-list").hide();
     jQuery(".m-filter-item-list").removeClass('down');
     jQuery("#" + id).addClass('down').slideDown();
-} else if (idCheck !== "" && id !== "gender"){
+}
+else if (idCheck !== ""){
     jQuery(".m-filter-item-list").removeClass('down');
     jQuery("#" + id).slideUp();
-} else if (id === "gender"){
-    console.log(id);
-   //alert("test");
 };
+// else if (id === "gender"){
+//     //console.log(id);
+//    //alert("test");
+// };
 
 jQuery("body").mouseup(function (e){
       var container = jQuery("#" + id);
