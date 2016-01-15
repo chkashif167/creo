@@ -16,6 +16,7 @@
 ?>
 <?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'before_items', array('block' => $this)); ?>
 <div class="cate-open-close">
+<!-- <span id="styles_label" class="search-by">Search by Design</span> -->
 <a id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="opener attribure_labels" data-id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
 <?php $catName= $this->getFilterOptions()->name; ?>
 <?php foreach ($this->getItems() as $_item): ?>
@@ -32,11 +33,10 @@ $labels = str_replace(' ', '_',strtolower($this->getFilterOptions()->name));
 if($labels == 'design_category'){$catName = 'View All';}
 ?>
 <?php if ($catName=='true' || $selectedItem == '') {
-echo $catName;
-} elseif($catName!='' || $selectedItem != '') { ?>
+    echo $catName;
+    } elseif($labels=='design_category' && $selectedItem != '') { ?>
     <span class="m-selected-filter-item"><?php echo $selectedItem; ?></span>
-<?php }?>
-
+<?php } else{ echo $catName; } ?>
 </a>
 <ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
 <?php

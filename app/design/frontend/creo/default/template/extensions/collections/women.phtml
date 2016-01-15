@@ -31,15 +31,26 @@
  * @see Mage_Catalog_Block_Product_List
  */
 ?>
+<div class="row">
+<div class="col-xs-12">
+<nav class="breadcrumb1">
+    <ul>
+        <li class="home"><a title="Go to Home Page" href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+        <li class="category3"><a title="Collections" href="<?php echo Mage::getBaseUrl() . "collections/index/categories" ?>">Collections</a></li>
+        <li class="category17"><strong>Women</strong></li>
+    </ul>
+</nav>
+</div>
+</div>
 <?php
 $_attrbiuteCollection = $this->getLoadedAttributeCollection();
 ?>
-<div class="cate-drop-holder">
+<div class="cate-drop-holder" id="fme_filters_list">
 <div class="skewbtn1"><button id="goback" onclick="goback()" title="Back">Back</button></div>
+<div class="cate-open-close">
 <span class="search-by">Search By Design</span>
-<div class="cate-drop-frame">
-<a href="javascript:;" class="opener"> View All</a>
-<ul>
+<a class="opener attribure_labels" data-id="collection-mega-menu"> View All</a>
+<ul id="collection-mega-menu" class="slide m-filter-item-list">
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
             <?php if ($a['value']): ?>

@@ -357,7 +357,7 @@ font-family: fontello;
 .options-area label {
 color: #222;
 font: 14px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
-margin: 0 0 6px;
+margin:5px 0 6px;
 text-transform: uppercase;
 }
 .options-area label em {
@@ -1053,8 +1053,10 @@ width: 100%;
 border: 0px solid #fff !important;
 box-shadow: 0 0 0px #ccc !important;}
 .catalog-product-view li.product-image-thumbs { margin-right: 1px !important;}
+/*
+Removed Additional Search by design labels
 .categorypath-clothing-women-tshirt-html #fme_filters_list #styles_label { display:inline-block !important;}
-.categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}
+.categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}*/
 .previousnext { display: none;}
 #creditcardnumbercn { width: 58%; float: left;}
 #creditcardpci_cc_type_cvv_div { width: 40%; float: right;}
@@ -1122,4 +1124,46 @@ background: #000;
 .dont_click_it {
 pointer-events: none;
 cursor: default;
+}
+#options-16-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+#options-16-list li input {
+    display: none;
+}
+#options-16-list li span.label { margin:  0; padding:  0 40px 0 0;}
+#options-16-list li label[for="options_16_2"] {
+    height: 38px;
+    width: 74px;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font1.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+
+#options-16-list li label[for="options_16_3"] {
+    height: 38px;
+    width: 74px;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font2.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-16-list li label[for="options_16_4"] {
+    height: 38px;
+    width: 74px;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font3.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-16-list li label[for="options_16_5"] {
+       height: 38px;
+    width: 74px;
+    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font4.jpg)no-repeat;
+    cursor:pointer;
+    background-size:  100%;
+    font-size:  0px;
 }

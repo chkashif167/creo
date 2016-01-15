@@ -33,15 +33,15 @@
 ?>
 <?php if($this->canShowBlock()): ?>
 <?php /*?><div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
-<?php */?>    
+<?php */?>
 <?php /*?><div class="block-title">
         <strong><span><?php echo $this->__('Shop By') ?></span></strong>
     </div><?php */?>
    <?php /*?> <div class="block-content toggle-content"><?php */?>
-       
+
         <?php if($this->canShowOptions()): ?>
            <?php /*?> <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p><?php */?>
-           
+
                 <?php $_filters = $this->getFilters() ?>
                 <?php foreach ($_filters as $_filter): ?>
                 <?php if($_filter->getItemsCount()): ?>
@@ -49,12 +49,12 @@
                    <?php echo $_filter->getHtml() ?>
                 <?php endif; ?>
                 <?php endforeach; ?>
-           
+
             <script type="text/javascript">decorateDataList('narrow-by-list')</script>
         <?php endif; ?>
          <?php echo $this->getStateHtml() ?>
         <?php if ($this->getLayer()->getState()->getFilters()): ?>
-            <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+            <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php //echo $this->__('Clear All') ?></a></div>
         <?php endif; ?>
    <?php /*?> </div><?php */?>
 <?php /*?></div><?php */?>
@@ -62,7 +62,6 @@
 <script type="text/javascript">
 function change_image(imagename)
 {
-    
      image = document.getElementById(imagename);
      image.src = '<?php echo $this->getSkinUrl("images/"); ?>'+imagename+"-hover.png";
 }
