@@ -1208,6 +1208,48 @@ a[class*='_selected_']{
 .cartPage_custome_responsive .text-area { text-align: center;}
 .categorypath-clothing-html #fme_filters_list img  { width: 100%;}
 .color_swatches_full_width { width: 100%;}
+#options-16-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+#options-16-list li input {
+    display: none;
+}
+#options-16-list li span.label { margin:  0; padding:  0 40px 0 0;}
+#options-16-list li label[for="options_16_2"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font1.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+
+#options-16-list li label[for="options_16_3"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font2.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-16-list li label[for="options_16_4"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font3.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-16-list li label[for="options_16_5"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font4.jpg)no-repeat;
+    cursor:pointer;
+    background-size:  100%;
+    font-size:  0px;
+}
 @media only screen and (max-device-width:359px){
 .cart-btn-area .btn-holder .button2,
 .checkout-cart-index .btn-holder .btn-proceed-checkout,

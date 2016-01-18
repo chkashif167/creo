@@ -2745,6 +2745,7 @@ jQuery(document).ready(function($) {
 var id = jQuery(this).attr('data-id');
 var idClick = event.type;
 var idCheck = jQuery("#" + id).hasClass('down');
+
 console.log(id);
 if (idCheck == "" && id !== "gender") {
     //jQuery(".m-filter-item-list").hide();
@@ -2755,6 +2756,7 @@ if (idCheck == "" && id !== "gender") {
     jQuery("#" + id).slideUp();
 } else if (id === "gender"){
     console.log(id);
+    return false;
    //alert("test");
 };
 
@@ -2770,6 +2772,11 @@ jQuery("body").mouseup(function (e){
      // console.log(e.target);
       });
 });
+
+var idMetrial = jQuery("#notebook_material li").hasClass('m-selected-ln-item');
+if(idMetrial){
+jQuery("#label_notebook_material").css('margin-left', '110px');
+}
 
 });
 

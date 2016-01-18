@@ -3853,7 +3853,7 @@ div.fme-filter dd li{overflow: visible !important;}
 #nav .links-area{
 	display: inline-block;
 	vertical-align: top;
-	width: 35%;
+	width:auto;
 	text-align: left;
 }
 #nav .links-area h2{
@@ -5066,7 +5066,7 @@ textarea {
 
 #fme_filters_list .cate-open-close {
 	float: none;
-	display: inline-block;
+	/*display: inline-block;*/
 	vertical-align: middle;
 	margin: 0 5px 0 0;
 	z-index: 22;
@@ -5107,8 +5107,6 @@ textarea {
 	position: absolute;
 	right: 0;
 }
-#fme_filters_list #label_tshirt_color,#fme_filters_list ul#tshirt_color{display:none;}
-#fme_filters_list #label_gender{}
 #fme_filters_list ul#gender {display: inline-block;left: inherit;right:0;width: auto;padding:0;position:relative;vertical-align:middle;border: 0;\
 margin: 0;}
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
@@ -5330,7 +5328,8 @@ dl {margin: 0 0 10px;}
     color: #fff;
     display: inline-block;
     vertical-align: middle;
-    padding: 3px 10px;
+    padding:3px 10px;
+    margin-right:5px;
 }
 .top-black-bar{
 	display: none;
@@ -5366,13 +5365,16 @@ dl {margin: 0 0 10px;}
 	margin: 0 0 10px;
 	text-align: center;
 }
-.cate-drop-holder .search-by {
+.cate-drop-holder .search-by,.category_top_filters .search-by{
     background: #ef4f61;
     color: #fff;
     display: inline-block;
     vertical-align: middle;
     padding: 3px 10px;
 }
+#fme_filters_list #label_tshirt_color,#fme_filters_list ul#tshirt_color,
+#fme_filters_list .search-by.label_tshirt_color,#fme_filters_list .search-by.label_gender{display:none;}
+#fme_filters_list #label_gender{}
 .cate-drop-holder .cate-drop-frame {
     display: inline-block;
     vertical-align: middle;
@@ -5419,7 +5421,7 @@ dl {margin: 0 0 10px;}
     text-transform: uppercase;
     width: 130px;
 }
-.cate-drop-holder .cate-drop-frame:hover ul{display: block;}
+/*.cate-drop-holder .cate-drop-frame:hover ul{display: block;}*/
 .cate-drop-holder .cate-drop-frame:hover ul a{
     border-top: 1px solid #ccc;
     color: #222;
@@ -5517,14 +5519,18 @@ h3.inline-h span:before{
     left: 0;
     margin: 0;
     padding: 20px 25%;
-    position: absolute;
+    position: relative;
     right: 0;
-    top: auto;
+    top:0;
     width: 100%;
     z-index: 999;
 }
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
-#fme_filters_list .cate-open-close .slide li{width:auto;margin:1px;}
+#fme_filters_list .cate-open-close .slide li{width:24%;margin:1px;}
+#fme_filters_list .cate-open-close #collection-mega-menu.slide li,
+body.category-tshirt #fme_filters_list .cate-open-close #design_category.slide li,
+body.category-polo #fme_filters_list .cate-open-close #design_category.slide li,
+body.category-clothing #fme_filters_list .cate-open-close #design_category.slide li{text-align:left;}
 #fme_filters_list .cate-open-close .slide li:hover a,.m-selected-ln-item{background: #000;color: #fff;}
 #fme_filters_list .cate-open-close li.m-selected-ln-item a{color:#fff;}
 .m-selected-ln-item{padding:0;}
@@ -5536,13 +5542,16 @@ transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg)
 .skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 /*#fme_filters_list .cate-open-close #gender{display:inline-block !important;}*/
-#gender li{background-color:#ddd;}
+#gender li{background-color:#ddd;text-align:center !important;}
 #gender li a{transform: skewX(18deg);-moz-transform: skewX(18deg);-webkit-transform: skewX(18deg);
 -ms-transform: skewX(18deg);padding:0 !important;}
 #gender li:hover a{background-color:transparent !important;}
-#gender li:hover{background-color:#000;}
-#fme_filters_list .cate-open-close #label_gender{border:0;}
+#gender li:hover,#gender li.m-selected-ln-item{background-color:#000;border:1px solid transparent;}
+#fme_filters_list .cate-open-close #label_gender{border:0;cursor:none;pointer-events:none;}
 #fme_filters_list .cate-open-close #label_gender.opener:before{content:':';border:0;top:0;}
+#fme_filters_list .cate-open-close #label_phone_model.opener,
+#fme_filters_list .cate-open-close #label_notebook_material.opener{position: absolute;top: 0;margin-left:110px;}
+#fme_filters_list .cate-open-close #label_notebook_material.opener{margin-left:227px;}
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
 /*#fme_filters_list .cate-open-close .slide li{width:32.3%;margin:0 0.5%;}*/
 #fme_filters_list .cate-open-close .slide li:hover a{background: #000;color: #fff;}
@@ -5550,6 +5559,7 @@ transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg)
 #product-options-wrapper dl dt:nth-child(3),#product-options-wrapper dl dd:nth-child(4),#product-options-wrapper dl dt:nth-child(5),
 #product-options-wrapper dl dd:nth-child(6){display:inline-block;width:auto;vertical-align:top;padding:3px;}
 #options-16-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
+.cate-open-close.label_gender{position: absolute;right:20%;top:0;}
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}
