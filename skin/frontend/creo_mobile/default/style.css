@@ -1303,10 +1303,11 @@ left:0;margin:0;padding:0;position:relative;right: 0;top: auto;width:100%;z-inde
 .cate-open-close .slide.m-filter-item-list li{display:inline-block;text-align:center;border-top:1px solid #eee;line-height:2;width:49%;}
 .cate-open-close .slide.m-filter-item-list li a{font-size:14px;}
 .cate-open-close .slide.m-filter-item-list li:first-child{border:0;}
-.cate-open-close .slide.m-filter-item-list li.m-selected-ln-item{background-color:#000;color:#fff;}
+.cate-open-close .slide.m-filter-item-list li.m-selected-ln-item{background-color:#000;color:#fff;border:1px solid #000;}
 .cate-open-close .slide.m-filter-item-list li.m-selected-ln-item a{color:#fff;}
 /*#label_gender,#label_tshirt_color{display:none;}*/
 .size_guide_men_image, .size_guide_women_image{max-width:100%;width: 100%;}
+#options-16-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
 .stacktable.small-only{display:none;}

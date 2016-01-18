@@ -1137,7 +1137,7 @@ cursor: default;
 #options-16-list li label[for="options_16_2"] {
     height: 38px;
     width: 74px;
-    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font1.jpg)no-repeat;
+    background: url(images/font1.jpg)no-repeat;
     cursor:pointer;
      background-size:  100%;
      font-size:  0px;
@@ -1146,7 +1146,7 @@ cursor: default;
 #options-16-list li label[for="options_16_3"] {
     height: 38px;
     width: 74px;
-    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font2.jpg)no-repeat;
+    background: url(images/font2.jpg)no-repeat;
     cursor:pointer;
      background-size:  100%;
      font-size:  0px;
@@ -1154,7 +1154,7 @@ cursor: default;
 #options-16-list li label[for="options_16_4"] {
     height: 38px;
     width: 74px;
-    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font3.jpg)no-repeat;
+    background: url(images/font3.jpg)no-repeat;
     cursor:pointer;
      background-size:  100%;
      font-size:  0px;
@@ -1162,7 +1162,7 @@ cursor: default;
 #options-16-list li label[for="options_16_5"] {
        height: 38px;
     width: 74px;
-    background: url(http://beta.creoroom.com/skin/frontend/creo/default/images/font4.jpg)no-repeat;
+    background: url(images/font4.jpg)no-repeat;
     cursor:pointer;
     background-size:  100%;
     font-size:  0px;
