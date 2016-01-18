@@ -20,11 +20,11 @@ exit;
 	$i=0;
 foreach($productCollection as $product) 
 {
-    $attributeCode = "shipping_details";
+    $attributeCode = "design";
     echo "\n".'updating '.$product->getSku()."...".$i."<br>";
 	//echo $product->getName()."<br>";
     $product = Mage::getModel('catalog/product')
                    ->load($product->getEntityId());
-    $product->setData($attributeCode, "<p>FREE shipping on all orders over AED 140 (within UAE).<br>Flat Rate on All orders within GCC of AED 50.<br>Express International Shipping of USD 22.<br>Standard International Shipping of USD 10.<br>Please see Return and Exchange policy.<br>")->getResource()->saveAttribute($product, $attributeCode);
+    $product->setData($attributeCode, "")->getResource()->saveAttribute($product, $attributeCode);
 $i++;
 }
