@@ -437,6 +437,7 @@ p.style1 {
 #nav ol > li {
 	float: left;
 	margin: 0 0px 0 0;
+	padding:0px;
 }
 #nav ol > li > a {
 	display: block;
@@ -466,7 +467,7 @@ p.style1 {
 	-webkit-transform: skewX(-30deg);
 	-ms-transform: skewX(-30deg);
 	content: '';
-	width:96%;
+	width:100%;
 }
 #nav .drop-parent:hover > a:before {
 	transform: skewX(0deg);
