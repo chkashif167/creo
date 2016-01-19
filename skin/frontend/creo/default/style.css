@@ -467,6 +467,7 @@ p.style1 {
 	-webkit-transform: skewX(-30deg);
 	-ms-transform: skewX(-30deg);
 	content: '';
+	width:98%;
 }
 #nav .drop-parent:hover > a:before {
 	transform: skewX(0deg);
