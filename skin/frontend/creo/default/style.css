@@ -437,7 +437,6 @@ p.style1 {
 #nav ol > li {
 	float: left;
 	margin: 0 0px 0 0;
-	padding-right:5px;
 }
 #nav ol > li > a {
 	display: block;
