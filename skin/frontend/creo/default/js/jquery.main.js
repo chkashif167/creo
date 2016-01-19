@@ -2773,10 +2773,10 @@ jQuery("body").mouseup(function (e){
       });
 });
 
-// var idMetrial = jQuery("#notebook_material li").hasClass('m-selected-ln-item');
-// if(idMetrial){
-// jQuery("#label_notebook_material").css('margin-left', '110px');
-// }
+var idMetrial = jQuery("#notebook_material li").hasClass('m-selected-ln-item');
+if(idMetrial){
+jQuery("#label_notebook_material").css('margin-left', '110px');
+}
 
 });
 
