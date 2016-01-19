@@ -1690,16 +1690,19 @@ div.fme-filter dd li{overflow: visible !important;}
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	width: 102%;
+	width: 101%;
 	letter-spacing: -0.5px;
 }
+.products-grid:after{clear:both;display:block;position:relative;content:'';}
 .products-grid li{
 	display: inline-block;
 	vertical-align: top;
-	width: 23%;
+	width: 24%;
+	float: left;
 	margin: 0 1% 30px 0;
 	letter-spacing: normal;
 }
+.products-grid li.item.last{margin-right:0;}
 .products-grid .image-area{
 	position: relative;
 	text-align: center;
@@ -5346,15 +5349,15 @@ dl {margin: 0 0 10px;}
 }
 .category-polo .top-black-bar,
 .category-tshirt .top-black-bar{display: block;}
-.category-products h2.cph{position: relative;}
+.category-products h2.cph{position: relative;border-bottom:4px solid #eee;padding-bottom:10px;}
 .category-products h2.cph:before {
     background: #eee;
     content: "";
-    height: 4px;
+/*    height: 4px;
     left: 0;
     position: absolute;
     right: 0;
-    bottom: -10px;
+    bottom: -10px;*/
 }
 .cate-drop-holder:after{
 	display: block;
