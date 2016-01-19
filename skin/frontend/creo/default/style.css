@@ -5556,8 +5556,8 @@ transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg)
 #fme_filters_list .cate-open-close #label_gender{border:0;cursor:none;pointer-events:none;}
 #fme_filters_list .cate-open-close #label_gender.opener:before{content:':';border:0;top:0;}
 #fme_filters_list .cate-open-close #label_phone_model.opener,
-#fme_filters_list .cate-open-close #label_notebook_material.opener{position: absolute;top: 0;margin-left:110px;}
-#fme_filters_list .cate-open-close #label_notebook_material.opener{margin-left:227px;}
+#fme_filters_list .cate-open-close #label_notebook_material.opener{position: absolute;top: 0;margin-left:130px;}
+/*#fme_filters_list .cate-open-close #label_notebook_material.opener{margin-left:227px;}*/
 /*#fme_filters_list .cate-open-close:hover ul{display: block;}*/
 /*#fme_filters_list .cate-open-close .slide li{width:32.3%;margin:0 0.5%;}*/
 #fme_filters_list .cate-open-close .slide li:hover a{background: #000;color: #fff;}
