@@ -68,8 +68,10 @@ class Extensions_Functions_Helper_Data extends Mage_Core_Helper_Abstract
 					//return "<strong>$label</strong>";
 				} else {
 					if($_REQUEST['universal_categories'] > 0){
-						$lableLink = substr( $currentUrl, 0, $pos - 1);
-						return '<div class="skewbtn1"><a href="'.$lableLink.'" id="goback" title="Back"><span>Back</span></a></div>';					
+						if(!($_REQUEST['custom'])){
+							$lableLink = substr( $currentUrl, 0, $pos - 1);
+							return '<div class="skewbtn1"><a href="'.$lableLink.'" id="goback" title="Back"><span>Back</span></a></div>';												
+						}
 					}else{
 						//return '<div class="skewbtn1"><a href="'.$secondLast['link'].'" id="goback" title="Back">Back</a></div>';					
 					}
