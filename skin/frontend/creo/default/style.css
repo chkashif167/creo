@@ -5543,9 +5543,11 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 .skewbtn1{background:#000;transform: skewX(-30deg);-moz-transform: skewX(-30deg);-ms-transform: skewX(-30deg);
 -webkit-transform: skewX(-30deg);padding:0;display:inline-block;padding:3px 7px;margin-left:5px;float:left;z-index:10;
 position: relative;}
-.skewbtn1 #goback{color: #fff;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;line-height:1.2;
-transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg);-webkit-transform: skewX(30deg);}
+.skewbtn1 #goback{color: #fff;display:block;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;
+line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg);
+-webkit-transform: skewX(30deg);}
 .skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
+.category_top_filters.cate-links .skewbtn1{position:absolute;left:0;}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 /*#fme_filters_list .cate-open-close #gender{display:inline-block !important;}*/
 #gender li{background-color:#ddd;text-align:center !important;}

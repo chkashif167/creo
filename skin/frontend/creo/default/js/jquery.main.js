@@ -2450,7 +2450,7 @@ jQuery(document).ready(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 jQuery(window).load(function () {
@@ -2459,7 +2459,7 @@ jQuery(window).load(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 jQuery(window).resize(function () {
@@ -2468,7 +2468,7 @@ jQuery(window).resize(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 function popupValidation()
