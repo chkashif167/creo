@@ -1440,6 +1440,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
             )
         );
 
+
         /** @var $emailQueue Mage_Core_Model_Email_Queue */
         $emailQueue = Mage::getModel('core/email_queue');
         $emailQueue->setEntityId($this->getId())
@@ -1450,7 +1451,6 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 
         return $this;
     }
-
     /**
      * Send email with order update information
      *
