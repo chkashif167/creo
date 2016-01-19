@@ -469,6 +469,7 @@ p.style1 {
 	content: '';
 	width:100%;
 }
+#nav ol > li.active > a:before{width:96%;}
 #nav .drop-parent:hover > a:before {
 	transform: skewX(0deg);
 	-moz-transform: skewX(0deg);
