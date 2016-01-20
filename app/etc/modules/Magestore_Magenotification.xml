@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Magestore_Magenotification>
-            <active>false</active>
+            <active>true</active>
             <codePool>local</codePool>
         </Magestore_Magenotification>
     </modules>
