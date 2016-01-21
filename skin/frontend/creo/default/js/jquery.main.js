@@ -2450,7 +2450,7 @@ jQuery(document).ready(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 jQuery(window).load(function () {
@@ -2459,7 +2459,7 @@ jQuery(window).load(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 jQuery(window).resize(function () {
@@ -2468,7 +2468,7 @@ jQuery(window).resize(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 function popupValidation()
@@ -2774,7 +2774,8 @@ jQuery("body").mouseup(function (e){
 });
 
 var idMetrial = jQuery("#notebook_material li").hasClass('m-selected-ln-item');
-if(idMetrial){
+var idPhoneMdl = jQuery(".label_phone_model a").hasClass('attribure_labels');
+if(idMetrial || idPhoneMdl == ""){
 jQuery("#label_notebook_material").css('margin-left', '110px');
 }
 
