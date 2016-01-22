@@ -19,9 +19,7 @@ $designTitle = $customerDesign->getDesignTitle();
 $designNote = $customerDesign->getDesignNote();
 }
 ?>
-        <div class="row">
-          <div class="col-xs-8">
-            <form class="form-horizontal" method="GET" id="save_design_form" action="<?php echo Mage::helper("pdp")->getPdpBaseUrl() . "pdp/customerdesign/save/" ?>">
+          <form class="form-horizontal" method="GET" id="save_design_form" action="<?php echo Mage::helper("pdp")->getPdpBaseUrl() . "pdp/customerdesign/save/" ?>">
             <fieldset>
               <input type="hidden" value="filename.json" name="filename" id="customer_design_json"/>
               <input type="hidden" value="<?php echo $isSkipSaveStep ?>" id="is_skip_design_step"/>
@@ -47,21 +45,14 @@ $designNote = $customerDesign->getDesignNote();
                     <p> <a id="pdc_save_btn" pdc-action="SAVE_DESIGN_TO_ACCOUNT" pdc-data="pdc-saveto-account" class="btn btn-success"><?php echo $this->__('Save Design');?></a><br/>
                       <span id="save-for-later-label" style="font-style:12px;"><?php echo $this->__('Save for later use');?>.</span></p>
                     <div class="for-guest" style="display: none;">
-                      <div class="alert alert-warning"><p><?php echo $this->__("Please login to save your design to your account page. Just press SAVE DESIGN button after logged in.") ?></div>
-                      <a id="login-link" href="<?php echo $this->helper('pdp')->getPdpBaseUrl() ?>customer/account/login/" target='_blank'><?php echo $this->__("Click here to login or Create an account") ?></a> </div>
-                    </p>
+                      <div class="alert alert-warning"><p><?php echo $this->__("Please login to save your design to your account page. Just press SAVE DESIGN button after logged in.") ?></p></div>
+                     <p><a id="login-link" href="<?php echo $this->helper('pdp')->getPdpBaseUrl() ?>customer/account/login/" target='_blank'><?php echo $this->__("Click here to login or Create an account") ?></a></p></div>
                     <p><a class="btn btn-md btn-primary" pdc-action="SAVE_AND_CONTINUE" pdc-data="pdc-save-continue"><?php echo $this->__('No, Thanks. I will do it later');?>.</a><br/>
                       <span style="font-style:12px;"><?php echo $this->__('Review your design and continue');?>.</span></p>
                   </div>
                 </div>
               </fieldset>
             </form>
-          </div>
-          <div class="col-xs-4">
-            <ul class="preview-image-before-save">
-            </ul>
-          </div>
-        </div><!-- Closing Row -->
       </div><!-- Closing Modal holder -->
     </div>
   </div>

@@ -7,28 +7,27 @@ $isAdminUser = $this->isAdminUser();
 <div class="pdc-topbar">
 	<div class="topbar-content">
 		<h3 class="item-title"><span class="pdc-label-outline"></span> <?php echo $productTitle ?></h3>
-	<ul class="topbar-buttons">
+		<ul class="topbar-buttons">
+	<li>
                 <?php if(!$isAdminUser) : ?>
-                <li data-toggle="modal" data-target="#savePopup">
-                <!-- <button data-toggle="modal" pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" data-target="#savePopup" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Save Your Design'); ?>" class=""><label><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label></button> -->
-
-                <button type="button" title="<?php echo $this->__('Save Your Design'); ?>"><label><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label></button>
+                <label data-toggle="modal" data-target="#savePopup" data-placement="top" >
+                <button pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" type="button"title="<?php echo $this->__('Save Your Design'); ?>" class=""><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></button></label>
                 <?php else : ?>
                 <button type="button" pdc-data="pdc-btn" pdc-action="SAVE_SAMPLE" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Save this design as default design'); ?>" class=""><i class="pdc-check-box"></i> <?php echo $this->__('Save Sample Design');?></button>
-                </li>
                 <?php endif; ?>
+            </li>
+            <li>
                 <?php if($isAdminUser) : ?>
-                <li>
                 <button type="button" pdc-data="pdc-remove-sample" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('If you change the overlay image or background image. Then you need to remove old sample design! And create new design if need!'); ?>" class=""> 
                 <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span>
                     <?php echo $this->__('Remove Sample Design');?></button>
-                </li>
                 <?php endif; ?>
-			<li data-toggle="modal" data-target="#downloadPopup_temp"><button pdc-data="pdc-btn" pdc-action="DOWNLOAD" type="button" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Download Your Design'); ?>" class=""><i class="pdc-file-download"></i> <?php echo $this->__('Download');?></button></li>
-			<?php if(Mage::getStoreConfig('pdp/customer_action/sharing')){ ?>
-			<li data-toggle="modal" data-target="#sharingPopup_temp"><button pdc-data="pdc-btn" pdc-action="SHARE" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Share Your Design To Social networks'); ?>" class=""><i class="pdc-share"></i> <?php echo $this->__('Share');?></button></li>
-			<?php } ?>
-		</ul>
+            </li>
+	<li data-toggle="modal" data-target="#downloadPopup_temp"><button pdc-data="pdc-btn" pdc-action="DOWNLOAD" type="button" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Download Your Design'); ?>" class=""><i class="pdc-file-download"></i> <?php echo $this->__('Download');?></button></li>
+	<?php if(Mage::getStoreConfig('pdp/customer_action/sharing')){ ?>
+	<li data-toggle="modal" data-target="#sharingPopup_temp"><button pdc-data="pdc-btn" pdc-action="SHARE" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Share Your Design To Social networks'); ?>" class=""><i class="pdc-share"></i> <?php echo $this->__('Share');?></button></li>
+	<?php } ?>
+	</ul>
 	</div>
 </div><!-- EOTopbar-->
 <?php //Get all child blocks ?>
