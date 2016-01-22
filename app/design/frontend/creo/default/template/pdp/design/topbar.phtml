@@ -11,7 +11,7 @@ $isAdminUser = $this->isAdminUser();
 	<li>
                 <?php if(!$isAdminUser) : ?>
                 <label data-toggle="modal" data-target="#savePopup" data-placement="top" >
-                <button pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" type="button"title="<?php echo $this->__('Save Your Design'); ?>" class=""><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></button></label>
+                <input pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label>
                 <?php else : ?>
                 <button type="button" pdc-data="pdc-btn" pdc-action="SAVE_SAMPLE" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Save this design as default design'); ?>" class=""><i class="pdc-check-box"></i> <?php echo $this->__('Save Sample Design');?></button>
                 <?php endif; ?>
