@@ -19,7 +19,7 @@ $designTitle = $customerDesign->getDesignTitle();
 $designNote = $customerDesign->getDesignNote();
 }
 ?>
-          <form class="form-horizontal" method="GET" id="save_design_form" action="<?php echo Mage::helper("pdp")->getPdpBaseUrl() . "pdp/customerdesign/save/" ?>">
+          <form class="form-horizontal text-left" method="GET" id="save_design_form" action="<?php echo Mage::helper("pdp")->getPdpBaseUrl() . "pdp/customerdesign/save/" ?>">
             <fieldset>
               <input type="hidden" value="filename.json" name="filename" id="customer_design_json"/>
               <input type="hidden" value="<?php echo $isSkipSaveStep ?>" id="is_skip_design_step"/>
