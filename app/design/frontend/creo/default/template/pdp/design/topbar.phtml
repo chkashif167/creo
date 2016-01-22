@@ -8,9 +8,9 @@ $isAdminUser = $this->isAdminUser();
 	<div class="topbar-content">
 		<h3 class="item-title"><span class="pdc-label-outline"></span> <?php echo $productTitle ?></h3>
 		<ul class="topbar-buttons">
-	<li>
+			<li>
                 <?php if(!$isAdminUser) : ?>
-                <input data-toggle="modal" data-target="#savePopup" data-placement="top" pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?>
+                <button data-toggle="modal" pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" data-target="#savePopup" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Save Your Design'); ?>" class=""><i class="pdc-check-box"></i> <?php echo $this->__('SAVE');?></button>
                 <?php else : ?>
                 <button type="button" pdc-data="pdc-btn" pdc-action="SAVE_SAMPLE" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Save this design as default design'); ?>" class=""><i class="pdc-check-box"></i> <?php echo $this->__('Save Sample Design');?></button>
                 <?php endif; ?>
@@ -22,11 +22,11 @@ $isAdminUser = $this->isAdminUser();
                     <?php echo $this->__('Remove Sample Design');?></button>
                 <?php endif; ?>
             </li>
-	<li data-toggle="modal" data-target="#downloadPopup_temp"><button pdc-data="pdc-btn" pdc-action="DOWNLOAD" type="button" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Download Your Design'); ?>" class=""><i class="pdc-file-download"></i> <?php echo $this->__('Download');?></button></li>
-	<?php if(Mage::getStoreConfig('pdp/customer_action/sharing')){ ?>
-	<li data-toggle="modal" data-target="#sharingPopup_temp"><button pdc-data="pdc-btn" pdc-action="SHARE" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Share Your Design To Social networks'); ?>" class=""><i class="pdc-share"></i> <?php echo $this->__('Share');?></button></li>
-	<?php } ?>
-	</ul>
+			<li data-toggle="modal" data-target="#downloadPopup_temp"><button pdc-data="pdc-btn" pdc-action="DOWNLOAD" type="button" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Download Your Design'); ?>" class=""><i class="pdc-file-download"></i> <?php echo $this->__('Download');?></button></li>
+			<?php if(Mage::getStoreConfig('pdp/customer_action/sharing')){ ?>
+			<li data-toggle="modal" data-target="#sharingPopup_temp"><button pdc-data="pdc-btn" pdc-action="SHARE" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Share Your Design To Social networks'); ?>" class=""><i class="pdc-share"></i> <?php echo $this->__('Share');?></button></li>
+			<?php } ?>
+		</ul>
 	</div>
 </div><!-- EOTopbar-->
 <?php //Get all child blocks ?>
