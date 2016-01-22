@@ -14,6 +14,7 @@
     $product->setVisibility(4);
     $product->save(); 
     exit;
+    
     /*$categoryid = $_GET['cat'];
     if($categoryid==''){
         echo "Please provide category id";	
