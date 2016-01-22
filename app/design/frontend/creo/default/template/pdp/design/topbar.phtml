@@ -10,7 +10,9 @@ $isAdminUser = $this->isAdminUser();
 	<ul class="topbar-buttons">
                 <?php if(!$isAdminUser) : ?>
                 <li data-toggle="modal" data-target="#savePopup">
-                <button data-toggle="modal" pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" data-target="#savePopup" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Save Your Design'); ?>" class=""><label><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label></button>
+                <!-- <button data-toggle="modal" pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" data-target="#savePopup" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Save Your Design'); ?>" class=""><label><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label></button> -->
+
+                <button type="button" title="<?php echo $this->__('Save Your Design'); ?>"><label><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label></button>
                 <?php else : ?>
                 <button type="button" pdc-data="pdc-btn" pdc-action="SAVE_SAMPLE" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Save this design as default design'); ?>" class=""><i class="pdc-check-box"></i> <?php echo $this->__('Save Sample Design');?></button>
                 </li>
