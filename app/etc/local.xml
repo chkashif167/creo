@@ -41,9 +41,9 @@
             <default_setup>
                 <connection>
                     <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[root]]></username>
-                    <password><![CDATA[]]></password>
-                    <dbname><![CDATA[creo_26_10_2015]]></dbname>
+                    <username><![CDATA[creoroom_DB]]></username>
+                    <password><![CDATA[HSu*U!iT}G)w]]></password>
+                    <dbname><![CDATA[creoroom_creolive_DB]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
