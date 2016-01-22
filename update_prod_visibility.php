@@ -9,12 +9,11 @@
     //for single product
     $product_id = '175333';
     Mage::app('default');
-    $product = Mage::getModel('catalog/product');
-    $product->load($product_id);
-    $product->setVisibility(4);
-    $product->save(); 
+     $_product = Mage::getModel('catalog/product')->load($product_id);
+            $_product->setVisibility(4);
+            $_product->getResource()->saveAttribute($_product, 'visibility');
     exit;
-    
+
     /*$categoryid = $_GET['cat'];
     if($categoryid==''){
         echo "Please provide category id";	
