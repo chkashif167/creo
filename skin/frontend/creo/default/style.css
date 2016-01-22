@@ -5570,6 +5570,7 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 #options-16-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
 .cate-open-close.label_gender{position: absolute;right:20%;top:0;}
 .text-left{text-align:left;}
+#pdc_design_list{width:100%;}
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}
