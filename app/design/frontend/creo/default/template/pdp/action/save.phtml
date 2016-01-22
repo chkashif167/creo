@@ -5,12 +5,10 @@ $isSkipSaveStep = Mage::getStoreConfig("pdp/design/skip_save_design");
 <div class="modal fade" id="savePopup" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><?php echo $this->__('Save Your Design'); ?></h4>
-      </div>
-      <div class="modal-body">
-        <?php
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-holder">
+      <div class="heading-holder"><h3 id="ajaxModalTitle"><?php echo $this->__('Save Your Design'); ?></h3></div>
+<?php
 $customer = Mage::getSingleton("customer/session")->getCustomer();
 $designTitle = $designNote = "";
 $reDesignId = $this->getRequest()->getParam("redesign");
@@ -64,7 +62,7 @@ $designNote = $customerDesign->getDesignNote();
             </ul>
           </div>
         </div><!-- Closing Row -->
-      </div><!-- Closing Modal Body -->
+      </div><!-- Closing Modal holder -->
     </div>
   </div>
 </div>
