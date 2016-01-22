@@ -8,9 +8,10 @@ $isAdminUser = $this->isAdminUser();
 	<div class="topbar-content">
 		<h3 class="item-title"><span class="pdc-label-outline"></span> <?php echo $productTitle ?></h3>
 		<ul class="topbar-buttons">
-	<li data-toggle="modal" data-target="#savePopup_temp">
+	<li data-toggle="modal" data-target="#savePopup">
                 <?php if(!$isAdminUser) : ?>
-                <button data-toggle="modal" pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" data-target="#savePopup_temp" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Save Your Design'); ?>" class=""><label><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label></button>
+                Test
+                <!-- <button data-toggle="modal" pdc-data="pdc-btn" pdc-action="SAVE_CUSTOMER_DESIGN" data-target="#savePopup" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo $this->__('Save Your Design'); ?>" class=""><label><input type="checkbox" style="margin:0;"><?php echo $this->__('SAVE');?></label></button> -->
                 <?php else : ?>
                 <button type="button" pdc-data="pdc-btn" pdc-action="SAVE_SAMPLE" data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->__('Save this design as default design'); ?>" class=""><i class="pdc-check-box"></i> <?php echo $this->__('Save Sample Design');?></button>
                 <?php endif; ?>
