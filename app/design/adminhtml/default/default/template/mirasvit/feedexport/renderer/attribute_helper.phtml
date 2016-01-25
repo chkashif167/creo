@@ -1,0 +1,11 @@
+<script>
+document.observe('dom:loaded', function() {
+	FeedExportAttributeHelper.init();
+});
+</script>
+
+<div class="fieldset" id="attribute_helper">
+    <div id="attr_helper_line"></div>
+    <?php echo Mage::helper('feedexport/html')->getAttributeSelectHtml('attr_helper_attribute', null, 'width:250px;') ?>
+    <textarea rows="10" style="width:100%;" id="attr_helper_formatters"></textarea>
+</div>

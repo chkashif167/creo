@@ -1,0 +1,117 @@
+<?php
+$_htmlHelper = Mage::helper('feedexport/html');
+$_attribute  = $this->getModel();
+$_conditions = $_attribute->getConditions();
+if (!is_array($_conditions)) {
+    $_conditions = array();
+}
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Attribute Conditions')?></h4>
+    </div>
+    <div id="filter_fieldset" class="fieldset ">
+        <div class="grid mfe-attribute-conditions">
+            <table id="data-table" cellspacing="0" cellpadding="0" class="data">
+                <thead>
+                    <tr class="headings">
+                        <th width="2%"></th>
+                        <th width="48%"><?php echo $this->__('Condition')?></th>
+                        <th width="5%"><?php echo $this->__('Output Type')?></th>
+                        <th width="35%"><?php echo $this->__('Output Value')?></th>
+                        <th width="10%"><?php echo $this->__('Action')?></th>
+                    </tr>
+                </thead>
+                <tbody id="conditions-table">
+                    <?php foreach ($_conditions as $indx => $_condition): ?>
+                    <?php if ($indx == 'default') continue; ?>
+                    <?php $key = $indx ?>
+                    <tr data-key="<?php echo $key ?>" class="row">
+                        <td width="2%">
+                            <button onclick="FeedExportMapping.rowUp(this, 'DynamicAttribute'); return false;" class="button"><span><span><?php echo $this->__('↑')?></span></span></button>
+                            <button onclick="FeedExportMapping.rowDown(this, 'DynamicAttribute'); return false;" class="button"><span><span><?php echo $this->__('↓')?></span></span></button>
+                        </td>
+                        <td width="48%">
+                            <table class="subcondition-table">
+                                <?php if (isset($_condition['attribute'])): ?>
+                                    <?php foreach ($_condition['attribute'] as $_indx => $_attribute): ?>
+                                    <tr>
+                                        <td><?php echo $_htmlHelper->getAttributeSelectHtml('condition['.$key.'][attribute][]', $_attribute, 'width: 160px;', 'onchange="FeedExportDynamicAttribute.changeAttribute(this);"') ?></td>
+                                        <td><?php echo $_htmlHelper->getConditionSelectHtml('condition['.$key.'][condition][]', @$_condition['condition'][$_indx], $_attribute) ?></td>
+                                        <td><?php echo $_htmlHelper->getAttributeValueHtml('condition['.$key.'][value][]', @$_condition['value'][$_indx], $_attribute) ?></td>
+                                        <td><button onclick="FeedExportDynamicAttribute.removeSubConditionRow(this); return false;" class="delete button"><span></span></button></td>
+                                    </tr>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            </table>
+                            <button onclick="FeedExportDynamicAttribute.addSubConditionRow(this); return false;" class="button"><span><span><?php echo $this->__('Add Sub Condition')?></span></span></button>
+                        </td>
+                        <td width="5%">
+                             <?php echo $_htmlHelper->getOutputTypeHtml('condition['.$key.'][output_type]', @$_condition['output_type'], array('onchange' => 'FeedExportDynamicAttribute.changeConditionOutputType(this);')) ?>
+                        </td>
+                        <td width="35%" class="values">
+                            <input type="text" class="input-text" value="<?php echo $_condition['value_pattern'] ?>" name="condition[<?php echo $key ?>][value_pattern]" style="width: 98%;<?php echo (@$_condition['output_type'] == 'pattern') ? '' : 'display:none' ?>" />
+                            <?php echo $_htmlHelper->getAttributeSelectHtml('condition['.$key.'][value_attribute]', $_condition['value_attribute'], (@$_condition['output_type'] == 'pattern') ? 'display:none;width: 306px;' : 'width: 306px;') ?>
+                        </td>
+                        <td width="10%">
+                            <button onclick="FeedExportDynamicAttribute.removeConditionRow(this); return false;" class="button delete"><span><?php echo $this->__('Remove')?></span></button>
+                        </td>
+                    </tr>
+                    <?php endforeach ?>
+                    <tr id="row-template" style="display:none" class="row">
+                        <td width="2%">
+                            <button onclick="FeedExportMapping.rowUp(this, 'DynamicAttribute'); return false;" class="button"><span><span><?php echo $this->__('↑')?></span></span></button>
+                            <button onclick="FeedExportMapping.rowDown(this, 'DynamicAttribute'); return false;" class="button"><span><span><?php echo $this->__('↓')?></span></span></button>
+                        </td>
+                        <td width="48%">
+                            <table class="subcondition-table">
+                                <tr>
+                                    <td><?php echo $_htmlHelper->getAttributeSelectHtml('condition[CID][attribute][]', null, 'width: 160px;', 'onchange="FeedExportDynamicAttribute.changeAttribute(this);"') ?></td>
+                                    <td><?php echo $_htmlHelper->getConditionSelectHtml('condition[CID][condition][]', null) ?></td>
+                                    <td><?php echo $_htmlHelper->getAttributeValueHtml('condition[CID][value][]', null) ?></td>
+                                    <td><button onclick="FeedExportDynamicAttribute.removeSubConditionRow(this); return false;" class="delete button"><span></span></button></td>
+                                </tr>
+                            </table>
+                            <button onclick="FeedExportDynamicAttribute.addSubConditionRow(this); return false;" class="button"><span><span><?php echo $this->__('Add Sub Condition')?></span></span></button>
+                        </td>
+                        <td width="5%">
+                            <?php echo $_htmlHelper->getOutputTypeHtml('condition[CID][output_type]', null, array('onchange' => 'FeedExportDynamicAttribute.changeConditionOutputType(this);')) ?>
+                        </td>
+                        <td width="35%" class="values">
+                            <input type="text" class="input-text" name="condition[CID][value_pattern]"  style="width: 98%;" />
+                            <?php echo $_htmlHelper->getAttributeSelectHtml('condition[CID][value_attribute]', null, 'display:none;width: 306px;') ?>
+                        </td>
+                        <td width="10%">
+                            <button onclick="FeedExportDynamicAttribute.removeConditionRow(this); return false;" class="button delete"><span><?php echo $this->__('Remove')?></span></button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="headings"><th colspan="4"><?php echo $this->__('Default Value')?></th></tr>
+                    <tr class="row">
+                        <td width="2%"></td>
+                        <td width="48%"></td>
+                        <td width="5%">
+                            <?php echo $_htmlHelper->getOutputTypeHtml('condition[default][output_type]', @$_condition['output_type'], array('onchange' => 'FeedExportDynamicAttribute.changeConditionOutputType(this);')) ?>
+                        </td>
+                        <td width="35%" class="values">
+                            <input type="text" class="input-text" value="<?php echo @$_conditions['default']['value_pattern'] ?>" name="condition[default][value_pattern]"  style="width: 98%;<?php echo (@$_conditions['default']['output_type'] == 'pattern' || (!@$_conditions['default'])) ? '' : 'display:none' ?>" />
+                            <?php echo $_htmlHelper->getAttributeSelectHtml('condition[default][value_attribute]', @$_conditions['default']['value_attribute'], (@$_conditions['default']['output_type'] == 'pattern' || (!@$_conditions['default'])) ? 'display:none;width: 306px;' : 'width: 306px;') ?>
+                        </td>
+                        <td width="10%"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+            <div class="button-set">
+                <p>
+                    <button onclick="FeedExportDynamicAttribute.addConditionRow(); return false;" class="button"><span><span><?php echo $this->__('Add New Value')?></span></span></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+FeedExportDynamicAttribute.init();
+FeedExportDynamicAttribute.changeAttributeUrl = '<?php echo $this->getUrl('*/*/getattributevalue');?>';
+</script>

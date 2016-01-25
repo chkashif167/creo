@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    var added = false;
+    function addRule(closeAfter) {
+        if(window.opener != null && !added) {
+            window.opener.addRuleRow(<?php echo $this->getRuleBlockJson() ?>);
+            added = true;
+        }
+
+        if(closeAfter)
+        {
+            closeWindow();
+        }
+    }
+
+    function closeWindow()
+    {
+        if (window.opener) {
+            window.opener.focus();
+        }
+        window.close();
+    }
+
+    addRule(true);
+</script>
+<div class="a-center">
+    <?php echo $this->getCloseButtonHtml() ?>
+</div>

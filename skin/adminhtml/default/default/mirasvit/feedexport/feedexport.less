@@ -1,0 +1,189 @@
+.mfe-attribute-conditions {
+    select {
+        height: 21px;
+    }
+
+    .subcondition-table {
+        border: none;
+        width: 300px;
+        padding: 0px;
+        margin: 0px;
+
+        td {
+            border: none;
+            padding: 0px 5px 5px 0px;
+            margin: 0px;
+        }
+    }
+
+    tr.row {
+        >td {
+            padding: 10px 5px;
+        }
+    }
+}
+
+#attribute_helper {
+    margin-top: -20px;
+
+    #attr_helper_line {
+        font-family: monospace;
+        display: block;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    select {
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        font-family: monospace;
+    }
+}
+
+#feed_tab_rule_performance {
+    .note {
+        width: 400px;
+    }
+}
+
+.category-mapping {
+    .mapping {
+        padding: 1px 10px;
+        margin: 2px;
+        background: #F3F3F3;
+        border: 1px solid #ddd;
+
+        @margin: 25px;
+        &.level-1 { margin-left: @margin * 1;}
+        &.level-2 { margin-left: @margin * 2;}
+        &.level-3 { margin-left: @margin * 3;}
+        &.level-4 { margin-left: @margin * 4;}
+        &.level-5 { margin-left: @margin * 5;}
+        &.level-6 { margin-left: @margin * 6;}
+        &.level-7 { margin-left: @margin * 7;}
+        &.level-8 { margin-left: @margin * 8;}
+
+        .name {
+            float: left;
+            width: 200px;
+            overflow: hidden;
+            line-height: 20px;
+            white-space: nowrap;
+        }
+
+        .toggle {
+            float: left;
+            height: 18px;
+            margin-left: -9px;
+            margin-right: 7px;
+            width: 16px;
+
+            &.open {
+                background: url('../../images/mirasvit/feedexport/elbow-plus.gif');
+                cursor: pointer;
+            }
+            &.close {
+                background: url('../../images/mirasvit/feedexport/elbow-minus.gif');
+                cursor: pointer;
+            }
+            &.empty {
+                cursor: default;
+                background: url('../../images/mirasvit/feedexport/spacer.gif');
+            }
+        }
+
+        .map {
+            margin-left: 50px;
+            float: left;
+            input {
+                width: 350px;
+                border: 1px solid #DDD;
+                background: #F3F3F3;
+                padding: 1px 3px 1px 3px;
+                color: #2f2f2f;
+                font-size: 12px;
+
+                &:hover, &:focus {
+                    background: #fff;
+                    border-color: #aaa #c8c8c8 #c8c8c8 #aaa;
+                }
+            }
+        }
+    }
+}
+
+.feedexport {
+    &.feed-generator-loader {
+        background: #fff4e9;
+        border: 2px solid #f1af73;
+        color: #d85909;
+        font-weight: bold;
+        left: 50%;
+        margin-left: -125px;
+        padding: 15px 30px;
+        position: fixed;
+        text-align: center;
+        top: 45%;
+        width: 250px;
+        z-index: 1000;
+        font-size: 13px;
+
+        .controls {
+            margin-top: 10px;
+            button {
+                margin: 1px;
+            }
+        }
+
+        span.status {
+            padding: 1px;
+            display: block;
+
+            &.finish {
+                color: #26A000;
+            }
+
+            &.ready {
+                color: #999;
+            }
+        }
+
+        span.eta {
+            font-weight: normal;
+        }
+    }
+}
+
+/** feed grid */
+.feedexport-adminhtml-feed-index  {
+    .state-message {
+        background: #fff4e9;
+        border: 2px solid #f1af73;
+        color: #d85909;
+        font-weight: bold;
+        text-align: center;
+        margin: 5px;
+
+        span.status {
+            padding: 1px;
+            display: block;
+
+            &.finish {
+                color: #26A000;
+            }
+
+            &.ready {
+                color: #999;
+            }
+        }
+
+        span.eta {
+            font-weight: normal;
+        }
+    }
+}
