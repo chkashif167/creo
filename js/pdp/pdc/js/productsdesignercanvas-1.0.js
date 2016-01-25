@@ -120,7 +120,7 @@
 				success: function(response) {
 					callback(response);
                     //Should hide in callback function
-					//$('.pdploading').hide();
+					$('.pdploading').hide();
 				}
 			});
 		},
@@ -156,8 +156,8 @@
             self.saveJsonFile(function(response) {
                 var responseJson = JSON.parse(response);
                 //If skip save design step
-                //if($("#is_skip_design_step").length && $("#is_skip_design_step").val() === "1") {
-				if(true) {
+                if($("#is_skip_design_step").length && $("#is_skip_design_step").val() === "1") {
+				//if(true) {
                     self.showLog("Skip save design step", "info");
                     $("#customer_design_json").val(responseJson.filename);
                     self.newestJsonFilename = responseJson.filename;
@@ -213,7 +213,7 @@
 					success: function(response) {
 						callback(response);
 						//Should hide in callback function
-						//$('.pdploading').hide();
+						$('.pdploading').hide();
 					}
 				});
             }
