@@ -53,6 +53,10 @@ $_helper = $this->helper('catalog/output');
                             continue;
                         }
                     }
+
+                    
+
+                    
                 ?>
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
                         <div class="list_product_img">
@@ -124,6 +128,24 @@ $_helper = $this->helper('catalog/output');
             foreach ($_productCollection as $_product): ?>
                 <?php if ($i++ % $_columnCount == 0): ?>
                 
+                <?php
+                    // get simple produts' ids
+$childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
+
+// get simple products
+$childProducts = Mage::getModel('catalog/product_type_configurable')
+                        ->getUsedProducts(null,$_product);
+
+// get configurable options
+$productAttributeOptions = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
+$attributeOptions = array();
+foreach ($productAttributeOptions as $productAttribute) {
+    foreach ($productAttribute['values'] as $attribute) {
+        echo $attributeOptions[$productAttribute['label']][$attribute['value_index']] = $attribute['store_label']."<br>";
+    }
+}
+exit;
+                ?>
                     <ul class="products-grid">
                     <?php endif ?>
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
