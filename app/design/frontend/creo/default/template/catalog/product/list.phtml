@@ -54,13 +54,7 @@ $_helper = $this->helper('catalog/output');
                         }
                     }
 
-                    $ids=Mage::getResourceSingleton('catalog/product_type_configurable')
-            ->getChildrenIds($_product->getId());
-
-      $_subproducts = Mage::getModel('catalog/product')->getCollection()
-    ->addIdFilter ($ids)
-    ->addAttributeToSelect('styles')-> groupByAttribute('styles');
-echo "<pre>";print_r($_subproducts);echo "</pre>";
+                    
 
                     
                 ?>
@@ -134,6 +128,15 @@ echo "<pre>";print_r($_subproducts);echo "</pre>";
             foreach ($_productCollection as $_product): ?>
                 <?php if ($i++ % $_columnCount == 0): ?>
                 
+                <?php
+                    $ids=Mage::getResourceSingleton('catalog/product_type_configurable')
+            ->getChildrenIds($_product->getId());
+
+      $_subproducts = Mage::getModel('catalog/product')->getCollection()
+    ->addIdFilter ($ids)
+    ->addAttributeToSelect('styles')-> groupByAttribute('styles');
+echo "<pre>";print_r($_subproducts);echo "</pre>";
+                ?>
                     <ul class="products-grid">
                     <?php endif ?>
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
