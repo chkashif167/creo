@@ -1083,9 +1083,9 @@ Removed Additional Search by design labels
 .checkout-cart-index #shopping-cart-table .text-area a.edititem:before { content: '\e807'; font-size: 12px; margin: 0 5px; font-family:fontello;}
 .checkout-cart-configure .add-to-cart-buttons .btn-cart {background:#000 none repeat scroll 0 0;border: medium none;color: #fff;
 padding: 10px 0;text-transform: uppercase;width: 100%;}
-.pdploading { background: none !important;}
-.pdploading span { background: none !important; }
-.pdploading span::after { background: none !important; }
+.pdploading{background:none !important;background-color:#d8d8d8;}
+.pdploading span{background: url(images/FME/ajax-loader.gif) no-repeat !important;}
+/*.pdploading span::after { background: none !important; }*/
 .customer-account-edit .scaffold-form .fieldset1 em {  color: red;  margin: 0 6px 0 0; }
 .customer-account-edit .scaffold-form label[for=email] em {  color: red;  margin: 0 6px 0 0; }
 .customer-address-form form select#country { bottom: 0; font-size: 14px; padding: 4px 0; margin: 0 0 6px 0;}
