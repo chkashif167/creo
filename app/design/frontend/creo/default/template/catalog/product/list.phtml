@@ -131,20 +131,10 @@ $_helper = $this->helper('catalog/output');
                 <?php
                     // get simple produts' ids
 $childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
-
-// get simple products
-$childProducts = $_product->getTypeInstance(true)->getUsedProducts(null, $_product);
 foreach($childProducts as $child){
 
-    $attrs  = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($child);
-foreach($attrs as $attr) {
-    if(0 == strcmp("size", $attr['attribute_code'])) {
-        $options    = $attr['values'];
-        foreach($options as $option) {
-            print $child.":{$option['store_label']}<br />";
-        }
-    }
-}
+    $_childproduct = Mage::getModel('catalog/product')->load($child);
+    echo $_childproduct->getSku()."<br>";
 }
 
 exit;
