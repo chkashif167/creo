@@ -1,0 +1,36 @@
+<?php
+$_mapping = $this->getMapping();
+?>
+<div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo __('Category Mapping') ?></h4>
+    <div class="form-buttons"></div>
+</div>
+<div class="fieldset category-mapping" id="content">
+    <div class="grid">
+        <?php foreach ($_mapping as $_item): ?>
+            <div class="mapping level-<?php echo $_item['level'] ?>" data-level="<?php echo $_item['level'] ?>" <?php if ($_item['level'] > 1): ?>style="display:none"<?php endif ?>>
+                <?php if ($_item['has_childs']): ?>
+                <div class="toggle open"></div>
+                <?php else: ?>
+                <div class="toggle empty"></div>
+                <?php endif ?>
+                <div class="name"><?php echo $_item['name'] ?> (ID: <?php echo $_item['category_id'] ?>)</div>
+                <div class="map">
+                    <input
+                        class="mapping-input"
+                        type="text"
+                        name="mapping[<?php echo $_item['category_id'] ?>]"
+                        value="<?php echo $_item['map'] ?>"
+                        data-id="<?php echo $_item['category_id'] ?>"
+                        data-parent="<?php echo $_item['parent_id'] ?>">
+                </div>
+                <div class="clear"></div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>
+<script>
+document.observe('dom:loaded', function() {
+    FeedExportDynamicCategory.init();
+});
+</script>

@@ -1,0 +1,10 @@
+tables:
+  feedexport/feed:
+    -
+      feed_id: 1
+      name: Test feed
+      store_id: 1
+      filename: test.xml
+      type: xml
+      format: 
+      is_active: 1
