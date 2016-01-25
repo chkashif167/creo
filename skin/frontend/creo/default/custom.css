@@ -1125,16 +1125,16 @@ background: #000;
 pointer-events: none;
 cursor: default;
 }
-#options-16-list {
+#options-17-list {
     display: inline-block;
     margin: 0;
     padding: 0;
 }
-#options-16-list li input {
+#options-17-list li input {
     display: none;
 }
-#options-16-list li span.label { margin:  0; padding:  0 40px 0 0;}
-#options-16-list li label[for="options_16_2"] {
+#options-17-list li span.label { margin:  0; padding:  0 40px 0 0;}
+#options-17-list li label[for="options_17_2"] {
     height: 38px;
     width: 74px;
     background: url(images/font1.jpg)no-repeat;
@@ -1143,7 +1143,7 @@ cursor: default;
      font-size:  0px;
 }
 
-#options-16-list li label[for="options_16_3"] {
+#options-17-list li label[for="options_17_3"] {
     height: 38px;
     width: 74px;
     background: url(images/font2.jpg)no-repeat;
@@ -1151,7 +1151,7 @@ cursor: default;
      background-size:  100%;
      font-size:  0px;
 }
-#options-16-list li label[for="options_16_4"] {
+#options-17-list li label[for="options_17_4"] {
     height: 38px;
     width: 74px;
     background: url(images/font3.jpg)no-repeat;
@@ -1159,7 +1159,7 @@ cursor: default;
      background-size:  100%;
      font-size:  0px;
 }
-#options-16-list li label[for="options_16_5"] {
+#options-17-list li label[for="options_17_5"] {
        height: 38px;
     width: 74px;
     background: url(images/font4.jpg)no-repeat;
