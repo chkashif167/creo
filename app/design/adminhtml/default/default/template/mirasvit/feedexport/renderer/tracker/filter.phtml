@@ -1,0 +1,45 @@
+<?php
+$_trackerFilter = $this->getTrackerFilter();
+$_cnt = count($_trackerFilter['header']);
+if ($_cnt == 0) {
+    $_cnt = 1;
+}
+?>
+<div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('feedexport')->__('Filter') ?></h4>
+    <div class="form-buttons"></div>
+</div>
+<div class="fieldset mfe-trackerfilter" id="content">
+    Find products that match all of these criteria.
+    <div class="grid">                      
+        <table id="trackerfilter-table" cellspacing="0" cellpadding="0" class="data" style="width:100%;">
+            <thead>
+                <tr class="headings">
+                    <th width="180"><?php echo $this->__('Criteria')?></th>
+                    <th width="80"><?php echo $this->__('Expression')?></th>
+                    <th><?php echo $this->__('Value')?></th>
+                    <th width="50"></th>
+                </tr>
+            </thead>
+        <?php for($i = 0; $i < $_cnt; $i++): ?>
+            <tr>
+                <td>
+                    <?php echo Mage::helper('feedexport/html')->getTrackerAttributeSelect('tracker_rule[filter][attribute][]', $_trackerFilter['attribute'][$i], 'width:250px;') ?>
+                </td>
+                <td>
+                    <?php echo Mage::helper('feedexport/html')->getConditionSelect('tracker_rule[filter][expression][]', $_trackerFilter['expression'][$i], 'tracker') ?>
+                </td>
+                <td>
+                    <input type="text" class="input-text" name="tracker_rule[filter][value][]" value="<?php echo $_trackerFilter['value'][$i] ?>" />
+                </td>
+                <td>
+                    <button onclick="FeedExportTrackerFilter.rowRemove(this); return false;" class="button"><span><span><?php echo $this->__('✖') ?></span></span></button>
+                </td>
+            </tr>
+        <?php endfor ?>
+        </table>
+        <p style="margin-top:10px;">
+            <button onclick="FeedExportTrackerFilter.rowAdd(); return false;" class="button"><span><span><?php echo $this->__('Add Criteria') ?></span></span></button>
+        </p>
+    </div>
+</div>

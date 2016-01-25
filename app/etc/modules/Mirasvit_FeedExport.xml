@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Mirasvit_FeedExport>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Catalog/>
+            </depends>
+        </Mirasvit_FeedExport>
+    </modules>
+</config>
