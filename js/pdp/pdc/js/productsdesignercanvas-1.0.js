@@ -748,7 +748,6 @@
 		//Reset design action
         $('[pdc-action="reset_design"]').click(function() {
             var resetDesignMessage = "Are you sure? Your current design will be discarded!";
-			
 			jQuery.confirm({
 			title: 'Confirm',
 			confirmButtonClass: 'btn-info',
