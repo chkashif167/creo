@@ -131,20 +131,13 @@ $_helper = $this->helper('catalog/output');
                 <?php
                     // get simple produts' ids
 $childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
+foreach($childProducts as $child){
 
-// get simple products
-$childProducts = Mage::getModel('catalog/product_type_configurable')
-                        ->getUsedProducts(null,$_product);
-
-// get configurable options
-$productAttributeOptions = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
-$attributeOptions = array();
-foreach ($productAttributeOptions as $productAttribute) {
-    foreach ($productAttribute['values'] as $attribute) {
-        echo $attributeOptions[$productAttribute['label']][$attribute['value_index']] = $attribute['store_label']."<br>";
-    }
+    $_childproduct = Mage::getModel('catalog/product')->load($child);
+    echo $_childproduct->getSku()."<br>";
 }
-exit;
+
+
                 ?>
                     <ul class="products-grid">
                     <?php endif ?>
