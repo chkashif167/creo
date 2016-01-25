@@ -119,7 +119,7 @@ $_helper = $this->helper('catalog/output');
                 <?php if ($i++ % $_columnCount == 0): ?>
                 
                 <?php 
-                    if(($_product->getTypeId() == "simple") && ($_GET['styles']!=22){
+                    if(($_product->getTypeId() == "simple") && ($_GET['styles']!=22)){
                         $parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_product->getId());
                         if($parentIds){
                             continue;
