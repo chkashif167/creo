@@ -47,7 +47,7 @@ $_helper = $this->helper('catalog/output');
             <ol class="products-list products-grid" id="products-list">
             <?php foreach ($_productCollection as $_product): ?>
                 <?php 
-                    if($_product->getTypeId() == "simple"){
+                    if($_product->getTypeId() == "simple" && $_GET['styles']!=22){
                         $parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_product->getId());
                         if($parentIds){
                             continue;
@@ -128,17 +128,7 @@ $_helper = $this->helper('catalog/output');
             foreach ($_productCollection as $_product): ?>
                 <?php if ($i++ % $_columnCount == 0): ?>
                 
-                <?php
-                    // get simple produts' ids
-$childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
-foreach($childProducts as $child){
-
-    $_childproduct = Mage::getModel('catalog/product')->load($child);
-    echo $_childproduct->getSku()."<br>";
-}
-
-
-                ?>
+               
                     <ul class="products-grid">
                     <?php endif ?>
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
