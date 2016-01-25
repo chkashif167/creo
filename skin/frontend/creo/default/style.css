@@ -5571,7 +5571,7 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 .text-left{text-align:left;}
 #pdc_design_list{width:100%;}
 #pdc_design_list thead th{text-align: left;padding:10px;background-color:#000;color:#fff;}
-#pdc_design_list tbody td{border-bottom:1px solid #000;}
+#pdc_design_list tbody td{border-bottom:1px solid rgba(0,0,0,0.05);}
 #pdc_design_list tbody td{padding:10px;text-align:left;}
 #pdc_design_list tbody td .design-title{padding:5px;}
 #pdc_design_list tbody td .design-preview{padding:5px;}
