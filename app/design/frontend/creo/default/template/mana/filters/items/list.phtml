@@ -54,6 +54,7 @@ if($labels == 'design_category'){$catName = 'View All';}
 	<?php
 	}
 	?>
+
 	<?php foreach ($this->getItems() as $_item): ?>
 		<li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
 			<?php // MANA BEGIN ?>
@@ -72,6 +73,7 @@ if($labels == 'design_category'){$catName = 'View All';}
 		</li>
 	<?php endforeach ?>
 	</ul>
+
 	<?php
 	}
 }elseif($labels == 'gender'){
@@ -175,4 +177,5 @@ if($labels == 'design_category'){
 }
 ?>
 </div>
+
 <?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'after_items', array('block' => $this)) ?>
