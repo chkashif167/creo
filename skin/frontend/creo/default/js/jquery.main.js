@@ -2782,7 +2782,11 @@ jQuery("#label_notebook_material").css('margin-left', '110px');
 });
 
 jQuery(document).ready(function($) {
-       jQuery( "#options-17-list label").each(function(index) {
+	
+		jQuery("#options_16_text").attr("maxlength","1");
+		jQuery("#options_15_text").attr("maxlength","1");
+	
+       jQuery( "#options-16-list label").each(function(index) {
        jQuery(this).on("click", function(){
          jQuery( "#options-17-list label").css({"box-shadow":"3px 3px 5px rgba(170, 170, 170, 0.58)"});
          jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
