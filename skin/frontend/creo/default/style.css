@@ -5570,6 +5570,13 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 .cate-open-close.label_gender{position: absolute;right:20%;top:0;}
 .text-left{text-align:left;}
 #pdc_design_list{width:100%;}
+#pdc_design_list thead th{text-align: left;padding:10px;background-color:#000;color:#fff;}
+#pdc_design_list tbody td{border-bottom:1px solid #000;}
+#pdc_design_list tbody td{padding:10px;text-align:left;}
+#pdc_design_list tbody td .design-title{padding:5px;}
+#pdc_design_list tbody td .design-preview{padding:5px;}
+#pdc_design_list tbody td .design-preview ul{margin:0;padding:0;}
+
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}
