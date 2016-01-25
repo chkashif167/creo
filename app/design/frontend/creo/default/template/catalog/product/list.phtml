@@ -136,14 +136,19 @@ $childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds(
 $childProducts = Mage::getModel('catalog/product_type_configurable')
                         ->getUsedProducts(null,$_product);
 
-// get configurable options
-$productAttributeOptions = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
-$attributeOptions = array();
-foreach ($productAttributeOptions as $productAttribute) {
-    foreach ($productAttribute['values'] as $attribute) {
-        echo $attributeOptions[$productAttribute['label']][$attribute['value_index']] = $attribute['store_label']."<br>";
+foreach($childProducts as $child){
+
+    $attrs  = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($child);
+foreach($attrs as $attr) {
+    if(0 == strcmp("size", $attr['attribute_code'])) {
+        $options    = $attr['values'];
+        foreach($options as $option) {
+            print $child.":{$option['store_label']}<br />";
+        }
     }
 }
+}
+
 exit;
                 ?>
                     <ul class="products-grid">
