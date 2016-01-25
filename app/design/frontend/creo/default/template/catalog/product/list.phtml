@@ -121,8 +121,11 @@ $_helper = $this->helper('catalog/output');
                 
                 <?php 
 
-                    if(($_product->getTypeId() == "simple") && (!isset($_GET['styles']))){
+                    if($_product->getTypeId() == "simple"){
                         echo "I am here";
+                        echo "<pre>";
+                        print_r($_GET);
+                        echo "</pre>";
                         $parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_product->getId());
                         if($parentIds){
                             continue;
