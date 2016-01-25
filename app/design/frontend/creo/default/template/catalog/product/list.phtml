@@ -133,9 +133,7 @@ $_helper = $this->helper('catalog/output');
 $childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
 
 // get simple products
-$childProducts = Mage::getModel('catalog/product_type_configurable')
-                        ->getUsedProducts(null,$_product);
-
+$childProducts = $_product->getTypeInstance(true)->getUsedProducts(null, $_product);
 foreach($childProducts as $child){
 
     $attrs  = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($child);
