@@ -57,7 +57,6 @@ $_helper = $this->helper('catalog/output');
                     $ids=Mage::getResourceSingleton('catalog/product_type_configurable')
             ->getChildrenIds($_product->getId());
 
-
       $_subproducts = Mage::getModel('catalog/product')->getCollection()
     ->addIdFilter ($ids)
     ->addAttributeToSelect('styles')-> groupByAttribute('styles');
