@@ -5573,6 +5573,49 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 #pdc_design_list tbody td .design-preview ul{margin:0;padding:0;}
 .previous_jump .icon-angle-left::before {content: "...";font-size:12px;}
 #product-options-wrapper dd{margin-bottom:20px;}
+.std > p {
+	margin:0;
+	padding:0;
+	line-height:0;
+}
+
+.cms-page-view .std > p {
+	line-height:inherit;
+	letter-spacing:1px;
+	margin:0 0 1.2em;
+}
+
+.main-container.col3-layout .products-grid .quick-view {
+	top:90%;
+}
+
+.pdp-main-des h5.title {
+	background:none !important;
+	border-bottom:1px solid;
+}
+
+.view-mode {
+	display:none;
+}
+
+.pdc_text_list {
+	max-height:900px !important;
+}
+
+.input-text.required-entry.validate-email.email {
+	box-shadow:none;
+}
+/*#fme_layered_universal_categories a[class*="_selected_"] {background: black !important; color: #fff !important;}*/
+
+.loader-price{
+	height:48px;
+	width:48px;
+	background-image:url('images/opc-ajax-loader.gif'); background-repeat:no-repeat;
+}
+
+/*#pdc_design_list tr td.last a:nth-child(1) {
+    display: none;
+}*/
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
@@ -5733,48 +5776,4 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 		margin-top: 0;
 	}
 	.products-grid .mp_quickview_icon {top: 205px !important;}
-}
-
-.std > p {
-	margin:0;
-	padding:0;
-	line-height:0;
-}
-
-.cms-page-view .std > p {
-	line-height:inherit;
-	letter-spacing:1px;
-	margin:0 0 1.2em;
-}
-
-.main-container.col3-layout .products-grid .quick-view {
-	top:90%;
-}
-
-.pdp-main-des h5.title {
-	background:none !important;
-	border-bottom:1px solid;
-}
-
-.view-mode {
-	display:none;
-}
-
-.pdc_text_list {
-	max-height:900px !important;
-}
-
-.input-text.required-entry.validate-email.email {
-	box-shadow:none;
-}
-/*#fme_layered_universal_categories a[class*="_selected_"] {background: black !important; color: #fff !important;}*/
-
-.loader-price{
-	height:48px;
-	width:48px;
-	background-image:url('images/opc-ajax-loader.gif'); background-repeat:no-repeat;
-}
-
-#pdc_design_list tr td.last a:nth-child(1) {
-    display: none;
 }
