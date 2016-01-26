@@ -5774,3 +5774,7 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 	width:48px;
 	background-image:url('images/opc-ajax-loader.gif'); background-repeat:no-repeat;
 }
+
+#pdc_design_list tr td.last a:nth-child(1) {
+    display: none;
+}
