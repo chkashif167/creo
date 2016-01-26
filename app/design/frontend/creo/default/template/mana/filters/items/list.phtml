@@ -81,6 +81,8 @@ if($labels == 'design_category'){$catName = 'View All';}
 	?>
 	    <a id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="opener attribure_labels" data-id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
 <?php $catName= $this->getFilterOptions()->name; ?>
+<?php 	if(strpos($currentUrl,'custom') !== false){?>
+<div id="onlycrazyones">
 <?php foreach ($this->getItems() as $_item): ?>
         <?php // MANA BEGIN ?>
         <?php if ($_item->getMSelected()): ?>
@@ -88,6 +90,19 @@ if($labels == 'design_category'){$catName = 'View All';}
         <?php // MANA END ?>
         <?php endif; ?>
 <?php endforeach ?>
+</div>
+<?php
+	}else{	
+?>
+<?php foreach ($this->getItems() as $_item): ?>
+        <?php // MANA BEGIN ?>
+        <?php if ($_item->getMSelected()): ?>
+            <?php $selectedItem = $this->escapeHtml($_item->getLabel()) ?>
+        <?php // MANA END ?>
+        <?php endif; ?>
+<?php endforeach ?>
+<?php    
+	}?>
 <?php
 if($labels == 'design_category'){$catName = 'View All';}
 ?>
