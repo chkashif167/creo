@@ -22,7 +22,7 @@ $isAdminUser = $this->isAdminUser();
                     <?php echo $this->__('Remove Sample Design');?></button>
                 <?php endif; ?>
             </li>
-	<li data-toggle="modal" data-target="#downloadPopup"><button pdc-data="pdc-btn" pdc-action="DOWNLOAD" type="button" title="<?php echo $this->__('Download Your Design'); ?>" ><i class="pdc-file-download"></i> <?php echo $this->__('Download');?></button></li>
+	<li><button data-toggle="modal" data-target="#downloadPopup" title="<?php echo $this->__('Download Your Design'); ?>" class=""><i class="pdc-file-download"></i> <?php echo $this->__('Download');?></button></li>
 	<?php if(Mage::getStoreConfig('pdp/customer_action/sharing')){ ?>
 	<li><button data-toggle="modal" data-target="#sharingPopup" pdc-data="pdc-btn" pdc-action="SHARE" type="button" data-placement="top" title="<?php echo $this->__('Share Your Design To Social networks'); ?>" class=""><i class="pdc-share"></i> <?php echo $this->__('Share');?></button></li>
 	<?php } ?>
