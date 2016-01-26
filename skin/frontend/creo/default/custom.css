@@ -357,7 +357,7 @@ font-family: fontello;
 .options-area label {
 color: #222;
 font: 14px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;
-margin: 0 0 6px;
+margin:5px 0 6px;
 text-transform: uppercase;
 }
 .options-area label em {
@@ -1053,8 +1053,10 @@ width: 100%;
 border: 0px solid #fff !important;
 box-shadow: 0 0 0px #ccc !important;}
 .catalog-product-view li.product-image-thumbs { margin-right: 1px !important;}
+/*
+Removed Additional Search by design labels
 .categorypath-clothing-women-tshirt-html #fme_filters_list #styles_label { display:inline-block !important;}
-.categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}
+.categorypath-clothing-women-tshirt-html #fme_filters_list #fme_layered_styles { display:inline-block !important;}*/
 .previousnext { display: none;}
 #creditcardnumbercn { width: 58%; float: left;}
 #creditcardpci_cc_type_cvv_div { width: 40%; float: right;}
@@ -1081,9 +1083,9 @@ box-shadow: 0 0 0px #ccc !important;}
 .checkout-cart-index #shopping-cart-table .text-area a.edititem:before { content: '\e807'; font-size: 12px; margin: 0 5px; font-family:fontello;}
 .checkout-cart-configure .add-to-cart-buttons .btn-cart {background:#000 none repeat scroll 0 0;border: medium none;color: #fff;
 padding: 10px 0;text-transform: uppercase;width: 100%;}
-.pdploading { background: none !important;}
-.pdploading span { background: none !important; }
-.pdploading span::after { background: none !important; }
+.pdploading{background:none !important;background-color:#d8d8d8;}
+.pdploading span{background: url(images/FME/ajax-loader.gif) no-repeat !important;}
+/*.pdploading span::after { background: none !important; }*/
 .customer-account-edit .scaffold-form .fieldset1 em {  color: red;  margin: 0 6px 0 0; }
 .customer-account-edit .scaffold-form label[for=email] em {  color: red;  margin: 0 6px 0 0; }
 .customer-address-form form select#country { bottom: 0; font-size: 14px; padding: 4px 0; margin: 0 0 6px 0;}
@@ -1122,4 +1124,46 @@ background: #000;
 .dont_click_it {
 pointer-events: none;
 cursor: default;
+}
+#options-17-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+#options-17-list li input {
+    display: none;
+}
+#options-17-list li span.label { margin:  0; padding:  0 40px 0 0;}
+#options-17-list li label[for="options_17_2"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font1.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+
+#options-17-list li label[for="options_17_3"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font2.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-17-list li label[for="options_17_4"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font3.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-17-list li label[for="options_17_5"] {
+       height: 38px;
+    width: 74px;
+    background: url(images/font4.jpg)no-repeat;
+    cursor:pointer;
+    background-size:  100%;
+    font-size:  0px;
 }

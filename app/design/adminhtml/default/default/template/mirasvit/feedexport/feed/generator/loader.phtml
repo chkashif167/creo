@@ -1,0 +1,11 @@
+<?php
+$_msg = $this->getStateMessage();
+?>
+<div class="feedexport feed-generator-loader" id="feed_generator_loader" style="display:none;">
+    <img src="<?php echo $this->getSkinUrl('images/ajax-loader-tr.gif') ?>" alt="Loading..." width="31px" height="31px"/>
+    <br/>
+    <?php echo $_msg ?>
+    <div class="controls">
+        <button  type="button" class="scalable delete" onclick="FeedGenerator.abort();"><span><?php echo __('Abort') ?></span></button>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<?php
+/**
+ * @var $this Mirasvit_MstCore_Block_Adminhtml_Validator
+ */
+?>
+<?php
+$_results = $this->getResults();
+$_devResults = $this->getResults('dev');
+?>
+<div class="content-header">
+    <h3 >Validator</h3>
+    <p class="content-buttons form-buttons">
+        <button type="button" class="scalable back" onclick="setLocation('<?php echo $this->getBackUrl() ?>')"><span><span>Back</span></span></button>
+        <?php if ($this->isUsedExternalCache()): ?>
+            <button type="button" class="scalable delete" onclick="setLocation('<?php echo $this->getClearCacheUrl() ?>')"><span><span>Flush External Cache Storage</span></span></button>
+        <?php endif ?>
+    </p>
+</div>
+<div class="grid">
+    <h4 class="system-fieldset-sub-head">General information</h4>
+    <table class="data" cellspacing="0">
+        <thead>
+            <tr class="headings">
+                <th>Test</th>
+                <th>Status</th>
+                <th>How to fix</th>
+            </tr>
+        </thead>
+    <?php foreach ($_results as $_result): ?>
+        <tr>
+            <td width="30%"><?php echo $_result[1] ?></td>
+            <td width="100px">
+            <?php if ($_result[0] == Mirasvit_MstCore_Helper_Validator_Abstract::SUCCESS): ?>
+                <div class="grid-severity-notice"><span>Success</span></div>
+            <?php elseif ($_result[0] == Mirasvit_MstCore_Helper_Validator_Abstract::WARNING): ?>
+                <div class="grid-severity-major"><span>Warning</span></div>
+            <?php elseif ($_result[0] == Mirasvit_MstCore_Helper_Validator_Abstract::INFO): ?>
+                <div class="grid-severity-major"><span>Info</span></div>
+            <?php else: ?>
+                <div class="grid-severity-critical"><span>Failed</span></div>
+            <?php endif ?>
+            </td>
+            <td>
+            <?php if (is_array($_result[2])): ?>
+                <?php echo implode($_result[2], '<br>') ?>
+            <?php else: ?>
+                <?php echo $_result[2] ?>
+            <?php endif ?>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </table><br/>
+
+    <h4 class="system-fieldset-sub-head">For developers only</h4>
+    <table class="data" cellpadding="0">
+        <thead>
+            <tr class="headings">
+                <th>Test</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <?php foreach ($_devResults as $_result): ?>
+        <tr>
+            <td width="30%"><?php echo $_result[1] ?></td>
+            <td width="100px">
+                <?php if ($_result[0] == Mirasvit_MstCore_Helper_Validator_Abstract::SUCCESS): ?>
+                    <div class="grid-severity-notice"><span>Success</span></div>
+                <?php elseif ($_result[0] == Mirasvit_MstCore_Helper_Validator_Abstract::WARNING): ?>
+                    <div class="grid-severity-major"><span>Warning</span></div>
+                <?php elseif ($_result[0] == Mirasvit_MstCore_Helper_Validator_Abstract::INFO): ?>
+                    <div class="grid-severity-major"><span>Info</span></div>
+                <?php else: ?>
+                    <div class="grid-severity-critical"><span>Failed</span></div>
+                <?php endif ?>
+            </td>
+            <td>
+                <?php if (is_array($_result[2])): ?>
+                    <?php echo implode($_result[2], '<br>') ?>
+                <?php else: ?>
+                    <?php echo $_result[2] ?>
+                <?php endif ?>
+            </td>
+        </tr>
+        <?php endforeach ?>
+    </table>
+</div>

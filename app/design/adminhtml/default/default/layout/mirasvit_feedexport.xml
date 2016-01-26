@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+    <feedexport_adminhtml>
+        <reference name="head">
+            <action method="addCss"><script>mirasvit/feedexport/feedexport.css</script></action>
+
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/feedexport.js</script></action>
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/feed/generator.js</script></action>
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/feed/generator/loader.js</script></action>
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/dynamic/attribute.js</script></action>
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/dynamic/category.js</script></action>
+
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/template/content/xml.js</script></action>
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/template/content/csv.js</script></action>
+            <action method="addJs"><script>mirasvit/code/feedexport/adminhtml/template/content/renderer/attribute_helper.js</script></action>
+
+            <action method="addJs"><script>mirasvit/core/codemirror/codemirror.js</script></action>
+            <action method="addJs"><script>mirasvit/core/codemirror/xml.js</script></action>
+
+            <action method="addJs"><script>mirasvit/core/amcharts-3.4.5/amcharts.js</script></action>
+            <action method="addJs"><script>mirasvit/core/amcharts-3.4.5/serial.js</script></action>
+
+            <action method="addItem"><type>js_css</type><name>mirasvit/core/codemirror/codemirror.css</name><params/></action>
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="setCanLoadRulesJs"><flag>1</flag></action>
+        </reference>
+    </feedexport_adminhtml>
+
+    <feedexport_report_message>
+        <reference name="messages">
+            <action method="addNotice" translate="message">
+                <message>This report depends on timezone configuration. Once timezone is changed, the lifetime statistics need to be refreshed.</message>
+            </action>
+        </reference>
+    </feedexport_report_message>
+
+    <feedexport_adminhtml_feed_index>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_feed_index>
+
+    <feedexport_adminhtml_template_edit>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_template_edit>
+
+    <feedexport_adminhtml_template_new>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_template_new>
+
+    <feedexport_adminhtml_feed_new>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_feed_new>
+
+    <feedexport_adminhtml_feed_edit>
+        <update handle="feedexport_adminhtml" />
+        <reference name="content">
+            <block type="feedexport/adminhtml_feed_generator_loader" />
+        </reference>
+    </feedexport_adminhtml_feed_edit>
+
+    <feedexport_adminhtml_dynamic_attribute_new>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_dynamic_attribute_new>
+
+    <feedexport_adminhtml_dynamic_attribute_edit>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_dynamic_attribute_edit>
+
+    <feedexport_adminhtml_rule_edit>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_rule_edit>
+
+    <feedexport_adminhtml_report_feed_index>
+        <update handle="feedexport_adminhtml" />
+        <update handle="feedexport_report_message" />
+
+        <reference name="content">
+            <block type="feedexport/adminhtml_report_tracker" template="mirasvit/feedexport/report/grid/container.phtml" name="feedexport.report.grid.container">
+                <block type="feedexport/adminhtml_report_tracker_filter" name="grid.filter.form" />
+                <block type="feedexport/adminhtml_report_chart" name="report.chart" template="mirasvit/feedexport/report/chart.phtml"/>
+            </block>
+        </reference>
+    </feedexport_adminhtml_report_feed_index>
+
+    <feedexport_adminhtml_report_product_index>
+        <update handle="feedexport_adminhtml" />
+        <update handle="feedexport_report_message" />
+
+        <reference name="content">
+            <block type="feedexport/adminhtml_report_product" template="mirasvit/feedexport/report/grid/container.phtml" name="feedexport.report.grid.container">
+                <block type="feedexport/adminhtml_report_product_filter" name="grid.filter.form" />
+            </block>
+        </reference>
+    </feedexport_adminhtml_report_product_index>
+
+
+    <feedexport_adminhtml_dynamic_category_add>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_dynamic_category_add>
+
+    <feedexport_adminhtml_dynamic_category_edit>
+        <update handle="feedexport_adminhtml" />
+    </feedexport_adminhtml_dynamic_category_edit>
+
+</layout>

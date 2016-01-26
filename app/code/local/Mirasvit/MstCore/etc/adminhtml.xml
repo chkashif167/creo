@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <system>
+            <children>
+                <tools>
+                    <children>
+                        <mst_extensions translate="title">
+                            <title>Mirasvit Extensions Validator</title>
+                            <sort_order>1001</sort_order>
+                            <action>mstcore/adminhtml_validator/index</action>
+                        </mst_extensions>
+                    </children>
+                </tools>
+            </children>
+        </system>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <tools>
+                            <children>
+                                <mst_extensions translate="title">
+                                    <title>Mirasvit Extensions Validator</title>
+                                    <sort_order>0</sort_order>
+                                </mst_extensions>
+                            </children>
+                        </tools>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

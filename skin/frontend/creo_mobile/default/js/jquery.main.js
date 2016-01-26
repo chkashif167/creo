@@ -2763,3 +2763,48 @@ jQuery(document).ready(function(e) {
    //var colorSwatches = jQuery("#swatches-options-159").closest("div").
    //toggleClass("attributeItem custom-select").;
    });
+
+jQuery(document).ready(function($) {
+    jQuery(".attribure_labels").bind('click', function(event) {
+        /* Act on the event */
+var id = jQuery(this).attr('data-id');
+var idClick = event.type;
+var idCheck = jQuery("#" + id).hasClass('down');
+console.log(id);
+if (idCheck == "") {
+    //jQuery(".m-filter-item-list").hide();
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).addClass('down').slideDown();
+}
+else if (idCheck !== ""){
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).slideUp();
+};
+// else if (id === "gender"){
+//     //console.log(id);
+//    //alert("test");
+// };
+
+jQuery("body").mouseup(function (e){
+      var container = jQuery("#" + id);
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0) // ... nor a descendant of the container
+      {
+         if (!$(e.target).parent().attr('data-id')){
+           container.slideUp();
+         }
+      }
+     // console.log(e.target);
+      });
+});
+
+});
+
+jQuery(document).ready(function($) {
+       jQuery( "#options-16-list label").each(function(index) {
+       jQuery(this).on("click", function(){
+         jQuery( "#options-16-list label").css({"box-shadow":"3px 3px 5px rgba(170, 170, 170, 0.58)"});
+         jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
+       });
+    });
+});

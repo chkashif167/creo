@@ -143,6 +143,18 @@ $_swatches_height = (int) $_settings['swatch_height'];
 });
     </script>
 <?php endif; ?>
+<?php
+if($_GET[styles]==22){?>
+
+<script>
+jQuery(window).bind("load", function(){
+    jQuery('#swatches_option_value_22').click();
+});
+</script>
+
+<?php
+}
+?>
 <script>
 jQuery(document).ready(function(){
     jQuery(':hidden').parent('span.fake-select').removeClass('fake-select');

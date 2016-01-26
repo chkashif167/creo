@@ -1,0 +1,9 @@
+<?php if ($this->_section == 'mstcore_store'): ?>
+    <?php echo $this->getStoreHtml() ?>
+<?php endif ?>
+
+<script type="text/javascript">
+    document.observe('dom:loaded', function() {
+        $$('.content-header')[0].hide();
+    });
+</script>

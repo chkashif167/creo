@@ -2,11 +2,11 @@
 .product-swatches-container {
     clear: both;
     float: left;
-    margin-bottom: 15px;
+    margin-bottom:0px;
     width: 100%;
 }
 .product-swatches-container ul {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     width: 100%;
 }
 .product-swatches-container ul li {

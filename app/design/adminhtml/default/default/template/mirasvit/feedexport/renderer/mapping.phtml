@@ -1,0 +1,71 @@
+<?php
+$_url = Mage::helper('adminhtml')->getUrl('feedexport/adminhtml_template/getRow');
+$_mapping = $this->getMapping();
+$_cnt = count($_mapping['header']);
+if ($_cnt == 0) {
+    $_cnt = 1;
+}
+?>
+<div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('feedexport')->__('Fields Mapping') ?></h4>
+    <div class="form-buttons"></div>
+</div>
+<div class="fieldset mfe-mapping" id="content">
+    <div class="grid">
+        <table id="mapping-table" cellspacing="0" cellpadding="0" class="data" style="width:100%;">
+            <thead>
+                <tr class="headings">
+                    <th width="50"></th>
+                    <th width="180"><?php echo $this->__('Field Name')?></th>
+                    <th width="80"><?php echo $this->__('Prefix')?></th>
+                    <th><?php echo $this->__('Type')?></th>
+                    <th width="180"><?php echo $this->__('Value')?></th>
+                    <th width="80"><?php echo $this->__('Suffix')?></th>
+                    <th width="80"><?php echo $this->__('Output Type')?></th>
+                    <th><?php echo $this->__('Symbols Limit')?></th>
+                    <th width="50"></th>
+                </tr>
+            </thead>
+        <?php for($i = 0; $i < $_cnt; $i++): ?>
+            <tr>
+                <td>
+                    <button onclick="FeedExportMapping.rowUp(this); return false;" class="button"><span><span><?php echo $this->__('↑')?></span></span></button>
+                    <button onclick="FeedExportMapping.rowDown(this); return false;" class="button"><span><span><?php echo $this->__('↓')?></span></span></button>
+                </td>
+                <td>
+                    <input type="text" class="input-text" name="csv[mapping][header][]" value="<?php echo $_mapping['header'][$i] ?>" />
+                </td>
+                <td>
+                    <input type="text" class="input-text" name="csv[mapping][prefix][]" value="<?php echo $_mapping['prefix'][$i] ?>" />
+                </td>
+                <td>
+                    <select style="width:100%;" onchange="FeedExportMapping.changeValueType(this)" name="csv[mapping][type][]">
+                        <option <?php echo isset($_mapping['type'][$i]) && $_mapping['type'][$i] == 'attribute' ? 'selected="selected"' : '';?> value="attribute"><?php echo $this->__('Attribute')?></option>
+                        <option <?php echo isset($_mapping['type'][$i]) && $_mapping['type'][$i] == 'parent_attribute' ? 'selected="selected"' : '';?> value="parent_attribute"><?php echo $this->__('Parent Attribute')?></option>
+                        <option <?php echo isset($_mapping['type'][$i]) && $_mapping['type'][$i] == 'pattern' ? 'selected="selected"' : '';?> value="pattern"><?php echo $this->__('Pattern')?></option>
+                    </select>
+                </td>
+                <td>
+                    <input style="display:<?php echo $_mapping['type'][$i] == 'pattern' ? 'block' : 'none';?>;" type="text" class="input-text" name="csv[mapping][value_pattern][]" value="<?php echo htmlspecialchars($_mapping['value_pattern'][$i]) ?>" />
+                    <?php echo Mage::helper('feedexport/html')->getAttributeSelectHtml('csv[mapping][value_attribute][]', $_mapping['value_attribute'][$i], 'width:180px;display:'.($_mapping['type'][$i] == 'pattern' ? 'none' : 'block')) ?>
+                </td>
+                <td>
+                    <input type="text" class="input-text" name="csv[mapping][suffix][]" value="<?php echo $_mapping['suffix'][$i] ?>" />
+                </td>
+                <td>
+                    <?php echo Mage::helper('feedexport/html')->getFormattersHtml('csv[mapping][formatters][]', @$_mapping['formatters'][$i]) ?>
+                </td>
+                <td>
+                    <input type="text" class="input-text" name="csv[mapping][limit][]" value="<?php echo $_mapping['limit'][$i] ?>" />
+                </td>
+                <td>
+                    <button onclick="FeedExportMapping.rowRemove(this); return false;" class="button"><span><span><?php echo $this->__('✖') ?></span></span></button>
+                </td>
+            </tr>
+        <?php endfor ?>
+        </table>
+        <p style="margin-top:10px;">
+            <button onclick="FeedExportMapping.rowAdd('<?php echo $_url ?>'); return false;" class="button"><span><span><?php echo $this->__('Add Row') ?></span></span></button>
+        </p>
+    </div>
+</div>

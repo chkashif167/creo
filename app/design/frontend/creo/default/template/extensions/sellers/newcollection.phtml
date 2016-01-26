@@ -32,15 +32,27 @@
  */
 ?>
 <?php
+$_categoryLabel = $this->getCategoryLabel();
 $_productCollection = $this->getLoadedProductCollection();
 $_helper = $this->helper('catalog/output');
+$currentCat = $_productCollection->getFirstItem()->cat_name;
 ?>
-
+<div class="row">
+<div class="col-xs-12">
+<nav class="breadcrumb1">
+    <ul>
+        <li class="home"><a title="Go to Home Page" href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+        <li class="category3"><a title="Collections" href="<?php echo Mage::getBaseUrl() . strtolower($_categoryLabel) . ".html" ?>"><?php echo $_categoryLabel ?></a></li>
+        <li class="category17"><strong>New</strong></li>
+    </ul>
+</nav>
+</div>
+</div>
 <?php if (!$_productCollection->count()): ?>
     <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
     <div class="category-products">
-    <div class="row"><div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="cph">New Collection</h2></div>
+    <h2 class="cph">New Collection</h2>
     <?php echo $this->getToolbarHtml() ?>
         <?php // List mode  ?>
         <?php if ($this->getMode() != 'grid'): ?>

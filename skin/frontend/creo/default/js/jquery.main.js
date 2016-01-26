@@ -2450,7 +2450,7 @@ jQuery(document).ready(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 jQuery(window).load(function () {
@@ -2459,7 +2459,7 @@ jQuery(window).load(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 jQuery(window).resize(function () {
@@ -2468,7 +2468,7 @@ jQuery(window).resize(function () {
     foorterheight = jQuery("#footer").outerHeight();
     contentHeight = ((mainheight) - (headerheight + foorterheight + 47));
     jQuery(".main").css('min-height', contentHeight);
-    console.log(mainheight, headerheight, foorterheight, contentHeight);
+    //console.log(mainheight, headerheight, foorterheight, contentHeight);
 });
 
 function popupValidation()
@@ -2507,7 +2507,6 @@ function popupValidation()
             	errors = "Please make sure to select print color"; 
 			}
 		}
-		
 		if(jQuery("#swatches-options-152").length > 0) {
 			if(jQuery("#attribute149").val()===''){
 				errors = "Please make sure to select phone model";
@@ -2515,6 +2514,26 @@ function popupValidation()
             	errors = "Please make sure to select case color";
 			}
 		}
+
+        if(jQuery("#swatches-options-164").length > 0){
+            if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+                errors = "Please select cap theme";
+            }
+
+        }
+        if(jQuery("#options-17-list").length > 0){
+            if(jQuery("input[name='options[17]']:checked").length<=0){
+                errors = "Please select font style";
+            }else if(jQuery("#options_16_text").val()==''){
+                errors = "Please enter text to box1";
+            }else if(jQuery("#options_16_text").val().length>1){
+                errors = "Please enter only one character to box1";
+            }else if(jQuery("#options_15_text").val()==''){
+                errors = "Please enter text to box2";
+            }else if(jQuery("#options_15_text").val().length>1){
+                errors = "Please enter only one character to box2";
+            }
+        }
 
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
@@ -2714,9 +2733,63 @@ jQuery(window).load(function(){
 				length = and - equalsto;
 				id = pathname.substr(equalsto + 1, length - 1);
 			}else{
-				id = pathname.substring(equalsto + 1);												
+				id = pathname.substring(equalsto + 1);
 			}
 			jQuery('#universal_categories-'+id).simulate('click');
 		}
 	}
+});
+jQuery(document).ready(function($) {
+    jQuery(".attribure_labels").bind('click', function(event) {
+        /* Act on the event */
+var id = jQuery(this).attr('data-id');
+var idClick = event.type;
+var idCheck = jQuery("#" + id).hasClass('down');
+
+console.log(id);
+if (idCheck == "" && id !== "gender") {
+    //jQuery(".m-filter-item-list").hide();
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).addClass('down').slideDown();
+} else if (idCheck !== "" && id !== "gender"){
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).slideUp();
+} else if (id === "gender"){
+    console.log(id);
+    return false;
+   //alert("test");
+};
+
+jQuery("body").mouseup(function (e){
+      var container = jQuery("#" + id);
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0) // ... nor a descendant of the container
+      {
+         if (!$(e.target).parent().attr('data-id')){
+           container.slideUp();
+         }
+      }
+     // console.log(e.target);
+      });
+});
+
+var idMetrial = jQuery("#notebook_material li").hasClass('m-selected-ln-item');
+var idPhoneMdl = jQuery(".label_phone_model a").hasClass('attribure_labels');
+if(idMetrial || idPhoneMdl == ""){
+jQuery("#label_notebook_material").css('margin-left', '110px');
+}
+
+});
+
+jQuery(document).ready(function($) {
+	
+		jQuery("#options_16_text").attr("maxlength","1");
+		jQuery("#options_15_text").attr("maxlength","1");
+	
+       jQuery( "#options-16-list label").each(function(index) {
+       jQuery(this).on("click", function(){
+         jQuery( "#options-17-list label").css({"box-shadow":"3px 3px 5px rgba(170, 170, 170, 0.58)"});
+         jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
+       });
+    });
 });
