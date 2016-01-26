@@ -569,7 +569,7 @@ border-color: #eee; overflow: hidden; padding: 0;width:49%;}
 .tab-links .user-name a { color: #222; }
 .tabset.tabset2 { margin: 0; padding: 0; list-style: none; text-transform: uppercase; font: 12px/17px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .tabset.tabset2 li { float: left; margin: 0 4px 0 0; }
-.tabset.tabset2 li:nth-child(6){display:none;}
+/*.tabset.tabset2 li:nth-child(6){display:none;}*/
 .tabset.tabset2 a { display: block; padding: 0 5px; text-align: center; border: 1px solid #c5c5c5; color: #222; min-width: 90px; transform: skewX(-25deg); -moz-transform: skewX(-25deg); -ms-transform: skewX(-25deg); -webkit-transform: skewX(-25deg); }
 .tabset.tabset2 a span { display: block; transform: skewX(25deg); -moz-transform: skewX(25deg); -ms-transform: skewX(25deg); -webkit-transform: skewX(25deg); }
 .tabset.tabset2 li.active a, .tabset.tabset2 a:hover { text-decoration: none; border-color: #f16167; background: #f16167; }
@@ -1307,9 +1307,9 @@ left:0;margin:0;padding:0;position:relative;right: 0;top: auto;width:100%;z-inde
 .cate-open-close .slide.m-filter-item-list li.m-selected-ln-item{background-color:#000;color:#fff;border:1px solid #000;}
 .cate-open-close .slide.m-filter-item-list li.m-selected-ln-item a{color:#fff;}
 /*#label_gender,#label_tshirt_color{display:none;}*/
-
 .size_guide_men_image, .size_guide_women_image{max-width:100%;width: 100%;}
 #options-17-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
+.previous_jump .icon-angle-left::before {content: "...";font-size:12px;}
 
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only{display:table;}
