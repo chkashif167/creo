@@ -1867,13 +1867,10 @@ div.fme-filter dd li{overflow: visible !important;}
 	-webkit-transform: skewX(-20deg);
 }
 .pagination li a strong,
-.pagination li a span{
-	display: block;
-	transform: skewX(20deg);
-	-moz-transform: skewX(20deg);
-	-ms-transform: skewX(20deg);
-	-webkit-transform: skewX(20deg);
-}
+.pagination li a span{display: block;transform: skewX(20deg);-moz-transform: skewX(20deg);-ms-transform: skewX(20deg);
+-webkit-transform: skewX(20deg);}
+.pagination li a.last{transform: skewX(0deg);-moz-transform: skewX(0deg);-ms-transform: skewX(0deg);
+-webkit-transform: skewX(0deg);}
 .pagination a[aria-label="Next"],
 .pagination a[aria-label="Previous"]{
 	border: none;
