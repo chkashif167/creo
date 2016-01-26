@@ -147,7 +147,7 @@ $_swatches_height = (int) $_settings['swatch_height'];
 if($_GET[styles]==22){?>
 
 <script>
-jQuery(document).ready(function(){
+jQuery(window).bind("load", function(){
     jQuery('#swatches_option_value_22').click();
 });
 </script>
