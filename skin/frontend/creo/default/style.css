@@ -5576,6 +5576,8 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 #pdc_design_list tbody td .design-title{padding:5px;}
 #pdc_design_list tbody td .design-preview{padding:5px;}
 #pdc_design_list tbody td .design-preview ul{margin:0;padding:0;}
+.previous_jump .icon-angle-left::before {content: "...";}
+#product-options-wrapper dd{margin-bottom:20px;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
