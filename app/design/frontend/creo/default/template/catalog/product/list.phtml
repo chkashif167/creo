@@ -117,29 +117,77 @@ $_helper = $this->helper('catalog/output');
             ?>
             <?php $i = 0;
             foreach ($_productCollection as $_product): ?>
-            <?php 
-                    
-                    if($_product->getTypeId() == "simple" && $_GET['styles']!=22){
-                        $parentIds = Mage::getResourceSingleton('catalog/product_type_configurable')
-                 ->getParentIdsByChild($_product->getId());
-                        if($parentIds){
-                            continue;
-                        }
-                    }
-                ?>
+            
                 <?php if ($i++ % $_columnCount == 0): ?>
                 
                 
                
                     <ul class="products-grid">
                     <?php endif ?>
-                    <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
 
-                        <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
+                    <?php 
+                    
+                    //if($_product->getTypeId() == "simple" && $_GET['styles']!=22){
+                        //$parentIds = Mage::getResourceSingleton('catalog/product_type_configurable')->getParentIdsByChild($_product->getId());
+                       // if($parentIds){
+                            
+    //print_r($_subproducts);
+                           // continue;
+                        //}
+                   // }
+
+                    //$ids=Mage::getResourceSingleton('catalog/product_type_configurable')->getChildrenIds($_product->getId());
+
+if ($_product->type_id == 'configurable' && $_GET['styles']==22) {
+        $options = array();
+        // Get any super_attribute settings we need
+        $productAttributesOptions = $_product->getTypeInstance(true)->getConfigurableOptions($_product);
+        foreach ($productAttributesOptions as $productAttributeOption) {
+                    $options[$_product->getId()] = array();
+                foreach ($productAttributeOption as $optionValues) {
+                    $val = $optionValues['option_title'];
+                    $pos = strpos($optionValues['sku'], 'TankTop');
+                    if($pos==true && $optionValues['attribute_code']=='styles'){
+                        $options[$_product->getId()][] = array (
+                            'sku' =>  $optionValues['sku'],
+                        $optionValues['sku'] =>  $optionValues['attribute_code']."=".$val) ;
+                    }
+                    
+                    
+                }
+            }
+
+    //$pimage = Mage::getModel('catalog/product')->loadByAttribute('sku',$options[$_product->getId()][0]['sku'])->getImageUrl();
+    $productt = Mage::getModel('catalog/product')->loadByAttribute('sku',$options[$_product->getId()][0]['sku']);
+    if(is_object($productt)) {
+
+        $smallimg = Mage::helper('catalog/image')->init($productt, 'small_image')->resize(480, 650);
+
+    }
+}
+
+                ?>
+                    <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
+                    <?php if($smallimg){?>
+                        <a  href="<?php echo $_product->getProductUrl() ?>?style=22" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area">
+                        
+                        <img src="<?php echo $smallimg; ?>" width="480" height="650" alt="" />
                         </a>
+                        <?php }else{?>
+                        <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
+                        </a>
+                        <?php }?>
+                        
                         <a  rel="nofollow" href="<?php echo Mage::getBaseUrl() . 'quickview/index/view?pid=' . $_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId() ?>"> <span class="quick-view"><i class="icon-search"></i> quick view</span></a>
                         <div class="text-area">
+                        <?php if($smallimg){?>
+                            <h3><a href="<?php echo $_product->getProductUrl() ?>?style=22" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
+                        <?php }else{ ?>
+
                             <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
+                         <?php } ?>
+                        
                             <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
 
                             <div class="btn-holder"> 
