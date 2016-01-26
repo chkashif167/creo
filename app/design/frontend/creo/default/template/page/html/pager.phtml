@@ -110,7 +110,8 @@ else{$customurl = '';}
         <?php endif;?>
 
         <?php if ($this->canShowLast()): ?>
-          <li><a class="last" href="<?php echo $this->getLastPageUrl().$customurl ?>"><?php echo $this->getLastPageNum() ?></a></li>
+          <li><a class="last" href="<?php echo $this->getLastPageUrl().$customurl ?>">
+		  <span><?php echo $this->getLastPageNum() ?> </span></a></li>
         <?php endif;?>
 
         <?php if (!$this->isLastPage()): ?>

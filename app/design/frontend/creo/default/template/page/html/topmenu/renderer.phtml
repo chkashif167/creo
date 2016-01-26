@@ -205,9 +205,14 @@
 <?php
 
 $children_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
+$m=0;
 foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
     echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+    if($m==0){
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/men/tshirt.html?styles=22">Tank Top</a></li>';
+    }
+    $m++;
 endforeach;
 ?>
                 </ul>
@@ -215,9 +220,14 @@ endforeach;
    <li> <strong> Women </strong> </li>
 <?php
 $children_category = Mage::getModel('catalog/category')->load('58')->getChildrenCategories();
+$w=0;
 foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
     echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+    if($w==0){
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/women/tshirt.html?styles=22">Tank Top</a></li>';
+    }
+    $w++;
 endforeach;
 ?>
                 </ul>
