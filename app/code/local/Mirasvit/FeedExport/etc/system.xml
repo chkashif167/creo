@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <feedexport translate="label" module="feedexport">
+            <label>Advanced Product Feeds</label>
+            <tab>mstcore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>500</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <generation>
+                    <label>File Generation Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <!-- <iteration_size translate="label">
+                            <label>Number of Products per Iteration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[This option allows to optimize file creation for low memory servers. Use "0" for generate all products at one iteration.]]>
+                            </comment>
+                        </iteration_size> -->
+                    </fields>
+                </generation>
+            </groups>
+        </feedexport>
+    </sections>
+</config>

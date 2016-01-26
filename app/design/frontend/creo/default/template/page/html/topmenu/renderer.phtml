@@ -179,9 +179,9 @@
  <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
     ?>
-<li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
 <?php }else{?>
-<li><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<li><a href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
 <?php
 }
 ?>
@@ -193,9 +193,9 @@
            
             <div class="links-frame">
                 <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=3" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller/?id=3" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection/?id=3" ?>">NEW</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=3" ?>">Trending</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=3" ?>">Best Seller</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=3" ?>">NEW</a></li>
 
                 </ul>
 
@@ -205,9 +205,14 @@
 <?php
 
 $children_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
+$m=0;
 foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
     echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+    if($m==0){
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/men/tshirt.html?styles=22">Tank Top</a></li>';
+    }
+    $m++;
 endforeach;
 ?>
                 </ul>
@@ -215,9 +220,14 @@ endforeach;
    <li> <strong> Women </strong> </li>
 <?php
 $children_category = Mage::getModel('catalog/category')->load('58')->getChildrenCategories();
+$w=0;
 foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
     echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+    if($w==0){
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/women/tshirt.html?styles=22">Tank Top</a></li>';
+    }
+    $w++;
 endforeach;
 ?>
                 </ul>
@@ -266,9 +276,9 @@ endforeach;
         <div class="links-area">
             <div class="links-frame">
                 <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=5" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller/?id=5" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection/?id=5" ?>">NEW</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=5" ?>">Trending</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=5" ?>">Best Seller</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=5" ?>">NEW</a></li>
 
                 </ul>
                 <ul class="links">
@@ -307,14 +317,14 @@ endforeach;
 </li>
 <li <?php if(in_array("caps",$parent_cat_array) || $_GET['id']==54) {
                     echo'class="active"';
-                } ?>><a href="javascript:void(0)">CAPS</a>
+                } ?>><a href="javascript:void(0)"><?php echo $this->__('Caps'); ?></a>
     <div class="drop">
         <div class="links-area">
             <div class="links-frame">
                 <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending/?id=54" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller/?id=54" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection/?id=54" ?>">NEW</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=54" ?>">Trending</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=54" ?>">Best Seller</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=54" ?>">NEW</a></li>
 
                 </ul>
                 <ul class="links">

@@ -687,16 +687,13 @@ padding: 0;}
 #bill_form .validation-advice, #ship_form .validation-advice { font-size:10px; color: red;}
 #bill_form .form-group,#ship_form .form-group{padding:0;}
 .checkoutcreatNewAccount label { margin: 0px 0 0 0 !important;} 
-
-
-
 .checkoutShippingMethod { float: left; width: 100%;}
 .checkoutShippingMethod ul { float: left; width:100%; padding: 0; margin:0;}
 .checkoutShippingMethod ul li { float: left; width:100%;}
 .checkoutShippingMethod ul li input, .checkoutShippingMethod ul li label { float: left;}
 .checkoutShippingMethod ul li input { margin: 6px 8px 0 0 !important; } 
 .checkoutShippingMethod ul li label { margin: 5px 0 0 0; font-weight: normal;}
-.checkoutShippingMethod .shippingtitle { font-weight: bold; margin: 12px 0 0 0; float: left; width:100%;}
+.checkoutShippingMethod .shippingtitle{font-weight:bold;margin:0;float:left;width:100%;}
 .onestepcheckout-index-index {}
 /*.BillingStateSelectBoxArrows, .BillingCountrySelectBoxArrows, .shippingStateSelectBoxArrows, .shippingCountrySelectBoxArrows { top: 79px !important;}*/
 .checkoutcreatNewAccount { padding: 0; margin: 0;}
@@ -707,29 +704,21 @@ padding: 0;}
 .showShippingAddressCheckboxDiv img { float: left; margin: 0 14px;}
 .hidddenDiv { padding: 0; margin: 0 !important;}
 .onestepcheckout-index-index label{ font-weight: normal !important;font-size:12px;}
-/*.onestepcheckout_block {
-    float: left;
-    width: 100%;
-}*/
+/*.onestepcheckout_block {float: left;width: 100%;}*/
 .shippingmethod_heading, .paymentmethod-heading { margin-top: 14px !important;} 
-.onestepcheckout-index-index .form_fields {
-    float: left;
-    width: 100%;
-}
+.onestepcheckout-index-index .form_fields {float: left;width: 100%;}
 .paymentradiobutton { float: left; margin: 3px 0 0 0 !important;}
 .paymentradiobuttonlabel { margin: 3px 0 0 6px;}
 .paymenntForm { margin: 14px 0 0 0;}
 .op_block_title { margin:0 !important;}
 .textfix { display:none;}
-.category_top_filters {
-}
+.category_top_filters {}
 .card-date-month { width:115px;}
 .checkout-heading { border: none !important;}
 .onestepcheckout-index-index form select { position: static;}
-#checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load paymentradiobuttonlabel { float: left; margin: 0 5px 0 0;}
-.option-alternate:nth-last-child(2) {
-    display: none;
-}
+#checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load .paymentradiobuttonlabel {
+float: left; margin: 0 5px 0 0;}
+.option-alternate:nth-last-child(2) {display: none;}
 .checkout-cart-index .checkout_applyCoupon { display: none;}
 #coupon-discount { float: left; width:100%;}
 
@@ -886,11 +875,6 @@ padding: 5px 8px; margin:0;}
 }
 .add-to-cart-buttons { float: left; width: 100%;}
 
-
-
-
-
-
 .product-detail .btn-holder span.design-product{
     background: #000 none repeat scroll 0 0;
     border: 4px solid #000;
@@ -904,7 +888,6 @@ padding: 5px 8px; margin:0;}
     margin: 10px 0;
     cursor: pointer;
 }
-
 
 /*.product-detail .btn-holder span.design-product::after {
     border-color: transparent transparent #000;
@@ -941,23 +924,20 @@ padding: 5px 8px; margin:0;}
   .old-price {text-decoration: line-through;}
 */ 
 
-
-
 .sort-items { display: none;}
 .sortbyCustom { float: right !important; width: 240px; }
 .sortbycontainer { float: left; position: relative; z-index:10; }
 .sortbycontainer a { float: left; width: 144px; border: 1px solid #e2e2e2;
-                     color: #222;
-                     float: left;
-                     font: 13px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
-                     padding: 5px 10px;
-                     margin: 0;
-                     text-transform: uppercase;
-                     position: relative;
+     color: #222;
+     float: left;
+     font: 13px/20px "Roboto Condensed",Helvetica,Arial,sans-serif;
+     padding: 5px 10px;
+     margin: 0;
+     text-transform: uppercase;
+     position: relative;
 }
 
-.sortbycontainer >  a:after     
-{ width: 0;
+.sortbycontainer >  a:after{ width: 0;
   height: 0;
   border-style: solid;
   border-width: 8px 5px 0;
@@ -1183,7 +1163,7 @@ margin:0 !important;}
 .homepage_navigation_middle {}
 .homepage_navigation_middle .panel-heading { background: #000; color: #fff; float 100%;} 
 .homepage_navigation_middle .panel-title a { display:inline-block; width: 100%;}
-.mobilewebsite_top_banner { float: left; width: 100%;}
+.mobilewebsite_top_banner { float: left; width:100%;background-color:#fff;}
 .mobilewebsite_top_banner a { float: left; width: 50%;}
 .mobilewebsite_top_banner a img{ width: 100%;}
 .mobilewebsite_bottom_categories { float: left; width: 100%}
@@ -1227,7 +1207,49 @@ a[class*='_selected_']{
 .cartPage_custome_responsive .qty-area { margin: 0 !important;}
 .cartPage_custome_responsive .text-area { text-align: center;}
 .categorypath-clothing-html #fme_filters_list img  { width: 100%;}
+.color_swatches_full_width { width: 100%;}
+#options-16-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+#options-16-list li input {
+    display: none;
+}
+#options-16-list li span.label { margin:  0; padding:  0 40px 0 0;}
+#options-16-list li label[for="options_16_2"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font1.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
 
+#options-16-list li label[for="options_16_3"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font2.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-16-list li label[for="options_16_4"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font3.jpg)no-repeat;
+    cursor:pointer;
+     background-size:  100%;
+     font-size:  0px;
+}
+#options-16-list li label[for="options_16_5"] {
+    height: 38px;
+    width: 74px;
+    background: url(images/font4.jpg)no-repeat;
+    cursor:pointer;
+    background-size:  100%;
+    font-size:  0px;
+}
 @media only screen and (max-device-width:359px){
 .cart-btn-area .btn-holder .button2,
 .checkout-cart-index .btn-holder .btn-proceed-checkout,

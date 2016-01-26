@@ -1,5 +1,8 @@
+
 <?php $style_array = array('largevshape', 'round', 'vshape') ?>
 <?php $gender_array = array('men', 'children', 'women'); ?>
+
+
 <?php $customId = '255';
 /*
  * Adding javascript include
@@ -17,6 +20,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
     <?php
 }
 ?>
+<div class="skewbtn1"><button id="goback" onclick="goback()" title="Back">< Back</button></div>
 
 <?php if ($this->canShowBlock()): $state = $this->getStateInfo() ?>
     <div class="block block-layered-nav">

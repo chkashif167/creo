@@ -1,0 +1,74 @@
+.mstcore-toolbar table {
+  max-width: 100%;
+  background-color: #fff;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 18px;
+}
+.mstcore-toolbar table th,
+.mstcore-toolbar table td {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #eee;
+}
+.mstcore-toolbar table th {
+  font-weight: bold;
+}
+.mstcore-toolbar table thead th {
+  vertical-align: bottom;
+}
+.mstcore-toolbar table caption + thead tr:first-child th,
+.mstcore-toolbar table caption + thead tr:first-child td,
+.mstcore-toolbar table colgroup + thead tr:first-child th,
+.mstcore-toolbar table colgroup + thead tr:first-child td,
+.mstcore-toolbar table thead:first-child tr:first-child th,
+.mstcore-toolbar table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+.mstcore-toolbar table tbody + tbody {
+  border-top: 2px solid #eee;
+}
+.mstcore-toolbar table .table {
+  background-color: #fff;
+}
+.mstcore-toolbar table tbody tr:hover > td,
+.mstcore-toolbar table tbody tr:hover > th {
+  background-color: #eee;
+}
+.mstcore-toolbar table th,
+.mstcore-toolbar table td {
+  padding: 4px 5px;
+}
+.mstcore-toolbar .green {
+  color: #0a0;
+}
+.mstcore-toolbar .red {
+  color: #a00;
+}
+.mstcore-toolbar .yellow {
+  color: #aa0;
+}
+.mstcore-toolbar .panel-label {
+  padding: 5px 25px;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #000;
+  float: left;
+  margin: 10px;
+  cursor: pointer;
+}
+.mstcore-toolbar .panel-container {
+  display: none;
+}
+.mstcore-toolbar .clear {
+  height: 0px;
+  clear: both;
+}
+.mstcore-toolbar .panel-container {
+  background: #fff;
+  margin: 10px;
+  padding: 15px;
+}

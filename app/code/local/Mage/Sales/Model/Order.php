@@ -1351,8 +1351,9 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
             ->setEventType(self::EMAIL_EVENT_NAME_NEW_ORDER)
             ->setIsForceCheck(!$forceMode);
 
-        $mailer->setQueue($emailQueue)->send();
-
+       $mailer->setQueue($emailQueue)->send();
+         
+          
         $this->setEmailSent(true);
         $this->_getResource()->saveAttribute($this, 'email_sent');
 
@@ -1439,6 +1440,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
             )
         );
 
+
         /** @var $emailQueue Mage_Core_Model_Email_Queue */
         $emailQueue = Mage::getModel('core/email_queue');
         $emailQueue->setEntityId($this->getId())
@@ -1449,7 +1451,6 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 
         return $this;
     }
-
     /**
      * Send email with order update information
      *

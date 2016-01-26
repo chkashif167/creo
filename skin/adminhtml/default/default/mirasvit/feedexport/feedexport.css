@@ -1,0 +1,167 @@
+.mfe-attribute-conditions select {
+  height: 21px;
+}
+.mfe-attribute-conditions .subcondition-table {
+  border: none;
+  width: 300px;
+  padding: 0px;
+  margin: 0px;
+}
+.mfe-attribute-conditions .subcondition-table td {
+  border: none;
+  padding: 0px 5px 5px 0px;
+  margin: 0px;
+}
+.mfe-attribute-conditions tr.row > td {
+  padding: 10px 5px;
+}
+#attribute_helper {
+  margin-top: -20px;
+}
+#attribute_helper #attr_helper_line {
+  font-family: monospace;
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#attribute_helper select {
+  margin-bottom: 10px;
+}
+#attribute_helper textarea {
+  font-family: monospace;
+}
+#feed_tab_rule_performance .note {
+  width: 400px;
+}
+.category-mapping .mapping {
+  padding: 1px 10px;
+  margin: 2px;
+  background: #F3F3F3;
+  border: 1px solid #ddd;
+}
+.category-mapping .mapping.level-1 {
+  margin-left: 25px;
+}
+.category-mapping .mapping.level-2 {
+  margin-left: 50px;
+}
+.category-mapping .mapping.level-3 {
+  margin-left: 75px;
+}
+.category-mapping .mapping.level-4 {
+  margin-left: 100px;
+}
+.category-mapping .mapping.level-5 {
+  margin-left: 125px;
+}
+.category-mapping .mapping.level-6 {
+  margin-left: 150px;
+}
+.category-mapping .mapping.level-7 {
+  margin-left: 175px;
+}
+.category-mapping .mapping.level-8 {
+  margin-left: 200px;
+}
+.category-mapping .mapping .name {
+  float: left;
+  width: 200px;
+  overflow: hidden;
+  line-height: 20px;
+  white-space: nowrap;
+}
+.category-mapping .mapping .toggle {
+  float: left;
+  height: 18px;
+  margin-left: -9px;
+  margin-right: 7px;
+  width: 16px;
+}
+.category-mapping .mapping .toggle.open {
+  background: url('../../images/mirasvit/feedexport/elbow-plus.gif');
+  cursor: pointer;
+}
+.category-mapping .mapping .toggle.close {
+  background: url('../../images/mirasvit/feedexport/elbow-minus.gif');
+  cursor: pointer;
+}
+.category-mapping .mapping .toggle.empty {
+  cursor: default;
+  background: url('../../images/mirasvit/feedexport/spacer.gif');
+}
+.category-mapping .mapping .map {
+  margin-left: 50px;
+  float: left;
+}
+.category-mapping .mapping .map input {
+  width: 350px;
+  border: 1px solid #DDD;
+  background: #F3F3F3;
+  padding: 1px 3px 1px 3px;
+  color: #2f2f2f;
+  font-size: 12px;
+}
+.category-mapping .mapping .map input:hover,
+.category-mapping .mapping .map input:focus {
+  background: #fff;
+  border-color: #aaa #c8c8c8 #c8c8c8 #aaa;
+}
+.feedexport.feed-generator-loader {
+  background: #fff4e9;
+  border: 2px solid #f1af73;
+  color: #d85909;
+  font-weight: bold;
+  left: 50%;
+  margin-left: -125px;
+  padding: 15px 30px;
+  position: fixed;
+  text-align: center;
+  top: 45%;
+  width: 250px;
+  z-index: 1000;
+  font-size: 13px;
+}
+.feedexport.feed-generator-loader .controls {
+  margin-top: 10px;
+}
+.feedexport.feed-generator-loader .controls button {
+  margin: 1px;
+}
+.feedexport.feed-generator-loader span.status {
+  padding: 1px;
+  display: block;
+}
+.feedexport.feed-generator-loader span.status.finish {
+  color: #26A000;
+}
+.feedexport.feed-generator-loader span.status.ready {
+  color: #999;
+}
+.feedexport.feed-generator-loader span.eta {
+  font-weight: normal;
+}
+/** feed grid */
+.feedexport-adminhtml-feed-index .state-message {
+  background: #fff4e9;
+  border: 2px solid #f1af73;
+  color: #d85909;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+}
+.feedexport-adminhtml-feed-index .state-message span.status {
+  padding: 1px;
+  display: block;
+}
+.feedexport-adminhtml-feed-index .state-message span.status.finish {
+  color: #26A000;
+}
+.feedexport-adminhtml-feed-index .state-message span.status.ready {
+  color: #999;
+}
+.feedexport-adminhtml-feed-index .state-message span.eta {
+  font-weight: normal;
+}

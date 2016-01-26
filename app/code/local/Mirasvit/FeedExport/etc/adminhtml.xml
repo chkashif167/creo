@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <feedexport>
+                                <title>Manage Feeds</title>
+                                <sort_order>1</sort_order>
+                                <children>
+                                    <feedexport_feed module="feedexport">
+                                        <title>Manage Feeds</title>
+                                        <sort_order>10</sort_order>
+                                    </feedexport_feed>
+                                    <feedexport_template module="feedexport">
+                                        <title>Manage Templates</title>
+                                        <sort_order>20</sort_order>
+                                    </feedexport_template>
+                                    <feedexport_rule module="feedexport">
+                                        <title>Manage Filters</title>
+                                        <sort_order>25</sort_order>
+                                    </feedexport_rule>
+                                    <feedexport_custom_attribute module="feedexport">
+                                        <title>Manage Dynamic Attributes</title>
+                                        <sort_order>30</sort_order>
+                                    </feedexport_custom_attribute>
+                                    <feedexport_mapping_category module="feedexport">
+                                        <title>Manage Catagory Mapping</title>
+                                        <sort_order>35</sort_order>
+                                    </feedexport_mapping_category>
+                                    <feedexport_report module="feedexport">
+                                        <title>Reports</title>
+                                        <sort_order>40</sort_order>
+                                        <children>
+                                            <feedexport_report_feed module="feedexport">
+                                                <title>Report By Product Feeds</title>
+                                                <sort_order>10</sort_order>
+                                            </feedexport_report_feed>
+                                            <feedexport_report_product module="feedexport">
+                                                <title>Report By Products</title>
+                                                <sort_order>20</sort_order>
+                                            </feedexport_report_product>
+                                        </children>
+                                    </feedexport_report>
+                                </children>
+                            </feedexport>
+                        </children>
+                    </catalog>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <feedexport>
+                                        <title>Advanced Product Feeds</title>
+                                    </feedexport>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <catalog>
+            <children>
+                <feedexport module="feedexport">
+                    <title>Manage Feeds</title>
+                    <sort_order>1</sort_order>
+                    <action>feedexport/adminhtml_feed/index</action>
+
+                    <children>
+                        <feedexport_feed module="feedexport">
+                            <title>Manage Feeds</title>
+                            <sort_order>10</sort_order>
+                            <action>feedexport/adminhtml_feed/index</action>
+                        </feedexport_feed>
+                        <feedexport_template module="feedexport">
+                            <title>Manage Templates</title>
+                            <sort_order>20</sort_order>
+                            <action>feedexport/adminhtml_template/index</action>
+                        </feedexport_template>
+                        <feedexport_rule module="feedexport">
+                            <title>Manage Filters</title>
+                            <sort_order>25</sort_order>
+                            <action>feedexport/adminhtml_rule/index</action>
+                        </feedexport_rule>
+                        <feedexport_custom_attribute module="feedexport">
+                            <title>Manage Dynamic Attributes</title>
+                            <sort_order>30</sort_order>
+                            <action>feedexport/adminhtml_dynamic_attribute/index</action>
+                        </feedexport_custom_attribute>
+                        <feedexport_mapping_category module="feedexport">
+                            <title>Manage Category Mapping</title>
+                            <sort_order>30</sort_order>
+                            <action>feedexport/adminhtml_dynamic_category/index</action>
+                        </feedexport_mapping_category>
+                        <feedexport_report module="feedexport">
+                            <title>Reports</title>
+                            <sort_order>40</sort_order>
+                            <action>feedexport/adminhtml_report_feed/index</action>
+                            <children>
+                                <feedexport_report_feed module="feedexport">
+                                    <title>Report By Product Feeds</title>
+                                    <sort_order>10</sort_order>
+                                    <action>feedexport/adminhtml_report_feed/index</action>
+                                </feedexport_report_feed>
+                                <feedexport_report_product module="feedexport">
+                                    <title>Report By Products</title>
+                                    <sort_order>20</sort_order>
+                                    <action>feedexport/adminhtml_report_product/index</action>
+                                </feedexport_report_product>
+                            </children>
+                        </feedexport_report>
+                    </children>
+                </feedexport>
+            </children>
+        </catalog>
+    </menu>
+    <translate>
+        <modules>
+            <Mirasvit_FeedExport>
+                <files>
+                    <default>Mirasvit_FeedExport.csv</default>
+                </files>
+            </Mirasvit_FeedExport>
+        </modules>
+    </translate>
+</config>
