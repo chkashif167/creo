@@ -1,0 +1,6 @@
+<item>
+<name><![CDATA[Filter For Configurable Products]]></name>
+<type><![CDATA[attribute]]></type>
+<conditions_serialized><![CDATA[a:7:{s:4:"type";s:33:"feedexport/rule_condition_combine";s:9:"attribute";N;s:8:"operator";N;s:5:"value";s:1:"1";s:18:"is_value_processed";N;s:10:"aggregator";s:3:"all";s:10:"conditions";a:3:{i:0;a:5:{s:4:"type";s:33:"feedexport/rule_condition_product";s:9:"attribute";s:6:"status";s:8:"operator";s:2:"==";s:5:"value";s:1:"1";s:18:"is_value_processed";b:0;}i:1;a:5:{s:4:"type";s:33:"feedexport/rule_condition_product";s:9:"attribute";s:3:"qty";s:8:"operator";s:1:">";s:5:"value";s:1:"0";s:18:"is_value_processed";b:0;}i:2;a:5:{s:4:"type";s:33:"feedexport/rule_condition_product";s:9:"attribute";s:5:"price";s:8:"operator";s:1:">";s:5:"value";d:0;s:18:"is_value_processed";b:0;}}}]]></conditions_serialized>
+<actions_serialized><![CDATA[a:4:{s:4:"type";s:33:"feedexport/rule_action_collection";s:9:"attribute";N;s:8:"operator";s:1:"=";s:5:"value";N;}]]></actions_serialized>
+</item>

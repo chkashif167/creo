@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addCss"><name>mstcore/css/base.css</name></action>
+            <action method="addCss"><name>mstcore/css/regexpal.css</name></action>
+            <action method="addJs"><name>mirasvit/code/mstcore/adminhtml/help.js</name></action>
+            <action method="addJs"><name>mirasvit/core/tooltip.js</name></action>
+            <action method="addJs"><script>mirasvit/core/regexp/regex-colorizer.js</script></action>
+            <action method="addJs"><script>mirasvit/core/regexp/regex-form.js</script></action>
+        </reference>
+
+        <reference name="notifications">
+            <block type="mstcore/adminhtml_toolbar" name="toolbar" template="mstcore/toolbar.phtml" before="-" />
+        </reference>
+    </default>
+
+    <adminhtml_system_config_edit>
+        <reference name="content">
+            <block type="mstcore/config" name="mstcore_config" template="mstcore/config.phtml" after="-"></block>
+        </reference>
+    </adminhtml_system_config_edit>
+</layout>

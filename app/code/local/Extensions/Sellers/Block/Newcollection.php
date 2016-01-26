@@ -49,6 +49,13 @@ class Extensions_Sellers_Block_Newcollection extends Mage_Core_Block_Template {
     protected $_productCollection;
 
     /**
+     * Category Label
+     *
+     * @var Mage_Eav_Model_Entity_Collection_Abstract
+     */
+    protected $_categoryLabel;
+
+    /**
      * Retrieve New Products By Category Collection
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
@@ -88,6 +95,32 @@ class Extensions_Sellers_Block_Newcollection extends Mage_Core_Block_Template {
     public function getLoadedProductCollection()
     {
         return $this->_getProductCollection();
+    }
+
+    /**
+     * Retrieve Category Label
+     *
+     * @var Mage_Eav_Model_Entity_Collection_Abstract
+     */
+    public function getCategoryLabel()
+    {
+        return $this->_getCategoryLabel();
+    }
+
+    /**
+     * Retrieve Category Label
+     *
+     * @var Mage_Eav_Model_Entity_Collection_Abstract
+     */
+	protected function _getCategoryLabel()	
+    {
+		if (is_null($this->_categoryLabel)) {
+ 	        $catId = $this->getRequest()->getParam('id');
+			$_category = Mage::getModel('catalog/category')->load($catId);
+			$this->_categoryLabel = $_category->getName();
+		}
+        return $this->_categoryLabel;
+        
     }
 
     /**

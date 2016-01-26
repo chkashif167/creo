@@ -1,6 +1,14 @@
 Release Notes
 -----------------
 
+===3.1.0===
+- AJAX layered naviation replaced by default navigation 
+- Dropdown (layered Navigation) on CREO MOBILE and DESKTOP  
+- Tank Top links in top navigation on desktop only
+- Product listing page reloading issue resolved 
+- Bread Crums issues resolved 
+- Back button added on collection and category pages
+
 ===3.0.1===
 - Payment logos added on footer and onecheckoutpage
 - Checkout page layout fixes

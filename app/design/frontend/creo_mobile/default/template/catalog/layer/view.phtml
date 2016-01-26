@@ -30,6 +30,8 @@
  *
  * @see Mage_Catalog_Block_Layer_View
  */
+$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+echo Mage::helper('functions/data')->getListingParentLink($currentUrl);
 ?>
 <?php if($this->canShowBlock()): ?>
 <?php /*?><div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
@@ -54,7 +56,7 @@
         <?php endif; ?>
          <?php echo $this->getStateHtml() ?>
         <?php if ($this->getLayer()->getState()->getFilters()): ?>
-            <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+            <!-- <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div> -->
         <?php endif; ?>
    <?php /*?> </div><?php */?>
 <?php /*?></div><?php */?>
