@@ -5563,7 +5563,7 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 #product-options-wrapper dl dt:nth-child(3),#product-options-wrapper dl dd:nth-child(4),#product-options-wrapper dl dt:nth-child(5),
 #product-options-wrapper dl dd:nth-child(6){display:inline-block;width:24%;vertical-align:top;padding:3px;}
 .cate-open-close.label_gender{position: absolute;right:20%;top:0;}
-#onlycrazy .cate-open-close.label_gender{position:relative;right:0;}
+#onlycrazy.cate-open-close.label_gender{position:relative;right:0;}
 .text-left{text-align:left;}
 #pdc_design_list{width:100%;}
 #pdc_design_list thead th{text-align: left;padding:10px;background-color:#000;color:#fff;}
