@@ -25,6 +25,7 @@
  */
 ?>
 <?php
+
 /**
  * Product list template
  *
@@ -46,18 +47,8 @@ $_helper = $this->helper('catalog/output');
             <?php $_iterator = 0; ?>
             <ol class="products-list products-grid" id="products-list">
             <?php foreach ($_productCollection as $_product): ?>
-                <?php 
-                    if($_product->getTypeId() == "simple"){
-                        $parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_product->getId());
-                        if($parentIds){
-                            continue;
-                        }
-                    }
+                
 
-                    
-
-                    
-                ?>
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
                         <div class="list_product_img">
                             <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" /></a>
@@ -126,26 +117,20 @@ $_helper = $this->helper('catalog/output');
             ?>
             <?php $i = 0;
             foreach ($_productCollection as $_product): ?>
+            <?php 
+                    
+                    if($_product->getTypeId() == "simple" && $_GET['styles']!=22){
+                        $parentIds = Mage::getResourceSingleton('catalog/product_type_configurable')
+                 ->getParentIdsByChild($_product->getId());
+                        if($parentIds){
+                            continue;
+                        }
+                    }
+                ?>
                 <?php if ($i++ % $_columnCount == 0): ?>
                 
-                <?php
-                    // get simple produts' ids
-$childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
-
-// get simple products
-$childProducts = Mage::getModel('catalog/product_type_configurable')
-                        ->getUsedProducts(null,$_product);
-
-// get configurable options
-$productAttributeOptions = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
-$attributeOptions = array();
-foreach ($productAttributeOptions as $productAttribute) {
-    foreach ($productAttribute['values'] as $attribute) {
-        echo $attributeOptions[$productAttribute['label']][$attribute['value_index']] = $attribute['store_label']."<br>";
-    }
-}
-exit;
-                ?>
+                
+               
                     <ul class="products-grid">
                     <?php endif ?>
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">

@@ -470,7 +470,7 @@ p.style1 {
 	content: '';
 	width:100%;
 }
-#nav ol > li.active > a:before{width:96%;}
+#nav ol > li.active > a:before{width:101%;}
 #nav .drop-parent:hover > a:before {
 	transform: skewX(0deg);
 	-moz-transform: skewX(0deg);
@@ -5547,7 +5547,7 @@ position: relative;}
 .skewbtn1 #goback{color: #fff;display:block;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;
 line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transform: skewX(30deg);
 -webkit-transform: skewX(30deg);}
-.skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
+.skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61;text-decoration:none;}
 .category_top_filters.cate-links .skewbtn1{position:absolute;left:0;}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 /*#fme_filters_list .cate-open-close #gender{display:inline-block !important;}*/
@@ -5566,11 +5566,17 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 #fme_filters_list .cate-open-close .slide li:hover a{background: #000;color: #fff;}
 .size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 #product-options-wrapper dl dt:nth-child(3),#product-options-wrapper dl dd:nth-child(4),#product-options-wrapper dl dt:nth-child(5),
-#product-options-wrapper dl dd:nth-child(6){display:inline-block;width:auto;vertical-align:top;padding:3px;}
-#options-16-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
+#product-options-wrapper dl dd:nth-child(6){display:inline-block;width:24%;vertical-align:top;padding:3px;}
 .cate-open-close.label_gender{position: absolute;right:20%;top:0;}
 .text-left{text-align:left;}
 #pdc_design_list{width:100%;}
+#pdc_design_list thead th{text-align: left;padding:10px;background-color:#000;color:#fff;}
+#pdc_design_list tbody td{border-bottom:1px solid rgba(0,0,0,0.05);}
+#pdc_design_list tbody td{padding:10px;text-align:left;}
+#pdc_design_list tbody td .design-title{padding:5px;}
+#pdc_design_list tbody td .design-preview{padding:5px;}
+#pdc_design_list tbody td .design-preview ul{margin:0;padding:0;}
+
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
 	.search-form{width: 130px;}

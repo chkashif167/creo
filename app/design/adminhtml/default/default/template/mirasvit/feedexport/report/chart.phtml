@@ -1,0 +1,108 @@
+<?php
+$data = $this->getChartData();
+?>
+
+<?php if ($data): ?>
+<div id="recipienttrendchart" style="width: 100%; height: 400px;"></div>
+<script type="text/javascript">
+    var chart;
+    var recipeintTrendData = [];
+    <?php foreach ($this->getCollection() as $_item): ?>
+        recipeintTrendData.push({
+            date:   '<?php echo $_item->getPeriod() ?>',
+            clicks: <?php echo intval($_item->getClicks()) ?>,
+            orders: <?php echo intval($_item->getOrders()) ?>,
+        });
+    <?php endforeach ?>
+
+    AmCharts.ready(function () {
+        chart                    = new AmCharts.AmSerialChart();
+        chart.pathToImages       = "/js/mirasvit/core/amcharts-3.4.5/images/";
+        chart.dataProvider       = recipeintTrendData;
+        chart.categoryField      = "date";
+
+        var categoryAxis = chart.categoryAxis;
+        categoryAxis.parseDates       = true;
+        categoryAxis.minPeriod        = "DD";
+        categoryAxis.dashLength       = 1;
+        categoryAxis.minorGridEnabled = true;
+        categoryAxis.position         = "top";
+        categoryAxis.axisColor        = "#DADADA";
+
+        var clickAxis = new AmCharts.ValueAxis();
+        clickAxis.axisAlpha  = 1;
+        clickAxis.dashLength = 1;
+        clickAxis.title      = "Clicks";
+        clickAxis.inside     = true;
+        chart.addValueAxis(clickAxis);
+
+        var orderAxis = new AmCharts.ValueAxis();
+        orderAxis.axisAlpha  = 1;
+        orderAxis.gridAlpha  = 0;
+        orderAxis.dashLength = 0;
+        orderAxis.position   = "right";
+        orderAxis.title      = "Orders";
+        orderAxis.inside     = true;
+        chart.addValueAxis(orderAxis);
+
+        var graph = new AmCharts.AmGraph();
+        graph.id                          = 'clicks';
+        graph.valueField                  = "clicks";
+        graph.title                       = "Clicks";
+        graph.valueAxis                   = clickAxis;
+        graph.balloonText                 = "Clicks: [[value]]";
+        graph.type                        = "smoothedLine";
+        graph.lineColor                   = "#5fb503";
+        graph.lineAlpha                   = 1;
+        graph.lineThickness               = 2;
+        graph.fillAlphas                  = 0.1;
+        graph.bulletSize                  = 6;
+        graph.bullet                      = 'round';
+        graph.hideBulletsCount            = 50,
+        graph.bulletBorderAlpha           = 1;
+        graph.bulletColor                 = '#FFFFFF';
+        graph.useLineColorForBulletBorder = true;
+
+        chart.addGraph(graph);
+
+        var graph = new AmCharts.AmGraph();
+        graph.id                          = 'orders';
+        graph.valueField                  = "orders";
+        graph.title                       = "Orders";
+        graph.valueAxis                   = orderAxis;
+        graph.balloonText                 = "Orders: [[value]]";
+        graph.type                        = "smoothedLine";
+        graph.lineColor                   = "#ff0000";
+        graph.lineAlpha                   = 1;
+        graph.lineThickness               = 2;
+        graph.fillAlphas                  = 0.01;
+        graph.bulletSize                  = 6;
+        graph.bullet                      = 'round';
+        graph.hideBulletsCount            = 50,
+        graph.bulletBorderAlpha           = 1;
+        graph.bulletColor                 = '#FFFFFF';
+        graph.useLineColorForBulletBorder = true;
+        chart.addGraph(graph);
+
+        var legend = new AmCharts.AmLegend();
+        legend.equalWidths = false;
+        chart.addLegend(legend);
+
+        var chartCursor            = new AmCharts.ChartCursor();
+        chartCursor.cursorPosition = "mouse";
+        chartCursor.pan            = true;
+        chart.addChartCursor(chartCursor);
+
+        var chartScrollbar = new AmCharts.ChartScrollbar();
+        chartScrollbar.autoGridCount   = true;
+        chartScrollbar.graph           = 'clicks';
+        chartScrollbar.scrollbarHeight = 40;
+
+        chart.addChartScrollbar(chartScrollbar);
+
+        chart.write("recipienttrendchart");
+    });
+</script>
+<?php else:?>
+    <p>Please, select feed and period equal to day to view performance graph.</p>
+<?php endif;?>

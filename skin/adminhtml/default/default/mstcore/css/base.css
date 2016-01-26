@@ -1,0 +1,91 @@
+ul.tabs a.mstcore-store {
+    padding-left: 18px;
+}
+ul.tabs a.mstcore-store span {
+   background: url("../images/store.png") no-repeat;
+   margin: 0px 0px 0px 0px;
+   padding: 15px 0px;
+}
+ul.tabs a.mstcore-store.active {
+   background: #fff;
+}
+ul.tabs a.mstcore-store.active:hover {
+   padding-left: 18px;
+}
+ul.tabs a.mstcore-store.active:hover span {
+   background-color: none;
+   background: url("../images/store.png") no-repeat;
+   margin: 0px 0px 0px 0px;
+   padding: 15px 0px;
+}
+
+.mstcore-help-button {
+   position: absolute;
+   margin-top: -20px;
+   margin-left: 270px;
+}
+
+
+.tooltip {
+   position: absolute!important;
+   overflow:hidden;
+   font-size: 12px;
+   z-index: 10000!important;
+}
+.tooltip .xboxcontent {
+   padding: 3px 5px;
+   color: #444;
+   background: #fff9e9;
+   border-radius: 3px;
+   border: 1px solid #eee2be;
+}
+
+.mst-config td {
+   position: relative;
+}
+.mst-config td.scope-label {
+   width: 90px !important;
+}
+.mst-config .note {
+   display: none;
+}
+.mst-config .hint {
+   position: absolute;
+   left: -117px;
+   top: 5px;
+}
+.mst-config .hint > div {
+   display: block !important;
+   border-color: #ccc #aaa #aaa #ccc;
+   border-width: 1px;
+   border-style: solid;
+   background-color: #fff;
+   background-image: url(../../images/btn_back_bg.gif);
+   color: #555;
+   padding: 1px 7px 2px 7px;
+   cursor: pointer;
+   font: bold 12px arial, helvetica, sans-serif;
+}
+
+.mst-config .grid {
+   width: 280px;
+}
+
+#mst-toolbar ul li {
+    float: left;
+    background: url("../../images/nav1_sep.gif") no-repeat 100% 0;
+    padding: 0 75px 0 15px!important;
+    position: relative;
+    min-width: 200px;
+    max-width: 250px;
+}
+#mst-toolbar .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+#mst-toolbar .truncate a {
+    position: absolute;
+    right: 8px;
+}
