@@ -47,15 +47,6 @@ $_helper = $this->helper('catalog/output');
             <?php $_iterator = 0; ?>
             <ol class="products-list products-grid" id="products-list">
             <?php foreach ($_productCollection as $_product): ?>
-                <?php 
-                    echo $_product->getTypeId()."sss";
-                    if($_product->getTypeId() == "simple"){
-                        echo $parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_product->getId());
-                        if($parentIds){
-                            continue;
-                        }
-                    }
-                ?> 
                 
 
                     <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
@@ -126,17 +117,19 @@ $_helper = $this->helper('catalog/output');
             ?>
             <?php $i = 0;
             foreach ($_productCollection as $_product): ?>
-                <?php if ($i++ % $_columnCount == 0): ?>
-                
-                <?php 
-                    echo $_product->getTypeId()."ddd";
-                    if($_product->getTypeId() == "simple"){
-                        echo $parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_product->getId());
+            <?php 
+                    
+                    if($_product->getTypeId() == "simple" && $_GET['styles']!=22){
+                        $parentIds = Mage::getResourceSingleton('catalog/product_type_configurable')
+                 ->getParentIdsByChild($_product->getId());
                         if($parentIds){
                             continue;
                         }
                     }
                 ?>
+                <?php if ($i++ % $_columnCount == 0): ?>
+                
+                
                
                     <ul class="products-grid">
                     <?php endif ?>
