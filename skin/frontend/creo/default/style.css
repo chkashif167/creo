@@ -4452,7 +4452,7 @@ textarea {
 	text-transform: uppercase;
 	background: rgba(255, 255, 255, 0.7);
 	color: #000;
-	font:bold 26px/30px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:bold 22px/30px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .three-column-category a:hover .category-title{
 	background: #ef4f61;
@@ -5613,10 +5613,11 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 	width:48px;
 	background-image:url('images/opc-ajax-loader.gif'); background-repeat:no-repeat;
 }
-
 /*#pdc_design_list tr td.last a:nth-child(1) {
     display: none;
 }*/
+#product-options-wrapper dl.last .char-options label{width:100%;}
+#product-options-wrapper dl.last .char-options {display: inline-block;width: 47%;margin-right: 12px;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
@@ -5769,6 +5770,11 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 		display: block;
 		width: auto;
 	}
+#fme_filters_list .cate-open-close .slide li{width:49%;}
+#fme_filters_list .cate-open-close #collection-mega-menu.slide li,
+body.category-tshirt #fme_filters_list .cate-open-close #design_category.slide li,
+body.category-polo #fme_filters_list .cate-open-close #design_category.slide li,
+body.category-clothing #fme_filters_list .cate-open-close #design_category.slide li{text-align:center;}
 }
 @media only screen and (max-width: 767px) {
 	body { min-width: 768px; }
