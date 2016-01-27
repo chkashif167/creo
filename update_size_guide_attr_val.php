@@ -44,7 +44,6 @@ foreach($productCollection as $product)
         echo "\n".'updating women products'.$product->getSku()."...".$i."<br>";
     }
 
-
     $product = Mage::getModel('catalog/product')
                    ->load($product->getEntityId());
     $product->setData($attributeCode, $att_text)->getResource()->saveAttribute($product, $attributeCode);
