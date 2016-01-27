@@ -42,8 +42,13 @@
                 <connection>
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
+<<<<<<< HEAD
                     <password><![CDATA[]]></password>
                     <dbname><![CDATA[creo_26_10_2015]]></dbname>
+=======
+                    <password><![CDATA[root]]></password>
+                    <dbname><![CDATA[creobeta_magedb]]></dbname>
+>>>>>>> 6528c9f7127d15253175dc51c121e60acc56db91
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>

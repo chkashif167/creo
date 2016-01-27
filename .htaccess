@@ -32,7 +32,7 @@
 ## adjust memory limit
 
 #    php_value memory_limit 64M
-    php_value memory_limit 256M
+    php_value memory_limit 512M
     php_value max_file_uploads 25
     php_value max_execution_time 6000000
 
