@@ -25,7 +25,7 @@
  */
 ?>
 <?php $_option = $this->getOption(); ?>
-<!-- <dt> -->
+<div class="char-options">
 <label<?php if ($_option->getIsRequire()) echo ' class="required"' ?>><?php if ($_option->getIsRequire()) echo '<em>*</em>' ?><?php echo  $this->escapeHtml($_option->getTitle()) ?>
     <?php echo $this->getFormatedPrice() ?>
 <!-- </dt>
@@ -43,4 +43,4 @@
     <?php endif; ?>
     </div>
 </label>
-<!-- </dd> -->
+</div>
