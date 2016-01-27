@@ -35,7 +35,9 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
                                     //Using imagick to convert application file to png file
                                     $convertResult = Mage::helper("pdp/upload")->convertFileToImage($baseDir . $name);
                                     if(isset($convertResult['status']) && $convertResult['status'] == "success") {
-                                        $uploadedImages[] = $mediaUrl . $convertResult['filename'];
+                                        //$uploadedImages[] = $mediaUrl . $convertResult['filename'];
+                                        $orignalFile = $mediaUrl . $convertResult['filename'];//code modified for resizing
+                                        $uploadedImages[] = $this->resizeImage($orignalFile, '', ['width' => 240, 'height' => 330]);
                                     } else {
                                         $this->getResponse()->setBody(json_encode($convertResult))->sendResponse();
                                         exit();
@@ -43,11 +45,15 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
                                 } else {
                                     //Check if image is real, if not, remove file for security reason.
                                     if($uploads["type"][$key] == "image/svg+xml") {
-                                        $uploadedImages[] = $mediaUrl . $name;
+                                        //$uploadedImages[] = $mediaUrl . $name;
+                                        $orignalFile = $mediaUrl . $name;//code modified for resizing
+                                        $uploadedImages[] = $this->resizeImage($orignalFile, '', ['width' => 240, 'height' => 330]);
                                     } else {
                                         $isRealImage = $this->_helper->isRealImage($baseDir . $name);
                                         if($isRealImage) {
-                                            $uploadedImages[] = $mediaUrl . $name;
+                                            //$uploadedImages[] = $mediaUrl . $name;
+                                            $orignalFile = $mediaUrl . $name;//code modified for resizing
+                                            $uploadedImages[] = $this->resizeImage($orignalFile, '', ['width' => 240, 'height' => 330]);
                                         } else {
                                             $response['status'] = 'error';
                                             $response['message'] = 'Please upload a valid file!';
@@ -74,6 +80,59 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
 			}
 		}
 	}
+
+    /**
+    $options[width]
+    $options[height]
+    $options[media-url]
+     **/
+    public function resizeImage($basePath, $newPath = '', $options = array()) {
+        if(!file_exists($basePath)) {
+            return false;
+        }
+        $extTemp = explode(".", $basePath);
+        if(end($extTemp) == "svg") {
+            return false;
+        }
+        //Image name
+        $width = 150;
+        $height = 150;
+        if(isset($options['width'])) {
+            $width = $options['width'];
+        }
+        if(isset($options['height'])) {
+            $height = $options['height'];
+        }
+        $nameTemp = explode(DS, $basePath);
+        $newFilename = "resize_" . end($nameTemp);
+        if($newPath == "") {
+            $newPath = Mage::getBaseDir('media') . DS . "pdp" . DS . "images" . DS . "upload" . DS . "resize" . DS;
+        }
+        //Create new folder if not exists
+        if(!file_exists($newPath)) {
+            mkdir($newPath, 0777, true);
+            if(!file_exists($newPath)) {
+                return false;
+            }
+        }
+        $imageObj = new Varien_Image($basePath);
+        $imageObj->constrainOnly(TRUE);
+        $imageObj->keepAspectRatio(TRUE);
+        $imageObj->keepFrame(false);
+        $imageObj->keepTransparency(true);
+        $imageObj->backgroundColor(array(255,255,255));
+        $imageObj->resize($width, $height);
+        $imageObj->save($newPath . $newFilename);
+        if(file_exists($newPath . $newFilename)) {
+            $mediaUrl = Mage::getBaseUrl("media") . "pdp/images/upload/" . "resize/";
+            if(isset($options['media-url'])) {
+                $mediaUrl = $options['media-url'];
+            }
+            return $mediaUrl . $newFilename;
+        }
+        return false;
+    }
+
 	public function setCustomImageSession($image) {
 		$customImages = Mage::getSingleton("core/session")->getCustomUploadImages();
 		$customImages[] = $image;
