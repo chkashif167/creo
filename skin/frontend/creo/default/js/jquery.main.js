@@ -2507,10 +2507,7 @@ function popupValidation()
             	errors = "Please make sure to select print color";
 			}
 		}
-<<<<<<< HEAD
-=======
 
->>>>>>> hotfix-nz
 		if(jQuery("#swatches-options-152").length > 0) {
 			if(jQuery("#attribute149").val()===''){
 				errors = "Please make sure to select phone model";
