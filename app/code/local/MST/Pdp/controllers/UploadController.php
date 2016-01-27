@@ -8,27 +8,27 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
     public function testAction() {
         echo "Test Function </br>";
     }
-	public function uploadCustomImageAction() {
-		if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES["uploads"])) {
-			$uploads = $_FILES["uploads"];
+    public function uploadCustomImageAction() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES["uploads"])) {
+            $uploads = $_FILES["uploads"];
             //SVG type : image/svg+xml
-			if (count($uploads['name'])>0) {
-				$baseDir = Mage::getBaseDir('media') . DS . "pdp" . DS . "images" . DS . "upload" . DS;
-				if (!file_exists($baseDir)) {
-					mkdir($baseDir, 0777);
-				}
-				if (file_exists($baseDir)) {
-					$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "pdp/images/upload/";
-					$uploadedImages = array();
-					foreach ($uploads['name'] as $key => $name) {
-						if ($uploads['error'][$key] === UPLOAD_ERR_OK) {
-							$filenameTemp = explode(".", $uploads["name"][$key]);
-							$name = time() . '-customupload.' . end($filenameTemp);
-							$size = $uploads["size"][$key];
-							$type = $uploads["type"][$key]; // could be bogus!!! Users and browsers lie!!!
-							$tmp  = $uploads["tmp_name"][$key];
-							$result = move_uploaded_file( $tmp, $baseDir . $name);
-							if ($result) {
+            if (count($uploads['name'])>0) {
+                $baseDir = Mage::getBaseDir('media') . DS . "pdp" . DS . "images" . DS . "upload" . DS;
+                if (!file_exists($baseDir)) {
+                    mkdir($baseDir, 0777);
+                }
+                if (file_exists($baseDir)) {
+                    $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "pdp/images/upload/";
+                    $uploadedImages = array();
+                    foreach ($uploads['name'] as $key => $name) {
+                        if ($uploads['error'][$key] === UPLOAD_ERR_OK) {
+                            $filenameTemp = explode(".", $uploads["name"][$key]);
+                            $name = time() . '-customupload.' . end($filenameTemp);
+                            $size = $uploads["size"][$key];
+                            $type = $uploads["type"][$key]; // could be bogus!!! Users and browsers lie!!!
+                            $tmp  = $uploads["tmp_name"][$key];
+                            $result = move_uploaded_file( $tmp, $baseDir . $name);
+                            if ($result) {
                                 //Check upload file types
                                 $applicationFileTypes = Mage::helper("pdp/upload")->getApplicationFileTypes();
                                 if(in_array($type, $applicationFileTypes)) {
@@ -36,7 +36,7 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
                                     $convertResult = Mage::helper("pdp/upload")->convertFileToImage($baseDir . $name);
                                     if(isset($convertResult['status']) && $convertResult['status'] == "success") {
                                         //$uploadedImages[] = $mediaUrl . $convertResult['filename'];
-                                        $orignalFile = $mediaUrl . $convertResult['filename'];//code modified for resizing
+                                        $orignalFile = $baseDir . $convertResult['filename'];//code modified for resizing
                                         $uploadedImages[] = $this->resizeImage($orignalFile, '', ['width' => 240, 'height' => 330]);
                                     } else {
                                         $this->getResponse()->setBody(json_encode($convertResult))->sendResponse();
@@ -46,13 +46,13 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
                                     //Check if image is real, if not, remove file for security reason.
                                     if($uploads["type"][$key] == "image/svg+xml") {
                                         //$uploadedImages[] = $mediaUrl . $name;
-                                        $orignalFile = $mediaUrl . $name;//code modified for resizing
+                                        $orignalFile = $baseDir . $name;//code modified for resizing
                                         $uploadedImages[] = $this->resizeImage($orignalFile, '', ['width' => 240, 'height' => 330]);
                                     } else {
                                         $isRealImage = $this->_helper->isRealImage($baseDir . $name);
                                         if($isRealImage) {
                                             //$uploadedImages[] = $mediaUrl . $name;
-                                            $orignalFile = $mediaUrl . $name;//code modified for resizing
+                                            $orignalFile = $baseDir . $name;//code modified for resizing
                                             $uploadedImages[] = $this->resizeImage($orignalFile, '', ['width' => 240, 'height' => 330]);
                                         } else {
                                             $response['status'] = 'error';
@@ -63,23 +63,23 @@ class MST_Pdp_UploadController extends Mage_Core_Controller_Front_Action
                                         }
                                     }
                                 }
-							}
-						} else if ($uploads['error'][$key] === UPLOAD_ERR_INI_SIZE) {
-							$response['status'] = 'error';
-							$response['message'] = 'The uploaded file exceeds the upload_max_filesize. Please check your server PHP settings!';
-							$this->getResponse()->setBody(json_encode($response))->sendResponse();
-							exit();
-						}
-					}
-					$key++;
-					if (isset($uploadedImages[0])) {
-						$this->setCustomImageSession($uploadedImages[0]);
-					}
-					$this->getResponse()->setBody(json_encode($uploadedImages));
-				}
-			}
-		}
-	}
+                            }
+                        } else if ($uploads['error'][$key] === UPLOAD_ERR_INI_SIZE) {
+                            $response['status'] = 'error';
+                            $response['message'] = 'The uploaded file exceeds the upload_max_filesize. Please check your server PHP settings!';
+                            $this->getResponse()->setBody(json_encode($response))->sendResponse();
+                            exit();
+                        }
+                    }
+                    $key++;
+                    if (isset($uploadedImages[0])) {
+                        $this->setCustomImageSession($uploadedImages[0]);
+                    }
+                    $this->getResponse()->setBody(json_encode($uploadedImages));
+                }
+            }
+        }
+    }
 
     /**
     $options[width]
