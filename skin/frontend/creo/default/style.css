@@ -5613,10 +5613,11 @@ line-height:1.2;transform: skewX(30deg);-moz-transform: skewX(30deg);-ms-transfo
 	width:48px;
 	background-image:url('images/opc-ajax-loader.gif'); background-repeat:no-repeat;
 }
-
 /*#pdc_design_list tr td.last a:nth-child(1) {
     display: none;
 }*/
+#product-options-wrapper dl.last .char-options label{width:100%;}
+#product-options-wrapper dl.last .char-options {display: inline-block;width: 47%;margin-right: 12px;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
