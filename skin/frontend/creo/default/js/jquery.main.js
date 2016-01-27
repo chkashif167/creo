@@ -1646,11 +1646,11 @@ $j(window).load(function () {
             setCookie("newsletter", "hide-news-letter", 60);
         }
     });
-	
+
 	jQuery('.closebtn').click(function(){
-		
+
 			setCookie("newsletter", "hide-news-letter", 60);
-		
+
 	});
 });
 
@@ -2476,8 +2476,8 @@ function popupValidation()
     var errors = "";
     //only apply this validation if it has swatches
     if (jQuery('.option-container').find('.has-swatches').length > 0) {
-        //check all required elements size/style and color. 
-        
+        //check all required elements size/style and color.
+
 		// size
 		if(jQuery("#swatches-options-132").length > 0) {
 			if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
@@ -2490,24 +2490,24 @@ function popupValidation()
 			}
 		}
 		if(jQuery("#swatches-options-134").length > 0) {
-			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             errors = "Please make sure to select style";
 			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
 					 errors = "Please make sure to select tshirt color";
 				}
         }/*else if(jQuery("#swatches-options-159").length > 0) {
-				
+
 		}*/
-		
-		
+
+
 		if(jQuery("#swatches-options-160").length > 0) {
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select polo color";
 			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            	errors = "Please make sure to select print color"; 
+            	errors = "Please make sure to select print color";
 			}
 		}
-		
+
 		if(jQuery("#swatches-options-152").length > 0) {
 			if(jQuery("#attribute149").val()===''){
 				errors = "Please make sure to select phone model";
@@ -2521,8 +2521,8 @@ function popupValidation()
             jQuery.alert({
                 title: 'Alert!',
                 content: errors,
-                /*confirm: function(){ 
-                 alert('Confirmed!'); 
+                /*confirm: function(){
+                 alert('Confirmed!');
                  }*/
             });
             return false;
@@ -2543,8 +2543,8 @@ function designYourOwnPopupValidation()
         jQuery.alert({
             title: 'Alert!',
             content: "Please choose size first.",
-            /*confirm: function(){ 
-             alert('Confirmed!'); 
+            /*confirm: function(){
+             alert('Confirmed!');
              }*/
         });
 		return false;
@@ -2566,8 +2566,8 @@ jQuery(document).ready(function (e) {
 /*
 // select filter by default
 jQuery(document).ready(function (e) {
-    var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
-	if( getcategory == 'categories.html' || 
+    var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));
+	if( getcategory == 'categories.html' ||
 	    getcategory == 'skull-collection.html' ||
 	    getcategory == 'x-city-love-collection.html' ||
 	    getcategory == 'celebrity-hush-collection.html' ||
@@ -2593,7 +2593,7 @@ jQuery(document).ready(function (e) {
 			}
 		}
 	}
-	
+
 	if( getcategory == 'clothing.html'
 	){
 		if(jQuery('#gender-24').length ){
@@ -2609,7 +2609,7 @@ jQuery(document).ready(function (e) {
 	    getcategory == 'men.html' ||
 	    getcategory == 'women.html'
 	){
-		if(jQuery('#styles-20').length ){		
+		if(jQuery('#styles-20').length ){
 			if(!(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape')){
 				jQuery('#styles-20').find('img').trigger('click');
 			}
@@ -2620,20 +2620,20 @@ jQuery(document).ready(function (e) {
 /*jQuery(document).ready(function(e) {
    var getitem = jQuery("#fme_layered_universal_categories li a").attr("class");
   // console.log(getitem);
-   
+
     jQuery(document).on("click",".opener",function() {
 	   alert("dd");
 	 var getitem = jQuery("#fme_layered_universal_categories li").attr("class");
 		console.log(getitem);
     });
 
-  
+
 });*/
 /*jQuery(document).ready(function(e) {
     jQuery('.my-account').on('keydown', '#telephone', function(e){
 -1!==jQuery.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault();
  });
- 
+
 		var maxLen = 16;
         jQuery('.my-account #telephone').keydown(function(event){
             var Length = jQuery(".my-account #telephone").val().length;
@@ -2644,7 +2644,7 @@ jQuery(document).ready(function (e) {
                 }
 				else
 				{
-				return true;	
+				return true;
 				}
             }
         });
@@ -2654,7 +2654,7 @@ jQuery(document).ready(function(e) {
 	jQuery('.my-account #telephone').attr('maxlength', '16');
 	jQuery('.my-account #telephone').attr('onkeypress', 'return isNumeric(event)');
 	jQuery('.my-account #telephone').attr('oninput', 'maxLengthCheck(this)');
-	jQuery('.my-account #telephone').attr('max', '16'); 
+	jQuery('.my-account #telephone').attr('max', '16');
 	jQuery('.my-account #telephone').attr('min', '1');
 });
 
@@ -2662,7 +2662,7 @@ jQuery(document).ready(function(e) {
     if (object.value.length > object.maxLength)
       object.value = object.value.slice(0, object.maxLength)
   }
-    
+
   function isNumeric (evt) {
     if(evt.keyCode==8 || evt.keyCode==46 || evt.keyCode==37 || evt.keyCode==38|| evt.keyCode==39 || evt.keyCode==40 ){
     return true;
@@ -2686,7 +2686,7 @@ jQuery(window).load(function(){
 });
 /** Selection of the first style ends here **/
 
-//jQuery(document).ready(function() { 
+//jQuery(document).ready(function() {
 //    //pure javascript
 //    var pathname = window.location.href;
 //	alert(pathname);
@@ -2699,7 +2699,6 @@ jQuery(window).load(function(){
 //	}
 //});
 jQuery(window).load(function(){
-	
 	var pathname = window.location.href;
 	var getvalue = jQuery('#fme_layered_params').val();
 	if (pathname.indexOf("universal_categories") > 0 && !(getvalue)){
@@ -2708,15 +2707,70 @@ jQuery(window).load(function(){
 			var length = '';
 			var id = '';
 			var equalsto = '';
-			equalsto = pathname.search("=");	
+			equalsto = pathname.search("=");
 			if (pathname.indexOf("&") > 0){
-				and = pathname.search("&");	
+				and = pathname.search("&");
 				length = and - equalsto;
 				id = pathname.substr(equalsto + 1, length - 1);
 			}else{
-				id = pathname.substring(equalsto + 1);												
+				id = pathname.substring(equalsto + 1);
 			}
 			jQuery('#universal_categories-'+id).simulate('click');
 		}
 	}
+});
+
+jQuery(document).ready(function($) {
+    jQuery(".attribure_labels").bind('click', function(event) {
+        /* Act on the event */
+var id = jQuery(this).attr('data-id');
+var idClick = event.type;
+var idCheck = jQuery("#" + id).hasClass('down');
+
+console.log(id);
+if (idCheck == "" && id !== "gender") {
+    //jQuery(".m-filter-item-list").hide();
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).addClass('down').slideDown();
+} else if (idCheck !== "" && id !== "gender"){
+    jQuery(".m-filter-item-list").removeClass('down');
+    jQuery("#" + id).slideUp();
+} else if (id === "gender"){
+    console.log(id);
+    return false;
+   //alert("test");
+};
+
+jQuery("body").mouseup(function (e){
+      var container = jQuery("#" + id);
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0) // ... nor a descendant of the container
+      {
+         if (!$(e.target).parent().attr('data-id')){
+           container.slideUp();
+         }
+      }
+     // console.log(e.target);
+      });
+});
+
+var idMetrial = jQuery("#notebook_material li").hasClass('m-selected-ln-item');
+var idPhoneMdl = jQuery(".label_phone_model a").hasClass('attribure_labels');
+if(idMetrial || idPhoneMdl == ""){
+jQuery("#label_notebook_material").css('margin-left', '110px');
+}
+
+});
+
+jQuery(document).ready(function($) {
+
+        jQuery("#options_16_text").attr("maxlength","1");
+        jQuery("#options_15_text").attr("maxlength","1");
+
+       jQuery( "#options-16-list label").each(function(index) {
+       jQuery(this).on("click", function(){
+         jQuery( "#options-17-list label").css({"box-shadow":"3px 3px 5px rgba(170, 170, 170, 0.58)"});
+         jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
+       });
+    });
 });
