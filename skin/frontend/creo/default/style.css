@@ -5579,12 +5579,12 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 	padding:0;
 	line-height:0;
 }
-
 .cms-page-view .std > p {
 	line-height:inherit;
 	letter-spacing:1px;
 	margin:0 0 1.2em;
 }
+.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 
 .main-container.col3-layout .products-grid .quick-view {
 	top:90%;
