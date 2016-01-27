@@ -5619,6 +5619,8 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 }*/
 #product-options-wrapper dl.last .char-options label{width:100%;}
 #product-options-wrapper dl.last .char-options {display: inline-block;width: 47%;margin-right: 12px;}
+.alert-success .glyphicon{left:0;top:5px;}
+.thumbnail #uploadPhotos img{width:auto;max-width:100%;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}

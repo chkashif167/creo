@@ -3,10 +3,9 @@
 <div class="modal fade" id="uploadPhotos" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-md">
 	<div class="modal-content">
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<div class="modal-holder">
 	  <div class="modal-header">
-		<div class="heading-holder"><h3 class="modal-title"><i class="pdc-file-upload"></i> <?php echo $this->__('Upload Files');?> </h3></div>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<div class="heading-holder"><h3 class="modal-title"><i class="pdc-file-upload"></i> <?php echo $this->__('Upload Files');?> </h3></div>
 	  </div>
 	  <div class="modal-body">
 		<p class="popup-text01"><?php echo $this->__('By uploading an image you guarantee that you have read these <a href="#"> Terms &amp; Conditions</a> of Uploading Photos.<br/>And that you agree to abide by all clauses within these <a hr
@@ -108,11 +107,10 @@
 	  </div>
 	</div>
 	</div>
-  </div>
-</div>
+
 <!--New Crop Modal-->
-<div id="crop_modal" class="modal fade">
-    <div class="modal-dialog modal-lg">
+<div id="crop_modal" class="modal fade" tabindex="1" aria-hidden="true">
+    <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -122,13 +120,9 @@
             <div id="crop_panel">
                 <img id="crop_image" src=""/>
             </div>
-          </div>
-          <div class="modal-footer">
-              <a pdc-action="crop-image" class="btn btn-info"><?php echo $this->__("Crop") ?></a>
-              <a pdc-action="cancel-crop" class="btn btn-warning"><?php echo $this->__("Cancel") ?></a>
+              <a pdc-action="crop-image" class="btn btn-md btn-primary"><?php echo $this->__("Crop") ?></a>
+              <a pdc-action="cancel-crop" class="btn btn-md btn-primary"><?php echo $this->__("Cancel") ?></a>
           </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-
