@@ -1,7 +1,7 @@
 <?php
 /*
  * Aten Software Product Data Exporter for Magento
- * 
+ *
  * Copyright (c) 2014. Aten Software LLC. All Rights Reserved.
  * Author: Shailesh Humbad
  * Website: http://www.atensoftware.com/p187.php
@@ -41,8 +41,6 @@ $exporter = new AtenExporterForMagento();
 // Class to hold all functionality for the exporter
 class AtenExporterForMagento
 {
-
-
 
 	// Set the password to export data here
 	const PASSWORD = '';
