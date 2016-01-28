@@ -1,5 +1,7 @@
 Release Notes
 -----------------
+===3.1.1===
+- Image resize issue fix for design your own
 
 ===3.1.0===
 - AJAX layered naviation replaced by default navigation 
