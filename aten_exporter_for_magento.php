@@ -41,7 +41,6 @@ $exporter = new AtenExporterForMagento();
 // Class to hold all functionality for the exporter
 class AtenExporterForMagento
 {
-
 	// Set the password to export data here
 	const PASSWORD = '';
 
