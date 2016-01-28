@@ -177,6 +177,11 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     <?php endif;?>
         <div class="<?php echo $_container_class; ?>" id="product-gallery-container">
             <ul class="<?php echo $_list_class; ?>">
+            <li  class="<?php echo $_image->getAssociatedAttributes(); ?> product-image-thumbs" <?php if ($_image->getDisabled()): ?>style="display:none;"<?php endif; ?>>
+            <?php
+        $_img = '<img id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+        ?></li>
                 <?php foreach ($this->getGalleryImages() as $_image): ?>
                     <li  class="<?php echo $_image->getAssociatedAttributes(); ?> product-image-thumbs" <?php if ($_image->getDisabled()): ?>style="display:none;"<?php endif; ?>>
                         <a class="fancybox-gallery" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_large_image_width, $_large_image_height); ?>" rel="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_zoom_image_width, $_zoom_image_height); ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
