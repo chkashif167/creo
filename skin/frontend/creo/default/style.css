@@ -5579,12 +5579,12 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 	padding:0;
 	line-height:0;
 }
-
 .cms-page-view .std > p {
 	line-height:inherit;
 	letter-spacing:1px;
 	margin:0 0 1.2em;
 }
+.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 
 .main-container.col3-layout .products-grid .quick-view {
 	top:90%;
@@ -5618,6 +5618,8 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 }*/
 #product-options-wrapper dl.last .char-options label{width:100%;}
 #product-options-wrapper dl.last .char-options {display: inline-block;width: 47%;margin-right: 12px;}
+.alert-success .glyphicon{left:0;top:5px;}
+.thumbnail #uploadPhotos img{width:auto;max-width:100%;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
