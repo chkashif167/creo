@@ -549,7 +549,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             Mage::app()->getStore()->getId()
         );
 
-        $successUrl = $this->_getUrl('*/*/index', array('_secure' => true));
+        $successUrl = $this->_getUrl('thankyou', array('_secure' => true));
         if ($this->_getSession()->getBeforeAuthUrl()) {
             $successUrl = $this->_getSession()->getBeforeAuthUrl(true);
         }
