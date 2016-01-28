@@ -2783,7 +2783,6 @@ jQuery("#label_notebook_material").css('margin-left', '110px');
 });
 
 jQuery(document).ready(function($) {
-
         jQuery("#options_16_text").attr("maxlength","1");
         jQuery("#options_15_text").attr("maxlength","1");
 

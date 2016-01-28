@@ -1,7 +1,11 @@
 <?php
 /*
  * Aten Software Product Data Exporter for Magento
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> hotfix-remove-back-button
  * Copyright (c) 2014. Aten Software LLC. All Rights Reserved.
  * Author: Shailesh Humbad
  * Website: http://www.atensoftware.com/p187.php
@@ -42,6 +46,11 @@ $exporter = new AtenExporterForMagento();
 class AtenExporterForMagento
 {
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> hotfix-remove-back-button
 	// Set the password to export data here
 	const PASSWORD = '';
 

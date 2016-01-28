@@ -5584,8 +5584,6 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 	letter-spacing:1px;
 	margin:0 0 1.2em;
 }
-.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
-
 .main-container.col3-layout .products-grid .quick-view {
 	top:90%;
 }
@@ -5598,6 +5596,7 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 .view-mode {
 	display:none;
 }
+.size_guide_men_image, .size_guide_women_image { max-width: 500px; width: 100%;}
 
 .pdc_text_list {
 	max-height:900px !important;
