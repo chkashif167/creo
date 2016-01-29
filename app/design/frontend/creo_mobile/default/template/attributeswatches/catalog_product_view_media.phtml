@@ -54,13 +54,13 @@ $_zoom_image_width = (int) $_settings['zoom_image_width'];
 $_zoom_image_height = (int) $_settings['zoom_image_height'];
 ?>
 <script type="text/javascript">
-    
+
     jQuery(document).ready(function() {
 <?php
 /* if fancybox plugin is enabled */
 if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
     ?>
-    
+
         //<![CDATA[
         // Check if fancybox is actually installed
             if (jQuery.fancybox != undefined) {
@@ -92,7 +92,7 @@ if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
                     return false;
                 });
             }
-    
+
 <?php endif; ?>
     <?php
 /* if cloudzoom plugin is enabled */
@@ -102,28 +102,28 @@ if (Mage::getStoreConfig('attributeswatches/cloudzoom/enabled')):
     ?>
     /* Call quick start function. */
         //<![CDATA[
-        
+
             if (jQuery.fn.CloudZoom !== undefined) {
                 jQuery('#main-image-link').CloudZoom();
                 if (jQuery.fn.fancybox !== undefined) { /* show button to display the lightbox */
                     jQuery("#fancybox-link").show();
                 }
             }
-    
+
 <?php endif; ?>
-    
+
 <?php
 /* if cloudzoom & fancybox are disabled */
 if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getStoreConfig('attributeswatches/lightbox/enabled')):?>
     jQuery(document).on('click', '#main-image-link', function(e){
         e.preventDefault();
         return false;
-    });    
+    });
 <?php endif; ?>
     });
         //]]>
 </script>
-    
+
     <div id="product-media-container">
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
         <p class="product-image" style="display:none;">
@@ -144,8 +144,8 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
         ?></a><a id='fancybox-link' href='#'><?php echo $this->__("+ Enlarge"); ?></a>
         </p>
 <?php endif; ?>
-<?php if (count($this->getGalleryImages()) > 0): 
-    
+<?php if (count($this->getGalleryImages()) > 0):
+
     /* calculations and classes for vertical carousel - left or right of main image... */
     $_carousel_settings = Mage::getStoreConfig('attributeswatches/carousel');
     $_carousel_enabled = $_carousel_settings['enabled'];
@@ -167,7 +167,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     $_container_class = $_carousel_enabled ? ' ' : "more-views-container";
     $_container_class.= ($_carousel_direction == 'vertical') ? ' vertical-carousel-container ' : "";
     $_list_class = $_carousel_enabled ? 'slides' : "";
-    
+
     /* hide gallery when only one image is present and option is enabled... */
     $_hide_gallery = (int)$_settings['hide_gallery'] && $this->getGalleryImages()->count()==1;
     if(!$_hide_gallery):
@@ -177,8 +177,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     <?php endif;?>
         <div class="<?php echo $_container_class; ?>" id="product-gallery-container">
             <ul class="<?php echo $_list_class; ?>">
-            <li  class="<?php echo $_image->getAssociatedAttributes(); ?> product-image-thumbs" <?php if ($_image->getDisabled()): ?>style="display:none;"<?php endif; ?>>
-            <?php
+            <li><?php
         $_img = '<img id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
         ?></li>

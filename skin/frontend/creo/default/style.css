@@ -4120,6 +4120,29 @@ p.availability{margin: 0;}
 	border: medium none;
 	padding: 30px 10px 0;
 }
+.modal-content.normal-modal{transform:skewY(0deg);-moz-transform: skewY(0deg);-ms-transform: skewY(0deg);
+-webkit-transform: skewY(0deg);}
+.modal-content.normal-modal .close{top:inherit;right:35px;bottom:30px;font-size:16px;}
+.modal-content.normal-modal{padding:50px 15px;border:5px solid #000;}
+.modal-content.normal-modal .modal-body{max-width:480px;margin:0 auto;}
+.modal-content.normal-modal .modal-body p.big{font-size:15px;line-height:1.5;letter-spacing:1.2px;text-transform:uppercase;
+color:#000;}
+.modal-content.normal-modal .modal-body p.big big{font-size:45px;font-weight:700;letter-spacing:-1px;}
+.modal-content.normal-modal .modal-body input.email{border:2px solid #000;height:38px;padding:5px 12px;font-size:18px;}
+.modal-content.normal-modal .modal-body .actions{width:100%;display:block;position:relative;margin:10px 0 20px;}
+.modal-content.normal-modal .modal-body .actions:before{position:absolute;width:100%;content:'';background-color:#000;height:2px;
+display:block;top:50%;z-index:-1;}
+.modal-content.normal-modal .modal-body .newslettersubscribe.off,
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:hover,
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:focus{margin:0 auto;background:#fff;border:0;padding:0 15px;
+outline:none;}
+.modal-content.normal-modal .modal-body .newslettersubscribe.off{width:auto;height:auto;}
+.modal-content.normal-modal .modal-body .newslettersubscribe.off span{background-color:#000;color:#fff;text-transform:uppercase;
+font-size:22px;line-height:1.8;padding:0 10px;display:block;}
+
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:hover span,
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:focus span{background-color:#f16167;}
+
 .other-formats > h4{
 	font:bold 12px/16px "Roboto Condensed",Helvetica,Arial,sans-serif;
 	margin: 0 0 10px;
