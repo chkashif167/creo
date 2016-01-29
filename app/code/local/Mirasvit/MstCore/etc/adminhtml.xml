@@ -5,11 +5,11 @@
             <children>
                 <tools>
                     <children>
-                        <mst_extensions translate="title">
+                        <mst_validator translate="title">
                             <title>Mirasvit Extensions Validator</title>
                             <sort_order>1001</sort_order>
-                            <action>mstcore/adminhtml_validator/index</action>
-                        </mst_extensions>
+                            <action>adminhtml/mstcore_validator/index</action>
+                        </mst_validator>
                     </children>
                 </tools>
             </children>
@@ -20,14 +20,16 @@
             <admin>
                 <children>
                     <system>
-                        <tools>
-                            <children>
-                                <mst_extensions translate="title">
-                                    <title>Mirasvit Extensions Validator</title>
-                                    <sort_order>0</sort_order>
-                                </mst_extensions>
-                            </children>
-                        </tools>
+                        <children>
+                            <tools>
+                                <children>
+                                    <mst_validator translate="title">
+                                        <title>Mirasvit Extensions Validator</title>
+                                        <sort_order>0</sort_order>
+                                    </mst_validator>
+                                </children>
+                            </tools>
+                        </children>
                     </system>
                 </children>
             </admin>

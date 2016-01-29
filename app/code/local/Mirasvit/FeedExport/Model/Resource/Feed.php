@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Model_Resource_Feed extends Mage_Core_Model_Mysql4_Abstract
@@ -22,6 +23,13 @@ class Mirasvit_FeedExport_Model_Resource_Feed extends Mage_Core_Model_Mysql4_Abs
         $this->_init('feedexport/feed', 'feed_id');
     }
 
+    /**
+     * Before save.
+     *
+     * @param Mirasvit_FeedExport_Model_Feed $object
+     *
+     * @return $this
+     */
     protected function _beforeSave(Mage_Core_Model_Abstract $object)
     {
         if ($object->isObjectNew() && !$object->hasCreatedAt()) {
@@ -49,6 +57,11 @@ class Mirasvit_FeedExport_Model_Resource_Feed extends Mage_Core_Model_Mysql4_Abs
         return parent::_beforeSave($object);
     }
 
+    /**
+     * @param Mirasvit_FeedExport_Model_Feed $object
+     *
+     * @return $this
+     */
     protected function _afterLoad(Mage_Core_Model_Abstract $object)
     {
         Mage::helper('feedexport/format')->expandFormat($object);
@@ -61,11 +74,15 @@ class Mirasvit_FeedExport_Model_Resource_Feed extends Mage_Core_Model_Mysql4_Abs
         return parent::_afterLoad($object);
     }
 
-
+    /**
+     * @param Mirasvit_FeedExport_Model_Feed $object
+     *
+     * @return Mirasvit_FeedExport_Model_Feed
+     */
     public function loadRules(Mage_Core_Model_Abstract $object)
     {
         $select = $this->_getReadAdapter()->select()
-            ->from($this->getTable('feedexport/rule_feed'))
+            ->from($this->getTable('feedexport/rule_feed'), array('*'))
             ->where('feed_id = ?', $object->getId());
 
         if ($data = $this->_getReadAdapter()->fetchAll($select)) {
@@ -75,26 +92,36 @@ class Mirasvit_FeedExport_Model_Resource_Feed extends Mage_Core_Model_Mysql4_Abs
             }
             $object->setData('rule_ids', $array);
         }
+
         return $object;
     }
 
-    protected function saveRules($object)
+    /**
+     * @param Mirasvit_FeedExport_Model_Feed $object
+     */
+    protected function saveRules(Mage_Core_Model_Abstract $object)
     {
-        $table     = $this->getTable('feedexport/rule_feed');
+        $table = $this->getTable('feedexport/rule_feed');
         $condition = $this->_getWriteAdapter()->quoteInto('feed_id = ?', $object->getId());
 
         $this->_getWriteAdapter()->delete($table, $condition);
 
-        foreach ((array)$object->getData('rule_ids') as $ruleId) {
+        foreach ((array) $object->getData('rule_ids') as $ruleId) {
             $insertArray = array(
                 'feed_id' => $object->getId(),
-                'rule_id' => $ruleId
+                'rule_id' => $ruleId,
             );
             $this->_getWriteAdapter()->insert($table, $insertArray);
         }
     }
 
-    public function saveProductIds($object, $productIds)
+    /**
+     * @param Mirasvit_FeedExport_Model_Feed $object
+     * @param array                          $productIds
+     *
+     * @return $this
+     */
+    public function saveProductIds(Mage_Core_Model_Abstract $object, $productIds)
     {
         $feedId = intval($object->getId());
         $this->_getWriteAdapter()->delete($this->getTable('feedexport/feed_product'), 'feed_id = '.$feedId);
@@ -107,14 +134,14 @@ class Mirasvit_FeedExport_Model_Resource_Feed extends Mage_Core_Model_Mysql4_Abs
             $rows[] = "('".implode("','", array($feedId, $productId))."')";
 
             if (sizeof($rows) == 1000) {
-                $sql = $queryStart.join(',', $rows).$queryEnd;
+                $sql = $queryStart.implode(',', $rows).$queryEnd;
                 $this->_getWriteAdapter()->query($sql);
                 $rows = array();
             }
         }
 
         if (!empty($rows)) {
-            $sql = $queryStart.join(',', $rows).$queryEnd;
+            $sql = $queryStart.implode(',', $rows).$queryEnd;
             $this->_getWriteAdapter()->query($sql);
         }
 

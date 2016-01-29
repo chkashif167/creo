@@ -10,23 +10,25 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Model_Rule_Condition_Product_Parent extends Mirasvit_FeedExport_Model_Rule_Condition_Product
 {
     /**
      * Rewrite parent method validate
-     * to load and verifying parent product
+     * to load and verifying parent product.
      *
-     * @param  Mage_Catalog_Model_Product $object
+     * @param Mage_Catalog_Model_Product $object
+     *
      * @return bool
      */
     public function validate(Varien_Object $object)
     {
-        $parentObject = Mage::getSingleton('feedexport/feed_generator_pattern_product')->getParentProduct($object, true);
+        $parentObject = $this->getProductPattern()->getParentProduct($object, true);
 
         if ($parentObject->getId() == $object->getId()) {
             $parentObject->setData(array());

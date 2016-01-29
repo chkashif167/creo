@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -79,14 +79,14 @@ class Mirasvit_Shell_FeedExport extends Mage_Shell_Abstract
         return $feeds;
     }
 
+    /**
+     * @param Mirasvit_FeedExport_Model_Feed $feed
+     */
     public function generate($feed)
     {
-        $ts = microtime(true);
-
         $name = '['.$feed->getId().'] '.$feed->getName();
         echo $name.str_repeat('.', 50 - strlen($name)).'<br>';
-        $status = null;
-        $feed->getGenerator()->getState()->reset();
+
         $feed->generateCli(true);
         echo 'done'.'<br>';
     }

@@ -34,42 +34,42 @@
         </reference>
     </feedexport_report_message>
 
-    <feedexport_adminhtml_feed_index>
+    <adminhtml_feedexport_feed_index>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_feed_index>
+    </adminhtml_feedexport_feed_index>
 
-    <feedexport_adminhtml_template_edit>
+    <adminhtml_feedexport_template_edit>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_template_edit>
+    </adminhtml_feedexport_template_edit>
 
-    <feedexport_adminhtml_template_new>
+    <adminhtml_feedexport_template_new>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_template_new>
+    </adminhtml_feedexport_template_new>
 
-    <feedexport_adminhtml_feed_new>
+    <adminhtml_feedexport_feed_new>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_feed_new>
+    </adminhtml_feedexport_feed_new>
 
-    <feedexport_adminhtml_feed_edit>
+    <adminhtml_feedexport_feed_edit>
         <update handle="feedexport_adminhtml" />
         <reference name="content">
             <block type="feedexport/adminhtml_feed_generator_loader" />
         </reference>
-    </feedexport_adminhtml_feed_edit>
+    </adminhtml_feedexport_feed_edit>
 
-    <feedexport_adminhtml_dynamic_attribute_new>
+    <adminhtml_feedexport_dynamic_attribute_new>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_dynamic_attribute_new>
+    </adminhtml_feedexport_dynamic_attribute_new>
 
-    <feedexport_adminhtml_dynamic_attribute_edit>
+    <adminhtml_feedexport_dynamic_attribute_edit>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_dynamic_attribute_edit>
+    </adminhtml_feedexport_dynamic_attribute_edit>
 
-    <feedexport_adminhtml_rule_edit>
+    <adminhtml_feedexport_rule_edit>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_rule_edit>
+    </adminhtml_feedexport_rule_edit>
 
-    <feedexport_adminhtml_report_feed_index>
+    <adminhtml_feedexport_report_feed_index>
         <update handle="feedexport_adminhtml" />
         <update handle="feedexport_report_message" />
 
@@ -79,9 +79,9 @@
                 <block type="feedexport/adminhtml_report_chart" name="report.chart" template="mirasvit/feedexport/report/chart.phtml"/>
             </block>
         </reference>
-    </feedexport_adminhtml_report_feed_index>
+    </adminhtml_feedexport_report_feed_index>
 
-    <feedexport_adminhtml_report_product_index>
+    <adminhtml_feedexport_report_product_index>
         <update handle="feedexport_adminhtml" />
         <update handle="feedexport_report_message" />
 
@@ -90,15 +90,15 @@
                 <block type="feedexport/adminhtml_report_product_filter" name="grid.filter.form" />
             </block>
         </reference>
-    </feedexport_adminhtml_report_product_index>
+    </adminhtml_feedexport_report_product_index>
 
 
-    <feedexport_adminhtml_dynamic_category_add>
+    <adminhtml_feedexport_dynamic_category_add>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_dynamic_category_add>
+    </adminhtml_feedexport_dynamic_category_add>
 
-    <feedexport_adminhtml_dynamic_category_edit>
+    <adminhtml_feedexport_dynamic_category_edit>
         <update handle="feedexport_adminhtml" />
-    </feedexport_adminhtml_dynamic_category_edit>
+    </adminhtml_feedexport_dynamic_category_edit>
 
 </layout>

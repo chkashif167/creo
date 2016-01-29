@@ -69,48 +69,48 @@
                 <feedexport module="feedexport">
                     <title>Manage Feeds</title>
                     <sort_order>1</sort_order>
-                    <action>feedexport/adminhtml_feed/index</action>
+                    <action>adminhtml/feedexport_feed/index</action>
 
                     <children>
                         <feedexport_feed module="feedexport">
                             <title>Manage Feeds</title>
                             <sort_order>10</sort_order>
-                            <action>feedexport/adminhtml_feed/index</action>
+                            <action>adminhtml/feedexport_feed/index</action>
                         </feedexport_feed>
                         <feedexport_template module="feedexport">
                             <title>Manage Templates</title>
                             <sort_order>20</sort_order>
-                            <action>feedexport/adminhtml_template/index</action>
+                            <action>adminhtml/feedexport_template/index</action>
                         </feedexport_template>
                         <feedexport_rule module="feedexport">
                             <title>Manage Filters</title>
                             <sort_order>25</sort_order>
-                            <action>feedexport/adminhtml_rule/index</action>
+                            <action>adminhtml/feedexport_rule/index</action>
                         </feedexport_rule>
                         <feedexport_custom_attribute module="feedexport">
                             <title>Manage Dynamic Attributes</title>
                             <sort_order>30</sort_order>
-                            <action>feedexport/adminhtml_dynamic_attribute/index</action>
+                            <action>adminhtml/feedexport_dynamic_attribute/index</action>
                         </feedexport_custom_attribute>
                         <feedexport_mapping_category module="feedexport">
                             <title>Manage Category Mapping</title>
                             <sort_order>30</sort_order>
-                            <action>feedexport/adminhtml_dynamic_category/index</action>
+                            <action>adminhtml/feedexport_dynamic_category/index</action>
                         </feedexport_mapping_category>
                         <feedexport_report module="feedexport">
                             <title>Reports</title>
                             <sort_order>40</sort_order>
-                            <action>feedexport/adminhtml_report_feed/index</action>
+                            <action>adminhtml/feedexport_report_feed/index</action>
                             <children>
                                 <feedexport_report_feed module="feedexport">
                                     <title>Report By Product Feeds</title>
                                     <sort_order>10</sort_order>
-                                    <action>feedexport/adminhtml_report_feed/index</action>
+                                    <action>adminhtml/feedexport_report_feed/index</action>
                                 </feedexport_report_feed>
                                 <feedexport_report_product module="feedexport">
                                     <title>Report By Products</title>
                                     <sort_order>20</sort_order>
-                                    <action>feedexport/adminhtml_report_product/index</action>
+                                    <action>adminhtml/feedexport_report_product/index</action>
                                 </feedexport_report_product>
                             </children>
                         </feedexport_report>

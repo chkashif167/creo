@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -64,7 +64,7 @@ class Mirasvit_FeedExport_Block_Adminhtml_Feed_Grid extends Mage_Adminhtml_Block
         $this->addColumn('file', array(
             'header'   => Mage::helper('feedexport')->__('File'),
             'align'    => 'left',
-            'index'    => 'type',
+            'index'    => 'name',
             'renderer' => 'Mirasvit_FeedExport_Block_Adminhtml_Feed_Renderer_Link'
         ));
 

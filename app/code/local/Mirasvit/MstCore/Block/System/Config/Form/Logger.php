@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_MstCore_Block_System_Config_Form_Logger extends Mage_Adminhtml_Block_System_Config_Form_Fieldset
@@ -21,10 +22,10 @@ class Mirasvit_MstCore_Block_System_Config_Form_Logger extends Mage_Adminhtml_Bl
     {
         $html = $this->_getHeaderHtml($element);
         foreach ($element->getElements() as $field) {
-            $html.= $field->toHtml();
+            $html .= $field->toHtml();
         }
 
-        $url = Mage::getSingleton('adminhtml/url')->getUrl('mstcore/adminhtml_logger/index');
+        $url = Mage::getSingleton('adminhtml/url')->getUrl('adminhtml/mstcore_logger/index');
         $html .= '
             <tr>
                 <td class="label"></td>
@@ -36,6 +37,7 @@ class Mirasvit_MstCore_Block_System_Config_Form_Logger extends Mage_Adminhtml_Bl
             </tr>
             ';
         $html .= $this->_getFooterHtml($element);
+
         return $html;
     }
 }
