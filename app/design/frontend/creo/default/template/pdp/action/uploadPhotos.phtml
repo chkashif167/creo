@@ -2,14 +2,14 @@
 <?php $helper = $this->helper("pdp/upload"); ?>
 <div class="modal fade" id="uploadPhotos" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-md">
-	<div class="modal-content">
-	  <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<div class="heading-holder"><h3 class="modal-title"><i class="pdc-file-upload"></i> <?php echo $this->__('Upload Files');?> </h3></div>
-	  </div>
-	  <div class="modal-body">
-		<p class="popup-text01"><?php echo $this->__('By uploading an image you guarantee that you have read these <a href="#"> Terms &amp; Conditions</a> of Uploading Photos.<br/>And that you agree to abide by all clauses within these <a hr
-		#>Terms and Conditions</a>.');?></p>
+<div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<div class="modal-holder">
+    <div class="modal-header">
+    <div class="heading-holder"><h3 class="modal-title"><i class="pdc-file-upload"></i> <?php echo $this->__('Upload Files');?> </h3></div>
+      </div>
+        <p class="popup-text01"><?php echo $this->__('By uploading an image you guarantee that you have read these <a href="#"> Terms &amp; Conditions</a> of Uploading Photos.<br/>And that you agree to abide by all clauses within these <a hr
+        #>Terms and Conditions</a>.');?></p>
         <!--<div class="upload-info well">
             <?php // if($helper->isImagickLoaded()) : ?>
             <div class="best-result">
@@ -45,37 +45,36 @@
                 <?php echo $helper->getUploadNote() ?>
             </div> 
             <?php endif; ?>
-        </div>
-		<div class="content_upload nodisplay" pdc-clipart-tab="content_upload">
-			<!--Uploaded Image Here-->
+        <div class="content_upload nodisplay" pdc-clipart-tab="content_upload">
+            <!--Uploaded Image Here-->
             <?php $customImageInSession = Mage::getSingleton("core/session")->getCustomUploadImages(); ?>
             <div id="lists_img_upload">
                 <input type="hidden" id="delete_image_msg" value="<?php echo $this->__("Are you sure?") ?>"/>
-				<div class="row">
-				<?php if (is_array($customImageInSession) && count($customImageInSession) > 0) : ?>
-					<?php //echo "<pre>"; print_r($customImageInSession); ?>
-					<?php foreach($customImageInSession as $_customImg) : ?>
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail" pdc-data="upload-item">
-							<img pdc-data="upload-image" width="130px" alt="Invalid Image" src="<?php echo $_customImg ?>" color="">
-							<div class="caption" style="text-align: center;">
-								<p>
-									<a class="btn btn-default crop-item" role="button"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> <?php echo $this->__("Crop") ?></a>
-									<a class="btn btn-default add-to-design" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> <?php echo $this->__("Use") ?></a>
+                <div class="row">
+                <?php if (is_array($customImageInSession) && count($customImageInSession) > 0) : ?>
+                    <?php //echo "<pre>"; print_r($customImageInSession); ?>
+                    <?php foreach($customImageInSession as $_customImg) : ?>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail" pdc-data="upload-item">
+                            <img pdc-data="upload-image" width="130px" alt="Invalid Image" src="<?php echo $_customImg ?>" color="">
+                            <div class="caption" style="text-align: center;">
+                                <p>
+                                    <a class="btn btn-default crop-item" role="button"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> <?php echo $this->__("Crop") ?></a>
+                                    <a class="btn btn-default add-to-design" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> <?php echo $this->__("Use") ?></a>
                                     <a class="btn btn-danger delete-upload-image" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<?php endforeach; ?>
-				<?php endif; ?>
-				</div>
-			</div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                </div>
+            </div>
             <?php $uploadImageAction = Mage::getBaseUrl() . "pdp/upload/uploadCustomImage" ?>
-			<form id="upload_images_form" action="<?php echo $uploadImageAction ?>" method="POST" enctype="multipart/form-data">
+            <form id="upload_images_form" action="<?php echo $uploadImageAction ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" id="pdc_upload_config" value="<?php echo htmlentities($helper->getConfig('JSON')) ?>"/>
                 <input type="hidden" id="unsuported_message" value="<?php echo $helper->getUnsuportedMessage(); ?>"/>
-				<div class="row">
+                <div class="row">
                     <div class="col-sm-12 pdc-message">
                         <div id="msg_error" class="alert alert-danger hide" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -85,7 +84,7 @@
                             <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
                             <span class="message"></span>
                         </div>
-					</div>
+                    </div>
                     <div class="col-sm-12">
                         <div class="file-upload">
                             <span class="btn-file">
@@ -102,21 +101,21 @@
                         </div>
                     </div>
                 </div>
-			</form>
-		</div>
-	  </div>
-	</div>
-	</div>
-
+            </form>
+        </div>
+      </div>
+    </div>
+    </div>
+        </div>
 <!--New Crop Modal-->
 <div id="crop_modal" class="modal fade" tabindex="1" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
+        <div class="modal-holder">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title"><?php echo $this->__("Crop Area") ?></h4>
           </div>
-          <div class="modal-body">
             <div id="crop_panel">
                 <img id="crop_image" src=""/>
             </div>
