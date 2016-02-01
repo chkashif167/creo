@@ -28,7 +28,7 @@
 <config>
     <modules>
         <Tabs_Extension>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
             <depends />
         </Tabs_Extension>
