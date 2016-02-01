@@ -60,11 +60,27 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                         ->getId();
                 if ($ownerId !== null && $ownerId != $customerSession->getId()) {
                     Mage::throwException($this->__('This email address is already assigned to another user.'));
+
+
                 }
 
                 $emailExist = Mage::getModel('newsletter/subscriber')->load($email, 'subscriber_email');
                 if ($emailExist->getId()) {
-                Mage::throwException($this->__('This email address is already exist.'));
+                //Mage::throwException($this->__('This email address is already exist.'));
+
+                    $emailTemplate = Mage::getModel('core/email_template')->loadByCode('already_subscribed_coupen_code');
+                    //$processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
+           
+                    $mail = Mage::getModel('core/email')
+                     ->setToName()
+                     ->setToEmail($email)
+                     ->setBody($emailTemplate)
+                     ->setSubject('Newsletter subscription success')
+                     ->setFromEmail('talktous@creoroom.com')
+                     ->setFromName('Creo')
+                     ->setType('html');
+                     $mail->send();
+                     $session->addSuccess($this->__('Thank you for your subscription.'));
                 }
                 $status = Mage::getModel('newsletter/subscriber')->subscribe($email);
                 
