@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_MstCore_Block_System_Config_Form_Extensions extends Mage_Adminhtml_Block_System_Config_Form_Fieldset
@@ -28,9 +29,9 @@ class Mirasvit_MstCore_Block_System_Config_Form_Extensions extends Mage_Adminhtm
         }
         $html .= '</table>';
 
-        $url = Mage::getSingleton('adminhtml/url')->getUrl('mstcore/adminhtml_validator/index', array('modules' => ''));
+//        $url = Mage::getSingleton('adminhtml/url')->getUrl('adminhtml/mstcore_validator/index', array('modules' => ''));
 
-        $html .= '<br><button onclick="window.location=\''.$url.'\'" type="button"><span>Run validation tests for all extensions</span></button>';
+//        $html .= '<br><button onclick="window.location=\''.$url.'\'" type="button"><span>Run validation tests for all extensions</span></button>';
 
         $html .= $this->_getFooterHtml($element);
 
@@ -39,10 +40,13 @@ class Mirasvit_MstCore_Block_System_Config_Form_Extensions extends Mage_Adminhtm
 
     protected function _renderExtension($ext)
     {
+        $url = Mage::getSingleton('adminhtml/url')->getUrl('adminhtml/mstcore_validator/index', array('modules' => $ext->getExtension()));
+
         $tds = array();
         $tds[] = '<a href="'.$ext->getUrl().'">'.$ext->getName().'</a>';
         $tds[] = $ext->getVersion();
         $tds[] = $ext->getLatest();
+        $tds[] = '<button onclick="window.location=\''.$url.'\'" type="button"><span>Validate Installation</span></button>';
 
         $html = '<tr>';
         foreach ($tds as $value) {
@@ -55,9 +59,9 @@ class Mirasvit_MstCore_Block_System_Config_Form_Extensions extends Mage_Adminhtm
 
     protected function getExtensions()
     {
-        $result     = array();
+        $result = array();
         $extensions = Mage::helper('mstcore/code')->getOurExtensions();
-        $list       = Mage::getModel('mstcore/feed_extensions')->getList();
+        $list = Mage::getModel('mstcore/feed_extensions')->getList();
 
         foreach ($extensions as $extension) {
             if (!isset($list[$extension['s']])) {
@@ -69,12 +73,13 @@ class Mirasvit_MstCore_Block_System_Config_Form_Extensions extends Mage_Adminhtm
 
             $result[$extension['s']] = new Varien_Object(array(
                 'extension' => $extension['s'],
-                'version'   => $version,
-                'name'      => $info['name'],
-                'url'       => $info['url'],
-                'latest'    => $info['version'].'.<small>'.$info['revision'].'</small>',
+                'version' => $version,
+                'name' => $info['name'],
+                'url' => $info['url'],
+                'latest' => $info['version'].'.<small>'.$info['revision'].'</small>',
             ));
         }
+
         return $result;
     }
 }

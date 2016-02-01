@@ -1310,7 +1310,7 @@ left:0;margin:0;padding:0;position:relative;right: 0;top: auto;width:100%;z-inde
 .size_guide_men_image, .size_guide_women_image{max-width:100%;width: 100%;}
 #options-17-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
 .previous_jump .icon-angle-left::before {content: "...";font-size:12px;}
-
+#product-gallery-container .bx-wrapper{min-height:400px;overflow:hidden;}
 /*#pdc_design_list tr td.last a:nth-child(1) {
     display: none;
 }*/

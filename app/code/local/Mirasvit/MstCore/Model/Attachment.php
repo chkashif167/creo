@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_MstCore_Model_Attachment extends Mage_Core_Model_Abstract
@@ -22,18 +23,23 @@ class Mirasvit_MstCore_Model_Attachment extends Mage_Core_Model_Abstract
         $this->_init('mstcore/attachment');
     }
 
-	public function getUrl() {
-		return Mage::getUrl("mstcore/attachment/download", array('uid'=>$this->getUid()));
-	}
+    public function getUrl()
+    {
+        $store = Mage::getModel('core/store')->getCollection()
+            ->addFieldToFilter('is_active', 1)
+            ->getFirstItem();
 
-	public function _beforeSave()
-	{
+        return Mage::getUrl('mstcore/attachment/download', array('uid' => $this->getUid(), '_store' => $store->getId()));
+    }
+
+    public function _beforeSave()
+    {
         parent::_beforeSave();
         if (!$this->getUid()) {
-        	$uid = md5(
-            	Mage::getSingleton('core/date')->gmtDate() .
-            	Mage::helper('mstcore/string')->generateRandHeavy(100));
+            $uid = md5(
+                Mage::getSingleton('core/date')->gmtDate().
+                Mage::helper('mstcore/string')->generateRandHeavy(100));
             $this->setUid($uid);
         }
-	}
+    }
 }

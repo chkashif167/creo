@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 

@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Model_Observer
@@ -31,7 +32,6 @@ class Mirasvit_FeedExport_Model_Observer
 
                 $feed->generateCli();
                 $feed->delivery();
-
             } else {
                 Mage::helper('feedexport')->addToHistory($feed, 'Skip cron scheduler');
             }
@@ -48,7 +48,7 @@ class Mirasvit_FeedExport_Model_Observer
         $collection = Mage::getModel('feedexport/feed_history')->getCollection()
             ->addFieldToFilter('created_at', array('lt' => $date->toString('Y-MM-dd H:mm:s')));
 
-        foreach($collection as $entry) {
+        foreach ($collection as $entry) {
             $entry->delete();
         }
 
@@ -69,17 +69,17 @@ class Mirasvit_FeedExport_Model_Observer
             );
         }
         $block->getMassactionBlock()->addItem('feedexport_export', array(
-            'label'      => __('Export Products'),
-            'url'        => $block->getUrl('feedexport/adminhtml_feed/massProductsExport', array('_current' => true)),
+            'label' => __('Export Products'),
+            'url' => $block->getUrl('adminhtml/feedexport_feed/massProductsExport', array('_current' => true)),
             'additional' => array(
                 'visibility' => array(
-                    'name'   => 'feed_id',
-                    'type'   => 'select',
-                    'class'  => 'required-entry',
-                    'label'  => __('Feed'),
-                    'values' => $feeds
-                )
-            )
+                    'name' => 'feed_id',
+                    'type' => 'select',
+                    'class' => 'required-entry',
+                    'label' => __('Feed'),
+                    'values' => $feeds,
+                ),
+            ),
         ));
     }
 }

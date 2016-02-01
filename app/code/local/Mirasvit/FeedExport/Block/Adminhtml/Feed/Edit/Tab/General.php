@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -110,8 +110,8 @@ class Mirasvit_FeedExport_Block_Adminhtml_Feed_Edit_Tab_General extends Mage_Adm
                 ));
 
                 $general->addField('generated_cnt', 'note', array(
-                    'label'    => __('Count Products'),
-                    'title'    => __('Count Products'),
+                    'label'    => __('Count Items'),
+                    'title'    => __('Count Items'),
                     'text'    => $model->getGeneratedCnt(),
                 ));
             }

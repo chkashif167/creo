@@ -10,16 +10,17 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Model_Feed_Generator_Pattern extends Varien_Object
 {
-    protected $_categories      = array();
+    protected $_categories = array();
     protected static $_patterns = array();
-    protected $_cache           = array();
+    protected $_cache = array();
 
     public function parsePattern($pattern)
     {
@@ -34,39 +35,37 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern extends Varien_Object
             preg_match('/{\(([^}]*)\)}/', $pattern, $matches);
             if (isset($matches[1])) {
                 self::$_patterns[$pattern] = array(
-                    'key'        => '('.$matches[1].')',
-                    'type'       => '',
+                    'key' => '('.$matches[1].')',
+                    'type' => '',
                     'formatters' => array(),
                     'additional' => '',
                 );
             } else {
                 //type B {...}
-                preg_match('/{([^},|]+)([|])?(parent|only_parent|grouped|configurable|bundle)?([^}]*)}/', $pattern, $matches);
+                preg_match('/{([^},|]+)([|])?(parent|only_parent|parent_if_empty|grouped|configurable|bundle)?([^}]*)}/', $pattern, $matches);
                 if (!isset($matches[1])) {
                     return false;
                 }
-                $key  = $matches[1];
+                $key = $matches[1];
                 $type = trim($matches[3]);
 
                 preg_match_all('/\[([^\]]+)\]/', $matches[4], $matches);
                 $formatters = $matches[1];
 
-                $subkey     = explode(':', $key);
-                $key        = $subkey[0];
+                $subkey = explode(':', $key);
+                $key = $subkey[0];
                 $additional = '';
                 if (isset($subkey[1])) {
                     $additional = $subkey[1];
                 }
 
                 self::$_patterns[$pattern] = array(
-                    'key'        => $key,
-                    'type'       => $type,
+                    'key' => $key,
+                    'type' => $type,
                     'formatters' => $formatters,
                     'additional' => $additional,
                 );
             }
-
-
         }
 
         return self::$_patterns[$pattern];
@@ -74,7 +73,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern extends Varien_Object
 
     public function getPatternValue($content, $scope = null, $obj = null)
     {
-        preg_match_all('/{([^}]+)(\sparent|\sonly_parent|\sgrouped|\sconfigurable|\sbundle)?([^}]*)}/', $content, $matches);
+        preg_match_all('/{([^}]+)(\sparent|\sonly_parent|\sparent_if_empty|\sgrouped|\sconfigurable|\sbundle)?([^}]*)}/', $content, $matches);
 
         foreach ($matches[0] as $pattern) {
             $value = false;
@@ -164,7 +163,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern extends Varien_Object
     {
         if (!isset($this->_categories[$categoryId])) {
             $category = Mage::getModel('catalog/category')->load($categoryId);
-            $path     = explode('/', $category->getPath());
+            $path = explode('/', $category->getPath());
 
             // check that category from this store
             if (in_array($this->getStore()->getRootCategoryId(), $path)) {

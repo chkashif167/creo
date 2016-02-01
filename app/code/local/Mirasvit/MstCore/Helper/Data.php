@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
@@ -20,16 +21,16 @@ class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
     public function isModuleInstalled($modulename)
     {
         $modules = Mage::getConfig()->getNode('modules')->children();
-        $modulesArray = (array)$modules;
+        $modulesArray = (array) $modules;
 
-        if(isset($modulesArray[$modulename])
+        if (isset($modulesArray[$modulename])
             && $modulesArray[$modulename]->is('active')
             && $modulesArray[$modulename]->is('codePool')) {
-                $codePool = $modulesArray[$modulename]->codePool;
-                $configFile = Mage::getBaseDir('code'). DS . $codePool . DS . str_replace('_', DS, $modulename) . DS . 'etc' . DS . 'config.xml';
-                if (file_exists($configFile)) {
-                    return true;
-                }
+            $codePool = $modulesArray[$modulename]->codePool;
+            $configFile = Mage::getBaseDir('code').DS.$codePool.DS.str_replace('_', DS, $modulename).DS.'etc'.DS.'config.xml';
+            if (file_exists($configFile)) {
+                return true;
+            }
         }
 
         return false;
@@ -58,7 +59,7 @@ class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
     public function copyConfigData($oldPath, $newPath, $callbackFunction = false)
     {
         if ($oldPath == $newPath) {
-            throw new Exception("Old path should now be equal to the new path. Otherwise, we will have possible data loses.");
+            throw new Exception('Old path should now be equal to the new path. Otherwise, we will have possible data loses.');
         }
         $resource = Mage::getSingleton('core/resource');
         $connection = $resource->getConnection('core_write');
@@ -76,16 +77,16 @@ class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
     }
 
     /**
-     * Return array of used cache systems: cache_name => cache_clear_method
+     * Return array of used cache systems: cache_name => cache_clear_method.
      *
      * @return array
      */
     public function getUsedCaches()
     {
         $caches = array(
-            'APC'     => 'apc_clear_cache',
+            'APC' => 'apc_clear_cache',
             'OPcache' => 'opcache_reset',
-            'xCache'  => 'xcache_clear_cache',
+            'xCache' => 'xcache_clear_cache',
         );
 
         foreach ($caches as $name => $method) {
@@ -99,9 +100,12 @@ class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
 
     public function getModules()
     {
-        $modules = Mage::app()->getRequest()->getParam('modules');
-        if ($modules != '') {
-            $modules = explode(',', $modules);
+        if ($modules = Mage::app()->getRequest()->getParam('modules')) {
+            if (strpos($modules, ',') !== false) {
+                $modules = explode(',', $modules);
+            } else {
+                $modules = $this->getFolders($modules);
+            }
         }
 
         if (count($modules) == 0) {
@@ -122,10 +126,76 @@ class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
 
         return $modules;
     }
+
+    /**
+     * @param string $sku
+     *
+     * @return array
+     */
+    protected function getFolders($sku)
+    {
+        switch ($sku) {
+            case 'SSU':
+                return array('SearchAutocomplete', 'SearchIndex', 'SearchLandingPage', 'SearchSphinx', 'Misspell');
+            case 'RMA':
+                return array('Rma');
+            case 'HDMX':
+                return array('Helpdesk');
+            case 'SEO':
+                return array('Seo', 'SeoAutolinks', 'SeoFilter', 'SeoSitemap');
+            case 'SSC':
+                return array('Misspell');
+            case 'PO':
+                return array('Action');
+            case 'FAR':
+                return array('AsyncIndex');
+            case 'SSP':
+                return array('SearchIndex', 'SearchLandingPage', 'SearchSphinx');
+            case 'YME':
+                return array('PriceExport');
+            case 'SAS':
+                return array('SearchAutocomplete');
+            case 'CV':
+                return array('CatalogVideo');
+            case 'BMS':
+                return array('Banner');
+            case 'MMP':
+                return array('Menu');
+            case 'ACC':
+                return array('AsyncCache');
+            case 'SSM':
+                return array('SeoSitemap');
+            case 'SAL':
+                return array('SeoAutolinks');
+            case 'CLB':
+                return array('CatalogLabel');
+            case 'PFE':
+                return array('FeedExport');
+            case 'TES':
+                return array('Email', 'EmailDesign', 'EmailReport', 'EmailSmtp');
+            case 'FPC':
+                return array('Fpc');
+            case 'KB':
+                return array('Kb');
+            case 'PQ':
+                return array('ProductQuestion');
+            case 'RWP':
+                return array('Rewards', 'RewardsSocial');
+            case 'ADVN':
+                return array('Advn', 'AdvnDesign', 'EmailSmtp');
+            case 'ADVR':
+                return array('Advd', 'Advr');
+            case 'SCR':
+                return array('Credit');
+            case 'GRY':
+                return array('Giftr');
+        }
+
+        return array();
+    }
 }
 
 if (!function_exists('pr')) {
-
     function pr($arr)
     {
         echo '<pre>';

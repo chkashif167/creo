@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -56,7 +56,8 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Action_Iterator_Entity
                 ->addFieldToFilter('entity_id', 1)
                 ->setDateOrder()
                 ->setPageSize(100)
-                ->addRateVotes();
+                ->addRateVotes()
+                ->clear();
 
             $this->applyRuleFilter($collection, 'entity_pk_value');
         }
@@ -73,6 +74,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Action_Iterator_Entity
             $model = Mage::getModel('review/review')->load($row['review_id']);
         } else {
             $model = Mage::getModel('catalog/'.$this->_type)->load($row['entity_id']);
+            $model->setStoreId($this->getFeed()->getStoreId());
         }
         $result = $this->_patternModel->getPatternValue($this->_format['entity'][$this->_type], $this->_type, $model);
 

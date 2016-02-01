@@ -144,7 +144,7 @@
   font-weight: normal;
 }
 /** feed grid */
-.feedexport-adminhtml-feed-index .state-message {
+.adminhtml-feedexport-feed-index .state-message {
   background: #fff4e9;
   border: 2px solid #f1af73;
   color: #d85909;
@@ -152,16 +152,16 @@
   text-align: center;
   margin: 5px;
 }
-.feedexport-adminhtml-feed-index .state-message span.status {
+.adminhtml-feedexport-feed-index .state-message span.status {
   padding: 1px;
   display: block;
 }
-.feedexport-adminhtml-feed-index .state-message span.status.finish {
+.adminhtml-feedexport-feed-index .state-message span.status.finish {
   color: #26A000;
 }
-.feedexport-adminhtml-feed-index .state-message span.status.ready {
+.adminhtml-feedexport-feed-index .state-message span.status.ready {
   color: #999;
 }
-.feedexport-adminhtml-feed-index .state-message span.eta {
+.adminhtml-feedexport-feed-index .state-message span.eta {
   font-weight: normal;
 }

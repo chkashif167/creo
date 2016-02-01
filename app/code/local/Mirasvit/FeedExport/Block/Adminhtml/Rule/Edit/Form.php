@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Block_Adminhtml_Rule_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
@@ -21,10 +22,10 @@ class Mirasvit_FeedExport_Block_Adminhtml_Rule_Edit_Form extends Mage_Adminhtml_
     {
         $form = new Varien_Data_Form(
             array(
-                'id'      => 'edit_form',
-                'action'  => $this->getData('action'),
-                'method'  => 'post',
-                'enctype' => 'multipart/form-data'
+                'id' => 'edit_form',
+                'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'))),
+                'method' => 'post',
+                'enctype' => 'multipart/form-data',
             )
         );
 

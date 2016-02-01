@@ -10,21 +10,61 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
+
+/**
+ * Class Mirasvit_FeedExport_Model_Feed.
+ *
+ * @method bool getIsMassStatus()
+ * @method Mirasvit_FeedExport_Model_Feed setCreatedAt(string $val)
+ * @method string getCreatedAt()
+ * @method bool hasCreatedAt()
+ * @method Mirasvit_FeedExport_Model_Feed setUpdatedAt(string $val)
+ * @method string getUpdatedAt()
+ * @method Mirasvit_FeedExport_Model_Feed setStoreId(int)
+ * @method int getStoreId()
+ * @method Mirasvit_FeedExport_Model_Feed setNotificationEvents(array $val)
+ * @method string getGeneratedAt()
+ * @method $this setCronDay(array $val)
+ * @method array getCronDay()
+ * @method $this setCronTime(array $val)
+ * @method array getCronTime()
+ */
 class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
 {
-    protected $_store           = null;
-    protected $_rule            = null;
-    protected $_trackerRule     = null;
-    protected $_generator       = null;
-    protected $_state           = null;
-    protected $_fileNameWithExt = null;
-    protected $_tmpPathKey      = null;
+    /**
+     * Store.
+     *
+     * @var Mage_Core_Model_Store
+     */
+    protected $store;
 
+    /**
+     * @var Mirasvit_FeedExport_Model_Feed_Generator
+     */
+    protected $generator;
+
+    /**
+     * @var Mirasvit_FeedExport_Model_Feed_Generator_State
+     */
+    protected $state;
+
+    /**
+     * @var string
+     */
+    protected $fileNameWithExt;
+    /**
+     * @var string
+     */
+    protected $tmpPathKey;
+
+    /**
+     * Initialize resource mode.
+     */
     protected function _construct()
     {
         $this->_init('feedexport/feed');
@@ -32,16 +72,19 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
 
     public function getTmpPathKey()
     {
-        return $this->getId() . $this->getGenerator()->getMode();
+        return $this->getId().$this->getGenerator()->getMode();
     }
 
+    /**
+     * @return Mage_Core_Model_Abstract|Mage_Core_Model_Store
+     */
     public function getStore()
     {
-        if (!$this->_store) {
-            $this->_store = Mage::getModel('core/store')->load($this->getStoreId());
+        if (!$this->store) {
+            $this->store = Mage::getModel('core/store')->load($this->getStoreId());
         }
 
-        return $this->_store;
+        return $this->store;
     }
 
     public function getRuleIds()
@@ -62,15 +105,18 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
         return $this->getData('notification_events');
     }
 
+    /**
+     * @return Mirasvit_FeedExport_Model_Feed_Generator
+     */
     public function getGenerator()
     {
-        if (!$this->_generator) {
-            $this->_generator = Mage::getModel('feedexport/feed_generator');
-            $this->_generator->setFeed($this)
+        if (!$this->generator) {
+            $this->generator = Mage::getModel('feedexport/feed_generator');
+            $this->generator->setFeed($this)
                 ->init();
         }
 
-        return $this->_generator;
+        return $this->generator;
     }
 
     public function getUrl()
@@ -89,7 +135,8 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
     public function getArchiveUrl()
     {
         if ($this->getArchivation() &&
-            file_exists(Mage::getBaseDir('media').DS.'feed'.DS.$this->getFilenameWithExt().'.'.$this->getArchivation())) {
+            file_exists(Mage::getBaseDir('media').DS.'feed'.DS.$this->getFilenameWithExt().'.'.$this->getArchivation())
+        ) {
             return Mage::getBaseUrl('media').'feed'.DS.$this->getFilenameWithExt().'.'.$this->getArchivation();
         }
 
@@ -113,12 +160,13 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
         }
         Mage::register('current_state', $generator->getState());
 
-        $appEmulation           = Mage::getSingleton('core/app_emulation');
+        $appEmulation = Mage::getSingleton('core/app_emulation');
         $initialEnvironmentInfo = $appEmulation->startEnvironmentEmulation($this->getStore()->getId());
 
         try {
             Mage::getConfig()->loadEventObservers('frontend');
-        } catch(Exception $e) {}
+        } catch (Exception $e) {
+        }
 
         Mage::app()->addEventArea('frontend');
 
@@ -134,9 +182,6 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
     public function generateCli($verbose = false)
     {
         $requestHelper = Mage::helper('feedexport/request');
-        $status        = $this->getGenerator()->getState()->getStatus();
-
-        $this->getGenerator()->getState()->reset();
 
         $status = null;
         while ($status != Mirasvit_FeedExport_Model_Feed_Generator_State::STATUS_READY) {
@@ -148,11 +193,13 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
             }
 
             if ($verbose) {
-                echo $this->getGenerator()->getState()->__toString().PHP_EOL;
+                echo $this->getGenerator()->getState()->__toString();
+                echo round(memory_get_usage() / 1024 / 1024, 1).'M'.PHP_EOL;
             }
 
             $this->getGenerator()->getState()->resetTimeout();
         }
+        $this->updateGenerationInfo($this->getGenerator());
     }
 
     public function generateTest()
@@ -165,18 +212,19 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
         }
         Mage::register('current_state', $generator->getState());
 
-        $appEmulation           = Mage::getSingleton('core/app_emulation');
+        $appEmulation = Mage::getSingleton('core/app_emulation');
         $initialEnvironmentInfo = $appEmulation->startEnvironmentEmulation($this->getStore()->getId());
         try {
             Mage::getConfig()->loadEventObservers('frontend');
-        } catch(Exception $e) {}
+        } catch (Exception $e) {
+        }
         Mage::app()->addEventArea('frontend');
 
         do {
             $generator->process();
         } while (!in_array($generator->getState()->getStatus(), array(
             Mirasvit_FeedExport_Model_Feed_Generator_State::STATUS_READY,
-            Mirasvit_FeedExport_Model_Feed_Generator_State::STATUS_ERROR
+            Mirasvit_FeedExport_Model_Feed_Generator_State::STATUS_ERROR,
         )));
 
         $appEmulation->stopEnvironmentEmulation($initialEnvironmentInfo);
@@ -186,7 +234,7 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
     {
         if ($generator->getState()->isReady()) {
             $this->setGeneratedAt(Mage::getSingleton('core/date')->gmtDate())
-                ->setGeneratedCnt($generator->getState()->getChainItemValue('iterator_product', 'size'))
+                ->setGeneratedCnt($generator->getState()->getChainItemValue($generator->getState()->getIteratorType(), 'size'))
                 ->setGeneratedTime(Mage::getSingleton('core/date')->gmtTimestamp() - $generator->getState()->getCreatedAt())
                 ->save();
 
@@ -230,7 +278,7 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
 
     public function getFilenameWithExt()
     {
-        if ($this->_fileNameWithExt == null) {
+        if ($this->fileNameWithExt == null) {
             $file = $this->getData('filename');
 
             if (strpos($file, '.') === false) {
@@ -239,10 +287,10 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
 
             $file = Mage::getSingleton('feedexport/feed_generator_pattern')->getPatternValue($file, null, null);
 
-            $this->_fileNameWithExt = $file;
+            $this->fileNameWithExt = $file;
         }
 
-        return $this->_fileNameWithExt;
+        return $this->fileNameWithExt;
     }
 
     public function getHistoryCollection()
@@ -256,11 +304,11 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
     public function addToHistory($title, $message = null, $type = null)
     {
         Mage::getModel('feedexport/feed_history')
-                ->setFeedId($this->getId())
-                ->setTitle($title)
-                ->setMessage($message)
-                ->setType($type)
-                ->save();
+            ->setFeedId($this->getId())
+            ->setTitle($title)
+            ->setMessage($message)
+            ->setType($type)
+            ->save();
 
         return $this;
     }
@@ -278,15 +326,16 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
 
     public function canRunCron()
     {
-        $result  = false;
+        $result = false;
 
-        $crntDay        = Mage::getSingleton('core/date')->date('w');
-        $crntDayOfYear  = Mage::getSingleton('core/date')->date('z');
-        $crntTime       = Mage::getSingleton('core/date')->date('G') * 60 + Mage::getSingleton('core/date')->date('i');
+        $crntDay = Mage::getSingleton('core/date')->date('w');
+        $crntDayOfYear = Mage::getSingleton('core/date')->date('z');
+        $crntTime = (int) Mage::getSingleton('core/date')->date('G') * 60 + (int) Mage::getSingleton('core/date')->date('i');
 
-        $lastRun        = strtotime($this->getGeneratedAt());
-        $lastDayOfYear  = Mage::getSingleton('core/date')->date('z', $lastRun);
-        $lastTime       = Mage::getSingleton('core/date')->date('G', $lastRun) * 60 + Mage::getSingleton('core/date')->date('i', $lastRun);
+        $lastRun = strtotime($this->getGeneratedAt());
+        $lastDayOfYear = Mage::getSingleton('core/date')->date('z', $lastRun);
+        $lastTime = (int) Mage::getSingleton('core/date')->date('G', $lastRun) * 60
+            + (int) Mage::getSingleton('core/date')->date('i', $lastRun);
 
         // we run generation minimum day ago. Need run generation
         if ($crntDayOfYear > $lastDayOfYear) {
@@ -305,10 +354,17 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
         return $result;
     }
 
+    /**
+     * Create new feed based on current.
+     *
+     * @return $this
+     */
     public function duplicate()
     {
-        $feedCopy = Mage::getModel('feedexport/feed')
-            ->addData($this->getData())
+        /** @var Mirasvit_FeedExport_Model_Feed $duplicate */
+        $duplicate = Mage::getModel('feedexport/feed');
+
+        $duplicate->addData($this->getData())
             ->setId(null)
             ->setCreatedAt(null)
             ->setUpdatedAt(null)
@@ -320,7 +376,7 @@ class Mirasvit_FeedExport_Model_Feed extends Mage_Core_Model_Abstract
             ->setFilename($this->getFilename().'_copy')
             ->save();
 
-        $feedCopy->setRuleIds($this->getRuleIds())
+        $duplicate->setRuleIds($this->getRuleIds())
             ->save();
 
         return $this;

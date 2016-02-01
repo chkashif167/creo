@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $this Mirasvit_MstCore_Block_Adminhtml_Validator
+ * @var Mirasvit_MstCore_Block_Adminhtml_Validator
  */
 ?>
 <?php
@@ -16,6 +16,11 @@ $_devResults = $this->getResults('dev');
         <?php endif ?>
     </p>
 </div>
+<?php if ($this->getIsPassed()): ?>
+    <h1 style="color: #3cb861">Success. All tests passed!</h1>
+<?php else: ?>
+    <h1  style="color: #e41101">Some tests failed. Please, try to solve problems.</h1>
+<?php endif; ?>
 <div class="grid">
     <h4 class="system-fieldset-sub-head">General information</h4>
     <table class="data" cellspacing="0">

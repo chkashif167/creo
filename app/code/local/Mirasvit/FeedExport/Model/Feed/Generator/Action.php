@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -37,5 +37,12 @@ abstract class Mirasvit_FeedExport_Model_Feed_Generator_Action extends Varien_Ob
     public function getValue($key)
     {
         return Mage::helper('feedexport')->getState()->getChainItemValue($this->getKey(), $key);
+    }
+
+    public function setIteratorType()
+    {
+        Mage::helper('feedexport')->getState()->setData('iterator_type', $this->getKey());
+
+        return $this;
     }
 }
