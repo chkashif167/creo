@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Helper_Io extends Mage_Core_Helper_Abstract
@@ -22,13 +23,13 @@ class Mirasvit_FeedExport_Helper_Io extends Mage_Core_Helper_Abstract
     public function write($filename, $content, $mode = 'w')
     {
         $wait = true;
-        $fp   = fopen($filename, $mode);
-        if($this->isWin()) {
+        $fp = fopen($filename, $mode);
+        if ($this->isWin()) {
             fwrite($fp, $content);
         } else {
             flock($fp, LOCK_SH, $wait);
             fwrite($fp, $content);
-            flock($fp, LOCK_UN);    
+            flock($fp, LOCK_UN);
         }
         fclose($fp);
 
@@ -42,11 +43,11 @@ class Mirasvit_FeedExport_Helper_Io extends Mage_Core_Helper_Abstract
     public function read($filename)
     {
         $wait = true;
-        if(!$this->fileExists($filename)) {
+        if (!$this->fileExists($filename)) {
             Mage::throwException(sprintf('File %s not exists.', $filename));
         } else {
             $fp = fopen($filename, 'r');
-            if($this->isWin()) {
+            if ($this->isWin()) {
                 $content = file_get_contents($filename);
             } else {
                 flock($fp, LOCK_SH, $wait);
@@ -186,7 +187,7 @@ class Mirasvit_FeedExport_Helper_Io extends Mage_Core_Helper_Abstract
 
     public function lock($file)
     {
-        if(!$this->isWin()) {
+        if (!$this->isWin()) {
             flock($this->_getLockFilePointer($file), LOCK_EX | LOCK_NB);
         }
 
@@ -195,7 +196,7 @@ class Mirasvit_FeedExport_Helper_Io extends Mage_Core_Helper_Abstract
 
     public function unlock($file)
     {
-        if(!$this->isWin()) {
+        if (!$this->isWin()) {
             flock($this->_getLockFilePointer($file), LOCK_UN);
         }
 
@@ -205,7 +206,7 @@ class Mirasvit_FeedExport_Helper_Io extends Mage_Core_Helper_Abstract
     public function isLocked($file)
     {
         $fp = $this->_getLockFilePointer($file);
-        if(!$this->isWin()) {
+        if (!$this->isWin()) {
             if (flock($fp, LOCK_EX | LOCK_NB)) {
                 flock($fp, LOCK_UN);
 
@@ -251,7 +252,12 @@ class Mirasvit_FeedExport_Helper_Io extends Mage_Core_Helper_Abstract
 
                     if ($isLoggedIn) {
                         try {
-                            ssh2_scp_send($connection, $filePath.DS.$fileName, $path.DS.$fileName);
+                            $sftp = ssh2_sftp($connection);
+                            $stream = fopen('ssh2.sftp://'.$sftp.DS.$path.DS.$fileName, 'w');
+                            $data = file_get_contents($filePath.DS.$fileName);
+                            fwrite($stream, $data);
+                            fclose($stream);
+
                             return true;
                         } catch (Exception $e) {
                             Mage::throwException('There was a problem while uploading file "'.$filePath.DS.$fileName.'"');
@@ -295,6 +301,7 @@ Please contact your hosting provider to install the extension. More information 
 
                     try {
                         ftp_put($connection, $fileName, $filePath.DS.$fileName, FTP_ASCII);
+
                         return true;
                     } catch (Exception $e) {
                         Mage::throwException('There was a problem while uploading file "'.$filePath.DS.$fileName.'"');

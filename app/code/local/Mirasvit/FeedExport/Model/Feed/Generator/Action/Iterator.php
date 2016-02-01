@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -45,7 +45,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Action_Iterator extends Mirasvit_
         }
 
         $collection = $iteratorModel->getCollection();
-        $size       = $collection->getSize();
+        $size       = $collection->getConnection()->fetchOne($collection->getSelectCountSql());
         $idx        = intval($this->getValue('idx'));
         $add        = intval($this->getValue('add'));
 
@@ -102,6 +102,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Action_Iterator extends Mirasvit_
         if ($idx >= $size) {
             $iteratorModel->finish();
             $this->finish();
+            $this->setIteratorType($this->getKey());
         }
     }
 }

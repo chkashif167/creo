@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -371,7 +371,7 @@ class Mirasvit_FeedExport_Model_Rule_Condition_Product extends Mage_Rule_Model_C
                 break;
 
             case 'status_parent':
-                $parentProduct = Mage::getSingleton('feedexport/feed_generator_pattern_product')->getParentProduct($object);
+                $parentProduct = $this->getProductPattern()->getParentProduct($object);
                 $value = $parentProduct->getStatus();
                 
                 return $this->validateAttribute($value);
@@ -517,5 +517,13 @@ class Mirasvit_FeedExport_Model_Rule_Condition_Product extends Mage_Rule_Model_C
     public function getJsFormObject()
     {
         return 'rule_conditions_fieldset';
+    }
+
+    /**
+     * @return Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
+     */
+    public function getProductPattern()
+    {
+        return Mage::getSingleton('feedexport/feed_generator_pattern_product')->setFeed($this->getRule()->getFeed());
     }
 }

@@ -173,13 +173,13 @@
     </frontend>
     <admin>
         <routers>
-            <feedexport>
-                <use>admin</use>
-                <args>
-                    <module>Mirasvit_FeedExport</module>
-                    <frontName>feedexport</frontName>
-                </args>
-            </feedexport>
+            <adminhtml>
+				<args>
+					<modules>
+						<feedexport after="Mage_Adminhtml">Mirasvit_FeedExport_Adminhtml</feedexport>
+					</modules>
+				</args>
+			</adminhtml>
         </routers>
     </admin>
     <adminhtml>
@@ -193,10 +193,10 @@
         <events>
             <adminhtml_catalog_product_grid_prepare_massaction>
                 <observers>
-                    <feedexport_adminhtml_catalog_product_grid_prepare_massaction>
+                    <adminhtml_feedexport_catalog_product_grid_prepare_massaction>
                         <class>feedexport/observer</class>
                         <method>onAdminhtmlCatalogProductGridPrepareMassaction</method>
-                    </feedexport_adminhtml_catalog_product_grid_prepare_massaction>
+                    </adminhtml_feedexport_catalog_product_grid_prepare_massaction>
                 </observers>
             </adminhtml_catalog_product_grid_prepare_massaction>
         </events>

@@ -1,5 +1,5 @@
 <?php
-$_url = Mage::helper('adminhtml')->getUrl('feedexport/adminhtml_template/getRow');
+$_url = Mage::helper('adminhtml')->getUrl('adminhtml/feedexport_template/getRow');
 $_mapping = $this->getMapping();
 $_cnt = count($_mapping['header']);
 if ($_cnt == 0) {
@@ -26,7 +26,7 @@ if ($_cnt == 0) {
                     <th width="50"></th>
                 </tr>
             </thead>
-        <?php for($i = 0; $i < $_cnt; $i++): ?>
+        <?php for ($i = 0; $i < $_cnt; ++$i): ?>
             <tr>
                 <td>
                     <button onclick="FeedExportMapping.rowUp(this); return false;" class="button"><span><span><?php echo $this->__('↑')?></span></span></button>

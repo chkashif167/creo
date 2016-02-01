@@ -137,13 +137,13 @@
     </adminhtml>
     <admin>
         <routers>
-            <mstcore>
-                <use>admin</use>
-                <args>
-                    <module>Mirasvit_MstCore</module>
-                    <frontName>mstcore</frontName>
-                </args>
-            </mstcore>
+            <adminhtml>
+				<args>
+					<modules>
+						<mstcore before="Mage_Adminhtml">Mirasvit_MstCore_Adminhtml</mstcore>
+					</modules>
+				</args>
+			</adminhtml>
         </routers>
     </admin>
     <frontend>

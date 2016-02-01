@@ -10,9 +10,10 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Block_Adminhtml_Rule_Edit_Tab_Filter extends Mage_Adminhtml_Block_Widget_Form
@@ -47,15 +48,15 @@ class Mirasvit_FeedExport_Block_Adminhtml_Rule_Edit_Tab_Filter extends Mage_Admi
         $form->setHtmlIdPrefix('rule_');
         $renderer = Mage::getBlockSingleton('adminhtml/widget_form_renderer_fieldset')
             ->setTemplate('promo/fieldset.phtml')
-            ->setNewChildUrl(Mage::getModel('adminhtml/url')->getUrl('*/adminhtml_rule/newConditionHtml/form/rule_conditions_fieldset', array('rule_type' => $model->getType())));
+            ->setNewChildUrl(Mage::getModel('adminhtml/url')->getUrl('*/*/newConditionHtml/form/rule_conditions_fieldset', array('rule_type' => $model->getType())));
 
         $fieldset = $form->addFieldset('conditions_fieldset', array('legend' => __('Filters (leave blank for select all products)')))
             ->setRenderer($renderer);
 
         $fieldset->addField('conditions', 'text', array(
-            'name'     => 'conditions',
-            'label'    => __('Filters'),
-            'title'    => __('Filters'),
+            'name' => 'conditions',
+            'label' => __('Filters'),
+            'title' => __('Filters'),
             'required' => true,
         ))->setRule($model)
             ->setRenderer(Mage::getBlockSingleton('rule/conditions'));

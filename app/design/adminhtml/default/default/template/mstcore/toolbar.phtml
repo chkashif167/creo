@@ -1,15 +1,13 @@
 <?php
 /**
- * @var $this Mirasvit_MstCore_Block_Adminhtml_Toolbar
+ * @var Mirasvit_MstCore_Block_Adminhtml_Toolbar
  */
 ?>
-<?php
-$results = $this->getResults('dev');
-?>
 <?php if ($this->isToolbarAllowed()): ?>
+    <?php $results = $this->getResults('dev'); ?>
     <div id="mst-toolbar" class="notification-global notification-global-notice">
         <span class="f-right">
-            <a href="<?php echo $this->getUrl('mstcore/adminhtml_validator/index') ?>">Go to Mirasvit Extensions Validator</a>
+            <a href="<?php echo $this->getUrl('adminhtml/mstcore_validator/index') ?>">Go to Mirasvit Extensions Validator</a>
         </span>
         <p><strong class="label">Mirasvit Extensions Validator</strong></p>
         <?php foreach ($results as $result): ?>

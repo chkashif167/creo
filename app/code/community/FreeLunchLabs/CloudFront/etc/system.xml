@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <cloudfront translate="label" module="cloudfront">
+            <class>separator-top</class>
+            <label>Cloud Front CDN Configuration</label>
+            <tab>general</tab>
+            <sort_order>110</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled CloudFront CDN</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <key translate="label comment">
+                            <label>AWS Access Key ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Your Amazon Web Services Access Key. <a href="https://portal.aws.amazon.com/gp/aws/securityCredentials#cred_tab_block" target="_blank">Find It Here.</a>]]>
+                            </comment>
+                        </key>
+                        <secret translate="label comment">
+                            <label>AWS Secret Access Key</label>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Your Amazon Web Services Secret Access Key. <a href="https://portal.aws.amazon.com/gp/aws/securityCredentials#cred_tab_block" target="_blank">Find It Here.</a>]]>
+                            </comment>
+                        </secret>
+                        <distribution translate="label comment">
+                            <label>CloudFront Distribution ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </distribution>
+                        <cloudfront_test_connect_wizard translate="button_label">
+                            <label></label>
+                            <button_label>Create New Distribution</button_label>
+                            <frontend_model>freelunchlabs_cloudfront/adminhtml_testconnection</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>The Distribution ID is how CloudFront identifies your Distribution. If you don't have one, click the "Create New Distribution" button. You can also enter your own Distribution ID if you already have one configured.</comment>
+                        </cloudfront_test_connect_wizard>
+                        <origin translate="label comment">
+                            <label>Source URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>The URL where CloudFront will look to find your file. In almost all cases, this will be you Unsecure Base URL.</comment>
+                        </origin>
+                        <refresh translate="label">
+                            <label>Enabled Quick CDN Refresh Support</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Highly recommended. Gives you the ability to instainiously refresh the files stored on the CDN. Requires Apache mod_rewrite.</comment>
+                        </refresh>
+                        <refreshCache translate="label">
+                            <label>Refresh Config Cache on CDN Refresh</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Automatically clears the Config Cache when content on the CDN is refreshed. If set to "no", you might have to manually clear the config cache after a CDN refresh.</comment>
+                        </refreshCache>
+                    </fields>
+                </general>
+                <media>
+                    <label>Media Files</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <media translate="label">
+                            <label>Enabled CDN for Media</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If set to "Yes" this will add all of your media files to the CDN. This includes files from the CMS and Catalog.</comment>
+                        </media>
+                        <media_path translate="label comment">
+                            <label>Media Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>The path to your media directory relative to your Source URL. In almost all cases, this will be: media/</comment>
+                        </media_path>
+                        <auto_refresh_media>
+                            <label>Auto Refresh Media</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If set to "Yes" this will automatically refresh the Media Files on the CDN when you upload new Product images. Requires "Quick CDN Refresh Support" to be enabled.</comment>
+                        </auto_refresh_media>
+                    </fields>
+                </media>
+                <skin>
+                    <label>Skin Files</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <skin translate="label">
+                            <label>Enabled CDN for Skin</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If set to "Yes" this will add all of your skin files to the CDN. This includes files used in your theme, such as CSS, Logos, and Background Images.</comment>
+                        </skin>
+                        <skin_path translate="label comment">
+                            <label>Skin Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>The path to your skin directory relative to your Source URL. In most cases, this will be: skin/</comment>
+                        </skin_path>
+                    </fields>
+                </skin>
+                <js>
+                    <label>Javascript Files</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <js translate="label">
+                            <label>Enabled CDN for JavaScript</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If set to "Yes" this will add all of your JavaScript files to the CDN. This includes all the files within the root "js" directory.</comment>
+                        </js>
+                        <js_path translate="label comment">
+                            <label>Javascript Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>The path to your Javascript directory relative to your Source URL. In most cases, this will be: js/</comment>
+                        </js_path>
+                    </fields>
+                </js>
+                <test_mode>
+                    <label>Testing Tools</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>0</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled CDN for JavaScript</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If set to "Yes", this will only allow the CDN to work for the below IP address. This is useful if you want to test the CDN without disrupting users on your live site.</comment>
+                        </enabled>
+                        <ip_address translate="label comment">
+                            <label>Javascript Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>The path to your Javascript directory relative to your Source URL. In most cases, this will be: js/</comment>
+                        </ip_address>
+                        <test_file>
+                            <label>Test File Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Path to a test file to make sure Quick CDN Refresh Support will work.</comment>
+                        </test_file>
+                    </fields>
+                </test_mode>
+            </groups>
+        </cloudfront>
+    </sections>
+</config>

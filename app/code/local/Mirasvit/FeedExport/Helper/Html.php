@@ -10,8 +10,8 @@
  * @category  Mirasvit
  * @package   Advanced Product Feeds
  * @version   1.1.2
- * @build     616
- * @copyright Copyright (C) 2015 Mirasvit (http://mirasvit.com/)
+ * @build     671
+ * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
 
@@ -212,6 +212,7 @@ class Mirasvit_FeedExport_Helper_Html extends Mage_Core_Helper_Abstract
         $stock = array(
             'is_in_stock',
             'qty',
+            'parent_qty',
             'manage_stock'
         );
 

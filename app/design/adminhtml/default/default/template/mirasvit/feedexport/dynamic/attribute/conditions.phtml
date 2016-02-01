@@ -50,7 +50,7 @@ if (!is_array($_conditions)) {
                              <?php echo $_htmlHelper->getOutputTypeHtml('condition['.$key.'][output_type]', @$_condition['output_type'], array('onchange' => 'FeedExportDynamicAttribute.changeConditionOutputType(this);')) ?>
                         </td>
                         <td width="35%" class="values">
-                            <input type="text" class="input-text" value="<?php echo $_condition['value_pattern'] ?>" name="condition[<?php echo $key ?>][value_pattern]" style="width: 98%;<?php echo (@$_condition['output_type'] == 'pattern') ? '' : 'display:none' ?>" />
+                            <input type="text" class="input-text" value="<?php echo htmlentities($_condition['value_pattern']) ?>" name="condition[<?php echo $key ?>][value_pattern]" style="width: 98%;<?php echo (@$_condition['output_type'] == 'pattern') ? '' : 'display:none' ?>" />
                             <?php echo $_htmlHelper->getAttributeSelectHtml('condition['.$key.'][value_attribute]', $_condition['value_attribute'], (@$_condition['output_type'] == 'pattern') ? 'display:none;width: 306px;' : 'width: 306px;') ?>
                         </td>
                         <td width="10%">
@@ -95,7 +95,7 @@ if (!is_array($_conditions)) {
                             <?php echo $_htmlHelper->getOutputTypeHtml('condition[default][output_type]', @$_condition['output_type'], array('onchange' => 'FeedExportDynamicAttribute.changeConditionOutputType(this);')) ?>
                         </td>
                         <td width="35%" class="values">
-                            <input type="text" class="input-text" value="<?php echo @$_conditions['default']['value_pattern'] ?>" name="condition[default][value_pattern]"  style="width: 98%;<?php echo (@$_conditions['default']['output_type'] == 'pattern' || (!@$_conditions['default'])) ? '' : 'display:none' ?>" />
+                            <input type="text" class="input-text" value="<?php echo htmlentities(@$_conditions['default']['value_pattern']) ?>" name="condition[default][value_pattern]"  style="width: 98%;<?php echo (@$_conditions['default']['output_type'] == 'pattern' || (!@$_conditions['default'])) ? '' : 'display:none' ?>" />
                             <?php echo $_htmlHelper->getAttributeSelectHtml('condition[default][value_attribute]', @$_conditions['default']['value_attribute'], (@$_conditions['default']['output_type'] == 'pattern' || (!@$_conditions['default'])) ? 'display:none;width: 306px;' : 'width: 306px;') ?>
                         </td>
                         <td width="10%"></td>

@@ -1,18 +1,14 @@
 <?php
 /*
  * Aten Software Product Data Exporter for Magento
-<<<<<<< HEAD
  *
-=======
- * 
->>>>>>> hotfix-remove-back-button
  * Copyright (c) 2014. Aten Software LLC. All Rights Reserved.
  * Author: Shailesh Humbad
  * Website: http://www.atensoftware.com/p187.php
  *
  * This file is part of Aten Software Product Data Exporter for Magento.
  *
- * Aten Software Product Data Exporter for Magento is free software: 
+ * Aten Software Product Data Exporter for Magento is free software:
  * you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -45,12 +41,6 @@ $exporter = new AtenExporterForMagento();
 // Class to hold all functionality for the exporter
 class AtenExporterForMagento
 {
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> hotfix-remove-back-button
 	// Set the password to export data here
 	const PASSWORD = '';
 
