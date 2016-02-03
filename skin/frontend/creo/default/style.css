@@ -681,7 +681,7 @@ p.style1 {
 	padding: 55px 0 10px;
 }
 .search-form {
-	margin: 0 0 0 5px;
+	margin:-9px 0 0 5px;
 	padding: 3px 5px;
 	border: 1px solid #000;
 	width: auto;
