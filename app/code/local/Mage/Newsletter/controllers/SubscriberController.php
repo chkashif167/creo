@@ -59,7 +59,7 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                         ->loadByEmail($email)
                         ->getId();
                 if ($ownerId !== null && $ownerId != $customerSession->getId()) {
-                    Mage::throwException($this->__('This email address is already assigned to another user.'));
+                    //Mage::throwException($this->__('This email address is already assigned to another user.'));
 
 
                 }
@@ -68,9 +68,14 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                 if ($emailExist->getId()) {
                 //Mage::throwException($this->__('This email address is already exist.'));
 
+
                     /*$emailTemplate = Mage::getModel('core/email_template')->loadByCode('already_subscribed_coupen_code');
                     
            
+
+                    $emailTemplate = Mage::getModel('core/email_template')->loadByCode('already_subscribed_coupen_code');
+
+                    //$processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
                     $mail = Mage::getModel('core/email')
                      ->setToName()
                      ->setToEmail($email)
@@ -83,9 +88,7 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                      $session->addSuccess($this->__('Thank you for your subscription.'));*/
                 }
                 $status = Mage::getModel('newsletter/subscriber')->subscribe($email);
-                
 
-                
                 if ($status == Mage_Newsletter_Model_Subscriber::STATUS_NOT_ACTIVE) {
                     $session->addSuccess($this->__('Confirmation request has been sent.'));
                 }
@@ -100,10 +103,10 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                 }
             }
             catch (Mage_Core_Exception $e) {
-                $session->addException($e, $this->__('There was a problem with the subscription: %s', $e->getMessage()));
+                //$session->addException($e, $this->__('There was a problem with the subscription: %s', $e->getMessage()));
             }
             catch (Exception $e) {
-                $session->addException($e, $this->__('There was a problem with the subscription.'));
+                //$session->addException($e, $this->__('There was a problem with the subscription.'));
             }
         }
         $this->_redirectReferer();
