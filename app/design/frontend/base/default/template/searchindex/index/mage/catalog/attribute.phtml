@@ -1,0 +1,13 @@
+<?php
+$_collection = $this->getCollection();
+$_index = Mage::helper('searchindex/index')->getIndex('mage_catalog_attribute');
+?>
+<div class="searchindex-result searchindex-result-category">
+    <ul>
+        <?php foreach ($_collection as $_item): ?>
+            <li>
+            <a href="<?php echo $_index->getUrl($_item) ?>"><?php echo $_item->getLabel() ?></a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>

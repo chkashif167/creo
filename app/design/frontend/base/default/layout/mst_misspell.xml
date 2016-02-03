@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalogsearch_result_index translate="label">
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/mirasvit/misspell/misspell.css</stylesheet></action>
+        </reference>
+        <reference name="content">
+            <block type="misspell/suggest" name="misspell.suggest" as="misspell.suggest" before="search.result" template="mst_misspell/suggest.phtml" />
+            <block type="misspell/fallback" name="misspell.fallback" as="misspell.fallback" before="search.result" template="mst_misspell/fallback.phtml" />
+        </reference>
+    </catalogsearch_result_index>
+</layout>

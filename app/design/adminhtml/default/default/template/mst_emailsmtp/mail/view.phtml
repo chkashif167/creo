@@ -1,0 +1,82 @@
+<?php
+$_model = $this->getModel();
+?>
+<script>
+    function autoResize(id){
+        var newheight;
+        var newwidth;
+
+        if(document.getElementById){
+            newheight=document.getElementById(id).contentWindow.document.body.scrollHeight;
+            newwidth=document.getElementById(id).contentWindow.document.body.scrollWidth;
+        }
+
+        document.getElementById(id).height= (newheight) + "px";
+        document.getElementById(id).width= (newwidth) + "px";
+    }
+</script>
+<div class="content-header">
+    <h3 class="icon-head head-adminhtml-queue-view"><?php echo $this->getHeaderText() ?></h3>
+    <p class="form-buttons"><button title="Back" type="button" class="scalable back" onclick="setLocation('<?php echo $this->getBackUrl() ?>')" style=""><span><span><span>Back</span></span></span></button></p>
+</div>
+<table width="100%">
+    <tr>
+        <td width="50%">
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                    <h4 class="icon-head head-edit-form fieldset-legend">General Information</h4>
+                    <div class="form-buttons"></div>
+                </div>
+                <div class="fieldset">
+                    <table class="form-list">
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Mail ID') ?></td>
+                            <td class="value"><?php echo $_model->getId() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Created At') ?></td>
+                            <td class="value"><?php echo $_model->getCreatedAt()  ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Updated At') ?></td>
+                            <td class="value"><?php echo $_model->getUpdatedAt() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Subject') ?></td>
+                            <td class="value"><?php echo $_model->getSubject() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Recipient Email') ?></td>
+                            <td class="value"><?php echo $_model->getToEmail() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Recipient Name') ?></td>
+                            <td class="value"><?php echo $_model->getToName() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Sender Email') ?></td>
+                            <td class="value"><?php echo $_model->getFromEmail() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Sender Name') ?></td>
+                            <td class="value"><?php echo $_model->getFromName() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Reply To') ?></td>
+                            <td class="value"><?php echo $_model->getReplyTo() ? $_model->getReplyTo() : '-' ?></td>
+                        </tr>
+                        <?php if($_model->getMessage()) { ?>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('emailsmtp')->__('Exception-message') ?></td>
+                            <td class="value"><?php echo $_model->getMessage();  ?></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
+        </td>
+        <td width="50%">
+            <iframe width="100%" height="200px"  src="<?php echo $this->getPreviewUrl() ?>" style="border: 1px solid #d6d6d6; margin: 0px 5px 0px 5px;" id="iframe1" onLoad="autoResize('iframe1');">
+        </td>
+    </tr>
+</table>

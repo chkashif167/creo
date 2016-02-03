@@ -1,0 +1,50 @@
+<div class="dashboard-container UI-DASHBOARD-CONTAINER">
+    <div class="content-header">
+        <table cellspacing="0">
+            <tr>
+                <td>
+                    <h3 class="head-dashboard">
+                        <?php if ($this->getDashboard()->getId() === 0): ?>
+                            <?php echo $this->__('Advanced Dashboard') ?>
+                        <?php else: ?>
+                            <?php echo $this->__('User Dashboard') ?>
+                        <?php endif ?>
+                    </h3>
+                </td>
+                <td>
+                </td>
+                <td class="form-buttons">
+                    <a href="<?php echo $this->getNotificationEditUrl() ?>">Email notifications</a>
+
+
+                    <?php if ($this->getDashboard()->isEditable()): ?>
+                    <button type="button" class="scalable add UI-ADD-WIDGET">
+                        <span><span>Add Widget</span></span>
+                    </button>
+                    <?php endif ?>
+
+                    <?php echo $this->getStoreSwitcher()->toHtml() ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="gridster UI-DASHBOARD-GRID"
+        data-url="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/advd_dashboard/action') ?>"
+        data-store-ids="<?php echo Mage::app()->getRequest()->getParam('store_ids') ?>"
+        data-id="<?php echo $this->getDashboard()->getId() ?>"
+        data-editable="<?php echo $this->getDashboard()->isEditable() ?>">
+
+        <?php if ($this->getDashboard()->isEditable()): ?>
+        <label class="gridster-lock">
+            <input type="checkbox" title="Lock/Unlock Dashboard" class="UI-DASHBOARD-LOCK">
+        </label>
+        <?php endif ?>
+
+        <ul></ul>
+    </div>
+</div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script>
+    google.load("visualization", '1.1', {packages:['corechart'], 'language': 'en'});
+</script>

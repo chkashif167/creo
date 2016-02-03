@@ -1,0 +1,13 @@
+tables:
+  customer/entity:
+    - customer_id: 1
+      email: bob@example.com
+  log/visitor:
+    - visitor_id: 1
+      first_visit_at: 2013-10-01 23:00:00
+      last_visit_at: 2013-10-01 23:10:00
+  log/customer:
+    - log_id: 1
+      visitor_id: 1
+      customer_id: 1
+      store_id: 1

@@ -1,0 +1,18 @@
+<?php
+$_indexes = $this->getIndexes();
+?>
+
+<div class="page-title">
+    <h1><?php echo ($this->getHeaderText()) ? $this->getHeaderText() : $this->__("Search results for '%s'", $this->helper('catalogsearch')->getEscapedQueryText()) ?></h1>
+</div>
+<div class="searchindex-results-list">
+<?php foreach ($_indexes as $_index): ?>
+    <?php if ($_index->getCountResults()
+        && ($_index->getContentBlock()->getIsVisible() == true || $_index->getCode() == 'mage_catalog_product')): ?>
+            <h3><?php echo $_index->getTitle() ?>&nbsp;<span>(<?php echo $_index->getCountResults() ?>)</span></h3>
+            <?php echo $_index->getContentBlock()->toHtml() ?>
+            <br>
+    <?php endif ?>
+<?php endforeach ?>
+</div>
+<?php Mage::helper('mstcore/debug')->dump('product $collection', Mage::getModel('catalogsearch/layer')->getProductCollection()->getSelect()->__toString()); ?>

@@ -1,0 +1,26 @@
+<script type="text/javascript">
+//<![CDATA[
+    function on<?php echo $this->getHtmlId() ?>() {
+        var elem   = $('btn_<?php echo $this->getHtmlId() ?>');
+        var params = {};
+
+        new Ajax.Request('<?php echo $this->getAjaxUrl() ?>', {
+            parameters: params,
+            onSuccess: function(response) {
+                var result = '';
+                try {
+                    response = response.responseText;
+                    result   = response;
+                } catch (e) {
+                    result = e;
+                }
+                $('reindex_result<?php echo $this->getHtmlId() ?>').addClassName('notice-msg').update(result).show();
+            }
+        });
+    }
+//]]>
+</script>
+<button onclick="on<?php echo $this->getHtmlId() ?>(); return false;" class="scalable" type="button" id="<?php echo $this->getHtmlId() ?>">
+    <span><?php echo $this->escapeHtml($this->getButtonLabel()) ?></span>
+</button>
+<p id="reindex_result<?php echo $this->getHtmlId() ?>" style="display:none; padding: 8px 8px 2px 32px !important; min-height: 26px;"></p>

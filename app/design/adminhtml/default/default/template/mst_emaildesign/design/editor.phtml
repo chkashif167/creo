@@ -1,0 +1,56 @@
+<?php
+$_model = $this->getModel();
+?>
+
+<div class="htmleditor-design">
+    <textarea id="<?php echo $this->getName() ?>" name="<?php echo $this->getName() ?>" class="codemirror"><?php echo $this->getValue() ?></textarea>
+    <iframe id="preview<?php echo $this->getName() ?>"></iframe>
+    <div class="clearfix"></div>
+</div>
+
+<script>
+document.observe('dom:loaded', function() {
+    var url = "<?php echo $this->getUrl('*/*/drop', array('id' => Mage::registry('current_model')->getId())) ?>";
+    var previewId = 'preview<?php echo $this->getName() ?>';
+    var item = $('<?php echo $this->getName() ?>');
+    var delay;
+    var <?php echo $this->getName() ?> = CodeMirror.fromTextArea(item, {
+        mode           : 'text/html',
+        tabMode        : 'indent',
+        matchTags      : true,
+        viewportMargin : Infinity,
+        tabSize        : 2,
+        lineWrapping   : false
+    });
+    
+    <?php echo $this->getName() ?>.on("change", function() {
+        clearTimeout(delay);
+        delay = setTimeout(updatePreview, 300);
+    });
+
+    setInterval(function() {
+        <?php echo $this->getName() ?>.refresh();
+        <?php echo $this->getName() ?>.save()
+    }, 100);
+
+    function updatePreview() {
+        var previewFrame = document.getElementById(previewId);
+        var preview      =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+        
+        var content  = $('<?php echo $this->getName() ?>').value;
+        
+        new Ajax.Request(url, {
+            loaderArea : false,
+            type       : 'POST',
+            parameters : {template: content},
+            onSuccess  : function(response) {
+                preview.open();
+                preview.write(response.responseText);
+                preview.close();
+            }
+        });
+
+    }
+    setTimeout(updatePreview, 300);
+});
+</script>

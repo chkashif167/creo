@@ -1,0 +1,67 @@
+<?php
+    $_htmlHelper = Mage::helper('email/html');
+    $_collection = $this->getChainCollection();
+    $_parent     = $this->getParent();
+?>
+<div id="tabs_general_section_content" style=""><div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('email')->__('Email Chain') ?></h4>
+        <div class="form-buttons"></div>
+    </div>
+    <div class="fieldset" id="chain-container">
+        <ul class="chain">
+            <?php foreach ($_collection as $_item): ?>
+            <?php $_prefix = 'chain['.$_item->getId().']'; ?>
+            <li class="chain-row" style="<?php if (!$_item->getId()):?>display:none<?php endif ?>">
+                <button type="button" onclick="return false;" class="chain-row-expand expand"><span><span><?php echo Mage::helper('email')->__('More') ?></span></span></button>
+                <button type="button" onclick="return false;" class="chain-row-collapse collapse" style="display: none;"><span><span><?php echo Mage::helper('email')->__('Less') ?></span></span></button>
+                &nbsp;&nbsp;&nbsp;
+                <?php echo $this->__('After') ?> 
+                <span class="chain-param">
+                    <a href="javascript:void(0)" class="label">...</a>
+                    <span class="element">
+                        <input type="text" name="<?php echo $_prefix ?>[days]" value="<?php echo $_item->getDays() ?>" class="element-value-changer input-text">
+                    </span>
+                </span> <?php echo $this->__('days') ?>
+                <span class="chain-param">
+                    <a href="javascript:void(0)" class="label">...</a>
+                    <span class="element">
+                        <?php echo $_htmlHelper->getTypeSelect($_prefix.'[schedule_type]', $_item->getType(), array('class' => 'element-value-changer')) ?>
+                    </span>
+                </span> 
+                <span class="chain-param">
+                    <a href="javascript:void(0)" class="label">...</a>
+                    <span class="element">
+                        <?php echo $_htmlHelper->getHourSelect($_prefix.'[hours]', $_item->getHours(), array('class' => 'element-value-changer')) ?>
+                    </span>
+                </span><?php echo $this->__('hour(s)') ?>
+                <span class="chain-param">
+                    <a href="javascript:void(0)" class="label">...</a>
+                    <span class="element">
+                        <?php echo $_htmlHelper->getMinuteSelect($_prefix.'[minutes]', $_item->getMinutes(), array('class' => 'element-value-changer')) ?>
+                    </span>
+                </span> <?php echo $this->__('minute(s) send') ?>
+                <span class="chain-param">
+                    <a href="javascript:void(0)" class="label">...</a>
+                    <span class="element">
+                        <?php echo $_htmlHelper->getTemplateSelect($_prefix.'[template_id]', $_item->getTemplateId(), array('class' => 'element-value-changer')) ?>
+                    </span>
+                </span> <?php echo $this->__('email') ?>
+                &nbsp;&nbsp;&nbsp;
+                <button type="button" onclick="return false;" class="chain-row-remove delete"><span><span><?php echo Mage::helper('email')->__('Delete') ?></span></span></button>
+                <div class="options">
+                    <?php echo $_parent->getCouponFieldset($_item) ?>
+                    <?php echo $_parent->getCrossSellFieldset($_item) ?>
+                    <?php echo $_parent->getExcludeDaysFieldset($_item) ?>
+                </div>
+            </li>
+            <?php endforeach ?>
+        </ul>
+        <p style="margin-top:20px;">
+            <button type="button" onclick="return false;" class="add-email-chain-row scalable add"><span><span><?php echo $this->__('Add New Email') ?></span></span></button>
+        </p>
+    </div>
+</div>
+<script>
+var chain = new EmailTriggerChain('chain-container');
+</script>

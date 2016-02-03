@@ -1,0 +1,76 @@
+.htmleditor-design {
+    position: relative;
+    width: 100%;
+
+    .CodeMirror {
+        float: left;
+        width: 50%;
+        height: 600px;
+        max-width: 700px;
+        border: 1px solid #d6d6d6;
+    }
+    iframe {
+        width: 49%;
+        float: left;
+        height: 600px;
+        margin-left: 10px;
+        border: 1px solid #d6d6d6;
+    }
+
+    .clearfix {
+        height: 0px;
+        clear: both;
+    }
+}
+
+.htmleditor-template {
+    position: relative;
+    width: 98% !important;
+
+    .areas {
+        float: left;
+        width: 50%;
+        position: relative;
+
+        .item {
+        padding-right: 10px;
+            position:relative;
+            margin-bottom: 15px;
+            
+            .label {
+                position: absolute;
+                left: -205px;
+                top: 0px;
+            }
+            .CodeMirror {
+                max-width: 700px;
+                min-height: 35px;
+                width: 100%;
+                border: 1px solid #d6d6d6;
+            }
+        }
+    }
+    iframe {
+        width: 49%;
+        float: left;
+        height: 600px;
+        border: 1px solid #d6d6d6;
+    }
+
+    .clearfix {
+        height: 0px;
+        clear: both;
+    }
+}
+.icon-head {
+  &.head-adminhtml-design {
+    background-image: url('../images/fam_layout.gif');
+  }
+}
+.emaildesign-adminhtml-template-index {
+  h3.icon-head {
+    &.head-adminhtml-template {
+      background-image: url('../images/fam_application_view_tile.gif');
+    }
+  }
+}

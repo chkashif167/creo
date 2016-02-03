@@ -1,0 +1,81 @@
+<?php
+$_model = $this->getModel();
+?>
+
+<div class="htmleditor-template">
+    <div class="areas" id="areas">
+    <?php foreach ($_model->getAreas() as $_code => $_info): ?>
+        <?php 
+            $_content = $_model->getAreaContent($_code);
+            if ($_content === false && isset($_info['example'])) {
+                $_content = $_info['example'];
+            }
+        ?>
+        <div class="item">
+            <div class="label"><?php echo $_info['label'] ?></div>
+            <textarea id="area[<?php echo $_code ?>]" name="area[<?php echo $_code ?>]" class="codemirror"><?php echo $_content ?></textarea>
+        </div>
+    <?php endforeach ?>
+    </div>
+    <iframe id="preview"></iframe>
+    <div class="clearfix"></div>
+</div>
+
+
+<script>
+document.observe('dom:loaded', function() {
+    var url = "<?php echo $this->getUrl('*/*/drop', array('id' => Mage::registry('current_model')->getId())) ?>";
+    var previewId = 'preview';
+    <?php foreach ($_model->getAreas() as $_code => $_label): ?>
+        var item = $('area[<?php echo $_code ?>]');
+        var delay;
+        var <?php echo $_code ?> = CodeMirror.fromTextArea(item, {
+            mode           : 'text/html',
+            tabMode        : 'indent',
+            matchTags      : true,
+            viewportMargin : Infinity,
+            tabSize        : 2,
+            lineWrapping   : false
+        });
+        
+        <?php echo $_code ?>.on("change", function() {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 300);
+        });
+
+        setInterval(function() {
+            <?php echo $_code ?>.refresh();
+            <?php echo $_code ?>.save()
+        }, 100);
+    <?php endforeach ?>
+
+    function updatePreview() {
+        var previewFrame = document.getElementById(previewId);
+        var preview      =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+        
+
+        var areas = {};
+        <?php foreach ($_model->getAreas() as $_code => $_label): ?>
+        areas['<?php echo $_code ?>']  = $('area[<?php echo $_code ?>]').value;
+        <?php endforeach ?>
+        
+        new Ajax.Request(url, {
+            loaderArea : false,
+            type       : 'POST',
+            parameters : areas,
+            onSuccess  : function(response) {
+                preview.open();
+                preview.write(response.responseText);
+                preview.close();
+                var h = $('areas').getHeight() - 17;
+
+                if (h > 600) {
+                    $(previewFrame).setStyle({height: h + 'px'});
+                }
+            }
+        });
+
+    }
+    setTimeout(updatePreview, 300);
+});
+</script>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <misspell translate="label" module="misspell">
+            <label>Search Spell-Correction</label>
+            <tab>mstcore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>103</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <general>
+                    <label>General Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>10</sort_order>
+                    <frontend_model>mstcore/system_config_form_fieldset</frontend_model>
+                    <fields>
+                        <misspell translate="label">
+                            <label>Enable spell correction</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </misspell>
+
+                        <reindex>
+                            <label></label>
+                            <button_label>Reindex Words</button_label>
+                            <button_action>reindex</button_action>
+                            <frontend_model>misspell/adminhtml_system_btnAction</frontend_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <misspell>1</misspell>
+                            </depends>
+                        </reindex>
+
+                        <fallback translate="label">
+                            <label>Enable fallback search</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </fallback>
+                    </fields>
+                </general>
+            </groups>
+        </misspell>
+    </sections>
+</config>

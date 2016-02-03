@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Mirasvit_SearchIndex>
+            <version>1.0.5.1</version>
+        </Mirasvit_SearchIndex>
+    </modules>
+    <global>
+        <models>
+            <catalogsearch>
+                <rewrite>
+                    <indexer_fulltext>Mirasvit_SearchIndex_Model_Catalogsearch_Indexer_Fulltext</indexer_fulltext>
+                </rewrite>
+            </catalogsearch>
+
+            <catalogsearch_resource>
+                <rewrite>
+                    <fulltext_collection>Mirasvit_SearchIndex_Model_Catalogsearch_Resource_Fulltext_Collection</fulltext_collection>
+                    <!--<fulltext>Mirasvit_SearchIndex_Model_Catalogsearch_Resource_Fulltext</fulltext>-->
+                    <!-- uncomment for enable extension for Global Search in Magento Admin !-->
+                    <!-- <search_collection>Mirasvit_SearchIndex_Model_Catalogsearch_Resource_Search_Collection</search_collection> -->
+                </rewrite>
+            </catalogsearch_resource>
+
+            <searchindex>
+                <class>Mirasvit_SearchIndex_Model</class>
+                <resourceModel>searchindex_resource</resourceModel>
+            </searchindex>
+
+            <searchindex_resource>
+                <class>Mirasvit_SearchIndex_Model_Resource</class>
+                <entities>
+                    <index>
+                        <table>m_searchindex</table>
+                    </index>
+                </entities>
+            </searchindex_resource>
+        </models>
+        <helpers>
+            <searchindex>
+                <class>Mirasvit_SearchIndex_Helper</class>
+            </searchindex>
+        </helpers>
+        <resources>
+            <searchindex_setup>
+                <setup>
+                    <module>Mirasvit_SearchIndex</module>
+                </setup>
+            </searchindex_setup>
+        </resources>
+        <blocks>
+            <searchindex>
+                <class>Mirasvit_SearchIndex_Block</class>
+            </searchindex>
+        </blocks>
+        <events>
+            <catalogsearch_index_process_complete>
+                <observers>
+                    <searchindex_index_process_complete>
+                        <class>searchindex/observer</class>
+                        <method>onIndexProcessComplete</method>
+                    </searchindex_index_process_complete>
+                </observers>
+            </catalogsearch_index_process_complete>
+            <controller_action_postdispatch_cms_index_noRoute>
+                <observers>
+                    <searchindex_index_no_route>
+                        <class>searchindex/observer</class>
+                        <method>onNoRoute</method>
+                    </searchindex_index_no_route>
+                </observers>
+            </controller_action_postdispatch_cms_index_noRoute>
+        </events>
+    </global>
+    <frontend>
+        <translate>
+            <modules>
+                <Mirasvit_SearchIndex>
+                    <files>
+                        <default>Mirasvit_SearchIndex.csv</default>
+                    </files>
+                </Mirasvit_SearchIndex>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <searchindex module="searchindex">
+                    <file>searchindex.xml</file>
+                </searchindex>
+            </updates>
+        </layout>
+        <routers>
+            <searchindex>
+                <use>standard</use>
+                <args>
+                    <module>Mirasvit_SearchIndex</module>
+                    <frontName>searchindex</frontName>
+                </args>
+            </searchindex>
+        </routers>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <searchindex module="searchindex">
+                    <file>searchindex.xml</file>
+                </searchindex>
+            </updates>
+        </layout>
+        <acl>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <searchindex translate="title" module="searchindex">
+                                            <title>Sphinx Index</title>
+                                        </searchindex>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+				<args>
+					<modules>
+						<searchindex after="Mage_Adminhtml">Mirasvit_SearchIndex_Adminhtml</searchindex>
+					</modules>
+				</args>
+			</adminhtml>
+        </routers>
+    </admin>
+    <default>
+        <searchindex>
+            <merge>
+                <match_expr>/[a-zA-z0-9]*-[a-zA-z0-9]*/</match_expr>
+                <replace_expr>/-/</replace_expr>
+                <replace_char></replace_char>
+            </merge>
+        </searchindex>
+    </default>
+</config>

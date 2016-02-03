@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/mirasvit_searchindex.css</stylesheet></action>
+        </reference>
+    </default>
+
+    <cms_index_index>
+        <reference name="content">
+            <block type="searchindex/snippet" name="google_sitelinks_search" before="-" template="searchindex/google_sitelinks_search.phtml" />
+        </reference>
+    </cms_index_index>
+
+    <catalogsearch_result_index translate="label">
+        <reference name="content">
+            <block type="searchindex/results" name="search.result" as="search.result" template="searchindex/results_tabs.phtml">
+                <block type="searchindex/relatedTerms" name="related_searches" template="searchindex/related_terms.phtml" />
+                <block type="catalog/product_list" name="search_result_list" template="catalog/product/list.phtml">
+                    <block type="core/text_list" name="product_list.name.after" as="name.after" />
+                    <block type="core/text_list" name="product_list.after" as="after" />
+                    <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                        <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                    </block>
+                    <!-- <action method="setColumnCount"><count>3</count></action> -->
+                    <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+                </block>
+
+                <block type="searchindex/index_mage_catalog_category" name="searchindex_result_mage_catalog_category" template="searchindex/index/mage/catalog/category.phtml">
+                    <action method="setIsVisible"><value>1</value></action>
+                    <action method="setIndexCode"><value>mage_catalog_category</value></action>
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_external_wordpress_post" template="searchindex/index/external/wordpress/post.phtml">
+                    <action method="setIndexCode"><value>external_wordpress_post</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_external_vbulletin_thread" template="searchindex/index/external/vbulletin/thread.phtml">
+                    <action method="setIndexCode"><value>external_vbulletin_thread</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_mage_catalogsearch_query" template="searchindex/index/mage/catalogsearch/query.phtml">
+                    <action method="setIndexCode"><value>mage_catalogsearch_query</value></action>
+                    <action method="setIsVisible"><value>0</value></action>
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_mirasvit_action_action" template="searchindex/index/mirasvit/action/action.phtml">
+                    <action method="setIndexCode"><value>mirasvit_action_action</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_aw_blog_post" template="searchindex/index/aw/blog/post.phtml">
+                    <action method="setIndexCode"><value>aw_blog_post</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_mage_cms_page" template="searchindex/index/mage/cms/page.phtml">
+                    <action method="setIndexCode"><value>mage_cms_page</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_mage_cms_block" template="searchindex/index/mage/cms/block.phtml">
+                    <action method="setIndexCode"><value>mage_cms_block</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_azebiz_support_kbarticle" template="searchindex/index/azebiz/support/kbarticle.phtml">
+                    <action method="setIndexCode"><value>azebiz_support_kbarticle</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_tm_knowledgebase_faq" template="searchindex/index/tm/knowledgebase/faq.phtml">
+                    <action method="setIndexCode"><value>tm_knowledgebase_faq</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_aw_kbase_article" template="searchindex/index/aw/kbase/article.phtml">
+                    <action method="setIndexCode"><value>aw_kbase_article</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_mage_catalog_attribute" template="searchindex/index/mage/catalog/attribute.phtml">
+                    <action method="setIsVisible"><value>1</value></action>
+                    <action method="setIndexCode"><value>mage_catalog_attribute</value></action>
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_magpleasure_blog_post" template="searchindex/index/magpleasure/blog/post.phtml">
+                    <action method="setIndexCode"><value>magpleasure_blog_post</value></action>
+                    <action method="setIsVisible"><value>1</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_mirasvit_kb_article" template="searchindex/index/mirasvit/kb/article.phtml">
+                    <action method="setIndexCode"><value>mirasvit_kb_article</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_dotsquares_faq_faq" template="searchindex/index/dotsquares/faq/faq.phtml">
+                    <action method="setIndexCode"><value>dotsquares_faq_faq</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_magentothem_blog_post" template="searchindex/index/magentothem/blog/post.phtml">
+                    <action method="setIndexCode"><value>magentothem_blog_post</value></action>
+                    <action method="setIsVisible"><value>1</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <block type="searchindex/index_template" name="searchindex_result_smartwave_blog_post" template="searchindex/index/smartwave/blog/post.phtml">
+                    <action method="setIndexCode"><value>smartwave_blog_post</value></action>
+                    <block type="page/html_pager" name="pager" />
+                </block>
+
+                <action method="setListOrders"/>
+                <action method="setListModes"/>
+                <action method="setListCollection"/>
+            </block>
+        </reference>
+    </catalogsearch_result_index>
+</layout>

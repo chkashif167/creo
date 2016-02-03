@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Mirasvit_EmailReport>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mirasvit_EmailReport>
+    </modules>
+</config>

@@ -1,0 +1,14 @@
+tables:
+  searchsphinx/stopword:
+    -
+      id: 1
+      word: and
+      store: 2
+    -
+      id: 2
+      word: or
+      store: 2
+    -
+      id: 3
+      word: the
+      store: 2

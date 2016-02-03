@@ -1,0 +1,205 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.advr-report-block-container .content-header {
+  position: relative;
+}
+.advr-report-block-container .advr-widget-toolbar {
+  *zoom: 1;
+  position: relative;
+  border: 1px solid #dadfe0;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.advr-report-block-container .advr-widget-toolbar:before,
+.advr-report-block-container .advr-widget-toolbar:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.advr-report-block-container .advr-widget-toolbar:after {
+  clear: both;
+}
+.advr-report-block-container .advr-widget-toolbar .field-row {
+  margin-bottom: 0px;
+}
+.advr-report-block-container .advr-widget-toolbar .custom {
+  float: left;
+  margin-right: 10px;
+}
+.advr-report-block-container .advr-widget-toolbar .custom input[type="checkbox"] {
+  margin-left: 10px;
+}
+.advr-report-block-container .advr-widget-toolbar .custom input[type="radio"] {
+  margin-right: 10px;
+}
+.advr-report-block-container .advr-widget-toolbar .custom.custom-filter_by_sku input {
+  margin-left: 10px;
+}
+.advr-report-block-container .advr-widget-toolbar .date-range,
+.advr-report-block-container .advr-widget-toolbar .custom-geo_dimension {
+  margin-right: 40px;
+  float: left;
+}
+.advr-report-block-container .advr-widget-toolbar .date-range input[type="radio"],
+.advr-report-block-container .advr-widget-toolbar .custom-geo_dimension input[type="radio"] {
+  margin-left: 20px;
+  cursor: pointer;
+}
+.advr-report-block-container .advr-widget-toolbar .date-range label.inline,
+.advr-report-block-container .advr-widget-toolbar .custom-geo_dimension label.inline {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol {
+  float: right;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary {
+  *zoom: 1;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary:before,
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary:after {
+  clear: both;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary .interval {
+  float: left;
+  width: 200px;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary .interval select {
+  margin-left: 10px;
+  width: 150px;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary .refresh {
+  float: left;
+  margin-left: 10px;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary .date-from,
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary .date-to {
+  margin-left: 10px;
+  float: left;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary .date-from label,
+.advr-report-block-container .advr-widget-toolbar .datecontrol .primary .date-to label {
+  display: none;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare {
+  *zoom: 1;
+  margin-top: 5px;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare:before,
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare:after {
+  clear: both;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare .compare-checkbox {
+  float: left;
+  text-align: right;
+  width: 200px;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare .date-from,
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare .date-to {
+  margin-left: 10px;
+  float: left;
+}
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare .date-from label,
+.advr-report-block-container .advr-widget-toolbar .datecontrol .compare .date-to label {
+  display: none;
+}
+.advr-report-block-container .grid small.discount {
+  font-size: 10px;
+  float: left;
+  display: inline-block;
+  text-align: left;
+  color: #888;
+}
+.advr-report-block-container .grid td {
+  position: relative;
+}
+.advr-report-block-container .grid .percent-bar {
+  height: 3px;
+  background: #2fd75b;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  min-width: 0px;
+  z-index: 10;
+}
+.advr-report-block-container .grid .percent-value {
+  z-index: 100;
+  position: relative;
+}
+.advr-report-block-container .grid th .percent-bar {
+  display: none;
+}
+.advr-report-block-container .grid th .percent-value {
+  display: inline-block;
+}
+.advr-report-block-container .grid .percent {
+  position: relative;
+}
+.advr-report-block-container .grid tfoot tr td {
+  border-top: 0px;
+}
+.advr-report-block-container .advr-report-block-switcher {
+  position: absolute;
+  right: 0px;
+  top: 2px;
+}
+.advr-report-block-container .advr-report-block-switcher label {
+  margin-right: 5px;
+}
+.advr-report-block-container .advr-extended-filter {
+  *zoom: 1;
+  position: relative;
+  border: 1px solid #dadfe0;
+  margin-bottom: 10px;
+  margin-top: -11px;
+}
+.advr-report-block-container .advr-extended-filter:before,
+.advr-report-block-container .advr-extended-filter:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.advr-report-block-container .advr-extended-filter:after {
+  clear: both;
+}
+.advr-report-block-container .advr-extended-filter table {
+  margin-bottom: -1px;
+}
+.advr-report-block-container .advr-extended-filter table tr td {
+  padding: 5px 10px !important;
+  border-bottom: 1px solid #dadfe0 !important;
+}
+.advr-report-block-container .advr-extended-filter table tr td.value .range .range-line {
+  float: left;
+  margin-right: 9px;
+}
+.advr-report-block-container .advr-extended-filter table tr td.value .range .range-line .input-text {
+  width: 100px;
+}
+.advr-report-block-container .advr-extended-filter table tr td.value .range .range-line:last-child {
+  margin-right: 0px;
+}
+.advr-report-block-container .advr-extended-filter table tr.add-filter td {
+  background: #efefef !important;
+}

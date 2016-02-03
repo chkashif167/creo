@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <menu>
+        <dashboard>
+            <children>
+                <advd_dashboard_global module="advd">
+                    <title>Advanced Dashboard</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/advd_dashboard/global</action>
+                </advd_dashboard_global>
+                <advd_dashboard_user module="advd">
+                    <title>User Dashboard</title>
+                    <sort_order>20</sort_order>
+                    <action>adminhtml/advd_dashboard/user</action>
+                </advd_dashboard_user>
+            </children>
+        </dashboard>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <dashboard>
+                        <children>
+                            <advd_dashboard_global module="advd">
+                                <title>Advanced Dashboard (Global)</title>
+                                <sort_order>10</sort_order>
+                                <children>
+                                    <actions module="advd">
+                                        <title>Actions</title>
+                                        <sort_order>10</sort_order>
+                                        <children>
+                                            <manage module="advd">
+                                                <title>Manage</title>
+                                                <sort_order>10</sort_order>
+                                            </manage>
+                                        </children>
+                                    </actions>
+                                </children>
+                            </advd_dashboard_global>
+                            <advd_dashboard_user module="advd">
+                                <title>User Dashboard</title>
+                                <sort_order>20</sort_order>
+                            </advd_dashboard_user>
+                        </children>
+                    </dashboard>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

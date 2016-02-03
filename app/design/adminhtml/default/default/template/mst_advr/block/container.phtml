@@ -1,0 +1,27 @@
+<?php
+$_switcher = $this->getStoreSwitcherHtml();
+$_toolbar  = $this->getToolbarHtml();
+$_grid     = $this->getGridHtml();
+$_chart    = $this->getChartHtml();
+?>
+
+<div class="advr-report-block-container">
+    <div class="content-header">
+        <h3><?php echo $this->getHeaderText() ?></h3>
+        <sup style="display:none;"><?php echo Mage::getSingleton('core/date')->date() ?> (GMT <?php echo Mage::getSingleton('core/date')->getGmtOffset('hours') ?>)</sup>
+        <?php echo $_switcher ?>
+    </div>
+
+    <?php echo $_chart ?>
+    <?php echo $_toolbar ?>
+    <?php echo $_grid ?>
+
+</div>
+
+<?php if (Mage::registry('chart_package')): ?>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script>
+    google.load("visualization", '1.1', {packages:['<?php echo Mage::registry('chart_package') ?>'], 'language': 'en'});
+    google.setOnLoadCallback(drawChart);
+</script>
+<?php endif ?>

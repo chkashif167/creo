@@ -1,0 +1,62 @@
+.chain-row {
+    padding: 4px 0px;
+
+    .chain-param {
+        border: 1px solid #d6d6d6;
+        margin-right: 3px;
+
+        .label {
+            font-weight: bold;
+            color: black;
+            text-decoration:none;
+            padding: 0px 2px 0px 4px;
+        }
+
+        .element {
+            display: none;
+            input, select {
+                width: auto !important;
+                min-width: 30px;
+            }
+        }
+
+        &:hover {
+            border-color: #ed6502 #a04300 #a04300 #ed6502;
+            background: #f77c16;
+            .label {
+                color: #fff;
+            }
+        }
+
+        &.chain-param-edit {
+            border: none;
+            background: none;
+
+            .label {
+                display: none;
+            }
+            .element {
+                display: inline;
+            }
+        }
+    }
+
+    .options {
+        display: none;
+        margin-top: 15px
+    }
+}
+
+.icon-head {
+  &.head-adminhtml-trigger {
+    background-image: url('../images/fam_newspaper.gif');
+  }
+
+  &.head-adminhtml-queue, &.head-adminhtml-mail {
+    background-image: url('../images/fam_newspaper_go.gif');
+  }
+
+  &.head-adminhtml-event {
+    background-image: url('../images/fam_folder_database.gif');
+  }
+}

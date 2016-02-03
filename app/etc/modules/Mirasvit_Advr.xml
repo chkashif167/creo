@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mirasvit_Advr>
+            <active>true</active>
+            <codePool>local</codePool>
+			<depends>
+                <Mirasvit_MstCore/>
+            </depends>
+        </Mirasvit_Advr>
+    </modules>
+</config>

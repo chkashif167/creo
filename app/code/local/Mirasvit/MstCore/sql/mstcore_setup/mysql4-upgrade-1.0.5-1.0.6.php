@@ -8,9 +8,9 @@
  * Please refer to http://www.magentocommerce.com for more information.
  *
  * @category  Mirasvit
- * @package   Advanced Product Feeds
- * @version   1.1.2
- * @build     671
+ * @package   Sphinx Search Ultimate
+ * @version   2.3.2
+ * @build     1290
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 

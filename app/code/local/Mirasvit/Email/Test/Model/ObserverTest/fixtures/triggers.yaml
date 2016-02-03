@@ -1,0 +1,57 @@
+scope:
+  website:
+    - website_id: 2
+      code: usa_website
+      name: USA Website
+      default_group_id: 2
+  group:
+    - group_id: 2
+      website_id: 2
+      name: USA Store Group
+      default_store_id: 2
+      root_category_id: 2
+  store:
+    - store_id: 2
+      website_id: 2
+      group_id: 2
+      code: usa
+      name: USA Store
+    - store_id: 3
+      website_id: 2
+      group_id: 2
+      code: uk
+      name: UK Store
+tables:
+  email/trigger:
+    - trigger_id: 1
+      title: Abandonded Cart
+      store_ids: 2,3
+      is_active: 1
+      active_from: null
+      active_to: null
+      event: cart_abandoned
+      cancellation_event: order_status|new,customer_activity
+    - trigger_id: 2
+      title: New Customer
+      store_ids: 2,3
+      is_active: 1
+      active_from: null
+      active_to: null
+      event: customer_activity
+      cancellation_event: customer_activity,customer_loggedin
+    - trigger_id: 3
+      title: Non Active Trigger
+      store_ids: 2,3
+      is_active: 0
+      active_from: null
+      active_to: null
+      event: order_status_new
+      cancellation_event:
+    - trigger_id: 4
+      title: Non Active Trigger 2
+      store_ids: 2,3
+      is_active: 1
+      active_from: 2015-10-10 00:00:00
+      active_to: 2020-10-10 00:00:00
+      event: order_status_pending
+      cancellation_event:

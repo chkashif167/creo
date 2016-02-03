@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mirasvit_EmailSmtp>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends/>
+        </Mirasvit_EmailSmtp>
+    </modules>
+</config>

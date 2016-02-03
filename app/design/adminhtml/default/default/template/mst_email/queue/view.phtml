@@ -1,0 +1,91 @@
+<?php
+$_model = $this->getModel();
+?>
+<div class="content-header">
+    <h3 class="icon-head head-adminhtml-queue-view"><?php echo $this->getHeaderText() ?></h3>
+    <p class="form-buttons"><button title="Back" type="button" class="scalable back" onclick="setLocation('<?php echo $this->getBackUrl() ?>')" style=""><span><span><span>Back</span></span></span></button></p>
+</div>
+<table width="100%">
+    <tr>
+        <td width="50%">
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                    <h4 class="icon-head head-edit-form fieldset-legend">General Information</h4>
+                    <div class="form-buttons"></div>
+                </div>
+                <div class="fieldset">
+                    <table class="form-list">
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Trigger') ?></td>
+                            <td class="value"><?php echo $_model->getTrigger()->getTitle() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Scheduled At') ?></td>
+                            <td class="value"><?php echo $_model->getScheduledAt() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Sent At') ?></td>
+                            <td class="value"><?php echo $_model->getSentAt() ? $_model->getSentAt() : '-' ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Subject') ?></td>
+                            <td class="value"><?php echo $_model->getSubject() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Recipient Email') ?></td>
+                            <td class="value"><?php echo $_model->getRecipientEmail() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Recipient Name') ?></td>
+                            <td class="value"><?php echo $_model->getRecipientName() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Sender Email') ?></td>
+                            <td class="value"><?php echo $_model->getSenderEmail() ?></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Sender Name') ?></td>
+                            <td class="value"><?php echo $_model->getSenderName() ?></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="entry-edit-head">
+                    <h4 class="icon-head head-edit-form fieldset-legend">History</h4>
+                    <div class="form-buttons"></div>
+                </div>
+                <div class="fieldset">
+                    <table class="form-list">
+                        <?php foreach(explode(PHP_EOL, $_model->getHistory()) as $_message): ?>
+                            <tr>
+                                <td colspan="2"><?php echo $_message ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </table>
+                </div>
+
+                <div class="entry-edit-head">
+                    <h4 class="icon-head head-edit-form fieldset-legend">Variables</h4>
+                    <div class="form-buttons"></div>
+                </div>
+                <div class="fieldset">
+                    <table class="form-list">
+                        <tr>
+                            <td class="label"><?php echo Mage::helper('email')->__('Unique Key') ?></td>
+                            <td class="value"><?php echo $_model->getUniqKey() ?></td>
+                        </tr>
+                        <?php foreach ($_model->getArgs() as $_key => $_value): ?>
+                            <tr>
+                                <td class="label"><?php echo $_key ?></td>
+                                <td class="value"><?php echo is_object($_value) ? '[...]' : $_value ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </table>
+                </div>
+            </div>
+        </td>
+        <td width="50%">
+            <iframe width="100%" height="100%" src="<?php echo $this->getPreviewUrl() ?>" style="border: 1px solid #d6d6d6; margin: 0px 5px 0px 5px;">
+        </td>
+    </tr>
+</table>

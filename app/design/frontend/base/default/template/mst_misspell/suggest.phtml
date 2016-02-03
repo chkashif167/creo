@@ -1,0 +1,13 @@
+<?php
+$_suggest = $this->getSuggestText();
+?>
+<?php if ($this->isSuggested()): ?>
+<p class="note-msg misspell suggest">
+    <?php echo $this->__("Your search '<strong>%s</strong>' did not match any products.", Mage::helper('core')->escapeHtml($this->getOriginalQueryText())) ?>
+    <?php echo $this->__('Did you mean:') ?> <strong><a href="<?php echo $this->getQueryUrl($_suggest) ?>"><?php echo Mage::helper('core')->escapeHtml($_suggest) ?></a></strong>
+</p>
+<?php elseif ($_suggest && 0): ?>
+<p class="notice-msg">
+    <?php echo $this->__('Did you mean:') ?> <a href="<?php echo $this->getQueryUrl($_suggest) ?>"><?php echo Mage::helper('core')->escapeHtml($_suggest) ?></a>
+</p>
+<?php endif ?>

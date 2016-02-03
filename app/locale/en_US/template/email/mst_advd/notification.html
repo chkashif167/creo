@@ -1,0 +1,95 @@
+<!--@subject {{var subject}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url"}
+@-->
+<style>
+body { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+div.block {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #e4e4e4;
+    background: #f9f9f9;
+    border-radius: 2px;
+    padding: 0px 10px 15px 10px;
+    font-size:13px
+}
+div.block h3 {
+    font-size: 12px;
+    color: #555555;
+    padding: 0px;
+    margin: 10px 0px;
+    text-transform: uppercase;
+}
+div.block h3 small {
+    font-size: 10px;
+    color: #aaaaaa;
+    float: right;
+    font-weight: normal;
+    text-transform: none;
+}
+.dashboard-block-metric {
+    text-align: center;
+}
+
+.metric b {
+    color: #555;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+.comparison.plus {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #0e9915;
+}
+.comparison.minus {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #ff0000;
+}
+.percent {
+    font-weight: bold;
+}
+
+table.data {
+    width: 100%;
+}
+table.data th {
+    font-size: 11px;
+    text-align: left;
+    padding: 8px 0px;
+    border-bottom: 2px solid #e4e4e4;
+}
+table.data td {
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 0px;
+    border-bottom: 1px solid #e4e4e4;
+}
+</style>
+
+<body style="background: #ffffff; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%" style="background: #ffffff;">
+    <tr>
+        <td align="center" valign="top" style="padding:20px 0 20px 0">
+            <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650" style="padding: 0px 25px;">
+                <tr>
+                    <td valign="top" style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;font-size:30px;font-weight:bold;line-height:120%;color:rgb(82,82,82);text-align:center;zoom:1">
+                        {{var subject}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td valign="top">
+                        {{var content}}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="text-align:center;"><center><p style="font-size:12px; margin:0;">Thank you again, <strong>{{var store.getFrontendName()}}</strong></p></center></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addJs" ifconfig="searchautocomplete/general/enabled"><script>mirasvit/core/jquery.min.js</script></action>
+            <action method="addJs" ifconfig="searchautocomplete/general/enabled"><script>mirasvit/core/underscore.js</script></action>
+            <action method="addJs" ifconfig="searchautocomplete/general/enabled"><script>mirasvit/core/backbone.js</script></action>
+            <action method="addJs" ifconfig="searchautocomplete/general/enabled"><script>mirasvit/code/searchautocomplete/form.js</script></action>
+            <action method="addJs" ifconfig="searchautocomplete/general/enabled"><script>mirasvit/code/searchautocomplete/autocomplete.js</script></action>
+            <action method="addItem" ifconfig="sales/msrp/enabled"><type>skin_js</type><name>js/msrp.js</name></action>
+        </reference>
+
+        <block type="searchautocomplete/layout" name="search.block">
+            <action method="addSearchAutocomplete" ifconfig="searchautocomplete/general/enabled" />
+        </block>
+
+        <!-- Uncomment it to use your own theme -->
+        <!-- <update handle="searchautocomplete_custom" /> -->
+    </default>
+
+    <!-- Uncomment it to use your own theme -->
+    <!-- <searchautocomplete_custom>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/mirasvit/searchautocomplete/amazon.css</stylesheet></action>
+        </reference>
+
+        <reference name="header">
+            <block type="searchautocomplete/form" name="top.search" as="topSearch" template="mst_searchautocomplete/amazon.phtml"/>
+        </reference>
+
+        <reference name="top.bar">
+            <block type="searchautocomplete/form" name="top.search" as="topSearch" template="mst_searchautocomplete/amazon.phtml"/>
+        </reference>
+    </searchautocomplete_custom> -->
+</layout>

@@ -1,0 +1,29 @@
+<form <?php echo $this->getForm()->serialize($this->getForm()->getHtmlAttributes()) ?>>
+    <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+
+    <div class="entry-edit">
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="50%">
+                    <?php foreach ($this->getForm()->getElements() as $_element): ?>
+                        <?php if ($_element->getHtmlId() == 'general' || $_element->getHtmlId() == 'attributes'): ?>
+                            <?php echo $_element->toHtml() ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </td>
+                <?php if ($this->getForm()->getElements()->count() > 2): ?>
+                <td>&nbsp;</td>
+                <td width="50%">
+                    <?php foreach ($this->getForm()->getElements() as $_element): ?>
+                        <?php if ($_element->getHtmlId() != 'general' && $_element->getHtmlId() != 'attributes'): ?>
+                            <?php echo $_element->toHtml() ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                    &nbsp;
+                </td>
+                <?php endif ?>
+            </tr>
+        </table> 
+    </div>
+<?php echo $this->getChildHtml('form_after');?>
+</form>

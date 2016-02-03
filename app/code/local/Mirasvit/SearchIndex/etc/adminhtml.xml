@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <searchindex translate="title" module="searchindex">
+                                        <title>Search Index</title>
+                                    </searchindex>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <search>
+                        <title>Search Configuration</title>
+                        <sort_order>10</sort_order>
+                        <children>
+                            <searchindex_index>
+                                <title>Manage Search Indexes</title>
+                                <sort_order>10</sort_order>
+                            </searchindex_index>
+                        </children>
+                        <children>
+                            <searchindex_validation>
+                                <title>Validation</title>
+                                <sort_order>50</sort_order>
+                            </searchindex_validation>
+                        </children>
+                        <children>
+                            <searchindex_report>
+                                <title>Search Terms</title>
+                                <sort_order>60</sort_order>
+                            </searchindex_report>
+                        </children>
+                        <children>
+                            <searchindex_settings>
+                                <title>Settings</title>
+                                <sort_order>70</sort_order>
+                            </searchindex_settings>
+                        </children>
+                    </search>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <search module="searchindex">
+            <title>Search</title>
+            <sort_order>85</sort_order>
+            <children>
+                <searchindex_index module="searchindex">
+                    <title>Manage Search Indexes</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/searchindex_index/index</action>
+                </searchindex_index>
+                <searchindex_validation module="searchindex">
+                    <title>Validate Search Results</title>
+                    <action>adminhtml/searchindex_validation/index</action>
+                    <sort_order>90</sort_order>
+                </searchindex_validation>
+                <searchindex_report module="searchindex">
+                    <title>Search Terms</title>
+                    <action>adminhtml/searchindex_report/index</action>
+                    <sort_order>95</sort_order>
+                </searchindex_report>
+                <searchindex_settings module="searchindex">
+                    <title>Settings</title>
+                    <action>adminhtml/system_config/edit/section/searchsphinx</action>
+                    <sort_order>100</sort_order>
+                </searchindex_settings>
+            </children>
+        </search>
+    </menu>
+</config>

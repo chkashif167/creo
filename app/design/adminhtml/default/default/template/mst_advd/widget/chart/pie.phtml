@@ -1,0 +1,54 @@
+<?php
+$_id = 'chart'.rand(0, 100000);
+?>
+<div id='<?php echo $_id ?>' style='width: 100%; height: 100%;'></div>
+
+<script type="text/javascript">
+    function drawChart()
+    {   
+        var series = <?php echo json_encode($this->getSeries()) ?>;
+        var data = google.visualization.arrayToDataTable(series);
+
+        if (data.getNumberOfRows() == 0) {
+            document.getElementById('<?php echo $_id ?>').style.display = 'none';
+            return;
+        }
+        
+        var options = {
+            backgroundColor: 'transparent',
+            // is3D: true,
+            pieHole: 0.4,
+            sliceVisibilityThreshold: 0.01,
+
+            chartArea: {
+                width: '100%',
+                height: '85%'
+            },
+
+            colors: ["#2fd75b", "#ff7e0e", "#52c4ff", "#c7b700", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#e87e0d"],
+            
+            fontSize: '11',
+
+            legend: {
+                position: 'bottom',
+                alignment: 'center',
+                textStyle: {
+                    color    : '#aaaaaa',
+                    fontSize : '11'
+                }
+            }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('<?php echo $_id ?>'));
+
+        google.visualization.events.addListener(chart, 'select', function(e) {
+            var sel = chart.getSelection();
+            if (sel.length > 0 && series[sel[0].row + 1][2]) {
+                window.location.href = series[sel[0].row + 1][2];
+            }
+        });
+
+        chart.draw(data, options);
+    }
+    drawChart();
+</script>
