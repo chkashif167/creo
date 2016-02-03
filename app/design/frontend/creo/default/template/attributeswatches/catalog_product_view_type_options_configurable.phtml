@@ -62,7 +62,7 @@ $_swatches_height = (int) $_settings['swatch_height'];
                                             break;
                                         case 'image':
                                             ?>
-                                            <a class="" style=" <?php echo $_option['swatch_value'] ?>; width:<?php echo $_swatches_width ?>px; height:<?php echo $_swatches_height; ?>px;" data-original-title="<?php echo $_option["label"] ?>"  title="<?php echo $_option["label"] ?>" rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="#" rev="">
+                                            <a <?php if($_attribute["id"]==162){?> onclick="changeCustomOptionImages(<?php echo $_option["id"] ?>)" <?php } ?> class="" style=" <?php echo $_option['swatch_value'] ?>; width:<?php echo $_swatches_width ?>px; height:<?php echo $_swatches_height; ?>px;" data-original-title="<?php echo $_option["label"] ?>"  title="<?php echo $_option["label"] ?>" rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="#" rev="">
                                                 <span><?php echo $_option["label"] ?></span>
                                             </a>
                                             <span class="tooltip-container"><span class="tooltip"><span><?php echo $_option["label"] ?></span></span></span>
