@@ -684,8 +684,8 @@ p.style1 {
 	margin: 0 0 0 5px;
 	padding: 3px 5px;
 	border: 1px solid #000;
-	width: 140px;
-	overflow: hidden;
+	width: auto;
+	/*overflow: hidden;*/
 	display: inline-block;
 	vertical-align: top;
 	position:relative;
@@ -5642,6 +5642,7 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 #product-options-wrapper dl.last .char-options {display: inline-block;width: 47%;margin-right: 12px;}
 .alert-success .glyphicon{left:0;top:5px;}
 .thumbnail #uploadPhotos img{width:auto;max-width:100%;}
+.searchautocomplete .nav .nav-input{padding-left:22px !important;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}

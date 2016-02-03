@@ -26,7 +26,7 @@
   box-sizing: border-box;
 }
 .searchautocomplete {
-  position: absolute;
+/*  position: absolute;
   top: -5px;
   right: 0px;
   height: 34px;
@@ -34,9 +34,12 @@
   padding: 4px 10px;
   -webkit-border-radius: 0px 0px 0px 5px;
   -moz-border-radius: 0px 0px 0px 5px;
-  border-radius: 0px 0px 0px 5px;
+  border-radius: 0px 0px 0px 5px;*/
   background: #fff;
-  display: block;
+  display:inline-block;
+  position: relative;
+  max-width:200px;
+  vertical-align: top;
 }
 .searchautocomplete .sprite {
   background: url('../../../images/mirasvit/sprite.png');
@@ -49,11 +52,11 @@
   margin-top: 8px;
 }
 .searchautocomplete .nav {
-  background: url('../../../images/mirasvit/sprite.png');
+/*  background: url('../../../images/mirasvit/sprite.png');
   float: left;
   height: 34px;
   position: relative;
-  width: 340px;
+  width: 340px;*/
 }
 .searchautocomplete .nav .nav-search-in {
   position: absolute;
@@ -128,7 +131,7 @@
 }
 .searchautocomplete .nav .nav-input {
   *zoom: 1;
-  margin: 6px 0px 0px 10px;
+  margin: 0px;
   padding: 0px 5px 0px 5px;
   z-index: 12;
   position: relative;
@@ -145,7 +148,7 @@
 .searchautocomplete .nav .nav-input input {
   z-index: 10;
   padding: 0px;
-  height: 23px;
+  height: 20px;
   border: 0px;
   font-family: arial, sans-serif;
   font-size: 12px;
@@ -203,20 +206,20 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff313a44', endColorstr='#ff444c55', GradientType=0);
 }
 .searchautocomplete .searchautocomplete-placeholder {
-  -webkit-border-radius: 5px 5px 5px 5px;
+/*  -webkit-border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;*/
   background: #FFF;
   border: 1px solid #ccc;
   padding: 15px 10px 5px 10px;
   position: absolute;
-  right: 48px;
+  right:0px;
   top: 42px;
   width: 318px;
   z-index: 102;
 }
 .searchautocomplete .searchautocomplete-placeholder:before {
-  border-color: transparent transparent #CCC transparent;
+  border-color: transparent transparent #ef4f61 transparent;
   content: "";
   position: absolute;
   border-style: solid;
@@ -224,7 +227,7 @@
   height: 0;
   width: 0;
   top: -11px;
-  left: 30px;
+  right: 30px;
 }
 .searchautocomplete .searchautocomplete-placeholder ul {
   list-style: none;
@@ -234,9 +237,11 @@
 .searchautocomplete .searchautocomplete-placeholder ul li {
   *zoom: 1;
   text-align: left;
+  display: block;
   padding: 5px 5px;
   margin-bottom: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
+  width:100%;
 }
 .searchautocomplete .searchautocomplete-placeholder ul li:before,
 .searchautocomplete .searchautocomplete-placeholder ul li:after {
@@ -260,7 +265,7 @@
   float: right;
 }
 .searchautocomplete .searchautocomplete-placeholder ul li.active {
-  background-color: #eeffee;
+  background-color: #f8f8f8;
   cursor: pointer;
 }
 .searchautocomplete .searchautocomplete-placeholder ul li.active a {
@@ -290,7 +295,7 @@
   color: #999;
 }
 .searchautocomplete .searchautocomplete-placeholder ul li .highlight strong {
-  color: #f00;
+  color: #ef4f61;
 }
 .searchautocomplete .searchautocomplete-placeholder ul li .ratings {
   margin: 0;
@@ -318,7 +323,7 @@
   position: absolute;
   width: 18px;
   height: 18px;
-  top: 9px;
+  top: 4px;
   right: 10px;
   z-index: 99;
   -webkit-transform: scale(0.6);
