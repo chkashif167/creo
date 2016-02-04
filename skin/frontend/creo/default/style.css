@@ -678,7 +678,7 @@ p.style1 {
 }
 #header .bottom-area {
 	text-align: right;
-	padding: 55px 0 10px;
+	padding: 56px 0 0px;
 }
 .search-form {
 	margin:-9px 0 0 5px;
@@ -723,10 +723,11 @@ p.style1 {
 #header .login-area .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0 25px;
+	padding: 0 22px;
 	position: relative;
 	color: #222;
 	font: 12px/19px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	text-transform: capitalize;
 }
 #header .login-area.active .opener,
 #header .login-area .opener:hover {
@@ -786,7 +787,7 @@ p.style1 {
 #header .basic-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0 13px 0 7px;
+	padding:0px;
 	position: relative;
 	color: #222;
 	text-transform: uppercase;
@@ -804,8 +805,8 @@ p.style1 {
 	width: 9px;
 	height: 19px;
 	position: absolute;
-	top: 0;
-	right: 3px;
+	top: 0px;
+	right: -10px;
 	content: '\e812';
 }
 #header .basic-open-close ul {
