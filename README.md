@@ -1,5 +1,17 @@
 Release Notes
 -----------------
+===3.2.0===
+- Subscription popup finctioanlity modification
+- Snap product custom options creat a function call only for snapbacks
+- Redirection to thank you page after registration
+- Advanced Product Feeds
+- Advanced Reports
+- Follow Up Email
+- Sphinx Search Ultimate
+- Styling on frontend
+- Pagination on product listing pages
+- Trendy product feature added
+
 ===3.1.1===
 - Image resize issue fix for design your own
 
