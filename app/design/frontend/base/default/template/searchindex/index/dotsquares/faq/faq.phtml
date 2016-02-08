@@ -1,0 +1,12 @@
+<div class="searchindex-result">
+    <?php echo $this->getPager() ?>
+    <ul>
+        <?php foreach($this->getCollection() as $_item) : ?>
+        <li class="outer-box-faq">
+            <strong><?php echo $_item->getTitle() ?></strong><br>
+            <?php echo $_item->getContent() ?>
+        </li>
+        <?php endforeach ?>
+    </ul>
+    <?php echo $this->getPager() ?>
+</div>

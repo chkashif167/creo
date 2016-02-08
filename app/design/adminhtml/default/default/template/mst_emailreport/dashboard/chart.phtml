@@ -1,0 +1,184 @@
+<?php
+$_data    = $this->getChartData();
+$_emails  = 0;
+$_opens   = 0;
+$_clicks  = 0;
+$_reviews = 0;
+$_orders  = 0;
+?>
+
+<script>
+var chartData = [
+<?php foreach ($_data as $_item): ?>
+    {
+        'period':  '<?php echo $_item['period'] ?>',
+        'emails': '<?php echo $_item['emails'] ?>',
+        'readers': '<?php echo $_item['opens'] ?>',
+        'clicks':  '<?php echo $_item['clicks'] ?>',
+        'reviews': '<?php echo $_item['reviews'] ?>',
+        'orders':  '<?php echo $_item['orders'] ?>'
+    },
+    <?php
+        $_emails  += intval($_item['emails']);
+        $_opens   += intval($_item['opens']);
+        $_clicks  += intval($_item['clicks']);
+        $_reviews += intval($_item['reviews']);
+        $_orders  += intval($_item['orders']);
+    ?>
+<?php endforeach ?>
+];
+</script>
+
+<table width="100%">
+    <tr>
+        <td width="70%">
+            <div id="chartdiv" style="width: 100%; height: 400px; margin: 10px 0px;"></div>
+        </td>
+        <td width="30%">
+            <div id="chartdiv2" style="width: 100%; height: 400px; margin: 10px 0px;"></div>
+        </td>
+    </tr>
+</table>
+
+<script>
+var chart = AmCharts.makeChart("chartdiv", {
+        "type": "serial",
+        "theme": "none",
+        "pathToImages": "//www.amcharts.com/lib/3/images/",
+        "dataDateFormat": "YYYY-MM-DD",
+        "valueAxes": [{
+            "id":"v1",
+            "axisAlpha": 0,
+            "position": "left"
+        }],
+        "graphs": [
+            {
+                "id": "emails",
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletColor": "#FFFFFF",
+                "bulletSize": 5,
+                "hideBulletsCount": 50,
+                "lineThickness": 2,
+                "title": "Emails",
+                "useLineColorForBulletBorder": true,
+                "valueField": "emails",
+                "type": "smoothedLine",
+                "balloonText": "Emails: [[value]]"
+            },
+            {
+                "id": "readers",
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletColor": "#FFFFFF",
+                "bulletSize": 5,
+                "hideBulletsCount": 50,
+                "lineThickness": 2,
+                "title": "Readers",
+                "useLineColorForBulletBorder": true,
+                "valueField": "readers",
+                "type": "smoothedLine",
+                "balloonText": "Readers: [[value]]"
+            },
+            {
+                "id": "clicks",
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletColor": "#FFFFFF",
+                "bulletSize": 5,
+                "hideBulletsCount": 50,
+                "lineThickness": 2,
+                "title": "Clicks",
+                "useLineColorForBulletBorder": true,
+                "valueField": "clicks",
+                "type": "smoothedLine",
+                "balloonText": "Clicks: [[value]]"
+            },
+            {
+                "id": "orders",
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletColor": "#FFFFFF",
+                "bulletSize": 5,
+                "hideBulletsCount": 50,
+                "lineThickness": 2,
+                "title": "Orders",
+                "useLineColorForBulletBorder": true,
+                "valueField": "orders",
+                "type": "smoothedLine",
+                "balloonText": "Orders: [[value]]"
+            }
+        ],
+        "chartScrollbar": {
+            "graph": "readers",
+            "scrollbarHeight": 30
+        },
+        "chartCursor": {
+            "cursorPosition": "mouse",
+            "pan": true,
+             "valueLineEnabled":true,
+             "valueLineBalloonEnabled":true
+        },
+        "categoryField": "period",
+        "categoryAxis": {
+            "parseDates": true,
+            "dashLength": 1,
+            "minorGridEnabled": true,
+            "position": "top"
+        },
+        "legend": {
+            "autoMargins": false,
+            "borderAlpha": 0.2,
+            "equalWidths": false,
+            "horizontalGap": 10,
+            "markerSize": 10,
+            "useGraphSettings": true,
+            "valueAlign": "left",
+            "valueWidth": 0
+        },
+        "dataProvider": chartData
+    }
+);
+
+chart.addListener("rendered", zoomChart);
+
+zoomChart();
+function zoomChart(){
+    chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
+}
+
+
+var funnelChart = AmCharts.makeChart("chartdiv2", {
+    "type": "funnel",
+    "theme": "none",
+    "dataProvider": [
+        {
+            "title": "Emails",
+            "value": <?php echo $_emails ?>
+        },
+        {
+            "title": "Readers",
+            "value": <?php echo $_opens ?>
+        },
+        {
+            "title": "Clicks",
+            "value": <?php echo $_clicks ?>
+        },
+        {
+            "title": "Orders",
+            "value": <?php echo $_orders ?>
+        },
+    ],
+    "balloon": {
+        "fixedPosition": true
+    },
+    "valueField": "value",
+    "titleField": "title",
+    "marginRight": 70,
+    "startX": -500,
+    "outlineAlpha":1,
+    "outlineColor":"#FFFFFF",
+    "outlineThickness":2,
+    "balloonText": "[[title]]: [[value]]"
+});
+</script>

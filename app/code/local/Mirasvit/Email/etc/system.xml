@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <trigger_email translate="label" module="email">
+            <label>Follow Up Email</label>
+            <tab>mstcore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general>
+                    <label>General</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>0</sort_order>
+                    <fields>
+                         <max_email_heading translate="label">
+                            <label>Limit number of emails per address</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <sort_order>0</sort_order>
+                        </max_email_heading>
+                        <max_email translate="label">
+                            <label>Send maximum emails</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number required-entry validate-zero-or-greater</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <sort_order>10</sort_order>
+                            <comment>0 for unlimit</comment>
+                        </max_email>
+                        <max_email_period translate="label">
+                            <label>Period (hours)</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number required-entry validate-zero-or-greater</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <sort_order>20</sort_order>
+                            <comment>0 for unlimit</comment>
+                        </max_email_period>
+                    </fields>
+                </general>
+                <info>
+                    <label>Information</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <facebook_url translate="label">
+                            <label>Facebook Url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </facebook_url>
+                        <twitter_url translate="label">
+                            <label>Twitter Url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twitter_url>
+                    </fields>
+                </info>
+                <test>
+                    <label>Test Information</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>20</sort_order>
+                    <fields>
+                        <sandbox translate="label">
+                            <label>Sandbox Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If Enabled, ALL mails will be sent only to Test Recipient</comment>
+                        </sandbox>
+                        <email translate="label">
+                            <label>Test Recipient</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </email>
+                    </fields>
+                </test>
+            </groups>
+        </trigger_email>
+    </sections>
+</config>

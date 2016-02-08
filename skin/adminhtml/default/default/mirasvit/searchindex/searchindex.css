@@ -1,0 +1,41 @@
+.searchindex-adminhtml-index-index .head-adminhtml-index,
+.searchindex-adminhtml-index-edit .head-adminhtml-index,
+.searchlandingpage-adminhtml-page-index .head-adminhtml-page,
+.searchsphinx-adminhtml-synonym-index .head-adminhtml-synonym,
+.searchsphinx-adminhtml-stopword-index .head-adminhtml-stopword,
+.searchindex-adminhtml-report-index .head-adminhtml-report {
+    padding-left: 0px;
+}
+
+.searchindex-adminhtml-report-index div.grid div.hor-scroll table tbody tr {
+    background: #fff;
+}
+
+.searchindex-adminhtml-report-index div.grid div.hor-scroll table tbody tr.on-mouse {
+    background: none repeat scroll 0 0 #fcf5dd!important;
+    cursor: pointer;
+}
+
+#searchindex_report_products_grid_table tr.headings {
+    background: url("../../images/sort_row_bg.gif") repeat-x scroll 0 50% rgba(0, 0, 0, 0)!important;
+}
+
+#searchindex_report_products_grid_table tr.even{
+    background: none repeat scroll 0 0 #f6f6f6;
+}
+
+.searchindex-adminhtml-report-index td.last, #searchindex_report_products_grid .grid {
+    padding: 0;
+}
+
+#searchindex_report_products_grid_table.data {
+    border: none;
+}
+.a-attention{
+    color: #A04300;
+    background-color: #FDF1E8;
+    margin: 5px 0px 5px 0px;
+    padding: 5px 10px 5px 10px;
+    border: solid 1px #DB742A;
+}
+

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mirasvit_Misspell>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mirasvit_Misspell>
+    </modules>
+</config>

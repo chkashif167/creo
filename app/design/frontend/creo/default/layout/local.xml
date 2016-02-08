@@ -56,6 +56,31 @@
 	<action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
 	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
 	<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
+		<block type="core/text" name="simple_example_javascript_block"> 
+		<action method="setText">
+		<text><![CDATA[
+		<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "CREO",
+		"url": "https://creoroom.com",
+		"logo": "https://creoroom.com/skin/frontend/creo/default/images/logo.png",
+		"sameAs" : [
+		"https://www.facebook.com/CREOROOM",
+		"https://twitter.com/creo_room/",
+		"https://instagram.com/creo_room/",
+		"https://www.pinterest.com/creo_room/"
+		],
+		"contactPoint" : [{
+		"@type" : "ContactPoint",
+		"telephone" : "+97143310717",
+		"contactType" : "customer service"
+		}]
+		}
+		</script>
+		]]></text>
+		</action>
+		</block>
 	</reference>
 	
 	<reference name="content">

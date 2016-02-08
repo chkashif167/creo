@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <email>
+                        <children>
+                            <emailreport>
+                                <title>Statistics</title>
+                                <sort_order>50</sort_order>
+                            </emailreport>
+                        </children>
+                    </email>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <email>
+            <children>
+                <emailreport module="emailreport">
+                    <title>Statistics</title>
+                    <sort_order>80</sort_order>
+                    <action>adminhtml/emailreport_dashboard/index</action>
+                </emailreport>
+            </children>
+        </email>
+    </menu> 
+</config>

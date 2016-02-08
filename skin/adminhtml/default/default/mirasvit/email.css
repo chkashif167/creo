@@ -1,0 +1,52 @@
+.chain-row {
+  padding: 4px 0px;
+}
+.chain-row .chain-param {
+  border: 1px solid #d6d6d6;
+  margin-right: 3px;
+}
+.chain-row .chain-param .label {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  padding: 0px 2px 0px 4px;
+}
+.chain-row .chain-param .element {
+  display: none;
+}
+.chain-row .chain-param .element input,
+.chain-row .chain-param .element select {
+  width: auto !important;
+  min-width: 30px;
+}
+.chain-row .chain-param:hover {
+  border-color: #ed6502 #a04300 #a04300 #ed6502;
+  background: #f77c16;
+}
+.chain-row .chain-param:hover .label {
+  color: #fff;
+}
+.chain-row .chain-param.chain-param-edit {
+  border: none;
+  background: none;
+}
+.chain-row .chain-param.chain-param-edit .label {
+  display: none;
+}
+.chain-row .chain-param.chain-param-edit .element {
+  display: inline;
+}
+.chain-row .options {
+  display: none;
+  margin-top: 15px;
+}
+.icon-head.head-adminhtml-trigger {
+  background-image: url('../images/fam_newspaper.gif');
+}
+.icon-head.head-adminhtml-queue,
+.icon-head.head-adminhtml-mail {
+  background-image: url('../images/fam_newspaper_go.gif');
+}
+.icon-head.head-adminhtml-event {
+  background-image: url('../images/fam_folder_database.gif');
+}

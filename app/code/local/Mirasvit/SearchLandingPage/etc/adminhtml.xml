@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <search>
+                        <title>Search Configuration</title>
+                        <sort_order>20</sort_order>
+                        <children>
+                            <searchlandingpage_page>
+                                <title>Manage Landing Pages</title>
+                                <sort_order>20</sort_order>
+                            </searchlandingpage_page>
+                        </children>
+                    </search>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <search>
+            <children>
+                <searchlandingpage_page module="searchlandingpage">
+                    <title>Manage Landing Pages</title>
+                    <sort_order>20</sort_order>
+                    <action>adminhtml/searchlandingpage_page/index</action>
+                </searchlandingpage_page>
+            </children>
+        </search>
+    </menu>
+</config>

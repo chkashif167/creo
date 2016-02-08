@@ -1,0 +1,51 @@
+scope:
+  website: # Initialize websites
+    - website_id: 2
+      code: usa_website
+      name: USA Website
+      default_group_id: 2
+  group: # Initializes store groups
+    - group_id: 2
+      website_id: 2
+      name: USA Store Group
+      default_store_id: 2
+      root_category_id: 2 # Default Category
+  store: # Initializes store views
+    - store_id: 2
+      website_id: 2
+      group_id: 2
+      code: usa
+      name: USA Store
+    - store_id: 3
+      website_id: 2
+      group_id: 2
+      code: uk
+      name: UK Store
+tables:
+  email/trigger:
+    - trigger_id: 1
+      title: Abandonded Cart
+      store_ids: 2,3
+      event: cart_abandoned
+      cancellation_event: order_placed,customer_loggedin
+  email/trigger_chain:
+    - chain_id: 1
+      trigger_id: 1
+      delay: 0
+      template_id: emaildesing:1
+      run_rule_id:
+      stop_rule_id:
+    - chain_id: 2
+      trigger_id: 1
+      delay: 3605
+      template_id: emaildesing:1
+      run_rule_id:
+      stop_rule_id:
+  email/event:
+    - event_id: 1
+      code: cart_abandoned
+      created_at: 2013-10-01 00:00:00
+      updated_at: 2013-10-01 00:00:00
+      uniq_key: eventuniqkey
+      args_serialized: a:3:{s:14:"customer_email";s:15:"bob@example.com";s:13:"customer_name";s:3:"Bob";s:4:"time";s:10:"1380585600";}
+  email/queue:

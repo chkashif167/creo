@@ -1,0 +1,16 @@
+<div class="searchindex-result">
+    <?php echo $this->getPager() ?>
+    <ul>
+        <?php foreach($this->getCollection() as $_post) : ?>
+        <li>
+            <div class="title">
+                <a href="<?php echo $_post->getPostUrl() ?>"><?php echo $_post->getTitle() ?></a>
+            </div>
+            <div class="content">
+                <?php echo Mage::helper('core/string')->truncate(strip_tags($_post->getShortContent()), 300) ?>
+            </div>
+        </li>
+        <?php endforeach ?>
+    </ul>
+    <?php echo $this->getPager() ?>
+</div>

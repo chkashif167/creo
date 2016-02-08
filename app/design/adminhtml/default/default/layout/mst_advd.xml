@@ -1,0 +1,30 @@
+<layout version="0.1.0">
+    <advdadmin_adminhtml>
+        <reference name="head">
+            <action method="addCss"><script>mirasvit/advd.css</script></action>
+
+            <action method="addJs"><script>mirasvit/core/jquery.min.js</script></action>
+            <action method="addJs"><script>mirasvit/core/underscore.js</script></action>
+            <action method="addJs"><script>mirasvit/core/backbone.js</script></action>
+        </reference>
+    </advdadmin_adminhtml>
+
+    <adminhtml_advd_dashboard>
+        <update handle="editor" />
+
+        <update handle="advdadmin_adminhtml" />
+
+        <reference name="head">
+            <action method="addJs"><script>mirasvit/code/advd/adminhtml/jquery.gridster.js</script></action>
+            <action method="addJs"><script>mirasvit/code/advd/adminhtml/dashboard.js</script></action>
+        </reference>
+    </adminhtml_advd_dashboard>
+
+    <adminhtml_advd_dashboard_global>
+        <update handle="adminhtml_advd_dashboard" />
+    </adminhtml_advd_dashboard_global>
+    
+    <adminhtml_advd_dashboard_user>
+        <update handle="adminhtml_advd_dashboard" />
+    </adminhtml_advd_dashboard_user>
+</layout>

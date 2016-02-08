@@ -1,0 +1,10 @@
+tables:
+  searchsphinx/synonym:
+    -
+      id: 1
+      synonyms: british,england,uk,gb
+      store: 2
+    -
+      id: 2
+      synonyms: phone,cellphone,mobile
+      store: 2

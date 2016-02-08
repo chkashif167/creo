@@ -1,0 +1,33 @@
+<?php if ($this->getData('button_action') == 'reindex'): ?>
+    <?php $_cronStatus = Mage::helper('mstcore/cron')->checkCronStatus(false, false); ?>
+    <?php if ($_cronStatus !== true): ?>
+        <p><?php echo $_cronStatus ?></p>
+    <?php endif ?>
+<?php endif ?>
+<script type="text/javascript">
+//<![CDATA[
+    function func_<?php echo $this->getHtmlId() ?>() {
+        var elem   = $('btn_<?php echo $this->getHtmlId() ?>');
+        var params = {};
+
+        new Ajax.Request('<?php echo $this->getAjaxUrl() ?>', {
+            parameters: params,
+            onSuccess: function(transport) {
+                var result = transport.responseText.evalJSON();
+
+                $('result_<?php echo $this->getHtmlId() ?>').addClassName('notice-msg')
+                    .update(result.message)
+                    .show();
+
+                if (result.btn_label != undefined) {
+                    $('<?php echo $this->getHtmlId() ?>').update(result.btn_label);
+                }
+            }
+        });
+    }
+//]]>
+</script>
+<button onclick="func_<?php echo $this->getHtmlId() ?>(); return false;" class="scalable" type="button" id="<?php echo $this->getHtmlId() ?>">
+    <span><?php echo $this->escapeHtml($this->getButtonLabel()) ?></span>
+</button>
+<p id="result_<?php echo $this->getHtmlId() ?>" style="display:none; padding: 8px 8px 2px 32px !important; min-height: 26px;"></p>

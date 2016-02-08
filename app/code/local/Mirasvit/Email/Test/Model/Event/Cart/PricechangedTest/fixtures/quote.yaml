@@ -1,0 +1,125 @@
+scope:
+  website: # Initialize websites
+    - website_id: 2
+      code: usa_website
+      name: USA Website
+      default_group_id: 2
+  group: # Initializes store groups
+    - group_id: 2
+      website_id: 2
+      name: USA Store Group
+      default_store_id: 2
+      root_category_id: 2 # Default Category
+  store: # Initializes store views
+    - store_id: 2
+      website_id: 2
+      group_id: 2
+      code: usa
+      name: USA Store
+
+eav:
+  catalog_category:
+    - entity_id: 1
+      name: Root Category
+      level: 1
+  catalog_product:
+    - entity_id: 1
+      type_id: simple
+      sku: camera
+      name: Camera
+      stock:
+        qty: 100.00
+        is_in_stock: 1
+      website_ids:
+        - usa_website
+      category_ids:
+        - 1
+      price: 20
+      tax_class_id: 2
+      status: 1
+      visibility: 4
+    - entity_id: 2
+      type_id: simple
+      sku: phone
+      name: Phone
+      stock:
+        qty: 100.00
+        is_in_stock: 1
+      website_ids:
+        - usa_website
+      category_ids:
+        - 1
+      price: 25
+      tax_class_id: 2
+      status: 1
+      visibility: 4
+    - entity_id: 3
+      type_id: simple
+      sku: notebook
+      name: notebook
+      stock:
+        qty: 100.00
+        is_in_stock: 1
+      website_ids:
+        - usa_website
+      category_ids:
+        - 1
+      price: 30
+      tax_class_id: 2
+      status: 1
+      visibility: 4
+
+tables:
+  sales/quote:
+    - entity_id: 1
+      store_id: 2
+      created_at: 2013-10-01 23:00:00
+      updated_at: 2013-10-01 23:10:00
+      customer_email: john@example.com
+      customer_firstname: John
+      customer_lastname: Barham
+      is_active: 1
+      items_count: 1
+    - entity_id: 2
+      store_id: 2
+      created_at: 2013-10-01 00:00:00
+      updated_at: 2013-10-01 00:10:00
+      customer_email: bob@example.com
+      customer_firstname: Bob
+      customer_lastname: Smith
+      is_active: 1
+      items_count: 1
+    - entity_id: 3
+      store_id: 2
+      created_at: 2013-10-01 21:00:00
+      updated_at: 2013-10-01 21:10:00
+      customer_email: bob@example.com
+      customer_firstname: Bob
+      customer_lastname: Smith
+      is_active: 1
+      items_count: 1
+  sales/quote_item:
+    - item_id: 1
+      quote_id: 1
+      product_id: 1
+      store_id: 2
+      created_at: 2013-10-01 10:00:00
+      updated_at: 2013-10-01 10:00:00
+      qty: 1
+      price: 20
+    - item_id: 2
+      quote_id: 2
+      product_id: 2
+      store_id: 2
+      created_at: 2013-10-01 23:00:00
+      updated_at: 2013-10-01 23:00:00
+      qty: 1
+      price: 25.01
+    - item_id: 3
+      quote_id: 3
+      product_id: 3
+      store_id: 2
+      created_at: 2013-10-01 21:00:00
+      updated_at: 2013-10-01 21:00:00
+      qty: 1
+      price: 30

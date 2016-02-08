@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <trigger_email translate="title" module="email">
+                                        <title>Follow Up Email</title>
+                                    </trigger_email>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <email>
+                        <title>Follow Up Email</title>
+                        <sort_order>85</sort_order>
+                        <children>
+                            <email_trigger>
+                                <title>Manage Triggers</title>
+                                <sort_order>10</sort_order>
+                            </email_trigger>
+                            <email_queue>
+                                <title>Mail Log (Queue)</title>
+                                <sort_order>30</sort_order>
+                            </email_queue>
+                            <email_system>
+                                <title>System</title>
+                                <sort_order>100</sort_order>
+                                <children>
+                                    <email_event>
+                                        <title>Event Log</title>
+                                        <sort_order>10</sort_order>
+                                    </email_event>
+                                    <email_settings>
+                                        <title>Settings</title>
+                                        <sort_order>20</sort_order>
+                                    </email_settings>
+                                </children>
+                            </email_system>
+                        </children>
+                    </email>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <email module="email">
+            <title>Follow Up Email</title>
+            <sort_order>85</sort_order>
+            <children>
+                <email_trigger module="email">
+                    <title>Manage Triggers</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/email_trigger/index</action>
+                </email_trigger>
+                <email_queue module="email">
+                    <title>Mail Log (Queue)</title>
+                    <sort_order>30</sort_order>
+                    <action>adminhtml/email_queue/index</action>
+                </email_queue>
+                <email_system module="email">
+                    <title>System</title>
+                    <sort_order>100</sort_order>
+                    <children>
+                        <email_event module="email">
+                            <title>Event Log</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/email_event/index</action>
+                        </email_event>
+                        <email_settings module="email">
+                            <title>Settings</title>
+                            <action>adminhtml/system_config/edit/section/trigger_email</action>
+                            <sort_order>100</sort_order>
+                        </email_settings>
+                    </children>
+                </email_system>
+            </children>
+        </email>
+    </menu>
+</config>

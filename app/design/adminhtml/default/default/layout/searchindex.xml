@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>mirasvit/searchindex/searchindex.css</stylesheet></action>
+        </reference>
+    </default>
+
+    <adminhtml_searchindex_index_edit>
+        <reference name="head">
+            <action method="addItem">
+                <type>js</type>
+                <name>mirasvit/code/searchindex/adminhtml/attributes.js</name>
+            </action>
+        </reference>
+    </adminhtml_searchindex_index_edit>
+
+    <adminhtml_searchindex_report_index>
+        <reference name="content">
+            <block type="searchindex/adminhtml_report" name="searchindex.report" />
+        </reference>
+    </adminhtml_searchindex_report_index>
+
+</layout>

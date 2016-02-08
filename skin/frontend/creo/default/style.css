@@ -678,14 +678,14 @@ p.style1 {
 }
 #header .bottom-area {
 	text-align: right;
-	padding: 55px 0 10px;
+	padding: 56px 0 0px;
 }
 .search-form {
-	margin: 0 0 0 5px;
+	margin:-9px 0 0 5px;
 	padding: 3px 5px;
 	border: 1px solid #000;
-	width: 140px;
-	overflow: hidden;
+	width: auto;
+	/*overflow: hidden;*/
 	display: inline-block;
 	vertical-align: top;
 	position:relative;
@@ -727,6 +727,7 @@ p.style1 {
 	position: relative;
 	color: #222;
 	font: 12px/19px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	text-transform: capitalize;
 }
 #header .login-area.active .opener,
 #header .login-area .opener:hover {
@@ -786,7 +787,7 @@ p.style1 {
 #header .basic-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0 13px 0 7px;
+	padding:0px;
 	position: relative;
 	color: #222;
 	text-transform: uppercase;
@@ -804,8 +805,8 @@ p.style1 {
 	width: 9px;
 	height: 19px;
 	position: absolute;
-	top: 0;
-	right: 3px;
+	top: 0px;
+	right: -10px;
 	content: '\e812';
 }
 #header .basic-open-close ul {
@@ -5642,6 +5643,7 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 #product-options-wrapper dl.last .char-options {display: inline-block;width: 47%;margin-right: 12px;}
 .alert-success .glyphicon{left:0;top:5px;}
 .thumbnail #uploadPhotos img{width:auto;max-width:100%;}
+.searchautocomplete .nav .nav-input{padding-left:22px !important;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}

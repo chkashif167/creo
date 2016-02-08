@@ -1,0 +1,22 @@
+<?php
+$_collection = $this->getItems();
+$_idx        = 0;
+?>
+<?php if($_collection->getSize()): ?>
+<table width="0" border="0" cellspacing="1" cellpadding="5">
+    <tr>
+    <?php foreach($_collection as $_item): ?>
+        <td valign="top" align="center" width="20%">
+            <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>">
+                <img src="<?php echo Mage::helper('mstcore/image')->init($_item, 'thumbnail', 'catalog/product')->resize(80) ?>" width="80" height="80" />
+            </a>
+            <p>
+                <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+            </p>
+        </td>
+        <?php $_idx++ ?>
+        <?php if ($_idx >= 5) break; ?>
+    <?php endforeach ?>
+    </tr>
+</table>
+<?php endif ?>

@@ -1,0 +1,12 @@
+<div class="searchindex-result">
+    <ul>
+        <?php foreach($this->getCollection() as $_item) : ?>
+        <?php $_url = Mage::getUrl('catalogsearch/result/index', array('_query' => array('q' => $_item->getName()))); ?>
+        <li>
+            <div class="title">
+                <a href="<?php echo $_url ?>"><?php echo $_item->getName() ?></a>
+            </div>
+        </li>
+        <?php endforeach ?>
+    </ul>
+</div>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Mirasvit_EmailDesign>
+            <version>1.0.0</version>
+        </Mirasvit_EmailDesign>
+    </modules>
+    <global>
+        <models>
+            <emaildesign>
+                <class>Mirasvit_EmailDesign_Model</class>
+                <resourceModel>emaildesign_resource</resourceModel>
+            </emaildesign>
+
+            <emaildesign_resource>
+                <class>Mirasvit_EmailDesign_Model_Resource</class>
+                <entities>
+                    <design>
+                        <table>m_emaildesign_design</table>
+                    </design>
+                    <template>
+                        <table>m_emaildesign_template</table>
+                    </template>
+                </entities>
+            </emaildesign_resource>
+        </models>
+        <helpers>
+            <emaildesign>
+                <class>Mirasvit_EmailDesign_Helper</class>
+            </emaildesign>
+        </helpers>
+        <resources>
+            <emaildesign_setup>
+                <setup>
+                    <module>Mirasvit_EmailDesign</module>
+                </setup>
+            </emaildesign_setup>
+        </resources>
+        <blocks>
+            <emaildesign>
+                <class>Mirasvit_EmailDesign_Block</class>
+            </emaildesign>
+        </blocks>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <emaildesign module="emaildesign">
+                    <file>mst_emaildesign.xml</file>
+                </emaildesign>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Mirasvit_EmailDesign>
+                    <files>
+                        <default>Mirasvit_EmailDesign.csv</default>
+                    </files>
+                </Mirasvit_EmailDesign>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+				<args>
+					<modules>
+						<emaildesign after="Mage_Adminhtml">Mirasvit_EmailDesign_Adminhtml</emaildesign>
+					</modules>
+				</args>
+			</adminhtml>
+        </routers>
+    </admin>
+</config>

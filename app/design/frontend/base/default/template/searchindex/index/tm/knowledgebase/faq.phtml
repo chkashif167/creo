@@ -1,0 +1,20 @@
+<?php
+$tm = new TM_KnowledgeBase_Block_Categories;
+?>
+
+<div class="searchindex-result">
+    <?php echo $this->getPager() ?>
+    <ul>
+        <?php foreach($this->getCollection() as $_item) : ?>
+        <li>
+            <div class="title">
+                <a href="<?php echo $tm->getUrl('knowledgebase/index/view').'faq/'.$_item['identifier'] ?>"><?php echo $_item->getTitle() ?></a>
+            </div>
+            <div class="content">
+                <?php echo Mage::helper('core/string')->truncate(strip_tags($_item->getContent()), 300) ?>
+            </div>
+        </li>
+        <?php endforeach ?>
+    </ul>
+    <?php echo $this->getPager() ?>
+</div>

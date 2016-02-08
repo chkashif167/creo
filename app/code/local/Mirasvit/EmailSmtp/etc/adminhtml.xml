@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <emailsmtp translate="title" module="emailsmtp">
+                                        <title>Email Smtp</title>
+                                    </emailsmtp>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <email>
+                        <children>
+                            <email_system>
+                                <children>
+                                    <emailsmtp translate="title" module="emailsmtp">
+                                        <title>Email Smtp</title>
+                                    </emailsmtp>
+                                </children>
+                            </email_system>
+                        </children>
+                    </email>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <email>
+            <children>
+                <email_system>
+                    <children>
+                        <emailsmtp module="emailsmtp">
+                            <title>Mail Log</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/emailsmtp_mail/index</action>
+                        </emailsmtp>
+                    </children>
+                </email_system>
+            </children>
+        </email>
+    </menu> 
+</config>

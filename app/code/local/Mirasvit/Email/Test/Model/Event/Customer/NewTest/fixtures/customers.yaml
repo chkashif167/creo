@@ -1,0 +1,35 @@
+scope:
+  website: # Initialize websites
+    - website_id: 2
+      code: usa_website
+      name: USA Website
+      default_group_id: 2
+  group: # Initializes store groups
+    - group_id: 2
+      website_id: 2
+      name: USA Store Group
+      default_store_id: 2
+      root_category_id: 2 # Default Category
+  store: # Initializes store views
+    - store_id: 2
+      website_id: 2
+      group_id: 2
+      code: usa
+      name: USA Store
+tables:
+  customer/entity:
+    - entity_id: 1
+      entity_type_id: 1
+      email: bob@example.com
+      created_at: 2013-10-01 00:00:00
+      store_id: 2
+    - entity_id: 2
+      entity_type_id: 1
+      email: john@example.com
+      created_at: 2013-09-30 00:00:00
+      store_id: 2
+    - entity_id: 3
+      entity_type_id: 1
+      email: will@example.com
+      created_at: 2013-08-30 00:00:00
+      store_id: 2

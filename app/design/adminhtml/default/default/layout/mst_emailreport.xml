@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+    <emailreport_adminhtml>
+        <reference name="head">
+            <action method="addCss"><script>mirasvit/emailreport.css</script></action>
+            <action method="addJs"><script>mirasvit/core/amcharts-3.13.1/amcharts.js</script></action>
+            <action method="addJs"><script>mirasvit/core/amcharts-3.13.1/serial.js</script></action>
+            <action method="addJs"><script>mirasvit/core/amcharts-3.13.1/funnel.js</script></action>
+            <action method="addJs"><script>mirasvit/core/amcharts-3.13.1/pie.js</script></action>
+        </reference>
+    </emailreport_adminhtml>
+
+    <adminhtml_emailreport_recipient_single>
+        <update handle="emailreport_adminhtml" />
+    </adminhtml_emailreport_recipient_single>
+
+    <adminhtml_emailreport_email_analysis>
+        <update handle="emailreport_adminhtml" />
+    </adminhtml_emailreport_email_analysis>
+
+    <adminhtml_emailreport_recipient_trend>
+        <update handle="emailreport_adminhtml" />
+    </adminhtml_emailreport_recipient_trend>
+
+    <adminhtml_emailreport_dashboard_index>
+        <update handle="emailreport_adminhtml" />
+
+        <reference name="content">
+            <block type="emailreport/adminhtml_dashboard" name="dashboard" as="dashboard" template="mst_emailreport/dashboard.phtml">
+                <block type="emailreport/adminhtml_dashboard_filter_form" name="filter_form" />
+                <block type="emailreport/adminhtml_dashboard_gridTrigger" name="grid_trigger" />
+                <block type="emailreport/adminhtml_dashboard_gridPeriod" name="grid_period" />
+                <block type="emailreport/adminhtml_dashboard_gridTrigger" name="chart" template="mst_emailreport/dashboard/chart.phtml"/>
+            </block>
+        </reference>
+    </adminhtml_emailreport_dashboard_index>
+</layout>

@@ -1,0 +1,14 @@
+<?php if ($this->getGoogleSitelinksSearch()): ?>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "<?php echo Mage::getBaseUrl() ?>",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "<?php echo urldecode(Mage::getUrl('catalogsearch/result/index', array('_query' => array('q' => '{search_term_string}')))) ?>",
+     "query-input": "required name=search_term_string"
+   }
+}
+</script>
+<?php endif ?>

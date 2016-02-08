@@ -1,0 +1,69 @@
+<?php
+class Mirasvit_Email_Model_Event_Custom_Example extends Mirasvit_Email_Model_Event_Abstract
+{
+    const EVENT_CODE = 'wishlist_wishlist|';
+
+    public function getEventsGroup()
+    {
+        return __('Example');
+    }
+
+    public function getEvents()
+    {
+        $result = array();
+
+        $result[self::EVENT_CODE.'productadded'] = __('Product was added to wishlist');
+        $result[self::EVENT_CODE.'shared']       = __('Wishlist shared');
+
+        return $result;
+    }
+
+    public function findEvents($eventCode, $from)
+    {
+        return array();
+    }
+
+    public function observer($eventCode, $observer)
+    {
+        if ($eventCode == self::EVENT_CODE.'productadded') {
+            $product  = $observer->getProduct();
+            $wishlist = $observer->getWishlist();
+            $customer = Mage::getModel('customer/customer')->load($wishlist->getCustomerId());
+
+            $key = array();
+            $key[] = $customer->getEmail();
+            $key[] = $wishlist->getId();
+            $key[] = $product->getId();
+
+            $args = array(
+                'time'              => time(),
+                'customer_email'    => $customer->getEmail(),
+                'customer_name'     => $customer->getName(),
+                'customer_id'       => $customer->getId(),
+                'store_id'          => $wishlist->getStore()->getId(),
+                'product_id'        => $product->getId(),
+                'wishlist_id'       => $wishlist->getId(),
+            );
+
+            $this->dispatchEvent($eventCode, $key, $args);
+        } elseif ($eventCode == self::EVENT_CODE.'shared') {
+            $wishlist = $observer->getWishlist();
+            $customer = Mage::getModel('customer/customer')->load($wishlist->getCustomerId());
+
+            $key = array();
+            $key[] = $customer->getEmail();
+            $key[] = $wishlist->getId();
+
+            $args = array(
+                'time'              => time(),
+                'customer_email'    => $customer->getEmail(),
+                'customer_name'     => $customer->getName(),
+                'customer_id'       => $customer->getId(),
+                'store_id'          => $wishlist->getStore()->getId(),
+                'wishlist_id'       => $wishlist->getId(),
+            );
+
+            $this->saveEvent($eventCode, $key, $args);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div class="searchindex-result">
+    <?php echo $this->getPager() ?>
+    <ul>
+        <?php foreach($this->getCollection() as $_item) : ?>
+        <li>
+            <div class="title">
+                <a href="<?php echo $_item->getUrl() ?>"><?php echo $_item->getTitle() ?></a>
+            </div>
+        </li>
+        <?php endforeach ?>
+    </ul>
+    <?php echo $this->getPager() ?>
+</div>

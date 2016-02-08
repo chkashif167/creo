@@ -1,0 +1,58 @@
+tables:
+  emaildesign/design:
+    - design_id: 1
+      title: Base Desing
+      template: '{{var area.content}}'
+
+  emaildesign/template:
+    - template_id: 1
+      design_id: 1
+      title: Base template
+      subject: Hello {{var customer_name}}
+      areas_content: "Email: {{var customer_email}} Name: {{var customer_name}} "
+
+  email/trigger:
+    - trigger_id: 1
+      title: Abandonded Cart
+      store_ids: 2,3
+      event: cart_abandoned
+      cancellation_event: order_placed,customer_loggedin
+
+  email/trigger_chain:
+    - chain_id: 1
+      trigger_id: 1
+      delay: 0
+      template_id: emaildesign:1
+      run_rule_id:
+      stop_rule_id:
+    - chain_id: 2
+      trigger_id: 1
+      delay: 3605
+      template_id: emaildesign:1
+      run_rule_id:
+      stop_rule_id:
+
+  email/event:
+    - event_id: 1
+      code: cart_abandoned
+      created_at: 2013-10-01 00:00:00
+      updated_at: 2013-10-01 00:00:00
+      uniq_key: eventuniqkey
+      args_serialized: a:3:{s:14:"customer_email";s:18:"martin@example.com";s:13:"customer_name";s:6:"Martin";s:4:"time";s:10:"1380585600";}
+
+  email/queue:
+    - queue_id: 1
+      status: pending
+      trigger_id: 1
+      chain_id: 1
+      subject: Predifined subject
+      args_serialized: a:3:{s:14:"customer_email";s:18:"martin@example.com";s:13:"customer_name";s:6:"Martin";s:4:"time";s:10:"1380585600";}
+      uniq_key: queue1
+      uniq_key_md5: queue1_md5
+    - queue_id: 2
+      status: pending
+      trigger_id: 1
+      chain_id: 2
+      uniq_key: queue2
+      uniq_key_md5: queue2_md5
+      args_serialized: a:3:{s:14:"customer_email";s:18:"martin@example.com";s:13:"customer_name";s:6:"Martin";s:4:"time";s:10:"1380585600";}

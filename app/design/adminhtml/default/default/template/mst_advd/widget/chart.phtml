@@ -1,0 +1,90 @@
+<?php
+$_id = 'chart'.rand(0, 100000);
+?>
+<div id="<?php echo $_id ?>" style='width: 100%; height: 100%;'></div>
+
+<script type="text/javascript">
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(<?php echo json_encode($this->getDataTable()) ?>);
+
+        var chart = new google.visualization.AreaChart(document.getElementById('<?php echo $_id ?>'));
+
+        var options = {
+            backgroundColor: 'transparent',
+            pointSize: 5,
+            areaOpacity: 0.65,
+
+            chartArea: {
+                width: '100%',
+                height: '100%'
+            },
+            
+            colors: ["#2fd75b", "#ff7e0e", "#52c4ff", "#c7b700", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+            
+            fontSize: '10',
+
+            legend: {
+                position: 'none',
+            },
+            hAxis: {
+                textPosition: 'none',
+                textStyle: {
+                    color    : '#aaaaaa',
+                }
+            },
+            vAxis: {
+                textPosition: 'in',
+                baselineColor: '#dddddd',
+                gridlines: {
+                    color: '#f0f0f0'
+                },
+                textStyle: {
+                    color    : '#aaaaaa',
+                }
+            }
+        }
+
+        // function showHideSeries () {
+        //     var sel = chart.getSelection();
+        //     if (sel.length > 0) {
+        //         if (sel[0].row == null) {
+        //             var col = sel[0].column;
+        //             if (typeof(columns[col]) == 'number') {
+        //                 var src = columns[col];
+
+        //                 // hide the data series
+        //                 columns[col] = {
+        //                     label: data.getColumnLabel(src),
+        //                     type: data.getColumnType(src),
+        //                     sourceColumn: src,
+        //                     calc: function () {
+        //                         return null;
+        //                     }
+        //                 };
+
+        //                 series[src - 1].color = '#eeeeee';
+        //                 series[src - 1].type  = 'line';
+        //             } else {
+        //                 var src = columns[col].sourceColumn;
+        //                 columns[col] = src;
+
+        //                 series[src - 1].color = null;
+        //                 series[src - 1].type  = 'column';
+        //             }
+        //             var view = new google.visualization.DataView(data);
+        //             view.setColumns(columns);
+        //             chart.draw(view, options);
+        //         }
+        //     }
+        // }
+        
+        // google.visualization.events.addListener(chart, 'select', showHideSeries);
+
+        var view = new google.visualization.DataView(data);
+        
+        // view.setColumns(columns);
+
+        chart.draw(view, options);
+    }
+    drawChart();
+</script>

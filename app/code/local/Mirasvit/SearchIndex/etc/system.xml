@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <searchsphinx translate="label" module="searchindex">
+            <groups>
+                <merge>
+                    <label>Merge Settings (Long tail)</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>35</sort_order>
+                    <frontend_model>mstcore/system_config_form_fieldset</frontend_model>
+                    <comment><![CDATA[
+                        For example, we have a product "Canon PowerShot SX500 IS".
+                        If customer searches for ‘Canon PowerShot SX-500IS’, default search will not find our product.<br>
+                        Using "long-tail" search, the search function recognizes char combination pattern during reindex and search (by <b>match expression</b>) and replace special chars (<b>replace expression</b>) to empty or any other char (<b>replace char</b>).<br>
+                        So during reindexing "SX500 IS" will be converted to "SX500IS" and during search "SX-500IS" will be converted to "SX500IS" too. And search will be able to find product by several combinations of product's name spelling.
+                    ]]></comment>
+                    <fields>
+                        <match_expr translate="label">
+                            <label>Match Expression</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </match_expr>
+                        <replace_expr translate="label">
+                            <label>Replace Expression</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </replace_expr>
+                        <replace_char translate="label">
+                            <label>Replace Char</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </replace_char>
+                    </fields>
+                </merge>
+                <multistore>
+                    <label>Multi Store Results</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>40</sort_order>
+                    <frontend_model>mstcore/system_config_form_fieldset</frontend_model>
+                    <comment><![CDATA[]]></comment>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Display multi-store results</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <stores translate="label">
+                            <label>Display results for these stores</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>searchindex/system_config_source_store</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </stores>
+                        <redirect translate="label">
+                            <label>Redirect to the store with results</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </redirect>
+                    </fields>
+                </multistore>
+                <noroute translate="label">
+                    <label>404 To Search</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>45</sort_order>
+                    <frontend_model>mstcore/system_config_form_fieldset</frontend_model>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable redirect from 404 to search results</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                    </fields>
+                </noroute>
+            </groups>
+        </searchsphinx>
+    </sections>
+</config>

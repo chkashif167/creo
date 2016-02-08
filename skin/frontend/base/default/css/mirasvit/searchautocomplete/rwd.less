@@ -1,0 +1,110 @@
+@import "default.less";
+
+.searchautocomplete {
+    .input-text {
+        outline: none;
+    }
+
+    &.active {
+        .input-text {
+            outline: none;
+            border-radius: 2px 2px 0px 0px;
+            border: 1px solid #3399cc;
+        }
+
+    }
+
+    .nav-search-in {
+        top: 0px;
+
+        .category-fake {
+            padding-top: 7px;
+        }
+
+        .nav-down-arrow {
+            top: 19px;
+        }
+
+        .category {
+            top: 0px;
+            left: 0px;
+            height: 40px;
+        }
+    }
+    .searchautocomplete-placeholder {
+        top: 0px !important;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 0px 0px 5px 5px;
+        border: 1px solid #3399cc;
+        border-top: 0px;
+
+        &:before {
+            display: none;
+        }
+        ul {
+            li {
+                border: 1px solid #fff;
+
+                div.highlight {
+                    color: #666;
+                }
+
+                img {
+                    border: 1px solid #ededed;
+                }
+
+                &:last-child {
+                    border: 1px solid #fff;
+                }
+
+                &.active {
+                    background: transparent;
+                    box-shadow: none;
+                    border: 1px solid #3399cc !important;
+                }
+
+                .ratings {
+                    margin: 5px 0px;
+                }
+
+                .name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    font-size: 14px;
+                    line-height: 16px;
+                    display: block;
+                }
+
+                div.highlight {
+                    display: none;
+                }
+
+                @media only screen and (min-width: 1100px) {
+                    div.highlight {
+                        display: block;
+                        float: left;
+                        max-width: 250px;
+                    }
+                }
+
+                .searchautocomlete-image {
+                    margin: 0px 10px 0px 0px;
+                }
+
+                .price-box {
+                    margin: 0px;
+
+                    .price {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 771px) {
+    #header-search {
+        width: 35% !important;
+    }
+}

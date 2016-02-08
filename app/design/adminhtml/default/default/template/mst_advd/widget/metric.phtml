@@ -1,0 +1,21 @@
+<?php
+    $_value     = $this->getMetricValue();
+    $_toCompare = $this->getMetricValueToCompare();
+
+    $_diff = 0;
+    if ($_toCompare) {
+        $_diff = ($_value / $_toCompare) * 100 - 100;
+    }
+?>
+<div class="dashboard-block-metric">
+    <div class="metric">
+        <b><?php echo $this->formatMetricValue($_value) ?></b>
+    
+        <?php if ($_toCompare && abs($_diff) > 0): ?>
+            <div class="comparison <?php echo ($_diff > 0) ? 'plus' : 'minus' ?>">
+                <span class="percent"><?php echo intval(abs($_diff)) ?> %</span>
+                <span class="value"><?php echo $this->formatMetricValue(abs($_value - $_toCompare)) ?></span>
+            </div>
+        <?php endif ?>
+    </div>
+</div>

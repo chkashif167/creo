@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <searchautocomplete translate="label" module="searchautocomplete">
+            <label>Search Autocomplete</label>
+            <tab>mstcore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>102</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general>
+                    <label>General Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>10</sort_order>
+                    <!-- <frontend_model>mstcore/system_config_form_fieldset</frontend_model> -->
+                    <fields>
+                        <enabled>
+                            <label>Enable search autocomplete</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <min_chars translate="label">
+                            <label>Minimum number of characters to search</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </min_chars>
+                        <delay translate="label">
+                            <label>The delay before start finding</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>In milliseconds, e.g. 500 means 0.5 of second</comment>
+                        </delay>
+                        <max_results translate="label">
+                            <label>Maximum number of results in the dropdown list</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </max_results>
+                        <tip translate="label">
+                            <label>Tip in the search box</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tip>
+                        <show_price translate="label">
+                            <label>Show Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>
+                        <show_image translate="label">
+                            <label>Show Thumbnail</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_image>
+                        <image_size translate="label">
+                            <label>Thumbnail size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>[width]x[height]</comment>
+                        </image_size>
+                        <show_rating>
+                            <label>Show Rating</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_rating>
+                        <show_short_description translate="label">
+                            <label>Show Short Description</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>75</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_short_description>
+                        <short_description_len translate="label">
+                            <label>Max length of short description</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </short_description_len>
+                        <filter_type translate="label">
+                            <label>Display Filter By</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>searchautocomplete/system_config_source_filter</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </filter_type>
+                        <categories translate="label">
+                            <label>Categories</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>searchautocomplete/system_config_source_category</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Leave empty for display top level categories</comment>
+                            <depends>
+                                <filter_type>category</filter_type>
+                            </depends>
+                        </categories>
+                        <attributes translate="label">
+                            <label>Attributes</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>searchautocomplete/system_config_source_attribute</source_model>
+                            <sort_order>95</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Leave empty for display all possible attributes</comment>
+                            <depends>
+                                <filter_type>attribute</filter_type>
+                            </depends>
+                        </attributes>
+                        <indexes translate="label">
+                            <label>Displayed Search Indexes</label>
+                            <if_module_enabled>Mirasvit_SearchIndex</if_module_enabled>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>searchautocomplete/system_config_source_index</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </indexes>
+                    </fields>
+                </general>
+                <styles>
+                    <label>Search Autocomplete Styles</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>20</sort_order>
+                    <expanded>1</expanded>
+                    <fields>
+                        <theme translate="label">
+                            <label>Search Autocomplete Theme</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>searchautocomplete/system_config_source_theme</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </theme>
+                    </fields>
+                </styles>
+            </groups>
+        </searchautocomplete>
+    </sections>
+</config>

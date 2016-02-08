@@ -1,0 +1,69 @@
+<?php
+/**
+ * @var $this Mirasvit_SearchIndex_Block_Adminhtml_Validation_Tab_Speed
+ */
+?>
+<form action="<?php echo $this->getUrl('*/*/*') ?>" method="get">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Check why product can\'t be found by search phrase') ?></h4>
+    </div>
+    <div class="fieldset">
+        <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+                <tr>
+                    <td class="label">
+                        <label><b><?php echo $this->__('Search Phrase') ?> <span class="required">*</span></b></label>
+                    </td>
+                    <td class="value">
+                        <input type="text" class="input-text required-entry" name="q" value="<?php echo $this->getQ() ?>">
+                    </td>
+                </tr>
+
+                <?php if (!Mage::app()->isSingleStoreMode()): ?>
+                    <tr>
+                        <td class="label">
+                            <label><b><?php echo $this->__('Store') ?></b></label>
+                        </td>
+                        <td class="value">
+                            <?php echo $this->getStoreHtmlSelect() ?>
+                        </td>
+                    </tr>
+                <?php else: ?>
+                    <input type="hidden" name="store_id" value="<?php echo $this->getStoreId() ?>" />
+                <?php endif ?>
+                <tr>
+                    <td></td>
+                    <td class="value">
+                        <button type="submit" class="scalable save"><span><span><span><?php echo $this->__('Submit') ?></span></span></span></button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        <label><b><?php echo $this->__('Search Time (seconds)') ?></b></label>
+                    </td>
+                    <td class="value"><?php echo $this->getSearchTime() ?></td>
+                </tr>
+                <tr>
+                    <td class="label">
+                        <label><b><?php echo $this->__('Number of Results') ?></b></label>
+                    </td>
+                    <td class="value"><?php echo $this->getResultCount() ?></td>
+                </tr>
+                <tr>
+                    <td class="label">
+                        <label><b><?php echo $this->__('Current Search Engine') ?></b></label>
+                    </td>
+                    <td class="value">
+                        <div id="messages">
+                            <ul class="messages">
+                                <?php echo $this->getSearchEngineStatus() ?>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+<?php echo $this->getGridHtml() ?>

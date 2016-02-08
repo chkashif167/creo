@@ -1,0 +1,80 @@
+@import "mixin.less";
+
+.searchindex-results {
+    @borderColor: #A0B3C3;
+
+    .clearfix();
+    margin-bottom: 10px;
+    border-bottom: 1px solid @borderColor;
+
+    li {
+        margin-bottom: -1px;
+        float: left;
+        .clearfix();
+        margin: 0px 2px;
+
+        a {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            display: block;
+            cursor: pointer;
+            padding: 2px 5px 1px 5px;
+            line-height: 20px;
+            border: 1px solid transparent;
+            border-bottom:none;
+            .border-radius(5px 5px 0 0);
+            text-decoration: none;
+
+            &:hover {
+                #gradient > .vertical(#e8e8e8, #ffffff);
+                border: 1px solid @borderColor;
+                border-bottom:none;
+            }
+
+            span {
+                font-weight: normal;
+                font-size: 0.9em;
+            }
+        }
+
+        &.active {
+            a {
+                #gradient > .vertical(#e8e8e8, #ffffff);
+                cursor: default;
+                border: 1px solid @borderColor;
+                border-bottom:none;
+            }
+        }
+    }
+}
+
+.searchindex-result {
+    li {
+        padding: 5px;
+
+        .title {
+            a {
+                font-weight: bold;
+                color: #203548;
+                font-size: 13px;
+            }
+        }
+    }
+
+    &.searchindex-result-category {
+        margin-bottom: 20px;
+        li {
+            padding: 1px 0px;
+
+            a {
+                font-weight: bold;
+                color: #203548;
+            }
+        }
+    }
+}
+
+.searchindex-highlight {
+    background-color: #ff0;
+}

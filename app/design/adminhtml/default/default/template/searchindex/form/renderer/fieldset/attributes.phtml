@@ -1,0 +1,97 @@
+<?php
+$_element    = $this->getElement();
+$_htmlId     = $this->getElement()->getHtmlId();
+$_htmlClass  = $this->getElement()->getClass();
+$_htmlName   = $this->getElement()->getName();
+$_availableAttributes = $this->getAvailableAttributes();
+$_attributes = $this->getAttributes();
+$_indexCode  = $this->getIndexCode();
+?>
+
+<?php if ($_element->getFieldsetContainerId()): ?>
+<div id="<?php echo $_element->getFieldsetContainerId(); ?>">
+<?php endif ?>
+<?php if ($_element->getLegend()): ?>
+<div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $_element->getLegend() ?></h4>
+    <div class="form-buttons"><?php echo $_element->getHeaderBar() ?></div>
+</div>
+<?php endif ?>
+<?php if (!$_element->getNoContainer()): ?>
+    <div class="fieldset <?php echo $_element->getClass() ?>" id="<?php echo $_element->getHtmlId() ?>">
+<?php endif ?>
+    <div class="hor-scroll grid tier">
+        <?php if ($_element->getComment()): ?>
+            <p class="comment"><?php echo $this->escapeHtml($_element->getComment()) ?></p>
+        <?php endif; ?>
+        <?php if ($_element->hasHtmlContent()): ?>
+            <?php echo $_element->getHtmlContent(); ?>
+        <?php else: ?>
+        <table cellspacing="0" class="data border">
+            <thead>
+                <tr class="headings">
+                    <th><?php echo $this->__('Attribute') ?></th>
+                    <th><?php echo $this->__('Weight') ?></th>
+                    <th />
+                </tr>
+                <tr id="<?php echo $_htmlId ?>_template" class="no-display">
+                    <td>
+                        <select class="required-entry select" name="<?php echo $_htmlName ?>[code][]">
+                            <?php foreach($_availableAttributes as $_code => $_name) : ?>
+                            <option value="<?php echo $_code ?>"><?php echo $_name ?>  (<?php echo $_code ?>)</option>
+                            <?php endforeach ?>
+                        </select>
+                    </td>
+                    <td>
+                        <input class="input-text required-entry validate-number validate-digits validate-greater-than-zero" type="text" name="<?php echo $_htmlName ?>[weight][]" value="1"/>
+                    </td>
+                    <td class="last">
+                        <button class="scalable delete icon-btn delete-product-option" onclick="SearchIndexAttributes.deleteItem(event); return false"><span>Delete</span></button>
+                    </td>
+                </tr>
+
+                <?php foreach ($_attributes as $_attrCode => $_weight): ?>
+                <tr>
+                    <td>
+                        <select class="required-entry select" name="<?php echo $_htmlName ?>[code][]">
+                            <?php foreach($_availableAttributes as $_code => $_name) : ?>
+                            <option value="<?php echo $_code ?>" <?php if ($_attrCode == $_code): ?>selected<?php endif ?>><?php echo $_name ?> (<?php echo $_code ?>)</option>
+                            <?php endforeach ?>
+                        </select>
+                    </td>
+                    <td>
+                        <input class="input-text required-entry validate-number validate-digits validate-greater-than-zero" type="text" name="<?php echo $_htmlName ?>[weight][]" value=<?php echo $_weight ?> />
+                    </td>
+                    <td class="last">
+                        <button class="scalable delete icon-btn delete-product-option" onclick="SearchIndexAttributes.deleteItem(event); return false"><span>Delete</span></button>
+                    </td>
+                </tr>
+                <?php endforeach ?>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="3" class="a-right">
+                        <button style="" onclick="SearchIndexAttributes.addItem()" class="scalable add" type="button"><span>Add attribute</span></button>
+                    </td>
+                </tr>
+                <?php if ($_indexCode == "mage_catalog_product"): ?>
+                <tr>
+                    <td colspan="3">
+                        <div class="a-attention">Extension perform search by all searchable attributes available at Catalog/Manage Attributes, where "Use in Quick Search" is "Yes"</div>
+                    </td>
+                </tr>
+                <?php endif ?>
+            </tfoot>
+            <tbody id="<?php echo $_htmlId ?>_container">
+            </tbody>
+        </table>
+        <?php endif ?>
+    </div>
+    <?php echo $_element->getSubFieldsetHtml() ?>
+<?php if (!$_element->getNoContainer()): ?>
+    </div>
+<?php endif; ?>
+<?php if ($_element->getFieldsetContainerId()): ?>
+</div>
+<?php endif; ?>

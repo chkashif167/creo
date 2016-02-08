@@ -1,0 +1,13 @@
+.misspell.fallback strong,
+.misspell.suggest strong {
+  color: #c76200;
+}
+.misspell.fallback strong strike,
+.misspell.suggest strong strike {
+  color: #3d6611;
+  font-weight: normal;
+}
+.misspell.fallback strong a,
+.misspell.suggest strong a {
+  color: #c76200;
+}

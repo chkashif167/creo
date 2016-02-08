@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<widgets>
+    <searchautocomplete_form type="searchautocomplete/widget_form">
+        <name>Search Autocomplete: Search Box</name>
+        <description type="desc">Adds a search box with autocomplete</description>
+    </searchautocomplete_form>
+</widgets>

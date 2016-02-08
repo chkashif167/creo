@@ -1,0 +1,220 @@
+.clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.advr-report-block-container {
+    .content-header {
+        position: relative;
+    }
+
+    .advr-widget-toolbar {
+        .clearfix();
+
+        position: relative;
+        border: 1px solid #dadfe0;
+        padding: 10px 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+
+        .field-row {
+            margin-bottom: 0px;
+        }
+
+        .custom {
+            float: left;
+            margin-right: 10px;
+            
+            input[type="checkbox"] {
+                margin-left: 10px;
+            }
+
+            input[type="radio"] {
+                margin-right: 10px;
+            }
+
+            &.custom-filter_by_sku {
+                // position: absolute;
+                // left: 10px;
+                // bottom: 10px;
+
+                input {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .date-range, .custom-geo_dimension {
+            margin-right: 40px;
+            float: left;
+
+            input[type="radio"] {
+                margin-left: 20px;
+                cursor: pointer;
+            }
+
+            label.inline {
+                padding-left: 10px;
+                cursor: pointer;
+            }
+        }
+
+        .datecontrol {
+            float: right;
+
+            .primary {
+                .clearfix();
+                .interval {
+                    float: left;
+                    width: 200px;
+
+                    select {
+                        margin-left: 10px;
+                        width: 150px;
+                    }
+                }
+                
+                .refresh {
+                    float: left;
+                    margin-left: 10px;
+                }
+
+                .date-from, .date-to {
+                    margin-left: 10px;
+                    float: left;
+                    label {
+                        display: none;
+                    }
+                }
+            }
+
+            .compare {
+                .clearfix();
+                margin-top: 5px;
+
+                .compare-checkbox {
+                    float: left;
+                    text-align: right;
+                    width: 200px;
+                } 
+
+                .date-from, .date-to {
+                    margin-left: 10px;
+                    float: left;
+                    label {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .grid {
+        small.discount {
+            font-size: 10px;
+            float: left;
+            display: inline-block;
+            text-align: left;
+            color: #888;
+        }
+
+        td {
+            position: relative;
+        }
+
+        .percent-bar {
+            height: 3px;
+            background: rgb(47, 215, 91);
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            min-width: 0px;
+            z-index: 10;
+        }
+        .percent-value {
+            z-index: 100;
+            position: relative;
+        }
+
+        th .percent-bar {
+            display: none;
+        }
+        th .percent-value {
+            display: inline-block;
+        }
+
+        .percent {
+            position: relative;
+        }
+
+        tfoot tr td {
+            border-top: 0px;
+        }
+    }
+
+    
+    .advr-report-block-switcher {
+        position: absolute;
+        right: 0px;
+        top: 2px;
+
+        label {
+            margin-right: 5px;
+        }
+    }
+    
+    .advr-extended-filter {
+        .clearfix();
+
+        position: relative;
+        border: 1px solid #dadfe0;
+        // padding: 10px 10px;
+        margin-bottom: 10px;
+        margin-top: -11px;
+
+
+        table {
+            margin-bottom: -1px;
+            
+            tr {
+                td {
+                    padding: 5px 10px !important;
+                    border-bottom: 1px solid #dadfe0 !important;
+
+                    &.value {
+                        .range {
+                            .range-line {
+                                float: left;
+                                margin-right: 9px;
+
+                                .input-text {
+                                    width: 100px;
+                                }
+
+                                &:last-child {
+                                    margin-right: 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.add-filter {
+                    td {
+                        background: #efefef !important;
+                    }
+                }
+            }
+        }
+    }
+}
+

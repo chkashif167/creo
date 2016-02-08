@@ -1,0 +1,6 @@
+tables:
+  searchsphinx/synonym:
+    -
+      id: 1
+      synonyms: word01,word02,word03,word04,word05
+      store: 2
