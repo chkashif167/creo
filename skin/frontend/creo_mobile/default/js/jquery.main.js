@@ -1646,11 +1646,9 @@ $j(window).load(function () {
             setCookie("newsletter", "hide-news-letter", 60);
         }
     });
-	
+
 	jQuery('.closebtn').click(function(){
-		
-			setCookie("newsletter", "hide-news-letter", 60);
-		
+	setCookie("newsletter", "hide-news-letter", 60);
 	});
 });
 
@@ -2476,8 +2474,8 @@ function popupValidation()
     var errors = "";
     //only apply this validation if it has swatches
     if (jQuery('.option-container').find('.has-swatches').length > 0) {
-        //check all required elements size/style and color. 
-        
+        //check all required elements size/style and color.
+
 		// size
 		if(jQuery("#swatches-options-132").length > 0) {
 			if (jQuery('.option-container:eq(0)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
@@ -2490,24 +2488,24 @@ function popupValidation()
 			}
 		}
 		if(jQuery("#swatches-options-134").length > 0) {
-			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) { 
+			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             errors = "Please make sure to select style";
 			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
 					 errors = "Please make sure to select tshirt color";
 				}
         }/*else if(jQuery("#swatches-options-159").length > 0) {
-				
+
 		}*/
-		
-		
+
+
 		if(jQuery("#swatches-options-160").length > 0) {
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select polo color";
 			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            	errors = "Please make sure to select print color"; 
+            	errors = "Please make sure to select print color";
 			}
 		}
-		
+
 		if(jQuery("#swatches-options-152").length > 0) {
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
             	errors = "Please make sure to select case color";
@@ -2519,8 +2517,8 @@ function popupValidation()
             jQuery.alert({
                 title: 'Alert!',
                 content: errors,
-                /*confirm: function(){ 
-                 alert('Confirmed!'); 
+                /*confirm: function(){
+                 alert('Confirmed!');
                  }*/
             });
             return false;
@@ -2541,8 +2539,8 @@ function designYourOwnPopupValidation()
         jQuery.alert({
             title: 'Alert!',
             content: "Please choose size first.",
-            /*confirm: function(){ 
-             alert('Confirmed!'); 
+            /*confirm: function(){
+             alert('Confirmed!');
              }*/
         });
 		return false;
@@ -2564,8 +2562,8 @@ jQuery(document).ready(function (e) {
 /*
 // select filter by default
 jQuery(document).ready(function (e) {
-    var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));	
-	if( getcategory == 'categories.html' || 
+    var getcategory = (window.location.href.substr(window.location.href.lastIndexOf('/') + 1));
+	if( getcategory == 'categories.html' ||
 	    getcategory == 'skull-collection.html' ||
 	    getcategory == 'x-city-love-collection.html' ||
 	    getcategory == 'celebrity-hush-collection.html' ||
@@ -2591,7 +2589,7 @@ jQuery(document).ready(function (e) {
 			}
 		}
 	}
-	
+
 	if( getcategory == 'clothing.html'
 	){
 		if(jQuery('#gender-24').length ){
@@ -2607,7 +2605,7 @@ jQuery(document).ready(function (e) {
 	    getcategory == 'men.html' ||
 	    getcategory == 'women.html'
 	){
-		if(jQuery('#styles-20').length ){		
+		if(jQuery('#styles-20').length ){
 			if(!(jQuery('#styles-20').attr('class') == 'fme_layered_attribute Vshape fme_layered_attribute_selected_Vshape')){
 				jQuery('#styles-20').find('img').trigger('click');
 			}
@@ -2618,20 +2616,20 @@ jQuery(document).ready(function (e) {
 /*jQuery(document).ready(function(e) {
    var getitem = jQuery("#fme_layered_universal_categories li a").attr("class");
   // console.log(getitem);
-   
+
     jQuery(document).on("click",".opener",function() {
 	   alert("dd");
 	 var getitem = jQuery("#fme_layered_universal_categories li").attr("class");
 		console.log(getitem);
     });
 
-  
+
 });*/
 /*jQuery(document).ready(function(e) {
     jQuery('.my-account').on('keydown', '#telephone', function(e){
 -1!==jQuery.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault();
  });
- 
+
 		var maxLen = 16;
         jQuery('.my-account #telephone').keydown(function(event){
             var Length = jQuery(".my-account #telephone").val().length;
@@ -2642,7 +2640,7 @@ jQuery(document).ready(function (e) {
                 }
 				else
 				{
-				return true;	
+				return true;
 				}
             }
         });
@@ -2652,7 +2650,7 @@ jQuery(document).ready(function(e) {
 	jQuery('.my-account #telephone').attr('maxlength', '16');
 	jQuery('.my-account #telephone').attr('onkeypress', 'return isNumeric(event)');
 	jQuery('.my-account #telephone').attr('oninput', 'maxLengthCheck(this)');
-	jQuery('.my-account #telephone').attr('max', '16'); 
+	jQuery('.my-account #telephone').attr('max', '16');
 	jQuery('.my-account #telephone').attr('min', '1');
 });
 
@@ -2660,7 +2658,7 @@ jQuery(document).ready(function(e) {
     if (object.value.length > object.maxLength)
       object.value = object.value.slice(0, object.maxLength)
   }
-    
+
   function isNumeric (evt) {
     if(evt.keyCode==8 || evt.keyCode==46 || evt.keyCode==37 || evt.keyCode==38|| evt.keyCode==39 || evt.keyCode==40 ){
     return true;

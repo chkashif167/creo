@@ -1648,9 +1648,7 @@ $j(window).load(function () {
     });
 
 	jQuery('.closebtn').click(function(){
-
-			setCookie("newsletter", "hide-news-letter", 60);
-
+	setCookie("newsletter", "hide-news-letter", 60);
 	});
 });
 
