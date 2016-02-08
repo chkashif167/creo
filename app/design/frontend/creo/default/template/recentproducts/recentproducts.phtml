@@ -1,15 +1,26 @@
 <?php 
-$products = $this->getRecentProducts();
+$pcount = $this->getData('product_count');
+$cat_to_select = $this->getData('category_id');
+$products = $this->getRecentProducts($cat_to_select,$pcount);
+//echo "<pre>";
+//print_r($products);
+$productMediaConfig = Mage::getModel('catalog/product_media_config');
+
 ?>
   
 <div id="product_list">
   <h1>Recent Products</h1>
   <?php if (is_array($products) && count($products)) { ?>
-    <?php foreach($products as $product) { ?>
+    <?php foreach($products as $product) { 
+            $thumbnailUrl  = $productMediaConfig->getMediaUrl($product['thumb']);
+        ?>
       <div>
         <a href="<?php echo $product['url'] ?>"><?php echo $product['name'] ?></a>
         <br>
-        <img src="<?php echo $product['image'] ?>">
+        <a href="<?php echo $product['url'] ?>"><img src="<?php echo $thumbnailUrl;?>" width="225" height="325" border="0"/></a>
+
+
+        
               </div>
     <?php } ?>
   <?php } ?>
