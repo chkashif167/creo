@@ -239,13 +239,37 @@ body.canvas-slid #disable_view{position: fixed;z-index: 9998;background-color: r
 .small-header .logo { width: 56px; margin: 7px 0; padding: 0; float: left; }
 .small-header #nav { float: right; width: 50%; }
 .modal-content:after { clear: both; content: ""; display: block; }
-.modal-content { border-radius: 0; border-top: 17px solid #000; padding: 40px 10%; transform: skewY(-5deg); -moz-transform: skewY(-5deg); -ms-transform: skewY(-5deg); -webkit-transform: skewY(-5deg); backface-visibility: hidden; }
+.modal-content { border-radius: 0; border-top: 17px solid #000; padding: 40px 10%;backface-visibility: hidden; }
 .modal-content.modal-login { padding: 28px 5% 12px; }
-.modal-content .close { position: absolute; top: 8px; right: 15px; font-size: 25px; }
+.modal-content .close { position: absolute; bottom:15px; right:15px; font-size: 16px; }
 .modal-content .close:hover { color: #000; opacity: 1; }
-.modal-holder { transform: skewY(5deg); -moz-transform: skewY(5deg); -ms-transform: skewY(5deg); -webkit-transform: skewY(5deg); backface-visibility: hidden; text-align: center; color: #888; font: 16px/26px "Roboto Condensed", Helvetica, Arial, sans-serif; }
+.modal-content.normal-modal{padding:30px 12px;border:3px solid #000;}
+.modal-holder {backface-visibility: hidden; text-align: center; color: #888;
+font: 16px/26px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .modal-holder h2 { margin: 0 0 10px; text-transform: uppercase; color: #222; font: 40px/42px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .modal-holder p { margin: 0 0 10px; }
+.modal-content.normal-modal{transform:skewY(0deg);-moz-transform: skewY(0deg);-ms-transform: skewY(0deg);
+-webkit-transform: skewY(0deg);}
+.modal-content.normal-modal .close{top:inherit;right:15px;bottom:15px;font-size:16px;}
+.modal-content.normal-modal{padding:15px 12px;border:3px solid #000;}
+.modal-content.normal-modal .modal-body{max-width:480px;margin:0 auto;}
+.modal-content.normal-modal .modal-body p.big{font-size:11px;line-height:1.5;letter-spacing:0.5px;text-transform:uppercase;
+color:#000;}
+.modal-content.normal-modal .modal-body p.big big{font-size:20px;font-weight:700;letter-spacing:-1px;}
+.modal-content.normal-modal .modal-body input.email{border:2px solid #000;height:38px;padding:5px 12px;font-size:18px;}
+.modal-content.normal-modal .modal-body .actions{width:100%;display:block;position:relative;margin:10px 0 20px;}
+.modal-content.normal-modal .modal-body .actions:before{position:absolute;width:100%;content:'';background-color:#000;height:2px;
+display:block;top:50%;z-index:-1;}
+.modal-content.normal-modal .modal-body .newslettersubscribe.off,
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:hover,
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:focus{margin:0 auto;background:#fff;border:0;padding:0 15px;
+outline:none;}
+.modal-content.normal-modal .modal-body .newslettersubscribe.off{width:auto;height:auto;}
+.modal-content.normal-modal .modal-body .newslettersubscribe.off span{background-color:#000;color:#fff;text-transform:uppercase;
+font-size:18px;line-height:1.8;padding:0 10px;display:block;}
+
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:hover span,
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:focus span{background-color:#f16167;}
 .subscribe-form { display: block; margin: 0; padding: 0; background: none; border: none; }
 input[type="text"], input[type="password"], input.email { display: block; background: none; border: 1px solid #ddd; width: 100%; height: 28px; line-height: 20px; margin: 0 0 10px; padding: 4px 10px; text-align: left; }
 .login-popup-form button[type="submit"], input[type="submit"] { margin: 0 auto 20px; padding: 5px; display: block; border: 1px solid #565656; background: #222; width: 168px; height: 52px; text-align: center; cursor: pointer; text-transform: uppercase; color: #fff; font: 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; }
