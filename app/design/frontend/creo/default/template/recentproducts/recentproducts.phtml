@@ -1,0 +1,16 @@
+<?php 
+$products = $this->getRecentProducts();
+?>
+  
+<div id="product_list">
+  <h1>Recent Products</h1>
+  <?php if (is_array($products) && count($products)) { ?>
+    <?php foreach($products as $product) { ?>
+      <div>
+        <a href="<?php echo $product['url'] ?>"><?php echo $product['name'] ?></a>
+        <br>
+        <img src="<?php echo $product['image'] ?>">
+              </div>
+    <?php } ?>
+  <?php } ?>
+</div>
