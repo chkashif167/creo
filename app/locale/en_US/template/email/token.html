@@ -6,14 +6,13 @@
 @-->
 {{template config_path="design/email/header"}}
 {{inlinecss file="email-inline.css"}}
-
-<table cellpadding="0" cellspacing="0" border="0">
-    <tr>
-        <td class="action-content">
+<h1 style="font-size: 18px; font-weight: 700; font-family: 'Roboto Condensed', sans-serif; color: #fff;">CREO </h1>
+</td><!-- header End -->
+</tr>
+<tr>
+<td colspan="3">
             <h1>Hello, {{htmlescape var=$userName}}</h1>
             <p>Your authorization to <b>{{htmlescape var=$applicationName}}</b> has been changed to <b>{{htmlescape var=$status}}</b> by Admin team.</p>
         </td>
-    </tr>
-</table>
-
+</tr>
 {{template config_path="design/email/footer"}}
