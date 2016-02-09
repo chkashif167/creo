@@ -13,6 +13,8 @@ class Progos_Recentproducts_Block_Recentproducts extends Mage_Core_Block_Templat
         'url' => $product->getProductUrl(),
         'image' => $product->getImage(),
         'thumb' => $product->getSmallImage(),
+        'sku' => $product->getSku(),
+        'urlpath'=>$product->getData('url_path'),
       );
     }
  
