@@ -29,6 +29,7 @@
     padding: 0px 5px 0px;
     text-decoration: none;
 }
+body.categorypath-create-caps-html .product-swatches-container li a{display:none;}
 .product-swatches-container a.active {
     background: #fff;
     box-shadow: 3px 3px 5px #aaa;
