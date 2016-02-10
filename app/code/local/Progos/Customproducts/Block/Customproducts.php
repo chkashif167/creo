@@ -1,10 +1,10 @@
 <?php
-class Progos_Recentproducts_Block_Recentproducts extends Mage_Core_Block_Template {
-  public function getRecentProducts($cat_to_select,$pcount) {
+class Progos_Customproducts_Block_Customproducts extends Mage_Core_Block_Template {
+  public function getRecentProducts($pids) {
     // call model to fetch data
 
     $arr_products = array();
-    $products = Mage::getModel("recentproducts/recentproducts")->getRecentProducts($cat_to_select,$pcount);
+    $products = Mage::getModel("customproducts/customproducts")->getCustomProducts($pids);
   
     foreach ($products as $product) {
       $arr_products[] = array(

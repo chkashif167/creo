@@ -1,7 +1,12 @@
 <?php 
-$pcount = $this->getData('product_count');
-$cat_to_select = $this->getData('category_id');
-$products = $this->getRecentProducts($cat_to_select,$pcount);
+$pids_raw = $this->getData('product_ids');
+$pids_temp = explode(',',$pids_raw);
+$pids = array();
+foreach($pids_temp as $pid_temp){
+    $pids[] = $pid_temp;
+}
+
+$products = $this->getRecentProducts($pids);
 $baseCurrency = Mage::app()->getStore()->getBaseCurrencyCode();
 //echo "<pre>";
 //print_r($products);
