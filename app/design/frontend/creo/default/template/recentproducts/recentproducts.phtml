@@ -2,26 +2,96 @@
 $pcount = $this->getData('product_count');
 $cat_to_select = $this->getData('category_id');
 $products = $this->getRecentProducts($cat_to_select,$pcount);
+$baseCurrency = Mage::app()->getStore()->getBaseCurrencyCode();
 //echo "<pre>";
 //print_r($products);
 $productMediaConfig = Mage::getModel('catalog/product_media_config');
 
-?>
-  
-<div id="product_list">
-  <h1>Recent Products</h1>
-  <?php if (is_array($products) && count($products)) { ?>
-    <?php foreach($products as $product) { 
-            $thumbnailUrl  = $productMediaConfig->getMediaUrl($product['thumb']);
-        ?>
-      <div>
-        <a href="<?php echo $product['url'] ?>"><?php echo $product['name'] ?></a>
-        <br>
-        <a href="<?php echo $product['url'] ?>"><img src="<?php echo $thumbnailUrl;?>" width="225" height="325" border="0"/></a>
 
+function getCategoryPath($sku)
+    {
+        $product = Mage::getModel('catalog/product')->loadByAttribute('sku',$sku);
+        
+        $pathArray = array();
+        $collection1 = $product->getCategoryCollection()
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->addAttributeToSelect('path')
+            ->addAttributeToSelect('is_active');
+            
+
+        foreach($collection1 as $cat1){            
+            $pathIds = explode('/', $cat1->getPath());            
+            $collection = Mage::getModel('catalog/category')->getCollection()
+                ->setStoreId(Mage::app()->getStore()->getId())
+                ->addAttributeToSelect('name')
+                ->addAttributeToSelect('is_active')
+                ->addFieldToFilter('entity_id', array('in' => $pathIds));
+
+            $pahtByName = '';
+            foreach($collection as $cat){                
+                $pahtByName .= '/' . strtolower($cat->getName());
+            }
+            
+            $pathArray[] = $pahtByName;
+
+        }
+        
+        return $pathArray;
+    }
+
+
+?>
+
+
+  <?php if (is_array($products) && count($products)) { ?>
+    <?php 
+    $i=0;
+    foreach($products as $product) { 
+            $thumbnailUrl  = $productMediaConfig->getMediaUrl($product['thumb']);
+            $i++;
+            $arr = getCategoryPath($product['sku']);
+            $arr_temp = explode('/default category',$arr[count($arr)-1]);
+            //print_r($arr_temp);
+            //$str = ltrim('/',$arr_temp[1]);
+            
+            $purl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$arr_temp[1]."/".$product['urlkey'].".html";
+          
+        ?>
 
         
-              </div>
+                            
+                                <table class="btn-newsletter" cellpadding="0" cellspacing="0" border="0" style=" width: 33%; display: inline-block; vertical-align: top; ">
+                                    <tr>
+                                        <td>
+                                            <a href="<?php echo $purl;?>" style="text-decoration:none;outline:none;display:block;width:100%;"><img style="max-width:100%;width:100%;" src="<?php echo $thumbnailUrl;?>" width="261" height="303">
+                                            <div style="display:inline-table; vertical-align:middle; width:100%;">
+                                                <h5 style='background-color: #000000;
+                                                    color: #ffffff;
+    display:table-cell;
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 70px;
+    margin-top: 0;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;'><?php echo $product['name'] ?></h5>
+    <span><?php echo $baseCurrency;?><?php echo number_format($product['finalPrice'],2); ?></span>
+                                            </div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                               
+                            
+                            <?php
+                                if($i%3==0){
+                                    echo '</td></tr><tr style="width:100%;"><td class="three-column test">';
+                                }
+                            ?>
+                        
     <?php } ?>
   <?php } ?>
-</div>

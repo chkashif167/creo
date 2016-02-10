@@ -5,5 +5,11 @@
       <active>true</active>
       <codePool>local</codePool>
     </Progos_Recentproducts>
+
+    <Progos_Customproducts>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Progos_Customproducts>
+
   </modules>
 </config>
