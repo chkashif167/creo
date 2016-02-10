@@ -2736,6 +2736,11 @@ jQuery(window).load(function(){
 			jQuery('#universal_categories-'+id).simulate('click');
 		}
 	}
+var selectedvalue = jQuery(".selectcolorcustom.selected").attr('data-value');
+var datacolor = jQuery(".selectcolorcustom.selected").attr('data-color');
+    //console.log(datavalue,datacolor);
+    jQuery("#product-options-wrapper .options-list li").removeClass();
+    jQuery("#product-options-wrapper .options-list li").addClass(datacolor);
 });
 
 jQuery(document).ready(function($) {
@@ -2790,4 +2795,13 @@ jQuery(document).ready(function($) {
          jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
        });
     });
+
+jQuery(".selectcolorcustom").click(function(){
+    var datavalue = jQuery(this).attr('data-value');
+    var datacolor = jQuery(this).attr('data-color');
+    //console.log(datavalue,datacolor);
+    jQuery("#product-options-wrapper .options-list li").removeClass();
+    jQuery("#product-options-wrapper .options-list li").addClass(datacolor);
+});
+
 });

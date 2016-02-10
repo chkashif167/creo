@@ -5644,6 +5644,7 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 .alert-success .glyphicon{left:0;top:5px;}
 .thumbnail #uploadPhotos img{width:auto;max-width:100%;}
 .searchautocomplete .nav .nav-input{padding-left:22px !important;}
+body.categorypath-create-caps-html .product-swatches-container li a{display:none;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
