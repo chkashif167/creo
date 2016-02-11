@@ -56,16 +56,19 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 <span class="search-by">Search By Design</span>
 <a class="opener attribure_labels" data-id="collection-mega-menu"> View All</a>
 <ul id="collection-mega-menu" class="slide m-filter-item-list">
+<?php $attr = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories'); ?>
+
+<li>
+   <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html" ?>">View All</a>
+</li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
-            <?php if ($a['value']): ?>
-                <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
-            <?php else: 
-			?>
-            <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html" ?>">View All</a>
-            <?php endif; ?>
+
+                <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
+                        
         </li>
     <?php endforeach ?>
+
 </ul>
 </div>
 </div>
