@@ -2684,7 +2684,7 @@ jQuery(window).load(function(){
 /** Selection of the first style ends here **/
 
 jQuery(document).ready(function($){
-   jQuery(".bgr-icon").click(function() {
+   jQuery(".bgr-icon,.search-icon").click(function() {
       var id = jQuery(this).attr('data-id');
       console.log(id);
       jQuery("#" + id).slideToggle();

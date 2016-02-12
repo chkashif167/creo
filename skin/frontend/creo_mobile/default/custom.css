@@ -117,7 +117,8 @@
     padding: 0;
     width: 19px;
     position: absolute;
-    left: 5px;
+    left:12px;
+    top:12px;
 }
 .subtotal .price {
     color: #000 !important;
