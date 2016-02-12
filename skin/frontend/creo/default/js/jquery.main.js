@@ -1,5 +1,5 @@
-// page init
 jQuery(document).ready(function () {
+// page init
 //    jQuery('#largevshape').on('mouseover', function() {
 //  		$(this).attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
 //	});
@@ -2792,14 +2792,13 @@ jQuery("#label_notebook_material").css('margin-left', '110px');
 });
 
 jQuery(document).ready(function($) {
-        jQuery("#options_34_text").attr("maxlength","1");
-       //  jQuery("#options_15_text").attr("maxlength","1");
+        jQuery("#options_34_text,#options_33_text,#options_32_text,#options_31_text").attr("maxlength","1");
 
-       // jQuery( "#options-16-list label").each(function(index) {
-       // jQuery(this).on("click", function(){
-       //   jQuery( "#options-17-list label").css({"box-shadow":"3px 3px 5px rgba(170, 170, 170, 0.58)"});
-       //   jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
-       // });
+       jQuery( "#options-16-list label").each(function(index) {
+       jQuery(this).on("click", function(){
+         jQuery( "#options-17-list label").css({"box-shadow":"3px 3px 5px rgba(170, 170, 170, 0.58)"});
+         jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
+       });
     });
 
 jQuery(".selectcolorcustom").click(function(){
