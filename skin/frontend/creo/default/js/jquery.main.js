@@ -2524,10 +2524,6 @@ function popupValidation()
             if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
                 errors = "Please select a snap style";
             }
-
-        }
-        if(jQuery(".char-options .input-box input[name='options[34]']").length > 0){
-                errors = "Please Add one character on box1";
         }
 
         if(jQuery("#options-17-list").length > 0){
