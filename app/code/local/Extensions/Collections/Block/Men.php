@@ -78,6 +78,10 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
                 ->addAttributeToFilter($attributeCode, array('neq' => ''))
                 ->addAttributeToSelect($attributeCode);
 
+                Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($products);
+                Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($products);
+                Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($products);
+
             $usedAttributeValues = array_unique($products->getColumnValues($attributeCode));
             $attributeModel = Mage::getSingleton('eav/config')->getAttribute('catalog_product', $attributeCode);
 
