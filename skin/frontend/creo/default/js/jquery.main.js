@@ -2520,6 +2520,16 @@ function popupValidation()
             }
 
         }
+        if(jQuery("#swatches-options-175").length > 0){
+            if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+                errors = "Please select a snap style";
+            }
+
+        }
+        if(jQuery(".char-options .input-box input[name='options[34]']").length > 0){
+                errors = "Please Add one character on box1";
+        }
+
         if(jQuery("#options-17-list").length > 0){
             if(jQuery("input[name='options[17]']:checked").length<=0){
                 errors = "Please select font style";
