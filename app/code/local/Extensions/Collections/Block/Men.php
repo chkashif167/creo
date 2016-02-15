@@ -62,18 +62,13 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 	protected function _getAttributeCollection()	
     {
 		if (is_null($this->_attributeCollection)) {
-            // $attribute = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories');
-            // $id = $attribute->getId();
-            // die($id);
-			//$attribute = Mage::getModel('catalog/resource_eav_attribute')->load(154);
-		    //$attributeOptions = $attribute ->getSource()->getAllOptions();
-/*			echo "<pre>";
-			print_r($_img);
-			echo "</pre>";*/
-            $attributeCode = 'universal_categories';
-
+             $attributeCode = 'universal_categories';
+            
+            $cat_id = 3;
+            $category = Mage::getModel('catalog/category')->load($cat_id);
            // build and filter the product collection
            $products = Mage::getResourceModel('catalog/product_collection')
+                ->addCategoryFilter($category)
                 ->addAttributeToFilter($attributeCode, array('notnull' => true))
                 ->addAttributeToFilter($attributeCode, array('neq' => ''))
                 ->addAttributeToSelect($attributeCode);
@@ -127,7 +122,7 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 			$collection = Mage::getModel('catalog/product')
 							->getCollection()
 							->addAttributeToFilter('entity_id', array('in' => $clothingProductIdsArray))
-						->addAttributeToFilter('gender', 24)			
+						    ->addAttributeToFilter('gender', 24)			
 							->joinField(
 									'category_id', 'catalog/category_product', 'category_id', 
 									'product_id = entity_id', null, 'left'
