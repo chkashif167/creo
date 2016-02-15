@@ -44,7 +44,7 @@
     filter: alpha(opacity=60);
     opacity: 0.6;
 }
-
+body.categorypath-create-caps-html .product-swatches-container li a{display:none;}
 .product-swatches-container a.active.selected {
     background: #fff;
     border: solid 1px #ffffff;
