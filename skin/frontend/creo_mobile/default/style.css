@@ -172,7 +172,7 @@ display:block;}
 #header #search_mini_form{display:none;}
 .search-form { margin:5px auto; padding:6px; border-top:1px solid #eee; width: 100%; overflow: hidden; display:block;
 vertical-align: top;position: relative; z-index: 22;max-width:100%; }
-.searchautocomplete .searchautocomplete-placeholder{position: relative;top:5px;}
+.searchautocomplete .searchautocomplete-placeholder{position: relative;top:5px;width:100%;}
 .searchautocomplete .searchautocomplete-loader{top:7px;}
 a.search-icon.glyphicon.glyphicon-search {color: #fff;background: #2E2A2B;padding: 15px 12px 16px;vertical-align: top;top: 25px;
 left: 4px;font-size: 14px;}
