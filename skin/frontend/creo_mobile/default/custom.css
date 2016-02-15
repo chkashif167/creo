@@ -739,7 +739,8 @@ padding: 5px 8px; margin:0;}
 
 .onestepcheckout-index-index .checkout_applyCoupon { /*float: right; width:30%;*/}
 .onestepcheckout-index-index .discount-form .leftSide { float: left; width:50%;}
-.onestepcheckout-index-index .discount-form .leftSide label, .onestepcheckout-index-index .discount-form .leftSide input { float: left; width:100%; text-align:left;}
+.onestepcheckout-index-index .discount-form .leftSide label, .onestepcheckout-index-index .discount-form .leftSide input {
+float: left; width:100%;text-align:left;border-radius:0;box-shadow:none;}
 .onestepcheckout-index-index .discount-form .buttons-set { float: right; width:45%;}
 .onestepcheckout-index-index .discount-form .buttons-set button {background: #000 none repeat scroll 0 0;
  border: medium none;
