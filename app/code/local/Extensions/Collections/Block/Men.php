@@ -62,10 +62,12 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 	protected function _getAttributeCollection()	
     {
 		if (is_null($this->_attributeCollection)) {
-             $attributeCode = 'universal_categories';
             
-            $cat_id = 3;
-            $category = Mage::getModel('catalog/category')->load($cat_id);
+            $catid = 3;
+            $category = Mage::getModel('catalog/category')->load($catid);
+            $attributeCode = 'universal_categories';
+
+
            // build and filter the product collection
            $products = Mage::getResourceModel('catalog/product_collection')
                 ->addCategoryFilter($category)
