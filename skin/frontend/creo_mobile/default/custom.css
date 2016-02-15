@@ -733,8 +733,8 @@ padding: 5px 8px;}
 
 .onestepcheckout-index-index .checkout_bottom_area .total { width:50%;float:left;border:2px solid #eee; display: block;
 padding: 5px 8px; margin:0;}
-.onestepcheckout-index-index .checkout_bottom_area .total .title { float: left; } 
-.onestepcheckout-index-index .checkout_bottom_area .total span { float: right; font-size:14px !important; line-height: 18px !important; font-size:14px; font-weight: normal ; } 
+.onestepcheckout-index-index .checkout_bottom_area .total .title { float: left; font-size:12px;}
+.onestepcheckout-index-index .checkout_bottom_area .total span { float: right; font-size:11px !important; line-height: 18px !important; font-size:14px; font-weight: normal ; } 
 
 
 .onestepcheckout-index-index .checkout_applyCoupon { /*float: right; width:30%;*/}
@@ -1257,7 +1257,7 @@ a[class*='_selected_']{
 .cart-top-area .btn-holder a:first-child,
 .cart-bottom-area .btn-holder a:first-child{font-size:10px;}
 .onestepcheckout-index-index .checkout_bottom_area .total .title,
-.onestepcheckout-index-index .checkout_bottom_area .subtotal .title{font-size: 11px;}
+.onestepcheckout-index-index .checkout_bottom_area .subtotal .title{font-size: 10px;}
 .onestepcheckout-index-index .checkout_bottom_area .total span,
-.onestepcheckout-index-index .checkout_bottom_area .subtotal span{font-size:11px !important;}
+.onestepcheckout-index-index .checkout_bottom_area .subtotal span{font-size:10px !important;}
 }
