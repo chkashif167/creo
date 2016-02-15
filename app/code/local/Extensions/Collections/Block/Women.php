@@ -72,8 +72,11 @@ class Extensions_Collections_Block_Women extends Mage_Core_Block_Template {
             echo "</pre>";*/
             $attributeCode = 'universal_categories';
 
+           $cat_id = 3;
+            $category = Mage::getModel('catalog/category')->load($cat_id);
            // build and filter the product collection
-           $products = Mage::getResourceModel('catalog/product_collection')
+            $products = Mage::getResourceModel('catalog/product_collection')
+                ->addCategoryFilter($category)
                 ->addAttributeToFilter($attributeCode, array('notnull' => true))
                 ->addAttributeToFilter($attributeCode, array('neq' => ''))
                 ->addAttributeToSelect($attributeCode);
