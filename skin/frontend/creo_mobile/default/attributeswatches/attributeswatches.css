@@ -58,6 +58,7 @@ body.categorypath-create-caps-html .product-swatches-container li a{display:none
     padding: 0px;
     position: relative;
     text-align: center;
+    display: none;
 }
 .product-swatches-container .has-swatches a.active.selected {
     padding: 0px !important;
