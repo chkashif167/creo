@@ -62,18 +62,13 @@ class Extensions_Collections_Block_Women extends Mage_Core_Block_Template {
 	protected function _getAttributeCollection()	
     {
 		if (is_null($this->_attributeCollection)) {
-			// $attribute = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories');
-            // $id = $attribute->getId();
-            // die($id);
-            //$attribute = Mage::getModel('catalog/resource_eav_attribute')->load(154);
-            //$attributeOptions = $attribute ->getSource()->getAllOptions();
-/*          echo "<pre>";
-            print_r($_img);
-            echo "</pre>";*/
+			$catid = 3;
+            $category = Mage::getModel('catalog/category')->load($catid);
             $attributeCode = 'universal_categories';
 
            // build and filter the product collection
-           $products = Mage::getResourceModel('catalog/product_collection')
+            $products = Mage::getResourceModel('catalog/product_collection')
+                ->addCategoryFilter($category)
                 ->addAttributeToFilter($attributeCode, array('notnull' => true))
                 ->addAttributeToFilter($attributeCode, array('neq' => ''))
                 ->addAttributeToSelect($attributeCode);
