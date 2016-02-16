@@ -2520,9 +2520,14 @@ function popupValidation()
             }
 
         }
-        if(jQuery("#swatches-options-175").length > 0){
+        if(jQuery("#swatches-options-177").length > 0){
             if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-                errors = "Please select a snap style";
+                errors = "Please select a cap font color";
+            }
+        }
+        if(jQuery("#swatches-options-178").length > 0){
+            if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+                errors = "Please select a font style";
             }
         }
 
