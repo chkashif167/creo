@@ -2799,6 +2799,7 @@ jQuery("body").mouseup(function (e){
 });
 
 jQuery(document).ready(function($) {
+    jQuery("#options_34_text,#options_33_text,#options_32_text,#options_31_text").attr("maxlength","1");
        jQuery( "#options-16-list label").each(function(index) {
        jQuery(this).on("click", function(){
          jQuery( "#options-16-list label").css({"box-shadow":"3px 3px 5px rgba(170, 170, 170, 0.58)"});
