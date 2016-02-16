@@ -6,7 +6,7 @@ $_currentAttribute = Mage::getSingleton('core/app')->getRequest()->getParam('att
 $_filterType = $this->getFilterType();
 $_url = $this->getAjaxUrl();
 ?>
-<form class="searchautocomplete UI-SEARCHAUTOCOMPLETE search-form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get"
+<form id="search_mini_form" class="searchautocomplete UI-SEARCHAUTOCOMPLETE search-form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get"
     data-tip="<?php echo $this->__(Mage::getStoreConfig('searchautocomplete/general/tip')) ?>"
     data-url="<?php echo $_url ?>"
     data-minchars="<?php echo Mage::getStoreConfig('searchautocomplete/general/min_chars') ?>"

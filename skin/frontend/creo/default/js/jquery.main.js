@@ -1,5 +1,5 @@
-// page init
 jQuery(document).ready(function () {
+// page init
 //    jQuery('#largevshape').on('mouseover', function() {
 //  		$(this).attr('src', 'http://localhost/creo/skin/frontend/creo/default/images/largevshape-hover.png');
 //	});
@@ -2520,6 +2520,12 @@ function popupValidation()
             }
 
         }
+        if(jQuery("#swatches-options-175").length > 0){
+            if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
+                errors = "Please select a snap style";
+            }
+        }
+
         if(jQuery("#options-17-list").length > 0){
             if(jQuery("input[name='options[17]']:checked").length<=0){
                 errors = "Please select font style";
@@ -2736,6 +2742,11 @@ jQuery(window).load(function(){
 			jQuery('#universal_categories-'+id).simulate('click');
 		}
 	}
+var selectedvalue = jQuery(".selectcolorcustom.selected").attr('data-value');
+var datacolor = jQuery(".selectcolorcustom.selected").attr('data-color');
+    //console.log(datavalue,datacolor);
+    jQuery("#product-options-wrapper .options-list li").removeClass();
+    jQuery("#product-options-wrapper .options-list li").addClass(datacolor);
 });
 
 jQuery(document).ready(function($) {
@@ -2781,8 +2792,7 @@ jQuery("#label_notebook_material").css('margin-left', '110px');
 });
 
 jQuery(document).ready(function($) {
-        jQuery("#options_16_text").attr("maxlength","1");
-        jQuery("#options_15_text").attr("maxlength","1");
+        jQuery("#options_34_text,#options_33_text,#options_32_text,#options_31_text").attr("maxlength","1");
 
        jQuery( "#options-16-list label").each(function(index) {
        jQuery(this).on("click", function(){
@@ -2790,4 +2800,13 @@ jQuery(document).ready(function($) {
          jQuery(this).css({"box-shadow":"1px 1px 5px #444 inset"});
        });
     });
+
+jQuery(".selectcolorcustom").click(function(){
+    var datavalue = jQuery(this).attr('data-value');
+    var datacolor = jQuery(this).attr('data-color');
+    //console.log(datavalue,datacolor);
+    jQuery("#product-options-wrapper .options-list li").removeClass();
+    jQuery("#product-options-wrapper .options-list li").addClass(datacolor);
+});
+
 });
