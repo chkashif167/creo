@@ -16,29 +16,16 @@
 	</div>
 	<div class="post-view">
 		<p class="post-date when"><?php echo stripslashes($this->__('This entry was posted on %s<span class=\"by-author\"> by %s</span>.', $post->getPostDate(), $post->getAuthor()->getDisplayName())) ?></p>
-		<?php $collection = Mage::getModel('wordpress/post')->getCollection(); ?>
-		<?php foreach($collection as $posts){
-			$featuredImage = $posts->getFeaturedImage();
-			if ($featuredImages = $posts->getFeaturedImage()): 
-			?>
-			
-			<div class="featured-image left"><img src="<?php echo $featuredImages->getAvailableImage() ?>" alt="<?php echo $this->escapeHtml($post->getPostTitle()) ?>"/></div>
-		<?php 
-		endif;
-		}
-?>
+
 		<?php echo $this->getBeforePostContentHtml() ?>
 		<div class="post-entry entry std<?php if ($post->getFeaturedImage()): ?> post-entry-with-image<?php endif; ?>">
 			<?php if ($post->isViewableForVisitor()): ?>
-				<?php if ($featuredImage = $post->getFeaturedImage()): ?>
-					<div class="featured-image left"><img src="<?php echo $featuredImage->getAvailableImage() ?>" alt="<?php echo $this->escapeHtml($post->getPostTitle()) ?>"/></div>
-				<?php endif; ?>
-				<?php echo $post->getPostContent() ?>
+					<?php echo $post->getPostContent() ?>
 			<?php else: ?>
 				<?php echo $this->getPasswordProtectHtml() ?>
 			<?php endif; ?>
 		</div>
 		<?php echo $this->getAfterPostContentHtml() ?>
-		<?php echo $this->getCommentsHtml() ?>
+		<?php //echo $this->getCommentsHtml() ?>
 	</div>
 <?php endif; ?>
