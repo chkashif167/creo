@@ -286,4 +286,20 @@
     </reference>
 </customer_logged_in>
 
+<wordpress_default>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+</wordpress_default>
+
+<wordpress_post_view>
+	<reference name="head">
+			<action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
+			<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
+    </reference>
+    <reference name="content">
+	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	</reference>
+</wordpress_post_view>
+
 </layout>

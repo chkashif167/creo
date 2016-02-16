@@ -18,7 +18,7 @@
 		<p class="post-date when"><?php echo stripslashes($this->__('This entry was posted on %s<span class=\"by-author\"> by %s</span>.', $post->getPostDate(), $post->getAuthor()->getDisplayName())) ?></p>
 		<?php $collection = Mage::getModel('wordpress/post')->getCollection(); ?>
 		<?php foreach($collection as $posts){
-			$featuredImage = $posts->getFeaturedImage();
+			$featuredImages = $posts->getFeaturedImage();
 			if ($featuredImages = $posts->getFeaturedImage()): 
 			?>
 			
@@ -39,6 +39,6 @@
 			<?php endif; ?>
 		</div>
 		<?php echo $this->getAfterPostContentHtml() ?>
-		<?php echo $this->getCommentsHtml() ?>
+		<?php //echo $this->getCommentsHtml() ?>
 	</div>
 <?php endif; ?>
