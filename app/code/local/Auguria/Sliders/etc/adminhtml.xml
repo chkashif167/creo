@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Auguria
+ * @package    Auguria_Sliders
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+-->
+<config>
+    <menu>
+         <cms>
+            <children>
+                <auguria_sliders translate="title" module="auguria_sliders">
+                    <title>Sliders</title>
+                    <action>adminhtml/sliders</action>
+                    <sort_order>100</sort_order>
+                </auguria_sliders>
+            </children>
+         </cms>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                    	<children>
+                        	<config>
+                        		<children>
+                            		<auguria_sliders translate="title" module="auguria_sliders">
+	                                <title>Sliders</title>
+                            		</auguria_sliders>
+                            	</children>
+                            </config>
+                        </children>
+                    </system>
+                    <cms>
+                    	<children>
+                    		<auguria_sliders translate="title" module="auguria_sliders">
+                    			<title>Sliders</title>
+                    		</auguria_sliders>
+                    	</children>
+                    </cms>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
