@@ -61,11 +61,17 @@ function getCategoryPath($sku)
             
             $purl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$arr_temp[1]."/".$product['urlkey'].".html";
           
+          $blockHtml = $this->getLayout()->createBlock('cms/block')->setBlockId('newsletter-products-grid')->toHtml();
+          $blockHtml = str_replace('{PRODUCT_URL}', $purl,$blockHtml);
+          $blockHtml = str_replace('{PRODUCT_IMAGE}', $thumbnailUrl,$blockHtml);
+          $blockHtml = str_replace('{PRODUCT_TITLE}', $product['name'],$blockHtml);
+          $blockHtml = str_replace('{PRODUCT_CURRENCY}', $baseCurrency,$blockHtml);
+          $blockHtml = str_replace('{PRODUCT_PRICE}', number_format($product['finalPrice'],2),$blockHtml);
+          echo $blockHtml;
         ?>
-
-        
+   
                             
-                                <table class="btn-newsletter" cellpadding="0" cellspacing="0" border="0" style=" width: 33%; display: inline-block; vertical-align: top; ">
+                                <!--<table class="btn-newsletter" cellpadding="0" cellspacing="0" border="0" style=" width: 33%; display: inline-block; vertical-align: top; ">
                                     <tr>
                                         <td>
                                             <a href="<?php echo $purl;?>" style="text-decoration:none;outline:none;display:block;width:100%;"><img style="max-width:100%;width:100%;" src="<?php echo $thumbnailUrl;?>" width="261" height="303">
@@ -89,7 +95,7 @@ function getCategoryPath($sku)
                                             </a>
                                         </td>
                                     </tr>
-                                </table>
+                                </table>-->
                                
                             
                             <?php
