@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Progos_Customproducts>
+      <version>1.0</version>
+    </Progos_Customproducts>
+  </modules>
+  <global>
+    <blocks>
+      <customproducts>
+        <class>Progos_Customproducts_Block</class>
+      </customproducts>
+    </blocks>
+    <models>
+      <customproducts>
+        <class>Progos_Customproducts_Model</class>
+      </customproducts>
+    </models>
+  </global>
+</config>

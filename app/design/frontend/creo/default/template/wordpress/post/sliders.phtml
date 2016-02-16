@@ -1,0 +1,7 @@
+<?php
+echo "hellllo"; 
+$collection = Mage::getModel('wordpress/post')->getCollection(); ?>
+		<?php foreach($collection as $posts){
+			print_r($posts);
+		}
+?>

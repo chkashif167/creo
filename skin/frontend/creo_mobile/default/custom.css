@@ -117,7 +117,8 @@
     padding: 0;
     width: 19px;
     position: absolute;
-    left: 5px;
+    left:12px;
+    top:7px;
 }
 .subtotal .price {
     color: #000 !important;
@@ -716,8 +717,8 @@ padding: 0;}
 .card-date-month { width:115px;}
 .checkout-heading { border: none !important;}
 .onestepcheckout-index-index form select { position: static;}
-#checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load .paymentradiobuttonlabel {
-float: left; margin: 0 5px 0 0;}
+#checkout-payment-method-load input[type="radio"].paymentradiobutton,
+#checkout-payment-method-load input[type="radio"].paymentradiobuttonlabel{float: left; margin: 0 5px 0 0;}
 .option-alternate:nth-last-child(2) {display: none;}
 .checkout-cart-index .checkout_applyCoupon { display: none;}
 #coupon-discount { float: left; width:100%;}
@@ -732,13 +733,12 @@ padding: 5px 8px;}
 
 .onestepcheckout-index-index .checkout_bottom_area .total { width:50%;float:left;border:2px solid #eee; display: block;
 padding: 5px 8px; margin:0;}
-.onestepcheckout-index-index .checkout_bottom_area .total .title { float: left; } 
-.onestepcheckout-index-index .checkout_bottom_area .total span { float: right; font-size:14px !important; line-height: 18px !important; font-size:14px; font-weight: normal ; } 
-
-
+.onestepcheckout-index-index .checkout_bottom_area .total .title { float: left; font-size:12px;}
+.onestepcheckout-index-index .checkout_bottom_area .total span { float: right; font-size:11px !important; line-height: 18px !important; font-size:14px; font-weight: normal ; }
 .onestepcheckout-index-index .checkout_applyCoupon { /*float: right; width:30%;*/}
 .onestepcheckout-index-index .discount-form .leftSide { float: left; width:50%;}
-.onestepcheckout-index-index .discount-form .leftSide label, .onestepcheckout-index-index .discount-form .leftSide input { float: left; width:100%; text-align:left;}
+.onestepcheckout-index-index .discount-form .leftSide label, .onestepcheckout-index-index .discount-form .leftSide input {
+float: left; width:100%;text-align:left;border-radius:0;box-shadow:none;}
 .onestepcheckout-index-index .discount-form .buttons-set { float: right; width:45%;}
 .onestepcheckout-index-index .discount-form .buttons-set button {background: #000 none repeat scroll 0 0;
  border: medium none;
@@ -747,7 +747,7 @@ padding: 5px 8px; margin:0;}
  font-size: 12px;
  font-weight: normal;
  line-height: 1.3;
- padding: 4px 12px;
+ padding: 6px 12px;
  text-align: center;
  text-decoration: none;
  width: 100%; 
@@ -1256,7 +1256,7 @@ a[class*='_selected_']{
 .cart-top-area .btn-holder a:first-child,
 .cart-bottom-area .btn-holder a:first-child{font-size:10px;}
 .onestepcheckout-index-index .checkout_bottom_area .total .title,
-.onestepcheckout-index-index .checkout_bottom_area .subtotal .title{font-size: 11px;}
+.onestepcheckout-index-index .checkout_bottom_area .subtotal .title{font-size: 10px;}
 .onestepcheckout-index-index .checkout_bottom_area .total span,
-.onestepcheckout-index-index .checkout_bottom_area .subtotal span{font-size:11px !important;}
+.onestepcheckout-index-index .checkout_bottom_area .subtotal span{font-size:10px !important;}
 }

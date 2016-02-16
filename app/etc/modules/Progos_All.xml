@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Progos_Recentproducts>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Progos_Recentproducts>
+
+    <Progos_Customproducts>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Progos_Customproducts>
+
+  </modules>
+</config>

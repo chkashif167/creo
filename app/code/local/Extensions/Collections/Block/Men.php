@@ -67,6 +67,7 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
             $category = Mage::getModel('catalog/category')->load($catid);
             $attributeCode = 'universal_categories';
 
+
            // build and filter the product collection
            $products = Mage::getResourceModel('catalog/product_collection')
                 ->addCategoryFilter($category)
@@ -123,7 +124,7 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 			$collection = Mage::getModel('catalog/product')
 							->getCollection()
 							->addAttributeToFilter('entity_id', array('in' => $clothingProductIdsArray))
-						->addAttributeToFilter('gender', 24)			
+						    ->addAttributeToFilter('gender', 24)			
 							->joinField(
 									'category_id', 'catalog/category_product', 'category_id', 
 									'product_id = entity_id', null, 'left'
