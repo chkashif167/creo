@@ -176,12 +176,18 @@
 	<wordpress_post_view>
 		<reference name="content">
 			<block type="wordpress/post_view" name="wp.post.view" template="wordpress/post/view.phtml">
-				<block type="core/text_list" name="post.content.before" as="before_post_content" />
+				<block type="core/text_list" name="post.content.before" as="before_post_content">
+					<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="wordpress/post/sliders.phtml"/>
+				</block>
+
 				<block type="core/text_list" name="post.content.after" as="after_post_content">
+
+					
 					<block type="wordpress/post_meta" name="wp.post.view.meta" as="meta" after="-" template="wordpress/post/meta.phtml">
 						<action method="setDisplayPreviousNextLinks"><display>1</display></action>
 					</block>
 				</block>
+
 				<block type="wordpress/post_view_comment_wrapper" name="wp.post.view.comments" as="comments" template="wordpress/post/view/comment/wrapper.phtml">
 					<block type="wordpress/post_view_comments" name="wp.post.view.comments.list" as="comment_list" template="wordpress/post/view/comments.phtml" />
 					<block type="wordpress/post_view_comment_pager" name="wp.post.view.comments.pager" as="pager"/>

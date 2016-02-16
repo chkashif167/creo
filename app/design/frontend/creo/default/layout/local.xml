@@ -298,7 +298,8 @@
 			<action method="addItem"><type>skin_js</type><script>js/auguria/sliders/slides.min.jquery_forked.js</script></action>
     </reference>
     <reference name="content">
-	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+	<!-- <block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="wordpress/post/sliders.phtml" before="comments"/> -->
+
 	</reference>
 </wordpress_post_view>
 
