@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Zealousweb_WhoAlsoView>
+      <version>0.1.0</version>
+    </Zealousweb_WhoAlsoView>
+  </modules>
+  <global>
+    <helpers>
+      <whoalsoview>
+        <class>Zealousweb_WhoAlsoView_Helper</class>
+      </whoalsoview>
+    </helpers>
+	<blocks>
+	  <whoalsoview>
+		<class>Zealousweb_WhoAlsoView_Block</class>
+	  </whoalsoview>
+	</blocks>
+    <catalog>
+		<rewrite>
+			<product_view>Zealousweb_WhoAlsoView_Block_Whoalsoview</product_view>
+		</rewrite>
+	</catalog>
+	<models>
+	  <whoalsoview>
+		<class>Zealousweb_WhoAlsoView_Model</class>
+		<resourceModel>whoalsoview_mysql4</resourceModel>
+	  </whoalsoview>
+	  <whoalsoview_mysql4>
+		<class>Zealousweb_WhoAlsoView_Model_Mysql4</class>
+		<entities>		  
+			  <whoalsoview>
+				<table>who_also_view</table>
+			  </whoalsoview>
+        </entities>
+	  </whoalsoview_mysql4>
+	</models>
+	<resources>
+	  <whoalsoview_setup>
+		<setup>
+		  <module>Zealousweb_WhoAlsoView</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </whoalsoview_setup>
+	  <whoalsoview_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </whoalsoview_write>
+	  <whoalsoview_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </whoalsoview_read>
+	</resources>
+    <events>
+	  <catalog_controller_product_view> <!-- identifier of the event we want to catch -->
+        <observers>
+          <catalog_controller_product_view_handler> <!-- identifier of the event handler -->
+            <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+            <class>whoalsoview/observer</class> <!-- observers class alias -->
+            <method>WhoAlsoView</method>  <!-- observer's method to be called -->
+            <args></args> <!-- additional arguments passed to observer -->
+          </catalog_controller_product_view_handler>
+        </observers>
+      </catalog_controller_product_view>
+    </events>
+  </global>
+  <frontend>
+        <layout>
+            <updates>
+                <whoalsoview>
+                    <file>whoalsoview.xml</file>
+                </whoalsoview>
+            </updates>
+        </layout>
+   </frontend>
+  <default>
+    <who_also_view>
+        <general_settings>
+        <max_product_count>6</max_product_count>
+        <title>Customer Who Viewed This Item Also Viewed</title>
+        </general_settings>
+    </who_also_view>
+  </default>
+</config> 
