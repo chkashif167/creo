@@ -34,7 +34,7 @@
     box-shadow: 3px 3px 5px #aaa;
     color: #333;
     cursor: pointer;
-    display: block;
+    display: block !important;
     filter: alpha(opacity=100);
     float: left;
     opacity: 1;
@@ -44,7 +44,7 @@
     filter: alpha(opacity=60);
     opacity: 0.6;
 }
-
+body.categorypath-create-caps-html .product-swatches-container li a{display:none;}
 .product-swatches-container a.active.selected {
     background: #fff;
     border: solid 1px #ffffff;
@@ -58,6 +58,7 @@
     padding: 0px;
     position: relative;
     text-align: center;
+    display: none;
 }
 .product-swatches-container .has-swatches a.active.selected {
     padding: 0px !important;
