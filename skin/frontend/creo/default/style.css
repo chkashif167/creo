@@ -678,12 +678,12 @@ p.style1 {
 }
 #header .bottom-area {
 	text-align: right;
-	padding: 56px 0 0px;
+	padding:45px 0 0px;
 }
 .search-form {
-	margin:-9px 0 0 5px;
-	padding: 3px 5px;
-	border: 1px solid #000;
+	margin:0;
+	padding:1px 2px;
+	border:1px solid #000;
 	width: auto;
 	/*overflow: hidden;*/
 	display: inline-block;
@@ -782,7 +782,7 @@ p.style1 {
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
-	margin: 0 5px 0 0;
+	margin: 2px 5px 0 0;
 }
 #header .basic-open-close .opener {
 	display: inline-block;
@@ -2603,7 +2603,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	padding: 0;
 	display: block;
 	color: #000;
-	font:9px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font:12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	float: right !important;
 	width:73px;
 }
