@@ -47,6 +47,7 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
     protected $_attributeCollection;
+    
 
     /**
      * Trending Product Collection
