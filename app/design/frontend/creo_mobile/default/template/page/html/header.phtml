@@ -44,19 +44,20 @@ is_product_details_page = true;
 <div class="main-menu-content"><?php echo $this->getChildHtml('topMenu') ?></div>
 </nav>
 <div id="disable_view"></div>
-<div class="col-xs-3">
+<div class="col-xs-4">
 <div class="main-menu">
   <a class="navbar-toggle bgr-icon glyphicon glyphicon-align-justify" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"></a>
 </div>
 </div>
-<div class="col-xs-6">
+<div class="col-xs-4">
 	<strong class="logo">
 	<a href="<?php echo Mage::getBaseUrl(); ?>">
 	 <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
 	</a>
 	</strong>
 </div>
-<div class="col-xs-3 paddingr-zero" align="right">
+<div class="col-xs-4 paddingr-zero" align="right" style="padding:0;">
+<a data-id="search_mini_form" class="search-icon glyphicon glyphicon-search"></a>
 <div id="open-close-minicart" class="cart">
 	<a href="javascript:void(0)" class="opener"><span class="count">
 		<?php
@@ -67,6 +68,7 @@ is_product_details_page = true;
 	<?php echo $this->getChildHtml('minicart_head'); ?>
 </div>
 </div>
+<?php echo $this->getChildHtml('topSearch') ?>
 <?php //echo $this->getChildHtml('topLinks') ?>
 </div>
 </div>

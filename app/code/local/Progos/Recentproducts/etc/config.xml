@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Progos_Recentproducts>
+      <version>1.0</version>
+    </Progos_Recentproducts>
+  </modules>
+  <global>
+    <blocks>
+      <recentproducts>
+        <class>Progos_Recentproducts_Block</class>
+      </recentproducts>
+    </blocks>
+    <models>
+      <recentproducts>
+        <class>Progos_Recentproducts_Model</class>
+      </recentproducts>
+    </models>
+  </global>
+</config>
+

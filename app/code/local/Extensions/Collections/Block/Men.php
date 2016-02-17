@@ -62,17 +62,33 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 	protected function _getAttributeCollection()	
     {
 		if (is_null($this->_attributeCollection)) {
-			$attribute = Mage::getModel('catalog/resource_eav_attribute')->load(157);
-		    $attributeOptions = $attribute ->getSource()->getAllOptions();
-/*			echo "<pre>";
-			print_r($_img);
-			echo "</pre>";
-*/			$this->_attributeCollection = $attributeOptions;
+            
+            $catid = 3;
+            $category = Mage::getModel('catalog/category')->load($catid);
+            $attributeCode = 'universal_categories';
+
+
+           // build and filter the product collection
+           $products = Mage::getResourceModel('catalog/product_collection')
+                ->addCategoryFilter($category)
+                ->addAttributeToFilter($attributeCode, array('notnull' => true))
+                ->addAttributeToFilter($attributeCode, array('neq' => ''))
+                ->addAttributeToSelect($attributeCode);
+
+                Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($products);
+                Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($products);
+                Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($products);
+
+            $usedAttributeValues = array_unique($products->getColumnValues($attributeCode));
+            $attributeModel = Mage::getSingleton('eav/config')->getAttribute('catalog_product', $attributeCode);
+
+			$this->_attributeCollection = $usedAttributeValues;
 
 		}
         return $this->_attributeCollection;
       
     }
+
 
     /**
      * Retrieve Attrinute Collection
@@ -108,7 +124,7 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 			$collection = Mage::getModel('catalog/product')
 							->getCollection()
 							->addAttributeToFilter('entity_id', array('in' => $clothingProductIdsArray))
-						->addAttributeToFilter('gender', 24)			
+						    ->addAttributeToFilter('gender', 24)			
 							->joinField(
 									'category_id', 'catalog/category_product', 'category_id', 
 									'product_id = entity_id', null, 'left'

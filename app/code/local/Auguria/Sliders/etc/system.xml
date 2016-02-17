@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Auguria
+ * @package    Auguria_Sliders
+ * @author     Auguria
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License version 3 (GPLv3)
+ */
+-->
+<config>
+    <sections>
+        <auguria_sliders translate="label" module="auguria_sliders">
+            <label>Sliders</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<general translate="label" module="auguria_sliders">
+                    <label>Sliders Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label" module="auguria_sliders">
+                            <label>Enable Sliders</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <preload translate="label" module="auguria_sliders">
+                            <label>Preload</label>
+                            <comment>Set true to preload images in an image based slideshow.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_truefalse</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </preload>
+                        <generate_next_prev translate="label" module="auguria_sliders">
+                            <label>Generate next/prev</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_truefalse</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </generate_next_prev>
+						<generate_pagination>
+                            <label>Generate pagination</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_truefalse</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </generate_pagination>
+						<fade_speed>
+                            <label>Fade speed</label>
+                            <comment>Set the speed of the fading animation in milliseconds.</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </fade_speed>
+						<slide_speed>
+                            <label>Slide speed</label>
+                            <comment>Set the speed of the sliding animation in milliseconds.</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </slide_speed>
+						<effect_next_prev>
+                            <label>Effect for next/prev</label>
+                            <comment>Set effect, slide or fade for next/prev.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_effect</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </effect_next_prev>
+                        <effect_pagination>
+                            <label>Effect for pagination</label>
+                            <comment>Set effect, slide or fade for pagination.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_effect</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </effect_pagination>
+						<crossfade>
+                            <label>Crossfade</label>
+                            <comment>Crossfade images in a image based slideshow.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_truefalse</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </crossfade>
+						<randomize>
+                            <label>Randomize</label>
+                            <comment>Set to true to randomize slides.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_truefalse</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </randomize>
+						<play>
+                            <label>Autoplay</label>
+                            <comment>Autoplay slideshow, a positive number will set to true and be the time between slide animation in milliseconds.</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </play>
+						<pause>
+                            <label>Pause</label>
+                            <comment>Pause slideshow on click of next/prev or pagination. A positive number will set to true and be the time of pause in milliseconds.</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pause>
+						<hover_pause>
+                            <label>Hover pause</label>
+                            <comment>Set to true and hovering over slideshow will pause it.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_truefalse</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hover_pause>
+						<auto_height>
+                            <label>Auto height</label>
+                            <comment>Set to true to auto adjust height.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>auguria_sliders/adminhtml_system_config_source_truefalse</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </auto_height>
+						<auto_height_speed>
+                            <label>Auto height speed</label>
+                            <comment>Set auto height animation time in milliseconds.</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </auto_height_speed>
+                        
+                        <animate_caption>
+                            <label>Animate caption</label>
+                            <comment>A positive number will set to true and indicate animation speed in milliseconds.</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>145</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </animate_caption>
+						<empty_caption_height>
+                            <label>Caption height on empty page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </empty_caption_height>
+						<one_caption_height>
+                            <label>Caption height on one column page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </one_caption_height>
+						<two_caption_height>
+                            <label>Caption height on two columns page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </two_caption_height>
+						<three_caption_height>
+                            <label>Caption height on three columns page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </three_caption_height>
+                        
+						<empty_image_height>
+                            <label>Image height on empty page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </empty_image_height>
+						<one_image_height>
+                            <label>Image height on one column page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </one_image_height>
+						<two_image_height>
+                            <label>Image height on two columns page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </two_image_height>
+						<three_image_height>
+                            <label>Image height on three columns page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </three_image_height>
+				
+						<empty_image_width>
+                            <label>Image width on empty page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </empty_image_width>
+						<one_image_width>
+                            <label>Image width on one column page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>240</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </one_image_width>
+						<two_image_width>
+                            <label>Image width on two columns page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>250</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </two_image_width>
+						<three_image_width>
+                            <label>Image width on three columns page</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>auguria_sliders/adminhtml_system_config_backend_naturalNumber</backend_model>
+                            <sort_order>260</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </three_image_width>
+                    </fields>
+                </general>
+            </groups>
+        </auguria_sliders>
+    </sections>
+</config>
