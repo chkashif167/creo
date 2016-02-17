@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Customer_Who_Viewed_This_item_Also_Viewed</name>
+    <version>1.0.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>The Extension allows displaying of additional products which was also viewed by other customers while visiting the current product.</summary>
+    <description>The Extension allows displaying of additional products which was also viewed by other customers while visiting the current product.</description>
+    <notes>First Version Release.</notes>
+    <authors><author><name>Zealousweb Technologies Pvt Ltd.</name><user>Zealousweb</user><email>dhruvi@zealousweb.net</email></author></authors>
+    <date>2014-03-06</date>
+    <time>12:47:24</time>
+    <contents><target name="magelocal"><dir name="Zealousweb"><dir name="WhoAlsoView"><dir name="Block"><file name="Whoalsoview.php" hash="80e82ec9a8f374a04e5b305b506ec45b"/></dir><dir name="Helper"><file name="Data.php" hash="9c35693c49b4e23b714e709a2ef769c8"/></dir><dir name="Model"><file name="Getsetting.php" hash="cb4b42db0bf1a906f06caead95f401e2"/><dir name="Mysql4"><dir name="Whoalsoview"><file name="Collection.php" hash="3490e224ae9fe42674fa7625be1b74c9"/></dir><file name="Whoalsoview.php" hash="da210383717ec51bade95dc513b09ddf"/></dir><file name="Observer.php" hash="e910900037d955ba246e5c7592a55258"/><file name="Whoalsoview.php" hash="06bfc69dcb343a70b55d58764843d1e6"/></dir><dir name="etc"><file name="adminhtml.xml" hash="34d8184715fe4e018e7ba0237ca9912e"/><file name="config.xml" hash="52a46463f34bd3bd49bdd1ad2b633f4b"/><file name="system.xml" hash="1b0d0a86a3a739a3363a35b46f7fd4b7"/></dir><dir name="sql"><dir name="whoalsoview_setup"><file name="mysql4-install-0.1.0.php" hash="56c6bcb440721184985f65563dc8f5de"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="whoalsoview.xml" hash="3aabde070cfe8222a06cc8b6adc1d635"/></dir><dir name="template"><dir name="whoalsoview"><file name="mostviewed.phtml" hash="8e76ee713fa345b60267261fef7d5fe1"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><dir name="whoalsoview"><file name="styles.css" hash="a28e0a08435387ebd08b859dd2fd9fb7"/></dir></dir><dir name="js"><dir name="whoalsoview"><file name="owl.carousel.custom.js" hash="bed8a2af7480f0f8740d629ca8118c94"/><file name="owl.carousel.js" hash="6e1cfb7b7c0d31738353b2f625ffca44"/><file name="wav.jquery-1.9.1.min.js" hash="397754ba49e9e0cf4e7c190da78dda05"/><file name="wav.noconflict.js" hash="3179f2255b046d5f2e9a71e365287bef"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Zealousweb_WhoAlsoView.xml" hash="f61dd5af19ce58a5556ae2c4123cffed"/></dir></target><target name="mageweb"><dir name="cron"><file name="Zealousweb_WhoAlsoView-cron.php" hash="ae3864a51591e385cadfc1af34d036b2"/></dir></target><target name="mage"><dir name="."><file name="CWVTIAV 1.0-User Guide.Pdf" hash="1401750256b64cc86b3a4cd7397e0c20"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.6.0.0</min><max>1.8</max></package></required></dependencies>
+</package>

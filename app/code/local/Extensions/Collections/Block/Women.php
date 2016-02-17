@@ -87,6 +87,7 @@ class Extensions_Collections_Block_Women extends Mage_Core_Block_Template {
       
     }
 
+
     /**
      * Retrieve Attrinute Collection
      *
