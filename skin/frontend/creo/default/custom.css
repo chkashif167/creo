@@ -89,12 +89,9 @@ float: right;
 height: 40px;
 width: 99px;
 }
-.headerLogin {
-display: inline-block;
-padding: 0px 18px;
-font-size: 13px;
-text-transform: uppercase;
-}
+a.headerLogin{display: inline-block;padding:4px 14px;font-size:12px;text-transform:uppercase;vertical-align:top;margin-left:10px;
+background-color:#000;color:#fff;text-decoration:none;}
+a.headerLogin:hover{background-color:#f16a79;color:#fff;}
 .login-form .validation-advice {
 font-size: 10px;
 text-align: left;
