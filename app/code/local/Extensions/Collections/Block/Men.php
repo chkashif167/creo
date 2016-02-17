@@ -118,7 +118,8 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 	protected function _getTrendingProductCollection()	
     {
 		if (is_null($this->_productCollection)) {
-			$productIds = Mage::getStoreConfig('sellers_options/trending'); 
+			$productIds = Mage::getStoreConfig('sellers_options/trending');
+            print_r($productIds);
 			$clothingProductIdsArray = explode(',',$productIds['clothing']);
 			$catId = '3';
 			$collection = Mage::getModel('catalog/product')
