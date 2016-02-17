@@ -47,6 +47,7 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
     protected $_attributeCollection;
+    
 
     /**
      * Trending Product Collection
@@ -118,8 +119,7 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 	protected function _getTrendingProductCollection()	
     {
 		if (is_null($this->_productCollection)) {
-			$productIds = Mage::getStoreConfig('sellers_options/trending');
-            print_r($productIds);
+			$productIds = Mage::getStoreConfig('sellers_options/trending'); 
 			$clothingProductIdsArray = explode(',',$productIds['clothing']);
 			$catId = '3';
 			$collection = Mage::getModel('catalog/product')
