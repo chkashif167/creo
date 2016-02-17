@@ -1,0 +1,70 @@
+<?php
+  $_sku = $this->getProduct()->getSku(); 
+  $site_url = Mage::getBaseUrl();
+  $category_ids = $this->getProduct()->getCategoryIds();  
+  $current_category_id = $category_ids;
+  $length = 4;
+  $_columnCount = 4;
+  $count_sku = $this->lastviewproduct($_sku,$current_category_id);
+  $_productCollection = array();
+  
+foreach($count_sku as $key =>$pro_value)
+{
+    $model = Mage::getModel('catalog/product'); //getting product model
+    $_product = $model->load($key);   
+    array_push($_productCollection, $_product);
+}
+
+if(count($_productCollection)){ ?>
+
+<?php $display_length = $this->displayproductlength(); ?>
+<?php $showInStock = $this->showInStock(); ?>
+<?php $_collectionSize = count($_productCollection); ?>
+<div id="last_most_view_box" class="product-view product-mostview">
+    <div id="last_most_view_box_sub">
+        <div id="last_most_view_title">
+            <h2>
+                <span><?php echo $this->displaytitle(); ?></span>
+            </h2>
+            <div class="products-grid mostlastview sliderbox">
+            <!--div class="container"-->
+             <!--div class="row"-->
+              <!-- <div class="sliderbox"> -->
+                <ul  id="owl-demo" class="owl-carousel"> 
+                <?php $i=0; foreach ($_productCollection as $key => $_product): ?>
+                 <?php if ($key < $display_length && ($showInStock == $_product->isAvailable() || 1 == $_product->isAvailable())): ?>
+                    <li class="item<?php if($key==0): ?> first<?php elseif($key==$_collectionSize): ?> last<?php endif; ?>">
+                        <a href="<?php echo $site_url.$_product->getUrlPath(); ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(125); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
+                        <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h2>
+                        <?php if($_product->getRatingSummary()): ?>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                        <?php endif; ?>
+                        <?php echo $this->getPriceHtml($_product, true) ?>
+                        <div class="actions">
+                            <?php if($_product->isSaleable()): ?>
+                                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <?php else: ?>
+                                <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                            <?php endif; ?>
+                            <ul class="add-to-links">
+                                <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                    <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                <?php endif; ?>
+                                    <li><span class="separator">|</span> <a href="<?php echo $this->helper('catalog/product_compare')->getAddUrl($_product) ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                  <?php endif ?>  
+                <?php endforeach ?>
+                </ul>    
+                <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+             <!-- </div> -->
+            <!--/div-->
+          <!--/div-->
+        </div>
+        </div>
+        
+    </div>
+</div>
+<?php } ?>
+
