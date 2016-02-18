@@ -55,14 +55,16 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 <span class="search-by">Search By Design</span>
 <a class="opener attribure_labels" data-id="collection-mega-menu"> View All</a>
 <ul id="collection-mega-menu" class="slide m-filter-item-list">
+    <?php $attr = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories'); ?>
+
+<li>
+   <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html" ?>">View All</a>
+</li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
-            <?php if ($a['value']): ?>
-                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
-            <?php else: 
-			?>
-            <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html" ?>">View All</a>
-            <?php endif; ?>
+
+                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
+                        
         </li>
     <?php endforeach ?>
 </ul>
@@ -79,7 +81,7 @@ $_helper = $this->helper('catalog/output');
     <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
     <div class="category-products">
-        <?php echo $this->getToolbarHtml() ?>
+    <?php echo $this->getToolbarHtml() ?>
         <?php // List mode  ?>
         <?php if ($this->getMode() != 'grid'): ?>
             <?php $_iterator = 0; ?>
@@ -117,7 +119,7 @@ $_helper = $this->helper('catalog/output');
             </div>
             <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
-        <?php else: ?>
+    <?php else: ?>
             <script>
                 function setLocationAjax(url, id) {
                     url += 'isAjax/1';
@@ -152,17 +154,17 @@ $_helper = $this->helper('catalog/output');
             </script>
         <?php // Grid Mode   ?>
 
-        <?php $_collectionSize = $_productCollection->count() ?>
-        <?php
-        $_columnCount = 4;
-        //$this->getColumnCount();
-        ?>
-        <?php $i = 0;
-        foreach ($_productCollection as $_product): ?>
-        <?php if ($i++ % $_columnCount == 0): ?>
-            <ul class="products-grid">
-        <?php endif ?>
-            <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
+            <?php $_collectionSize = $_productCollection->count() ?>
+            <?php
+            $_columnCount = 4;
+            //$this->getColumnCount(); 
+            ?>
+            <?php $i = 0;
+            foreach ($_productCollection as $_product): ?>
+                <?php if ($i++ % $_columnCount == 0): ?>
+                    <ul class="products-grid">
+                    <?php endif ?>
+                    <li class="item<?php if (($i - 1) % $_columnCount == 0): ?> first<?php elseif ($i % $_columnCount == 0): ?> last<?php endif; ?>">
 
                         <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
                         </a>
@@ -218,31 +220,23 @@ $_helper = $this->helper('catalog/output');
 <div class="design_categories_attributes shipping-methods">
 <h3><span>DESIGN CATEGORIES</span></h3>
 <ul>
-    <?php foreach ($_attrbiuteCollection as $a): ?>
-
-            <?php if ($a['value']): ?>
-            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
+ <?php foreach ($_attrbiuteCollection as $a): ?>
+            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a); ?>
             <?php
-			$imgurl =  $this->escapeHtml($_img);
-			if(!$_img){
-			continue;
-			}
-			?>
+            $imgurl =  $this->escapeHtml($_img);
+            if(!$_img){
+                continue;
+                }
+            ?>
         <li>
-	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
-				<a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a['value']."" ?>">
-				<?php if ($_img): ?>
-                    <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $a['label']; ?>" />
+                <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a); ?>
+                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>">
+                <?php if ($_img): ?>
+                    <img src="<?php echo $this->escapeHtml($_img); ?>" alt="" />
                 <?php endif; ?>
                 
                 <?php // echo $a['label']; ?></a>
-                
-            <?php else: 
-			?>
-           <?php /*?> <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a><?php */?>
-         
-        </li>
-            <?php endif; ?> 
+                 
     <?php endforeach ?>
 </ul>
 </div>
