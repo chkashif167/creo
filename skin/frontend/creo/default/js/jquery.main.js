@@ -2798,6 +2798,7 @@ jQuery("#label_notebook_material").css('margin-left', '110px');
 
 jQuery(document).ready(function($) {
         jQuery("#options_35_text,#options_36_text,#options_37_text,#options_38_text").attr("maxlength","1");
+        jQuery('.product-swatches-container').find('#swatches-options-178 li:first-child').find('a').click();
 
        jQuery( "#options-16-list label").each(function(index) {
        jQuery(this).on("click", function(){
