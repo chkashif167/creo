@@ -20,7 +20,11 @@
 
 {{template config_path="design/email/header"}}
 {{inlinecss file="email-inline.css"}}
-
+<h1 style="font-size: 18px; font-weight: 700; font-family: 'Roboto Condensed', sans-serif; color: #fff;">CREO</h1>
+</td><!-- header End -->
+</tr>
+<tr>
+<td colspan="3">
 <table cellpadding="0" cellspacing="0" border="0">
     <tr>
         <td>
@@ -28,7 +32,7 @@
                 <tr>
                     <td class="email-heading">
                         <h1>Thank you for your order from {{var store.getFrontendName()}}.</h1>
-                        <p>You can check the status of your order by <a href="{{store url="customer/account/"}}"">logging into your account</a>.</p>
+                        <p>You can check the status of your order by <a href="{{store url="customer/account/"}}">logging into your account</a>.</p>
                     </td>
                     <td class="store-info">
                         <h4>Order Questions?</h4>
@@ -94,5 +98,6 @@
         </td>
     </tr>
 </table>
-
+</td>
+</tr>
 {{template config_path="design/email/footer"}}
