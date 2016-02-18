@@ -56,16 +56,17 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 <span class="search-by">Search By Design</span>
 <a class="opener attribure_labels" data-id="collection-mega-menu"> View All</a>
 <ul id="collection-mega-menu" class="slide m-filter-item-list">
+<?php $attr = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories'); ?>
+
+<li>
+   <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html" ?>">View All</a>
+</li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
-            <?php if ($a['value']): ?>
-                <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
-            <?php else: 
-			?>
-            <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html" ?>">View All</a>
-            <?php endif; ?>
+        <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
         </li>
     <?php endforeach ?>
+
 </ul>
 </div>
 </div>
@@ -225,12 +226,11 @@ $_helper = $this->helper('catalog/output');
 <div class="row">
 <div class="col-xs-12">
 <div class="design_categories_attributes shipping-methods">
+
 <h3><span>DESIGN CATEGORIES</span></h3>
 <ul>
-    <?php foreach ($_attrbiuteCollection as $a): ?>
-
-            <?php if ($a['value']): ?>
-            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
+ <?php foreach ($_attrbiuteCollection as $a): ?>
+            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a); ?>
             <?php
 			$imgurl =  $this->escapeHtml($_img);
 			if(!$_img){
@@ -238,20 +238,14 @@ $_helper = $this->helper('catalog/output');
 				}
 			?>
         <li>
-	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a['value']); ?>
+	            <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a); ?>
 				<a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a['value']."" ?>">
 				<?php if ($_img): ?>
                     <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $a['label']; ?>" />
                 <?php endif; ?>
                 
                 <?php // echo $a['label']; ?></a>
-                
-            <?php else: 
-			?>
-           <?php /*?> <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a><?php */?>
-         
-        </li>
-            <?php endif; ?> 
+                 
     <?php endforeach ?>
 </ul>
 </div>

@@ -89,12 +89,9 @@ float: right;
 height: 40px;
 width: 99px;
 }
-.headerLogin {
-display: inline-block;
-padding: 0px 18px;
-font-size: 13px;
-text-transform: uppercase;
-}
+a.headerLogin{display: inline-block;padding:4px 14px;font-size:12px;text-transform:uppercase;vertical-align:top;margin-left:10px;
+background-color:#000;color:#fff;text-decoration:none;}
+a.headerLogin:hover{background-color:#f16a79;color:#fff;}
 .login-form .validation-advice {
 font-size: 10px;
 text-align: left;
@@ -1047,7 +1044,13 @@ width: 100%;
 .products-grid { z-index: 9; position: relative;}
 #product-gallery-container .bx-wrapper ul.slides li { width:auto !important;}
 #product-options-wrapper { float: left; width: 75%;}
-#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top: !important; height: 25px; width: 25px; line-height: 25px; background-position: 50% 50%;}
+#product-options-wrapper .product-swatches-container ul.has-swatches li a { margin-top: 0 !important; padding-top:0 !important;
+/*line-height: 25px;*/ background-position: 50% 50%;background-size:cover;}
+#product-options-wrapper #options-container-191624 .product-swatches-container ul.has-swatches li a{
+height:90px !important; width:90px !important;}
+#product-options-wrapper #options-container-191624 .attributeItem{width:100%;float:none;}
+#product-options-wrapper .product-swatches-container ul.has-swatches li a.selected{
+border: 1px solid #F16167;background-size: 95% 95%;background-repeat: no-repeat;}
 .attributeItem { float: left; width:50%;}
 .catalog-product-view .bx-controls.bx-has-controls-direction { display: none;}
 .bx-wrapper  { background: #fff none repeat scroll 0 0;

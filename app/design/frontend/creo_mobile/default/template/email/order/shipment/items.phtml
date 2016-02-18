@@ -31,13 +31,14 @@
 <?php if ($_shipment && $_order): ?>
 
     <?php $_items     = $_order->getAllItems() ?>
+
     <?php $_itemCount = count($_items) ?>
-    <table class="items" cellpadding="0" cellspacing="0" border="0">
+    <table class="items" cellpadding="0" cellspacing="0" border="0" style="width:100%;"> 
             <thead>
                 <tr>
-                <td style="min-width: 80%; overflow: hidden; padding:0px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:4px 10px;"> <span style='display: block; ' >Product Description</span></a></td>
+                <td style="min-width: 80%; overflow: hidden; padding:0px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase;padding:4px 10px;"> <span style='display: block; ' >Description</span></a></td>
                 <td style="min-width: 20%; overflow: hidden; padding:0px;"><a href="#" style="font:18px/30px 'Roboto Condensed', sans-serif; background:#000; display:block; color:#fff; text-decoration:none; text-transform: uppercase; padding:4px 10px;"> <span style='display: block; ' >
-                Quantity</span></a></td>
+                Qty</span></a></td>
                 </tr>
 	        </thead>
 

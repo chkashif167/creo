@@ -52,7 +52,7 @@ $_swatches_height = (int) $_settings['swatch_height'];
                                                 $_image = $this->helper('catalog/image')->init($_image_product, 'image');
                                             }
                                             ?>
-                                            <a <?php if($_attribute["id"]==162){?> onclick="changeCustomOptionImages(<?php echo $_option["id"] ?>)" <?php } ?> class="" style="width:<?php echo $_swatches_width ?>px; height:<?php echo $_swatches_height; ?>px;" title="<?php echo $_option["label"] ?>" data-original-title="<?php echo $_option["label"] ?>"  rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="<?php //echo $_image; ?>" rev="<?php //echo $_image->resize(256); ?>" >
+                                            <a <?php if($_attribute["id"]==162){?> data-color="<?php echo $_option["label"] ?>" data-value="<?php echo $_option["id"] ?>" <?php } ?> class="selectcolorcustom" style="width:<?php echo $_swatches_width ?>px; height:<?php echo $_swatches_height; ?>px;" title="<?php echo $_option["label"] ?>" data-original-title="<?php echo $_option["label"] ?>"  rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="<?php //echo $_image; ?>" rev="<?php //echo $_image->resize(256); ?>" >
                                                 <?php
                                                 echo "<img src='" . $_image->resize($_swatches_width, $_swatches_height) . "' title='" . $_option["label"] . "' alt='" . $_option["label"] . "'/>";
                                                 ?>
@@ -125,12 +125,11 @@ $_swatches_height = (int) $_settings['swatch_height'];
                 }
             });
         });
-        
+
         jQuery(document).ready(function(){
     jQuery("select").change(function(){
         jQuery(this).find("option:selected").each(function(){
             if(jQuery(this).attr("value")=="244"){
-				
                 jQuery(".box").not(".saudi").hide();
                 jQuery(".saudi").show();
             }

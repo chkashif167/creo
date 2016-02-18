@@ -15,6 +15,8 @@ class Progos_Recentproducts_Block_Recentproducts extends Mage_Core_Block_Templat
         'thumb' => $product->getSmallImage(),
         'sku' => $product->getSku(),
         'urlpath'=>$product->getData('url_path'),
+        'urlkey'=>$product->getUrlKey(),
+        'finalPrice'=>$product->getFinalPrice(),
       );
     }
  

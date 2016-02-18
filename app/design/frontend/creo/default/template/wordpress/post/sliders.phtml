@@ -1,0 +1,103 @@
+<?php 
+ //$collection = Mage::getModel('wordpress/post')->getCollection(); ?>
+
+<?php $posts = $this->getPost();?>
+<?php if ($posts): ?>
+	<?php 
+	$szPostContent = $posts->getPostContent();
+	$szSearchPattern = '~<img [^\>]*\ />~';
+
+	// Run preg_match_all to grab all the images and save the results in $aPics
+	preg_match_all( $szSearchPattern, $szPostContent, $aPics );
+
+	// Check to see if we have at least 1 image
+	$iNumberOfPics = count($aPics[0]);
+
+	
+	     // Now here you would do whatever you need to do with the images
+	     // For this example the images are just displayed
+	?>
+    <?php endif; ?>
+
+	<?php if ( $iNumberOfPics > 0 ) { ?>
+	<div id="auguria-slider" class="clearer">
+	<div class="auguria-slider-container">
+	<?php     for ( $i=0; $i < $iNumberOfPics ; $i++ ) {?>
+	<?php  ?>
+	           <div class="slide">
+				<a class="auguria-slider-link"
+				href="<?php echo $posts->getPermalink() ?>"
+				title="<?php echo $this->escapeHtml($posts->getPostTitle()); ?>"> 
+				<?php echo $aPics[0][$i] ?>
+			    </a>
+		    </div>
+	     <?php }; ?>
+	</div>
+<?php if (Mage::getStoreConfig('auguria_sliders/general/generate_next_prev')=='true' && $iNumberOfPics>1):
+	?>
+	<a href="#" class="prev btn-prev"><span><?php echo $this->__('Previous'); ?> </span>
+	</a> <a href="#" class="next btn-next"><span><?php echo $this->__('Next'); ?> </span>
+	</a>
+	<?php
+	endif;
+	?>
+</div>
+<?php };?>
+
+<script type="text/javascript">
+//<![CDATA[
+	jQuery(function(){
+
+		var slide = jQuery("#auguria-slider").slides({
+			height : 250,
+			width : 250,
+    		container: 'auguria-slider-container',
+<?php
+		if (Mage::getStoreConfig('auguria_sliders/general/preload')=='true'):
+?>
+			preload: true,
+			preloadImage: '<?php echo $this->getSkinUrl('images/auguria/sliders/loading.gif'); ?>',
+<?php
+		endif;
+?>
+    		generateNextPrev: false,
+            generatePagination: <?php if($iNumberOfPics>1): echo Mage::getStoreConfig('auguria_sliders/general/generate_pagination'); else: echo 'false'; endif; ?>,
+            fadeSpeed: <?php echo Mage::getStoreConfig('auguria_sliders/general/fade_speed'); ?>,
+            slideSpeed: <?php echo Mage::getStoreConfig('auguria_sliders/general/slide_speed'); ?>,
+            effect: "<?php echo Mage::getStoreConfig('auguria_sliders/general/effect_next_prev'); ?>,<?php echo Mage::getStoreConfig('auguria_sliders/general/effect_pagination'); ?>",
+            crossfade: <?php echo Mage::getStoreConfig('auguria_sliders/general/crossfade'); ?>,
+            randomize: <?php echo Mage::getStoreConfig('auguria_sliders/general/randomize'); ?>,
+            play: <?php echo Mage::getStoreConfig('auguria_sliders/general/play'); ?>,
+            pause: <?php echo Mage::getStoreConfig('auguria_sliders/general/pause'); ?>,
+            hoverPause: <?php echo Mage::getStoreConfig('auguria_sliders/general/hover_pause'); ?>,
+            autoHeight: <?php echo Mage::getStoreConfig('auguria_sliders/general/auto_height'); ?>,
+            autoHeightSpeed: <?php echo Mage::getStoreConfig('auguria_sliders/general/auto_height_speed'); ?>,
+            captionHeight: <?php echo $this->getCaptionHeight(); ?>,
+            captionSize: 16,
+<?php
+		if ((int)Mage::getStoreConfig('auguria_sliders/general/animate_caption')>0):
+?>
+            animationStart: function(current){
+            	jQuery('.caption').animate({
+					bottom:-<?php echo $this->getCaptionHeight(); ?>
+				},<?php echo Mage::getStoreConfig('auguria_sliders/general/animate_caption'); ?>);
+			},
+			animationComplete: function(current){
+				jQuery('.caption').animate({
+					bottom:0
+				},<?php echo Mage::getStoreConfig('auguria_sliders/general/animate_caption'); ?>);
+			},
+			slidesLoaded: function() {
+				jQuery('.caption').animate({
+					bottom:0
+				},<?php echo Mage::getStoreConfig('auguria_sliders/general/animate_caption'); ?>);
+			}
+<?php
+		endif;
+?>
+    	});
+	});
+
+//]]>
+</script>
+

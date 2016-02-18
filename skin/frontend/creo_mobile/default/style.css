@@ -28,7 +28,8 @@ input[type=search]::-webkit-search-decoration,
 input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration{-webkit-appearance:none;}
 input[type=search] { -webkit-appearance: none; -webkit-box-sizing: content-box; }
-input, textarea, select { font: 100% Arial, Helvetica, sans-serif; vertical-align: middle; color: #000; }
+input, textarea, select { font: 16px Arial, Helvetica, sans-serif; vertical-align: middle; color: #000; }
+input, textarea, select{font-size:16px !important;}
 textarea { overflow: auto; resize: vertical; vertical-align: top; }
 form, fieldset { margin: 0; padding: 0; border-style: none; }
 button::-moz-focus-inner, input::-moz-focus-inner {
@@ -125,10 +126,11 @@ p.style1 { font-family: 'Roboto Condensed', sans-serif; font-size: 19px; color: 
 .logo img { display: block; width: 100%; height: auto; }
 .main-menu{height:80px;position:relative;width:100%;}
 .main-menu .bgr-icon{font-size:30px;color:#ed5164;padding:6px 8px;border:1px solid #ed5164;top:8px;cursor:pointer;
-position:absolute;border-radius:0;left:0px;z-index:999999;background-color:#fff;}
+position:absolute;border-radius:0;left:0px;z-index:999999;background-color:#fff;line-height:1.1;}
 .main-menu .main-menu-content { display: none;}
 .main-menu .main-menu-content #nav {position:absolute; top: 88px; left: 0; width: 100%; background-color: #fff; z-index: 555; }
-body.canvas-slid #disable_view{position: fixed;z-index: 9998;background-color: rgba(0, 0, 0, 0.35);height: 100%;width: 100%;display: block;}
+body.canvas-slid #disable_view{position:fixed;z-index:9998;background-color:rgba(0, 0, 0, 0.35);height:100%;width:100%;
+display:block;}
 #nav:after { display: block; content: ''; clear: both; }
 #nav ol { margin: 0; padding: 0; list-style: none;/*	letter-spacing: -1px;*/ text-transform: uppercase; font: 15px/21px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #nav ol > li { display: block; margin: 0;border-bottom:1px solid #333;}
@@ -137,7 +139,8 @@ body.canvas-slid #disable_view{position: fixed;z-index: 9998;background-color: r
 #nav ol > li.active .drop{display: block;}
 #nav ol > li.active a{color:#fff;background-color:#ef4f61;}
 #header .right-area { text-align: right; }
-#header .cart {text-align:center;display:inline-block;vertical-align: top; width: auto; padding: 0px; position: relative; z-index: 33; margin-top: 25px; }
+#header .cart {text-align:center;display:inline-block;vertical-align: top; width: auto; padding: 0px; position: relative; z-index: 33;
+margin-top: 20px; }
 #header .cart .opener { font: bold 12px/16px "Roboto Condensed", Helvetica, Arial, sans-serif; color: #fff; text-transform: uppercase; position: relative; display: block; padding: 14px 16px; z-index: 22; width: auto; }
 #header .cart .opener:hover { text-decoration: none; opacity: 0.9; }
 #header .cart .opener:before { font-family: 'fontello'; line-height: 16px; font-size: 22px; height: 16px; display: inline-block; vertical-align: middle; margin: 0 6px 0 0; content: '\e80d'; }
@@ -168,8 +171,17 @@ body.canvas-slid #disable_view{position: fixed;z-index: 9998;background-color: r
 #header .cart .btn-holder a { display: block; padding: 5px 10px; margin: 0 16px; background: #ef4f61; text-transform: uppercase; color: #fff; position: relative; border: 3px solid #ef4f61; font: bold 14px/18px Arial, Helvetica, sans-serif; }
 #header .cart .btn-holder a:hover { text-decoration: none; border-color: #000; }
 #header .bottom-area { text-align: right; padding: 55px 0 10px; }
-.search-form { margin: 0 0 0 5px; padding: 3px 5px; border: 1px solid #000; width: 140px; overflow: hidden; display: inline-block; vertical-align: top; position: relative; z-index: 22; }
-.search-form input[type="text"] { margin: 0; padding: 0; background: none; border: none; width: 115px; height: 11px; font-size: 9px; line-height: 11px; float: right; outline: none; }
+#header #search_mini_form{display:none;}
+.search-form { margin:5px auto; padding:6px; border-top:1px solid #eee; width: 100%; overflow: hidden; display:block;
+vertical-align: top;position: relative; z-index: 22;max-width:100%; }
+.searchautocomplete .searchautocomplete-placeholder{position: relative;top:5px;width:100%;z-index:5000;}
+.searchautocomplete .searchautocomplete-loader{top:7px;}
+.searchautocomplete .nav .nav-input input.input-text.UI-SEARCH{font-size:16px;font-weight:300;letter-spacing:-0.5px;color:#555;
+font-family:"Roboto Condensed", Helvetica, Arial, sans-serif;}
+a.search-icon.glyphicon.glyphicon-search {color: #fff;background: #2E2A2B;padding: 15px 12px 16px;vertical-align: top;top: 20px;
+left: 4px;font-size: 14px;}
+.search-form input[type="text"] { margin: 0; padding: 0; background: none; border: none; width: 90%; height: 18px; font-size: 11px;
+line-height:1; float: right; outline: none; }
 .search-form input[type="submit"] { background: url(images/productpage/search.png) no-repeat; float: left; border: none; margin: 0; padding: 0; font-size: 0; line-height: 0; width: 11px; height: 11px; }
 .search-form input[type="submit"]:hover { background: url(images/productpage/search.png) no-repeat; }
 #header .login-area { display: inline-block; vertical-align: top; position: relative; }
@@ -653,7 +665,7 @@ line-height:1.3;}
 .form-holder h3 { padding: 0 0 5px; margin: 0 0 5px; border-bottom: 2px solid #eee; text-transform: uppercase; color: #000; font: 17px/20px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 .form-holder p { margin: 0 0 12px; }
 .form-holder label { display:block;padding:0; margin:0 0 5px;text-transform: capitalize; color: #000;
-font:14px/16px "Roboto Condensed", Helvetica, Arial, sans-serif;}
+font:16px "Roboto Condensed", Helvetica, Arial, sans-serif;}
 .form-holder .checkbox-holder { overflow: hidden; margin: 0 0 5px; }
 .form-holder .checkbox-holder input[type="checkbox"]{float:left;margin:0 5px 0 0;padding:0;height:10px;width:10px;background: #ddd; }
 .form-holder .checkbox-holder label { float: left; margin: 0; font:14px/12px "Roboto Condensed", Helvetica, Arial, sans-serif; }
@@ -1335,6 +1347,8 @@ left:0;margin:0;padding:0;position:relative;right: 0;top: auto;width:100%;z-inde
 #options-17-list label{box-shadow:3px 3px 5px rgba(170, 170, 170, 0.58);}
 .previous_jump .icon-angle-left::before {content: "...";font-size:12px;}
 #product-gallery-container .bx-wrapper{min-height:400px;overflow:hidden;}
+.jconfirm.white .jconfirm-box{transform: skewY(0deg) !important;-moz-transform: skewY(0deg) !important;
+-ms-transform: skewY(0deg) !important;-webkit-transform: skewY(0deg) !important;}
 /*#pdc_design_list tr td.last a:nth-child(1) {
     display: none;
 }*/
