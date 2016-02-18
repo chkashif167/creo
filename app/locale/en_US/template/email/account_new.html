@@ -13,10 +13,11 @@
 
 {{template config_path="design/email/header"}}
 {{inlinecss file="email-inline.css"}}
-
-<table cellpadding="0" cellspacing="0" border="0">
-    <tr>
-        <td class="action-content">
+<h1 style="font-size: 18px; font-weight: 700; font-family: 'Roboto Condensed', sans-serif; color: #fff;">CREO</h1>
+</td><!-- header End -->
+</tr>
+<tr>
+<td colspan="3">
             <h1>Welcome to {{var store.getFrontendName()}}.</h1>
             <p>To log in when visiting our site just click <a href="{{store url="customer/account/"}}">Login</a> or <a href="{{store url="customer/account/"}}">My Account</a> at the top of every page, and then enter your email address and password.</p>
             <p class="highlighted-text">
@@ -40,6 +41,4 @@
             </p>
         </td>
     </tr>
-</table>
-
 {{template config_path="design/email/footer"}}
