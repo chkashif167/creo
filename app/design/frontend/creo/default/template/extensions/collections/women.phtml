@@ -58,12 +58,12 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
     <?php $attr = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories'); ?>
 
 <li>
-   <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html" ?>">View All</a>
+   <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html" ?>">View All</a>
 </li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
 
-                <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
+                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
                         
         </li>
     <?php endforeach ?>
@@ -230,9 +230,9 @@ $_helper = $this->helper('catalog/output');
             ?>
         <li>
                 <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a); ?>
-                <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a['value']."" ?>">
+                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>">
                 <?php if ($_img): ?>
-                    <img src="<?php echo $this->escapeHtml($_img); ?>" alt="<?php echo $a['label']; ?>" />
+                    <img src="<?php echo $this->escapeHtml($_img); ?>" alt="" />
                 <?php endif; ?>
                 
                 <?php // echo $a['label']; ?></a>
