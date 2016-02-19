@@ -143,11 +143,11 @@
   </option>
   <?php endforeach; ?>
   </select>
-  <?php /*if($this->getCurrentDirection() == 'desc'): ?>
-  <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo $this->__('Set Ascending Direction') ?>"><?php echo $this->__('Set Ascending Direction') ?></a>
+  <?php if($this->getCurrentDirection() == 'desc'): ?>
+  <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo $this->__('Set Ascending Direction') ?>"><?php //echo $this->__('Set Ascending Direction') ?></a>
   <?php else: ?>
-  <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" class="sort-by-switcher sort-by-switcher--asc" title="<?php echo $this->__('Set Descending Direction') ?>"><?php echo $this->__('Set Descending Direction') ?></a>
-  <?php endif; */?>
+  <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" class="sort-by-switcher sort-by-switcher--asc" title="<?php echo $this->__('Set Descending Direction') ?>"><?php //echo $this->__('Set Descending Direction') ?></a>
+  <?php endif; ?>
   </div>
   </div>
   <?php endif; ?>
