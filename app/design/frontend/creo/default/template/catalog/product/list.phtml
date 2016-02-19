@@ -219,7 +219,7 @@ if ($_product->type_id == 'configurable' && $_GET['styles']==22) {
         <?php endif; ?>
 
         <div class="toolbar-bottom">
-            <?php //echo $this->getToolbarHtml() ;
+            <?php echo $this->getToolbarHtml() ;
 			
 				echo $this->getToolbarBlock()->setTemplate('catalog/product/list/toolbar-bottom.phtml')->toHtml() ;
 			?>
