@@ -5645,6 +5645,8 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 .alert-success .glyphicon{left:0;top:5px;}
 .thumbnail #uploadPhotos img{width:auto;max-width:100%;}
 .searchautocomplete .nav .nav-input{padding-left:22px !important;}
+.toolbar{padding-bottom:10px;}
+.toolbar .sort-by select{width:auto;height: auto;line-height:1.5;font-size:12px;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
