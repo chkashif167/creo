@@ -135,4 +135,5 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
         return $this->_productCollection;      
     }
 
+
 }

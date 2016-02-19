@@ -2708,6 +2708,7 @@ jQuery(document).ready(function(e) {
 
 /** Select first style by default on product detail page **/
 jQuery(window).load(function(){
+    jQuery('.product-swatches-container').find('#swatches-options-178 li:first-child').find('a').click();
     //check if the style id exist
     if(jQuery('#attribute-134-container').length >= 1){
         jQuery('#attribute-134-container').find('li:first').find('a').trigger('click');//this id only exists for styles

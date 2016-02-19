@@ -47,6 +47,12 @@ function getCategoryPath($sku)
     <?php 
     $i=0;
     foreach($products as $product) { 
+
+        $product_model = Mage::getModel('catalog/product');
+        $my_product_id  = $product_model->getIdBySku($product['sku']);
+        $my_product     = $product_model->load($my_product_id);
+        $purl = $product_model->getProductUrl($product);
+
             $thumbnailUrl  = $productMediaConfig->getMediaUrl($product['thumb']);
             $i++;
             $arr = getCategoryPath($product['sku']);
@@ -54,7 +60,7 @@ function getCategoryPath($sku)
             //print_r($arr_temp);
             //$str = ltrim('/',$arr_temp[1]);
             
-            $purl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$arr_temp[1]."/".$product['urlkey'].".html";
+            //$purl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$arr_temp[1]."/".$product['urlkey'].".html";
 
             $blockHtml = $this->getLayout()->createBlock('cms/block')->setBlockId('newsletter-products-grid')->toHtml();
             $blockHtml = str_replace('{PRODUCT_URL}', $purl,$blockHtml);
