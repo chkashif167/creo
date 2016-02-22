@@ -1715,15 +1715,4 @@ var pdc = PDC();
 	}
     Clipart.init();
     PDCActions.pdpBtnClick();
-	
-	//update product color based on json file
-	var mainWindow = top.document;	
-	var _designInJson = JSON.parse(jQuery("#extra_options_value", mainWindow).val());
-	if(_designInJson){
-	jQuery.each( _designInJson, function( key, val ) {
-		var side_color_id = val.side_color_id;
-		console.log("color code is called here"+side_color_id);
-		jQuery('.pdc_design_color').find("[pdc-color='"+side_color_id+"']").trigger('click');
-	  });
-	}
 });
