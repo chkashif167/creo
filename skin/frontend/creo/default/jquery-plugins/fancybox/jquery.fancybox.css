@@ -21,7 +21,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 8020;
+	z-index: 9999;
 }
 
 .fancybox-skin {
