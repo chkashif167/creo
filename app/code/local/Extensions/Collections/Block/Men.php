@@ -60,32 +60,30 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
      *
      * @var Mage_Eav_Model_Entity_Collection_Abstract
      */
-	protected function _getAttributeCollection()	
+	protected function _getAttributeCollection()   
     {
-		if (is_null($this->_attributeCollection)) {
-            
+        if (is_null($this->_attributeCollection)) {
             $catid = 3;
             $category = Mage::getModel('catalog/category')->load($catid);
             $attributeCode = 'universal_categories';
 
-
            // build and filter the product collection
-           $products = Mage::getResourceModel('catalog/product_collection')
+            $products = Mage::getResourceModel('catalog/product_collection')
                 ->addCategoryFilter($category)
                 ->addAttributeToFilter($attributeCode, array('notnull' => true))
                 ->addAttributeToFilter($attributeCode, array('neq' => ''))
                 ->addAttributeToSelect($attributeCode);
 
-                Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($products);
-                Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($products);
-                Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($products);
-
+            Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($products);
+            Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($products);
+            Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($products);
+            
             $usedAttributeValues = array_unique($products->getColumnValues($attributeCode));
             $attributeModel = Mage::getSingleton('eav/config')->getAttribute('catalog_product', $attributeCode);
 
-			$this->_attributeCollection = $usedAttributeValues;
+            $this->_attributeCollection = $usedAttributeValues;
 
-		}
+        }
         return $this->_attributeCollection;
       
     }
@@ -136,5 +134,6 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
 		}
         return $this->_productCollection;      
     }
+
 
 }
