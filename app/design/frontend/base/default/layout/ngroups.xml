@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="left">
+            <block type="ngroups/ngroups" name="ngroups" template="ngroups/ngroups.phtml" />
+            <remove name="left.newsletter" />
+        </reference>
+    </default>
+    <ngroups_index_index>
+        <reference name="content">
+            <block type="ngroups/ngroups" name="ngroups" template="ngroups/ngroups.phtml" />
+        </reference>
+    </ngroups_index_index>
+    <newsletter_manage_index translate="label">
+        <reference name="customer_newsletter">
+            <action method="setTemplate"><template>ngroups/customer/form/newsletter.phtml</template></action>
+        </reference>
+    </newsletter_manage_index>
+    
+    <customer_account_index translate="label">
+        <reference name="customer_account_dashboard_info">
+            <action method="setTemplate"><template>ngroups/customer/account/dashboard/info.phtml</template></action>
+        </reference>
+    </customer_account_index>            
+</layout> 
