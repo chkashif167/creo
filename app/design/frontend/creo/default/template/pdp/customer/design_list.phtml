@@ -36,6 +36,9 @@
             $designLink = $this->getDesignLink($_obj->getId(), $productId);
             ?>
             <td>
+                <p style="display:none;">
+                	<?php echo $productId; print_r($productId); ?>
+                </p>
                 <span class="design-title"><?php echo $_obj->getDesignTitle() ?></span>
                 <div class="design-preview">
                     <ul>
