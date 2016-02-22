@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MagiDev
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade MagiDev Package to newer
+ * versions in the future. If you wish to customize Package for your
+ * needs please refer to http://www.magidev.com for more information.
+ *
+ * @category    Magidev
+ * @package     Magidev_Sort
+ * @copyright   Copyright (c) 2014 MagiDev. (http://www.magidev.com)
+ */
+
+/**
+ * Configuration of the Package
+ *
+ * @category   Magidev
+ * @package    Magidev_Sort
+ * @author     Magidev Team <support@magidev.com>
+ */
+-->
+<config>
+    <modules>
+        <Magidev_Sort>
+            <version>0.3.0.3</version>
+        </Magidev_Sort>
+    </modules>
+    <global>
+        <helpers>
+            <magidev_sort>
+                <class>Magidev_Sort_Helper</class>
+            </magidev_sort>
+        </helpers>
+        <models>
+            <magidev_sort>
+                <class>Magidev_Sort_Model</class>
+            </magidev_sort>
+        </models>
+        <events>
+            <adminhtml_catalog_category_tabs>
+                <observers>
+                    <magidev_add_category_tab>
+                        <class>Magidev_Sort_Model_Observer</class>
+                        <method>addTabs</method>
+                    </magidev_add_category_tab>
+                </observers>
+            </adminhtml_catalog_category_tabs>
+        </events>
+        <blocks>
+            <magidev_sort>
+                <class>Magidev_Sort_Block</class>
+            </magidev_sort>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Magidev_Sort before="Mage_Adminhtml">Magidev_Sort_Adminhtml</Magidev_Sort>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <magidev_sort>
+                    <file>magidev/sort.xml</file>
+                </magidev_sort>
+            </updates>
+        </layout>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <magidev_sort>
+                                            <title>MagidevOne Sort</title>
+                                        </magidev_sort>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <catalog>
+			<frontend>
+            	<merchandising_column_count>4</merchandising_column_count>
+				<merchandising_sort_direction>1</merchandising_sort_direction>
+				<merchandising_sort_search>20</merchandising_sort_search>
+			</frontend>
+        </catalog>
+    </default>
+</config>

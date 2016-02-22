@@ -1,0 +1,78 @@
+<?php
+$groups = $this->groups;
+if (isset($groups['totalRecords']) && $groups['totalRecords'] > 0 && Mage::helper("ngroups")->isEnabledForFrontend()):
+    ?>
+    <div class="block block-subscribe">
+        <div class="block-title">
+            <strong><span><?php echo Mage::helper('ngroups')->__('Newsletter') ?></span></strong>
+        </div>
+        <div class="block-content">
+            <form method="post" action="<?php echo $this->getUrl('ngroups/index/save') ?>" id="newsletter_form">
+                <label for="group"><?php echo Mage::helper('ngroups')->__('Newsletter Group') ?>:</label>
+                <div class="input-box" style="margin:10px 0;">
+                    <?php if (Mage::helper("ngroups")->isAllowMultiply()) { ?>
+                        <?php if (sizeof($groups['items']) == 1):?> <input type="checkbox" id="cgroup<?php echo $groups['items'][0]['ngroups_id'];?>" name="cgroup[]" value="<?php echo $groups['items'][0]['ngroups_id'] ?>" style="margin:2px 0px 2px 0; display:none" checked><label for="cgroup<?php echo  $groups['items'][0]['ngroups_id']; ?>" style="margin:2px 0 0 5px;"><?php echo $groups['items'][0]['title'] ?></label><br>		
+                        <?php else:?>
+                            <?php foreach ($groups['items'] as $group) { ?>
+                                <input type="checkbox" name="cgroup[]" id="cgroup<?php echo  $group['ngroups_id']; ?>" value="<?php echo $group['ngroups_id'] ?>" style="margin:2px 0px 2px 0;">
+                                <label for="cgroup<?php echo  $group['ngroups_id'] ;?>" style="margin:2px 0 0 5px;"><?php echo $group['title'] ?></label><br>		
+                            <?php } ?>
+                        <?php endif;?>        
+                    <?php } else { ?>
+                        <?php if (sizeof($groups['items']) == 1):?>
+                            <label for="group" style="margin:2px 0 0 5px;"><?php echo $groups['items'][0]['title'] ?></label>
+                            <br />
+                            <select name="group" id="group" class="select" style="width:100%;display:none;">
+                                <?php foreach ($groups['items'] as $group) { ?>
+                                    <option value="<?php echo $group['ngroups_id'] ?>" selected><?php echo $group['title'] ?></option>
+                                <?php } ?>
+                            </select>
+                        <?php else:?>
+                            <select name="group" id="group" class="select" style="width:100%">
+                                <option value="0"><?php echo Mage::helper('ngroups')->__('-- Please select group --') ?></option>
+                                <?php foreach ($groups['items'] as $group) { ?>
+                                    <option value="<?php echo $group['ngroups_id'] ?>"><?php echo $group['title'] ?></option>
+                                <?php } ?>
+                            </select>
+                        <?php endif; ?>
+                    <?php } ?>
+                </div>
+                
+                <?php if (Mage::helper("ngroups")->isShowName()):?>
+                <label for="mail"><?php echo Mage::helper('ngroups')->__('Name') ?>:</label>
+                <div class="input-box">
+                    <input type="text" name="custom_subscriber_name" id="custom_subscriber_name" class="input-text" style="width:100%">
+                </div>
+                <br />
+                <?php endif;?>
+
+                <?php if (Mage::helper("ngroups")->isShowPhone()):?>
+                <label for="mail"><?php echo Mage::helper('ngroups')->__('Phone number') ?>:</label>
+                <div class="input-box">
+                    <input type="text" name="custom_subscriber_telephone" id="custom_subscriber_telephone" class="input-text" style="width:100%">
+                </div>
+                <br />
+                <?php endif;?>
+
+                <label for="mail"><?php echo Mage::helper('ngroups')->__('E-mail') ?>:</label>
+                <div class="input-box">
+                    <input type="text" name="mail" id="mail" class="validate-email required-entry input-text" style="width:100%">
+                </div>
+
+
+                <div class="actions">
+                    <button class="button" title="Subscribe" type="submit"><span><span><?php echo Mage::helper('ngroups')->__('Subscribe') ?></span></span></button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('newsletter_form', true);
+    //]]>
+    </script>
+    <?php
+endif;
+?>

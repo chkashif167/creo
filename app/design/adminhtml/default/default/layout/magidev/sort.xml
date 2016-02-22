@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+
+    <adminhtml_catalog_category_edit>
+        <reference name="head">
+            <action method="addCss"><name>magidev/sort.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>magidev/sort.js</name></action>
+        </reference>
+    </adminhtml_catalog_category_edit>
+
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * MagiDev
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade MagiDev Package to newer
+ * versions in the future. If you wish to customize Package for your
+ * needs please refer to http://www.magidev.com for more information.
+ *
+ * @category    Magidev
+ * @package     Magidev_Sort
+ * @copyright   Copyright (c) 2014 MagiDev. (http://www.magidev.com)
+ */
+
+/**
+ * Configuration of the Package
+ *
+ * @category   Magidev
+ * @package    Magidev_Sort
+ * @author     Magidev Team <support@magidev.com>
+ */
+-->
+<config>
+    <sections>
+        <catalog translate="label" module="magidev_sort">
+            <groups>
+                <frontend>
+                    <fields>
+                        <merchandising_column_count translate="label">
+                            <label>Merchandising Column Count</label>
+                            <comment></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </merchandising_column_count>
+						<merchandising_type translate="label">
+							<label>Merchandising Sort Type</label>
+							<comment></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>magidev_sort/system_config_source_type</source_model>
+							<sort_order>401</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</merchandising_type>
+                        <merchandising_sort_direction translate="label">
+                            <label>Merchandising Sort Direction</label>
+                            <comment>which of sort direction is used on frontend?</comment>
+							<source_model>magidev_sort/system_config_source_direction</source_model>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>402</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </merchandising_sort_direction>
+                        <merchandising_sort_search translate="label">
+                            <label>Merchandising Limit of Search Results</label>
+                            <comment></comment>
+							<frontend_type>text</frontend_type>
+						   	<sort_order>403</sort_order>
+						   	<show_in_default>1</show_in_default>
+						   	<show_in_website>1</show_in_website>
+						   	<show_in_store>1</show_in_store>
+                        </merchandising_sort_search>
+                    </fields>
+                </frontend>
+            </groups>
+        </catalog>
+    </sections>
+</config>
