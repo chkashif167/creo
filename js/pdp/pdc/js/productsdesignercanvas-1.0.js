@@ -480,8 +480,20 @@
                 //this.showLog(_currentJson);
                 this.sides = _currentJson;
                 this.setActiveSideColor();
+				this.restoreColorForEdit();
             }
         },
+		//init sample data, share, ...
+        restoreColorForEdit: function() {
+			var mainWindow = top.document;	
+			var _designInJson = JSON.parse(jQuery("#extra_options_value", mainWindow).val());
+			if(_designInJson){
+			jQuery.each( _designInJson, function( key, val ) {
+				var side_color_id = val.side_color_id;
+				jQuery('.pdc_design_color').find("[pdc-color='"+side_color_id+"']").trigger('click');
+			  });
+			}
+		},
 		resetToSampleDesign: function() {
             //If exists sample, then reset to sample design, else => canvas.clear();
             this.showLog("Reset design to sample design or empty design", "info");
