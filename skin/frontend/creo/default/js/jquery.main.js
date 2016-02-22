@@ -2520,12 +2520,12 @@ function popupValidation()
             }
 
         }
-        if(jQuery("#swatches-options-177").length > 0){
+        if(jQuery("#swatches-options-176").length > 0){
             if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
                 errors = "Please select a cap font color";
             }
         }
-        if(jQuery("#swatches-options-178").length > 0){
+        if(jQuery("#swatches-options-177").length > 0){
             if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
                 errors = "Please select a font style";
             }
@@ -2708,6 +2708,7 @@ jQuery(document).ready(function(e) {
 
 /** Select first style by default on product detail page **/
 jQuery(window).load(function(){
+    jQuery('.product-swatches-container').find('#swatches-options-176 li:first-child').find('a').click();
     //check if the style id exist
     if(jQuery('#attribute-134-container').length >= 1){
         jQuery('#attribute-134-container').find('li:first').find('a').trigger('click');//this id only exists for styles
@@ -2797,7 +2798,7 @@ jQuery("#label_notebook_material").css('margin-left', '110px');
 });
 
 jQuery(document).ready(function($) {
-        jQuery("#options_35_text,#options_36_text,#options_37_text,#options_38_text").attr("maxlength","1");
+        jQuery("#options_17_text,#options_18_text,#options_19_text,#options_20_text").attr("maxlength","1");
 
        jQuery( "#options-16-list label").each(function(index) {
        jQuery(this).on("click", function(){
