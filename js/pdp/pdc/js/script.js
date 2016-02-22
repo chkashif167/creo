@@ -8,6 +8,7 @@ pdc2(document).ready(function($){
 		if (width <= 560) {
 			jQuery('#noticePopup').modal('show')
 		} 
+		updateColorFromJson();
 	});
 /*###### TOOLTIPS #####*/	
 	$(function () {
@@ -209,8 +210,8 @@ pdc2(document).ready(function($){
 		$('.pdc-design-area-left').toggleClass('design-are-to-left');		
 		$('.pdc-design-area-right ').toggleClass('right-to-open');	
 	});
-
-
+});
+function updateColorFromJson(){
 	//update product color based on json file
 	var mainWindow = top.document;	
 	var _designInJson = JSON.parse(jQuery("#extra_options_value", mainWindow).val());
@@ -221,6 +222,5 @@ pdc2(document).ready(function($){
 		jQuery('.pdc_design_color').find("[pdc-color='"+side_color_id+"']").trigger('click');
 	  });
 	}
-
-});
+	}
  
