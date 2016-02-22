@@ -1,4 +1,5 @@
 var pdc2 = jQuery.noConflict();
+var isColorUpdated = false;
 pdc2(document).ready(function($){
 
 /*###### RESPONSIVE NOTIFY #####*/	
@@ -8,7 +9,9 @@ pdc2(document).ready(function($){
 		if (width <= 560) {
 			jQuery('#noticePopup').modal('show')
 		} 
-		updateColorFromJson();
+		if(!isColorUpdated){
+			updateColorFromJson();
+		}
 	});
 /*###### TOOLTIPS #####*/	
 	$(function () {
@@ -211,8 +214,9 @@ pdc2(document).ready(function($){
 		$('.pdc-design-area-right ').toggleClass('right-to-open');	
 	});
 });
-function updateColorFromJson(){
-	//update product color based on json file
+//update product color based on json file
+function updateColorFromJson(){	
+	isColorUpdated = true;
 	var mainWindow = top.document;	
 	var _designInJson = JSON.parse(jQuery("#extra_options_value", mainWindow).val());
 	if(_designInJson){
