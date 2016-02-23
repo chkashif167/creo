@@ -1,0 +1,167 @@
+<?php
+    $_categoryProducts=$this->getCategoryProducts();
+    $_helper = $this->helper('catalog/output');
+    $_collectionSize = count($_categoryProducts)
+?>
+<?php if($_collectionSize&&$this->getCategoryId()):?>
+	<table>
+		<tr>
+			<td>
+
+			<?php $_columnCount = $this->getColumnCount(); ?>
+			<?php $_pageCount = $this->getPageCount(); ?>
+			<div class="category-products" id="category-products-list"
+				 data-column-count="<?php echo $_columnCount;?>"
+				 data-collection-count="<?php echo $_collectionSize;?>"
+				 data-category-id="<?php echo $this->getCategoryId()?>"
+				 data-save-url="<?php echo  $this->getAdminUrl("*/sortproduct/save",array());?>?isAjax=true"
+				 data-add-url="<?php echo  $this->getAdminUrl("*/sortproduct/add",array());?>?isAjax=true"
+				 data-sort-type="<?php echo $this->getType()?>"
+					>
+				<table>
+					<tr>
+						<td>
+ 						<div style="display: none;"><button id="available-sort" onclick="mAvailable.sort(<?php echo $this->getCategoryId()?>, '<?php echo  $this->getAdminUrl("*/sortproduct/save",array());?>?isAjax=true','<?php echo $this->getType()?>'); return false;">Out of Stock to the End</button></div>
+						<?php $_close=false; $_ul=false; $_open=true;?>
+						<?php $i=0; $j=0; $p=1; foreach ($_categoryProducts as $_position=>$_product): ?>
+						<?php if ($j%$_pageCount==0&&$_open==true||$_open==true): ?>
+							<?php $_open=false; ?>
+							<div class="pages">
+						<?php endif ?>
+						<?php if ($i++%$_columnCount==0): ?>
+						<ul class="products-grid">
+							<?php $_ul=false; ?>
+						<?php endif ?>
+							<li		<?php if($i==$_collectionSize):?>
+									id="position-<?php echo $i?>" data-position="<?php echo $_position?>" class="position-to-insert" style="display: none;"
+									<?php else:?>
+									id="position-<?php echo $i?>" data-position="<?php echo $_position?>" class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>"
+									<?php endif;?>
+									>
+								<?php if($i!=$_collectionSize):?>
+								<div data-stock="<?php if($_product->getStockItem()&&$_product->getStockItem()->getIsInStock()):?>1<?php else:?>0<?php endif;?>" data-id="<?php echo $_product->getId()?>" class="product <?php if($_product->getStatus()==Mage_Catalog_Model_Product_Status::STATUS_DISABLED):?>disabled-item<?php endif;?>" id="productId-<?php echo $_product->getId()?>" >
+									<img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(135); ?>" width="135" height="135" />
+									<h2 class="product-name">
+										<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+										<br/><span><?php echo $this->__('SKU:');?></span> <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'sku') ?>
+										<br/><span><?php echo $this->__('Price:');?></span> <?php echo Mage::helper('core')->currency($_product->getPrice(), true, false); ?>
+										<br/><span><?php echo $this->__('Availability:');?></span> <?php if($_product->getStockItem()&&$_product->getStockItem()->getIsInStock()):?>in stock<?php else:?>out of stock<?php endif;?>
+									</h2>
+									<div class="actions">
+										<a title="Quick edit Product" class="edit-item"  rel="<?php echo $this->getAdminUrl("*/sortproduct/edit",array('id'=>$_product->getId()));?>"><img src="<?php echo $this->getSkinUrl('images/magidev/sort/tab_edit.png') ?>" ></a>
+										<a target="_blank" title="Edit Product" href="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/catalog_product/edit",array('id'=>$_product->getId()))?>"><img src="<?php echo $this->getSkinUrl('images/icon_edit_address.gif') ?>" ></a>
+										<a class="disable-item" title="Enable/Disable Product" rel="<?php echo $this->getAdminUrl("*/sortproduct/status",array('id'=>$_product->getId())); ?>"><img src="<?php echo $this->getSkinUrl('images/icon-enabled.png') ?>" ></a>
+										<a class="delete-item" title="Remove from the Category" rel="<?php echo $this->getAdminUrl("*/sortproduct/delete",array('id'=>$_product->getId(),'categoryId'=>$this->getCategoryId()));?>"><img src="<?php echo $this->getSkinUrl('images/icon_remove_address.gif') ?>" ></a>
+									</div>
+								</div>
+								<?php endif;?>
+							</li>
+						<?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+						</ul>
+						<?php $_ul=true; ?>
+						<?php endif;  ?>
+						<?php $j++; if($_close==false&&($j%$_pageCount==0)) $_close=true;?>
+						<?php if ( $_close&&$_ul || $i==$_collectionSize ): ?>
+								<?php $_close=false; $_ul=false; $_open=true;?>
+								<div class="pages-label"><?php echo $this->helper('magidev_sort')->__('Page #%s',$p++)?></div>
+							</div>
+						<?php endif; ?>
+						<?php endforeach ?>
+						</td>
+						<td>
+
+						</td>
+					</tr>
+				</table>
+			</div>
+			</td>
+			<td>
+				<script type="text/javascript">
+				//<![CDATA[
+
+				//]]>
+				</script>
+				<div class="search-products-container">
+				<div class="search-products">
+					<div class="entry-edit">
+						<div class="entry-edit-head">
+							<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('SKU or Name')?></h4>
+
+							<div class="form-buttons">
+								<input type="text" name="search" id="search-new-products-query" onkeyup="Search.search($('search-new-products-query').value,<?php echo $this->getCategoryId()?>,'<?php echo $this->getAdminUrl('*/sortproduct/search',array())?>')" />
+								<button  class="scalable" onclick="Search.search($('search-new-products-query').value,<?php echo $this->getCategoryId()?>,'<?php echo $this->getAdminUrl('*/sortproduct/search',array())?>')" type="button" id="search-new-products"><span><span><span><?php echo $this->__('Search')?></span></span></span></button>
+							</div>
+						</div>
+						<div class="fieldset fieldset-wide" style="width:380px;">
+							<div class="hor-scroll">
+								<div id="add-product-container"></div>
+
+							</div>
+							<div class="add-all">
+								<button  class="scalable" type="button" id="search-new-products" onclick="Search.addAll()"><span><span><span><?php echo $this->__('Add all')?></span></span></span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div id="edit-form" style="display: none;">
+		<table cellspacing="0" class="form-list">
+			<tbody>
+			<tr>
+				<td class="label">
+					<label><?php echo $this->__('Product Name')?></label>
+				</td>
+				<td class="value">
+					<input type="text" name="quick[title]" id="m.quick.title" value="" class="input-text" />
+				</td>
+				<td class="scope-label"><span class="nobr">[<?php echo $this->getScope('name')?>]</span></td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label><?php echo $this->__('SKU')?></label>
+				</td>
+				<td class="value">
+					<input type="text" name="quick[sku]" value="" id="m.quick.sku" class="input-text" />
+				</td>
+				<td class="scope-label"><span class="nobr">[<?php echo $this->getScope('sku')?>]</span></td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label><?php echo $this->__('Price')?></label>
+				</td>
+				<td class="value">
+					<input type="text" name="quick[price]" value="" id="m.quick.price" class="input-text" />
+				</td>
+				<td class="scope-label"><span class="nobr">[<?php echo $this->getScope('price')?>]</span></td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label><?php echo $this->__('Special Price')?></label>
+				</td>
+				<td class="value">
+					<input type="text" name="quick[special_price]" value="" id="m.quick.s.price" class="input-text" />
+				</td>
+				<td class="scope-label"><span class="nobr">[<?php echo $this->getScope('special_price')?>]</span></td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label><?php echo $this->__('Short Description')?></label>
+				</td>
+				<td class="value">
+					<textarea type="text" name="quick[short_description]" value="" id="m.quick.short.description" class="textarea" ></textarea>
+				</td>
+				<td class="scope-label"><span class="nobr">[<?php echo $this->getScope('short_description')?>]</span></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		//<![CDATA[
+			var Sort = new Magidev.Sort(<?php echo $this->getCategoryId()?>, '<?php echo  $this->getAdminUrl("*/sortproduct/save",array());?>?isAjax=true','<?php echo $this->getType()?>');
+		//]]>
+	</script>
+<?php endif;?>
