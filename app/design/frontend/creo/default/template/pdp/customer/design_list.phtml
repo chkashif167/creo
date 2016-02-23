@@ -36,6 +36,9 @@
             $designLink = $this->getDesignLink($_obj->getId(), $productId);
             ?>
             <td>
+                <p style="display:none;">
+                	<?php echo $productId; print_r($_obj); ?>
+                </p>
                 <span class="design-title"><?php echo $_obj->getDesignTitle() ?></span>
                 <div class="design-preview">
                     <ul>
@@ -50,7 +53,7 @@
 			<td><?php echo nl2br($_obj->getDesignNote()) ?></td>
             <td><?php echo $_obj->getCreatedTime() ?></td>
 			<td>
-                <?php /*?> <a target="_blank" href="<?php echo $designLink ?>"><?php echo $this->__("Edit") ?></a> | <?php */ ?>
+                <a target="_blank" href="<?php echo $designLink ?>"><?php echo $this->__("Edit") ?></a> | 
                 <a id="delete_<?php echo $_obj->getId() ?>" onclick="deleteDesign(this)"><?php echo $this->__("Delete") ?></a>
             </td>
         </tr>
