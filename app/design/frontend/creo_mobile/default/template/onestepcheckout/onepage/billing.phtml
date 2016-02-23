@@ -25,7 +25,8 @@ $has_addr	= $this->customerHasAddresses();
         <?php if (!$logged)  : ?>
         <label for="billing:email" class="required"> <?php echo $this->__('Email Address') ?> </label>
         <sup>*</sup>
-        <input type="text" name="billing[email]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="t1 validate-email required-entry" />
+        
+        <input onblur="caps(this)" type="text" name="billing[email]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="t1 validate-email required-entry" />
         <?php endif; ?>
 		   <?php if ($phone_r !== 'hidden') : ?>
         <label for="billing:telephone" class="<?php if($phone_r === 'required') { echo 'required';}?> required" > <?php echo $this->__('Telephone') ?> </label>
@@ -253,4 +254,10 @@ $has_addr	= $this->customerHasAddresses();
 	ZipUpdater.prototype._setPostcodeOptional = function(){};
 	var billingRegionUpdater = new RegionUpdater('billing:country_id', 'billing:region', 'billing:region_id', countryRegions, undefined, 'billing:postcode');
 //]]>
+</script>
+
+<script>
+function caps(element){
+    element.value = element.value.toLowerCase();
+}
 </script>
