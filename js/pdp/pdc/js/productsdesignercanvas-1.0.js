@@ -253,9 +253,11 @@
 			// 3. Specify your action, location and Send to the server - End
 		},
         saveDesignToCustomerAccount: function() {
-            var self = this,
+            var mainWindow = top.document;	
+			var product_id = jQuery("#current_product_id", mainWindow).val();
+			var self = this,
                 data = {
-                    'product_id': $("#customer_design_product_id").val(),
+                    'product_id': product_id,
                     'filename': $("#customer_design_json").val(),
                     'design_title': $("#design_title").val(),
                     'design_note': $("#design_note").val()

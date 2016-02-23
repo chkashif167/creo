@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/ngroups.css</name></action>
+        </reference>
+    </default>
+    <ngroups_adminhtml_ngroups_index>
+        <reference name="content">
+            <block type="ngroups/adminhtml_ngroups" name="ngroups" />
+        </reference>
+    </ngroups_adminhtml_ngroups_index>
+</layout>

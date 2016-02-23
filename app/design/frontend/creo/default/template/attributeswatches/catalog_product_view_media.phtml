@@ -64,7 +64,7 @@ if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
         //<![CDATA[
         // Check if fancybox is actually installed
             if (jQuery.fancybox != undefined) {
-                jQuery("#main-image-link, a#fancybox-link").on("click", function() {
+                jQuery("#main-image-link, a#fancybox-link, .image_popup").on("click", function() {
                     //console.debug("sdfsd");
                     /* create array of images */
                     _images = new Array();
@@ -126,8 +126,8 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     
     <div id="product-media-container">
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
-        <p class="product-image">
-            <a class="fancybox-main cloud-zoom" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_zoom_image_width, $_zoom_image_height); ?>" rel="<?php echo $_cloudzoom_options; ?>">
+        <p class="product-image image_popup">
+            <a class="fancybox-main cloud-zoom image" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_zoom_image_width, $_zoom_image_height); ?>" rel="<?php echo $_cloudzoom_options; ?>">
         <?php
         $_img = '<img class="cloudzoom" id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
@@ -136,7 +136,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
         <a id="product-image-gallery-next" href="#"><span>&raquo;</span></a>
         </p>
 <?php else: ?>
-        <p class="product-image">
+        <p class="product-image image_popup">
             <a class="fancybox-main" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>" title="<?php echo $this->htmlEscape($this->getImageLabel()); ?>">
         <?php
         $_img = '<img id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
