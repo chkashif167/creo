@@ -13,7 +13,7 @@ $baseCurrency = Mage::app()->getStore()->getBaseCurrencyCode();
 $productMediaConfig = Mage::getModel('catalog/product_media_config');
 
 
-function getCategoryPath($sku)
+function getCatPath($sku)
     {
         $product = Mage::getModel('catalog/product')->loadByAttribute('sku',$sku);
         
@@ -60,7 +60,7 @@ function getCategoryPath($sku)
 
             $thumbnailUrl  = $productMediaConfig->getMediaUrl($product['thumb']);
             $i++;
-            $arr = getCategoryPath($product['sku']);
+            $arr = getCatPath($product['sku']);
             $arr_temp = explode('/default category',$arr[count($arr)-1]);
             //print_r($arr_temp);
             //$str = ltrim('/',$arr_temp[1]);
