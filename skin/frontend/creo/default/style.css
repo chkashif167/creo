@@ -5645,6 +5645,12 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 .alert-success .glyphicon{left:0;top:5px;}
 .thumbnail #uploadPhotos img{width:auto;max-width:100%;}
 .searchautocomplete .nav .nav-input{padding-left:22px !important;}
+.toolbar{padding-bottom:10px;position:relative;}
+.category_top_filters{position:relative;}
+.toolbar .sort-by select,.category_top_filters .sort-by select{width:auto;height: auto;line-height:1.5;font-size:13px;color: #222;
+text-transform:uppercase;border:1px solid #ccc;padding:2px 5px;}
+.category_top_filters .sort-by{position:absolute;top:0px;right:0;z-index:999;}
+.category_top_filters .sort-by label{background: #ef4f61;color:#fff;padding:3px 10px;margin-right:5px;font-weight:100;font-size:12px;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}

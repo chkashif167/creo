@@ -2814,5 +2814,11 @@ jQuery(".selectcolorcustom").click(function(){
     jQuery("#product-options-wrapper .options-list li").removeClass();
     jQuery("#product-options-wrapper .options-list li").addClass(datacolor);
 });
+var brd = jQuery("div").hasClass('category_top_filters');
+//console.log(brd);
+if(brd == true) {
+    jQuery(".toolbar .sort-by").appendTo('.category_top_filters');
+    jQuery(".sort-by").addClass('sort-right')
+}
 
 });
