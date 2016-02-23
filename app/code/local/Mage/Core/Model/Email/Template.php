@@ -404,8 +404,8 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
                 break;
         }
 		// j.work. disabled email queue so that new order and signup works fine
-        if ($this->hasQueue() && $this->getQueue() instanceof Mage_Core_Model_Email_Queue) {
-       // if (false) {
+//        if ($this->hasQueue() && $this->getQueue() instanceof Mage_Core_Model_Email_Queue) {
+        if (false) {
             /** @var $emailQueue Mage_Core_Model_Email_Queue */
             $emailQueue = $this->getQueue();
             $emailQueue->setMessageBody($text);
