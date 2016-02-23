@@ -1,8 +1,8 @@
-<?php 
+<?php
 $pids_raw = $this->getData('product_ids');
-$pids_temp = explode(',',$pids_raw);
+$pids_temp = explode(',', $pids_raw);
 $pids = array();
-foreach($pids_temp as $pid_temp){
+foreach ($pids_temp as $pid_temp) {
     $pids[] = $pid_temp;
 }
 
@@ -12,20 +12,20 @@ $baseCurrency = Mage::app()->getStore()->getBaseCurrencyCode();
 //print_r($products);
 $productMediaConfig = Mage::getModel('catalog/product_media_config');
 
-
-function getCatPath($sku)
+if (!function_exists('getCatPath')) {
+    function getCatPath($sku)
     {
-        $product = Mage::getModel('catalog/product')->loadByAttribute('sku',$sku);
-        
+        $product = Mage::getModel('catalog/product')->loadByAttribute('sku', $sku);
+
         $pathArray = array();
         $collection1 = $product->getCategoryCollection()
             ->setStoreId(Mage::app()->getStore()->getId())
             ->addAttributeToSelect('path')
             ->addAttributeToSelect('is_active');
-            
 
-        foreach($collection1 as $cat1){            
-            $pathIds = explode('/', $cat1->getPath());            
+
+        foreach ($collection1 as $cat1) {
+            $pathIds = explode('/', $cat1->getPath());
             $collection = Mage::getModel('catalog/category')->getCollection()
                 ->setStoreId(Mage::app()->getStore()->getId())
                 ->addAttributeToSelect('name')
@@ -33,54 +33,53 @@ function getCatPath($sku)
                 ->addFieldToFilter('entity_id', array('in' => $pathIds));
 
             $pahtByName = '';
-            foreach($collection as $cat){                
+            foreach ($collection as $cat) {
                 $pahtByName .= '/' . strtolower($cat->getName());
             }
-            
+
             $pathArray[] = $pahtByName;
 
         }
-        
+
         return $pathArray;
     }
-
-
+}
 ?>
 
 
-  <?php if (is_array($products) && count($products)) { ?>
-    <?php 
-    $i=0;
-    foreach($products as $product) { 
+<?php if (is_array($products) && count($products)) { ?>
+    <?php
+    $i = 0;
+    foreach ($products as $product) {
 
         $product_model = Mage::getModel('catalog/product');
-        $my_product_id  = $product_model->getIdBySku($product['sku']);
-        $my_product     = $product_model->load($my_product_id);
+        $my_product_id = $product_model->getIdBySku($product['sku']);
+        $my_product = $product_model->load($my_product_id);
         $purl = $product_model->getProductUrl($product);
 
-            $thumbnailUrl  = $productMediaConfig->getMediaUrl($product['thumb']);
-            $i++;
-            $arr = getCatPath($product['sku']);
-            $arr_temp = explode('/default category',$arr[count($arr)-1]);
-            //print_r($arr_temp);
-            //$str = ltrim('/',$arr_temp[1]);
-            
-            //$purl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$arr_temp[1]."/".$product['urlkey'].".html";
-          
-          $blockHtml = $this->getLayout()->createBlock('cms/block')->setBlockId('newsletter-products-grid')->toHtml();
-          $blockHtml = str_replace('{PRODUCT_URL}', $purl,$blockHtml);
-          $blockHtml = str_replace('{PRODUCT_IMAGE}', $thumbnailUrl,$blockHtml);
-          $blockHtml = str_replace('{PRODUCT_TITLE}', $product['name'],$blockHtml);
-          $blockHtml = str_replace('{PRODUCT_CURRENCY}', $baseCurrency,$blockHtml);
-          $blockHtml = str_replace('{PRODUCT_PRICE}', number_format($product['finalPrice'],2),$blockHtml);
-          echo $blockHtml;
+        $thumbnailUrl = $productMediaConfig->getMediaUrl($product['thumb']);
+        $i++;
+        $arr = getCatPath($product['sku']);
+        $arr_temp = explode('/default category', $arr[count($arr) - 1]);
+        //print_r($arr_temp);
+        //$str = ltrim('/',$arr_temp[1]);
+
+        //$purl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$arr_temp[1]."/".$product['urlkey'].".html";
+
+        $blockHtml = $this->getLayout()->createBlock('cms/block')->setBlockId('newsletter-products-grid')->toHtml();
+        $blockHtml = str_replace('{PRODUCT_URL}', $purl, $blockHtml);
+        $blockHtml = str_replace('{PRODUCT_IMAGE}', $thumbnailUrl, $blockHtml);
+        $blockHtml = str_replace('{PRODUCT_TITLE}', $product['name'], $blockHtml);
+        $blockHtml = str_replace('{PRODUCT_CURRENCY}', $baseCurrency, $blockHtml);
+        $blockHtml = str_replace('{PRODUCT_PRICE}', number_format($product['finalPrice'], 2), $blockHtml);
+        echo $blockHtml;
         ?>
-   
-                            
-                                <!--<table class="btn-newsletter" cellpadding="0" cellspacing="0" border="0" style=" width: 33%; display: inline-block; vertical-align: top; ">
+
+
+        <!--<table class="btn-newsletter" cellpadding="0" cellspacing="0" border="0" style=" width: 33%; display: inline-block; vertical-align: top; ">
                                     <tr>
                                         <td>
-                                            <a href="<?php echo $purl;?>" style="text-decoration:none;outline:none;display:block;width:100%;"><img style="max-width:100%;width:100%;" src="<?php echo $thumbnailUrl;?>" width="261" height="303">
+                                            <a href="<?php echo $purl; ?>" style="text-decoration:none;outline:none;display:block;width:100%;"><img style="max-width:100%;width:100%;" src="<?php echo $thumbnailUrl; ?>" width="261" height="303">
                                             <div style="display:inline-table; vertical-align:middle; width:100%;">
                                                 <h5 style='background-color: #000000;
                                                     color: #ffffff;
@@ -96,19 +95,19 @@ function getCatPath($sku)
     text-transform: uppercase;
     vertical-align: middle;
     width: 100%;'><?php echo $product['name'] ?></h5>
-    <span><?php echo $baseCurrency;?><?php echo number_format($product['finalPrice'],2); ?></span>
+    <span><?php echo $baseCurrency; ?><?php echo number_format($product['finalPrice'], 2); ?></span>
                                             </div>
                                             </a>
                                         </td>
                                     </tr>
                                 </table>-->
-                               
-                            
-                            <?php
-                                if($i%3==0){
-                                    echo '</td></tr><tr style="width:100%;"><td class="three-column test">';
-                                }
-                            ?>
-                        
+
+
+        <?php
+        if ($i % 3 == 0) {
+            echo '</td></tr><tr style="width:100%;"><td class="three-column test">';
+        }
+        ?>
+
     <?php } ?>
-  <?php } ?>
+<?php } ?>
