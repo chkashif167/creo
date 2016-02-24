@@ -30,7 +30,7 @@ if(count($_productCollection)){ ?>
             <!--div class="container"-->
              <!--div class="row"-->
               <!-- <div class="sliderbox"> -->
-                <ul  id="owl-demo" class="owl-carousel"> 
+                <ul  id="owl-demo" class="owl-carousel" style="display:block;">
                 <?php $i=0; foreach ($_productCollection as $key => $_product): ?>
                  <?php if ($key < $display_length && ($showInStock == $_product->isAvailable() || 1 == $_product->isAvailable())): ?>
                     <li class="item<?php if($key==0): ?> first<?php elseif($key==$_collectionSize): ?> last<?php endif; ?>">
