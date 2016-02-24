@@ -34,7 +34,7 @@ if(count($_productCollection)){ ?>
                 <?php $i=0; foreach ($_productCollection as $key => $_product): ?>
                  <?php if ($key < $display_length && ($showInStock == $_product->isAvailable() || 1 == $_product->isAvailable())): ?>
                     <li class="item<?php if($key==0): ?> first<?php elseif($key==$_collectionSize): ?> last<?php endif; ?>">
-                        <a href="<?php echo $site_url.$_product->getUrlPath(); ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product)) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product)) ?>" /></a>
+                        <a href="<?php echo $site_url.$_product->getUrlPath(); ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
                         <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h2>
                         <?php if($_product->getRatingSummary()): ?>
                         <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
