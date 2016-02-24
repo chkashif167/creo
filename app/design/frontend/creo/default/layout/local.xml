@@ -147,8 +147,8 @@
  <reference name="head">
   <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
   <action method="addCss"><stylesheet>css/whoalsoview/styles.css</stylesheet></action>
-  <action method="addJs"><script>js/whoalsoview/owl.carousel.js</script></action>
-  <action method="addJs"><script>js/whoalsoview/owl.carousel.custom.js</script></action>
+ <action method="addItem"><type>skin_js</type><script>s/whoalsoview/owl.carousel.js</script></action>
+ <action method="addItem"><type>skin_js</type><script>js/whoalsoview/owl.carousel.custom.js</script></action>
  </reference>
   </catalog_product_view>
 
