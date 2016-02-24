@@ -3655,7 +3655,7 @@ div.fme-filter dd li{overflow: visible !important;}
 }
 .shipping-methods p{margin: 0 0 8px;}
 .shipping-methods p a{font-weight: bold;}
-.shipping-methods h3,#last_most_view_title h3{
+.shipping-methods h3,#last_most_view_title > h3{
 	margin: 0 0 8px;
 	border-color: #eee;
 	border-style: solid;
@@ -3663,7 +3663,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	color: #fff;
 	font: 17px/30px "Roboto Condensed",Helvetica,Arial,sans-serif;
 }
-.shipping-methods  h3 span,#last_most_view_title h3 span{
+.shipping-methods  h3 span,#last_most_view_title > h3 span{
 	background: #000;
 	display: inline-block;
 	min-width: 150px;
@@ -3671,7 +3671,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	position: relative;
 	vertical-align: bottom;
 }
-.shipping-methods h3 span:before,#last_most_view_title h3 span:before{
+.shipping-methods h3 span:before,#last_most_view_title > h3 span:before{
 	border-color: transparent transparent transparent #000;
 	border-style: solid;
 	border-width: 30px 0 0 6px;
