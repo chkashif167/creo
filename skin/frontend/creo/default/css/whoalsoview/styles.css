@@ -42,7 +42,7 @@
 .owl-carousel .owl-item{
 	float: left;
 }
-.owl-carousel .owl-item .item{padding-right:5px;}
+.owl-carousel .owl-item .item{padding-right:10px;}
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div{
 	cursor: pointer;
