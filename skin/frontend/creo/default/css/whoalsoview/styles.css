@@ -25,7 +25,6 @@
 	display: none;
 	position: relative;
 	-webkit-transform: translate3d(0px, 0px, 0px);
-    
 }
 .owl-carousel .owl-wrapper-outer{
 	overflow: hidden;
@@ -42,8 +41,8 @@
 
 .owl-carousel .owl-item{
 	float: left;
-	margin:0 4px;
 }
+.owl-carousel .owl-item .item{padding-right:5px;}
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div{
 	cursor: pointer;
