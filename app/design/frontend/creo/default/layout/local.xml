@@ -121,33 +121,34 @@
 	<action method="setData"><name>category_title</name><value>featured_category</value></action>
 	<action method="setData"><name>category_id</name><value>7</value></action>
 	</block>-->
-	
+
 	<!--<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
 	<action method="setData"><name>title</name><value>Styles</value></action>
 	<action method="setData"><name>category_title</name><value>style_category</value></action>
 	<action method="setData"><name>category_id</name><value>12</value></action>
 	</block>-->
 	</reference>
-		
+
 </cms_index_index>
  <catalog_category_default>
   <reference name="root">
     <action method="setTemplate"><template>page/1column.phtml</template></action>
   </reference>
- 
+
   <reference name="content">
-  	
     <block type="cms/block" name="footer_contents">
       <action method="setBlockId"><block_id>footer_contents</block_id></action>
     </block>
   </reference>
-  
 </catalog_category_default>
 
 
  <catalog_product_view translate="label">
  <reference name="head">
   <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+  <action method="addCss"><stylesheet>css/whoalsoview/styles.css</stylesheet></action>
+  <action method="addJs"><script>js/whoalsoview/owl.carousel.js</script></action>
+  <action method="addJs"><script>js/whoalsoview/owl.carousel.custom.js</script></action>
  </reference>
   </catalog_product_view>
 
