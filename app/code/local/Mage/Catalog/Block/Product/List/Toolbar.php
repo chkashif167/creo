@@ -232,11 +232,13 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
         if ($this->getCurrentOrder()) {
             //$this->_collection->setOrder($this->getCurrentOrder(), $this->getCurrentDirection());
             if(($this->getCurrentOrder())=='position'){ //defines the sort option
-//sort by entity_id (descending)
-$this->_collection->addAttributeToSort('entity_id',$this->getCurrentDirection());
-} else {
-$this->_collection->setOrder($this->getCurrentOrder(),$this->getCurrentDirection());
-}
+
+                //sort by entity_id (descending)
+                $this->_collection->addAttributeToSort('entity_id',$this->getCurrentDirection());
+                } else {
+                $this->_collection->setOrder($this->getCurrentOrder(),$this->getCurrentDirection());
+                }
+
         }
         return $this;
     }
