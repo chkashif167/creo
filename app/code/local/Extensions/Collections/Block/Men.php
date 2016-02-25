@@ -79,9 +79,20 @@ class Extensions_Collections_Block_Men extends Mage_Core_Block_Template {
             Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($products);
             
             $usedAttributeValues = array_unique($products->getColumnValues($attributeCode));
+
             $attributeModel = Mage::getSingleton('eav/config')->getAttribute('catalog_product', $attributeCode);
 
             $this->_attributeCollection = $usedAttributeValues;
+           $filteredAudienceCollection = Mage::getResourceModel('eav/entity_attribute_option_collection')
+              ->setPositionOrder('asc')
+              ->setAttributeFilter(157)
+              ->addFieldToFilter('main_table.option_id', array('in' => $usedAttributeValues))
+              ->load();
+        $product_session = array();
+         foreach($filteredAudienceCollection as $fill):
+             array_push($product_session, $fill['option_id']);
+         endforeach;
+         $this->_attributeCollection =  $product_session;
 
         }
         return $this->_attributeCollection;
