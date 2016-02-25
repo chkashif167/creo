@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
       pagination : false,
       rewindNav : true,
       navigation : true,
-      navigationText : ["prev","next"],
+      navigationText : ["<",">"],
       itemsMobile : [550,2]  // itemsMobile disabled - inherit from itemsTablet option*/
       });
       // Custom Navigation Events

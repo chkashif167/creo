@@ -94,15 +94,14 @@
 	display: inline-block;
 	zoom: 1;
 	*display: inline;/*IE7 life-saver */
-	margin: 5px;
-	padding: 3px 10px;
-	font-size: 12px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-	background: #618499;
-	filter: Alpha(Opacity=50);/*IE7 fix*/
-	opacity: 0.7;
+	margin:0 2px;
+	padding:5px 8px;
+	font-size: 22px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	background: #000;
+	opacity: 1;
 }
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
