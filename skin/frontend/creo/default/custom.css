@@ -945,99 +945,20 @@ margin-top:0;
 /*.jconfirm white, .jconfirm-box-container.span6.offset3.col-md-5.col-md-offset-3 {
 display: none;
 }*/
-.tshirtsize table, th, td {
-border: 1px solid transparent;
-}
-.tshirtsize table {
-border-collapse: separate;
-border-spacing: 10px 4px;
-}
-.tshirtsize table>tbody>tr:nth-of-type(even) {
-background-color: #facbd1;
-}
-.tshirtsize table>tbody>tr:nth-of-type(odd) {
-background-color: #fde7ea;
-}
-.tshirtsize th{
-background-color: #f16b7a;
-text-align: center;
-width: 175px;
-color: #fef7f8;
-font-size: 15.87px;
-}
-.tshirtsize{
-width:400px;
-font-family: 'Roboto Condensed', sans-serif;
-text-transform: uppercase;
-background-color: #fff;
-}
-.tshirtsize .heading{
-font-size: 18.13px;
-font-weight: bold;
-text-align: center;
-border:2px solid #959595;
-padding-bottom: 1%;
-padding-top: 1%;
-width: 94.5%;
-margin-left: 3%;
-}
-.tshirtsize td{
-padding:5px;
-width: 133px;
-text-align: center;
-font-size: 15.87px;
-font-weight: 400;
-color: #251c1d;
-}
-.tshirtsize .headingsize{
-width: 100%;
-}
-.tshirtsize table, th, td{
-border: 1px solid transparent;
-}
-.tshirtsize table.womentable {
-border-collapse: separate;
-border-spacing: 5px 2px;
-}
-.tshirtsize table>tbody>tr:nth-of-type(even) {
-background-color: #facbd1;
-}
-.tshirtsize table>tbody>tr:nth-of-type(odd) {
-background-color: #fde7ea;
-}
-.womentable th{
-background-color: #f16b7a;
-text-align: center;
-width: 175px;
-color: #fef7f8;
-font-size: 15.87px;
-}
-.tshirtsize{
-width:400px;
-font-family: 'Roboto Condensed', sans-serif;
-text-transform: uppercase;
-background-color: #fff;
-}
-.headingsize2 .heading {
-font-size: 18.13px;
-font-weight: bold;
-text-align: center;
-border: 2px solid #959595;
-padding-bottom: 1%;
-padding-top: 1%;
-width: 97%;
-margin-left: 1.5%;
-}
-.womentable td{
-padding:3px;
-text-align: center;
-font-size: 15.87px;
-font-weight: 400;
-color: #251c1d;
-}
-.headingsize2{
-width: 100%;
-}
+
+.tshirtsize table, th, td {border: 1px solid transparent;color:#000;}
+.tshirtsize table{border-collapse:separate;border-spacing:2px 2px;}
+.tshirtsize{width:100%;font-family: 'Roboto Condensed', sans-serif;text-transform: uppercase;background-color: #fff;}
+.tshirtsize .heading{width:auto;padding:8px 15px;background-color:#000;font-size:16px;display:inline-block;color:#fff;}
+.tshirtsize table, th, td{border: 1px solid transparent;}
+.tshirtsize th{background-color:#000;text-align: center;color: #fff;font-size:12px;font-weight:normal;}
+.tshirtsize{width:100%;font-family: 'Roboto Condensed', sans-serif;text-transform: uppercase;background-color: #fff;
+margin-bottom:25px;}
+.tshirtsize small{text-transform:none;}
+.tshirtsize h4{line-height:1.2;font-size:16px;text-align:left;}
+.headingsize2 .heading{font-size: 18.13px;font-weight: bold;text-align: center;border: 2px solid #959595;padding-bottom: 1%;
+padding-top: 1%;width: 97%;margin-left: 1.5%;}
+.headingsize2{width: 100%;}
 .has-swatches.swatch-type-image { padding: 0;}
 .has-swatches.swatch-type-label { padding: 0;}
 .catalog-product-view #fancybox-link { display: none !important;}
@@ -1051,11 +972,7 @@ height:90px !important; width:90px !important;}
 #product-options-wrapper #options-container-217123 .attributeItem{width:100%;float:none;}
 #product-options-wrapper .product-swatches-container ul.has-swatches li a.selected{
 border: 1px solid #F16167;background-size: 95% 95%;background-repeat: no-repeat;}
-<<<<<<< HEAD
-.attributeItem { /*float: left;*/display:inline-block; width:49%;}
-=======
 .attributeItem { /*float: left;*/display: inline-block;width:49%;vertical-align:top;}
->>>>>>> hotfix-toolbar
 .catalog-product-view .bx-controls.bx-has-controls-direction { display: none;}
 .bx-wrapper  { background: #fff none repeat scroll 0 0;
 border: 0px solid #fff !important;
