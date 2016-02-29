@@ -83,6 +83,25 @@
 <span class="results-description">Showing 1–12 of 100 results</span>
 </div>
 </div>
+<?php $categoryImage = Mage::getModel('catalog/layer')->getCurrentCategory()->getImage();
+//Get the file name of the Image stored for the category ?>
+<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+    <div class="category-description std category-banner clearfix">
+    <div class="row">
+    <div class="col-xs-8">
+    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+        <p><?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></p>
+         <a href="#">FLAG MASK</a>
+         <a href="#">COCO</a>
+         <a href="#">FLORAL</a>
+         <a href="#">HIPSTER</a>
+     </div>
+     <div class="col-sm-4" align="right">
+     <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$categoryImage  ?>" />
+     </div>
+     </div>
+    </div>
+ <?php endif; ?>
 
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 
@@ -90,11 +109,6 @@
     <?php echo $_imgHtml ?>
 <?php endif; ?>
 
-<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
-    <div class="category-description std">
-        <?php // echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-    </div>
-    <?php endif; ?>
 
 <?php if($this->isContentMode()): ?>
     <?php echo $this->getCmsBlockHtml() ?>

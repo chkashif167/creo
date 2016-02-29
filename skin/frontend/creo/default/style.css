@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300,400italic);
 @font-face {
 	font-family: 'fontello';
 	src: url('fonts/fontello.eot?6880134');
@@ -5647,6 +5647,15 @@ body.category-clothing #fme_filters_list .cate-open-close #design_category.slide
 text-transform:uppercase;border:1px solid #ccc;padding:2px 5px;}
 .category_top_filters .sort-by{position:absolute;top:0px;right:0;z-index:999;}
 .category_top_filters .sort-by label{background: #ef4f61;color:#fff;padding:3px 10px;margin-right:5px;font-weight:100;font-size:12px;}
+.category-banner{width:100%;clear:both;}
+.category-banner img{max-height:200px;}
+.category-banner h1,.category-banner a{font-family:"Roboto Condensed",Helvetica,Arial,sans-serif;font-weight:700;font-size:36px;
+text-transform:uppercase;}
+.category-banner p{font-size:14px;}
+.category-banner a{display: inline-block;padding:5px 10px;vertical-align:top;text-transform:uppercase;font-size:18px;font-weight:bold;
+color:#fff;background-color:#000;text-decoration: none;}
+.category-banner a:focus,.category-banner a:hover{background-color:#ef4f61;}
+a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underline;font-weight:bold;font-size:16px;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}

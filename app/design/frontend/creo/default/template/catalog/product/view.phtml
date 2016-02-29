@@ -123,32 +123,25 @@ if($_product->stock_item->is_in_stock == 0){
 <?php echo $this->getTierPriceHtml() ?>
 
  </div>
-                        <span class="availability">Availability:  
-                            <?php echo $this->getChildHtml('product_type_availability'); ?>
-                        </span> 
-                    </div>
+<span class="availability">Availability: <?php echo $this->getChildHtml('product_type_availability'); ?></span>
+</div>
 
-
-                    <!-- tabs structure example -->
-                    <ul class="tabset tabset1">
-                        <li class="active"><a href="#tab1"><span>
-                                    <?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
-                        <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
-                        <li class="">
-                            <a href="#" data-toggle="modal" data-target="#sizeGuide"><span>
-                                    SIZE GUIDE
-                                    <?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?>
-                                </span></a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab1" style="display: block;" class="">
-                            <p><?php print $_product->getDescription(); ?> </p>
-                        </div>
-                        <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                            <p><?php print $_product->getDesign(); ?> </p>
-                        </div>
-                        <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
+<!-- tabs structure example -->
+<ul class="tabset tabset1">
+    <li class="active"><a href="#tab1"><span>
+                <?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
+    <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
+</ul>
+<div class="tab-content">
+    <div id="tab1" style="display: block;" class="">
+        <p><?php print $_product->getDescription(); ?> </p>
+    </div>
+    <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
+        <p><?php print $_product->getDesign(); ?> </p>
+    </div>
+</div>
+<a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span>SIZE GUIDE
+<?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a>
 <!-- Modal -->
 <div class="modal fade" id="sizeGuide" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -174,10 +167,6 @@ if($_product->stock_item->is_in_stock == 0){
   </div>
 </div>
 
-
-
-                        </div>
-                    </div>
                     <div class="options-area">
                 <?php if ($_product->isSaleable()):?>
                             <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
