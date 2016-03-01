@@ -86,10 +86,13 @@ is_product_details_page = true;
 			</div>-->
 		</div>
 		<div class="store-language-container">
-			<?php //echo $this->getChildHtml('store_language') ?>
+			<!-- <?php //echo $this->getChildHtml('store_language') ?> -->
 		</div>
 		<?php echo $this->getChildHtml('topLinks') ?>
 		<div class="bottom-area">
+		<div class="open-close basic-open-close">
+		<?php echo $this->getChildHtml('store_language') ?>
+		</div>
 			<!-- <a class="headerLogin" data-target=".bs-example-modal-md" data-toggle="modal" href="#">sub</a> -->
 			<?php echo $this->getChildHtml('currency_switcher') ?>
 			<?php $islogedin = Mage::getSingleton('customer/session')->isLoggedIn() ?>
