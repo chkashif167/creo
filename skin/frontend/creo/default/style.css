@@ -809,6 +809,8 @@ p.style1 {
 	right: -10px;
 	content: '\e812';
 }
+.opener#select-language{width:auto;height:auto;border:0;font-size:12px;}
+#header label.lang{margin:0;padding:0;}
 #header .basic-open-close ul {
 	margin: 0;
 	padding: 0;
@@ -5651,6 +5653,36 @@ text-transform:uppercase;}
 color:#fff;background-color:#000;text-decoration: none;}
 .category-banner a:focus,.category-banner a:hover{background-color:#ef4f61;}
 a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underline;font-weight:bold;font-size:16px;}
+
+/* qaisar working area for styling */
+.category--heading{
+    margin: 0 0 8px;
+    border-color: #eee;
+    border-style: solid;
+    border-width: 0 0 2px;
+    color: #fff;
+    font: 17px/30px "Roboto Condensed",Helvetica,Arial,sans-serif;
+}
+.category--heading span {
+    background: #000;
+    display: inline-block;
+    min-width: inherit;
+    padding: 0 30px 0 15px;
+    position: relative;
+    vertical-align: bottom;
+}
+.category--heading span:before {
+    border-color: transparent transparent transparent #000;
+    border-style: solid;
+    border-width: 30px 0 0 6px;
+    content: "";
+    height: 0;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+/* working area for qaisar end */
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
