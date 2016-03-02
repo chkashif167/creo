@@ -408,7 +408,8 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
     public function setDefaultDirection($dir)
     {
         if (in_array(strtolower($dir), array('asc', 'desc'))) {
-            $this->_direction = strtolower($dir);
+           // $this->_direction = strtolower($dir);
+             $this->_direction = 'desc';
         }
         return $this;
     }
