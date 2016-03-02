@@ -28,11 +28,6 @@ class CheckoutApi_ChargePayment_Model_Method_Creditcardpci extends CheckoutApi_C
         $billingAddress = $order->getBillingAddress();
         $config = parent::_createCharge($payment,$amount,$extraConfig);
         $config['postedParam']['email'] = $billingAddress->getData('email');
-        if (Mage::getSingleton('customer/session')->isLoggedIn()) {
-            $customer = Mage::getSingleton('customer/session')->getCustomer();
-
-            $config['postedParam']['email'] =  $customer->getEmail();
-        }
         $config['postedParam']['card'] =  array_merge (
                                                         array(
                                                                 'phoneNumber'   =>    $billingAddress->getData('telephone'),
