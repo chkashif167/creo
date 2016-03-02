@@ -307,8 +307,7 @@
 	</reference>
 </wordpress_post_view>
 
-
-<catalogsearch_result_index>
+<catalogsearch_result_index> 
         <reference name="search_result_list">
             <action method="setDefaultDirection"><dir>desc</dir></action>
         </reference>
