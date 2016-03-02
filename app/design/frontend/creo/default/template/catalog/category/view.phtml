@@ -85,7 +85,7 @@
 </div>
 <?php $categoryImage = Mage::getModel('catalog/layer')->getCurrentCategory()->getImage();
 //Get the file name of the Image stored for the category ?>
-<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+<?php if($_description=$this->getCurrentCategory()->getDescription()){ ?>
     <div class="category-description std category-banner clearfix">
     <div class="row">
     <div class="col-xs-8">
@@ -101,8 +101,9 @@
      </div>
      </div>
     </div>
- <?php endif; ?>
-
+ <?php }else{ ?>
+<h1 class="category--heading"><span><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></span></h1>
+<?php } ?>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 
 <?php if($_imgUrl): ?>
