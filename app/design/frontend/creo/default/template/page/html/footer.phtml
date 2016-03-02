@@ -47,9 +47,11 @@
 	<span class="copyright"><?php echo $this->getCopyright() ?></span>
 	</div>
 	<div class="column column1">
-		<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
-		<b class="head"><?php  echo $customer->getTitle(); ?></b>
-		<?php echo $customer->getContent(); ?>
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('customer_service')->toHtml(); ?>
+
+		<!-- <?php //$customer = Mage::getModel('cms/block')->load('customer_service'); ?>
+		<b class="head"><?php // echo $customer->getTitle(); <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social')->toHtml() ?>?></b>
+		<?php // echo $customer->getContent(); ?> -->
 	</div>
 	<div class="column">
 	<?php $about = Mage::getModel('cms/block')->load('about_us'); ?>

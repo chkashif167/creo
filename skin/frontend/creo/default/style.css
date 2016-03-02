@@ -443,6 +443,7 @@ p.style1 {
 #nav ol > li > a {
 	display: block;
 	padding: 0 12px 5px;
+	font-size:14px;
 	position: relative;
 	cursor: pointer;
 }
@@ -676,10 +677,7 @@ p.style1 {
 	text-decoration: none;
 	border-color: #000;
 }
-#header .bottom-area {
-	text-align: right;
-	padding:45px 0 0px;
-}
+#header .bottom-area {text-align: right;padding:55px 0 0px;}
 .search-form {
 	margin:0;
 	padding:1px 2px;
@@ -716,6 +714,7 @@ p.style1 {
 }
 .search-form input[type="submit"]:hover { background: url(images/productpage/search.png) no-repeat; }
 #header .login-area {
+	margin:2px;
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
@@ -747,15 +746,15 @@ p.style1 {
 	height: 19px;
 }
 #header .login-area .opener:after {
+	font-family: 'fontello';
+	font-size: 8px;
+	line-height: 19px;
+	width: 9px;
+	height: 19px;
 	position: absolute;
-	top: 7px;
-	right: 14px;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 6px 3px 0;
-	border-color: #222 transparent transparent;
-	content: '';
+	top: 0px;
+	right: 5px;
+	content: '\e812';
 }
 #header .login-area ul {
 	margin: 0;
@@ -809,7 +808,10 @@ p.style1 {
 	right: -10px;
 	content: '\e812';
 }
-.opener#select-language{width:auto;height:auto;border:0;font-size:12px;}
+.opener#select-language{width:auto;height:auto;border:0;font-size:12px;background-color:#fff;position:relative;}
+.opener#select-language+i:before{font-family: 'fontello';font-size:8px;line-height:2;width:12px;height:12px;position:absolute;
+top:1px;right:6px;z-index: 99999;content: '\e812';background-color: #fff;text-align: center;}
+.opener#select-language:hover+i:before,.opener#select-language:focus+i:before{background-color:#f5f5f5;}
 #header label.lang{margin:0;padding:0;}
 #header .basic-open-close ul {
 	margin: 0;
