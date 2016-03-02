@@ -2,13 +2,12 @@
 <layout version="0.1.0">
 
 <default>
-
 <reference name="head">
  <action method="addCss"><stylesheet>jquery.mCustomScrollbar.css</stylesheet></action>
   <action method="addItem"><type>skin_js</type><script>js/jquery.main.js</script></action>
   <action method="addItem"><type>skin_js</type><script>js/jquery.custom.js</script></action>
   <action method="addItem"><type>skin_js</type><script>js/jquery.mCustomScrollbar.js</script></action>
-	<action method="addItem"><type>skin_js</type><script>bootstrap/js/bootstrap.min.js</script></action>
+<action method="addItem"><type>skin_js</type><script>bootstrap/js/bootstrap.min.js</script></action>
    <action method="addCss"><stylesheet>bootstrap/css/bootstrap.css</stylesheet></action> 
    <action method="addCss"><stylesheet>style.css</stylesheet></action>
   <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
@@ -46,9 +45,13 @@
 		</block>-->
 		<block type="customer/form_login" name="customer_form_login"  before="footer_store_language" template="customer/form/loginpopup.phtml" />
 	 </reference>
-	 
 </default>
 
+<STORE_creo_ar>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/style-ar.css</stylesheet><params>media="screen"</params></action>
+        </reference>
+</STORE_creo_ar>
 
 <cms_index_index>
 	
@@ -121,33 +124,34 @@
 	<action method="setData"><name>category_title</name><value>featured_category</value></action>
 	<action method="setData"><name>category_id</name><value>7</value></action>
 	</block>-->
-	
+
 	<!--<block type="core/template" name="category_subcategory" template="catalog/category/subcategory.phtml">
 	<action method="setData"><name>title</name><value>Styles</value></action>
 	<action method="setData"><name>category_title</name><value>style_category</value></action>
 	<action method="setData"><name>category_id</name><value>12</value></action>
 	</block>-->
 	</reference>
-		
+
 </cms_index_index>
  <catalog_category_default>
   <reference name="root">
     <action method="setTemplate"><template>page/1column.phtml</template></action>
   </reference>
- 
+
   <reference name="content">
-  	
     <block type="cms/block" name="footer_contents">
       <action method="setBlockId"><block_id>footer_contents</block_id></action>
     </block>
   </reference>
-  
 </catalog_category_default>
 
 
  <catalog_product_view translate="label">
  <reference name="head">
   <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+  <action method="addCss"><stylesheet>css/whoalsoview/styles.css</stylesheet></action>
+ <action method="addItem"><type>skin_js</type><script>js/whoalsoview/owl.carousel.js</script></action>
+ <action method="addItem"><type>skin_js</type><script>js/whoalsoview/owl.carousel.custom.js</script></action>
  </reference>
   </catalog_product_view>
 
@@ -303,4 +307,37 @@
 	</reference>
 </wordpress_post_view>
 
+<catalogsearch_result_index> 
+        <reference name="search_result_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalogsearch_result_index>
+
+    <!-- Change default direction for advanced searches -->
+    <catalogsearch_advanced_result>
+        <reference name="search_result_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalogsearch_advanced_result>
+
+    <!-- Change default direction for a category without layered navigation -->
+    <catalog_category_default>
+        <reference name="product_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalog_category_default>
+
+    <!-- Change default direction for a category with layered navigation -->
+    <catalog_category_layered>
+        <reference name="product_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalog_category_layered>
+
+    <!-- Change default direction for category with ID 3 -->
+    <CATEGORY_3>
+        <reference name="product_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>                                   
+        </reference>
+    </CATEGORY_3>
 </layout>
