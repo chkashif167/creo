@@ -809,6 +809,8 @@ p.style1 {
 	right: -10px;
 	content: '\e812';
 }
+.opener#select-language{width:auto;height:auto;border:0;font-size:12px;}
+#header label.lang{margin:0;padding:0;}
 #header .basic-open-close ul {
 	margin: 0;
 	padding: 0;
