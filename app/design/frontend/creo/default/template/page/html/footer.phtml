@@ -48,27 +48,27 @@
 	</div>
 	<div class="column column1">
 		<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
-		<h3><?php  echo $customer->getTitle(); ?></h3>
+		<b class="head"><?php  echo $customer->getTitle(); ?></b>
 		<?php echo $customer->getContent(); ?>
 	</div>
 	<div class="column">
 	<?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
-	<h3><?php  echo $about->getTitle(); ?></h3>
+	<b class="head"><?php  echo $about->getTitle(); ?></b>
 	<?php echo $about->getContent(); ?>
 	</div>
 	<div class="column">
 		 <?php $acount = Mage::getModel('cms/block')->load('popular_products'); ?>
-		<h3><?php  echo $acount->getTitle(); ?></h3>
+		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<div class="column">
 		 <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
-		<h3><?php  echo $acount->getTitle(); ?></h3>
+		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<div class="column">
 		 <?php $acount = Mage::getModel('cms/block')->load('contact_footer'); ?>
-		<h3><?php  echo $acount->getTitle(); ?></h3>
+		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<?php /*
