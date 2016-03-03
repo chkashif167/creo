@@ -1,5 +1,4 @@
 "%s was successfully added to your shopping cart.","%s وقد نجحت في اضافة إلى سلة التسوق الخاصة بك."
-<<<<<<< HEAD
 "&laquo; Back to Billing Information","&laquo; العودة إلى بيانات الفاتورة"
 "&laquo; Back to Select Addresses","&laquo; العودة إلى اختيار العناوين"
 "&laquo; Back to Shopping Cart","&laquo; العودة إلى عربة التسوق"
@@ -31,14 +30,14 @@
 "Cannot update shopping cart","لا يمكن تحديث عربة التسوق"
 "Card Verification Number Visual Reference","بطاقه رقم التحقق من الاشارة البصريه"
 "Cart Subtotal:","المجموع الفرعيالسلة:"
-"Change","Change"
+"Change","تغيير"
 "Change Billing Address","تحرير"
-"Checkbox text","Checkbox text"
-"Checkout","إنهاء عملية الشراء"
-"Checkout Conditions","Checkout Conditions"
+"Checkbox text","نص خانة الإختيار"
+"Checkout","الدفع"
+"Checkout Conditions","شروط الخروج"
 "Checkout Options","خيارات إنهاء عملية الشراء"
-"Checkout Section","Checkout Section"
-"Checkout Terms and Conditions","Checkout Terms and Conditions"
+"Checkout Section","قسم الخروج"
+"Checkout Terms and Conditions","شروط وأحكام التسجيل"
 "Checkout as Guest","إنهاء عملية الشراء كزائر"
 "Checkout as a Guest or Register","إنهاء عملية الشراء كزائر أو التسجيل"
 "Checkout method","طريقة إنهاء عملية الشراء"
@@ -47,14 +46,14 @@
 "Click <a href=""%s"" onclick=""this.target='_blank'"">here to print</a> a copy of your order confirmation.","Click <a href=""%s"" onclick=""this.target='_blank'"">here to print</a> a copy of your order confirmation."
 "Close","إغلاق"
 "Company","الشركة"
-"Condition Name","Condition Name"
-"Condition was successfully deleted","Condition was successfully deleted"
-"Condition was successfully saved","Condition was successfully saved"
+"Condition Name","إسم الشرط"
+"Condition was successfully deleted","لقد تم محي الشرط بنجاح"
+"Condition was successfully saved","لقد تم خزن الشرط بنجاح"
 "Configurable product image","للتهيئة صورة المنتج"
 "Confirm Password","تأكيد كلمة المرور"
-"Content","Content"
-"Content Height","Content Height"
-"Content Height (css)","Content Height (css)"
+"Content","محتوى"
+"Content Height","علو المحتوى"
+"Content Height (css)","علو المحتوى  (css)"
 "Continue","استمرار"
 "Continue Shopping","الاستمرار بالتسوق"
 "Continue to Billing Information","الاستمرار إلى بيانات الفاتورة"
@@ -62,21 +61,21 @@
 "Continue to Shipping Information","الاستمرار إلى بيانات الشحن"
 "Country","الدولة"
 "Coupon code ""%s"" is not valid.","كود الكوبون ""%s"" غير صحيح."
-"Coupon code ""%s"" was applied successfully.","Coupon code ""%s"" was applied successfully."
+"Coupon code ""%s"" was applied successfully.","تم تطبيق رمز القسيمة ""٪ S"" بنجاح."
 "Coupon code was canceled successfully.","تم إلغاء كود الكوبون بنجاح."
 "Create Billing Address","إنشاء عنوان دفع الفاتورة"
 "Create Shipping Address","إنشاء عنوان الشحن"
-"Customer Address is not valid.","Customer Address is not valid."
+"Customer Address is not valid.","عنوان الزبون غير صالح"
 "Data saving problem","خطأ في حفظ البيانات"
 "Default Billing","افتراضي الفواتير"
 "Default Shipping","الشحن الافتراضي"
-"Delete Condition","Delete Condition"
-"Details","Details"
-"Disable Onepage Checkout","Disable Onepage Checkout"
-"Disabled","Disabled"
+"Delete Condition","محو الشرط"
+"Details","تفاصيل"
+"Disable Onepage Checkout","تعطيل الخروج Onepage"
+"Disabled","معطل"
 "Discount Codes","أكواد خصم"
 "Display Cart Summary","عرض ملخص عربة التسوق"
-"Display Shopping Cart Sidebar","Display Shopping Cart Sidebar"
+"Display Shopping Cart Sidebar","عرض الشريط الجانبي لعربة التسوق"
 "Display item quantities","عرض كميات السلع"
 "Display number of items in cart","عرض عدد السلع في عربة التسوق"
 "Easy access to your order history and status","الوصول السهل لحالة وتاريخ طلبك"
@@ -85,16 +84,16 @@
 "Edit Billing Address","تحرير عنوان دفع الفاتورة"
 "Edit Items","تحرير السلع"
 "Edit Shipping Address","تحرير عنوان الشحن"
-"Edit Terms and Conditions","Edit Terms and Conditions"
+"Edit Terms and Conditions","تحرير الشروط والأحكام"
 "Edit Your Cart","تحرير عربة التسوق خاصتك"
 "Email Address","البريد الإلكتروني"
-"Enable Terms and�Conditions","Enable Terms and�Conditions"
-"Enabled","Enabled"
-"Enter a New Address","قم بإدخال عنوانا جديدا"
+"Enable Terms and�Conditions","تفعيل الشروط والأحكام"
+"Enabled","مفعل"
+"Enter a New Address","أدخل عنوان جديد"
 "Enter your coupon code if you have one.","إذا كنت تملك كوبونا فقم بإدخال الكود."
 "Enter your destination to get a shipping estimate.","قم بإدخال وجهتك حتى تحصل على تقدير للشحن."
-"Error while deleting this condition. Please try again later.","Error while deleting this condition. Please try again later."
-"Error while saving this condition. Please try again later.","Error while saving this condition. Please try again later."
+"Error while deleting this condition. Please try again later.","خطأ عند حذف هذا الشرط. الرجاء المحاولة فيما بعد"
+"Error while saving this condition. Please try again later.","خطأ عند خزن هذا الشرط. الرجاء المحاولة فيما بعد"
 "Estimate Shipping and Tax","تقدير الشحن والضريبة"
 "Excl. Tax","Excl. Tax"
 "Fast and easy check out","إنهاء شراء سريع وسهل"
@@ -108,43 +107,43 @@
 "ID","ID"
 "Incl. Tax","Incl. Tax"
 "Invalid data","بيانات غير صحيحة"
-"Invalid email address ""%s""","Invalid email address ""%s"""
+"Invalid email address ""%s""","بريد ألكتروني غير صالح"
 "Invalid shipping method.","طريقة شحن غير صحيحة."
 "Items","السلع"
 "Load customer quote error","تحميل خطأ اقتباس العميل"
 "Loading next step...","تحميل الخطوة التالية ..."
 "Login","تسجيل الدخول"
-"Manage Checkout Terms and Conditions","Manage Checkout Terms and Conditions"
-"Maximum display Recently added item(s)","Maximum display Recently added item(s)"
+"Manage Checkout Terms and Conditions","إدارة شروط الخروج للأحكام والشروط"
+"Maximum display Recently added item(s)","أقصى عرض البند/البنود أدرجت حديثا"
 "Maximum qty allowed for Shipping to multiple addresses is %s","الكمية القصوى المسموح بها للشحن إلى عدة عناوين هي %s"
 "Move to Wishlist","النقل إلى قائمة الأمنيات"
 "My Account","حسابي"
-"My Cart","My Cart"
+"My Cart","عربتي"
 "My Cart (%s item)","عربة التسوق خاصتي (%s سلعة)"
 "My Cart (%s items)","عربة التسوق خاصتي (%s سلع)"
 "My Cart Link","وصلة سلتي"
 "New Address","عنوان جديد"
-"New Condition","New Condition"
-"Order #","Order #"
+"New Condition","شرط جديد"
+"Order #","طلب  #"
 "Order Review","مراجعة طلب الشراء"
 "Order Success","نجاح طلب الشراء"
-"Other items in your order","Other items in your order"
+"Other items in your order","المنتجات الأخرى في طلبك"
 "Password","كلمة المرور"
-"Payment Failed Email Reciever","Payment Failed Email Reciever"
-"Payment Failed Email Sender","Payment Failed Email Sender"
-"Payment Failed Emails","Payment Failed Emails"
-"Payment Failed Template","Payment Failed Template"
+"Payment Failed Email Reciever","فشل الدفع المتلقي البريد الإلكتروني"
+"Payment Failed Email Sender","فشل الدفع المرسل البريد الإلكتروني"
+"Payment Failed Emails","فشل الدفع البريد الإلكتروني"
+"Payment Failed Template","نموذج فشل الدفع"
 "Payment Information","بيانات الدفع"
 "Payment Method","طريقة الدفع"
 "Payment method is not defined","طريقة الدفع غير معرفة"
 "Place Order","مكان الطلب"
 "Please <a href=""%s"">continue shopping</a>.","فضلا <a href=""%s"">اكمل التسوق</a>."
-"Please agree to all Terms and Conditions before placing the order.","Please agree to all Terms and Conditions before placing the order."
-"Please agree to all Terms and Conditions before placing the orders.","Please agree to all Terms and Conditions before placing the orders."
+"Please agree to all Terms and Conditions before placing the order.","يرجى الموافقة على جميع البنود والشروط قبل وضع النظام."
+"Please agree to all Terms and Conditions before placing the orders.","يرجى الموافقة على جميع البنود والشروط قبل وضع النظام."
 "Please enter a valid zip code. For example 90602 or 90602-1234.","الرجاء إدخال الرمز البريدي. فعلى سبيل المثال 90602 او 90602-12344."
 "Please log in below:","من فضلك قم بتسجيل الدخول بالأسفل:"
 "Please select region, state or province","من فضلك قم باختيار المنطقة، الولاية أو المقاطعة"
-"Please select shipping address for applicable items","Please select shipping address for applicable items"
+"Please select shipping address for applicable items","الرجاء إختيار عنوان الشحن للبنود المطبقة"
 "Please select shipping methods for all addresses","من فضلك قم باختيار طرق الشحن لكل العناوين"
 "Price","السعر"
 "Proceed to Checkout","المواصلة لإنهاء الشراء"
@@ -161,11 +160,11 @@
 "Remove","إزالة"
 "Remove Item","إزالة سلعة"
 "Remove Product","إزالة منتج"
-"Remove item","Remove item"
+"Remove item","إزالة البند"
 "Review Order","مراجعة طلب الشراء"
 "Review Order - %s","مراجعة طلب الشراء - %s"
-"Sales","Sales"
-"Save Condition","Save Condition"
+"Sales","مبيعات"
+"Save Condition","خزن الشرط"
 "Save in address book","حفظ في دفتر العناوين"
 "Select Address","اختيار عنوان"
 "Select Addresses","اختيار عناوين"
@@ -173,8 +172,8 @@
 "Select State/Province...","اختيار الولاية/المقاطعة..."
 "Select a billing address from your address book or enter a new address.","اختر عنوان الفاتوره من دفتر العناوين الخاص بك ، او ادخال عنوان جديد."
 "Select a shipping address from your address book or enter a new address.","اختر عنوان الشحن من دفتر العناوين الخاص بك ، او ادخال عنوان جديد."
-"Send Payment Failed Email Copy Method","Send Payment Failed Email Copy Method"
-"Send Payment Failed Email Copy To","Send Payment Failed Email Copy To"
+"Send Payment Failed Email Copy Method","فشل ارسال الدفع إرسال نسخة للبريد الألكتروني"
+"Send Payment Failed Email Copy To","فشل إرسال الدفع إرسل نسخة للبريد الألكتروني"
 "Send to","إرسال إلى"
 "Ship to Multiple Addresses","الشحن إلى عدة عناوين"
 "Ship to different address","الشحن إلى عنوان مختلف"
@@ -184,36 +183,36 @@
 "Shipping Method","طريقة الشحن"
 "Shipping Methods","طرق الشحن"
 "Shipping method has not been selected yet","لم يتم اختيار طريقة الشحن حتى الآن"
-"Shipping selection is not applicable","Shipping selection is not applicable"
+"Shipping selection is not applicable","إختيار الشحن غير قابل للتطبيق"
 "Shipping to","الشحن إلى"
 "Shopping Cart","عربة التسوق"
-"Shopping Cart Sidebar","Shopping Cart Sidebar"
+"Shopping Cart Sidebar","الشريط الجانبي لعربة التسوق"
 "Shopping Cart is Empty","عربة التسوق فارغة"
-"Show Content as","Show Content as"
+"Show Content as","عرض المحتوى كـ"
 "Some of the products you requested are not available in the desired quantity","بعض المنتجات التي طلبتها غير متاحة بالكمية المطلوبة"
 "Some of the products you requested are unavailable","بعض المنتجات التي طلبتها غير موجودة"
-"Sorry, Onepage Checkout is disabled.","Sorry, Onepage Checkout is disabled."
-"Sorry, guest checkout is not enabled. Please try again or contact store owner.","Sorry, guest checkout is not enabled. Please try again or contact store owner."
+"Sorry, Onepage Checkout is disabled.","عذرا  Onepage خروج غير مفعل"
+"Sorry, guest checkout is not enabled. Please try again or contact store owner.","عذرا لم يتم تمكين النزلاء الخروج. يرجى المحاولة مرة أخرى أو اتصل بصاحب المتجر"
 "Sorry, no quotes are available for this order at this time.","عذرا ، لم يقتبس متوفره لهذا النظام في هذا الوقت.  "
 "State/Province","ولاية/مقاطعة"
-"Status","Status"
-"Store View","Store View"
+"Status","حالة"
+"Store View","عرض المتجر"
 "Street Address","عنوان الشارع"
-"Street Address ","Street Address "
+"Street Address ","عنوان الشارع"
 "Submitting order information...","تقديم بيانات طلب الشراء..."
 "Subtotal","المجموع الفرعي"
 "Telephone","هاتف"
-"Terms and Conditions","Terms and Conditions"
-"Terms and Conditions Information","Terms and Conditions Information"
-"Terms and conditions","Terms and conditions"
+"Terms and Conditions","الشروط والأحكام"
+"Terms and Conditions Information","معلومات الشروط والأحكام"
+"Terms and conditions","الشروط والأحكام"
 "Text","Text"
 "Thank you for your purchase!","شكرا لك على الشراء!"
 "There are <a href=""%s""><strong>%s items</strong></a> in your cart.","هناك <a href=""%s""><strong>%s عناصر</strong></a> في سلتك."
 "There is <a href=""%s""><strong>1 item</strong></a> in your cart.","عناك <a href=""%s""><strong>1 عنصر</strong></a> في سلتك."
 "There is already a customer registered using this email address","يوجد بالفعل عميل مسجل بهذا البريد الإلكتروني"
 "There was an error processing your order. Please contact us or try again later.","كان هناك خطأ تجهيز طلبك. يرجى الاتصال بنا او المحاوله مرة اخرى فى وقت لاحق."
-"This condition no longer exists","This condition no longer exists"
-"Total","Total"
+"This condition no longer exists","الشرط غير متوفر بعد الان"
+"Total","مجموع"
 "Total for this address","مجموع لهذا العنوان"
 "Unit Price","سعر الوحدة"
 "Update Qty &amp; Addresses","تحديث الكمية والعناوين"
@@ -225,196 +224,14 @@
 "You will receive an order confirmation email with details of your order and a link to track its progress.","سوف تتلقى  رسالة بالبريد الالكتروني لتاكيد طلبك مع تفاصيل لطلبك و وصلة لمتابعة التقدم المحرز ."
 "Your Checkout Progress","الخروج من التقدم الخاصة بك"
 "Your order # is: %s","طلبك # is: %s"
-"Your order # is: <a href=""%s"">%s</a>","Your order # is: <a href=""%s"">%s</a>"
+"Your order # is: <a href=""%s"">%s</a>","رقم طلبك هو   # is: <a href=""%s"">%s</a>"
 "Your order has been received","تم استلام طلبك"
-"Your order number is ","Your order number is "
+"Your order number is ","رقم طلبك هو"
 "Zip/Postal Code","الرمز البريدي"
-"osCommerce Orders","osCommerce Orders"
-"separate by "",""","separate by "","""
+"osCommerce Orders","أوامر نظام osCommerce"
+"separate by "",""","مفصولة ب "","""
 "My Cart","سلتي"
 "You have no items in your shopping cart.","You have no items in your shopping cart."
-"Checkout","Checkout"
-"Shopping Cart is Empty","Shopping Cart is Empty"
+"Checkout","الدفع"
+"Shopping Cart is Empty","عربة التسوق خالية"
 "Please <a href=""%s"">continue shopping</a>.","Please <a href=""%s"">continue shopping</a>."
-=======
-"&laquo; Back to Select Addresses","&laquo; العودة إلى اختيار العناوين"
-"&laquo; Back to Billing Information","&laquo; العودة إلى بيانات الفاتورة"
-"&laquo; Back to Shopping Cart","&laquo; العودة إلى عربة التسوق"
-"* Required Fields","* حقول مطلوبة"
-"There is already a customer registered using this email address","يوجد بالفعل عميل مسجل بهذا البريد الإلكتروني"
-"Fax","فاكس"
-"Please <a href=""%s"">continue shopping</a>.","فضلا <a href=""%s"">اكمل التسوق</a>."
-"Coupon code ""%s"" is not valid.","كود الكوبون ""%s"" غير صحيح."
-"Password","كلمة المرور"
-"There was an error processing your order. Please contact us or try again later.","كان هناك خطأ تجهيز طلبك. يرجى الاتصال بنا او المحاوله مرة اخرى فى وقت لاحق."
-"State/Province","ولاية/مقاطعة"
-"We are processing your order and you will soon receive an email with details of the order. Once the order has shipped you will receive another email with a link to track its progress.","ونحن على تجهيز طلبك وكنت قريبا مع تلقيت عبر البريد الالكتروني من اجل التفاصيل. مرة واحدة الامر شحنت ستتلقي رسالة الكترونيه اخرى مع وصلة لتتبع التقدم المحرز."
-"My Cart Link","وصلة سلتي"
-"Enter your destination to get a shipping estimate.","قم بإدخال وجهتك حتى تحصل على تقدير للشحن."
-"Enter a New Address","قم بإدخال عنوانا جديدا"
-"Register and save time!","قم بالتسجيل ووفر الوقت!"
-"Register to Create an Account","قم بالتسجيل لإنشاء حساب"
-"Configurable product image","للتهيئة صورة المنتج"
-"Back","للخلف"
-"Shipping method has not been selected yet","لم يتم اختيار طريقة الشحن حتى الآن"
-"You have no items in your shopping cart.","لا يوجد لديك أي سلع في عربة التسوق."
-"Cannot move item to wishlist","لا يمكن نقل السلعة إلى قائمة الأمنيات"
-"Cannot remove item","لا يمكن إزالة السلعة"
-"Can not add item to shopping cart","لا يمكن إضافة السلعة إلى عربة التسوق"
-"Can not apply coupon code.","لا يمكن استخدام كود الكوبون."
-"Cannot update shopping cart","لا يمكن تحديث عربة التسوق"
-"You have no items in your cart.","لا توجد اي عناصر في سلتك."
-"Order Success","نجاح طلب الشراء"
-"Forgot your password?","هل نسيت كلمة المرور؟"
-"Forgot an Item?","هل نسيت سلعة؟"
-"Are you sure you would like to remove this item from the shopping cart?","هل أنت متأكد من إزالة هذه السلعة من عربة التسوق؟"
-"Already registered?","هل أنت مسجل؟"
-"There are <a href=""%s""><strong>%s items</strong></a> in your cart.","هناك <a href=""%s""><strong>%s عناصر</strong></a> في سلتك."
-"Telephone","هاتف"
-"Place Order","مكان الطلب"
-"Please enter a coupon code.","من فضلك قم بإدخال كود كوبون."
-"Please enter a coupon code.","من فضلك قم بإدخال كود كوبون."
-"Please select region, state or province","من فضلك قم باختيار المنطقة، الولاية أو المقاطعة"
-"Please select shipping methods for all addresses","من فضلك قم باختيار طرق الشحن لكل العناوين"
-"Please log in below:","من فضلك قم بتسجيل الدخول بالأسفل:"
-"Please specify the product(s) quantity","من فضلك حدد كمية المنتج/المنتجات"
-"Please specify the product option(s)","من فضلك حدد خيار/خيارات المنتج"
-"Total for this address","مجموع لهذا العنوان"
-"Order Review","مراجعة طلب الشراء"
-"Review Order","مراجعة طلب الشراء"
-"Review Order - %s","مراجعة طلب الشراء - %s"
-"Discount Codes","أكواد خصم"
-"Cancel Coupon","إلغاء الكوبون"
-"Fast and easy check out","إنهاء شراء سريع وسهل"
-"Checkout","إنهاء عملية الشراء"
-"Checkout as Guest","إنهاء عملية الشراء كزائر"
-"Checkout as a Guest or Register","إنهاء عملية الشراء كزائر أو التسجيل"
-"Checkout with Multiple Addresses","إنهاء عملية الشراء بعناوين متعددة"
-"Create Shipping Address","إنشاء عنوان الشحن"
-"Create Billing Address","إنشاء عنوان دفع الفاتورة"
-"Enter your coupon code if you have one.","إذا كنت تملك كوبونا فقم بإدخال الكود."
-"Send to","إرسال إلى"
-"Remove","إزالة"
-"Remove Product","إزالة منتج"
-"Remove Item","إزالة سلعة"
-"Add New Address","إضافة عنوان جديد"
-"After adding a product redirect to shopping cart","إعادة التوجيه إلى عربة التسوق بعد إضافة منتج"
-"Close","إغلاق"
-"Default Billing","افتراضي الفواتير"
-"Quote Lifetime (days)","اقتبس من العمر (أيام)"
-"Qty","الكمية"
-"Maximum qty allowed for Shipping to multiple addresses is %s","الكمية القصوى المسموح بها للشحن إلى عدة عناوين هي %s"
-"Easy access to your order history and status","الوصول السهل لحالة وتاريخ طلبك"
-"Move to Wishlist","النقل إلى قائمة الأمنيات"
-"Proceed to Checkout","المواصلة لإنهاء الشراء"
-"Product","المنتج"
-"Product does not exist","المنتج غير موجود"
-"Subtotal","المجموع الفرعي"
-"Cart Subtotal:","المجموع الفرعيالسلة:"
-"Grand Total:","المجموع الكلي:"
-"City","المدينة"
-"Add to Wishlist","الإضافة إلى قائمة الأمنيات"
-"Add to Compare","الإضافة إلى المقارنة"
-"Add to Cart","الإضافة إلى عربة التسوق"
-"First Name","الاسم الأول"
-"Continue to Review Your Order","الاستمرار إلى مراجعة طلب الشراء"
-"Continue to Billing Information","الاستمرار إلى بيانات الفاتورة"
-"Continue to Shipping Information","الاستمرار إلى بيانات الشحن"
-"Continue Shopping","الاستمرار بالتسوق"
-"Email Address","البريد الإلكتروني"
-"Register","التسجيل"
-"Your Checkout Progress","الخروج من التقدم الخاصة بك"
-"Country","الدولة"
-"Zip/Postal Code","الرمز البريدي"
-"Please enter a valid zip code. For example 90602 or 90602-1234.","الرجاء إدخال الرمز البريدي. فعلى سبيل المثال 90602 او 90602-12344."
-"Items","السلع"
-"Recently added item(s)","السلعة/السلع المضافة حديثا"
-"Allow Guest Checkout","السماح للزائر بإنهاء عملية الشراء"
-"Price","السعر"
-"Shipping to","الشحن إلى"
-"Ship to this address","الشحن إلى هذا العنوان"
-"Ship to different address","الشحن إلى عنوان مختلف"
-"Ship to Multiple Addresses","الشحن إلى عدة عناوين"
-"Default Shipping","الشحن الافتراضي"
-"Company","الشركة"
-"Back to Shipping Information","العودة إلى بيانات الشحن"
-"Address","العنوان"
-"Address %s of %s","العنوان %s لـ %s"
-"Get a Quote","احصل على اقتباس"
-"Select State/Province...","اختيار الولاية/المقاطعة..."
-"Store Pickup","اختيار المتجر"
-"Select Shipping Method","اختيار طريقة الشحن"
-"Select Address","اختيار عنوان"
-"Select Addresses","اختيار عناوين"
-"Select a billing address from your address book or enter a new address.","اختر عنوان الفاتوره من دفتر العناوين الخاص بك ، او ادخال عنوان جديد."
-"Select a shipping address from your address book or enter a new address.","اختر عنوان الشحن من دفتر العناوين الخاص بك ، او ادخال عنوان جديد."
-"Product Name","اسم المنتج"
-"Last Name","اسم العائلة"
-"Continue","استمرار"
-"Apply Coupon","استخدام كوبون"
-"Use Billing Address","استخدام عنوان الدفع"
-"Click <a href=""%s"" target=""_blank"">here to print</a> a copy of your order confirmation.","اضغط <a href=""%s"" هدف=""_blank"">here to print</a> a صورة من تاكيد طلبك."
-"Billing Information","بيانات الفاتورة"
-"Billing Information - %s","بيانات الفاتورة - %s"
-"Payment Information","بيانات الدفع"
-"Shipping Information","بيانات الشحن"
-"Invalid data","بيانات غير صحيحة"
-"Card Verification Number Visual Reference","بطاقه رقم التحقق من الاشارة البصريه"
-"Some of the products you requested are unavailable","بعض المنتجات التي طلبتها غير موجودة"
-"Some of the products you requested are not available in the desired quantity","بعض المنتجات التي طلبتها غير متاحة بالكمية المطلوبة"
-"Submitting order information...","تقديم بيانات طلب الشراء..."
-"Estimate Shipping and Tax","تقدير الشحن والضريبة"
-"Coupon code was canceled successfully.","تم إلغاء كود الكوبون بنجاح."
-"Your order has been received","تم استلام طلبك"
-"Coupon code was applied successfully.","تم استخدام كود الكوبون بنجاح."
-"Confirm Password","تأكيد كلمة المرور"
-"Loading next step...","تحميل الخطوة التالية ..."
-"Load customer quote error","تحميل خطأ اقتباس العميل"
-"Update Qty &amp; Addresses","تحديث الكمية والعناوين"
-"Update Total","تحديث الإجمالي"
-"Update Shopping Cart","تحديث عربة التسوق"
-"Edit","تحرير"
-"Change Shipping Method","تحرير"
-"Change Shipping Address","تحرير"
-"Change Payment Method","تحرير"
-"Change Billing Address","تحرير"
-"Edit Items","تحرير السلع"
-"Edit Address","تحرير العنوان"
-"Edit Shipping Address","تحرير عنوان الشحن"
-"Edit Billing Address","تحرير عنوان دفع الفاتورة"
-"Edit Your Cart","تحرير عربة التسوق خاصتك"
-"Login","تسجيل الدخول"
-"Grouped product image","جمع صور المنتجات"
-"Save in address book","حفظ في دفتر العناوين"
-"My Account","حسابي"
-"Checkout Options","خيارات إنهاء عملية الشراء"
-"Data saving problem","خطأ في حفظ البيانات"
-"Your order number is %s","رقم طلبك هو  %s"
-"You will receive an order confirmation email with details of your order and a link to track its progress.","سوف تتلقى  رسالة بالبريد الالكتروني لتاكيد طلبك مع تفاصيل لطلبك و وصلة لمتابعة التقدم المحرز ."
-"My Cart","سلتي"
-"Register with us for future convenience:","سجل معنا في المستقبل لراحة:"
-"Unit Price","سعر الوحدة"
-"Thank you for your purchase!","شكرا لك على الشراء!"
-"Your order # is: %s","طلبك # is: %s"
-"Based on your selection, you may be interested in the following items:","طبقا لاختيارك، قد تكون مهتما بالسلع التالية:"
-"Checkout method","طريقة إنهاء عملية الشراء"
-"Payment Method","طريقة الدفع"
-"Payment method is not defined","طريقة الدفع غير معرفة"
-"Shipping Method","طريقة الشحن"
-"Invalid shipping method.","طريقة شحن غير صحيحة."
-"Shipping Methods","طرق الشحن"
-"Street Address","عنوان الشارع"
-"Street Address 2","عنوان الشارع 2"
-"Shipping Address","عنوان الشحن"
-"New Address","عنوان جديد"
-"Billing Address","عنوان دفع الفاتورة"
-"There is <a href=""%s""><strong>1 item</strong></a> in your cart.","عناك <a href=""%s""><strong>1 عنصر</strong></a> في سلتك."
-"Sorry, no quotes are available for this order at this time.","عذرا ، لم يقتبس متوفره لهذا النظام في هذا الوقت.  "
-"Shopping Cart","عربة التسوق"
-"Shopping Cart is Empty","عربة التسوق فارغة"
-"My Cart (%s items)","عربة التسوق خاصتي (%s سلع)"
-"My Cart (%s item)","عربة التسوق خاصتي (%s سلعة)"
-"Display item quantities","عرض كميات السلع"
-"Display Cart Summary","عرض ملخص عربة التسوق"
-"Display number of items in cart","عرض عدد السلع في عربة التسوق"
->>>>>>> 6befb3e5115251dc0dfcceea1be9de3a5d169522

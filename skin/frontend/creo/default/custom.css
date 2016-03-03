@@ -192,8 +192,7 @@ padding: 0;
 .in-stock span {
 color: #3ebd00;
 }
-.availability p.availability {
-width: 75px;
+.availability p.availability {/*width: 75px;*/
 text-align: left;
 margin-left: 6px;
 }

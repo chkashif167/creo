@@ -440,13 +440,7 @@ p.style1 {
 	margin: 0 0px 0 0;
 	padding:0px;
 }
-#nav ol > li > a {
-	display: block;
-	padding: 0 12px 5px;
-	font-size:14px;
-	position: relative;
-	cursor: pointer;
-}
+#nav ol > li > a {	display: block;padding: 0 10px 5px;font-size:14px;position: relative;cursor: pointer;}
 #nav ol > li a:hover { text-decoration: none; }
 #nav ol > li > a:after {
 	bottom: -2px;
@@ -2221,7 +2215,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	font: 38px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .price-area{
-	padding: 10px 50px 10px 0;
+	padding: 10px 0px 10px 0;
 	overflow: hidden;
 	border-width: 1px 0;
 	border-style: solid;
