@@ -88,7 +88,7 @@
     <?php
     foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
-    echo '<li><a href="' . $_category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl().'"> <strong class="title">' . $_category->getName() . '</strong></a></li>';
+    echo '<li><a href="' . $_category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl().'"> <strong class="title">' . $this->__($_category->getName()) . '</strong></a></li>';
     endforeach;
     ?>
   </ul>
@@ -102,7 +102,7 @@
   <?php
   foreach ($children as $category):
   $_category = Mage::getModel('catalog/category')->load($category->getId());
-  echo '<li><a href="' . $_category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl().'"> <strong class="title">' . $_category->getName() . '</strong></a></li>';
+  echo '<li><a href="' . $_category->getUrl() . '"><img alt="" src=" '.Mage::getModel('catalog/category')->load($_category->getId())->getImageUrl().'"> <strong class="title">' . $this->__($_category->getName()) . '</strong></a></li>';
   endforeach;
   ?>
 </ul>
@@ -191,7 +191,7 @@ $children_category = Mage::getModel('catalog/category')->load('57')->getChildren
 $m=0;
 foreach ($children_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
-echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+echo '<li><a href="' . $_category->getUrl() . '"> ' .$this->__($_category->getName()) . '</a></li>';
 if($m==0){
 echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/men/tshirt.html?styles=22">'.$this->__('Tank Top').'</a></li>';
 }
@@ -206,7 +206,7 @@ $children_category = Mage::getModel('catalog/category')->load('58')->getChildren
 $w=0;
 foreach ($children_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
-echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
 if($w==0){
 echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/women/tshirt.html?styles=22">'.$this->__("Tank Top").'</a></li>';
 }
@@ -271,7 +271,7 @@ echo'class="active"';
 $children_category = Mage::getModel('catalog/category')->load('5')->getChildrenCategories();
 foreach ($children_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
-echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
 endforeach;
 ?>
 </ul>
@@ -287,7 +287,7 @@ $Featured_category = Mage::getModel('catalog/category')->load('5')->getChildrenC
 foreach ($Featured_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
 if ($_category->featured_category == 1) {
-echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $this->__($category->getName()) . '</strong></a></li>';
 }
 endforeach;
 ?>
@@ -314,7 +314,7 @@ echo'class="active"';
 $children_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
 foreach ($children_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
-echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
 endforeach;
 ?>
 </ul>
@@ -330,7 +330,7 @@ $Featured_category = Mage::getModel('catalog/category')->load('54')->getChildren
 foreach ($Featured_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
 if ($_category->featured_category == 1) {
-echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $this->__($category->getName()) . '</strong></a></li>';
 }
 endforeach;
 ?>
