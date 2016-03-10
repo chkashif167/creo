@@ -25,3 +25,4 @@ footer#footer{direction:rtl;}
 .toolbar .sort-by select, .category_top_filters .sort-by select{font-size:12px;}
 #nav .links-area .links{text-align:right;}
 .product-detail .price-area .availability{float:left;}
+.catalog-product-view .text-area .qty-area label{display:block;}
