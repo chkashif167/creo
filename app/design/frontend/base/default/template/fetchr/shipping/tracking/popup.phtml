@@ -1,0 +1,70 @@
+<?php  $_results = $this->getTrackingInfo() ?>
+
+<button class="button" onclick="window.close(); window.opener.focus();"><span><span>Close Window</span></span></button>
+<?php if(sizeof($_results)>0): ?>
+<?php foreach($_results as $shipid => $_result): ?>
+    <?php if($shipid): ?>
+    <div>
+        <h4 class="title"><?php echo $this->__('Shipment #').$shipid; ?></h4>
+    </div>
+    <?php endif; ?>
+    <?php if(sizeof($_result)>0): ?>
+        <?php $rowCount = sizeof($_result); $counter = 1; ?>
+        <?php foreach($_result as $track): ?>
+        <table>
+            <?php if(is_object($track)): ?>
+            <tr>
+                <td><?php echo $this->__('Tracking Number:'); ?></td>
+                <td><?php echo $track->getTracking(); ?></td>
+            </tr>
+            <?php if ($track->getCarrierTitle()): ?>
+            <tr>
+                <td><?php echo $this->__('Carrier:'); ?></td>
+                <td><?php echo $track->getCarrierTitle(); ?></td>
+            </tr>
+            <?php endif; ?>
+              <?php elseif(isset($track['title']) && isset($track['number']) && $track['number']): ?>
+                <!--if the tracking is custom value-->
+
+                 <tr>
+                <td colspan="2">
+		<style>
+		#wrap { width: 600px; height: 560px; padding: 0;
+        overflow: hidden; position:relative;}
+#frame { width: 500px; height: 550px;
+        border: 1px solid black; position:relative; }
+
+</style>
+<div class="row-fluid">
+    <div class="span9" id="standard">
+        <div class="header-box">
+        <p class="header" ><?php echo ($track['title'] ? $track['title'] : $this->__('N/A')); ?> Tracking No : <?php echo (isset($track['number']) ? $track['number'] : ''); ?></p>
+        </div>
+        <div id="wrap">
+    <iframe id="frame" src="http://track.menavip.com/track.php?tracking_number=<?php echo $track['number']; ?>" frameborder="0"></iframe>
+        </div>
+        </div>
+</div>
+
+</td>
+            </tr>
+            <?php endif; ?>
+
+</table>
+
+            <?php if($counter!=$rowCount): ?>
+            <div class="divider"></div>
+            <?php endif; ?>
+            <?php $counter++; ?>
+        <!--end for each tracking information-->
+        <?php endforeach; ?>
+    <?php else: ?>
+        <div><?php echo $this->__('There is no tracking available for this shipment.'); ?></div>
+    <?php endif; ?>
+
+<?php endforeach; ?>
+<?php else: ?>
+    <div><?php echo $this->__('There is no tracking available.'); ?></div>
+<?php endif; ?>
+
+<button class="button" onclick="window.close(); window.opener.focus();"><span><span>Close Window</span></span></button>

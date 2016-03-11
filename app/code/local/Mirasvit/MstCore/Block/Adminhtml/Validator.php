@@ -8,9 +8,9 @@
  * Please refer to http://www.magentocommerce.com for more information.
  *
  * @category  Mirasvit
- * @package   Sphinx Search Ultimate
- * @version   2.3.2
- * @build     1290
+ * @package   Advanced Product Feeds
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -71,6 +71,8 @@ class Mirasvit_MstCore_Block_Adminhtml_Validator extends Mage_Adminhtml_Block_Te
             $module = 'Seo';
         } elseif ($module == 'MCore') {
             $module = 'MstCore';
+        } elseif ($module == 'RMA') {
+            $module = 'Rma';
         }
 
         $file = Mage::getBaseDir().'/app/code/local/Mirasvit/'.$module.'/Helper/Validator.php';

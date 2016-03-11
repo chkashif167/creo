@@ -9,8 +9,8 @@
  *
  * @category  Mirasvit
  * @package   Advanced Product Feeds
- * @version   1.1.2
- * @build     671
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -28,8 +28,8 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Action_Iterator_Rule
     {
         Mage::app()->getStore()->setId(0);
         $collection = Mage::getResourceModel('catalog/product_collection')
-                ->addStoreFilter($this->getFeed()->getStoreId())
-                ->setStoreId($this->getFeed()->getStoreId());
+                ->addStoreFilter($this->getFeed()->getStore())
+                ->setStore($this->getFeed()->getStore());
 
         if ($this->getFeed()->getExportOnlyEnabled()) {
             $collection->addAttributeToFilter('status', Mage_Catalog_Model_Product_Status::STATUS_ENABLED);

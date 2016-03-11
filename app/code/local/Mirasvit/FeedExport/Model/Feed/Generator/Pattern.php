@@ -9,8 +9,8 @@
  *
  * @category  Mirasvit
  * @package   Advanced Product Feeds
- * @version   1.1.2
- * @build     671
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -42,7 +42,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern extends Varien_Object
                 );
             } else {
                 //type B {...}
-                preg_match('/{([^},|]+)([|])?(parent|only_parent|parent_if_empty|grouped|configurable|bundle)?([^}]*)}/', $pattern, $matches);
+                preg_match('/{([^},|]+)([|])?(parent|only_parent|parent_if_empty|grouped|salable_grouped|configurable|bundle)?([^}]*)}/', $pattern, $matches);
                 if (!isset($matches[1])) {
                     return false;
                 }
@@ -73,7 +73,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern extends Varien_Object
 
     public function getPatternValue($content, $scope = null, $obj = null)
     {
-        preg_match_all('/{([^}]+)(\sparent|\sonly_parent|\sparent_if_empty|\sgrouped|\sconfigurable|\sbundle)?([^}]*)}/', $content, $matches);
+        preg_match_all('/{([^}]+)(\sparent|\sonly_parent|\sparent_if_empty|\sgrouped|\ssalable_grouped|\sconfigurable|\sbundle)?([^}]*)}/', $content, $matches);
 
         foreach ($matches[0] as $pattern) {
             $value = false;

@@ -9,23 +9,24 @@
  *
  * @category  Mirasvit
  * @package   Advanced Product Feeds
- * @version   1.1.2
- * @build     671
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
+
 
 
 class Mirasvit_FeedExport_Block_Adminhtml_Feed_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
 {
     const URL_PATH_GENERATE = 'feedexportfront/generate/run';
-    const URL_PATH_STATE    = '*/*/state';
-    const URL_PATH_TEST     = 'feedexportfront/generate/test';
+    const URL_PATH_STATE = '*/*/state';
+    const URL_PATH_TEST = 'feedexportfront/generate/test';
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->_objectId   = 'feed_id';
+        $this->_objectId = 'feed_id';
         $this->_blockGroup = 'feedexport';
         $this->_controller = 'adminhtml_feed';
 
@@ -61,11 +62,11 @@ class Mirasvit_FeedExport_Block_Adminhtml_Feed_Edit extends Mage_Adminhtml_Block
      */
     protected function _addButtons()
     {
-        $feedId      = $this->getModel()->getId();
-        $onclick     = "FeedGenerator.generate('%smode/%s', '%s', %d)";
+        $feedId = $this->getModel()->getId();
+        $onclick = "FeedGenerator.generate('%smode/%s', '%s', %d)";
         $generateUrl = $this->_getUrl(self::URL_PATH_GENERATE);
-        $stateUrl    = $this->_getUrl(self::URL_PATH_STATE);
-        $testUrl     = $this->_getUrl(self::URL_PATH_TEST, array('id' => $this->getModel()->getId(), 'skip' => 'rules'));
+        $stateUrl = $this->_getUrl(self::URL_PATH_STATE);
+        $testUrl = $this->_getUrl(self::URL_PATH_TEST, array('id' => $this->getModel()->getId(), 'skip' => 'rules'));
 
         $this->_addButton('saveandcontinue', array(
             'label'   => __('Save And Continue Edit'),
@@ -74,10 +75,9 @@ class Mirasvit_FeedExport_Block_Adminhtml_Feed_Edit extends Mage_Adminhtml_Block
         ), -100);
 
         $this->_addButton('test', array(
-            'label'     => $this->__('Generate Test Feed'),
-//            'onclick'   => "window.open('" . $testUrl . "', '_blank','width=800,height=700,resizable=1,scrollbars=1');",
-            'onclick'   => "FeedGenerator.generateTest(this, '" . $testUrl . "', false);",
-            'class'     => 'go',
+            'label'   => $this->__('Generate Test Feed'),
+            'onclick' => "FeedGenerator.generateTest(this, '" . $testUrl . "', false);",
+            'class'   => 'go',
         ), -100);
 
         if ($this->getModel()->getGenerator()->getState()->isReady()) {
@@ -111,7 +111,7 @@ class Mirasvit_FeedExport_Block_Adminhtml_Feed_Edit extends Mage_Adminhtml_Block
         }
 
         if (Mage::app()->getRequest()->getParam('generate')) {
-            $this->_formScripts[] = sprintf($onclick, $generateUrl.'', 'new/skip/rules/', $stateUrl, $feedId).";";
+            $this->_formScripts[] = sprintf($onclick, $generateUrl . '', 'new/skip/rules/', $stateUrl, $feedId) . ";";
         }
     }
 
@@ -132,11 +132,7 @@ class Mirasvit_FeedExport_Block_Adminhtml_Feed_Edit extends Mage_Adminhtml_Block
                 $url = $this->getModel()->getStore()->getUrl($urlPath, $options);
                 $parsedUrl = parse_url($url);
                 if ($parsedUrl['host'] != $_SERVER['HTTP_HOST']) {
-                    $defaultStore = Mage::app()
-                        ->getWebsite(true)
-                        ->getDefaultGroup()
-                        ->getDefaultStore();
-                    $url = $defaultStore->getUrl($urlPath, $options);
+                    $url = Mage::helper('adminhtml')->getUrl($urlPath, $options);
                 }
                 break;
 
