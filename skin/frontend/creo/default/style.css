@@ -1733,6 +1733,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	position: relative;
 	padding: 15px 0 0;
 }
+.products-grid .text-area h3{font-size:14px;}
 .products-grid .text-area:after{
 	display: block;
 	clear: both;

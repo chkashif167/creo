@@ -484,14 +484,14 @@ top: 0px;
 }
 .mp_quickview_icon { top: 0;}
 .products-grid li:hover .quick-view { display: none !important;}
-.products-grid li.item .btn-holder {
+.products-grid li.item .btn-holder,.products-grid div.item .btn-holder {
 position:absolute;
 width:100%;
 bottom:100%;
 display:none;
 z-index:9999;
 }
-.products-grid li.item:hover .btn-holder {
+.products-grid li.item:hover .btn-holder,.products-grid div.item:hover .btn-holder {
 display:block;
 }
 .products-list {
