@@ -9,8 +9,8 @@
  *
  * @category  Mirasvit
  * @package   Advanced Product Feeds
- * @version   1.1.2
- * @build     671
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -66,7 +66,11 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Action_Iterator extends Mirasvit_
         if ($this->getFeed()->getGenerator()->getMode() == 'test') {
             if ($ids = Mage::app()->getRequest()->getParam('ids')) {
                 $ids = explode(',', $ids);
-                $collection->addFieldToFilter('entity_id', $ids);
+                if ($this->getType() == 'review') {
+                    $collection->addFieldToFilter('main_table.review_id', $ids);
+                } else {
+                    $collection->addFieldToFilter('entity_id', $ids);
+                }
             } else {
                 $collection->getSelect()
                     ->order(new Zend_Db_Expr('RAND()'))

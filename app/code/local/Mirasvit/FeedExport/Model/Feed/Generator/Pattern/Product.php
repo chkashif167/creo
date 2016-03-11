@@ -9,8 +9,8 @@
  *
  * @category  Mirasvit
  * @package   Advanced Product Feeds
- * @version   1.1.2
- * @build     671
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -35,8 +35,8 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
             $product = $this->getParentProduct($product, true);
         }
 
-        if ($pattern['type'] == 'grouped') {
-            $products = $this->_getChildProducts($product);
+        if (in_array($pattern['type'], array('grouped', 'salable_grouped'))) {
+            $products = $this->_getChildProducts($product, ($pattern['type'] == 'salable_grouped'));
             $values = array();
             $childPattern = $pattern;
             $childPattern['type'] = null;
@@ -152,7 +152,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
                                 'left'
                             );
                         foreach ($childCollection as $child) {
-                            if ($child->getIsSalable()==1) {
+                            if ($child->getIsSalable() == 1) {
                                 $value += $child->getQty();
                             }
                         }
@@ -289,7 +289,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
                     $value = 0;
                     foreach ($collection as $subProduct) {
                         $weight = $subProduct->getWeight();
-                        $qty    = $productQts[$subProduct->getEntityId()];
+                        $qty = $productQts[$subProduct->getEntityId()];
                         intval($qty > 0) ? intval($qty) : 1;
                         $value += $weight * $qty;
                     }
@@ -417,7 +417,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
             if ('image'.$i == $arPattern['key']) {
                 $value = $image['url'];
             }
-            $i++;
+            ++$i;
         }
     }
 
@@ -473,7 +473,6 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
 
                 $this->_prepareProductCategories($obj);
                 $ids = $obj->getCategoryIds();
-                print_r($ids);
                 foreach ($ids as $id) {
                     $map = $mappingCategory->getMappingValue($id);
                     if (null == $map) {
@@ -583,7 +582,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
         return self::$_parentProductsCache[$parentId];
     }
 
-    protected function _getChildProducts($product)
+    protected function _getChildProducts($product, $isOnlySalable = false)
     {
         $connection = Mage::getSingleton('core/resource')->getConnection('read');
         $table = Mage::getSingleton('core/resource')->getTableName('catalog_product_relation');
@@ -599,6 +598,16 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
 
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addFieldToFilter('entity_id', array('in' => $childIds));
+        if ($isOnlySalable) {
+            $collection->addAttributeToFilter('status', Mage_Catalog_Model_Product_Status::STATUS_ENABLED)
+                ->joinField(
+                    'qty',
+                    'cataloginventory/stock_item',
+                    'qty',
+                    'product_id = entity_id',
+                    '{{table}}.is_in_stock = 1 AND {{table}}.qty > 0'
+                );
+        }
 
         return $collection;
     }
@@ -639,7 +648,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
                     $categoryPath[] = $_category->getName();
                     $parentId = $_category->getParentId();
 
-                    $i++;
+                    ++$i;
                     if ($i > 10 || $parentId == 0) {
                         break;
                     }
@@ -682,7 +691,7 @@ class Mirasvit_FeedExport_Model_Feed_Generator_Pattern_Product
                         $categoryPath[] = $_category->getName();
                         $parentId = $_category->getParentId();
 
-                        $i++;
+                        ++$i;
                         if ($i > 10 || $parentId == 0) {
                             break;
                         }

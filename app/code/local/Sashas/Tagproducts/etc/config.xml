@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author		Sashas
+ * @category    Sashas
+ * @package     Sashas_Tagproducts
+ * @copyright   Copyright (c) 2014 Sashas IT Support Inc. (http://www.sashas.org)
+ * @license    http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+ */
+-->
+<config>
+    <modules>
+        <Sashas_Tagproducts>
+            <version>1.0.1</version>
+        </Sashas_Tagproducts>
+    </modules>
+    <global>
+        <models>
+        	<tagproducts>
+        		<class>Sashas_Tagproducts_Model</class>
+        	</tagproducts>
+        </models>    
+        <helpers>
+            <tagproducts>
+                <class>Sashas_Tagproducts_Helper</class>
+            </tagproducts>
+        </helpers>
+        <blocks>
+             <tagproducts>
+                <class>Sashas_Tagproducts_Block</class>
+             </tagproducts>
+        </blocks>
+		<resources>
+			<tagproducts_setup>
+				<setup>
+					<module>Sashas_Tagproducts</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</tagproducts_setup>
+			<tagproducts_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</tagproducts_write>
+			<tagproducts_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</tagproducts_read>
+		</resources>        
+    </global>
+</config> 
