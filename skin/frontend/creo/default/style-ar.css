@@ -16,14 +16,17 @@ footer#footer{direction:rtl;}
 .searchautocomplete .searchautocomplete-placeholder:before,
 #header .basic-open-close ul{right:inherit;left:0;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
-#nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info{float:right;}
+#nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
+.faq-area.return-area .step-col li{float:right;}
 #nav .links-area .sorting-items{margin-left:15px;text-align:right;}
 #footer .column.column1{width:auto;}
 .product-detail .btn-holder button:first-child .span1{margin-left:0;margin-right:10px;}
 .products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
 .category--heading span:before{border-color: transparent #000 transparent #000;border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .toolbar .sort-by select, .category_top_filters .sort-by select{font-size:12px;}
-#nav .links-area .links{text-align:right;}
+#nav .links-area .links,.faq-area .faq-frame.terms .openeer-holder .question{text-align:right;}
 .product-detail .price-area .availability{float:left;}
 .catalog-product-view .text-area .qty-area label{display:block;}
 #last_most_view_box_sub{direction:ltr;}
+.faq-area.return-area .step-col li{margin: 0 0% 0 2%;}
+.faq-area .openeer-holder .question span{padding:0 7px;}

@@ -274,10 +274,7 @@ opacity: 1;
 font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 text-transform: uppercase;
 }
-.product-detail .btn-holder .span2:before {
-content: '\e80d';
-font-family: fontello;
-}
+.product-detail .btn-holder .span2:before {content: '\e80d';font-family: fontello;padding:0 5px;}
 /*cart button ends*/
 /*cart button stars on fancy box*/
 .quickview-index-view .btn-holder button::before {
