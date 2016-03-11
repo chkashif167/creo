@@ -1,5 +1,23 @@
 Release Notes
 -----------------
+===3.2.1===
+- Resolved checkout page issues
+- Product tags and search by tags
+- Product sorting options and functionality
+- Fixed design your own product edit and delete link
+- Fixed images issue in PDF sales receipt
+- Size guide changes
+- Collection attributes images sorting
+- Lightbox product detail
+- Creo Mobile email templates
+- Search on creo mobile
+- Restricting to only those attributes which are assigned to products in menu or men and women 
+- Sorting Images in collection page for men and women
+- Customer who view this also viewed plugin installation and customization
+- Fetchr extension added
+- Product feeds extension added
+- SEO suggested chaanges 70% done
+
 ===3.2.0===
 - Subscription popup finctioanlity modification
 - Snap product custom options creat a function call only for snapbacks
