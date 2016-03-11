@@ -440,12 +440,7 @@ p.style1 {
 	margin: 0 0px 0 0;
 	padding:0px;
 }
-#nav ol > li > a {
-	display: block;
-	padding: 0 12px 5px;
-	position: relative;
-	cursor: pointer;
-}
+#nav ol > li > a {	display: block;padding: 0 10px 5px;font-size:13px;position: relative;cursor: pointer;}
 #nav ol > li a:hover { text-decoration: none; }
 #nav ol > li > a:after {
 	bottom: -2px;
@@ -676,10 +671,7 @@ p.style1 {
 	text-decoration: none;
 	border-color: #000;
 }
-#header .bottom-area {
-	text-align: right;
-	padding:45px 0 0px;
-}
+#header .bottom-area {text-align: right;padding:55px 0 0px;}
 .search-form {
 	margin:0;
 	padding:1px 2px;
@@ -716,6 +708,7 @@ p.style1 {
 }
 .search-form input[type="submit"]:hover { background: url(images/productpage/search.png) no-repeat; }
 #header .login-area {
+	margin:2px;
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
@@ -723,7 +716,7 @@ p.style1 {
 #header .login-area .opener {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0 25px;
+	padding: 0 20px;
 	position: relative;
 	color: #222;
 	font: 12px/19px "Roboto Condensed", Helvetica, Arial, sans-serif;
@@ -736,8 +729,8 @@ p.style1 {
 }
 #header .login-area .opener:before {
 	position: absolute;
-	top: 0;
-	left: 9px;
+	top:0;
+	left:0px;
 	content: '\e808';
 	color: #f16167;
 	font-size: 12px;
@@ -747,15 +740,15 @@ p.style1 {
 	height: 19px;
 }
 #header .login-area .opener:after {
+	font-family: 'fontello';
+	font-size: 8px;
+	line-height: 19px;
+	width: 9px;
+	height: 19px;
 	position: absolute;
-	top: 7px;
-	right: 14px;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 6px 3px 0;
-	border-color: #222 transparent transparent;
-	content: '';
+	top: 0px;
+	right: 5px;
+	content: '\e812';
 }
 #header .login-area ul {
 	margin: 0;
@@ -782,8 +775,9 @@ p.style1 {
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
-	margin: 2px 5px 0 0;
+	margin:0;
 }
+#header .basic-open-close:first-child{margin-right:15px;}
 #header .basic-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
@@ -809,30 +803,28 @@ p.style1 {
 	right: -10px;
 	content: '\e812';
 }
-.opener#select-language{width:auto;height:auto;border:0;font-size:12px;}
+#select-language label{display:inline-block;padding:5px 10px;font-size:12px;text-transform:uppercase;vertical-align: top;margin:0;
+text-align:center;background-color:#000;color:#fff;text-decoration: none;cursor:pointer;}
+#select-language label:hover,#select-language label.selected{background-color:#ef4f61;}
+#select-language label input[type="radio"]{display:none;margin:0;}
+#select-language label.selected{/*display:none;*/}
+
 #header label.lang{margin:0;padding:0;}
 #header .basic-open-close ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	background: #fff;
-	min-width: 99px;
+	min-width:70px;
 	text-align: center;
 	position: absolute;
 	text-transform: uppercase;
 	box-shadow: 0 1px 2px #ccc;
 	font: 10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	right:-70%;
 }
-#header .basic-open-close li a {
-	display: block;
-	color: #666;
-	padding: 5px 10px;
-}
-#header .basic-open-close li a:hover {
-	color: #fff;
-	background: #000;
-	text-decoration: none;
-}
+#header .basic-open-close li a {display:block;color: #666;padding:5px 2px;}
+#header .basic-open-close li a:hover {color: #fff;background: #000;text-decoration: none;}
 /* carousel basic styles */
 .carousel-creo.home {
 	position: relative;
@@ -2219,7 +2211,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	font: 38px/32px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .product-detail .price-area{
-	padding: 10px 50px 10px 0;
+	padding: 10px 0px 10px 0;
 	overflow: hidden;
 	border-width: 1px 0;
 	border-style: solid;

@@ -34,11 +34,13 @@
 <?php if(count($this->getStores())>1): ?>
 <!-- <div class="form-language"> -->
     <!-- <label class="lang" for="select-language"><?php //echo $this->__('Language:') ?></label> -->
-    <select class="opener" id="select-language" title="<?php echo $this->__('Language') ?>" onchange="window.location.href=this.value">
+    <!-- <select class="opener" id="select-language" title="<?php //echo $this->__('Language') ?>" onchange="window.location.href=this.value"> -->
+    <div id="select-language">
     <?php foreach ($this->getStores() as $_lang): ?>
-        <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
-        <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->escapeHtml($_lang->getName()) ?></option>
+        <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' checked="checked"' : '' ?>
+        <?php $_selected2 = ($_lang->getId() == $this->getCurrentStoreId()) ? 'selected' : '' ?>
+        <label class="<?php echo $_selected2; ?>" title="Change Language from here"><input type="radio" name="lang"  onclick="window.location.href=this.value" value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->escapeHtml($_lang->getName()) ?></label>
     <?php endforeach; ?>
-    </select>
+    </div>
 <!-- </div> -->
 <?php endif; ?>

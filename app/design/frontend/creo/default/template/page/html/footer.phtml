@@ -47,32 +47,32 @@
 	<span class="copyright"><?php echo $this->getCopyright() ?></span>
 	</div>
 	<div class="column column1">
-		<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
-		<b class="head"><?php  echo $customer->getTitle(); ?></b>
+	<?php $customer = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('customer_service'); ?>
+		<b class="head"><?php echo $customer->getTitle();?></b>
 		<?php echo $customer->getContent(); ?>
 	</div>
 	<div class="column">
-	<?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
+	<?php $about = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('about_us'); ?>
 	<b class="head"><?php  echo $about->getTitle(); ?></b>
 	<?php echo $about->getContent(); ?>
 	</div>
 	<div class="column">
-		 <?php $acount = Mage::getModel('cms/block')->load('popular_products'); ?>
+		 <?php $acount = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('popular_products'); ?>
 		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<div class="column">
-		 <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
+		 <?php $acount = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('account_footer'); ?>
 		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<div class="column">
-		 <?php $acount = Mage::getModel('cms/block')->load('contact_footer'); ?>
+		 <?php $acount = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('contact_footer'); ?>
 		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<?php /*
-	$paymentlogos = Mage::getModel('cms/block')->load('footer-payment-logos');
+	$paymentlogos = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('footer-payment-logos');
 	$paymentlogos2 = $this->getLayout()->createBlock('cms/block')->setBlockId('footer-payment-logos')->toHtml();
 	if ($paymentlogos2 != '') { ?>
 	<div class="column">

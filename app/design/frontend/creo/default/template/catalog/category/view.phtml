@@ -102,7 +102,7 @@
      </div>
     </div>
  <?php }else{ ?>
-<h1 class="category--heading"><span><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></span></h1>
+<h1 class="category--heading"><span><?php echo $this->__($_helper->categoryAttribute($_category, $_category->getName(), 'name')) ?></span></h1>
 <?php } ?>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 

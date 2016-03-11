@@ -49,12 +49,16 @@
 
 <STORE_creo_ar>
         <reference name="head">
-            <action method="addCss"><stylesheet>css/style-ar.css</stylesheet><params>media="screen"</params></action>
+        	<action method="addCss"><stylesheet>style-ar.css</stylesheet></action>
         </reference>
+<!-- <cms_index_index>
+        <reference name="content">
+	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
+</reference>
+</cms_index_index> -->
 </STORE_creo_ar>
 
 <cms_index_index>
-	
 	<reference name="head">
 	<action method="addCss"><stylesheet>css/auguria/sliders/default.css</stylesheet></action>
 	<!--<action method="addJs"><script>auguria/sliders/jquery-1.7.2.min.js</script></action>-->
@@ -85,26 +89,20 @@
 		</action>
 		</block>
 	</reference>
-	
+
 	<reference name="content">
 	<block type="auguria_sliders/cms_page_slider" name="auguria_sliders" template="auguria/sliders/slider.phtml" before="-"/>
-	
 	</reference>
-	
 	<reference name="content">
 	<block type="cms/block" name="main_content-top">
-      <action method="setBlockId"><block_id>cutomecategories</block_id></action>
-    </block>
-	
-	
+	<action method="setBlockId"><block_id>cutomecategories</block_id></action>
+	</block>
 	<!--<block type="cms/block" name="featuredproducts_mid">
       <action method="setBlockId"><block_id>featuredproducts</block_id></action>
     </block>
-	
-	
+
 	<block type="clarion_featuredproduct/list_list" name="featuredproducts" template="clarion/featuredproduct/list/list.phtml" before="-"/>-->
-	
-	
+
 <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" after="main_content-top">
 <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled"><template>clarion/featuredproduct/list/list.phtml</template></action>
 <action method="setFeaturedPrdoctsOnPage"><page>home_page</page></action>
@@ -115,11 +113,10 @@
 <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
 <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
 </block>
-	
-	
-	<block type="cms/block" name="main_content-bottom">
-      <action method="setBlockId"><block_id>about-area</block_id></action>
-    </block>
+
+<block type="cms/block" name="main_content-bottom">
+<action method="setBlockId"><block_id>about-area</block_id></action>
+</block>
 	<!--<block type="core/template" name="featured_category" template="catalog/category/subcategory.phtml">
 	<action method="setData"><name>category_title</name><value>featured_category</value></action>
 	<action method="setData"><name>category_id</name><value>7</value></action>
@@ -130,7 +127,7 @@
 	<action method="setData"><name>category_title</name><value>style_category</value></action>
 	<action method="setData"><name>category_id</name><value>12</value></action>
 	</block>-->
-	</reference>
+</reference>
 
 </cms_index_index>
  <catalog_category_default>
@@ -337,7 +334,7 @@
     <!-- Change default direction for category with ID 3 -->
     <CATEGORY_3>
         <reference name="product_list">
-            <action method="setDefaultDirection"><dir>desc</dir></action>                                   
+            <action method="setDefaultDirection"><dir>desc</dir></action>
         </reference>
     </CATEGORY_3>
 </layout>
