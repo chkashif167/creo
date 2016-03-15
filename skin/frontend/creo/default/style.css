@@ -1785,6 +1785,7 @@ div.fme-filter dd li{overflow: visible !important;}
 	border-color:  #f16167 transparent transparent;
 	content: '';
 }
+.products-grid .btn-holder a i{padding:0 4px;}
 .products-grid .btn-holder a:first-child:before { display: none; }
 .products-grid .btn-holder a:hover:before { border-color: #000 transparent transparent; }
 .products-grid .btn-holder a:hover {
