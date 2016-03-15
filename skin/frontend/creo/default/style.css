@@ -5080,13 +5080,8 @@ textarea {
 .price-area .price-box{overflow: hidden;}
 .price-area .price-info{float: left;}
 
-#fme_filters_list .cate-open-close {
-	float: none;
-	/*display: inline-block;*/
-	vertical-align: middle;
-	margin: 0 5px 0 0;
-	z-index: 22;
-}
+#fme_filters_list .cate-open-close {float: none;/*display: inline-block;*/vertical-align: middle;margin: 0 5px 0 0;z-index: 22;
+height:auto !important;}
 #fme_filters_list .cate-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
@@ -5676,6 +5671,7 @@ a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underlin
     width: 0;
 }
 /* working area for qaisar end */
+.minicart-wrapper p.empty{margin:0;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
