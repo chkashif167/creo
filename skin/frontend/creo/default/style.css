@@ -5673,6 +5673,7 @@ a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underlin
 }
 /* working area for qaisar end */
 .minicart-wrapper p.empty{margin:0;}
+.auguria-slider-image{max-width:100%;}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
