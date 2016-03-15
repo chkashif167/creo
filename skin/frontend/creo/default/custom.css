@@ -274,10 +274,7 @@ opacity: 1;
 font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 text-transform: uppercase;
 }
-.product-detail .btn-holder .span2:before {
-content: '\e80d';
-font-family: fontello;
-}
+.product-detail .btn-holder .span2:before {content: '\e80d';font-family: fontello;padding:0 5px;}
 /*cart button ends*/
 /*cart button stars on fancy box*/
 .quickview-index-view .btn-holder button::before {
@@ -484,14 +481,14 @@ top: 0px;
 }
 .mp_quickview_icon { top: 0;}
 .products-grid li:hover .quick-view { display: none !important;}
-.products-grid li.item .btn-holder {
+.products-grid li.item .btn-holder,.products-grid div.item .btn-holder {
 position:absolute;
 width:100%;
 bottom:100%;
 display:none;
 z-index:9999;
 }
-.products-grid li.item:hover .btn-holder {
+.products-grid li.item:hover .btn-holder,.products-grid div.item:hover .btn-holder {
 display:block;
 }
 .products-list {

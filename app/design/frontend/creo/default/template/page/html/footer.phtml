@@ -112,54 +112,55 @@ if(msgType=='error-msg'){
 }
 
 jQuery( document ).ready( function($){
-	if(hdata){
+if(hdata){
+	jQuery.confirm({
+	title: msgTitle,
+	confirmButtonClass: 'btn-info',
+	content: hdata, // You can also LOAD the html data using LOAD FROM URL feature,
+	});
+}
 
-		jQuery.confirm({
-			title: msgTitle,
-			confirmButtonClass: 'btn-info',
-			content: hdata, // You can also LOAD the html data using LOAD FROM URL feature,
-
-		});
-	}
-
-	jQuery('#tools-button').find('li').find('a').click(function(){
+jQuery('#tools-button').find('li').find('a').click(function(){
 	setTimeout(function(){
 	jQuery('#tools-button').find('li').find('a').show();
 	},2);
-	});
+});
 
 });
 	autoClose: 'cancel|6000',
 	jQuery(".messages").hide();
 
-	function removeProd(){
-		jQuery.confirm({
-			title: msgTitle,
-			confirmButtonClass: 'btn-info',
-			content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
-			    confirm: function(){
-					return true;
-				}
+function removeProd(){
+	jQuery.confirm({
+		title: msgTitle,
+		confirmButtonClass: 'btn-info',
+		content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
+		    confirm: function(){
+				return true;
+			}
 
-		});
-		}
+	});
+}
 </script>
 <script>
 jQuery(window).load(function(){
     //jQuery('#currentvalue').text('View All');
     var url = window.location.href;
-    var array = url.split('?');
+    var array = url.split('?universal_categories=');
     var paramStr = array[1];
-    var params = paramStr.split("universal_categories=");
-    console.log(params);
+    var params = paramStr;
+    //console.log(params);
     var design = getQueryVar('universal_categories').trim();
-    if(design) {
-        console.log('here1'+design);
-        var currentEl = jQuery("#universal_categories-"+design).text();
-        if(currentEl) {
-            $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentEl+'</a>');
-        }
-    }
+//    console.log(design);
+
+    // if(design) {
+    //     console.log('here1'+design);
+    //     var currentEl = jQuery("#universal_categories-"+design).text();
+    //     if(currentEl) {
+    //         $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentEl+'</a>');
+    //     }
+    // }
+
     //var search2 = getQueryVar('design').toLowerCase();
     //console.log(search2);
     //location.href.replace("design="+design, "design=3araby");
