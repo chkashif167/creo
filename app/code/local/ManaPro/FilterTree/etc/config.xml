@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@category    Mana
+@package     ManaPro_FilterTree
+@copyright   Copyright (c) http://www.manadev.com
+@license     http://www.manadev.com/license  Proprietary License
+ -->
+<config>
+    <!-- This section registers module with Magento system. -->
+    <modules>
+        <ManaPro_FilterTree>
+            <!-- This version number identifies version of database tables specific to this extension. It is written to
+		  	core_resource table.  -->
+            <version>16.01.11.15</version>
+        </ManaPro_FilterTree>
+    </modules>
+    <!-- This section contains module settings which are merged into global configuration during each page load, 
+	each ajax request. -->
+    <global>
+        <!-- This section registers helper classes to be accessible through Mage::helper() method. ManaPro_FilterTree_Helper_Data
+		class is accessible through Mage::helper('manapro_filtertree') call, other ManaPro_FilterTree_Helper_XXX_YYY classes are accessible 
+		through  Mage::helper('manapro_filtertree/xxx_yyy') call. -->
+        <helpers>
+            <manapro_filtertree>
+                <!-- This says that string 'manapro_filtertree' corresponds to ManaPro_FilterTree_Helper pseudo-namespace in 
+				Mage::helper() calls. -->
+                <class>ManaPro_FilterTree_Helper</class>
+            </manapro_filtertree>
+        </helpers>
+        <!-- This section registers block classes ManaPro_FilterTree_Block_XXX_YYY to be accessible through
+            'manapro_filtertree/xxx_yyy' shortcuts. -->
+        <blocks>
+            <!-- This says that string 'manapro_filtertree' corresponds to ManaPro_FilterTree_Block pseudo-namespace. -->
+            <manapro_filtertree>
+                <class>ManaPro_FilterTree_Block</class>
+            </manapro_filtertree>
+            <!-- INSERT HERE: rewrites, ... -->
+        </blocks>
+        <!-- This section registers model classes to be accessible through Mage::getModel('<model type>') and through
+            Mage::getSingleton('<model type>') calls. That is, ManaPro_FilterTree_Model_XXX_YYY classes are accessible as
+            'manapro_filtertree/xxx_yyy' type strings both in getModel() and getSingleton() calls. -->
+        <models>
+            <!-- This says that string 'manapro_filtertree' corresponds to ManaPro_FilterTree_Model pseudo-namespace in
+                getModel() and getSingleton() calls. -->
+            <manapro_filtertree>
+                <class>ManaPro_FilterTree_Model</class>
+            </manapro_filtertree>
+            <!-- INSERT HERE: rewrites, ... -->
+        </models>
+        <!-- INSERT HERE: blocks, models, ... -->
+        <!-- This section registers event handlers of this module defined in ManaPro_FilterTree_Model_Observer with
+            events defined in other module throughout the system. So when some code in other module invokes an event
+            mentioned in this section, handler method of ManaPro_FilterTree_Model_Observer class gets called. -->
+        <events>
+            <controller_action_layout_load_before><!-- this is event name this module listens for -->
+                <observers>
+                    <manapro_filtertree>
+                        <class>manapro_filtertree/observer</class>
+                        <!-- model name of class containing event handler methods -->
+                        <method>beforeLayoutLoad</method>
+                        <!-- event handler method name -->
+                    </manapro_filtertree>
+                </observers>
+            </controller_action_layout_load_before>
+            <controller_action_layout_render_before><!-- this is event name this module listens for -->
+                <observers>
+                    <manapro_filtertree>
+                        <class>manapro_filtertree/observer</class>
+                        <!-- model name of class containing event handler methods -->
+                        <method>beforeLayoutRender</method>
+                        <!-- event handler method name -->
+                    </manapro_filtertree>
+                </observers>
+            </controller_action_layout_render_before>
+        </events>
+    </global>
+    <!-- INSERT HERE: adminhtml, frontend, ... -->
+    <mana_filters>
+        <display><!-- display options for individual filters -->
+            <category>
+                <tree translate="title" module="manapro_filtertree">
+                    <title>Tree</title>
+                    <!-- this one is displayed in admin -->
+                    <block>manapro_filtertree/filter</block>
+                    <model>manapro_filtertree/category</model>
+                    <solr_model>manapro_filtertree/solr_category</solr_model>
+                    <template>manapro/filtertree/tree.phtml</template>
+                    <!-- PHTML to be rendered -->
+                    <sort_order>150</sort_order>
+                    <!-- Position in "Display as" list. The item with least position is the default one. -->
+                </tree>
+                <subtree translate="title" module="manapro_filtertree">
+                    <title>Tree (2nd level and down)</title>
+                    <!-- this one is displayed in admin -->
+                    <block>manapro_filtertree/filter</block>
+                    <model>manapro_filtertree/subtree</model>
+                    <solr_model>manapro_filtertree/solr_subtree</solr_model>
+                    <template>manapro/filtertree/tree.phtml</template>
+                    <!-- PHTML to be rendered -->
+                    <sort_order>150</sort_order>
+                    <!-- Position in "Display as" list. The item with least position is the default one. -->
+                </subtree>
+				<parents_children translate="title" module="mana_filters">
+					<title>Parents and Children (One Item Can Be Selected At A Time)</title><!-- this one is displayed in admin -->
+					<block>mana_filters/filter</block>
+					<model>manapro_filtertree/parentsChildren</model>
+					<solr_model>mana_filters/solr_category</solr_model>
+					<template>manapro/filtertree/parents-children.phtml</template><!-- PHTML to be rendered -->
+					<sort_order>100</sort_order><!-- Position in "Display as" list. The item with least position is the default one. -->
+                    <popup_class>Mana/LayeredNavigation/Popup/Standard</popup_class>
+                </parents_children>
+            </category>
+        </display>
+    </mana_filters>
+    <!-- This section enables static visual changes in admin area. -->
+    <adminhtml>
+        <!-- This section registers additional translation file with our module-specific strings to be loaded -->
+        <translate>
+            <modules>
+                <ManaPro_FilterTree>
+                    <files>
+                        <default>ManaPro_FilterTree.csv</default>
+                    </files>
+                </ManaPro_FilterTree>
+            </modules>
+        </translate>
+        <!-- This section registers additional layout XML file with our module-specific layout changes to be loaded
+            and executes during page rendering. -->
+        <layout>
+            <updates>
+                <manapro_filtertree>
+                    <file>manapro_filtertree.xml</file>
+                </manapro_filtertree>
+            </updates>
+        </layout>
+    </adminhtml>
+    <!-- This section enables static visual changes in frontend area. -->
+    <frontend>
+        <!-- This section registers additional layout XML file with our module-specific layout changes to be loaded
+            and executes during page rendering. -->
+        <layout>
+            <updates>
+                <manapro_filtertree>
+                    <file>manapro_filtertree.xml</file>
+                </manapro_filtertree>
+            </updates>
+        </layout>
+        <routers>
+            <manapro_filtertree>
+                <use>standard</use>
+                <args>
+                    <module>ManaPro_FilterTree</module>
+                    <frontName>m-filter-tree</frontName>
+                </args>
+            </manapro_filtertree>
+        </routers>
+    </frontend>
+    <default>
+        <mana>
+            <message>
+                <make_all_categories_anchor_for_tree_filter>1</make_all_categories_anchor_for_tree_filter>
+            </message>
+        </mana>
+        <mana_filters>
+            <tree>
+                <expand_selected>1</expand_selected>
+            </tree>
+            <parents_children>
+                <show_siblings_of_deepest_subcategory>1</show_siblings_of_deepest_subcategory>
+            </parents_children>
+        </mana_filters>
+    </default>
+</config>
