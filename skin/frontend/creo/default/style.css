@@ -5269,7 +5269,7 @@ dl {margin: 0 0 10px;}
 	content: "";
 	height: 4px;
 	left: -7px;
-	right: 5px;
+	right:6px;
 	position: absolute;
 	border-bottom: 1px solid #eee;
 	transform: skewX(-30deg);

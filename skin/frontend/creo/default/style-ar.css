@@ -34,7 +34,7 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .order-details-table th:first-child{text-align:center;}
 .product-detail .price-area .availability{float:left;}
 .catalog-product-view .text-area .qty-area label{display:block;}
-#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links{direction:ltr;}
+#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.cart-top-area{direction:ltr;}
 .faq-area.return-area .step-col li,.form-holder .form-frame{margin: 0 0% 0 2%;}
 .faq-area .faq-frame .open-close2{margin:0 0 18px 2%;}
 .faq-area .openeer-holder .question span{padding:0 7px;}
@@ -47,3 +47,4 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 white-space:nowrap;}
 .cart-btn-area .btn-holder .button2 .span2, .cart-btn-area .btn-holder .button2:first-child .span2{padding-left:25px;}
 #header .login-area .opener{white-space:nowrap;}
+#header .cart .opener .count{left:inherit;right:15px;}

@@ -272,7 +272,7 @@ a.alignleft.checkout-items {
     color: #fff;
     padding: 10px 20px;
 }
-
+.search_mini_form .button{background:rgba(0, 0, 0, 0) url("images/productpage/search.png") no-repeat center;padding:0;}
 /*....... Integration-Starts.........*/
 
 .form-header {
