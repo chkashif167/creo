@@ -16,14 +16,9 @@
     transform: skewX(-18deg);
     display: inline-block;
     min-width: 214px;
-    padding: 4px 17px;	
+    padding: 4px 17px;
 }
-
-.checkout-form-headings h1 .re-skewed {
-    transform: skewX(18deg);
-    display: inline-block;
-}
-
+.checkout-form-headings h1 .re-skewed {transform: skewX(18deg);display:block;}
 .checkout-form .form-group label {
     display: block;
     font-weight: normal;
