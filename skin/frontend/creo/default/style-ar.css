@@ -25,7 +25,8 @@ footer#footer{direction:rtl;}
 .category--heading span:before,.shipping-methods h3 span:before, #last_most_view_title > h3 span:before{
 border-color: transparent #000 transparent #000;border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .toolbar .sort-by select, .category_top_filters .sort-by select{font-size:12px;}
-#nav .links-area .links,.faq-area .faq-frame.terms .openeer-holder .question{text-align:right;}
+#nav .links-area .links,.faq-area .faq-frame.terms .openeer-holder .question,
+.shipping-methods h3, #last_most_view_title > h3{text-align:right;}
 .product-detail .price-area .availability{float:left;}
 .catalog-product-view .text-area .qty-area label{display:block;}
 #last_most_view_box_sub{direction:ltr;}
