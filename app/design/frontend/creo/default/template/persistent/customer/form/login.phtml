@@ -42,16 +42,14 @@
         </nav>
     </div>
 </div>
-<div class="row">
-<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h2 class="form-header"><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
+<h2 class="form-header"><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
                 <?php echo $this->__('Login or Create an Account') ?>
             <?php else: ?>
                 <?php echo $this->__('Login'); ?>
             <?php endif; ?></h2>
-	
+<div class="row">
 <?php echo $this->getMessagesBlock()->toHtml() ?>
-  <div class="form-holder login-sec col-sm-6 no-padding-left">
+  <div class="form-holder login-sec col-sm-6">
    <div class="form-frame">
     
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="scaffold-form">
@@ -98,7 +96,7 @@
                  <?php /*?><a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a><?php */?>
                  
                 <div class="submit-holder btn-holder">
-                <button type="button" class="pull-left" onclick="window.location.href='<?php echo $this->getForgotPasswordUrl() ?>'"><span class="span1"><span class="span2">Forgot password?</span></span></button>
+                <button type="button" class="pull-left" onclick="window.location.href='<?php echo $this->getForgotPasswordUrl() ?>'"><span class="span1"><span class="span2"><?php echo $this->__('Forgot password?'); ?></span></span></button>
                     <button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
                 </div>
 

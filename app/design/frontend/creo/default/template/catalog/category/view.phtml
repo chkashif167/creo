@@ -74,12 +74,12 @@
 
 
 <div class="row">
-<div class="col-xs-12 top-black-bar"><p>All designs are available on Round Neck T-Shirt, V Neck T-Shirt and Tank Tops.</p></div>
+<div class="col-xs-12 top-black-bar"><p><?php echo $this->__('All designs are available on Round Neck T-Shirt, V Neck T-Shirt and Tank Tops.'); ?></p></div>
 <div class="col heading-area col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
         <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
     <?php endif; ?>
-    <h2><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h2>
+    <h2><?php echo $this->__($_helper->categoryAttribute($_category, $_category->getName(), 'name')); ?></h2>
 <span class="results-description">Showing 1–12 of 100 results</span>
 </div>
 </div>
@@ -89,12 +89,12 @@
     <div class="category-description std category-banner clearfix">
     <div class="row">
     <div class="col-xs-8">
-    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+    <h1><?php echo $this->__($_helper->categoryAttribute($_category, $_category->getName(), 'name')); ?></h1>
         <p><?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></p>
-         <a href="#">FLAG MASK</a>
-         <a href="#">COCO</a>
-         <a href="#">FLORAL</a>
-         <a href="#">HIPSTER</a>
+         <a href="#"><?php echo $this->__('FLAG MASK'); ?></a>
+         <a href="#"><?php echo $this->__('COCO'); ?></a>
+         <a href="#"><?php echo $this->__('FLORAL'); ?></a>
+         <a href="#"><?php echo $this->__('HIPSTER'); ?></a>
      </div>
      <div class="col-sm-4" align="right">
      <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$categoryImage  ?>" />

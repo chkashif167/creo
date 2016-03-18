@@ -16,14 +16,9 @@
     transform: skewX(-18deg);
     display: inline-block;
     min-width: 214px;
-    padding: 4px 17px;	
+    padding: 4px 17px;
 }
-
-.checkout-form-headings h1 .re-skewed {
-    transform: skewX(18deg);
-    display: inline-block;
-}
-
+.checkout-form-headings h1 .re-skewed {transform: skewX(18deg);display:block;}
 .checkout-form .form-group label {
     display: block;
     font-weight: normal;
@@ -277,7 +272,7 @@ a.alignleft.checkout-items {
     color: #fff;
     padding: 10px 20px;
 }
-
+.search_mini_form .button{background:rgba(0, 0, 0, 0) url("images/productpage/search.png") no-repeat center;padding:0;}
 /*....... Integration-Starts.........*/
 
 .form-header {

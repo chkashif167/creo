@@ -70,19 +70,19 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
   <div class="modal-dialog modal-lg">
     <div class="modal-content block-subscribe normal-modal">
       <div class="modal-body">
-        <img src="<?php echo $this->getSkinUrl('/images/get-hooked-up-text.png') ?>" title="Get Hooked Up" alt="Get Hooked Up" style="max-width:100%;">
-        <p class="big">Subscribe  and  get <big>20%</big>  OFF  on  your  first  purchase</p>
+        <img src="<?php echo $this->getSkinUrl('/images/get-hooked-up-text.png') ?>" title="<?php echo $this->__('Get Hooked Up'); ?>" alt="<?php echo $this->__('Get Hooked Up'); ?>" style="max-width:100%;">
+        <p class="big"><?php echo $this->__('Subscribe and get <big>20%</big> OFF on your first purchase'); ?></p>
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
           <div class="block-content">
             <div class="input-box">
-              <input required="required" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" placeholder="Email " class="input-text required-entry validate-email email"  />
+              <input required="required" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" placeholder="<?php echo $this->__('Email'); ?> " class="input-text required-entry validate-email email"  />
             </div>
             <div class="actions">
               <button type="submit" title="<?php echo $this->__('GET MY 20% OFF NOW') ?>" class="button newslettersubscribe off"><span><span><?php echo $this->__('GET MY 20% OFF NOW') ?></span></span></button>
             </div>
             <div class="dontshowagain" onclick="checkcookie()">
               <input type="checkbox" value="" name="checkbox1" id="checkbox1">
-              <label for="checkbox1">Don’t show this popup again</label>
+              <label for="checkbox1"><?php echo $this->__('Don’t show this popup again'); ?></label>
             </div>
           </div>
         </form>
@@ -101,7 +101,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     </style>
     <?php */ ?>
       </div>
-    <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">SKIP</span></button>
+    <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><?php echo $this->__('SKIP'); ?></span></button>
     </div>
   </div>
 </div>
