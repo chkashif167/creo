@@ -30,6 +30,34 @@
  *
  * @see Mage_Catalog_Block_Product_List
  */
+
+function slugify($text)
+{
+  // replace non letter or digits by -
+  $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+  // transliterate
+  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+  // remove unwanted characters
+  $text = preg_replace('~[^-\w]+~', '', $text);
+
+  // trim
+  $text = trim($text, '-');
+
+  // remove duplicate -
+  $text = preg_replace('~-+~', '-', $text);
+
+  // lowercase
+  $text = strtolower($text);
+
+  if (empty($text))
+  {
+    return 'n-a';
+  }
+
+  return $text;
+}
 ?>
 <div class="row">
 <div class="col-xs-12">
@@ -52,9 +80,12 @@ $_attrbiuteCollection = $this->getLoadedAttributeCollection();
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
             <?php if ($a['value']): ?>
-                <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=".$a['value']."" ?>"><?php echo $this->__($a['label']); ?></a>
-            <?php else: ?>
-            <a  class="fme_layered_clearall _selected_" href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>"><?php echo $this->__('View All'); ?></a>
+
+                <a href="<?php echo Mage::getBaseUrl().'clothing/'.slugify($attr->getSource()->getOptionText($a)).'.html';//Mage::getBaseUrl() . "clothing.html?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
+            <?php else: 
+			?>
+            <a  class="fme_layered_clearall _selected_" href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a>
+
             <?php endif; ?>
         </li>
     <?php endforeach ?>

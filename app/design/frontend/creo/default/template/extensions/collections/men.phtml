@@ -30,6 +30,35 @@
  *
  * @see Mage_Catalog_Block_Product_List
  */
+
+
+function slugify($text)
+{
+  // replace non letter or digits by -
+  $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+  // transliterate
+  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+  // remove unwanted characters
+  $text = preg_replace('~[^-\w]+~', '', $text);
+
+  // trim
+  $text = trim($text, '-');
+
+  // remove duplicate -
+  $text = preg_replace('~-+~', '-', $text);
+
+  // lowercase
+  $text = strtolower($text);
+
+  if (empty($text))
+  {
+    return 'n-a';
+  }
+
+  return $text;
+}
 ?>
 
 <div class="row">
@@ -64,7 +93,11 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 </li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
-        <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a."" ?>"><?php echo $this->__($attr->getSource()->getOptionText($a)); ?></a>
+
+
+                <a href="<?php echo Mage::getBaseUrl().'clothing/men/'.slugify($attr->getSource()->getOptionText($a)).'.html';//Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
+                        
+
         </li>
     <?php endforeach ?>
 
