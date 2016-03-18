@@ -140,7 +140,20 @@ if($_product->stock_item->is_in_stock == 0){
         <p><?php print $this->__($_product->getDesign()); ?> </p>
     </div>
 </div>
-<a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span><?php echo $this->__('SIZE GUIDE'); ?>
+<?php
+            $gender = $_product->getGender();
+            if ($gender == 24) { ?>
+            <a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span><?php echo $this->__('SIZE GUIDE'); ?>
+            <?php
+            } elseif ($gender == 25) {
+                //echo "Women";
+                ?>
+        <a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span><?php echo $this->__('SIZE GUIDE'); ?>
+            <?php
+            } else {
+                echo " ";
+            }
+            ?>
 <?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a>
 <!-- Modal -->
 <div class="modal fade" id="sizeGuide" tabindex="-1" role="dialog">
