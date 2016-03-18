@@ -5279,8 +5279,8 @@ dl {margin: 0 0 10px;}
 	-webkit-transform: skewX(-30deg);
 }
 #nav ol > li.active:last-child > a:before, #nav ol > li:last-child:hover > a:before{
-	left: -7px;
-	right: 6px;
+	left:-7px;
+	right:6px;
 	background: #000;
 	border: none;
 	height: 5px;
