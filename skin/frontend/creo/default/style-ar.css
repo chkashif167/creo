@@ -18,7 +18,7 @@ footer#footer{direction:rtl;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
 #nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
-.checkoutShippingMethod ul li label{float:right;}
+.checkoutShippingMethod ul li label,.product-detail .price-area .price{float:right;}
 #nav .links-area .sorting-items{margin-left:15px;text-align:right;}
 #footer .column.column1{width:auto;}
 .product-detail .btn-holder button:first-child .span1{margin-left:0;margin-right:10px;}
@@ -42,9 +42,11 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .product-area .cancel,.product-area .edit{right:inherit;left:10%;}
 .cart-bottom-area .btn-holder a:first-child .span1,.cart-bottom-area .btn-holder a:first-child .span2{-webkit-transform: skewX(0deg);
 -moz-transform: skewX(0deg);-ms-transform: skewX(0deg);-o-transform: skewX(0deg);transform: skewX(0deg);}
-.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select{padding-right:30px;}
+.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory{
+padding-right:30px;}
 #checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load .paymentradiobuttonlabel{float:none;
 white-space:nowrap;}
 .cart-btn-area .btn-holder .button2 .span2, .cart-btn-area .btn-holder .button2:first-child .span2{padding-left:25px;}
 #header .login-area .opener{white-space:nowrap;}
 #header .cart .opener .count{left:inherit;right:15px;}
+.pdc-design-view .edit-tools{left:0;}
