@@ -115,7 +115,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
           <div class="footer_newsletter">
             <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email email" placeholder="<?php echo $this->__('Email Address') ?>" />
             </div>
-            <input type="submit" value="JOIN" class="button newslettersubscribe ">
+            <input type="submit" value="<?php echo $this->__('JOIN'); ?>" class="button newslettersubscribe ">
           </div>
 
         </form>
