@@ -30,7 +30,8 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .tab-content2 .dark-heading span:before,.three-column h3 span:before{border-width:20px 6px 0 0px;}
 .toolbar .sort-by select, .category_top_filters .sort-by select{font-size:12px;}
 #nav .links-area .links,.faq-area .faq-frame.terms .openeer-holder .question,
-.shipping-methods h3, #last_most_view_title > h3,.faq-area h3,.tab-content2 .dark-heading,.three-column h3{text-align:right;}
+.shipping-methods h3, #last_most_view_title > h3,.faq-area h3,.tab-content2 .dark-heading,.three-column h3,
+#savePopup .form-horizontal .form-group p{text-align:right;}
 .order-details-table th:first-child{text-align:center;}
 .product-detail .price-area .availability{float:left;}
 .catalog-product-view .text-area .qty-area label{display:block;}
@@ -50,3 +51,4 @@ white-space:nowrap;}
 #header .login-area .opener{white-space:nowrap;}
 #header .cart .opener .count{left:inherit;right:15px;}
 .pdc-design-view .edit-tools{left:0;}
+.layer-final label{float:right;white-space:nowrap;}
