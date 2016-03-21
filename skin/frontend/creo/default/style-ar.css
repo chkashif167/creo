@@ -53,3 +53,12 @@ white-space:nowrap;}
 .pdc-design-view .edit-tools{left:0;}
 .layer-final label{float:right !important;white-space:nowrap;}
 #product-options-wrapper{width:84%;}
+
+@media only screen and (max-width: 1199px){
+
+}
+@media only screen and (max-width: 991px){
+#header{margin-bottom:0;}
+.search-form{right:inherit;left:0;top: 20px;}
+a.headerLogin{margin:5px 0;}
+}

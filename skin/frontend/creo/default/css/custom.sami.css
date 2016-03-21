@@ -627,3 +627,6 @@ div.fme-filter a.fme_layered_attribute {
 	margin: 0;
 }
 .footer_newsletter .validation-advice { float: left;}
+@media only screen and (max-width: 1199px) {
+.breadcrumb1{margin-top: 0;}
+}

@@ -5677,7 +5677,10 @@ a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underlin
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
-	.search-form{width: 130px;}
+	.search-form{width: 130px;margin: -60px 0 0;}
+	.breadcrumb1{margin-top:0;}
+	#header .bottom-area{padding:44px 0 0;}
+	#header{margin-bottom:0;}
 	.search-form input[type="text"]{width: 99px;}
 	.dark-box .box { height: 280px; }
 	#footer .copyright {
@@ -5721,7 +5724,7 @@ a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underlin
 	.products-grid .btn-holder a:first-child .span1{padding: 0 5px 0 0;}
 	.products-grid .btn-holder a:first-child{width: 24%;}
 	.products-grid .btn-holder a{width: 74%;}
-	#nav .links-area{width: 40%;}
+	#nav .links-area{/*width: 40%;*/ text-align:center;}
 	#nav ol > li{margin: 0 4px 0 0;}
 	#nav ol > li > a {padding: 0 8px 5px;}
 	.products-grid .mp_quickview_icon{top: 260px !important;}
@@ -5742,12 +5745,7 @@ a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underlin
 	#nav ol > li > a { padding: 3px 6px 7px; }
 	#nav ol > li.active a::before,
 	#nav ol > li:hover a::before { height: 4px; }
-	.search-form {
-		border-width: 1px;
-		position: absolute;
-		right: 0;
-		top: 10px;
-	}
+	.search-form {border-width: 1px;position: absolute;right: 0;top: 20px;margin-top:-5px;}
 	#header .bottom-area { position: relative; }
 	.dark-box .box { height: 320px; }
 	#footer .logo { margin: 0; }
