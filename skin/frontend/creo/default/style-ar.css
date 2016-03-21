@@ -48,8 +48,8 @@ padding-right:30px;}
 #checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load .paymentradiobuttonlabel{float:none;
 white-space:nowrap;}
 .cart-btn-area .btn-holder .button2 .span2, .cart-btn-area .btn-holder .button2:first-child .span2{padding-left:25px;}
-#header .login-area .opener,.options-area label,h3.item-title{white-space:nowrap;}
+#header .login-area .opener,.options-area label,h3.item-title,.breadcrumb1 li{white-space:nowrap;}
 #header .cart .opener .count{left:inherit;right:15px;}
 .pdc-design-view .edit-tools{left:0;}
-.layer-final label{float:right;white-space:nowrap;}
+.layer-final label{float:right !important;white-space:nowrap;}
 #product-options-wrapper{width:84%;}
