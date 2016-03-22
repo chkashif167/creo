@@ -244,7 +244,7 @@ $Featured_category = Mage::getModel('catalog/category')->load('57')->getChildren
 foreach ($Featured_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
 if ($_category->featured_category == 1) {
-echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $this->__($category->getName()) . '</strong></a></li>';
 }
 endforeach;
 ?>

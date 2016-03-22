@@ -53,6 +53,7 @@ white-space:nowrap;}
 .pdc-design-view .edit-tools{left:0;}
 .layer-final label{float:right !important;white-space:nowrap;}
 #product-options-wrapper{width:84%;}
+.breadcrumb1 li{float: right;margin: 0 0 0 45px;}
 
 @media only screen and (max-width: 1199px){
 
