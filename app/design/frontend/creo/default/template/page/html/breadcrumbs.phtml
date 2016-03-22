@@ -38,7 +38,7 @@
             <?php elseif($_crumbInfo['last']): ?>
 	<?php
 		$currentUrl = Mage::helper('core/url')->getCurrentUrl();
-		$label = $this->escapeHtml($_crumbInfo['label']);
+		$label = $this->__($this->escapeHtml($_crumbInfo['label']));
 	 	echo $this->__(Mage::helper('functions/data')->updateBreadcrumbs($currentUrl, $label));
 	?>
             <?php else: ?>
