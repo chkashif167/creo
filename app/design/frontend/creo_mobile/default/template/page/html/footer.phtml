@@ -41,7 +41,7 @@ echo $this->getChildHtml() ?>
 	</form>
 	</div> -->
 <div class="center-area footer_navigation">
-<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
+<?php $customer = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('customer_service'); ?>
  <div class="panel-group" id="footer-accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -55,7 +55,7 @@ echo $this->getChildHtml() ?>
     </div>
 
     <div class="panel panel-default">
-    <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
+    <?php $acount = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('account_footer'); ?>
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse8"><?php  echo $acount->getTitle(); ?></a>
@@ -67,7 +67,7 @@ echo $this->getChildHtml() ?>
     </div>
 
 <div class="panel panel-default">
-<?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
+<?php $about = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('about_us'); ?>
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" aria-expanded="false" data-parent="#footer-accordion" href="#collapse9">
@@ -79,7 +79,7 @@ echo $this->getChildHtml() ?>
       </div>
     </div>
 <?php
-$paymentlogos = Mage::getModel('cms/block')->load('footer-payment-logos');
+$paymentlogos = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('footer-payment-logos');
 $paymentlogos2 = $this->getLayout()->createBlock('cms/block')->setBlockId('footer-payment-logos')->toHtml();
 if ($paymentlogos2 != '') { ?>
 <div class="panel panel-default">
@@ -103,7 +103,7 @@ if ($paymentlogos2 != '') { ?>
 </div></div>
 </div>
 </footer>
-<div class="footer_termsconditions"> Terms & conditions @ creo-room </div>
+<div class="footer_termsconditions"><?php echo $this->__($this->getCopyright()); ?></div>
        <?php // echo $this->getCopyright()
 	   // check if user is logged in and already subscribed.
 		$customerEmail = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
@@ -119,11 +119,10 @@ var hdata ='';
 var hdata = jQuery(".messages li:first").text();
 var msgType = jQuery(".messages>li").attr("class");
 if(msgType=='error-msg'){
-	var msgTitle = 'Error';	
+	var msgTitle = "<?php echo $this->__('Error'); ?>";
 }else{
-	var msgTitle = 'Success';	
+	var msgTitle = "<?php echo $this->__('Success'); ?>";
 }
-			
 jQuery( document ).ready( function($){
 	if(hdata){
 
@@ -144,16 +143,15 @@ jQuery( document ).ready( function($){
 });
 	autoClose: 'cancel|6000',
 	jQuery(".messages").hide();
-	
+
 	function removeProd(){
 		jQuery.confirm({
 			title: msgTitle,
 			confirmButtonClass: 'btn-info',
-			content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
+			content: '<?php echo $this->__("Are you sure you would like to remove this item from the shopping cart?"); ?>', // You can also LOAD the html data using LOAD FROM URL feature,
 			    confirm: function(){
 					return true;
 				}
-			
 		});
 		}
 </script>
