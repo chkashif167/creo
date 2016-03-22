@@ -44,7 +44,7 @@
 	<div class="left-area">
 	<div class="logo-holder">
 	<strong class="logo"><a href="#"><img alt="CREO" src="<?php echo $this->getSkinUrl() ?>/images/logo02.png"></a></strong>
-	<span class="copyright"><?php echo $this->getCopyright() ?></span>
+	<span class="copyright"><?php echo $this->__($this->getCopyright()); ?></span>
 	</div>
 	<div class="column column1">
 	<?php $customer = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('customer_service'); ?>
@@ -106,9 +106,9 @@ var hdata ='';
 var hdata = jQuery(".messages li:first").text();
 var msgType = jQuery(".messages>li").attr("class");
 if(msgType=='error-msg'){
-	var msgTitle = 'Error';
+	var msgTitle = "<?php echo $this->__('Error'); ?>";
 }else{
-	var msgTitle = 'Success';
+	var msgTitle = "<?php echo $this->__('Success'); ?>";
 }
 
 jQuery( document ).ready( function($){
@@ -134,7 +134,7 @@ function removeProd(){
 	jQuery.confirm({
 		title: msgTitle,
 		confirmButtonClass: 'btn-info',
-		content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
+		content: "<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?'); ?>", // You can also LOAD the html data using LOAD FROM URL feature,
 		    confirm: function(){
 				return true;
 			}
