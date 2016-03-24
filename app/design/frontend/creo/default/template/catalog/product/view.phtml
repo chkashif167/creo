@@ -451,12 +451,9 @@ if($_product->stock_item->is_in_stock == 0){
             top: 45%;
             z-index: 900;
         }
-    </style>
-    
-    
-    
-<script type="application/javascript">    
-    //Get associated product price
+</style>
+<script type="application/javascript">
+//Get associated product price
 <?php if($_product->isConfigurable()):?>
 function isValidPrice(price)
 {

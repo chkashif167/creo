@@ -14,7 +14,7 @@ footer#footer{direction:rtl;}
 #header .header-icons{right:inherit;left:112px;}
 #header .cart .slide,.searchautocomplete .searchautocomplete-placeholder,
 .searchautocomplete .searchautocomplete-placeholder:before,
-#header .basic-open-close ul,.tab-content2 .column-content .edit-icon{right:inherit;left:0;}
+#header .basic-open-close ul,.tab-content2 .column-content .edit-icon,.owl-theme .owl-controls{right:inherit;left:0;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
 #nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
@@ -54,6 +54,8 @@ white-space:nowrap;}
 .layer-final label{float:right !important;white-space:nowrap;}
 #product-options-wrapper{width:84%;}
 .breadcrumb1 li{float: right;margin: 0 0 0 45px;}
+.icon-angle-left:before{content: '\e810';}
+.icon-angle-right:before{content: '\e80f';}
 
 @media only screen and (max-width: 1199px){
 
