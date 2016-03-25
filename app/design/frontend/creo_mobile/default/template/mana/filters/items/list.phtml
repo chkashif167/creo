@@ -19,7 +19,7 @@
 $labels = str_replace(' ', '_',strtolower($this->getFilterOptions()->name));
 $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 ?>
-<div class="cate-open-close label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
+<div <?php if(strpos($currentUrl,'custom') !== false){ ?> id="onlycrazy"<?php }?> class="cate-open-close label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
 <?php 
 if($labels == 'design_category'){
 	if(strpos($currentUrl,'custom') !== false){
@@ -54,6 +54,7 @@ if($labels == 'design_category'){$catName = 'View All';}
 	<?php
 	}
 	?>
+
 	<?php foreach ($this->getItems() as $_item): ?>
 		<li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
 			<?php // MANA BEGIN ?>
@@ -72,6 +73,7 @@ if($labels == 'design_category'){$catName = 'View All';}
 		</li>
 	<?php endforeach ?>
 	</ul>
+
 	<?php
 	}
 }elseif($labels == 'gender'){
@@ -175,4 +177,5 @@ if($labels == 'design_category'){
 }
 ?>
 </div>
+
 <?php echo Mage::helper('mana_core')->getNamedHtml('mana_filters/markup', 'after_items', array('block' => $this)) ?>

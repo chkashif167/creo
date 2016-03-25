@@ -18,7 +18,7 @@ footer#footer{direction:rtl;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
 #nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
-.checkoutShippingMethod ul li label,.product-detail .price-area .price,#bill_form label, #ship_form label{float:right;}
+.checkoutShippingMethod ul li label,.product-detail .price-area .price{float:right;}
 #nav .links-area .sorting-items{margin-left:15px;text-align:right;}
 #footer .column.column1{width:auto;}
 .product-detail .btn-holder button:first-child .span1{margin-left:0;margin-right:10px;}
@@ -58,12 +58,5 @@ white-space:nowrap;}
 .icon-angle-right:before{content: '\e80f';}
 .design_categories_attributes ul li{margin:0 0% 1% 1%;}
 .design_categories_attributes ul li:nth-child(4n){margin-left:0;}
-
-@media only screen and (max-width: 1199px){
-
-}
-@media only screen and (max-width: 991px){
-#header{margin-bottom:0;}
-.search-form{right:inherit;left:0;top: 20px;}
-a.headerLogin{margin:5px 0;}
-}
+.footer_navigation .panel-heading .panel-title, .footer_navigation .panel-heading .panel-title a,
+.footer_navigation .panel-group .panel .panel-collapse ul{padding-right:10px;}
