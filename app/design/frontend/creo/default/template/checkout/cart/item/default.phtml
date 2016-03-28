@@ -33,9 +33,9 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     <td class="product-cart-image">
     <div class="text-area">
         <?php if ($this->hasProductUrl()):?>
-            <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image alignleft">
+            <a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->__($this->escapeHtml($this->getProductName())); ?>" class="product-image alignleft">
         <?php endif;?>
-            <img src="<?php echo $this->getProductThumbnail()->resize(100); ?>" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" />
+            <img src="<?php echo $this->getProductThumbnail()->resize(100); ?>" alt="<?php echo $this->__($this->escapeHtml($this->getProductName())); ?>" />
         <?php if ($this->hasProductUrl()):?>
             </a>
         <?php endif;?>
@@ -55,9 +55,9 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
         <h3 class="product-name">
         <?php if ($this->hasProductUrl()):?>
-            <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->escapeHtml($this->getProductName()) ?></a>
+            <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->__($this->escapeHtml($this->getProductName())); ?></a>
         <?php else: ?>
-            <?php echo $this->escapeHtml($this->getProductName()) ?>
+            <?php echo $this->__($this->escapeHtml($this->getProductName())); ?>
         <?php endif; ?>
         </h3>
         <?php if ($isVisibleProduct): ?>
