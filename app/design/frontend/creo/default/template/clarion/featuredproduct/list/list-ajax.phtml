@@ -11,7 +11,7 @@
 <?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
 <table border="0" id="featured-product-list-table1">
     <tr>
-        <td><h2 class="title"><?php echo $this->getBlockTitle(); ?></h2></td><td class="previousnext"> <?php echo $this->getPager() ?></td>
+        <td><h2 class="title"><?php echo $this->__($this->getBlockTitle()); ?></h2></td><td class="previousnext"> <?php echo $this->getPager() ?></td>
     </tr>
     <!-- For layout dependent Columns -->
     <?php $layoutDepColCount = $this->getLayoutDependColumnCount();?>
@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td>
-                             <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></h3>
+                             <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>"><?php echo $this->__($this->escapeHtml($_product->getName())); ?></a></h3>
                         </td>
                     </tr>
                     <tr>
