@@ -1,37 +1,29 @@
 <?php
     if(Mage::getStoreConfig('trackorder/trackorder_general/enabled')):
 	$customerEmail = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
-	
     ?>
   <div class="row">
 <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<h2><?php echo $this->__('Track Your Order ') ?></h2>
+<h2><?php echo $this->__('Track Your Order') ?></h2>
 </div>
 </div>
 <div class="row">
-
 <div class="faq-area bulk-area col col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div id="oderinfo" class="order-info-message"></div>
-        <form name="track_order" id="track_order" action="" method="post" onsubmit="sendAjax('track_order','<?php  //echo Mage::getUrl('*/*/track',array('_secure'=>true));?>/trackorder/index/track/'); return false;">    
-        
+        <form name="track_order" id="track_order" action="" method="post" onsubmit="sendAjax('track_order','<?php  //echo Mage::getUrl('*/*/track',array('_secure'=>true));?>/trackorder/index/track/'); return false;">
         <div class="row" id="secondform">
   <div class="col-md-5">
   <div class="form-group">
-  
-  <label for="order_id" class="required"><?php echo $this->__('*Order Number') ?></label>
+  <label for="order_id" class="required">*<?php echo $this->__('Order Number') ?></label>
     <input type="text" name="order_id" id="order_id" value="" title="" class="input-text required-entry" />
     </div>
     </div>
     <?php if($customerEmail==''){?>
     <div class="col-md-5">
-    
   <div class="form-group">
-    <label for="email_address" class="required"><?php echo $this->__('*Email Address') ?></label>
-   
+    <label for="email_address" class="required">*<?php echo $this->__('Email Address') ?></label>
    <input type="text" name="email" id="email_address" value="" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
   </div>
-  
-  
 </div>
 <?php
     }else{
@@ -44,28 +36,21 @@
 <button type="submit" class="" title="<?php echo $this->__('Track Order') ?>" name="track" id="track"><?php echo $this->__('Track Order') ?></button>
 </div>
 </div>
-        
 
         </form>
-        
         <div id="loading-details" class="loading-details" style="display:none">
             <div id="loading-mask" >
                 <p class="loader" id="loading_mask_loader"><img src="<?php echo $this->getSkinUrl('trackorder/images/ajax-loader-tr.gif') ?>" alt="<?php echo Mage::helper('adminhtml')->__('Loading...') ?>"/><br/><?php echo $this->__('Please wait...') ?></p>
             </div>
         </div>
-        
-        </div>
-        
-        
         </div>
 
-    
-
+        </div>
 
 
     <script type="text/javascript">
         var validateForm = new VarienForm('track_order', true);
-    </script>           
+    </script>
     <script type="text/javascript">
 
         function sendAjax(frmId,url){
@@ -100,4 +85,3 @@
         Mage::app()->getFrontController()->getResponse()->setRedirect($url);
     ?>
     <?php endif; ?>
- 
