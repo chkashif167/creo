@@ -120,6 +120,26 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
         			$response['minicart'] = $minicart;
 
+
+                     // getting product info for data layer start.
+                   // echo "<pre>";print_r($params);exit;
+                    $obj = Mage::getModel('catalog/product');
+                    $_product = $obj->load($params['product']);
+//getting child product
+$childProduct = Mage::getModel('catalog/product_type_configurable')->getProductByAttributes($params['super_attribute'], $_product);
+
+////////
+
+                    //$response['productId'] = $params['product'];
+                    $response['productId'] = $childProduct->getId();
+                    $response['productSku'] = $childProduct->getSku();
+                    $response['productName'] = $childProduct->getName();
+                    $response['productQty'] = $params['qty'];
+                    $response['productPrice'] = $_product->getPrice();
+                    $response['currentCurrency'] = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+
+                    // getting product info for data layer end.
                 }
 
             } catch (Mage_Core_Exception $e) {
