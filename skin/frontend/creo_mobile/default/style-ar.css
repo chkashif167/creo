@@ -10,12 +10,15 @@ html{direction:rtl}body{direction:rtl}.flip.text-left{text-align:right}.flip.tex
 body{}
 footer#footer{direction:rtl;}
 .col-static{position: static;}
-#header .right-area,#header .bottom-area,#product-options-wrapper{text-align:left;}
-#header .header-icons{right:inherit;left:112px;}
+/*#header .right-area,#header .bottom-area,#product-options-wrapper{text-align:left;}*/
+/*#header .header-icons{right:inherit;left:112px;}*/
 #header .cart .slide,.searchautocomplete .searchautocomplete-placeholder,
-.searchautocomplete .searchautocomplete-placeholder:before,
+.searchautocomplete .searchautocomplete-placeholder:before,a.search-icon.glyphicon.glyphicon-search,
 #header .basic-open-close ul,.tab-content2 .column-content .edit-icon,.owl-theme .owl-controls{right:inherit;left:0;}
-.searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
+.main-menu .bgr-icon{left:inherit;}
+.product-detail .price-area .availability,#header .cart,a.search-icon.glyphicon.glyphicon-search{float:left;}
+.canvas-slid .main-menu .bgr-icon {right:250px;left:inherit;}
+/*.searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
 #nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
 .checkoutShippingMethod ul li label,.product-detail .price-area .price{float:right;}
@@ -33,7 +36,6 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .shipping-methods h3, #last_most_view_title > h3,.faq-area h3,.tab-content2 .dark-heading,.three-column h3,
 #savePopup .form-horizontal .form-group p,.modal-holder .login-form label{text-align:right;}
 .order-details-table th:first-child{text-align:center;}
-.product-detail .price-area .availability{float:left;}
 .catalog-product-view .text-area .qty-area label{display:block;}
 #last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.cart-top-area{direction:ltr;}
 .faq-area.return-area .step-col li,.form-holder .form-frame{margin: 0 0% 0 2%;}
@@ -58,5 +60,6 @@ white-space:nowrap;}
 .icon-angle-right:before{content: '\e80f';}
 .design_categories_attributes ul li{margin:0 0% 1% 1%;}
 .design_categories_attributes ul li:nth-child(4n){margin-left:0;}
+*/
 .footer_navigation .panel-heading .panel-title, .footer_navigation .panel-heading .panel-title a,
 .footer_navigation .panel-group .panel .panel-collapse ul{padding-right:10px;}
