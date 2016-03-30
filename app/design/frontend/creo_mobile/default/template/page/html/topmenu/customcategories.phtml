@@ -27,7 +27,7 @@
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" 
           href="#collapse<?php echo $i; ?>">
-		  <?php echo $_category->getName(); ?>
+		  <?php echo $this->__($_category->getName()); ?>
           </a>
         </h4>
       </div>
@@ -39,7 +39,7 @@
         if (count($_subcategories) > 0){
        foreach($_subcategories as $_subcategory){
 		 ?>
-        <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a>
+        <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $this->__($_subcategory->getName()); ?></a>
          <?php $_subcategory->getId();
        }
 		}
@@ -55,9 +55,7 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse7" data-parent="#accordion" 
-          href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=255&custom=1"?>">
-		  The Crazy Ones
-          </a>
+          href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=255&custom=1"?>"><?php echo $this->__('The Crazy Ones'); ?></a>
         </h4>
       </div>
     </div>
@@ -65,14 +63,12 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" 
-          href="#collapse5">
-		  Collections
-          </a>
+          href="#collapse5"><?php echo $this->__('Collections'); ?></a>
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
-        <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>">men</a>
-        <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>">women</a>
+        <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>"><?php echo $this->__('Men'); ?></a>
+        <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>"><?php echo $this->__('Women'); ?></a>
       </div>
     </div>
     <?php

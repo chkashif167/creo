@@ -61,34 +61,34 @@ if($_product->stock_item->is_in_stock == 0){
                             <!-- tabs structure example -->
                             <div class="tabs-cont">
                                 <ul class="tabset tabset1">
-                                    <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
-                                    <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
-                                    <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
+                                    <li class="active"><a href="#tab1"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel()); ?></span></a></li>
+                                    <li class=""><a href="#tab2"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel()); ?></span></a></li>
+                                    <li class=""><a href="#tab3"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel()); ?></span></a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div id="tab1" style="display: block;" class="">
-                                        <p><?php print $_product->getDescription(); ?> </p>
+                                        <p><?php print $this->__($_product->getDescription()); ?> </p>
                                     </div>
                                     <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                                        <p><?php print $_product->getShortDescription(); ?> </p>
+                                        <p><?php print $this->__($_product->getShortDescription()); ?> </p>
                                     </div>
                                     <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
-                                        <p><?php print $_product->getDesign(); ?> </p>
+                                        <p><?php print $this->__($_product->getDesign()); ?> </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="text-area col-lg-6 col-xs-12">
-                        <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+                        <h2><?php echo $this->__($_helper->productAttribute($_product, $_product->getName(), 'name')); ?></h2>
                         <div class="price-area">
                             <span class="price">
                                 <?php if($_product->getSpecialPrice() > 0.0):?>
                                     <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i>
                                 <?php endif;?>
                                 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-                            <span class="availability">Availability:
-                                <?php echo $this->getChildHtml('product_type_availability'); ?>
+                            <span class="availability"><?php echo $this->__('Availability'); ?>:
+                                <?php echo $this->__($this->getChildHtml('product_type_availability')); ?>
                             </span>
                         </div>
                         <div class="options-area">
@@ -103,7 +103,7 @@ if($_product->stock_item->is_in_stock == 0){
                     </div>
                 </div>
             <?php }else { ?>
-            <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+            <h2><?php echo $this->__($_helper->productAttribute($_product, $_product->getName(), 'name')); ?></h2>
                 <div class="">
                     <div class="product-img-box">
                         <?php echo $this->getChildHtml('media') ?>
@@ -122,7 +122,7 @@ if($_product->stock_item->is_in_stock == 0){
 <?php echo $this->getTierPriceHtml() ?>
 
  </div>
-                        <span class="availability">Availability:
+                        <span class="availability"><?php echo $this->__('Availability'); ?>:
                             <?php echo $this->getChildHtml('product_type_availability'); ?>
                         </span>
                     </div>
@@ -135,14 +135,14 @@ if($_product->stock_item->is_in_stock == 0){
                     <!-- tabs structure example -->
                     <ul class="tabset tabset1">
                         <li class="active"><a href="#tab1"><span>
-                                    <?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
+                                    <?php echo $this->__($attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel()); ?></span></a></li>
                         <li class="">
                             <a href="#tab2"><span>
-                                    SIZE GUIDE
+                                    <?php echo $this->__('SIZE GUIDE'); ?>
                                     <?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?>
                                 </span></a>
                         </li>
-                        <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
+                        <li class=""><a href="#tab3"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel()); ?></span></a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="tab1" style="display: block;" class="">
@@ -174,7 +174,7 @@ if($_product->stock_item->is_in_stock == 0){
 
                     <?php // jawwad.nissar work starts  ?>
                     <div class="shipping-area">
-                        <h4 st> Shipping Information  </h4>
+                        <h4> <?php echo $this->__('Shipping Information'); ?></h4>
                         <!--<a class="shipping-info" href="#">Shipping Information</a>-->
                         <p><?php print $_product->getShippingDetails(); ?> </p>
                     </div>

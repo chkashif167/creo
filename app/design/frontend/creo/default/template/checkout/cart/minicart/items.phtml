@@ -71,7 +71,7 @@ if(empty($_cartQty)) {
       <?php if ($this->canApplyMsrp()): ?>
       <?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?>
       <?php else: ?>
-     <?php echo $this->__('Total:') ?> <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+     <?php echo $this->__('Total') ?>: <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
       <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
       <br />
       (<?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>)

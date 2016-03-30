@@ -16,7 +16,7 @@ $_swatches_height = (int) $_settings['swatch_height'];
           continue;
          }?>
         <div class="attributeItem custom-select">
-            <dt id="label-attribute-<?php echo $_attribute["id"] ?>"><label class="required"><em>*</em><?php echo $_attribute["label"] ?></label><span class="selected-label">&nbsp;</span>   </dt>
+            <dt id="label-attribute-<?php echo $_attribute["id"] ?>"><label class="required"><em>*</em><?php echo $this->__($_attribute["label"]); ?></label><span class="selected-label">&nbsp;</span>   </dt>
             <dd class="option-container">
                 <?php
                 /* WILL DISPLAY THE COLOR SWATCHES AND ALL THE CUSTOM OPTION SELECTORS HERE */
@@ -57,21 +57,21 @@ $_swatches_height = (int) $_settings['swatch_height'];
                                                 echo "<img src='" . $_image->resize($_swatches_width, $_swatches_height) . "' title='" . $_option["label"] . "' alt='" . $_option["label"] . "'/>";
                                                 ?>
                                             </a>
-                                            <span class="tooltip-container"><span class="tooltip"><span><?php echo $_option["label"] ?></span></span></span>
+                                            <span class="tooltip-container"><span class="tooltip"><span><?php echo $this->__($_option["label"]); ?></span></span></span>
                                             <?php
                                             break;
                                         case 'image':
                                             ?>
                                             <a class="" style=" <?php echo $_option['swatch_value'] ?>; width:<?php echo $_swatches_width ?>px; height:<?php echo $_swatches_height; ?>px;" data-original-title="<?php echo $_option["label"] ?>"  title="<?php echo $_option["label"] ?>" rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="#" rev="">
-                                                <span><?php echo $_option["label"] ?></span>
+                                                <span><?php echo $this->__($_option["label"]); ?></span>
                                             </a>
-                                            <span class="tooltip-container"><span class="tooltip"><span><?php echo $_option["label"] ?></span></span></span>
+                                            <span class="tooltip-container"><span class="tooltip"><span><?php echo $this->__($_option["label"]); ?></span></span></span>
                                             <?php
                                             break;
                                         case 'label':
                                             ?>
                                             <a class="swatch-label" title="<?php echo $_option["label"] ?>" data-original-title="<?php echo $_option["label"] ?>"   rel="<?php echo $_option["id"] ?>" id="swatches_option_value_<?php echo $_option["id"] ?>" href="#">
-                                                <?php echo $_option["label"] ?>
+                                                <?php echo $this->__($_option["label"]); ?>
                                             </a>
                                             <?php
                                             break;
@@ -100,9 +100,9 @@ $_swatches_height = (int) $_settings['swatch_height'];
         <?php endforeach; ?>
     </dl>
 <div class="saudi">
-    <label class="required"><em>*</em>Arabic Code</label>
+    <label class="required"><em>*</em><?php echo $this->__('Arabic Code'); ?></label>
     <input type="text" style="margin:0;" value="" name="customplate" class="input-text required-entry  product-custom-option" id="customplate">
-    <label style="font-size:10px;">This field only applies to Saudi Plate Numbers</label>
+    <label style="font-size:10px;"><?php echo $this->__('This field only applies to Saudi Plate Numbers'); ?></label>
 </div>
     <script type="text/javascript">
         function out_of_stock_string() {
