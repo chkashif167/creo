@@ -269,6 +269,10 @@ if($_product->stock_item->is_in_stock == 0){
                                 type : 'post',
                                 data: data,
                                 success: function(data){
+                                    //adding data to data layers start
+                                    dataLayer.push({ 'event': 'addToCart','name':data.productName, 'id':data.productId, 'price':data.productPrice, 'currency':data.currentCurrency, 'quantity':data.productQty, 'sku':data.productSku });
+                                    //adding data to data layers end
+
                                 jQuery('.fme_loading_filters').hide();
                                         //alert(data.status + ": " + data.message);
                                         if (jQuery('#header-cart')) {
