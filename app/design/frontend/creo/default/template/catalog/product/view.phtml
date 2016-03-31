@@ -37,8 +37,7 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 <div class="row">
 
-<?php 
-
+<?php
 if($_product->stock_item->is_in_stock == 0){
 	$outofstockclass = "outofstockclass ";
  } ?>
@@ -63,35 +62,35 @@ if($_product->stock_item->is_in_stock == 0){
                             <!-- tabs structure example -->
                             <div class="tabs-cont">
                                 <ul class="tabset tabset1">
-                                    <li class="active"><a href="#tab1"><span><?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
-                                    <li class=""><a href="#tab2"><span><?php echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a></li>
-                                    <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
+                                    <li class="active"><a href="#tab1"><span><?php echo $attribute = $this->__($_product->getResource()->getAttribute('description')->getFrontendLabel()); ?></span></a></li>
+                                    <li class=""><a href="#tab2"><span><?php echo $attribute = $this->__($_product->getResource()->getAttribute('short_description')->getFrontendLabel()); ?></span></a></li>
+                                    <li class=""><a href="#tab3"><span><?php echo $attribute = $this->__($_product->getResource()->getAttribute('design')->getFrontendLabel()); ?></span></a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div id="tab1" style="display: block;" class="">
-                                        <p><?php print $_product->getDescription(); ?> </p>
+                                        <p><?php print $this->__($_product->getDescription()); ?> </p>
                                     </div>
                                     <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                                        <p><?php print $_product->getShortDescription(); ?> </p>
+                                        <p><?php print $this->__($_product->getShortDescription()); ?> </p>
                                     </div>
                                     <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
-                                        <p><?php print $_product->getDesign(); ?> </p>
+                                        <p><?php print $this->__($_product->getDesign()); ?> </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div class="text-area col-lg-6 col-xs-12">
-                        <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
-                        <div class="price-area"> 
+                        <h2><?php echo $this->__($_helper->productAttribute($_product, $_product->getName(), 'name')) ?></h2>
+                        <div class="price-area">
                             <span class="price">
                                 <?php if($_product->getSpecialPrice() > 0.0):?>
                                     <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
                                 <?php endif;?>
                                 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
-                            <span class="availability">Availability:  
-                                <?php echo $this->getChildHtml('product_type_availability'); ?>
-                            </span> 
+                            <span class="availability"><?php echo $this->__('Availability'); ?>:
+                                <?php echo $this->__($this->getChildHtml('product_type_availability')); ?>
+                            </span>
                         </div>
                         <div class="options-area">
                             <?php if ($_product->isSaleable()): ?>
@@ -111,7 +110,7 @@ if($_product->stock_item->is_in_stock == 0){
                     </div>
                 </div>
                 <div class="text-area">
-                    <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+                    <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></h2>
                     <div class="price-area"> 
 <div class="price-info">
 <?php /*?><?php if($_product->getSpecialPrice() > 0.0):?>
@@ -124,63 +123,67 @@ if($_product->stock_item->is_in_stock == 0){
 <?php echo $this->getTierPriceHtml() ?>
 
  </div>
-                        <span class="availability">Availability:  
-                            <?php echo $this->getChildHtml('product_type_availability'); ?>
-                        </span> 
-                    </div>
+<span class="availability"><?php echo $this->__('Availability'); ?>: <?php echo $this->__($this->getChildHtml('product_type_availability')); ?></span>
+</div>
 
+<!-- tabs structure example -->
+<ul class="tabset tabset1">
+    <li class="active"><a href="#tab1"><span>
+                <?php echo $attribute = $this->__($_product->getResource()->getAttribute('description')->getFrontendLabel()); ?></span></a></li>
+    <li class=""><a href="#tab2"><span><?php echo $attribute = $this->__($_product->getResource()->getAttribute('design')->getFrontendLabel()); ?></span></a></li>
+</ul>
+<div class="tab-content">
+    <div id="tab1" style="display: block;" class="">
+        <p><?php print $this->__($_product->getDescription()); ?> </p>
+    </div>
+    <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
+        <p><?php print $this->__($_product->getDesign()); ?> </p>
+    </div>
+</div>
+<a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span><?php echo $this->__('SIZE GUIDE'); ?>
+<?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a>
+<!-- Modal -->
+<div class="modal fade" id="sizeGuide" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="modal-holder">
+      <div class="modal-body">
+    <?php
+            $gender = $_product->getGender();
+            if ($gender == 24) {
+                echo $_product->getSizeguidemen();
+                //echo "Men";
+            } elseif ($gender == 25) {
+                //echo "Women";
+                echo $_product->getSizeguidewomen();
+            } else {
+                echo " ";
+            }
+            ?>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
 
-                    <!-- tabs structure example -->
-                    <ul class="tabset tabset1">
-                        <li class="active"><a href="#tab1"><span>
-                                    <?php echo $attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel(); ?></span></a></li>
-                        <li class="">
-                            <a href="#tab2"><span>
-                                    SIZE GUIDE
-                                    <?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?>
-                                </span></a>
-                        </li>
-                        <li class=""><a href="#tab3"><span><?php echo $attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel(); ?></span></a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab1" style="display: block;" class="">
-                            <p><?php print $_product->getDescription(); ?> </p>
-                        </div>
-                        <div id="tab2" style="display: none; width: 715px;" class="js-tab-hidden">
-                            <?php
-                            $gender = $_product->getGender();
-                            if ($gender == 24) {
-                                echo $_product->getSizeguidemen();
-                                //echo "Men";
-                            } elseif ($gender == 25) {
-                                //echo "Women";
-                                echo $_product->getSizeguidewomen();
-                            } else {
-                                echo " ";
-                            }
-                            ?> 
-                        </div>
-                        <div id="tab3" style="display: none; width: 715px;" class="js-tab-hidden">
-                            <p><?php print $_product->getDesign(); ?> </p>
-                        </div>
-                    </div>
                     <div class="options-area">
                 <?php if ($_product->isSaleable()):?>
                             <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                         <?php endif; ?>
                     </div>
                     <?php  if(!$_product->isSaleable()): ?>
-						<?php echo $this->getChildHtml('addto') ?>                      
+                        <?php echo $this->__($this->getChildHtml('addto')); ?>
                       <?php endif; ?>
 
-
                     <?php // jawwad.nissar work starts  ?>
-                    <div class="shipping-area"> 
-                        <h4 st> Shipping Information  </h4>
+                    <div class="shipping-area">
+                        <h4><?php echo $this->__('Shipping Information'); ?>  </h4>
                         <!--<a class="shipping-info" href="#">Shipping Information</a>-->
                         <p><?php print $_product->getShippingDetails(); ?> </p>
                     </div> 
-                    <?php // jawwad.nissar work ends  ?>                     
+
+                    <?php // jawwad.nissar work ends  ?>
                     <!--                    <div class="shipping-area"> 
                     <?php
 //                        $methods = Mage::getSingleton('shipping/config')->getActiveCarriers();
@@ -269,9 +272,8 @@ if($_product->stock_item->is_in_stock == 0){
                                 jQuery('.fme_loading_filters').hide();
                                         //alert(data.status + ": " + data.message);
                                         if (jQuery('#header-cart')) {
-                                
-								if(data.status != "ERROR"){
-								jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+			if(data.status != "ERROR"){
+			jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -282,41 +284,40 @@ if($_product->stock_item->is_in_stock == 0){
                                         event: 'over',
                                         effect: 'fade'
                                 });
-								jQuery('#ajaxModalTitle').html(data.status);
-								jQuery('#ajaxModalContent').html(data.message);
-								jQuery('.ajaxAddToCartModal').modal('show');
-								
-                                        //refresh minicart
-										var data = jQuery('#product_addtocart_form').serialize();
-										data += '&isRefresh=1';
-										try {
-										jQuery.ajax({
-										url: url,
-												dataType: 'json',
-												type : 'post',
-												data: data,
-												success: function(data){
-										if(data.status != "ERROR"){
-										jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
-										}
-												if (jQuery('#header-cart')) {
-												/*initialize the minicart dropdown again*/
-												jQuery('#open-close-minicart').openClose({
-												activeClass: 'active',
-														opener: '.opener',
-														slider: '.slide',
-														animSpeed: 400,
-														event: 'over',
-														effect: 'fade'
-												});
-														}
-												}
-										});
-										} catch (e) {
-								}
-										//refresh minicart
-										}
-								}
+		jQuery('#ajaxModalTitle').html(data.status);
+		jQuery('#ajaxModalContent').html(data.message);
+		jQuery('.ajaxAddToCartModal').modal('show');
+                //refresh minicart
+		var data = jQuery('#product_addtocart_form').serialize();
+		data += '&isRefresh=1';
+		try {
+		jQuery.ajax({
+		url: url,
+		dataType: 'json',
+		type : 'post',
+		data: data,
+		success: function(data){
+		if(data.status != "ERROR"){
+		jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+		}
+		if (jQuery('#header-cart')) {
+		/*initialize the minicart dropdown again*/
+		jQuery('#open-close-minicart').openClose({
+		activeClass: 'active',
+		opener: '.opener',
+		slider: '.slide',
+		animSpeed: 400,
+		event: 'over',
+		effect: 'fade'
+		});
+				}
+		}
+		});
+			} catch (e) {
+		}
+			//refresh minicart
+			}
+		}
                         });
                         } catch (e) {
                 }

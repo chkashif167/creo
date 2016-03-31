@@ -3,18 +3,17 @@ jQuery(document).ready(function() {
       var owl = jQuery("#owl-demo");
 
       owl.owlCarousel({
-
+        mouseDrag: true,
+        touchDrag: true,
       items : 4, //10 items above 1000px browser width
    //   itemsDesktop : [1000,4], //5 items between 1000px and 901px
      // itemsDesktopSmall : [900,4], // 3 items betweem 900px and 601px
       itemsTablet: [600,4], //2 items between 600 and 0;*/
       pagination : false,
-      rewindNav : false,
+      rewindNav : true,
       navigation : true,
-      navigationText : ["prev","next"],
-      itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option*/
-      
-      
+      navigationText : ["<",">"],
+      itemsMobile : [550,2]  // itemsMobile disabled - inherit from itemsTablet option*/
       });
       // Custom Navigation Events
       jQuery(".next").click(function(){

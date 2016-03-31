@@ -1,19 +1,18 @@
-<<<<<<< HEAD
 "%s already exist","%s موجود بالفعل"
 "%s already exists","%s موجود بالفعل"
 "-- Please Select --","-- من فضلك اختر --"
-"Add Block Names to Hints","Add Block Names to Hints"
-"Add Secret Key to URLs","Add Secret Key to URLs"
+"Add Block Names to Hints","إضافة حجب أسماء إلى التلميحات"
+"Add Secret Key to URLs","إضافة رمز سري الى عناوين الانترنت"
 "Add Store Code to Urls","رمز المخزن اضافة الى عناوين المواقع"
-"Admin","Admin"
-"Admin Base URL","Admin Base URL"
-"Admin User Emails","Admin User Emails"
+"Admin","مشرف"
+"Admin Base URL","عنوان المشرف الأولي"
+"Admin User Emails","عناوين البريد الألكتروني لمشرف المستخدم"
 "Advanced","متقدم"
 "Allow countries","السماح للدول"
 "Allowed IPs (comma separated)","سمحت المءسسه (مفصوله بفواصل)"
 "Are you sure?","هل أنت متأكد؟"
 "Back","للخلف"
-"Backup options","Backup options"
+"Backup options","الخيارات الاحتياطية"
 "Base JavaScript URL","قاعدة موقع جافا سكريبت"""
 "Base Link URL","قاعدة وصلة الموقع"
 "Base Media URL","موقع قاعدة وسائل الاعلام"
@@ -27,38 +26,38 @@
 "Can't retrieve entity config: %s","لا يمكن استرجاع الكيان أعداد: %s"
 "Cancel","إلغاء"
 "Cannot Delete Email Template","لا يمكن حذف قالب البريد الإلكتروني"
-"Cannot complete this operation from non-admin area.","Cannot complete this operation from non-admin area."
-"Category object is required for determining product request path","Category object is required for determining product request path"
+"Cannot complete this operation from non-admin area.","لا يمكن إتمام هذه العملية لأنك غير مسجل كمشرف"
+"Category object is required for determining product request path","مطلوب موضوع الفئة لتحديد طريق المنتج المختار"
 "Code","كود"
-"Collections Data","Collections Data"
-"Configuration","Configuration"
+"Collections Data","مجموعات البيانات"
+"Configuration","تكوينات"
 "Controller file was loaded but class does not exist","وكان المراقب المالي تحميل الملف ولكن لا وجود الطبقة"
 "Cookie Domain","Cookie الملك"
 "Cookie Lifetime","Cookie المده الزمنية"
 "Cookie Path","Cookie الطريق"
-"Copyright","Copyright"
+"Copyright","حق النشر"
 "Countries options","خيارات الدول"
 "Create Store","إنشاء متجر"
 "Create Store View","إنشاء عرض متجر"
 "Create Website","إنشاء موقع"
 "Current package name","اسم المجموعة الحالية"
 "Custom Design","تصميم مخصص"
-"Custom admin URL","Custom admin URL"
+"Custom admin URL","تصميم مخصص URL"
 "Custom email 1","بريد إلكتروني مخصص 1"
 "Custom email 2","بريد إلكتروني مخصص 2"
 "Customer support","دعم العملاء"
 "Date From","التاريخ من"
 "Date To","التاريخ إلى"
-"Date/time format ""%s"" is not supported.","Date/time format ""%s"" is not supported."
+"Date/time format ""%s"" is not supported.","تنسيق التاريخ / الوقت ""٪ S"" غير معتمد."
 "Debug","نقح"
 "Default","الافتراضي"
-"Default Description","Default Description"
-"Default Keywords","Default Keywords"
+"Default Description","الوصف الإفتراضي"
+"Default Keywords","كلمات البحث الإفتراضي"
 "Default Pages","الصفحات الافتراضية"
-"Default Robots","Default Robots"
+"Default Robots","الروبوتات الافتراضية"
 "Default Store","المتجر الافتراضي"
 "Default Store View","عرض المتجر الافتراضي"
-"Default Title","Default Title"
+"Default Title","العنوان الإفتراضي"
 "Default country","الدولة الافتراضية"
 "Default no-route url","لا الافتراضيه - موقع الطريق"
 "Default web url","الموقع الافتراضي"
@@ -66,7 +65,7 @@
 "Delete Store","حذف متجر"
 "Delete Store View","حذف عرض متجر"
 "Delete Website","حذف موقع"
-"Deleting a %1$s will not delete the information associated with the %1$s (e.g. categories, products, etc.), but the %1$s will not be able to be restored. It is suggested that you create a database backup before deleting the %1$s.","Deleting a %1$s will not delete the information associated with the %1$s (e.g. categories, products, etc.), but the %1$s will not be able to be restored. It is suggested that you create a database backup before deleting the %1$s."
+"Deleting a %1$s will not delete the information associated with the %1$s (e.g. categories, products, etc.), but the %1$s will not be able to be restored. It is suggested that you create a database backup before deleting the %1$s.","وحذف٪ 1 $ S تقم بحذف المعلومات المرتبطة٪ S $ 1 (فئات على سبيل المثال، المنتجات، وما إلى ذلك)، ولكن٪ 1 $ S لن تكون قادرة على استعادتها. يقترح أن تقوم بإنشاء نسخة احتياطية قاعدة البيانات قبل حذف٪ 1 $ S."
 "Design","تصميم"
 "Design Change","تغيير التصميم"
 "Developer","مطور"
@@ -85,21 +84,21 @@
 "Enabled for Frontend","لتمكين الواجهة"
 "Error in file: ""%s"" - %s","خطأ في الملف: ""%s"" - %s"
 "Error while saving. Please try again later.","خطا اثناء الادخار. يرجى اعادة المحاوله لاحقا."
-"Error: Passwords do not match","Error: Passwords do not match"
-"Exceptions Log File Name","Exceptions Log File Name"
-"First Day of Week","First Day of Week"
-"Footer","Footer"
+"Error: Passwords do not match","خطأ: كلمات المرور غير متطابقة"
+"Exceptions Log File Name","إستثناءات تسجيل اسم الملف"
+"First Day of Week","أول يوم بالاسبوع"
+"Footer","التذييل"
 "Forgot Password Email Sender","نسيت كلمة السر البريد الالكتروني للمرسل"
 "Forgot Password Email Template","نسيت كلمة السر البريد الالكتروني قالب"
 "General","عام"
 "General Settings","إعدادات عامة"
 "General contact","اتصالات عامة"
 "Global","عالمي"
-"HTML Head","HTML Head"
-"Header","Header"
+"HTML Head","HTML رأس"
+"Header","رأس الصفحة"
 "Host","المضيف"
 "Id path for specified store","رقم تعريف المسار المحدد للتخزين"
-"Incorrect credit card expiration date","Incorrect credit card expiration date"
+"Incorrect credit card expiration date","رقم انتهاء صلاحية بطاقة الإتمان غير صحيح"
 "Invalid base url type","نوع قاعدة الموقع غير صحيحة"
 "Invalid block name to set child %s: %s","كتلة غير صالحة لوضع اسم الطفل %s: %s"
 "Invalid block type: %s","غير صحيح من النوع (بلوك: %s"
@@ -110,32 +109,32 @@
 "Invalid transactional email code: ","قانون المعاملات البريد الالكتروني غير صحيح: "
 "Invalid websites configuration path: %s","مواقع غير صالحة طريق التكوين: %s"
 "Layout","تخطيط"
-"Layouts","Layouts"
+"Layouts","تخطيطات"
 "Leave empty for access from any location","اترك فارغا للوصول من أي موقع"
 "Locale","محلي"
 "Locale options","خيارات محلية"
-"Log Settings","Log Settings"
-"Logging from Mage::log(). File is located in�{{base_dir}}/var/log","Logging from Mage::log(). File is located in�{{base_dir}}/var/log"
-"Logging from Mage::logException(). File is located in�{{base_dir}}/var/log","Logging from Mage::logException(). File is located in�{{base_dir}}/var/log"
-"Logo Image Alt","Logo Image Alt"
-"Logo Image Src","Logo Image Src"
+"Log Settings","إعدادات سجل البيانات"
+"Logging from Mage::log(). File is located in�{{base_dir}}/var/log","تسجيل الدخول من  Mage::log(). الملف موجود في �{{base_dir}}/var/log  :"
+"Logging from Mage::logException(). File is located in�{{base_dir}}/var/log","تسجيل الدخول من Mage:log Exception (). الملف موجود في �{{base_dir}}/var/log"
+"Logo Image Alt","صورة الشعار Alt"
+"Logo Image Src","شاشة شعار الصورة"
 "Manage Stores","إدارة المتاجر"
-"Match expressions in the same order as displayed in the configuration.","Match expressions in the same order as displayed in the configuration."
-"Miscellaneous HTML","Miscellaneous HTML"
-"Miscellaneous scripts","Miscellaneous scripts"
+"Match expressions in the same order as displayed in the configuration.","بحث عن التعبيرات في نفس الترتيب كما هو معروض في التكوين."
+"Miscellaneous HTML","HTML المتنوعة"
+"Miscellaneous scripts","مخطوطات متنوعة"
 "Model class does not exist: %s","نموذج من الدرجة لا وجود لل: %s"
 "Model collection resource name is not defined","نموذج جمع الموارد اسم غير محدد"
-"Module ""%1$s"" can not be depended from ""%2$s""","Module ""%1$s"" can not be depended from ""%2$s"""
-"Module ""%1$s"" requires module ""%2$s""","Module ""%1$s"" requires module ""%2$s"""
+"Module ""%1$s"" can not be depended from ""%2$s""","لايمكن لوحدة 1$% الاعتماد من 2$%"
+"Module ""%1$s"" requires module ""%2$s""","وحدة ""٪ 1 $ S"" يتطلب وحدة ""٪ 2 $ S"""
 "Name","اسم"
 "New Design Change","تغيير تصميم جديد"
 "New Store","متجر جديد"
 "New Store View","عرض متجر جديد"
 "New Website","موقع جديد"
-"No","No"
+"No","كلا"
 "Package","مجموعة"
-"Please choose to register or to checkout as a guest","Please choose to register or to checkout as a guest"
-"Please define flag code.","Please define flag code."
+"Please choose to register or to checkout as a guest","من فضلك اختر التسجيل او تسجيل الخروج كضيف"
+"Please define flag code.","يرجى تحديد رمز العلم."
 "Please enter 6 or more characters.","من فضلك قم بإدخال 6 أحرف أو أكثر."
 "Please enter 6 or more characters. Leading or trailing spaces will be ignored.","من فضلك قم بإدخال 6 أحرف أو أكثر. سيتم تجاهل المسافات قبل أو بعد الأحرف."
 "Please enter a number greater than 0 in this field.","من فضلك قم بإدخال رقم أكبر من 0 في هذا الحقل."
@@ -151,15 +150,15 @@
 "Please enter a valid zip code.","الرجاء إدخال الرمز البريدي."
 "Please enter a valid zip code. For example 90602 or 90602-1234.","الرجاء إدخال الرمز البريدي. فعلى سبيل المثال 90602 او 90602-1234."
 "Please enter valid password.","من فضلك قم بإدخال كلمة مرور صحيحة."
-"Please make sure that Base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Please make sure that Base URL ends with '/' (slash), e.g. http://yourdomain/magento/"
+"Please make sure that Base URL ends with '/' (slash), e.g. http://yourdomain/magento/","الرجاء التأكد من أن قاعدة URL '/' (slash), e.g. http://yourdomain/magento تنتهي ب"
 "Please make sure your passwords match.","من فضلك تأكد من تطابق كلمة المرور."
 "Please select State/Province.","من فضلك اختر ولاية/مقاطعة."
 "Please select an option.","فضلا اختر خيار ."
 "Please select one of the above options.","فضلا اختار من الخيارات الموجوده في الاعلى."
 "Please select one of the options.","فضلا اختار واحد من الخيارات."
-"Please specify payment method.","Please specify payment method."
-"Please specify shipping method.","Please specify shipping method."
-"Please use letters only (a-z or A-Z) in this field.","Please use letters only (a-z or A-Z) in this field."
+"Please specify payment method.","الرجاء تحديد طريقة الدفع"
+"Please specify shipping method.","الرجاء تحديد طريقة الشحن"
+"Please use letters only (a-z or A-Z) in this field.","الرجاء استخدام حروف من (الألف الى الياء) في هذا الحقل"
 "Please use letters only (a-z) in this field.","فضلا استخدم الحروف من (ا-ي )في هذه الخانه."
 "Please use numbers only in this field. please avoid spaces or other characters such as dots or commas.","من فضلك قم باستخدام أرقام فقط في هذا الحقل. من فضلك تجنب استخدام المسافات أو أي رموز أخرى كالنقاط أو الفواصل."
 "Please use only letters (a-z) or numbers (0-9) only in this field. No spaces or other characters are allowed.","الرجاء استخدام الحروف (من الالف الى الياء الاقامة) او ارقام (0-9) الا في هذا الميدان. أي فراغات او الشخصيات الأخرى يسمح لل."
@@ -167,12 +166,12 @@
 "Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter.","الرجاء استخدام الحروف (من الالف الى الياء الاقامة) ، ارقام (0-9) يؤكد او (_) في هذا المجال ، ينبغي ان يكون الحرف الاول رسالة."
 "Please use this date format: dd/mm/yyyy. For example 17/03/2006 for the 17th of March, 2006.","الرجاء استخدام هذا الشكل حتى الآن : اليوم / الشهر / السنة. فعلى سبيل المثال 17/03/2006 للالسابع عشر من اذار / مارس ، 2006."
 "Please wait, loading...","من فضلك انتظر، جار التحميل..."
-"Polls","Polls"
+"Polls","إستطلاعات الرأي"
 "Port (25)","منفذ (25)"
 "Profiler","المحلل"
-"Prototype Deprecation Log","Prototype Deprecation Log"
+"Prototype Deprecation Log","سجل نموذج الانتقاص"
 "Request path for specified store","طلب مسار للمتجر المحدد"
-"Requested invalid store ""%s""","Requested invalid store ""%s"""
+"Requested invalid store ""%s""","السوق المطلوب غير متوفر ""%s"""
 "Resource is not set","المصدر ليس موضوع"
 "Root Category","التصنيف الجذر"
 "SMTP settings (Windows server only)","SMTP اوضاع (نظام النافذة فقط)"
@@ -183,359 +182,120 @@
 "Save Website","حفظ الموقع"
 "Search Engines Optimization","محركات البحث الأمثل"
 "Secure","آمن"
-"Security","Security"
-"Select Date","Select Date"
+"Security","حماية"
+"Select Date","إختر التأريخ"
 "Sender email","البريد الإلكتروني للمرسل"
 "Sender name","اسم المرسل"
 "Services","خدمات"
 "Session Cookie management","دورة ال  Cookie ادارة"
-"Session Lifetime, Seconds","Session Lifetime, Seconds"
-"Session Validation Settings","Session Validation Settings"
+"Session Lifetime, Seconds","عمر الدورة، ثواني"
+"Session Validation Settings","التحقق من صحة إعدادات الدورة"
 "Set as default","وضع كاافتراضي"
 "Skin (Images / CSS)","مسح (صور / CSS)"
 "Sort order","الترتيب"
-"Specified date/time ""%1$s"" do not match format ""%2$s"".","Specified date/time ""%1$s"" do not match format ""%2$s""."
-"Specify either category or product, or both.","Specify either category or product, or both."
+"Specified date/time ""%1$s"" do not match format ""%2$s"".","""%1$s"" التأريخ / الوقت المحدد لاتطابق شكل ""%2$s""."
+"Specify either category or product, or both.","حدد اما الفئة أو السلعة ، او كلاهما"
 "Start date can't be greater than end date","تاريخ بداية لا يمكن ان يكون اكبر من تاريخ إنتهاء"
-"Startup page","Startup page"
+"Startup page","بدء تشغيل الصفحة"
 "Status","الحالة"
 "Store","المتجر"
 "Store Email Addresses","عناوين البريد الإلكتروني للمتجر"
 "Store Information","بيانات المتجر"
 "Store Name","اسم المتجر"
-"Store View","Store View"
+"Store View","عرض المتجر"
 "Store View Information","بيانات عرض المتجر"
 "Store View Name","اسم عرض المتجر"
 "Store View was successfully saved","تم حفظ عرض المتجر بنجاح"
 "Store code should contain only letters (a-z), numbers (0-9) or underscore(_), first character should be a letter","رمز المخزن وينبغي ان تتضمن الحروف (من الالف الى الياء ) ، ارقام (0-9) يؤكد او (_) ، الحرف الأول ينبغي ان يكون رسالة"
-"Store doesn't exist","Store doesn't exist"
-"Store view doesn't exist","Store view doesn't exist"
-"Store view was successfully deleted.","Store view was successfully deleted."
+"Store doesn't exist","المتجر غير موجود"
+"Store view doesn't exist","عرض المتجر غير موجود"
+"Store view was successfully deleted.","لقد تم حذف عرض المتجر بنجاح"
 "Store was successfully deleted.","تم حذف المتجر بنجاح."
 "Store was successfully saved","تم حفظ المتجر بنجاح"
 "Store with the same code","متجر له نفس الكود"
 "System","النظام"
-"System Log File Name","System Log File Name"
+"System Log File Name","اسم ملف سجل النظام"
 "Template Path Hints","تلميحات مسار القالب"
 "Templates","قوالب"
-"The %s you entered is invalid. Please make sure that it follows ""http://domain.com/"" format.","The %s you entered is invalid. Please make sure that it follows ""http://domain.com/"" format."
+"The %s you entered is invalid. Please make sure that it follows ""http://domain.com/"" format.","ال  %s  الذي ادخلته غير فعال. الرجاء التأكد من إنه يتبع ""http://domain.com/"" تنسيق"
 "Themes","مواضيع"
-"This category and all its child elements","This category and all its child elements"
-"This category and its child categories only","This category and its child categories only"
-"This category and its products only","This category and its products only"
+"This category and all its child elements","هذه الفئة وجميع أولاد العناصر"
+"This category and its child categories only","هذه الفئة أولاد الفئة فقط"
+"This category and its products only","هذه الفئة و منتجاتها فقط"
 "This category only","هذا التصنيف فقط"
 "This is a required field.","هذا الحقل مطلوب."
-"This store cannot be deleted","This store cannot be deleted"
-"This store cannot be deleted.","This store cannot be deleted."
-"This store view cannot be deleted","This store view cannot be deleted"
-"This store view cannot be deleted.","This store view cannot be deleted."
-"This website cannot be deleted","This website cannot be deleted"
-"This website cannot be deleted.","This website cannot be deleted."
-"This will be displayed just before body closing tag","This will be displayed just before body closing tag"
-"This will be included before head closing tag in page HTML","This will be included before head closing tag in page HTML"
+"This store cannot be deleted","لا يمكن حذف هذا المتجر"
+"This store cannot be deleted.","لا يمكن حذف هذا المتجر"
+"This store view cannot be deleted","لا يمكن حذف عرض هذا المتجر"
+"This store view cannot be deleted.","لا يمكن حذف عرض هذا المتجر."
+"This website cannot be deleted","لا يمكن حذف هذا الموقع الألكتروني"
+"This website cannot be deleted.","لا يمكن حذف هذا الموقع الألكتروني."
+"This will be displayed just before body closing tag","سيتم عرض هذا قبل علامة إغلاق الجسم"
+"This will be included before head closing tag in page HTML","سيتم إضافة هذا قبل علامة إغلاق صفحة HTML في الرأس"
 "Timezone","منطقة التوقيت"
-"Title Prefix","Title Prefix"
-"Title Suffix","Title Suffix"
-"Translate Inline","Translate Inline"
-"Translate cache should be disabled for both Frontend and Admin inline translations","Translate cache should be disabled for both Frontend and Admin inline translations"
+"Title Prefix","عنوان البادئة"
+"Title Suffix","عنوان اللاحقة"
+"Translate Inline","الترجمة الضمنية"
+"Translate cache should be disabled for both Frontend and Admin inline translations","يجب أن يتم تعطيل ذاكرة التخزين المؤقت لترجمة كل من الواجهة وترجمات المضمنة الادارية"
 "Translations","ترجمات"
-"Unable to delete store view. Please, try again later.","Unable to delete store view. Please, try again later."
-"Unable to delete store. Please, try again later.","Unable to delete store. Please, try again later."
-"Unable to delete website. Please, try again later.","Unable to delete website. Please, try again later."
+"Unable to delete store view. Please, try again later.","لا يمكن حذف عرض هذا المتجر ، الرجاء المحاولة لاحقاً"
+"Unable to delete store. Please, try again later.","لا يمكن حذف هذا المتجر، الرجاء المحاولة لاحقاً"
+"Unable to delete website. Please, try again later.","لا يمكن حذف هذا الموقع الألكتروني ، الرجاء المحاولة لاحقاً"
 "Unable to proceed. Please, try again","لا يمكن الاستمرار. من فضلك حاول مرة أخرى"
 "Unknown scope ""%s""","غير معروف نطاق ""%s"""
 "Unsecure","غير آمن"
 "Url Options","خيارات الموقع"
-"Use HTTP Only","Use HTTP Only"
+"Use HTTP Only","استعمل HTTP  فقط"
 "Use Secure URLs in Admin","استخدام عناوين في ادارة امن"
 "Use Secure URLs in Frontend","تأمين استخدام عناوين المواقع في الواجهة"
 "Use Web Server Rewrites","إعادة كتابة باستخدام خادم الويب"
-"Use custom admin URL","Use custom admin URL"
-"Validate HTTP_USER_AGENT","Validate HTTP_USER_AGENT"
-"Validate HTTP_VIA","Validate HTTP_VIA"
-"Validate HTTP_X_FORWARDED_FOR","Validate HTTP_X_FORWARDED_FOR"
-"Validate REMOTE_ADDR","Validate REMOTE_ADDR"
-"Values less than 60 are ignored.","Values less than 60 are ignored."
+"Use custom admin URL","استخدام URL مخصص المشرف"
+"Validate HTTP_USER_AGENT","تحقق من صحة HTTP_USER_AGENT"
+"Validate HTTP_VIA","تحقق من صحة HTTP_VIA"
+"Validate HTTP_X_FORWARDED_FOR","تحقق من صحة HTTP_X_FORWARDED_FOR"
+"Validate REMOTE_ADDR","تحقق من صحة  REMOTE_ADDR"
+"Values less than 60 are ignored.","القيم الأقل من 60 تهمل"
 "Web","موقع"
 "Website","الموقع"
 "Website Information","بيانات الموقع"
 "Website Name","اسم الموقع"
 "Website code should contain only letters (a-z), numbers (0-9) or underscore(_), first character should be a letter","موقع المدونه يجب ان لا تحتوي الا على الحروف (من الالف الى الياء) ، ارقام (0-9) يؤكد او (_) ، الحرف الأول ينبغي ان يكون رسالة"
-"Website doesn't exist","Website doesn't exist"
+"Website doesn't exist","ألموقع الألكتروني غير موجود"
 "Website was successfully deleted.","تم حذف الموقع بنجاح."
 "Website was successfully saved","تم حفظ الموقع بنجاح"
 "Website with the same code","موقع له نفس الكود"
-"Weekend Days","Weekend Days"
-"Welcome Text","Welcome Text"
+"Weekend Days","أيام عطلة نهاية الإسبوع"
+"Welcome Text","نص الترحيب"
 "Wrong number of arguments for %s","اعداد خاطاءه من النقاشات لل %s"
-"Yes","Yes"
-"Your order can not be completed at this time as there is no payment methods available for it.","Your order can not be completed at this time as there is no payment methods available for it."
-"Your order can not be completed at this time as there is no shipping methods available for it. Please make necessary changes in your shipping address.","Your order can not be completed at this time as there is no shipping methods available for it. Please make necessary changes in your shipping address."
+"Yes","نعم"
+"Your order can not be completed at this time as there is no payment methods available for it.","لا يمكن إتمام طلبك في هذه اللحظة وذلك لعدم وجود طريقة دفع لهذا الطلب"
+"Your order can not be completed at this time as there is no shipping methods available for it. Please make necessary changes in your shipping address.","لا يمكن إتمام طلبك في هذا الوقت بسبب انعدام وجود طريقة الشحن. الرجاء إختيار عنوان الشحن"
 "Your session has been expired, you will be relogged in now.","لقد انتهت صلاحية جلستك. سيتم إعادة تسجيل دخولك الآن."
-"Search","Search"
-"Go","Go"
-"Search entire store here...","Search entire store here..."
-"Compare Products","Compare Products"
-"Back to Main Product Info","Back to Main Product Info"
-"You have no items to compare.","You have no items to compare."
-"Clear All","Clear All"
-"Search entire store here...","Search entire store here..."
-"Search","Search"
-"About the calendar","About the calendar"
-"For latest version visit: %s","For latest version visit: %s"
-"Distributed under GNU LGPL. See %s for details.","Distributed under GNU LGPL. See %s for details."
-"Date selection:","Date selection:"
-"- Use the %s, %s buttons to select year","- Use the %s, %s buttons to select year"
-"- Use the %s buttons to select month","- Use the %s buttons to select month"
-"- Hold mouse button on any of the above buttons for faster selection.","- Hold mouse button on any of the above buttons for faster selection."
-"Time selection:","Time selection:"
-"- Click on any of the time parts to increase it","- Click on any of the time parts to increase it"
-"- or click and drag for faster selection.","- or click and drag for faster selection."
-"Go Today","Go Today"
-"Next month (hold for menu)","Next month (hold for menu)"
-"Next year (hold for menu)","Next year (hold for menu)"
-"Select date","Select date"
-"Drag to move","Drag to move"
-"Close","Close"
-"(Shift-)Click or drag to change value","(Shift-)Click or drag to change value"
-"Time:","Time:"
-"DHTML Date/Time Selector","DHTML Date/Time Selector"
-=======
-"%s already exists","%s موجود بالفعل"
-"%s already exist","%s موجود بالفعل"
-"* Required Fields","* Required Fields"
-"-- Please Select --","-- من فضلك اختر --"
-"Cookie Domain","Cookie الملك"
-"Cookie Lifetime","Cookie المده الزمنية"
-"Cookie Path","Cookie الطريق"
-"Cron (Scheduled Tasks) - all the times are in minutes","Cron (المقرر المهام) -- جميع الأوقات في غضون دقائق"
-"SMTP settings (Windows server only)","SMTP اوضاع (نظام النافذة فقط)"
-"Submit","يرسل"
-"Var (temporary files) directory","فار) الملفات المؤقتة) دليل"
-"Please select one of the options.","فضلا اختار واحد من الخيارات."
-"Please select one of the above options.","فضلا اختار من الخيارات الموجوده في الاعلى."
-"Please select an option.","فضلا اختر خيار ."
-"Please use letters only (a-z) in this field.","فضلا استخدم الحروف من (ا-ي )في هذه الخانه."
-"Code","كود"
-"Invalid block name to set child %s: %s","كتلة غير صالحة لوضع اسم الطفل %s: %s"
-"Controller file was loaded but class does not exist","وكان المراقب المالي تحميل الملف ولكن لا وجود الطبقة"
-"Set as default","وضع كاافتراضي"
-"Templates","قوالب"
-"Code pools root directory","قانون مجمعات الدليل الرئيسي"
-"Invalid transactional email code: ","قانون المعاملات البريد الالكتروني غير صحيح: "
-"Base Link URL","قاعدة وصلة الموقع"
-"Base JavaScript URL","قاعدة موقع جافا سكريبت"""
-"Base URL","قاعدة الموقع"
-"Invalid base dir type specified: %s","قاعدة غير صحيحة دير نوع محدد: %s"
-"Before modifying the website code please make sure that it is not used in index.php","قبل تعديل قانون الموقع يرجى التأكد من انها لا تستخدم في index.php"
-"Before modifying the store view code please make sure that it is not used in index.php","قبل تعديل قانون المتجر ورأى يرجى التأكد من انها لا تستخدم في index.php"
-"Your session has been expired, you will be relogged in now.","لقد انتهت صلاحية جلستك. سيتم إعادة تسجيل دخولك الآن."
-"Your order has been received","لقد تم استلام طلبك"
-"Back","للخلف"
-"Unable to create backup. Please, try again later.","لا يمكن إنشاء نسخة احتياطية. من فضلك حاول مرة أخرى."
-"Unable to proceed. Please, try again","لا يمكن الاستمرار. من فضلك حاول مرة أخرى"
-"Can't retrieve request object","لا يمكن استرجاع وجوه الطلب"
-"Can't retrieve entity config: %s","لا يمكن استرجاع الكيان أعداد: %s"
-"Cannot Delete Email Template","لا يمكن حذف قالب البريد الإلكتروني"
-"This Website cannot be deleted","لا يمكن حذف هذا الموقع"
-"This Website cannot be deleted.","لا يمكن حذف هذا الموقع."
-"This Store cannot be deleted","لا يمكن حذف هذا المتجر"
-"This Store cannot be deleted.","لا يمكن حذف هذا المتجر."
-"Unable to delete Website. Please, try again later.","لا يمكن حذف الموقع. من فضلك حاول مرة أخرى."
-"Unable to delete Store. Please, try again later.","لا يمكن حذف المتجر. من فضلك حاول مرة أخرى."
-"Unable to delete Store View. Please, try again later.","لا يمكن حذف عرض المتجر. من فضلك حاول مرة أخرى."
-"Default no-route url","لا الافتراضيه - موقع الطريق"
-"You have no items to compare.","لا توجد عندك عناصر للمقارنة."
-"Enabled for Frontend","لتمكين الواجهة"
-"Invalid base url type","نوع قاعدة الموقع غير صحيحة"
-"Debug","نقح"
-"Model class does not exist: %s","نموذج من الدرجة لا وجود لل: %s"
-"Model collection resource name is not defined","نموذج جمع الموارد اسم غير محدد"
-"Forgot Password Email Template","نسيت كلمة السر البريد الالكتروني قالب"
-"Forgot Password Email Sender","نسيت كلمة السر البريد الالكتروني للمرسل"
-"Duplicate Of Template Code","نسخة طبق الاصل من نموذج قانون"
-"Filesystem","نظام الملف"
-"Are you sure?","هل أنت متأكد؟"
-"This category only","هذا التصنيف فقط"
-"This category and its products","هذا التصنيف ومنتجاته"
-"This category and its child categories","هذا التصنيف وتصنيفاته الفرعية"
-"This is a required field.","هذا الحقل مطلوب."
-"Enabled","مفعل"
-"Enabled for Admin","مفعل للمدير"
-"Web","موقع"
-"Base Media URL","موقع قاعدة وسائل الاعلام"
-"Base Skin URL","موقع قاعدة الجلد"
-"Website with the same code","موقع له نفس الكود"
-"Website code should contain only letters (a-z), numbers (0-9) or underscore(_), first character should be a letter","موقع المدونه يجب ان لا تحتوي الا على الحروف (من الالف الى الياء) ، ارقام (0-9) يؤكد او (_) ، الحرف الأول ينبغي ان يكون رسالة"
-"New Website","موقع جديد"
-"Invalid websites configuration path: %s","مواقع غير صالحة طريق التكوين: %s"
-"Themes","مواضيع"
-"located in {{base_dir}}/var/log","موضوعة في  {{base_dir}}/var/log"
-"Compare Products","مقارنة المنتجات"
-"Compare Products - %d Items","مقارنة المنتجات - %d عناصر"
-"Compare Items","مقارنة العناصر"
-"Please enter 6 or more characters.","من فضلك قم بإدخال 6 أحرف أو أكثر."
-"Please enter 6 or more characters. Leading or trailing spaces will be ignored.","من فضلك قم بإدخال 6 أحرف أو أكثر. سيتم تجاهل المسافات قبل أو بعد الأحرف."
-"Please enter valid password.","من فضلك قم بإدخال كلمة مرور صحيحة."
-"Please enter a valid email address. For example johndoe@domain.com.","من فضلك قم بإدخال بريد إلكتروني صحيح. كمثال johndoe@domain.com."
-"Please enter a valid date.","من فضلك قم بإدخال تاريخ صحيح."
-"Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.","من فضلك قم بإدخال رقم هاتف صحيح. كمثال (123) 456-7890 أو 123-456-7890."
-"Please enter a number greater than 0 in this field.","من فضلك قم بإدخال رقم أكبر من 0 في هذا الحقل."
-"Please enter a valid credit card number.","من فضلك قم بإدخال رقم بطاقة إئتمان صحيح."
-"Please enter a valid number in this field.","من فضلك قم بإدخال رقم صحيح في هذا الحقل."
-"Please use numbers only in this field. please avoid spaces or other characters such as dots or commas.","من فضلك قم باستخدام أرقام فقط في هذا الحقل. من فضلك تجنب استخدام المسافات أو أي رموز أخرى كالنقاط أو الفواصل."
-"Please wait, loading...","من فضلك انتظر، جار التحميل..."
-"Please select State/Province.","من فضلك اختر ولاية/مقاطعة."
-"Please make sure your passwords match.","من فضلك تأكد من تطابق كلمة المرور."
-"Port (25)","منفذ (25)"
-"Sales representative","مندوب المبيعات"
-"Timezone","منطقة التوقيت"
-"Advanced","متقدم"
-"Store with the same code","متجر له نفس الكود"
-"New Store","متجر جديد"
-"Package","مجموعة"
-"Locale","محلي"
-"Search Engines Optimization","محركات البحث الأمثل"
-"Invalid messages storage ""%s"" for layout messages initialization","مخزن الرسائل عاجزه ""%s"" التهيءه لتصميم رسائل"
-"Block with name ""%s"" already exists","مساحة بالاسم ""%s""تم ايجادها"
-"Invalid block: %s","مساحة غير ممكنه: %s"
-"Admin User","مستخدم إداري"
-"Skin (Images / CSS)","مسح (صور / CSS)"
-"Clear All Items","مسح جميع العناصر"
-"Developer","مطور"
-"Secure","آمن"
-"Empty main table name","إفراغ اسم الجدول الرئيسي"
-"Empty identifier field name","إفراغ اسم حقل المعرف"
-"Cancel","إلغاء"
-"Disable email communications","إلغاء تفعيل التواصل عن طريق البريد الإلكتروني"
-"Create Website","إنشاء موقع"
-"Create Store","إنشاء متجر"
-"Create Store View","إنشاء عرض متجر"
-"Manage Stores","إدارة المتاجر"
-"Use Web Server Rewrites","إعادة كتابة باستخدام خادم الويب"
-"General Settings","إعدادات عامة"
-"All","الكل"
-"System","النظام"
-"Website","الموقع"
-"Default web url","الموقع الافتراضي"
-"Website not exists","الموقع غير موجود"
-"Stores","المتاجر"
-"Store","المتجر"
-"Default Store","المتجر الافتراضي"
-"Store not exists","المتجر غير موجود"
-"Profiler","المحلل"
-"Host","المضيف"
-"Developer Client Restrictions","المطور العملاء القيود"
-"Resource is not set","المصدر ليس موضوع"
-"Default","الافتراضي"
-"Sender email","البريد الإلكتروني للمرسل"
-"Email","البريد الالكتروني"
-"Date From","التاريخ من"
-"Date To","التاريخ إلى"
-"Sort order","الترتيب"
-"Root Category","التصنيف الجذر"
-"Status","الحالة"
-"Default country","الدولة الافتراضية"
-"Please enter a valid zip code.","الرجاء إدخال الرمز البريدي."
-"Please enter a valid zip code. For example 90602 or 90602-1234.","الرجاء إدخال الرمز البريدي. فعلى سبيل المثال 90602 او 90602-1234."
-"Please enter a valid $ amount. For example $100.00.","الرجاء ادخال دولار من المبلغ. فعلى سبيل المثال 100،00 دولار.."
-"Please enter a valid social security number. For example 123-45-6789.","الرجاء ادخال رقم الضمان الاجتماعي. فعلى سبيل المثال 123-45-6789."
-"Please enter a valid URL. http:// is required","الرجاء ادخال عنوان. http:// مطلوب"
-"Please enter a valid URL. For example http://www.example.com or www.example.com","الرجاء ادخال عنوان. فعلى سبيل المثال http://www.example.com او www.example.com"
-"Please use this date format: dd/mm/yyyy. For example 17/03/2006 for the 17th of March, 2006.","الرجاء استخدام هذا الشكل حتى الآن : اليوم / الشهر / السنة. فعلى سبيل المثال 17/03/2006 للالسابع عشر من اذار / مارس ، 2006."
-"Please use only letters (a-z) or numbers (0-9) or spaces and # only in this field.","الرجاء استخدام الحروف (من الالف الى الياء الاقامة) او ارقام (0-9) أو المساحات و# فقط في هذا المجال."
-"Please use only letters (a-z) or numbers (0-9) only in this field. No spaces or other characters are allowed.","الرجاء استخدام الحروف (من الالف الى الياء الاقامة) او ارقام (0-9) الا في هذا الميدان. أي فراغات او الشخصيات الأخرى يسمح لل."
-"Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter.","الرجاء استخدام الحروف (من الالف الى الياء الاقامة) ، ارقام (0-9) يؤكد او (_) في هذا المجال ، ينبغي ان يكون الحرف الاول رسالة."
-"Allow countries","السماح للدول"
-"Default Pages","الصفحات الافتراضية"
-"Keep your eyes open for our special Back to School items and save A LOT!","ابقاء عينيك مفتوحة لدينا العودة الى المدارس الخاصة البنود وانقاذ الكثير!"
-"Leave empty for access from any location","اترك فارغا للوصول من أي موقع"
-"General contact","اتصالات عامة"
-"Remove This Item","احذف هذا العنصر"
-"Go","اذهب"
-"Name","اسم"
-"Website Name","اسم الموقع"
-"File Name","اسم الملف"
-"Store Name","اسم المتجر"
-"Current package name","اسم المجموعة الحالية"
-"Sender name","اسم المرسل"
-"Store View Name","اسم عرض المتجر"
-"Use Secure URLs in Admin","استخدام عناوين في ادارة امن"
-"Exception Log File Name","اشتثناء الدخول باسم الملف"
-"Wrong number of arguments for %s","اعداد خاطاءه من النقاشات لل %s"
-"Website Information","بيانات الموقع"
-"Store Information","بيانات المتجر"
-"Store View Information","بيانات عرض المتجر"
 "Search","بحث"
-"Custom email 1","بريد إلكتروني مخصص 1"
-"Custom email 2","بريد إلكتروني مخصص 2"
-"Contact Us","تواصل معنا"
-"Telephone","تلفون"
-"Template Path Hints","تلميحات مسار القالب"
-"Database was successfuly backed up.","تم التخزين الاحتياطي لقاعدة البيانات بنجاح."
-"Website was successfully saved","تم حفظ الموقع بنجاح"
-"Store was successfully saved","تم حفظ المتجر بنجاح"
-"Store View was successfully saved","تم حفظ عرض المتجر بنجاح"
-"Website was successfully deleted.","تم حذف الموقع بنجاح."
-"Store was successfully deleted.","تم حذف المتجر بنجاح."
-"Store View was successfully deleted.","تم حذف عرض المتجر بنجاح."
-"Use Secure URLs in Frontend","تأمين استخدام عناوين المواقع في الواجهة"
-"Start date can't be greater than end date","تاريخ بداية لا يمكن ان يكون اكبر من تاريخ إنتهاء"
-"Invalid layout update handle","تحديث نسق التعامل مع غير صالحة"
-"Invalid layout update argument, expected Mage_Core_Model_Layout_Element","تحديث الحجه غير صحيحة النسق ، من المتوقع ان mage_core_model_layout_element"
-"Edit Website","تحرير موقع"
-"Edit Store","تحرير متجر"
-"Edit Design Change","تحرير تغيير التصميم"
-"Edit Store View","تحرير عرض المتجر"
-"Layout","تخطيط"
-"Translations","ترجمات"
-"Comment","تعليق"
-"Disable modules output","تعطيل وحدات الإنتاج"
-"Design Change","تغيير التصميم"
-"New Design Change","تغيير تصميم جديد"
-"Design","تصميم"
-"Custom Design","تصميم مخصص"
-"Save","حفظ"
-"Save Website","حفظ الموقع"
-"Save Store","حفظ المتجر"
-"Save Store View","حفظ عرض المتجر"
-"Delete","حذف"
-"Delete Website","حذف موقع"
-"Deleting a website will not delete the information associated with the website (e.g. stores, categories, products, etc.), but the website will not be able to be restored. It is suggested that you create a database backup before deleting the website.","حذف موقع على شبكة الانترنت لن يتم حذف المعلومات المرتبطه الموقع على شبكة الانترنت (مثل المتاجر ، والفئات ، والمنتجات ، وما الى ذلك) ، إلا ان الموقع لن تكون قادرة على استعادة. ويقترح ان تقوم بانشاء قاعدة بيانات احتياطية قبل حذف الموقع.."
-"Delete Store","حذف متجر"
-"Deleting a store will not delete the information associated with the store (e.g. categories, products, etc.), but the store will not be able to be restored. It is suggested that you create a database backup before deleting the store.","حذف متجر لن يتم حذف المعلومات المرتبطه تخزين (مثل الفئات ، والمنتجات ، وما الى ذلك) ، لكن المتجر لن تكون قادرة على استعادة. ويقترح ان تقوم بانشاء قاعدة بيانات احتياطية قبل حذف المتجر.."
-"Deleting a store view will not delete the information associated with the store view (e.g. categories, products, etc.), but the store view will not be able to be restored. It is suggested that you create a database backup before deleting the store view.","حذف متجر الرأي لن يتم حذف المعلومات المرتبطه المتجر وراي (على سبيل المثال الفئات ، والمنتجات ، وما الى ذلك) ، ولكن نظرا لتخزين لن تكون قادرة على استعادة. ويقترح ان تقوم بانشاء قاعدة بيانات احتياطية قبل حذف المتجر ورأي."
-"Delete Store View","حذف عرض متجر"
-"Locale options","خيارات محلية"
-"Url Options","خيارات الموقع"
-"Countries options","خيارات الدول"
-"Services","خدمات"
-"Error in file: ""%s"" - %s","خطأ في الملف: ""%s"" - %s"
-"Error while saving. Please try again later.","خطا اثناء الادخار. يرجى اعادة المحاوله لاحقا."
-"Session Cookie management","دورة ال  Cookie ادارة"
-"Media files directory","دليل وسائل الاعلام ملفات"
-"Session files directory","دليل ملفات الجلسة"
-"Base directory","دليل أساسي"
-"Skin directory","دليل المسح"
-"Customer support","دعم العملاء"
-"Id path for specified store","رقم تعريف المسار المحدد للتخزين"
-"Store code should contain only letters (a-z), numbers (0-9) or underscore(_), first character should be a letter","رمز المخزن وينبغي ان تتضمن الحروف (من الالف الى الياء ) ، ارقام (0-9) يؤكد او (_) ، الحرف الأول ينبغي ان يكون رسالة"
-"Add Store Code to Urls","رمز المخزن اضافة الى عناوين المواقع"
-"Contact Information","ربط المعلومات"
-"Allowed IPs (comma separated)","سمحت المءسسه (مفصوله بفواصل)"
-"You will receive an order confirmation email with details of your order and a link to track its progress.","ستتلقي من اجل تأكيد بالبريد الالكتروني مع تفاصيل طلبك وصلة لتتبع التقدم المحرز."
-"Request path for specified store","طلب مسار للمتجر المحدد"
-"Your order # is: %s","طلبك # is: %s"
-"Target path for specified store","طريق الهدف لمخزن محدد"
-"Store Email Addresses","عناوين البريد الإلكتروني للمتجر"
-"Global","عالمي"
-"General","عام"
-"New Store View","عرض متجر جديد"
-"This Store View cannot be deleted","عرض المتجر هذا لا يمكن حذفه"
-"This Store View cannot be deleted.","عرض المتجر هذا لا يمكن حذفه."
-"Default Store View","عرض المتجر الافتراضي"
-"Store View not exists","عرض المتجر غير موجود"
-"Unknown scope ""%s""","غير معروف نطاق ""%s"""
-"Unsecure","غير آمن"
-"Invalid block type: %s","غير صحيح من النوع (بلوك: %s"
->>>>>>> 6befb3e5115251dc0dfcceea1be9de3a5d169522
+"Go","إذهب"
+"Search entire store here...","أبحث في جميع المتجر هنا"
+"Compare Products","مقارنة السلع"
+"Back to Main Product Info","الرجوع إلى معلومات السلع الرئيسية"
+"You have no items to compare.","You have no items to compare."
+"Clear All","حذف كل شيء"
+"Search entire store here...","بحث في كامل المتجر"
+"Search","بحث"
+"About the calendar","عن التقويم"
+"For latest version visit: %s","للحصول على اجدد نسخة قم بزيارة:  %s"
+"Distributed under GNU LGPL. See %s for details.","وزعت بموجب  GNU LGPL. للمعلومات انظر إلى %s"
+"Date selection:","أختيار التأريخ"
+"- Use the %s, %s buttons to select year","إستعمل زر  %s, %s لإختيار السنة"
+"- Use the %s buttons to select month","إستعمل زر %s, %s لإختيار الشهر"
+"- Hold mouse button on any of the above buttons for faster selection.","عقد زر الماوس على أي من الأزرار أعلاه لاختيار أسرع."
+"Time selection:","إختيار الوقت"
+"- Click on any of the time parts to increase it","انقر على أي من أجزاء الوقت لزيادته"
+"- or click and drag for faster selection.","أو انقر واسحب لاختيار أسرع."
+"Go Today","إذهب اليوم"
+"Next month (hold for menu)","الشهر القادم ( عقد لمدة للقائمة)"
+"Next year (hold for menu)","السنة القادمة ( عقد لمدة للقائمة)"
+"Select date","إختيار التأريخ"
+"Drag to move","إسحب لتحريك"
+"Close","إغلاق"
+"(Shift-)Click or drag to change value","(التحول) انقر أو اسحب لتغيير قيمة"
+"Time:","وقت"
+"DHTML Date/Time Selector","DHTML Date/Time Selector"

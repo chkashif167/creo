@@ -8,9 +8,9 @@
  * Please refer to http://www.magentocommerce.com for more information.
  *
  * @category  Mirasvit
- * @package   Sphinx Search Ultimate
- * @version   2.3.2
- * @build     1290
+ * @package   Advanced Product Feeds
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -18,22 +18,36 @@
 
 class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
 {
+    /**
+     * @var array
+     */
+    protected $modules = array();
+
+    /**
+     * @param string $modulename
+     * @return bool
+     */
     public function isModuleInstalled($modulename)
     {
-        $modules = Mage::getConfig()->getNode('modules')->children();
-        $modulesArray = (array) $modules;
+        if (isset($this->modules[$modulename])) {
+            return $this->modules[$modulename];
+        }
 
-        if (isset($modulesArray[$modulename])
+        $modules = Mage::getConfig()->getNode('modules')->children();
+        $modulesArray = (array)$modules;
+
+        if(isset($modulesArray[$modulename])
             && $modulesArray[$modulename]->is('active')
             && $modulesArray[$modulename]->is('codePool')) {
             $codePool = $modulesArray[$modulename]->codePool;
-            $configFile = Mage::getBaseDir('code').DS.$codePool.DS.str_replace('_', DS, $modulename).DS.'etc'.DS.'config.xml';
+            $configFile = Mage::getBaseDir('code'). DS . $codePool . DS . str_replace('_', DS, $modulename) . DS . 'etc' . DS . 'config.xml';
             if (file_exists($configFile)) {
-                return true;
+                $this->modules[$modulename] = true;
             }
+        } else {
+            $this->modules[$modulename] = false;
         }
-
-        return false;
+        return $this->modules[$modulename];
     }
 
     public function pr($arr, $ip = false, $die = false)
@@ -106,6 +120,8 @@ class Mirasvit_MstCore_Helper_Data extends Mage_Core_Helper_Data
             } else {
                 $modules = $this->getFolders($modules);
             }
+        } else {
+            $modules = array();
         }
 
         if (count($modules) == 0) {

@@ -232,11 +232,13 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
         if ($this->getCurrentOrder()) {
             //$this->_collection->setOrder($this->getCurrentOrder(), $this->getCurrentDirection());
             if(($this->getCurrentOrder())=='position'){ //defines the sort option
+
                 //sort by entity_id (descending)
                 $this->_collection->addAttributeToSort('entity_id',$this->getCurrentDirection());
                 } else {
                 $this->_collection->setOrder($this->getCurrentOrder(),$this->getCurrentDirection());
                 }
+
         }
         return $this;
     }
@@ -406,7 +408,8 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
     public function setDefaultDirection($dir)
     {
         if (in_array(strtolower($dir), array('asc', 'desc'))) {
-            $this->_direction = strtolower($dir);
+           // $this->_direction = strtolower($dir);
+             $this->_direction = 'desc';
         }
         return $this;
     }

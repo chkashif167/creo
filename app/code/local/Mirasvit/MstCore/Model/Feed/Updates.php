@@ -8,9 +8,9 @@
  * Please refer to http://www.magentocommerce.com for more information.
  *
  * @category  Mirasvit
- * @package   Sphinx Search Ultimate
- * @version   2.3.2
- * @build     1290
+ * @package   Advanced Product Feeds
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -50,7 +50,9 @@ class Mirasvit_MstCore_Model_Feed_Updates extends Mirasvit_MstCore_Model_Feed_Ab
                 }
             }
 
-            Mage::getModel('adminnotification/inbox')->parse($items);
+            if (Mage::getModel('adminnotification/inbox')) {
+                Mage::getModel('adminnotification/inbox')->parse($items);
+            }
         } catch (Exception $ex) {
             Mage::logException($ex);
         }

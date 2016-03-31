@@ -47,32 +47,32 @@
 	<span class="copyright"><?php echo $this->getCopyright() ?></span>
 	</div>
 	<div class="column column1">
-		<?php $customer = Mage::getModel('cms/block')->load('customer_service'); ?>
-		<h3><?php  echo $customer->getTitle(); ?></h3>
+	<?php $customer = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('customer_service'); ?>
+		<b class="head"><?php echo $customer->getTitle();?></b>
 		<?php echo $customer->getContent(); ?>
 	</div>
 	<div class="column">
-	<?php $about = Mage::getModel('cms/block')->load('about_us'); ?>
-	<h3><?php  echo $about->getTitle(); ?></h3>
+	<?php $about = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('about_us'); ?>
+	<b class="head"><?php  echo $about->getTitle(); ?></b>
 	<?php echo $about->getContent(); ?>
 	</div>
 	<div class="column">
-		 <?php $acount = Mage::getModel('cms/block')->load('popular_products'); ?>
-		<h3><?php  echo $acount->getTitle(); ?></h3>
+		 <?php $acount = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('popular_products'); ?>
+		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<div class="column">
-		 <?php $acount = Mage::getModel('cms/block')->load('account_footer'); ?>
-		<h3><?php  echo $acount->getTitle(); ?></h3>
+		 <?php $acount = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('account_footer'); ?>
+		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<div class="column">
-		 <?php $acount = Mage::getModel('cms/block')->load('contact_footer'); ?>
-		<h3><?php  echo $acount->getTitle(); ?></h3>
+		 <?php $acount = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('contact_footer'); ?>
+		<b class="head"><?php  echo $acount->getTitle(); ?></b>
 		<?php echo $acount->getContent(); ?>
 	</div>
 	<?php /*
-	$paymentlogos = Mage::getModel('cms/block')->load('footer-payment-logos');
+	$paymentlogos = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('footer-payment-logos');
 	$paymentlogos2 = $this->getLayout()->createBlock('cms/block')->setBlockId('footer-payment-logos')->toHtml();
 	if ($paymentlogos2 != '') { ?>
 	<div class="column">
@@ -112,54 +112,55 @@ if(msgType=='error-msg'){
 }
 
 jQuery( document ).ready( function($){
-	if(hdata){
+if(hdata){
+	jQuery.confirm({
+	title: msgTitle,
+	confirmButtonClass: 'btn-info',
+	content: hdata, // You can also LOAD the html data using LOAD FROM URL feature,
+	});
+}
 
-		jQuery.confirm({
-			title: msgTitle,
-			confirmButtonClass: 'btn-info',
-			content: hdata, // You can also LOAD the html data using LOAD FROM URL feature,
-
-		});
-	}
-
-	jQuery('#tools-button').find('li').find('a').click(function(){
+jQuery('#tools-button').find('li').find('a').click(function(){
 	setTimeout(function(){
 	jQuery('#tools-button').find('li').find('a').show();
 	},2);
-	});
+});
 
 });
 	autoClose: 'cancel|6000',
 	jQuery(".messages").hide();
 
-	function removeProd(){
-		jQuery.confirm({
-			title: msgTitle,
-			confirmButtonClass: 'btn-info',
-			content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
-			    confirm: function(){
-					return true;
-				}
+function removeProd(){
+	jQuery.confirm({
+		title: msgTitle,
+		confirmButtonClass: 'btn-info',
+		content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
+		    confirm: function(){
+				return true;
+			}
 
-		});
-		}
+	});
+}
 </script>
 <script>
 jQuery(window).load(function(){
     //jQuery('#currentvalue').text('View All');
     var url = window.location.href;
-    var array = url.split('?');
+    var array = url.split('?universal_categories=');
     var paramStr = array[1];
-    var params = paramStr.split("universal_categories=");
-    console.log(params);
+    var params = paramStr;
+    //console.log(params);
     var design = getQueryVar('universal_categories').trim();
-    if(design) {
-        console.log('here1'+design);
-        var currentEl = jQuery("#universal_categories-"+design).text();
-        if(currentEl) {
-            $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentEl+'</a>');
-        }
-    }
+//    console.log(design);
+
+    // if(design) {
+    //     console.log('here1'+design);
+    //     var currentEl = jQuery("#universal_categories-"+design).text();
+    //     if(currentEl) {
+    //         $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentEl+'</a>');
+    //     }
+    // }
+
     //var search2 = getQueryVar('design').toLowerCase();
     //console.log(search2);
     //location.href.replace("design="+design, "design=3araby");

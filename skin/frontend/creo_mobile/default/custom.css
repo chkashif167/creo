@@ -978,108 +978,17 @@ float: left; width:100%;text-align:left;border-radius:0;box-shadow:none;}
     display: none;
 }*/
 
-.tshirtsize table, th, td {
-    border: 1px solid transparent;
-
-}
-.tshirtsize table {
-    border-collapse: separate;
-    border-spacing: 10px 4px;
-}
-
-.tshirtsize table>tbody>tr:nth-of-type(even) {
-    background-color: #facbd1;
-}
-
-.tshirtsize table>tbody>tr:nth-of-type(odd) {
-    background-color: #fde7ea;
-}
-.tshirtsize th{
-    background-color: #f16b7a;
-    text-align: center;
-    width: 175px;
-    color: #fef7f8;
-    font-size: 12px;
-    text-transform: capitalize;
-}
-.tshirtsize{
-    width:400px;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-transform: uppercase;
-    background-color: #fff;
-}
-.tshirtsize .heading{
-    font-size: 18.13px;
-    font-weight: bold;
-    text-align: center;
-    border:2px solid #959595;
-    padding-bottom: 1%;
-    padding-top: 1%;
-    width: 94.5%;
-    margin-left: 3%;
-}
-.tshirtsize td{
-    padding:5px;
-    width: 133px;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 400;
-    color: #251c1d;
-}
-.tshirtsize .headingsize{
-    width: 100%;
-}
-
-.tshirtsize table, th, td{
-    border: 1px solid transparent;
-
-}
-.tshirtsize table.womentable {
-    border-collapse: separate;
-    border-spacing: 5px 2px;
-}
-
-.tshirtsize table>tbody>tr:nth-of-type(even) {
-    background-color: #facbd1;
-}
-
-.tshirtsize table>tbody>tr:nth-of-type(odd) {
-    background-color: #fde7ea;
-}
-.womentable th{
-    background-color: #f16b7a;
-    text-align: center;
-    width: 175px;
-    color: #fef7f8;
-    font-size: 11px;
-}
-.tshirtsize{
-    width:400px;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-transform: uppercase;
-    background-color: #fff;
-}
-.headingsize2 .heading {
-    font-size: 18.13px;
-    font-weight: bold;
-    text-align: center;
-    border: 2px solid #959595;
-    padding-bottom: 1%;
-    padding-top: 1%;
-    width: 97%;
-    margin-left: 1.5%;
-}
-.womentable td{
-    padding:3px;
-    text-align: center;
-    font-size: 9px;
-    font-weight: 400;
-    color: #251c1d;
-}
-.headingsize2{
-    width: 100%;
-}
-
+.tshirtsize table, th, td {border: 1px solid transparent;color:#000;}
+.tshirtsize table{border-collapse:separate;border-spacing:2px 2px;}
+.tshirtsize{width:100%;font-family: 'Roboto Condensed', sans-serif;text-transform: uppercase;background-color: #fff;}
+.tshirtsize .heading{width:auto;padding:8px 15px;background-color:#000;font-size:16px;display:inline-block;color:#fff;}
+.tshirtsize table, th, td{border: 1px solid transparent;}
+.tshirtsize th{background-color:#000;text-align: center;color: #fff;font-size:12px;font-weight:normal;}
+.tshirtsize{width:100%;font-family: 'Roboto Condensed', sans-serif;text-transform: uppercase;background-color: #fff;
+margin-bottom:25px;}
+.tshirtsize small{text-transform:none;}
+.tshirtsize h4{line-height:1.2;font-size:16px;text-align:left;}
+.headingsize2{width: 100%;}
 .has-swatches.swatch-type-image { padding: 0;}
 .has-swatches.swatch-type-label { padding: 0;}
 .catalog-product-view #fancybox-link { display: none !important;}

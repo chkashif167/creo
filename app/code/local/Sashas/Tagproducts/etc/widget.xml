@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author		Sashas
+ * @category    Sashas
+ * @package     Sashas_Tagproducts
+ * @copyright   Copyright (c) 2014 Sashas IT Support Inc. (http://www.sashas.org)
+ * @license    http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+ */
+-->
+<widgets>
+    <tagproducts_grid type="tagproducts/grid">
+        <name>Tag Products</name>
+        <description type="desc">Adds tagged product list</description>
+        <parameters>
+        	<show_layered translate="label">
+        		 <required>1</required>
+        		 <visible>1</visible>
+        		 <label>Show Layered Navigation</label>
+        		 <type>select</type>  
+        		 <value>1</value>      
+        		 <source_model>adminhtml/system_config_source_yesno</source_model>		 
+        	</show_layered>
+        	<products_per_page translate="label">
+        		 <required>1</required>
+        		 <visible>1</visible>
+        		 <label>Products per page</label>
+        		 <type>text</type> 
+        		 <value>8,16,24</value>               		 	
+        	</products_per_page>
+        	<products_per_row translate="label">
+        		 <required>1</required>
+        		 <visible>1</visible>
+        		 <label>Products per row</label>
+        		 <type>text</type> 
+        		 <value>4</value>               		 	
+        	</products_per_row>        	
+        	<tags translate="label">
+        		 <required>1</required>
+        		 <visible>1</visible>
+        		 <label>Select tags (or Union of tags)</label>
+        		 <type>multiselect</type>        
+        		 <source_model>tagproducts/source_tags</source_model>		 
+        	</tags>    
+        	<sort_by translate="label">
+        		 <required>1</required>
+        		 <visible>1</visible>
+        		 <label>Default Sort By</label>
+        		 <type>select</type>
+        		 <value>position</value>        
+        		 <source_model>adminhtml/system_config_source_catalog_listSort</source_model>		 
+        	</sort_by>   
+        <!--  	<default_mode translate="label">
+        		 <required>1</required>
+        		 <visible>1</visible>
+        		 <label>View Mode</label>
+        		 <type>select</type>      
+        		 <value>grid-list</value>  
+        		 <source_model>adminhtml/system_config_source_catalog_listMode</source_model>		 
+        	</default_mode>          -->	       	    	        	
+        </parameters>
+    </tagproducts_grid>
+</widgets> 

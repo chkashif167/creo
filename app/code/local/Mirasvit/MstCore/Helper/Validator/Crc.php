@@ -8,9 +8,9 @@
  * Please refer to http://www.magentocommerce.com for more information.
  *
  * @category  Mirasvit
- * @package   Sphinx Search Ultimate
- * @version   2.3.2
- * @build     1290
+ * @package   Advanced Product Feeds
+ * @version   1.1.4
+ * @build     702
  * @copyright Copyright (C) 2016 Mirasvit (http://mirasvit.com/)
  */
 
@@ -28,7 +28,10 @@ class Mirasvit_MstCore_Helper_Validator_Crc extends Mirasvit_MstCore_Helper_Vali
         $description = array();
 
         foreach ($modules as $module) {
-            $crcFile = Mage::getBaseDir('code').'/local/Mirasvit/MstCore/etc/'.$module.'.crc';
+            $crcFile = Mage::getBaseDir('code').'/local/Mirasvit/MstCore/etc/'.strtolower($module).'.crc';
+            if (!is_file($crcFile)) {
+                $crcFile = Mage::getBaseDir('code').'/local/Mirasvit/MstCore/etc/'.$module.'.crc';
+            }
             if (!is_file($crcFile)) {
                 if ($result !== self::FAILED) {
                     $result = self::INFO;
