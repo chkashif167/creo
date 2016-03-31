@@ -4427,7 +4427,7 @@ textarea {
 }
 .two-column-category .category-title{
 	position: absolute;
-	top: 0;
+	/*top: 0;*/
 	bottom: 0;
 	right: 0;
 	padding: 0 15px;
@@ -4437,6 +4437,8 @@ textarea {
 	background: rgba(255, 255, 255, 0.7);
 	color: #000;
 	font:bold 26px/30px "Roboto Condensed", Helvetica, Arial, sans-serif;
+	height: 100px;
+	width:100%;
 }
 .two-column-category a:hover .category-title{
 	background: #ef4f61;
@@ -4448,7 +4450,7 @@ textarea {
 }
 .two-column-category .category-title span {
 	display: table-cell;
-	height: 583px;
+	height: 100px;
 	vertical-align: middle;
 }
 .carousel-creo.home{margin: 0 0 13px;}
