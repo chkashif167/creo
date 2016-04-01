@@ -16,17 +16,32 @@ footer#footer{direction:rtl;}
 .searchautocomplete .searchautocomplete-placeholder:before,a.search-icon.glyphicon.glyphicon-search,
 #header .basic-open-close ul,.tab-content2 .column-content .edit-icon,.owl-theme .owl-controls{right:inherit;left:0;}
 .main-menu .bgr-icon{left:inherit;}
-.product-detail .price-area .availability,#header .cart,a.search-icon.glyphicon.glyphicon-search{float:left;}
+.product-detail .price-area .availability,#header .cart,a.search-icon.glyphicon.glyphicon-search,
+.cartPage_custome_responsive td.product-cart-actions .qty-area,.onestepcheckout-index-index .discount-form .buttons-set{float:left;}
 .canvas-slid .main-menu .bgr-icon {right:250px;left:inherit;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:52px;}
 #nav .links-area{margin-left:15px;text-align:right;}
 .product-detail .btn-holder button:first-child .span1{margin-left:0;margin-right:10px;}
 #nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
-.checkoutShippingMethod ul li label,.product-detail .price-area .price,.product-swatches-container .has-swatches li{float:right;}
+.checkoutShippingMethod ul li label,.product-detail .price-area .price,.product-swatches-container .has-swatches li,
+#bill_form label, #ship_form label,#bill_form sup, #ship_form sup,.onestepcheckout-index-index .discount-form .leftSide{float:right;}
 .product-detail .price-area{padding:10px 0;}
-#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.cart-top-area{direction:ltr;}
+#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links{direction:ltr;}
 .tshirtsize .heading{padding:8px 12px;}
+.cate-open-close{height:auto !important;}
+.cartPage_custome_responsive .item-options dd{text-align:right;}
+.cartPage_custome_responsive .item-options dt{text-align:left;}
+.cartPage_custome_responsive td{text-align:left;}
+.cartPage_custome_responsive td:before{left:15%;}
+.cartPage_custome_responsive td:nth-of-type(1):before { content: "";  }
+.cartPage_custome_responsive td:nth-of-type(2):before { content: "توحيد السعر";}
+.cartPage_custome_responsive td:nth-of-type(3):before { content: " حجم";}
+.cartPage_custome_responsive td:nth-of-type(4):before { content: "كمية";}
+.cartPage_custome_responsive td:nth-of-type(5):before { content: "حاصل الجمع ";}
+.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory{
+padding-right:30px;}
+.cart-table-area dl dt, .cart-table-area dl dd{text-align:center;}
 /*#footer .column.column1{width:auto;}
 .products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
 .category--heading span:before,.shipping-methods h3 span:before, #last_most_view_title > h3 span:before,.faq-area h3 span:before,
@@ -46,13 +61,8 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .faq-area .openeer-holder .question span{padding:0 7px;}
 .signup-form .row .col:first-child {margin: 0px 0% 0 2%;}
 .product-area .cancel,.product-area .edit{right:inherit;left:10%;}
-.cart-bottom-area .btn-holder a:first-child .span1,.cart-bottom-area .btn-holder a:first-child .span2{-webkit-transform: skewX(0deg);
--moz-transform: skewX(0deg);-ms-transform: skewX(0deg);-o-transform: skewX(0deg);transform: skewX(0deg);}
-.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory{
-padding-right:30px;}
 #checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load .paymentradiobuttonlabel{float:none;
 white-space:nowrap;}
-.cart-btn-area .btn-holder .button2 .span2, .cart-btn-area .btn-holder .button2:first-child .span2{padding-left:25px;}
 #header .cart .opener .count{left:inherit;right:15px;}
 .pdc-design-view .edit-tools{left:0;}
 .layer-final label{float:right !important;white-space:nowrap;}
@@ -62,6 +72,9 @@ white-space:nowrap;}
 .design_categories_attributes ul li{margin:0 0% 1% 1%;}
 .design_categories_attributes ul li:nth-child(4n){margin-left:0;}
 */
+.cart-btn-area .btn-holder .button2 .span2, .cart-btn-area .btn-holder .button2:first-child .span2{padding-left:25px;}
+.cart-bottom-area .btn-holder a:first-child .span1,.cart-bottom-area .btn-holder a:first-child .span2{-webkit-transform: skewX(0deg);
+-moz-transform: skewX(0deg);-ms-transform: skewX(0deg);-o-transform: skewX(0deg);transform: skewX(0deg);}
 #header .login-area .opener,.options-area label,h3.item-title,.breadcrumb1 li{white-space:nowrap;}
 .breadcrumb1 li{float: right;margin: 0 0 0 45px;}
 .footer_navigation .panel-heading .panel-title, .footer_navigation .panel-heading .panel-title a,
