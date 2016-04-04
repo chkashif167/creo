@@ -217,5 +217,37 @@
     </reference>
 </customer_logged_in>
 
+<catalogsearch_result_index> 
+        <reference name="search_result_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalogsearch_result_index>
 
+    <!-- Change default direction for advanced searches -->
+    <catalogsearch_advanced_result>
+        <reference name="search_result_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalogsearch_advanced_result>
+
+    <!-- Change default direction for a category without layered navigation -->
+    <catalog_category_default>
+        <reference name="product_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalog_category_default>
+
+    <!-- Change default direction for a category with layered navigation -->
+    <catalog_category_layered>
+        <reference name="product_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </catalog_category_layered>
+
+    <!-- Change default direction for category with ID 3 -->
+    <CATEGORY_3>
+        <reference name="product_list">
+            <action method="setDefaultDirection"><dir>desc</dir></action>
+        </reference>
+    </CATEGORY_3>
 </layout>

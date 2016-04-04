@@ -1329,6 +1329,10 @@ animation: animaterotate 1s 1;
 .skewbtn1 #goback{color: #fff;background-color:#000;font-size:12px;text-transform:uppercase;border:0;outline:none;line-height:1.2;}
 .skewbtn1:hover,.skewbtn1:hover #goback,.skewbtn1:focus,.skewbtn1:focus #goback{background-color:#ef4f61}
 .size_guide_men_image, .size_guide_women_image{max-width:100%;width: 100%;}
+.cate-open-close{height:auto !important;}
+.sorter .sort-by label {background:#ef4f61;color:#fff;padding: 3px 10px;margin-right:5px;font-weight:100;font-size:12px;}
+.toolbar .sorter .sort-by select{width: auto;height: auto;line-height: 1.5;font-size: 13px !important;color: #222;text-transform: uppercase;
+border: 1px solid #ccc;padding: 2px 5px;}
 .cate-open-close .opener{display:block;vertical-align: middle;padding:1px 20px 1px 8px;margin:2px 0;position: relative;
 color: #222;text-transform: uppercase;font: 13px/20px "Roboto Condensed", Helvetica, Arial, sans-serif;border: 1px solid #ccc;
 width:100%;cursor:pointer;}
