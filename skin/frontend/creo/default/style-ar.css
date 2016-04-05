@@ -18,7 +18,7 @@ footer#footer{direction:rtl;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
 #nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
-.checkoutShippingMethod ul li label,.product-detail .price-area .price,#bill_form label, #ship_form label{float:right;}
+.checkoutShippingMethod ul li label,.product-detail .price-area .price,#bill_form label, #ship_form label,.tabset.tabset1 li{float:right;}
 #nav .links-area .sorting-items{margin-left:15px;text-align:right;}
 #footer .column.column1{width:auto;}
 .product-detail .btn-holder button:first-child .span1{margin-left:0;margin-right:10px;}

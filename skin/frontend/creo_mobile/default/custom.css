@@ -1067,11 +1067,11 @@ margin:0 !important;}
 }
 .design_categories_attributes {}
 .design_categories_attributes ul { float: left; width: 100%; padding: 0; margin: 0;}
-.design_categories_attributes ul li { width: 24.25%; display: inline-block; margin: 0 1% 16px 0;}
-.design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}
+.design_categories_attributes ul li { width: 32.25%; display: inline-block; margin: 0 1% 1% 0;}
+/*.design_categories_attributes ul li:nth-child(4n) { margin-right: 0;}*/
 .design_categories_attributes ul li img { width: 100%;}
 .homepage_navigation_middle {}
-.homepage_navigation_middle .panel-heading { background: #000; color: #fff; float 100%;} 
+.homepage_navigation_middle .panel-heading { background: #000; color: #fff;}
 .homepage_navigation_middle .panel-title a { display:inline-block; width: 100%;}
 .mobilewebsite_top_banner { float: left; width:100%;background-color:#fff;}
 .mobilewebsite_top_banner a { float: left; width: 50%;}

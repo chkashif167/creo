@@ -274,7 +274,7 @@ color:#000;}
 display:block;top:50%;z-index:-1;}
 .modal-content.normal-modal .modal-body .newslettersubscribe.off,
 .modal-content.normal-modal .modal-body .newslettersubscribe.off:hover,
-.modal-content.normal-modal .modal-body .newslettersubscribe.off:focus{margin:0 auto;background:#fff;border:0;padding:0 15px;
+.modal-content.normal-modal .modal-body .newslettersubscribe.off:focus{margin:0 auto;background:#fff;border:0;padding:0 10px;
 outline:none;}
 .modal-content.normal-modal .modal-body .newslettersubscribe.off{width:auto;height:auto;}
 .modal-content.normal-modal .modal-body .newslettersubscribe.off span{background-color:#000;color:#fff;text-transform:uppercase;
