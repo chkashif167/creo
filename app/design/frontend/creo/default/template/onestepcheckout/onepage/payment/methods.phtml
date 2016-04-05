@@ -1,4 +1,4 @@
-<h1 class="select-paymt-methd">please select a payment method</h1>
+<h1 class="select-paymt-methd"><?php echo $this->__('please select a payment method'); ?></h1>
 <?php if (!$methods = $this->getMethods()) : ?>
 <p><?php echo $this->helper('checkout')->__('Sorry, no quotes are available for this order at this time.') ?></p>
 <?php else : ?>
@@ -15,7 +15,7 @@
 <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
 <?php echo $html; ?>
 <?php if(sizeof($this->getMethods()) >= 2): ?>
-<div class="option-alternate"><strong>OR</strong></div>
+<div class="option-alternate"><strong><?php echo $this->__('OR'); ?></strong></div>
 <?php endif; ?>
 <?php endif; ?>
 
