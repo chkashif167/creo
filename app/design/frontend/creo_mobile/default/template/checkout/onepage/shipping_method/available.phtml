@@ -32,7 +32,7 @@
     <div class="sp-methods checkoutShippingMethod">
     <?php $shippingCodePrice = array(); ?>
     <?php $_sole = count($_shippingRateGroups) == 1; foreach ($_shippingRateGroups as $code => $_rates): ?>
-        <div class="shippingtitle"><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></div>
+        <div class="shippingtitle"><?php echo  $this->__($this->escapeHtml($this->getCarrierName($code))); ?></div>
     
             <ul>
             <?php $_sole = $_sole && count($_rates) == 1; foreach ($_rates as $_rate): ?>
@@ -55,7 +55,7 @@
                         <?php endif; ?>
 
                         <?php endif; ?>
-                        <label for="s_method_<?php echo $_rate->getCode() ?>"><?php echo $this->escapeHtml($_rate->getMethodTitle()) ?>
+                        <label for="s_method_<?php echo $_rate->getCode() ?>"><?php echo  $this->__($this->escapeHtml($_rate->getMethodTitle())); ?>
                         <?php $_excl = $this->getShippingPrice($_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
                         <?php $_incl = $this->getShippingPrice($_rate->getPrice(), true); ?>
                         <?php echo $_excl; ?>

@@ -130,7 +130,7 @@
                         </tfoot>
                         <tbody>
                         <?php foreach ($this->getShippingAddressItems($_address) as $_item): ?>
-                            <?php echo $this->getRowItemHtml($_item); ?>
+                            <?php echo $this->__($this->getRowItemHtml($_item)); ?>
                         <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -181,7 +181,7 @@
                     </tfoot>
                     <tbody>
                     <?php foreach ($this->getVirtualItems() as $_item): ?>
-                        <?php echo $this->getRowItemHtml($_item); ?>
+                        <?php echo $this->__($this->getRowItemHtml($_item)); ?>
                     <?php endforeach; ?>
                     </tbody>
                     </table>

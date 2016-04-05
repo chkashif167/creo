@@ -25,28 +25,23 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" 
-          href="#collapse<?php echo $i; ?>">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>">
 		  <?php echo $this->__($_category->getName()); ?>
           </a>
         </h4>
       </div>
-      
       <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse">
-      <?php $_category->getId();
-	   $_category = Mage::getModel('catalog/category')->load($_category->getId());
-        $_subcategories = $_category->getChildrenCategories();
+<?php $_category->getId();
+	$_category = Mage::getModel('catalog/category')->load($_category->getId());
+      $_subcategories = $_category->getChildrenCategories();
         if (count($_subcategories) > 0){
-       foreach($_subcategories as $_subcategory){
-		 ?>
+       foreach($_subcategories as $_subcategory){ ?>
         <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $this->__($_subcategory->getName()); ?></a>
          <?php $_subcategory->getId();
        }
-		}
-	    ?>
-      </div>
-      
-     
+	}
+  ?>
+</div>
     </div>
     <?php
 	if( $_category->getName() == 'Caps' ){

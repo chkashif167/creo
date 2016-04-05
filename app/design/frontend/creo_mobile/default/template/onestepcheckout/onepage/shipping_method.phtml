@@ -20,14 +20,10 @@
 	   $giftwrap_desc=(Mage::getStoreConfig('onestepcheckout/giftwrap/giftwrapdescription'));
 ?>
 <?php if ($giftwrap_conditions == 1) : ?>
-<?php 
-
+<?php
 $_SESSION['giftwrap_conditions_enabled']=$giftwrap_conditions;
 $_SESSION['price_gift_warp']=$giftwrap_admin_price;
 $_SESSION['desc_gift_warp']=$giftwrap_desc;
-
-
-
  ?>
 <div class="gift_wraps">
   <div class="giftwrap-header">

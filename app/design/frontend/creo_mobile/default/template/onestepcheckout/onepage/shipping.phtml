@@ -11,7 +11,7 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
     <li class="options">
       <input type="checkbox" class="checkbox" name="shipping[same_as_billing]" id="shipping:same_as_billing" value="1"<?php if($this->getShipAddress()->getSameAsBilling()){echo ' checked="checked" ';} ?> title="<?php echo $this->__('Ship to this address') ?>" onClick="shipping.setSameAsBilling(this.checked)" />
       <img class="pull-left checkbox-label"  src="<?php echo $this->getSkinUrl('images/checkoutpage/van.png') ?>">
-      <label> <?php echo $this->__('Ship to same address ') ?> </label>
+      <label> <?php echo $this->__('Ship to same address') ?> </label>
     </li>
   </ul>
 </div>

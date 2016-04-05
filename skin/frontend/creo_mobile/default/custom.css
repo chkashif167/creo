@@ -284,6 +284,7 @@
 .product-detail .btn-holder .span2:before {
     content: '\e80d';
     font-family: fontello;
+    padding:0 5px;
 }
 /*cart button ends*/
 
@@ -463,10 +464,10 @@
     position: relative;
 }
 .product-options .validation-advice {
-    left: 0;
+/*  left: 0;
     position: absolute;
     right: 0;
-    top: 100%;
+    top: 100%;*/
     color: red;
 }
 .select-label {

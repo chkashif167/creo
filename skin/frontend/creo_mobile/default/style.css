@@ -1160,7 +1160,7 @@ border-color: transparent transparent transparent #000;
 }
 .homepage_navigation_middle .panel-title{
 	font-size: 18px;
-	line-height: 20px;
+	line-height: 40px;
 	margin: 0;
 	text-transform: uppercase;
 }
@@ -1168,7 +1168,7 @@ border-color: transparent transparent transparent #000;
 .homepage_navigation_middle .panel-collapse a{
 	display: block;
 	font-size: 16px;
-	line-height: 18px;
+	line-height: 36px;
 	text-transform: uppercase;
 	color: #000;
 	background: #fff;
