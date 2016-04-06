@@ -36,11 +36,10 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 ?>
 <?php if($this->canShowBlock()): ?>
 <?php /*?><div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
-<?php */?>
-<?php /*?><div class="block-title">
+<div class="block-title">
         <strong><span><?php echo $this->__('Shop By') ?></span></strong>
-    </div><?php */?>
-   <?php /*?> <div class="block-content toggle-content"><?php */?>
+    </div>
+    <div class="block-content toggle-content"><?php */?>
 
         <?php if($this->canShowOptions()): ?>
            <?php /*?> <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p><?php */?>
