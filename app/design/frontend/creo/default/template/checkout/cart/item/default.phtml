@@ -76,7 +76,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <dl class="item-options">
             <?php foreach ($_options as $_option) : ?>
             <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-            <dt><?php echo $this->escapeHtml($_option['label']);
+            <dt><?php echo $this->__($this->escapeHtml($_option['label']));
 
                    if($this->escapeHtml($_option['label']) == "Size")
                    {
@@ -94,7 +94,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
                 <div class="truncated_full_value">
                     <dl class="item-options">
-                        <dt><?php echo $this->escapeHtml($_option['label']) ?></dt>
+                        <dt><?php echo $this->__($this->escapeHtml($_option['label'])); ?></dt>
                         <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
                     </dl>
                 </div>

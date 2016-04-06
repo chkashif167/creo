@@ -35,24 +35,24 @@
 <div class="col-xs-12">
 <nav class="breadcrumb1">
     <ul>
-        <li class="home"><a title="Go to Home Page" href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
-        <li class="category17"><strong>Collections</strong></li>
+        <li class="home"><a title="Go to Home Page" href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
+        <li class="category17"><strong><?php echo $this->__('Collections'); ?></strong></li>
     </ul>
 </nav>
 </div>
 </div>
 <?php $_attrbiuteCollection = $this->getLoadedAttributeCollection(); ?>
 <div class="category_top_filters cate-links">
-<span class="search-by">Search By Design</span>
+<span class="search-by"><?php echo $this->__('Search By Design'); ?></span>
 <div class="cate-open-close">
-<a class="opener attribure_labels" data-id="collection-mega-menu">View All</a>
+<a class="opener attribure_labels" data-id="collection-mega-menu"><?php echo $this->__('View All'); ?></a>
 <ul id="collection-mega-menu" class="slide m-filter-item-list">
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
             <?php if ($a['value']): ?>
-                <a href="<?php echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
+                <a href="<?php echo Mage::getBaseUrl() . "clothing.html/?universal_categories=".$a['value']."" ?>"><?php echo $this->__($a['label']); ?></a>
             <?php else: ?>
-            <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a>
+            <a href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>"><?php echo $this->__('View All'); ?></a>
             <?php endif; ?>
         </li>
     <?php endforeach ?>
@@ -114,7 +114,7 @@ $_helper = $this->helper('catalog/output');
                             success: function (data) {
                                 jQuery('.fme_loading_filters').hide();
                                 if (jQuery('#header-cart')) {
-                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span><?php echo $this->__("My Cart"); ?></a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -150,9 +150,9 @@ $_helper = $this->helper('catalog/output');
 
                         <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
                         </a>
-                        <a  rel="nofollow" href="<?php echo Mage::getBaseUrl() . 'quickview/index/view?pid=' . $_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId() ?>"> <span class="quick-view"><i class="icon-search"></i> quick view</span></a>
+                        <a  rel="nofollow" href="<?php echo Mage::getBaseUrl() . 'quickview/index/view?pid=' . $_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId() ?>"> <span class="quick-view"><i class="icon-search"></i> <?php echo $this->__('quick view'); ?></span></a>
                         <div class="text-area">
-                            <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h3>
+                            <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->__($_helper->productAttribute($_product, $_product->getName(), 'name')); ?></a></h3>
                             <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
 
                             <div class="btn-holder"> 
@@ -160,14 +160,14 @@ $_helper = $this->helper('catalog/output');
                                     <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
                                 <?php endif; ?>
                                 <?php //if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped())) { ?>
-                                    <!--<a href="javascript:;" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>', '<?php echo $_product->getId() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>-->
+                                    <!--<a href="javascript:;" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>', '<?php echo $_product->getId() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a>-->
                                 <?php //} else { ?>
                                 <?php if($_product->isConfigurable()){ ?> 
-                                <a href="javascript:;" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>
+                                <a href="javascript:;" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a>
                                 <?php
 								}else{
 								?>
-                                    <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>
+                                    <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a>
                                     <?php
 								}
 									?>
@@ -209,7 +209,7 @@ $_helper = $this->helper('catalog/output');
 <div class="row">
 <div class="col-xs-12">
 <div class="design_categories_attributes shipping-methods">
-<h3><span>DESIGN CATEGORIES</span></h3>
+<h3><span><?php echo $this->__('DESIGN CATEGORIES'); ?></span></h3>
 <ul>
     <?php foreach ($_attrbiuteCollection as $a): ?>
 

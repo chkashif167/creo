@@ -34,7 +34,7 @@
 	}
 ?>
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__(' Add to Cart'); ?>
+<?php $buttonTitle = $this->__('Add to Cart'); ?>
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
@@ -42,10 +42,10 @@
   <?php $_product = $this->getProduct(); ?>
   <?php if($_product->isSaleable()): ?>
   <?php if(!$_product->isGrouped()): ?>
-  <label for="qty"><?php echo $this->__('Quantity:') ?></label>
-  <span class="up">up</span>   
+  <label for="qty"><?php echo $this->__('Quantity') ?>:</label>
+  <span class="up">up</span>
   <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-  <span class="down">down</span>  
+  <span class="down">down</span> 
   <?php endif; ?>
   <?php endif; ?>
 </div>
@@ -60,12 +60,11 @@
 
         <div class="add-to-cart-buttons btn-holder">
 			<?php if($_isCustomizeProduct) : ?>
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="var ret = designYourOwnPopupValidation(); if(ret == false){return false;}else{PDC_Actions.saveDesignBeforeAddToCart(); /*productAddToCartForm.submit(this)*/}"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="var ret = designYourOwnPopupValidation(); if(ret == false){return false;}else{PDC_Actions.saveDesignBeforeAddToCart(); /*productAddToCartForm.submit(this)*/}"><span class="span1"><span class="span2"><?php echo $this->__($buttonTitle); ?></span></span></button>
             <?php else : ?>
-			<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $buttonTitle ?></span></span></button>
-			<?php endif; ?>
-            
-				<?php echo $this->getChildHtml('', true, true) ?>
+		<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span class="span1"><span class="span2"><?php echo $this->__($buttonTitle); ?></span></span></button>
+		<?php endif; ?>
+		<?php echo $this->getChildHtml('', true, true) ?>
         </div>
     </div>
 <?php endif; ?>

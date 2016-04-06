@@ -62,7 +62,26 @@ if($_product->stock_item->is_in_stock == 0){
                             <div class="tabs-cont">
                                 <ul class="tabset tabset1">
                                     <li class="active"><a href="#tab1"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('description')->getFrontendLabel()); ?></span></a></li>
-                                    <li class=""><a href="#tab2"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel()); ?></span></a></li>
+
+<?php
+/*
+            $gender = $_product->getGender();
+            if ($gender == 24) { ?>
+            <li class=""><a href="#tab2"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel()); ?></span></a></li>
+            <?php
+            } elseif ($gender == 25) {
+                //echo "Women";
+                ?>
+       <li class=""><a href="#tab2"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel()); ?></span></a></li>
+            <?php
+            } else {
+                echo " ";
+            }
+*/
+?>
+
+
+
                                     <li class=""><a href="#tab3"><span><?php echo $this->__($attribute = $_product->getResource()->getAttribute('design')->getFrontendLabel()); ?></span></a></li>
                                 </ul>
                                 <div class="tab-content">

@@ -22,17 +22,17 @@ if(empty($images)) {
  
     <td>
     <img style=" float: left; margin: 0 14px 0 0;" src="<?php echo $image; ?>" width="55" height="55" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" />
-    <h3 class="product-name"><?php echo $this->htmlEscape($this->getProductName()) ?></h3>   
+    <h3 class="product-name"><?php echo $this->__($this->htmlEscape($this->getProductName())); ?></h3>   
           <?php if ($_options = $this->getOptionList()):?>
         <dl class="" style="float:left">
             <?php foreach ($_options as $_option) : ?>
             <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-            <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
+            <dt><?php echo $this->__($this->htmlEscape($_option['label'])); ?></dt>
             <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
                 <?php if (isset($_formatedOptionValue['full_view'])): ?>
                 <div class="truncated_full_value">
                     <dl class="item-options">
-                        <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
+                        <dt><?php echo $this->__($this->htmlEscape($_option['label'])); ?></dt>
                         <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
                     </dl>
                 </div>
