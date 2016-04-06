@@ -101,7 +101,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     </style>
     <?php */ ?>
       </div>
-    <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><?php echo $this->__('SKIP'); ?></span></button>
+    <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><?php echo $this->__('SKIP'); ?><?php echo $visitCount;?></span></button>
     </div>
   </div>
 </div>
@@ -130,3 +130,13 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
         <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/'); ?>
     }
     </script>
+
+    <?php 
+if($visitCount>2){
+  setcookie('newsletter', 'hide-news-lette',time() + (60 * 10),'/');
+?>
+<script type="text/javascript">jQuery('.modal_newsletter').modal('hide');</script>
+<?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/'); ?>
+<?php
+}
+    ?>
