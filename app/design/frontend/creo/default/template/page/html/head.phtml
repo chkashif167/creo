@@ -98,39 +98,40 @@ if($_Crrentproduct = Mage::registry('current_product')) {
 }
 
 
- $request = $this->getRequest();
-  $module = $request->getModuleName();
-  $controller = $request->getControllerName();
-  $action = $request->getActionName();
- if($module == 'ajax' && $controller == 'index' && $action == 'index')
- {
+$request = $this->getRequest();
+$module = $request->getModuleName();
+$controller = $request->getControllerName();
+$action = $request->getActionName();
+if($module == 'ajax' && $controller == 'index' && $action == 'index')
+{
   $cart='';
-    $cart = Mage::getModel('checkout/cart')->getQuote();
-    echo "<script type='text/javascript'>
-      datalayer[ \n";
-      $dl=0;
-    foreach ($cart->getAllVisibleItems() as $item) {
-      $product = $item->getProduct();
+  $cart = Mage::getModel('checkout/cart')->getQuote();
+  echo "<script type='text/javascript'>
+  datalayer[ \n";
+  $dl=0;
+  foreach ($cart->getAllVisibleItems() as $item) {
+    $product = $item->getProduct();
 
-        $productName = $item->getProduct()->getName();
-        $productPrice = $item->getProduct()->getPrice();
-        $productCurrency = Mage::app()->getStore()->getCurrentCurrencyCode();
+    $productName = $item->getProduct()->getName();
+    $productPrice = $item->getProduct()->getPrice();
+    $productCurrency = Mage::app()->getStore()->getCurrentCurrencyCode();
 
-          echo "{\n";
-            echo "sku:'".$item->getProduct()->getSku()."',\n";
-            echo "name:".$productName.",\n";
-            echo "quantity:".$item->getQty().",\n";
-            echo "price:".$productPrice.",\n";
-            echo "currerncy:".$productCurrency;
+    echo "{\n";
+    echo "sku:'".$item->getProduct()->getSku()."',\n";
+    echo "name:".$productName.",\n";
+    echo "quantity:".$item->getQty().",\n";
+    echo "price:".$productPrice.",\n";
+    echo "currerncy:".$productCurrency;
 
-            echo "\n}";
-            if($dl<count($cart->getAllVisibleItems())-1){
-              echo ",";
-            }
-            $dl++;
+    echo "\n}";
+    if($dl<count($cart->getAllVisibleItems())-1){
+      echo ",";
     }
-    echo '];</script>';
- }
+    $dl++;
+  }
+  echo '];</script>';
+}
+
 if(Mage::app()->getFrontController()->getAction()->getFullActionName()=='onestepcheckout_index_success'){
 
   $order = Mage::getSingleton('sales/order'); 
@@ -138,28 +139,26 @@ if(Mage::app()->getFrontController()->getAction()->getFullActionName()=='onestep
   $_items = $order->getAllVisibleItems();
 
   echo "<script type='text/javascript'>
-      datalayer[ \n";
-      $dl=0;
-    foreach ($_items as $item) {
-      $product = $item->getProduct();
+  datalayer[ \n";
+  $dl=0;
+  foreach ($_items as $item) { 
+    $product = $item->getProduct();
+    $productName = $item->getProduct()->getName();
+    $productPrice = $item->getProduct()->getPrice();
+    $productCurrency = Mage::app()->getStore()->getCurrentCurrencyCode();
 
-        $productName = $item->getProduct()->getName();
-        $productPrice = $item->getProduct()->getPrice();
-        $productCurrency = Mage::app()->getStore()->getCurrentCurrencyCode();
-
-          echo "{\n";
-            echo "sku:'".$item->getProduct()->getSku()."',\n";
-            echo "name:".$productName.",\n";
-            echo "quantity:".$item->getProduct()->getQty().",\n";
-            echo "price:".$productPrice.",\n";
-            echo "currerncy:".$productCurrency;
-
-            echo "\n}";
-            if($dl<count($_items)-1){
-              echo ",";
-            }
-            $dl++;
+    echo "{\n";
+    echo "sku:'".$item->getProduct()->getSku()."',\n";
+    echo "name:".$productName.",\n";
+    echo "quantity:".$item->getProduct()->getQty().",\n";
+    echo "price:".$productPrice.",\n";
+    echo "currerncy:".$productCurrency;
+    echo "\n}";
+    if($dl<count($_items)-1){
+        echo ",";
     }
-    echo '];</script>';
+    $dl++;
+  }
+  echo '];</script>';
 }
 ?>
