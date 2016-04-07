@@ -26,12 +26,14 @@ footer#footer{direction:rtl;}
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
 .checkoutShippingMethod ul li label,.product-detail .price-area .price,.product-swatches-container .has-swatches li,
 #bill_form label, #ship_form label,#bill_form sup, #ship_form sup,.onestepcheckout-index-index .discount-form .leftSide,
-.catalog-product-view .text-area .qty-area{float:right;}
+.catalog-product-view .text-area .qty-area,.form-holder .checkbox-holder input[type="checkbox"],
+.form-holder .checkbox-holder label{float:right;}
+.form-holder .checkbox-holder input[type="checkbox"]{margin-left:5px;}
 .product-detail .price-area{padding:10px 0;}
 #last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links{direction:ltr;}
 .tshirtsize .heading{padding:8px 12px;}
 .cate-open-close{height:auto !important;}
-.cartPage_custome_responsive .item-options dd{text-align:right;}
+.cartPage_custome_responsive .item-options dd,.jconfirm .jconfirm-box div.title,.jconfirm .jconfirm-box div.content{text-align:right;}
 .cartPage_custome_responsive .item-options dt{text-align:left;}
 .cartPage_custome_responsive td{text-align:left;}
 .cartPage_custome_responsive td:before{left:15%;}
@@ -44,6 +46,7 @@ footer#footer{direction:rtl;}
 padding-right:30px;}
 .cart-table-area dl dt, .cart-table-area dl dd{text-align:center;}
 .catalog-product-view .text-area .qty-area label{display:block;}
+.form-holder .form-frame{margin:0;}
 /*#footer .column.column1{width:auto;}
 .products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
 .category--heading span:before,.shipping-methods h3 span:before, #last_most_view_title > h3 span:before,.faq-area h3 span:before,

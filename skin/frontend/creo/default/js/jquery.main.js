@@ -2483,15 +2483,15 @@ function popupValidation()
 					errors = errors + " and size";
 				}
 				else {
-					errors = "Please make sure to select size";
+					errors = errors_arr['validate-tshirt-size'];
 				}
 			}
 		}
 		if(jQuery("#swatches-options-134").length > 0) {
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            errors = "Please make sure to select style";
+            errors = errors_arr['validate-tshirt-style'];
 			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-					 errors = "Please make sure to select tshirt color";
+					 errors = errors_arr['validate-tshirt-required'];
 				}
         }/*else if(jQuery("#swatches-options-159").length > 0) {
 
@@ -2500,55 +2500,55 @@ function popupValidation()
 
 		if(jQuery("#swatches-options-160").length > 0) {
 			if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            	errors = "Please make sure to select polo color";
+            	errors = errors_arr['validate-tshirt-polo-color'];
 			}else if (jQuery('.option-container:eq(2)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            	errors = "Please make sure to select print color";
+            	errors = errors_arr['validate-tshirt-print-color'];
 			}
 		}
 
 		if(jQuery("#swatches-options-152").length > 0) {
 			if(jQuery("#attribute149").val()===''){
-				errors = "Please make sure to select phone model";
+				errors = errors_arr['validate-phone-model'];
 			}else if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-            	errors = "Please make sure to select case color";
+            	errors = errors_arr['validate-case-color'];
 			}
 		}
 
         if(jQuery("#swatches-options-164").length > 0){
             if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-                errors = "Please select cap theme";
+                errors = errors_arr['validate-cap-theme'];
             }
 
         }
         if(jQuery("#swatches-options-176").length > 0){
             if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-                errors = "Please select a cap font color";
+                errors = errors_arr['validate-cap-font-color'];
             }
         }
         if(jQuery("#swatches-options-177").length > 0){
             if (jQuery('.option-container:eq(1)').find('.has-swatches').find('li').find('a.selected').length <= 0) {
-                errors = "Please select a font style";
+                errors = errors_arr['validate-cap-font-style'];
             }
         }
 
         if(jQuery("#options-17-list").length > 0){
             if(jQuery("input[name='options[17]']:checked").length<=0){
-                errors = "Please select font style";
+                errors = errors_arr['validate-cap-font-style'];
             }else if(jQuery("#options_16_text").val()==''){
-                errors = "Please enter text to box1";
+                errors = errors_arr['validate-cap-text-box1'];
             }else if(jQuery("#options_16_text").val().length>1){
-                errors = "Please enter only one character to box1";
+                errors = errors_arr['validate-cap-character-box1'];
             }else if(jQuery("#options_15_text").val()==''){
-                errors = "Please enter text to box2";
+                errors = errors_arr['validate-cap-text-box2'];
             }else if(jQuery("#options_15_text").val().length>1){
-                errors = "Please enter only one character to box2";
+                errors = errors_arr['validate-cap-character-box2'];
             }
         }
 
         if (errors != "") {
             errors = errors + ".";//Adding . to end the sentence
             jQuery.alert({
-                title: 'Alert!',
+                title: errors_arr['validate-alert'],
                 content: errors,
                 /*confirm: function(){
                  alert('Confirmed!');
@@ -2570,7 +2570,7 @@ function designYourOwnPopupValidation()
             return true;
         }else{
         jQuery.alert({
-            title: 'Alert!',
+            title: errors_arr['validate-alert'],
             content: "Please choose size first.",
             /*confirm: function(){
              alert('Confirmed!');

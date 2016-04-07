@@ -50,6 +50,21 @@ if(Mage::helper('mobiledetect')->isMobile() && !Mage::helper('mobiledetect')->is
 window.errors_arr = [];
 errors_arr['validate-emailAdress'] = "<?php echo $this->__('Email Adress is a required field.'); ?>";
 errors_arr['validate-passwordlogin'] = "<?php echo $this->__('Password is a required field.'); ?>";
+errors_arr['validate-tshirt-required'] = "<?php echo $this->__('Please make sure to select tshirt color'); ?>";
+errors_arr['validate-tshirt-size'] = "<?php echo $this->__('Please make sure to select size'); ?>";
+errors_arr['validate-tshirt-style'] = "<?php echo $this->__('Please make sure to select style'); ?>";
+errors_arr['validate-alert'] = "<?php echo $this->__('Alert!'); ?>";
+errors_arr['validate-tshirt-polo-color'] = "<?php echo $this->__('Please make sure to select polo color'); ?>";
+errors_arr['validate-tshirt-print-color'] = "<?php echo $this->__('Please make sure to select print color'); ?>";
+errors_arr['validate-phone-model'] = "<?php echo $this->__('Please make sure to select phone model'); ?>";
+errors_arr['validate-case-color'] = "<?php echo $this->__('Please make sure to select case color'); ?>";
+errors_arr['validate-cap-theme'] = "<?php echo $this->__('Please select cap theme'); ?>";
+errors_arr['validate-cap-font-color'] = "<?php echo $this->__('Please select a cap font color'); ?>";
+errors_arr['validate-cap-font-style']= "<?php echo $this->__('Please select font style'); ?>";
+errors_arr['validate-cap-text-box1'] = "<?php echo $this->__('Please enter text to box 1'); ?>";
+errors_arr['validate-cap-character-box1'] = "<?php echo $this->__('Please enter only one character to box 1'); ?>";
+errors_arr['validate-cap-text-box2'] = "<?php echo $this->__('Please enter text to box 2'); ?>";
+errors_arr['validate-cap-character-box2'] = "<?php echo $this->__('Please enter only one character to box 2'); ?>";
 </script>
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
