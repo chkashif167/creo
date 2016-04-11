@@ -33,7 +33,8 @@ footer#footer{direction:rtl;}
 #last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links{direction:ltr;}
 .tshirtsize .heading{padding:8px 12px;}
 .cate-open-close{height:auto !important;}
-.cartPage_custome_responsive .item-options dd,.jconfirm .jconfirm-box div.title,.jconfirm .jconfirm-box div.content{text-align:right;}
+.cartPage_custome_responsive .item-options dd,.jconfirm .jconfirm-box div.title,.jconfirm .jconfirm-box div.content,input,select,
+textarea,input[type="text"], input[type="password"], input.email{text-align:right;}
 .cartPage_custome_responsive .item-options dt{text-align:left;}
 .cartPage_custome_responsive td{text-align:left;}
 .cartPage_custome_responsive td:before{left:15%;}
