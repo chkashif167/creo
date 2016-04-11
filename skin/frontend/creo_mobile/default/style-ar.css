@@ -43,7 +43,7 @@ textarea,input[type="text"], input[type="password"], input.email{text-align:righ
 .cartPage_custome_responsive td:nth-of-type(3):before { content: " حجم";}
 .cartPage_custome_responsive td:nth-of-type(4):before { content: "كمية";}
 .cartPage_custome_responsive td:nth-of-type(5):before { content: "حاصل الجمع ";}
-.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory{
+.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory,select{
 padding-right:30px;}
 .cart-table-area dl dt, .cart-table-area dl dd{text-align:center;}
 .catalog-product-view .text-area .qty-area label{display:block;}
