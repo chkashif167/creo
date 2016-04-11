@@ -186,7 +186,7 @@ if($_product->stock_item->is_in_stock == 0){
                         <?php endif; ?>
                     </div>
                     <?php  if(!$_product->isSaleable()): ?>
-                        <?php echo $this->__($this->getChildHtml('addto')); ?>
+                        <?php echo $this->getChildHtml('addto'); ?>
                       <?php endif; ?>
 
                     <?php // jawwad.nissar work starts  ?>
@@ -282,6 +282,7 @@ if($_product->stock_item->is_in_stock == 0){
                                 type : 'post',
                                 data: data,
                                 success: function(data){
+                                  var dataLayer=[];
                                     //adding data to data layers start
                                     dataLayer.push({ 'event': 'addToCart','name':data.productName, 'id':data.productId, 'price':data.productPrice, 'currency':data.currentCurrency, 'quantity':data.productQty, 'sku':data.productSku });
                                     //adding data to data layers end
@@ -528,12 +529,12 @@ function hasDefaultSelection()
 
 jQuery(document).ready(function(){
     jQuery("[name*='super_attribute'], [name*='options']").on('change', function(){
-        loadPriceWithAjax();
+      //  loadPriceWithAjax();
     });
     
     //if any of the default attribute or option is selected do send the ajax request
     if(hasDefaultSelection()) {
-        loadPriceWithAjax();
+        //loadPriceWithAjax();
     }
 });
 <?php endif;?>

@@ -18,7 +18,7 @@
   <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
    <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
    
-    <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action>
+    <!-- <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action> -->
 	<action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.js</script></action>
 </reference>
 
