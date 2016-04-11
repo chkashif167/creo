@@ -300,7 +300,9 @@ endforeach;
 </li>
 <li <?php if(strstr($ccurrentUrl,"custom")) {
                     echo'class="active"';
+
                 } ?>> <a href="<?php echo Mage::getBaseUrl(). "clothing.html?universal_categories=".$customId."&custom=1" ?>"><?php echo $this->__('Brands'); ?></a>
+
 </li>
 <li <?php if(in_array("collections",$parent_cat_array)) {
                     echo'class="active"';

@@ -134,38 +134,39 @@ $text = '<ul class="cat-links">';
   {
   break;
   }
-$text .= '</ul><ul  class="cat-links">';
-$start = $j +1;
-$end = $end + ($count-1 );
-$count = 0;
-continue;
-}
-}
-$text .="</ul>";
-echo $text;
-?>
-</ul>
-</div>
-</div>
-</li>
-<li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
-<?php
-$ccurrentUrl = Mage::helper('core/url')->getCurrentUrl();
-//$customId = '255';
+  $text .= '</ul><ul  class="cat-links">';
+  $start = $j +1;
+  $end = $end + ($count-1 );
+  $count = 0;
+  continue;
+  }
+  }
+  $text .="</ul>";
+  echo $text;
+  ?>
+  </ul>
+
+  </div>
+  </div>
+  </li>
+  <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
+ <?php 
+ $ccurrentUrl = Mage::helper('core/url')->getCurrentUrl();
+ //$customId = '255';
 $customId = '259';
-$parent_cat_array = array();
-if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
-$parentId = Mage::registry('current_category')->getParentId();
-$parent = Mage::getModel('catalog/category')->load($parentId);
-while($parentId != 0) {//check for root category
-$parent_cat_array[] = strtolower($parent->getName());
-$parentId = $parent->getParentId();
-$parent = Mage::getModel('catalog/category')->load($parentId);
-}
-}
-$currentUrl = Mage::helper('core/url')->getCurrentUrl()
-//$parentname = $this->getCurrentCategory()->getParentCategory()->getName(); echo $parentname."SHANI"; ?>
-<?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
+ $parent_cat_array = array();
+ if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
+ $parentId = Mage::registry('current_category')->getParentId();
+ $parent = Mage::getModel('catalog/category')->load($parentId);
+ while($parentId != 0) {//check for root category
+     $parent_cat_array[] = strtolower($parent->getName());
+     $parentId = $parent->getParentId();
+     $parent = Mage::getModel('catalog/category')->load($parentId);
+ }
+ }
+ $currentUrl = Mage::helper('core/url')->getCurrentUrl()
+ //$parentname = $this->getCurrentCategory()->getParentCategory()->getName(); echo $parentname."SHANI"; ?>
+ <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
 ?>
 <li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
@@ -340,8 +341,10 @@ endforeach;
 </div>
 </li>
 <li <?php if(strstr($ccurrentUrl,"custom")) {
+
 echo'class="active"';
 } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=".$customId."&custom=1" ?>"><?php echo $this->__('Brands'); ?></a>
+
 </li>
 <!-- Menu active class added-->
 <li <?php if(strstr($ccurrentUrl,"collections")) {
