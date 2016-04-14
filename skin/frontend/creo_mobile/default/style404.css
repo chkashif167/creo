@@ -10,12 +10,12 @@ body {
 	margin: 0;
 	color: #333;
 	font: 12px/14px 'Open Sans', Arial, Helvetica, sans-serif;
-	background-image:url("images/bg-page-mobile.jpg");
-	background-repeat:no-repeat;
-	background-size:auto 100%;
-	background-position:right center;
+	background-image:url("images/page-not-found-mobile.jpg");
+	background-repeat:repeat;
+	background-size:100%;
+	background-position:top center;
 	background-color:#dddbdc;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	min-width: 320px;
 	height: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -43,13 +43,12 @@ p { margin: 0 0 1.2em; }
 .w2{
 	display: table-cell;
 	vertical-align: middle;
-	padding:20px 0 0;
+	padding:120px 0 0;
 }
 .logo-holder{
 	position: absolute;
-	top:8%;
+	top:2%;
 	left: 0;
-	right: 0;
 }
 
 .logo{
@@ -81,13 +80,13 @@ p { margin: 0 0 1.2em; }
 .text-area p{
 	margin: 0 0 20px;
 	padding: 25px 0;
-	border-width: 5px 0;
-	border-color: #eee;
-	border-style: solid;
+	text-align: center;
+	font-family:"Roboto Condensed", Helvetica, Arial, sans-serif;
+	font-size:110%;
 }
 .text-area p .home{
 	font-weight: bold;
-	border-bottom: 5px solid #fdda00;
+	color:#ef626a;
 }
 .text-area p .home:hover{
 	text-decoration: none;
@@ -114,5 +113,6 @@ p { margin: 0 0 1.2em; }
 	.link-holder li {margin: 0 0 5px;}
 }
 @media (orientation:landscape) {
-body {background-image:url("images/bg-page.jpg");background-size:100% auto;}
+body {background-image:url("images/page-not-found.jpg");background-size:100% auto;}
+.w2{vertical-align: bottom;}
 }

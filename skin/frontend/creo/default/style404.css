@@ -10,12 +10,13 @@ body {
 	margin: 0;
 	color: #333;
 	font: 12px/14px 'Open Sans', Arial, Helvetica, sans-serif;
-	background: #dddbdc url("images/bg-page.jpg") no-repeat 0 0 / 100% 100%;
-	overflow-y: scroll;
+	background: #dddbdc url("images/page-not-found.jpg") no-repeat 0 0 / cover;
+	overflow-y: hidden;
 	min-width: 320px;
 	height: 100%;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
+	background-position:center;
 }
 
 article, aside, details, figcaption, figure, footer, header, main, nav, section, summary { display: block; }
@@ -38,19 +39,20 @@ p { margin: 0 0 1.2em; }
 .w1{display: table-row;}
 .w2{
 	display: table-cell;
-	vertical-align: middle;
+	vertical-align: bottom;
 	padding: 88px 0 0;
 }
 .logo-holder{
 	position: absolute;
-	top: 15%;
+	top: 8%;
 	left: 0;
-	right: 0;
+	right:0;
 }
 
 .logo{
-	float: right;
+	float: left;
 	width: 137px;
+	margin:0;
 }
 .logo img{
 	display: block;
@@ -61,13 +63,13 @@ p { margin: 0 0 1.2em; }
 	max-width: 810px;
 	margin: 0 auto;
 	text-align: left;
-	padding: 20px 0 108px;
+	padding: 20px 0 10%;
 	color: #222;
 	font: 24px/37px 'Open Sans', Arial, Helvetica, sans-serif;
-	transform: rotate(-4deg);
+	/*transform: rotate(-4deg);
 	-ms-transform: rotate(-4deg);
 	-moz-transform: rotate(-4deg);
-	-webkit-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);*/
 }
 .text-area h1{
 	font:bold 64px/59px 'Open Sans', Arial, Helvetica, sans-serif;
@@ -79,15 +81,18 @@ p { margin: 0 0 1.2em; }
 	display: inline-block;
 }
 .text-area p{
-	margin: 0 0 20px;
+	margin: 0 0 0px;
 	padding: 25px 0;
 	border-width: 5px 0;
 	border-color: #eee;
 	border-style: solid;
+	text-align: center;
+	font-family:"Roboto Condensed", Helvetica, Arial, sans-serif;
+	font-size:110%;
 }
 .text-area p .home{
+	color:#ef626a;
 	font-weight: bold;
-	border-bottom: 5px solid #fdda00;
 }
 .text-area p .home:hover{
 	text-decoration: none;
@@ -97,9 +102,10 @@ p { margin: 0 0 1.2em; }
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	font:bold 18px/22px 'Open Sans', Arial, Helvetica, sans-serif;
+	font:bold 14px/22px 'Open Sans', Arial, Helvetica, sans-serif;
+	position: absolute;bottom: 3%;right: 3%;
 }
-.link-holder li{margin: 0 0 8px;}
+.link-holder li{margin: 0 10px 8px;display: inline-block;vertical-align:top;}
 .link-holder a{color: #222;}
 .link-holder a:hover{
 	text-decoration: none;
@@ -108,7 +114,7 @@ p { margin: 0 0 1.2em; }
 .std{height: 100%;}
 @media only screen and (max-width: 991px) {
 	.text-area{
-		padding: 20px 140px 108px;
+		/*padding: 20px 20px 108px;*/
 		font:16px/24px "Open Sans",Arial,Helvetica,sans-serif;
 	}
 	.text-area h1{font: bold 50px/50px "Open Sans",Arial,Helvetica,sans-serif;}
