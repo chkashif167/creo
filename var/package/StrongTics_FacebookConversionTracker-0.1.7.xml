@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<package>
+    <name>StrongTics_FacebookConversionTracker</name>
+    <version>0.1.7</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/OSL-3.0">Open Software License v. 3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>StrongTics FacebookConversionTracker allows merchants to measure their return on investment on Facebook Ads.</summary>
+    <description>Since Facebook has launched a conversion measurement tool, Facebook advertisers can access to their ROI by keeping a track over user actions like shopping, website registration or cart checkouts.&#xD;
+&lt;br&gt;&lt;br /&gt;&#xD;
+StrongTics Facebook Conversion Tracker helps businesses measure the performance of their Facebook Ads by reporting on the actions people take after viewing those ads.&lt;br /&gt;&lt;br /&gt;&#xD;
+Advertisers can create pixels that track conversions, add them to the pages of their website where the conversions will happen, and then track these conversions back to ads they are running on Facebook.&lt;br /&gt; &#xD;
+Conversion tracking also helps businesses leverage optimized cost per impressions (oCPM) to show ads to people who are more likely to convert off Facebook.&#xD;
+&lt;br /&gt;&lt;br /&gt;&#xD;
+This extension will allow you to set fully or in part following facebook pixel conversion:&lt;br /&gt;&#xD;
+&lt;strong&gt;- CHECKOUT&lt;/strong&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- REGISTRATION&lt;/strong&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- LEAD&lt;/strong&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- KEY_PAGE_VIEW&lt;/strong&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- ADD_TO_CART&lt;/strong&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- OTHER&lt;/strong&gt;&#xD;
+&lt;br /&gt;&lt;br /&gt;&#xD;
+&lt;h2&gt;Module Compatibility:&lt;/h2&gt;&#xD;
+This extension was developed following best practices according to Magento standards. &lt;br /&gt;&#xD;
+It doesn't impact or require any change of Magento default core files or whatever.&#xD;
+&lt;br /&gt;&lt;/br&gt;&#xD;
+&lt;strong&gt;The extension full supports Magento Community&lt;/strong&gt; &lt;br /&gt;&lt;br /&gt;&#xD;
+&lt;h2&gt;Module Features:&lt;/h2&gt;&#xD;
+&lt;strong&gt;It is fully customisable, you've got possibility to:&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- Easy to use:&lt;/strong&gt;&lt;br /&gt;&#xD;
+Enable and disable extension and all trackers outputting.&lt;br /&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- Flexible use of tag:&lt;/strong&gt;&lt;br /&gt;&#xD;
+Trackers can be enabled or disabled individually and independently.&lt;br /&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;- Multiple stores support:&lt;/strong&gt;&lt;br /&gt;&#xD;
+Support multiple stores, multiple store views and multiple domains.&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+&lt;h2&gt;Module Set up Requirements:&lt;/h2&gt;&#xD;
+&lt;strong&gt;StrongTics Facebook Conversion Tracker setting&lt;/strong&gt;&lt;br /&gt;&#xD;
+There are 5 pixel trackers: registration, lead, key_page_view, add_to_cart, other. So 5 configuration tabs.&lt;br /&gt;&#xD;
+For each of them you have to set:&lt;br /&gt;&#xD;
+&lt;strong&gt;1- Disabling or enabling of the tracker.&lt;/strong&gt;&lt;br /&gt;&#xD;
+&lt;strong&gt;2- Enter the Conversion pixel Id &lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;</description>
+    <notes>This update contains the following feature:&#xD;
+Custom Audience Retargeting Pixel.</notes>
+    <authors><author><name>Issa BERTHE</name><user>xsaBERTHE</user><email>issaberthet@yahoo.fr</email></author></authors>
+    <date>2015-02-14</date>
+    <time>21:40:14</time>
+    <contents><target name="magecommunity"><dir name="StrongTics"><dir name="FacebookConversionTracker"><dir name="Block"><file name="Abstract.php" hash="85e12abf4716b79079c32a6513bf2a9e"/><dir name="Checkout"><file name="Cart.php" hash="ae6f7516ab812dd3acf00913c284f982"/><file name="Success.php" hash="aca8a5825196850dbdfb71e0d728cc05"/></dir><dir name="Customer"><file name="Registration.php" hash="74f8136071fff64263974cc19d70267c"/></dir><file name="Keypage.php" hash="29c4ed7d6ebf3249c80ebcd980eecfc8"/><file name="Lead.php" hash="b16ba3b6bf43114dc08e6e0a946f7b24"/><file name="Other.php" hash="63c05501cd4dd5a765235b98ed273e0a"/><file name="Retargeting.php" hash="cf8981bdbdfb1494dea7f58b35da333d"/></dir><dir name="Helper"><file name="Config.php" hash="d14a64e62e63d418048d71c636cfc6de"/><file name="Data.php" hash="f070973f0360f34edcfaa5a7e1d1f75d"/></dir><dir name="Model"><file name="Observer.php" hash="8e1177cb8ec08a96dfaeb708e3e3becf"/></dir><dir name="etc"><file name="config.xml" hash="dcb004f39acd5a10226b773938b0e567"/><file name="system.xml" hash="43b6d79a726b6d6073336e2aa3f01b01"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="sticsfbtracker"><dir name="checkout"><file name="cart.phtml" hash="b91d68d06b6409f2d71e470c453c824a"/><file name="success.phtml" hash="5fc26f0b64f4e827ad4fe7d244e2fa27"/></dir><dir name="customer"><file name="registration.phtml" hash="4d6fdaec42883a00c8a30db18ce7609a"/></dir><file name="keypage.phtml" hash="f9a67941fc14a82a1e5f9bb6b78fab3a"/><file name="lead.phtml" hash="2614db5852687261f5fc9546feabc3b0"/><file name="other.phtml" hash="2fd160be939648d3e70ca8775d2005bd"/><file name="retargeting.phtml" hash="28794c1b37778bc62226ad3ea1fa15d2"/></dir></dir><dir name="layout"><file name="sticsfbtracker.xml" hash="8e54c8bb5481989037f5afc147c0e49d"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="StrongTics_FacebookConversionTracker.xml" hash="a17b548ab6a2a4003dca2cacff2c4388"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>4.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

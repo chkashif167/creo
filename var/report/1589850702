@@ -1,0 +1,9 @@
+a:5:{i:0;s:298:"Error in file: "E:\xampp\htdocs\creo\app\code\local\Mana\Filters\sql\mana_filters_setup\mysql4-install-1.1.1.php" - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'mana_filters_setup' for key 'PRIMARY', query was: INSERT INTO `core_resource` (`code`, `version`) VALUES (?, ?)";i:1;s:928:"#0 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '15.10.16.16')
+#2 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('15.10.16.16')
+#3 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
+#6 E:\xampp\htdocs\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#7 E:\xampp\htdocs\creo\index.php(93): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:11:"/creo/admin";s:11:"script_name";s:15:"/creo/index.php";s:4:"skin";s:7:"default";}

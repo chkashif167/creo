@@ -1,0 +1,9 @@
+a:5:{i:0;s:359:"Error in file: "E:\xampp\htdocs\creo\app\code\local\Mage\Customer\sql\customer_setup\install-1.6.0.0.php" - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creo.eav_entity_attribute' doesn't exist, query was: SELECT `eav_entity_attribute`.* FROM `eav_entity_attribute` WHERE (attribute_set_id = :attribute_set_id) AND (attribute_id = :attribute_id)";i:1;s:924:"#0 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '1.6.2.0.3')
+#2 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('1.6.2.0.3')
+#3 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
+#6 E:\xampp\htdocs\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#7 E:\xampp\htdocs\creo\index.php(89): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:12:"/creo/admin/";s:11:"script_name";s:15:"/creo/index.php";s:4:"skin";s:7:"default";}
