@@ -72,7 +72,7 @@ Minicart.prototype = {
         jQuery.confirm({
             title: errors_arr['validate-confirm'],
             confirmButtonClass: 'btn-info',
-            content: errors_arr['validate-confirm-remove-from-cart-message'], // You can also LOAD the html data using LOAD FROM URL feature,
+            content: errors_arr['validate-confirm-remove-from-cart-message'],  // You can also LOAD the html data using LOAD FROM URL feature,
             confirm: function() {
                 cart.hideMessage();
                 cart.showOverlay();
