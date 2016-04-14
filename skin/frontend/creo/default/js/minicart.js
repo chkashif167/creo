@@ -70,9 +70,9 @@ cart.processUpdateQuantity(this);
 removeItem: function(el) {
 var cart = this;
 jQuery.confirm({
-title: 'Confirm',
+title: errors_arr['validate-confirm'],
 confirmButtonClass: 'btn-info',
-content: 'Are you sure you would like to remove this item from the shopping cart?', // You can also LOAD the html data using LOAD FROM URL feature,
+content: errors_arr['validate-confirm-remove-from-cart-message'], // You can also LOAD the html data using LOAD FROM URL feature,
 confirm: function(){
 
 

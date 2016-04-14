@@ -9039,3 +9039,291 @@
 2016-04-14T06:24:08+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
 2016-04-14T06:24:10+00:00 ERR (3): Notice: Use of undefined constant styles - assumed 'styles'  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\attributeswatches\catalog_product_view_type_options_configurable.phtml on line 146
 2016-04-14T06:24:10+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\attributeswatches\catalog_product_view_type_options_configurable.phtml on line 146
+2016-04-14T08:54:45+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T08:54:45+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T08:54:45+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T08:54:45+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T08:54:45+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T08:54:45+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T08:54:45+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T08:54:45+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T08:54:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:54:46+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:54:46+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:54:47+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T08:54:47+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T08:54:47+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T08:54:49+00:00 DEBUG (7): 
+2016-04-14T08:54:49+00:00 DEBUG (7): 
+2016-04-14T08:54:49+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T08:54:49+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T08:54:49+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T08:54:50+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T08:54:53+00:00 ERR (3): Notice: Undefined index: siteVisits  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 28
+2016-04-14T08:55:34+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T08:55:34+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T08:55:34+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T08:55:34+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T08:55:34+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T08:55:34+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T08:55:34+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T08:55:34+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T08:55:34+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:55:34+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:55:34+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:55:35+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T08:55:35+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T08:55:35+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T08:55:37+00:00 DEBUG (7): 
+2016-04-14T08:55:37+00:00 DEBUG (7): 
+2016-04-14T08:55:38+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T08:55:38+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T08:55:38+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T08:55:38+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T08:56:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T08:56:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T08:56:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T08:56:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T08:56:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T08:56:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T08:56:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T08:56:08+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T08:56:08+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:56:08+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:56:08+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T08:56:09+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T08:56:10+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T08:56:10+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T08:56:12+00:00 DEBUG (7): 
+2016-04-14T08:56:12+00:00 DEBUG (7): 
+2016-04-14T08:56:12+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T08:56:12+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T08:56:12+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T08:56:13+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T08:56:16+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:01:49+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:01:49+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:01:49+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:01:49+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:01:49+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:01:49+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:01:49+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:01:49+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:01:49+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:01:49+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:01:49+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:01:51+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:01:51+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:01:51+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:01:55+00:00 DEBUG (7): 
+2016-04-14T09:01:55+00:00 DEBUG (7): 
+2016-04-14T09:01:55+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:01:55+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:01:55+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:01:55+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:02:02+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:02:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:02:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:02:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:02:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:02:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:02:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:02:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:02:25+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:02:26+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:02:26+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:02:26+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:02:27+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:02:28+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:02:28+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:02:32+00:00 DEBUG (7): 
+2016-04-14T09:02:32+00:00 DEBUG (7): 
+2016-04-14T09:02:32+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:02:32+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:02:32+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:02:33+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:02:40+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:03:24+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:03:24+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:03:24+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:03:24+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:03:24+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:03:24+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:03:24+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:03:24+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:03:24+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:03:24+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:03:24+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:03:25+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:03:25+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:03:26+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:03:28+00:00 DEBUG (7): 
+2016-04-14T09:03:28+00:00 DEBUG (7): 
+2016-04-14T09:03:28+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:03:28+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:03:28+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:03:29+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:03:32+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:03:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:03:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:03:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:03:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:03:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:03:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:03:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:03:53+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:03:54+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:03:54+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:03:54+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:03:55+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:03:55+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:03:55+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:03:57+00:00 DEBUG (7): 
+2016-04-14T09:03:57+00:00 DEBUG (7): 
+2016-04-14T09:03:57+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:03:57+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:03:57+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:03:58+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:04:01+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:05:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:05:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:05:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:05:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:05:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:05:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:05:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:05:08+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:05:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:05:09+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:05:09+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:05:10+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:05:10+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:05:10+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:05:12+00:00 DEBUG (7): 
+2016-04-14T09:05:12+00:00 DEBUG (7): 
+2016-04-14T09:05:12+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:05:12+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:05:12+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:05:13+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:05:16+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:05:40+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:05:40+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:05:40+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:05:40+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:05:40+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:05:40+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:05:40+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:05:40+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:05:40+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:05:40+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:05:40+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:05:42+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:05:42+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:05:42+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:05:44+00:00 DEBUG (7): 
+2016-04-14T09:05:44+00:00 DEBUG (7): 
+2016-04-14T09:05:44+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:05:44+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:05:44+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:05:45+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:05:48+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:07:09+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:07:09+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:07:09+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:07:09+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:07:09+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:07:09+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:07:09+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:07:09+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:07:09+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:07:09+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:07:09+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:07:10+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:07:11+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:07:11+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:07:13+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:07:16+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:07:54+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:07:54+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:07:54+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:07:54+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:07:54+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:07:54+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:07:54+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:07:54+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:07:55+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:07:55+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:07:55+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:07:56+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:07:56+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:07:56+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:07:58+00:00 DEBUG (7): 
+2016-04-14T09:07:58+00:00 DEBUG (7): 
+2016-04-14T09:07:58+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:07:58+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:07:58+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:07:59+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:08:03+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:09:51+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:09:51+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:09:51+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:09:51+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:09:51+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:09:51+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:09:51+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:09:51+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:09:51+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:09:51+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:09:51+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:09:52+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:09:52+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:09:53+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:09:55+00:00 DEBUG (7): 
+2016-04-14T09:09:55+00:00 DEBUG (7): 
+2016-04-14T09:09:55+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:09:55+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:09:55+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:09:56+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:10:00+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:10:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:10:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:10:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:10:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:10:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:10:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:10:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:10:53+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:10:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:10:53+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:10:53+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:10:54+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:10:54+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:10:54+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:10:56+00:00 DEBUG (7): 
+2016-04-14T09:10:56+00:00 DEBUG (7): 
+2016-04-14T09:10:56+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:10:56+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:10:56+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:10:57+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:11:01+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-04-14T09:13:18+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-04-14T09:13:18+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-04-14T09:13:18+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-04-14T09:13:18+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-04-14T09:13:18+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-04-14T09:13:18+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-04-14T09:13:18+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:13:18+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-04-14T09:13:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:13:18+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:13:18+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-04-14T09:13:19+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-04-14T09:13:19+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 257
+2016-04-14T09:13:19+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 300
+2016-04-14T09:13:22+00:00 DEBUG (7): 
+2016-04-14T09:13:22+00:00 DEBUG (7): 
+2016-04-14T09:13:22+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:13:22+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-04-14T09:13:22+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-04-14T09:13:23+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-04-14T09:13:27+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
