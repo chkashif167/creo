@@ -56,7 +56,7 @@ foreach ($productAttributeOptions as $productAttribute) {
 }
 ?>
 <div class="column color-area">
-    <h4>Color:</h4>
+    <h4><?php echo $this->__('Color'); ?>:</h4>
     <ul>
 <?php
 foreach( $attributeOptions['Tshirt Color'] as $ao ){
@@ -72,14 +72,14 @@ echo implode(' ',$txt);
 	</ul>
 </div>
 <div class="column size-area">
-    <h4>Size:</h4>
+    <h4><?php echo $this->__('Size'); ?>:</h4>
     <ul>
 <?php
 foreach( $attributeOptions['Size'] as $ao ){
 	if(strtolower($ao) == strtolower($size) ){
-		$txt2 [] = '<li class="active">'.$ao.'</li>';
+		$txt2 [] = '<li class="active">'.$this->__($ao).'</li>';
 		}else{
-	$txt2 [] = '<li>'.$ao.'</li>';
+	$txt2 [] = '<li>'.$this->__($ao).'</li>';
 		}
 		
 }
@@ -90,10 +90,10 @@ echo implode(' ',$txt2);
 <?php }
 else{
 	if($color){
-	echo '<div class="column color-area"> <h4>Color:</h4><ul><li class="active '.strtolower($color).'"><img width="21" height="21" alt="'.$color.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/t-'.strtolower($color).'.png" style="border:1px solid black; transform:skew(-15deg)"></li></ul></div>';
+	echo '<div class="column color-area"> <h4>'.$this->__("Color").':</h4><ul><li class="active '.strtolower($color).'"><img width="21" height="21" alt="'.$color.'" src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/catalog/swatches/1/21x21/media/t-'.strtolower($color).'.png" style="border:1px solid black; transform:skew(-15deg)"></li></ul></div>';
 	}
 	if($size){
-		echo '<div class="column size-area"> <h4>Size:</h4><ul><li class="active"><a href="#">'.$size.'</a></li></ul></div>';
+		echo '<div class="column size-area"> <h4>'.$this->__("Size").':</h4><ul><li class="active"><a href="#">'.$this->__($size).'</a></li></ul></div>';
 	}
 }
 ?>
