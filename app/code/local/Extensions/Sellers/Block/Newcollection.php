@@ -74,7 +74,7 @@ class Extensions_Sellers_Block_Newcollection extends Mage_Core_Block_Template {
 								)
 								->addAttributeToSelect('*')
 								->addAttributeToFilter('category_id', array($catId))			
-								->addAttributeToSort('created_at', 'desc')
+								->addAttributeToSort('entity_id', 'desc')
 								->addFieldToFilter('created_at', array('gt' => date("Y-m-d H:i:s", strtotime('- "'.$getdays.'" day'))));
 			$this->_productCollection = $collection;
 		}
