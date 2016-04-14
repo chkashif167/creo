@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>Website1service_RemoveNews</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This extension allows you to delete the newsletter templates in your admin panel.</summary>
+    <description>Magento doesn't allow you to delete newsletter template. You can only mark it to queue or preview but you can't delete it. This extension allows you to seamlessly delete any newsletter template and the newsletter queue in the same time. You will just have to select the drop down action  "Delete" to remove completely from the database your newsletter&#xD;
+</description>
+    <notes>This version is properly tested on the following Magento CE versions: 1.8, 1.8.1.0, 1.9&#xD;
+</notes>
+    <authors><author><name>SpaceLight</name><user>Website1service</user><email>magento-dev@website1service.com</email></author></authors>
+    <date>2014-09-26</date>
+    <time>08:51:46</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Website1service_RemoveNews.xml" hash="c464c9125a9e4d5a5c2e5eed093d870b"/></dir></target><target name="magecommunity"><dir name="Website1service"><dir name="RemoveNews"><dir name="Block"><dir name="Adminhtml"><dir name="Newsletter"><file name="Deletenews.php" hash="78a085a94d37748755577c443d9e2bcd"/></dir></dir></dir><dir name="etc"><file name="config.xml" hash="a8e2497b834411cc134d1e69da2740ba"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>5.5.12</max></php></required></dependencies>
+</package>

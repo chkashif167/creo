@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+    <name>Sashas_Tagproducts</name>
+    <version>1.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/GPL-3.0">GPL-3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Widget Tag Products Allows make CMS page with product which assigned to one tag or union of tags. Also it support layered navigation.</summary>
+    <description>Widget Tag Products Allos you create cms page and add products to it from one or few tags.  Products from few tags will show as union of the tags.&#xD;
+&#xD;
+Features:&#xD;
+&#xD;
+-You can select show/Not show Layered Navigation&#xD;
+-You can select Product per row &#xD;
+-You can specify Products per page&#xD;
+- Easy installation&#xD;
+&#xD;
+Sometimes after installation in layered navigation shows attributes with zero values to hide them follow instructions: ...</description>
+    <notes>Stable Release</notes>
+    <authors><author><name>Aliaksandr Lukyanau</name><user>sashas7777</user><email>cybergomel@gmail.com</email></author></authors>
+    <date>2014-01-25</date>
+    <time>03:17:17</time>
+    <contents><target name="magelocal"><dir name="Sashas"><dir name="Tagproducts"><dir name="Block"><file name="Grid.php" hash="afbdd7b7d70cc34740e2b57e943600ae"/><dir name="Layer"><file name="View.php" hash="0f0582400025abd966fd747972b2c8d1"/></dir><file name="List.php" hash="622e911f8aad9071568434489c36fad8"/></dir><dir name="Helper"><file name="Data.php" hash="43cabbcc7c8c2e49942ad8d077ca1a12"/></dir><dir name="Model"><file name="Layer.php" hash="d56bf2748c1216fd0d0c579a54ed78b4"/><dir name="Source"><file name="Tags.php" hash="63bc1b59c11713c93bb28b5322668e7b"/></dir></dir><dir name="etc"><file name="config.xml" hash="94903730bd5ba1cf8aeeb6216b388573"/><file name="widget.xml" hash="5eb95e2ef07690fd8cd9ecc5e4a7feff"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Sashas_Tagproducts.xml" hash="b1d0401c33d67c045fff4d14c082369a"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
