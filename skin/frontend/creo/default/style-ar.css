@@ -14,7 +14,8 @@ footer#footer{direction:rtl;}
 #header .header-icons{right:inherit;left:112px;}
 #header .cart .slide,.searchautocomplete .searchautocomplete-placeholder,
 .searchautocomplete .searchautocomplete-placeholder:before,
-#header .basic-open-close ul,.tab-content2 .column-content .edit-icon,.owl-theme .owl-controls{right:inherit;left:0;}
+#header .basic-open-close ul,.tab-content2 .column-content .edit-icon,.owl-theme .owl-controls,.category_top_filters .sort-by{right:inherit;
+left:0;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
 #nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
@@ -36,7 +37,7 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 #savePopup .form-horizontal .form-group p,.modal-holder .login-form label,.attributeItem,.jconfirm .jconfirm-box div.title,
 .jconfirm .jconfirm-box div.content,input,select,textarea,input[type="text"], input[type="password"], input.email,.cart-table-area dl dt,
 .cart-table-area dl dd,#product-options-wrapper{text-align:right;}
-.order-details-table th:first-child{text-align:center;}
+.order-details-table th:first-child,#fme_filters_list .cate-open-close li a{text-align:center;}
 .product-detail .price-area .availability,.cart-top-area .btn-holder{float:left;}
 .catalog-product-view .text-area .qty-area label{display:block;}
 #last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.cart-top-area,#fme_filters_list{direction:ltr;}
