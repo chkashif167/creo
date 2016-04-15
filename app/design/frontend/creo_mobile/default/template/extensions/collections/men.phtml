@@ -54,7 +54,7 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 </li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
-        <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
+        <a href="<?php echo Mage::getBaseUrl() . "clothing/men.html?universal_categories=".$a."" ?>"><?php echo $this->__($attr->getSource()->getOptionText($a)); ?></a>
         </li>
     <?php endforeach ?>
 

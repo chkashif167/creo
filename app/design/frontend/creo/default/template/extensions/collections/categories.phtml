@@ -81,10 +81,10 @@ $_attrbiuteCollection = $this->getLoadedAttributeCollection();
         <li>
             <?php if ($a['value']): ?>
 
-                <a href="<?php echo Mage::getBaseUrl().'clothing/'.slugify($a['label']).'.html';//Mage::getBaseUrl() . "clothing.html?universal_categories=".$a['value']."" ?>"><?php echo $a['label']; ?></a>
+                <a href="<?php echo Mage::getBaseUrl().'clothing/'.slugify($a['label']).'.html';//Mage::getBaseUrl() . "clothing.html?universal_categories=".$a['value']."" ?>"><?php echo $this->__($a['label']); ?></a>
             <?php else: 
 			?>
-            <a  class="fme_layered_clearall _selected_" href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>">View All</a>
+            <a  class="fme_layered_clearall _selected_" href="<?php echo Mage::getBaseUrl() . "clothing.html" ?>"><?php echo $this->__('View All'); ?></a>
 
             <?php endif; ?>
         </li>

@@ -26,7 +26,7 @@ if($labels == 'design_category'){
 		echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
 	}else{
 	?>
-	<span id="styles_label" class="search-by label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">Search by Design</span>
+	<span id="styles_label" class="search-by label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>"><?php echo $this->__('Search by Design'); ?></span>
 	<a id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="opener attribure_labels" data-id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
 <?php $catName= $this->getFilterOptions()->name; ?>
 <?php foreach ($this->getItems() as $_item): ?>
@@ -40,16 +40,16 @@ if($labels == 'design_category'){
 if($labels == 'design_category'){$catName = 'View All';}
 ?>
 <?php if ($catName=='true' || $selectedItem == '') {
-    echo $catName;
+    echo $this->__($catName);
     } elseif($labels=='design_category' && $selectedItem != '') { ?>
-    <span class="m-selected-filter-item"><?php echo $selectedItem; ?></span>
-<?php } else{ echo $catName; } ?>
+    <span class="m-selected-filter-item"><?php echo $this->__($selectedItem); ?></span>
+<?php } else{ echo $this->__($catName); } ?>
 </a>
 		<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
 	<?php
 	if($labels == 'design_category'){
 	?>
-	<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All">View All</a>
+	<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All"><?php echo $this->__('View All'); ?></a>
 	</li>
 	<?php
 	}
@@ -59,11 +59,11 @@ if($labels == 'design_category'){$catName = 'View All';}
 		<li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
 			<?php // MANA BEGIN ?>
 			<?php if ($_item->getMSelected()): ?>
-				<a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+				<a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
 			<?php else : ?>
 				<?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-				<a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
-				<?php else: echo $this->escapeHtml($_item->getLabel()) ?>
+				<a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+				<?php else: echo $this->__($this->escapeHtml($_item->getLabel())) ?>
 				<?php endif; ?>
 			<?php endif; ?>
 			<?php // MANA END ?>
@@ -92,16 +92,16 @@ if($labels == 'design_category'){$catName = 'View All';}
 if($labels == 'design_category'){$catName = 'View All';}
 ?>
 <?php if ($catName=='true' || $selectedItem == '') {
-    echo $catName;
+    echo $this->__($catName);
     } elseif($labels=='design_category' && $selectedItem != '') { ?>
-    <span class="m-selected-filter-item"><?php echo $selectedItem; ?></span>
-<?php } else{ echo $catName; } ?>
+    <span class="m-selected-filter-item"><?php echo $this->__($selectedItem); ?></span>
+<?php } else{ echo $this->__($catName); } ?>
 </a>
 		<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
 	<?php
 	if($labels == 'design_category'){
 	?>
-	<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All">View All</a>
+	<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All"><?php echo $this->__('View All'); ?></a>
 	</li>
 	<?php
 	}
@@ -110,11 +110,11 @@ if($labels == 'design_category'){$catName = 'View All';}
 		<li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
 			<?php // MANA BEGIN ?>
 			<?php if ($_item->getMSelected()): ?>
-				<a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+				<a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
 			<?php else : ?>
 				<?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-				<a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
-				<?php else: echo $this->escapeHtml($_item->getLabel()) ?>
+				<a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+				<?php else: echo $this->__($this->escapeHtml($_item->getLabel())) ?>
 				<?php endif; ?>
 			<?php endif; ?>
 			<?php // MANA END ?>
@@ -141,16 +141,16 @@ if($labels == 'design_category'){$catName = 'View All';}
 if($labels == 'design_category'){$catName = 'View All';}
 ?>
 <?php if ($catName=='true' || $selectedItem == '') {
-    echo $catName;
+    echo $this->__($catName);
     } elseif($labels=='design_category' && $selectedItem != '') { ?>
-    <span class="m-selected-filter-item"><?php echo $selectedItem; ?></span>
-<?php } else{ echo $catName; } ?>
+    <span class="m-selected-filter-item"><?php echo $this->__($selectedItem); ?></span>
+<?php } else{ echo $this->__($catName); } ?>
 </a>
 	<ul id="<?php echo $labels; ?>" class="slide m-filter-item-list <?php echo $this->getFilterOptions()->getIsReverse() ? 'm-reverse' : '' ?>">
 <?php
 if($labels == 'design_category'){
 ?>
-<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All">View All</a>
+<li><a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="View All"><?php echo $this->__('View All'); ?></a>
 </li>
 <?php
 }
@@ -159,11 +159,11 @@ if($labels == 'design_category'){
     <li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
         <?php // MANA BEGIN ?>
         <?php if ($_item->getMSelected()): ?>
-	        <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
+	        <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
         <?php else : ?>
 	        <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-	        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->escapeHtml($_item->getLabel()) ?></a>
-	        <?php else: echo $this->escapeHtml($_item->getLabel()) ?>
+	        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+	        <?php else: echo $this->__($this->escapeHtml($_item->getLabel())) ?>
 	        <?php endif; ?>
         <?php endif; ?>
         <?php // MANA END ?>

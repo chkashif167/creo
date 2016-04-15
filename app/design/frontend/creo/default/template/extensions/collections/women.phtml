@@ -91,9 +91,7 @@ $currentUrl = Mage::helper('core/url')->getCurrentUrl();
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
 
-
-                <a href="<?php echo Mage::getBaseUrl().'clothing/women/'.slugify($attr->getSource()->getOptionText($a)).'.html';//Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
-                        
+                <a href="<?php echo Mage::getBaseUrl().'clothing/women/'.slugify($attr->getSource()->getOptionText($a)).'.html';//Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $this->__($attr->getSource()->getOptionText($a)); ?></a>
 
         </li>
     <?php endforeach ?>
