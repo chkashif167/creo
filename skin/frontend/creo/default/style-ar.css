@@ -39,7 +39,7 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .order-details-table th:first-child{text-align:center;}
 .product-detail .price-area .availability,.cart-top-area .btn-holder{float:left;}
 .catalog-product-view .text-area .qty-area label{display:block;}
-#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.cart-top-area{direction:ltr;}
+#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.cart-top-area,#fme_filters_list{direction:ltr;}
 .faq-area.return-area .step-col li,.form-holder .form-frame{margin: 0 0% 0 2%;}
 .faq-area .faq-frame .open-close2{margin:0 0 18px 2%;}
 .faq-area .openeer-holder .question span{padding:0 7px;}
@@ -64,6 +64,7 @@ white-space:nowrap;}
 .design_categories_attributes ul li:nth-child(4n){margin-left:0;}
 a.sizeguide_link{top:110px;}
 .sales-order-view .cart-table-area th:before, .cart-table-area td:before{left:inherit;right:12px;border-left:0;border-right:2px solid #f3f3f3;}
+.bx-wrapper .bx-viewport ul.slides{left:0;}
 
 
 @media only screen and (max-width: 1199px){
