@@ -4845,7 +4845,7 @@ textarea {
 	width: 100%;
 }
 .cs-form input[type="submit"]{
-	float: right;
+	/*float: right;*/
 	background: #000;
 	border: none;
 	width: 92px;
@@ -5676,6 +5676,7 @@ a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underlin
 /* working area for qaisar end */
 .minicart-wrapper p.empty{margin:0;}
 .auguria-slider-image{max-width:100%;}
+.onestepcheckout-index-success #search_mini_form .button{}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}
