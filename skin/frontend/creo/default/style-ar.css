@@ -68,6 +68,8 @@ white-space:nowrap;}
 a.sizeguide_link{top:110px;}
 .sales-order-view .cart-table-area th:before, .cart-table-area td:before{left:inherit;right:12px;border-left:0;border-right:2px solid #f3f3f3;}
 .bx-wrapper .bx-viewport ul.slides{left:0;}
+.product-detail .price-area{font-size:22px;}
+.product-detail .price-area .price-box{display:inline-block;vertical-align:text-bottom;}
 
 
 @media only screen and (max-width: 1199px){
