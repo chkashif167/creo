@@ -806,9 +806,22 @@ border-bottom: 1px solid rgb(61, 62, 66);padding: 1em;text-transform: uppercase;
 #footer .copyright { display: block; color: #fff; font: 10px/12px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #footer .column ul { margin: 0; padding: 0; text-transform: uppercase; list-style: none; color: #fff; font: 10px/12px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 #footer .column li a { /*color: #fff;*/ }
-#select-language label{display:inline-block;padding:3px 6px;font-size:12px;text-transform:uppercase;vertical-align: top;margin:0;
+/*#select-language label{display:inline-block;padding:3px 6px;font-size:12px;text-transform:uppercase;vertical-align: top;margin:0;
 text-align:center;background-color:#000;color:#fff;text-decoration: none;cursor:pointer;}
-#select-language label:hover,#select-language label.selected{background-color:#ef4f61;}
+#select-language label:hover,#select-language label.selected{background-color:#ef4f61;}*/
+
+#select-language ul{position: relative;padding:0;margin:0;}
+#select-language li{display:inline-block;padding:0;font-size:12px;text-transform:uppercase;vertical-align: top;
+margin:0;text-align:center;background-color:#000;color:#fff;text-decoration: none;cursor:pointer;position:relative;
+border-top:1px solid #fff;min-width:45px;}
+#select-language li a.selected:before{right:2px;top:2px;}
+#select-language li a.selected,#select-language li a:hover.selected{background-color:#ef4f61;color:#fff;padding:5px 17px 2px 15px;}
+#select-language li ul{position:absolute;display:none;z-index:9999;}
+#select-language li li label,#select-language li li a{color:#fff;margin: 0;
+padding:5px 13px;cursor: pointer;display:block;background:inherit;}
+#select-language li li:hover{background-color:#ef4f61;color:#fff;}
+#select-language li:hover ul{display:block;}
+
 #select-language label input[type="radio"]{display:none;margin:0;}
 
 .scaffold-form .form-list { margin: 0; overflow: hidden; padding: 0; }
