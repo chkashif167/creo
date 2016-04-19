@@ -75,7 +75,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
           <div class="block-content">
             <div class="input-box">
-              <input required="required" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" placeholder="<?php echo $this->__('Email'); ?> " class="input-text required-entry validate-email email"  />
+              <input required="required" type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" placeholder="<?php echo $this->__('Email'); ?> " class="input-text required-entry validate-email email"  />
             </div>
             <div class="actions">
               <button type="submit" title="<?php echo $this->__('GET MY 20% OFF NOW') ?>" class="button newslettersubscribe off"><span><span><?php echo $this->__('GET MY 20% OFF NOW') ?></span></span></button>
@@ -113,7 +113,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
       <!--<span class="title">Join us for 20% off your first order</span>-->
           <div class="form-row">
           <div class="footer_newsletter">
-            <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email email" placeholder="<?php echo $this->__('Email Address') ?>" />
+            <input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email email" placeholder="<?php echo $this->__('Email Address') ?>" />
             </div>
             <input type="submit" value="<?php echo $this->__('JOIN'); ?>" class="button newslettersubscribe ">
           </div>
