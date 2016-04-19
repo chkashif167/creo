@@ -37,14 +37,18 @@
     <!-- <select class="opener" id="select-language" title="<?php //echo $this->__('Language') ?>" onchange="window.location.href=this.value"> -->
     <div id="select-language">
     <ul>
-    <li></li>
+    <li>
+    <a class="selected" title="Change Language from here"><?php echo $storeName = Mage::app()->getStore()->getName(); ?>
+    </a>
+    <ul class="sub">
     <?php foreach ($this->getStores() as $_lang): ?>
         <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' checked="checked"' : '' ?>
-        <?php $_selected2 = ($_lang->getId() == $this->getCurrentStoreId()) ? 'selected' : '' ?>
         <li>
-        <label class="<?php echo $_selected2; ?>" title="Change Language from here"><input type="radio" name="lang"  onclick="window.location.href=this.value" value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->escapeHtml($_lang->getName()) ?></label>
+        <label title="Change Language from here"><input type="radio" name="lang"  onclick="window.location.href=this.value" value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->escapeHtml($_lang->getName()) ?></label>
         </li>
     <?php endforeach; ?>
+    </ul>
+    </li>
     </ul>
     </div>
 <!-- </div> -->

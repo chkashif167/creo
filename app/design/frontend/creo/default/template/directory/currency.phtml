@@ -44,12 +44,17 @@ endforeach;
 
 ?>
 <div class="open-close basic-open-close">
-<a href="#" class="opener"><?php echo $currentCurrency; ?></a>
-<ul class="slide js-slide-hidden">
-<?php echo $topoption.$otheroptions; ?>
+    <div id="select-language">
+    <ul>
+    <li>
+    <a class="selected" title="Change currency from here"><?php echo $currentCurrency; ?></a>
+    <ul class="sub">
+    <?php echo $topoption.$otheroptions; ?>
+    </ul>
+    </li>
 </ul>
 </div>
-
+</div>
 
 
 <?php /*?><?php if($this->getCurrencyCount()>1): ?>
