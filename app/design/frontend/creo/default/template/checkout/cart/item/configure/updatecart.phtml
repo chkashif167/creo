@@ -35,7 +35,9 @@
     }
 ?>
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__('Update Cart'); ?>
+<?php $buttonTitle = $this->__('Update Cart');
+$this->__($buttonTitle);
+ ?>
 <?php if ($_product->isSaleable()): ?>
     
     <div class="add-to-cart">

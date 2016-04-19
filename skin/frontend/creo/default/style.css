@@ -4845,7 +4845,7 @@ textarea {
 	width: 100%;
 }
 .cs-form input[type="submit"]{
-	float: right;
+	/*float: right;*/
 	background: #000;
 	border: none;
 	width: 92px;
@@ -5204,12 +5204,11 @@ div.fme-filter dd a{padding: 0 !important;}
 	opacity: 1;
 }
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_20.selected {
-
-	background-image: url("http://www.creoroom.com/media/attributeswatches/v-neck-active.png") !important;  	}
+	background-image: url("images/v-neck-active.png") !important;  	}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_21.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/round-neck-active.png")!important;	}
+	background-image: url("images/round-neck-active.png")!important;	}
 #product-options-wrapper .product-swatches-container ul#swatches-options-134 li a#swatches_option_value_22.selected {
-	background-image: url("http://www.creoroom.com/media/attributeswatches/tank-top-active.png")!important;	}
+	background-image: url("images/tank-top-active.png")!important;	}
 .product-swatches-container ul:after {
 
 	clear: both;
@@ -5677,6 +5676,7 @@ a.sizeguide_link{position:absolute;top:140px;right:15px;text-decoration:underlin
 /* working area for qaisar end */
 .minicart-wrapper p.empty{margin:0;}
 .auguria-slider-image{max-width:100%;}
+.onestepcheckout-index-success #search_mini_form .button{}
 
 @media only screen and (max-width: 1199px) {
 	#nav ol{font-size: 13px;}

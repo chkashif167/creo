@@ -36,7 +36,6 @@ if(empty($_cartQty)) {
     $_cartQty = 0;
 }
 ?>
-
 <div id="minicart-error-message" class="minicart-message"></div>
 <div id="minicart-success-message" class="minicart-message"></div>
 <div class="minicart-wrapper">
@@ -71,7 +70,17 @@ if(empty($_cartQty)) {
       <?php if ($this->canApplyMsrp()): ?>
       <?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?>
       <?php else: ?>
-     <?php echo $this->__('Total') ?>: <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+     <?php echo $this->__('Total') ?>: <?php
+$theDigit = Mage::helper('checkout')->formatPrice($this->getSubtotal());
+$storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){
+$convertedDigit = strip_tags(htmlspecialchars_decode($theDigit));
+$convertedDigit = convertArabicNumbers($convertedDigit);
+echo $convertedDigit;
+} else {
+echo $theDigit;
+}
+     ?>
       <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
       <br />
       (<?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>)

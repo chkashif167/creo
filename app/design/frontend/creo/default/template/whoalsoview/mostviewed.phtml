@@ -40,7 +40,23 @@ if(count($_productCollection)){ ?>
                         <?php if($_product->getRatingSummary()): ?>
                         <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                         <?php endif; ?>
-                        <?php echo $this->getPriceHtml($_product, true) ?>
+
+<?php $minipriceDigit = $this->getPriceHtml($_product, true) ; ?>
+<?php $storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){
+$miniconvertedDigit = strip_tags(htmlspecialchars_decode($minipriceDigit));
+$miniconvertedDigit = convertArabicNumbers($miniconvertedDigit);
+?>
+<div class="price-box">
+<span class="regular-price">
+<span class="price"><?php echo $miniconvertedDigit; ?></span></span>
+</div>
+<?php
+} else {
+echo $minipriceDigit;
+}
+?>
+
                         <div class="btn-holder">
                             <?php if($_product->isSaleable()): ?>
                                <!--  <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button> -->

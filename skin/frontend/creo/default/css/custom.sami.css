@@ -266,7 +266,7 @@ a.alignleft.checkout-items {
 }
 
 .validation-advice { color: red; font-size: 10px; /*float: left;*/}
-.onestepcheckout-index-success .button {
+.onestepcheckout-index-success .main .button {
     background: black none repeat scroll 0 0;
     border: medium none;
     color: #fff;
