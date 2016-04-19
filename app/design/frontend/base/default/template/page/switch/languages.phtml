@@ -36,11 +36,16 @@
     <!-- <label class="lang" for="select-language"><?php //echo $this->__('Language:') ?></label> -->
     <!-- <select class="opener" id="select-language" title="<?php //echo $this->__('Language') ?>" onchange="window.location.href=this.value"> -->
     <div id="select-language">
+    <ul>
+    <li></li>
     <?php foreach ($this->getStores() as $_lang): ?>
         <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' checked="checked"' : '' ?>
         <?php $_selected2 = ($_lang->getId() == $this->getCurrentStoreId()) ? 'selected' : '' ?>
+        <li>
         <label class="<?php echo $_selected2; ?>" title="Change Language from here"><input type="radio" name="lang"  onclick="window.location.href=this.value" value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->escapeHtml($_lang->getName()) ?></label>
+        </li>
     <?php endforeach; ?>
+    </ul>
     </div>
 <!-- </div> -->
 <?php endif; ?>

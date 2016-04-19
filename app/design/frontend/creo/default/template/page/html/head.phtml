@@ -72,6 +72,32 @@ errors_arr['validate-confirm-remove-from-cart-message'] = "<?php echo $this->__(
 
 
 </script>
+<?php
+/*
+/////////////////////
+This function has been created by Abdulfattah alhazmi
+Roles:
+To convert Arabic/Farsi Numbers (٠‎ - ١‎ - ٢‎ - ٣‎ - ٤‎ - ٥‎ - ٦‎ - ٧‎ - ٨‎ - ٩‎) 
+TO the corrosponding English numbers (0-1-2-3-4-5-6-7-8-9)
+http://hazmi.co.cc
+/////////////////////
+*/
+function convertArabicNumbers($arabic) {
+    $trans = array(
+      "0" => "&#1632;",
+      "1" =>"&#1633;",
+      "2" => "&#1634;",
+       "3" => "&#1635;",
+       "4" => "&#1636;",
+       "5" => "&#1637;",
+       "6" => "&#1638;",
+       "7" => "&#1639;",
+       "8" => "&#1640;",
+       "9" => "&#1641;",
+    );
+    return strtr($arabic,$trans);
+}
+?>
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>

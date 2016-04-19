@@ -117,15 +117,25 @@ if($_product->stock_item->is_in_stock == 0){
 <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
 <?php endif;?>
 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?><?php */?>
+<?php  $minipriceDigit = $this->getPriceHtml($_product); ?>
+
+<?php $storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){
+$miniconvertedDigit = strip_tags(htmlspecialchars_decode($minipriceDigit));
+$miniconvertedDigit = convertArabicNumbers($miniconvertedDigit);
+echo $miniconvertedDigit;
+} else {
+echo $minipriceDigit;
+}
+?>
+<?php echo $this->getChildHtml('bundle_prices') ?>
+<?php echo $this->getTierPriceHtml() ?>
+
 <?php $storeCode = Mage::app()->getStore()->getCode();
 if ($storeCode == "creo_ar"){
 echo Mage::app()->getStore()->getCurrentCurrencyCode();
 }
 ?>
-<?php echo $this->getPriceHtml($_product); ?>
-<?php echo $this->getChildHtml('bundle_prices') ?>
-<?php echo $this->getTierPriceHtml() ?>
-
 
  </div>
 <span class="availability"><?php echo $this->__('Availability'); ?>: <?php echo $this->__($this->getChildHtml('product_type_availability')); ?></span>

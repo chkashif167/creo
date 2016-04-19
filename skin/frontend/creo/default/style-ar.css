@@ -36,7 +36,7 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .shipping-methods h3, #last_most_view_title > h3,.faq-area h3,.tab-content2 .dark-heading,.three-column h3,
 #savePopup .form-horizontal .form-group p,.modal-holder .login-form label,.attributeItem,.jconfirm .jconfirm-box div.title,
 .jconfirm .jconfirm-box div.content,input,select,textarea,input[type="text"], input[type="password"], input.email,.cart-table-area dl dt,
-.cart-table-area dl dd,#product-options-wrapper{text-align:right;}
+.cart-table-area dl dd,#product-options-wrapper,.cs-form textarea{text-align:right;}
 .order-details-table th:first-child,#fme_filters_list .cate-open-close li a,.bulk-order-form.track-shipment-form input[type="button"]{
 text-align:center;}
 .product-detail .price-area .availability,.cart-top-area .btn-holder{float:left;}
