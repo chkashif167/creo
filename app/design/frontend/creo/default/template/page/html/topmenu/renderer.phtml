@@ -241,6 +241,10 @@ endforeach;
   <span class="title">TANK TOPS</span>
 </a>
 </li>-->
+<?php $clothingStatic = $this->getLayout()->createBlock('cms/block')->setBlockId('clothing-featured-static')->toHtml();
+if($clothingStatic){
+  echo $clothingStatic;
+  } ?>
 <?php
 $Featured_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
 foreach ($Featured_category as $category):
@@ -284,10 +288,6 @@ endforeach;
 <span class="featured"><?php echo $this->__('Featured'); ?></span>
 </div>
 <ul class="featured-products">
-<?php $clothingStatic = $this->getLayout()->createBlock('cms/block')->setBlockId('clothing-featured-static')->toHtml();
-if($clothingStatic){
-  echo $clothingStatic;
-  } ?>
 <?php
 $Featured_category = Mage::getModel('catalog/category')->load('5')->getChildrenCategories();
 foreach ($Featured_category as $category):
