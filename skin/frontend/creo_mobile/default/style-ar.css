@@ -39,7 +39,7 @@ footer#footer{direction:rtl;}
 .cartPage_custome_responsive .item-options dd,.jconfirm .jconfirm-box div.title,.jconfirm .jconfirm-box div.content,input,select,
 textarea,input[type="text"], input[type="password"], input.email{text-align:right;}
 
-.cartPage_custome_responsive .item-options dt{text-align:left;}
+.cartPage_custome_responsive .item-options dt{text-align:left;padding-left:5px;}
 .cartPage_custome_responsive td{text-align:left;}
 .cartPage_custome_responsive td:before{left:15%;}
 .cartPage_custome_responsive td:nth-of-type(1):before { content: "";  }
@@ -48,8 +48,8 @@ textarea,input[type="text"], input[type="password"], input.email{text-align:righ
 .cartPage_custome_responsive td:nth-of-type(4):before { content: "كمية";}
 .cartPage_custome_responsive td:nth-of-type(5):before { content: "حاصل الجمع ";}
 
-.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory,select{
-padding-right:30px;}
+.checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory,select{padding-right:30px;}
+.checkout-form .form-group input{padding-right:10px;}
 .cart-table-area dl dt, .cart-table-area dl dd{text-align:center;}
 .catalog-product-view .text-area .qty-area label{display:block;}
 .form-holder .form-frame{margin:0;}

@@ -31,6 +31,12 @@
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php echo $this->getChildHtml('checkout_cart_empty_widget'); ?>
     <p><?php echo $this->__('You have no items in your shopping cart.') ?></p>
-    <p><?php echo $this->__('Click'); ?> <?php echo $this->__('<a href="%s">', $this->getContinueShoppingUrl()) ;?> <?php echo $this->__('here'); ?></a> <?php echo $this->__('to continue shopping.'); ?></p>
+    <p><?php $storeCode = Mage::app()->getStore()->getCode();
+    if ($storeCode == "creo_ar"){
+    	echo $this->__('انقر <a href="%s">هنا</a> لمتابعة التسوق.', $this->getContinueShoppingUrl());
+    } else {
+    	echo $this->__('Click <a href="%s">here</a> to continue shopping.', $this->getContinueShoppingUrl());
+    }
+?></p>
     <?php echo $this->getChildHtml('shopping.cart.table.after'); ?>
 </div>

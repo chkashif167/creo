@@ -1,0 +1,107 @@
+2016-02-16T14:08:25+00:00 DEBUG (7): exception 'Zend_Exception' with message 'dbModel read resource does not implement Zend_Db_Adapter_Abstract' in C:\wamp\www\creo\lib\Varien\Data\Collection\Db.php:187
+Stack trace:
+#0 C:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Db\Collection\Abstract.php(134): Varien_Data_Collection_Db->setConnection(false)
+#1 C:\wamp\www\creo\app\code\core\Mage\Core\Model\Config.php(1348): Mage_Core_Model_Resource_Db_Collection_Abstract->__construct(Array)
+#2 C:\wamp\www\creo\app\code\core\Mage\Core\Model\Config.php(1380): Mage_Core_Model_Config->getModelInstance('wordpress_resou...', Array)
+#3 C:\wamp\www\creo\app\Mage.php(491): Mage_Core_Model_Config->getResourceModelInstance('wordpress/user_...', Array)
+#4 C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Model\Resource\User.php(75): Mage::getResourceModel('wordpress/user_...')
+#5 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\sql\wordpress_setup\mysql4-upgrade-3.2.0.0-3.2.0.1.php(22): Fishpig_Wordpress_Model_Resource_User->cleanDuplicates()
+#6 C:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(624): include('C:\wamp\www\cre...')
+#7 C:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(422): Mage_Core_Model_Resource_Setup->_modifyResourceDb('upgrade', '0.1.0', '4.1.2.9')
+#8 C:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('4.1.2.9')
+#9 C:\wamp\www\creo\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#10 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#11 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
+#12 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#14 {main}
+2016-02-22T07:09:23+00:00 DEBUG (7): exception 'Exception' with message 'CURL (28): Operation timed out after 15000 milliseconds with 52311 out of 71494 bytes received' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-02-22T07:09:45+00:00 DEBUG (7): exception 'Exception' with message 'CURL (28): Operation timed out after 15000 milliseconds with 55231 out of 71494 bytes received' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-03-24T12:21:42+00:00 DEBUG (7): exception 'Exception' with message 'CURL (28): Operation timed out after 15000 milliseconds with 59611 out of 71831 bytes received' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-03-24T12:22:56+00:00 DEBUG (7): exception 'Exception' with message 'CURL (28): Operation timed out after 15000 milliseconds with 5591 out of 71831 bytes received' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-03-24T12:23:19+00:00 DEBUG (7): exception 'Exception' with message 'CURL (28): Operation timed out after 15000 milliseconds with 56691 out of 71831 bytes received' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-03-24T12:40:27+00:00 DEBUG (7): exception 'Exception' with message 'CURL (28): Operation timed out after 15000 milliseconds with 33331 out of 71831 bytes received' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-03-24T12:49:17+00:00 DEBUG (7): exception 'Exception' with message 'CURL (28): Operation timed out after 15000 milliseconds with 69731 out of 71831 bytes received' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-03-24T12:56:47+00:00 DEBUG (7): exception 'Exception' with message 'CURL (7): couldn't connect to host' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
+2016-04-20T10:51:04+00:00 DEBUG (7): exception 'Exception' with message 'CURL (6): Could not resolve host: connect20.magentocommerce.com; Host not found' in C:\wamp\www\creo\app\code\local\Fishpig\Wordpress\Helper\System.php:406
+Stack trace:
+#0 C:\wamp\www\creo\app\code\community\Fishpig\Wordpress\controllers\Adminhtml\WordpressController.php(60): Fishpig_Wordpress_Helper_System->makeHttpGetRequest('http://connect2...')
+#1 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Action.php(418): Fishpig_Wordpress_Adminhtml_WordpressController->checkVersionAction()
+#2 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Router\Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('checkVersion')
+#3 C:\wamp\www\creo\app\code\local\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 C:\wamp\www\creo\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Controller_Varien_Front->dispatch()
+#5 C:\wamp\www\creo\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\wamp\www\creo\index.php(93): Mage::run('', 'store')
+#7 {main}
