@@ -826,7 +826,8 @@ padding:5px 13px;cursor: pointer;display:block;background:inherit;}
 
 .scaffold-form .form-list { margin: 0; overflow: hidden; padding: 0; }
 .scaffold-form .form-list label { font-weight: normal; letter-spacing: 1px; }
-.scaffold-form .buttons-set .button { background: #f16167 none repeat scroll 0 0; border: medium none; color: #fff; height: 26px; padding: 5px 20px; }
+.scaffold-form .buttons-set .button { background: #f16167 none repeat scroll 0 0; border: medium none; color: #fff; height: 26px;
+padding: 5px 20px; }
 .scaffold-form .buttons-set .button:hover { background: #000; }
 .billingcountryselect { display: block; overflow: hidden; width: 100%; position: relative; }
 .showShippingAddress { list-style: outside none none; margin: 0; padding: 0; }
