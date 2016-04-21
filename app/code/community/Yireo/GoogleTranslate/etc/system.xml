@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo GoogleTranslate for Magento 
+ *
+ * @package     Yireo_GoogleTranslate
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright 2015 Yireo (http://www.yireo.com/)
+ * @license     Open Source License (OSL v3)
+ */
+-->
+<config>
+    <sections>
+        <catalog>
+            <groups>
+                <googletranslate translate="label">
+                    <label>Google Translate</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>900</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <apikey2 translate="label">
+                            <label>API key v2</label>
+                            <comment><![CDATA[API v2 key as received from Google APIs Console]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </apikey2>
+
+                        <buttonlabel translate="label">
+                            <label>Button format</label>
+                            <comment><![CDATA[Format of button-label ($FROM and $TO)]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </buttonlabel>
+
+                        <bork translate="label">
+                            <label>Bork Debugging</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Use the Swedish chef for bork debugging]]></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bork>
+
+                        <overwrite_existing translate="label">
+                            <label>Overwriting Existing</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Overwrite existing values with new translations]]></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </overwrite_existing>
+
+                        <skip_translation translate="label">
+                            <label>Skip Translation</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Skip translation to allow for logging only]]></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </skip_translation>
+
+                        <logging translate="label">
+                            <label>Enable logging</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Enable logging to file var/log/googletranslate.log]]></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logging>
+
+                        <widget_fixed translate="label">
+                            <label>Set Widget AS Fixed</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Attach widget to bottom of page]]></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </widget_fixed>
+
+                        <jquery translate="label">
+                            <label>Load jQuery</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Attach widget to bottom of page]]></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jquery>
+
+                        <customization_id translate="label">
+                            <label>Customization ID</label>
+                            <comment><![CDATA[ID used for optional frontend widget]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </customization_id>
+
+                        <batch_attributes translate="label">
+                            <label>Batch Attributes</label>
+                            <comment><![CDATA[Attributes to translate when running batches]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>googletranslate/system_config_source_attribute</source_model>
+                            <sort_order>81</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </batch_attributes>
+
+                        <batch_stores translate="label">
+                            <label>Batch Store Views</label>
+                            <comment><![CDATA[Store Views to translate to when running batches]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>adminhtml/system_config_source_store</source_model>
+                            <sort_order>82</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </batch_stores>
+
+                        <batch_max_items translate="label">
+                            <label>Maximum display in batch-mode</label>
+                            <comment><![CDATA[Treshold above which item-details will be hidden to save PHP memory]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </batch_max_items>
+                    </fields>
+                </googletranslate>
+            </groups>
+        </catalog>
+    </sections>
+</config>

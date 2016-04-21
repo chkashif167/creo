@@ -1,0 +1,35 @@
+/**
+ * Yireo GoogleTranslate for Magento
+ *
+ * @package     Yireo_GoogleTranslate
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright 2015 Yireo (http://www.yireo.com/)
+ * @license     Open Software License
+ */
+
+div.googletranslate-widget {
+    border: 1px solid #d6d6d6;
+    background-color: #FFFCB2;
+    height: 50px;
+}
+
+div.googletranslate-widget div {
+    float: left;
+    padding: 10px;
+}
+
+div.googletranslate-container {
+    position: relative;
+}
+
+div.googletranslate-container a {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    width: 15px;
+}
+
+div.googletranslate-icon {
+    background: transparent url("../images/googletranslate/icon-language.png") no-repeat top left;
+}

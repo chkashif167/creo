@@ -1,0 +1,88 @@
+<?php
+/**
+ * Yireo GoogleTranslate for Magento
+ *
+ * @package     Yireo_GoogleTranslate
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (c) 2014 Yireo (http://www.yireo.com/)
+ * @license     Open Software License
+ */
+
+$widget_css = null;
+if (Mage::getStoreConfig('catalog/googletranslate/widget_fixed') == 1) {
+    $widget_css = 'position:fixed; bottom:0; width:100%;';
+}
+?>
+<div class="googletranslate-widget" style="<?= $widget_css; ?>">
+    <div class="heading">
+        <strong><?= $this->__('GoogleTranslate configuration'); ?>:</strong>
+    </div>
+
+    <div class="field">
+        <label for="googletranslate_source_language"><?= $this->__('Source language'); ?></label>
+        <select id="googletranslate_source_language" name="googletranslate_source_language"
+                onchange="return googletranslate_change();">
+            <option value="auto"><?= $this->__('Automatic'); ?></option>
+            <?php foreach ($this->getLanguages() as $language) : ?>
+                <?php $selected = ($this->getSourceLanguage() == $language['value']) ? 'selected="selected"' : null; ?>
+                <option value="<?= $language['value']; ?>" <?= $selected; ?>><?= $language['label']; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="googletranslate_destination_language"><?= $this->__('Destination language'); ?></label>
+        <select id="googletranslate_destination_language" name="googletranslate_destination_language" onchange="return googletranslate_change();">
+            <option value="auto"><?= $this->__('Automatic'); ?></option>
+            <?php foreach ($this->getLanguages() as $language) : ?>
+                <?php $selected = ($this->getDestinationLanguage() == $language['value']) ? 'selected="selected"' : null; ?>
+                <?php $value = $language['value']; ?>
+                <option value="<?= $value; ?>" <?= $selected; ?>><?= $language['label']; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+
+    <div class="field" style="float:right">
+        <a href="#" onclick="jQuery('.googletranslate-widget').remove();">[close]</a>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var storeLanguages = <?= json_encode($this->getStoreLanguages()); ?>;
+
+    function googletranslate_change() {
+
+        var source = $('googletranslate_source_language');
+        var sourceValue = source.value;
+        var sourceLabel = source.options[source.selectedIndex].text;
+
+        var destination = $('googletranslate_destination_language');
+        var destinationValue = destination.value;
+        var destinationLabel = destination.options[destination.selectedIndex].text;
+
+        var label = '<?= Mage::getStoreConfig('catalog/googletranslate/buttonlabel'); ?>';
+        label = label.replace('$FROM', sourceLabel);
+        label = label.replace('$TO', destinationLabel);
+
+        if (sourceValue != '' && destinationValue != '') {
+            $$('.googletranslate_button').each(function (button) {
+                button.down('span').update(label);
+                button.className = 'googletranslate_button';
+                button.disabled = false;
+            });
+        }
+    }
+
+    Ajax.Responders.register({
+        onComplete: function () {
+            if (storeSwitcher = jQuery('#store_switcher')) {
+                store = storeSwitcher.val();
+                if (store > 0) {
+                    storeLanguage = storeLanguages['s' + store];
+                    jQuery('#googletranslate_destination_language').val(storeLanguage);
+                }
+            }
+        }
+    });
+</script>

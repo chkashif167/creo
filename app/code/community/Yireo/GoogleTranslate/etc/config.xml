@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo GoogleTranslate for Magento 
+ *
+ * @package     Yireo_GoogleTranslate
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright 2015 Yireo (http://www.yireo.com/)
+ * @license     Open Source License (OSL v3)
+ */
+-->
+<config>
+
+    <modules>
+        <Yireo_GoogleTranslate>
+            <version>3.1.4</version>
+        </Yireo_GoogleTranslate>
+    </modules>
+
+    <global>
+        <blocks>
+            <googletranslate>
+                <class>Yireo_GoogleTranslate_Block</class>
+            </googletranslate>
+        </blocks>
+
+        <helpers>
+            <googletranslate>
+                <class>Yireo_GoogleTranslate_Helper</class>
+            </googletranslate>
+        </helpers>
+
+        <models>
+            <googletranslate>
+                <class>Yireo_GoogleTranslate_Model</class>
+            </googletranslate>
+        </models>
+    </global>
+
+    <adminhtml>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <googletranslate_controller_action_predispatch>
+                        <type>singleton</type>
+                        <class>Yireo_GoogleTranslate_Model_Observer</class>
+                        <method>controllerActionPredispatch</method>
+                    </googletranslate_controller_action_predispatch>
+                </observers>
+            </controller_action_predispatch>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <googletranslate_add_html>
+                        <type>singleton</type>
+                        <class>Yireo_GoogleTranslate_Model_Observer</class>
+                        <method>coreBlockAbstractToHtmlBefore</method>
+                    </googletranslate_add_html>
+                </observers>
+            </core_block_abstract_to_html_before>
+            <content_translate_after>
+                <observers>
+                    <googletranslate_content_translate_after>
+                        <type>singleton</type>
+                        <class>Yireo_GoogleTranslate_Model_Observer</class>
+                        <method>contentTranslateAfter</method>
+                    </googletranslate_content_translate_after>
+                </observers>
+            </content_translate_after>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <googletranslate_core_block_abstract_prepare_layout_before>
+                        <class>Yireo_GoogleTranslate_Model_Observer</class>
+                        <method>coreBlockAbstractPrepareLayoutBefore</method>
+                    </googletranslate_core_block_abstract_prepare_layout_before>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+        </events>
+
+        <translate>
+            <modules>
+                <Yireo_BingTranslate>
+                    <files>
+                        <default>Yireo_BingTranslate.csv</default>
+                    </files>
+                </Yireo_BingTranslate>
+            </modules>
+        </translate>
+
+        <layout>
+            <updates>
+                <googletranslate>
+                    <file>googletranslate.xml</file>
+                </googletranslate>
+            </updates>
+        </layout>
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <catalog>
+                            <children>
+                                <googletranslate translate="title" module="googletranslate">
+                                    <title>Translate via GoogleTranslate</title>
+                                </googletranslate>
+                            </children>
+                        </catalog>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <googletranslate translate="title" module="googletranslate">
+                                            <title>GoogleTranslate Section</title>
+                                        </googletranslate>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <googletranslate before="Mage_Adminhtml">Yireo_GoogleTranslate</googletranslate>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+        <catalog>
+            <googletranslate>
+                <buttonlabel>GoogleTranslate from $FROM to $TO</buttonlabel>
+                <bork>0</bork>
+                <overwrite_existing>0</overwrite_existing>
+                <skip_translation>0</skip_translation>
+                <logging>0</logging>
+                <widget_fixed>1</widget_fixed>
+                <jquery>1</jquery>
+                <batch_max_items>1000</batch_max_items>
+            </googletranslate>
+        </catalog>
+    </default>
+</config>
