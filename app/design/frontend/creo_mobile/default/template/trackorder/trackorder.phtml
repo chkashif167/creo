@@ -1,11 +1,10 @@
 <?php
     if(Mage::getStoreConfig('trackorder/trackorder_general/enabled')):
 	$customerEmail = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
-	
     ?>
   <div class="row">
 <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<h2><?php echo $this->__('Track Your Order ') ?></h2>
+<h2><?php echo $this->__('Track Your Order') ?></h2>
 </div>
 </div>
 <div class="row">
@@ -18,7 +17,7 @@
   <div class="col-md-5">
   <div class="form-group">
   
-  <label for="order_id" class="required"><?php echo $this->__('*Order Number') ?></label>
+  <label for="order_id" class="required">*<?php echo $this->__('Order Number') ?></label>
     <input type="text" name="order_id" id="order_id" value="" title="" class="input-text required-entry" />
     </div>
     </div>
@@ -26,7 +25,7 @@
     <div class="col-md-5">
     
   <div class="form-group">
-    <label for="email_address" class="required"><?php echo $this->__('*Email Address') ?></label>
+    <label for="email_address" class="required">*<?php echo $this->__('Email Address') ?></label>
    
    <input type="text" name="email" id="email_address" value="" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
   </div>
