@@ -158,19 +158,25 @@ jQuery( document ).ready( function($){
 <script>
 jQuery(window).load(function(){
     //jQuery('#currentvalue').text('View All');
-    var url = window.location.href;
-    var array = url.split('?');
+ var url = window.location.href;
+    var array = url.split('?universal_categories=');
     var paramStr = array[1];
-    var params = paramStr.split("universal_categories=");
-    console.log(params);
+    var params = paramStr;
+    //console.log(params);
     var design = getQueryVar('universal_categories').trim();
-    if(design) {
-        console.log('here1'+design);
-        var currentEl = jQuery("#universal_categories-"+design).text();
-        if(currentEl) {
-            $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentEl+'</a>');
-        }
-    }
+    // var url = window.location.href;
+    // var array = url.split('?');
+    // var paramStr = array[1];
+    // var params = paramStr.split("universal_categories=");
+    // console.log(params);
+    // var design = getQueryVar('universal_categories').trim();
+    // if(design) {
+    //     console.log('here1'+design);
+    //     var currentEl = jQuery("#universal_categories-"+design).text();
+    //     if(currentEl) {
+    //         $('currentvalue').replace('<a href="#" class="opener" id="currentvalue">'+currentEl+'</a>');
+    //     }
+    // }
     //var search2 = getQueryVar('design').toLowerCase();
     //console.log(search2);
     //location.href.replace("design="+design, "design=3araby");

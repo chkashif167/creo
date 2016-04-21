@@ -28,7 +28,7 @@ footer#footer{direction:rtl;}
 
 #bill_form label, #ship_form label,#bill_form sup, #ship_form sup,.onestepcheckout-index-index .discount-form .leftSide,
 .catalog-product-view .text-area .qty-area,.form-holder .checkbox-holder input[type="checkbox"],
-.form-holder .checkbox-holder label{float:right;}
+.form-holder .checkbox-holder label,.tabset.tabset1 li{float:right;}
 .form-holder .checkbox-holder input[type="checkbox"]{margin-left:5px;}
 select{padding-right: 25px;}
 .product-detail .price-area{padding:10px 0;}
