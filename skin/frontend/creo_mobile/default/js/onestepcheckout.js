@@ -241,9 +241,9 @@ BillingAddress.prototype = {
 		jQuery('billing:ziprequired').hide();
 		jQuery('billing:staterequired').hide();		
 
-        jQuery('billing:country_id') && jQuery('billing:country_id').observe('change', function () {
-            if (jQuery('billing:region_id')) {function resetRegionId() {
-					var country = jQuery('billing:country_id').value;
+        $('billing:country_id') && $('billing:country_id').observe('change', function () {
+            if ($('billing:region_id')) {function resetRegionId() {
+					var country = $('billing:country_id').value;
 					if( country !== 'US' ){
 						jQuery('billing:postcode').hide();
 						jQuery('billing:postcodelabel').hide();
@@ -261,47 +261,47 @@ BillingAddress.prototype = {
 						jQuery('billing:ziprequired').show();
 						jQuery('billing:staterequired').show();		
 					}
-                    jQuery('billing:region_id').value = '';
-                    jQuery('billing:region_id')[0].selected = true
+                    $('billing:region_id').value = '';
+                    $('billing:region_id')[0].selected = true
                 }
                 resetRegionId.delay(0.2)
             }
-            if (jQuery('shipping:same_as_billing') && jQuery('shipping:same_as_billing').checked) {
+            if ($('shipping:same_as_billing') && $('shipping:same_as_billing').checked) {
                 shipping.syncWithBilling()
             }
             checkout.update({
                 'payment-method': 1,
-                'shipping-method': !jQuery('shipping:same_as_billing') || jQuery('shipping:same_as_billing').checked ? 1 : 0
+                'shipping-method': !$('shipping:same_as_billing') || $('shipping:same_as_billing').checked ? 1 : 0
             })
         });
-        jQuery('billing_customer_address') && jQuery('billing_customer_address').observe('change', function () {
-            if (jQuery('shipping:same_as_billing') && jQuery('shipping:same_as_billing').checked) {
+        $('billing_customer_address') && $('billing_customer_address').observe('change', function () {
+            if ($('shipping:same_as_billing') && $('shipping:same_as_billing').checked) {
                 shipping.syncWithBilling()
             }
             checkout.update({
                 'payment-method': 1,
-                'shipping-method': !jQuery('shipping:same_as_billing') || jQuery('shipping:same_as_billing').checked ? 1 : 0
+                'shipping-method': !$('shipping:same_as_billing') || $('shipping:same_as_billing').checked ? 1 : 0
             })
         });
-        jQuery('billing:region_id') && jQuery('billing:region_id').observe('change', function () {
-            if (jQuery('shipping:same_as_billing') && jQuery('shipping:same_as_billing').checked) {
+        $('billing:region_id') && $('billing:region_id').observe('change', function () {
+            if ($('shipping:same_as_billing') && $('shipping:same_as_billing').checked) {
                 shipping.syncWithBilling();
                 checkout.update({
                     'review': 1
                 })
-            } else if (!jQuery('shipping:same_as_billing')) {
+            } else if (!$('shipping:same_as_billing')) {
                 checkout.update({
                     'review': 1
                 })
             }
         });
-        jQuery('billing:postcode') && jQuery('billing:postcode').observe('change', function () {
-            if (jQuery('shipping:same_as_billing') && jQuery('shipping:same_as_billing').checked) {
+        $('billing:postcode') && $('billing:postcode').observe('change', function () {
+            if ($('shipping:same_as_billing') && $('shipping:same_as_billing').checked) {
                 shipping.syncWithBilling();
                 checkout.update({
                     'review': 1
                 })
-            } else if (!jQuery('shipping:same_as_billing')) {
+            } else if (!$('shipping:same_as_billing')) {
                 checkout.update({
                     'review': 1
                 })
@@ -334,13 +334,13 @@ var ShippingAddress = Class.create();
 ShippingAddress.prototype = {
     initialize: function (form) {
         this.form = form;
-		$('shipping:postcode').hide();
-		$('shipping:postcodelabel').hide();
-		$('shipping:statediv').hide();
-		$('shipping:statelabel').hide();
-		$('shipping:staterequired').hide();		
-		$('shipping:ziprequired').hide();		
-        $('shipping:country_id') && $('shipping:country_id').observe('change', function () {
+		jQuery('shipping:postcode').hide();
+		jQuery('shipping:postcodelabel').hide();
+		jQuery('shipping:statediv').hide();
+		jQuery('shipping:statelabel').hide();
+		jQuery('shipping:staterequired').hide();		
+		jQuery('shipping:ziprequired').hide();		
+        jQuery('shipping:country_id') && $('shipping:country_id').observe('change', function () {
 			var country = $('shipping:country_id').value;
 			if( country !== 'US' ){
 				$('shipping:postcode').hide();
@@ -355,8 +355,8 @@ ShippingAddress.prototype = {
 				$('shipping:postcodelabel').show();
 				$('shipping:statediv').show();
 				$('shipping:statelabel').show();						
-				$('shipping:staterequired').show();		
 				$('shipping:ziprequired').show();		
+				$('shipping:staterequired').show();		
 			}
             if ($('shipping:region_id')) {
                 $('shipping:region_id').value = '';
