@@ -1,0 +1,15 @@
+<?php
+/**
+ * Yireo GoogleTranslate for Magento 
+ *
+ * @package     Yireo_GoogleTranslate
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (C) 2014 Yireo (http://www.yireo.com/)
+ * @license     Open Source License (OSL v3)
+ */
+?>
+<?php if($this->allowTranslation()) : ?>
+<meta name="google-translate-customization" content="<?php echo $this->getCustomizationId(); ?>"></meta>
+<?php else: ?>
+<meta name="google" value="notranslate">
+<?php endif; ?>

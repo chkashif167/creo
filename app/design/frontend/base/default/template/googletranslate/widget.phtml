@@ -1,0 +1,40 @@
+<?php
+/**
+ * Yireo GoogleTranslate for Magento 
+ *
+ * @package     Yireo_GoogleTranslate
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (C) 2014 Yireo (http://www.yireo.com/)
+ * @license     Open Source License (OSL v3)
+ */
+?>
+<div id="custom_google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    <?php if($this->getIncludedLanguages(): ?>
+    includedLanguages: '<?php echo implode(',', $this->getIncludedLanguages()); ?>', 
+    <?php endif; ?>
+    <?php if($this->isMultilanguagePage(): ?>
+    multilanguagePage: true,
+    <?php endif; ?>
+    <?php if($this->getGaId(): ?>
+    gaTrack: true,
+    gaId: '<?php echo $this->getGaId(); ?>',
+    <?php endif; ?>
+    <?php if($this->getInlineLayout()) : ?>
+    layout: google.translate.TranslateElement.InlineLayout.<?php echo $this->getInlineLayout(); ?>,
+    <?php endif; ?>
+    pageLanguage: '<?php echo $this->getPageLanguage(); ?>',
+    autoDisplay: true
+  }, 'custom_google_translate_element');
+
+  <?php if($this->removeAttribution()) : ?>
+  if(typeof(document.querySelector) == 'function') {
+    document.querySelector('.goog-logo-link').setAttribute('style', 'display: none');
+    document.querySelector('.goog-te-gadget').setAttribute('style', 'font-size: 0');
+  }
+  <?php endif; ?>
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
