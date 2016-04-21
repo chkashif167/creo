@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+    <name>Chapagain_AutoCurrency</name>
+    <version>0.2.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>A currency switcher extension which automatically switches store's currency based on visitor's IP address.</summary>
+    <description>Auto Currency extension tracks visitor's IP address and automatically changes the store's currency to the visitor's location currency. Visitor can switch to his/her desired currency at any time.&#xD;
+&#xD;
+This extension uses two IP Address databases for IP Address lookup. One is MaxMind's GeoIP and the other is Webnet77's Ip2Country database. Shop admins have the option to choose between these two databases. The default one is Webnet77's Ip2Country database.</description>
+    <notes>Updated to latest MaxMind's database and geoip .inc file.&#xD;
+Added IPv6 support to MaxMind. &#xD;
+Added a new Ip2Country database of Webnet77.</notes>
+    <authors><author><name>Mukesh Chapagain</name><user>auto-converted</user><email>mukesh.chapagain@gmail.com</email></author></authors>
+    <date>2014-12-29</date>
+    <time>08:55:06</time>
+    <contents><target name="magecommunity"><dir name="Chapagain"><dir name="AutoCurrency"><dir name="Helper"><file name="Data.php" hash="d853b8b6c2baa439bc7c59cf14a0b023"/></dir><dir name="Model"><dir name="System"><dir name="Config"><dir name="Source"><file name="Database.php" hash="90a0a1ae6616c583284e51c629132e89"/></dir></dir></dir><file name="Store.php" hash="a16e9c173acc2d539b302c1500370f4a"/></dir><dir name="etc"><file name="config.xml" hash="0c51dfdb6090c2654013b0454f8b7f20"/><file name="system.xml" hash="53c818634d95422a194e1816bbc3190d"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Chapagain_AutoCurrency.xml" hash="dd65769f686b4c12011f5d09e18249ff"/></dir></target><target name="mage"><dir name="var"><dir name="geoip"><dir name="ip2country"><file name="Ip2Country.php" hash="e4c874a15745221b402b78b8c7366dc1"/><file name="ip2country.dat" hash="7fd6d50c4ffc64cf05498556c3673e84"/></dir><file name="GeoIP.dat" hash="28e77c28a1d378ba9aade6a919400f02"/><file name="GeoIPv6.dat" hash="c45653f7a894ba84ccab5efb24d6e0f1"/><file name="geoip.inc" hash="f8f704ef71b5d294c7530dc5637b6638"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

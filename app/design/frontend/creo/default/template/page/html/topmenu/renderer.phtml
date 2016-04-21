@@ -223,24 +223,10 @@ endforeach;
 <span class="featured"><?php echo $this->__('Featured'); ?></span>
 </div>
 <ul class="featured-products">
-<!--    <li>
-<a href="#">
-  <img alt="" src="images/img18.jpg">
-  <span class="title">CLasSIC POLO</span>
-</a>
-</li>
-<li>
-<a href="#">
-  <img alt="" src="images/img19.jpg">
-  <span class="title">VINTAGE/COOL</span>
-</a>
-</li>
-<li>
-<a href="#">
-  <img alt="" src="images/img20.jpg">
-  <span class="title">TANK TOPS</span>
-</a>
-</li>-->
+<?php $clothingStatic = $this->getLayout()->createBlock('cms/block')->setBlockId('clothing-featured-static')->toHtml();
+if($clothingStatic){
+  echo $clothingStatic;
+  } ?>
 <?php
 $Featured_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
 foreach ($Featured_category as $category):
@@ -327,6 +313,10 @@ endforeach;
 <span class="featured"><?php echo $this->__('Featured'); ?></span>
 </div>
 <ul class="featured-products">
+<?php $capsStatic = $this->getLayout()->createBlock('cms/block')->setBlockId('caps-featured-static')->toHtml();
+if($capsStatic){
+  echo $capsStatic;
+  } ?>
 <?php
 $Featured_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
 foreach ($Featured_category as $category):

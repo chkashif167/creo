@@ -777,7 +777,7 @@ p.style1 {
 	position: relative;
 	margin:0;
 }
-#header .basic-open-close:first-child{margin-right:15px;}
+/*#header .basic-open-close:first-child{margin-right:15px;}*/
 #header .basic-open-close .opener {
 	display: inline-block;
 	vertical-align: middle;
@@ -792,7 +792,7 @@ p.style1 {
 	text-decoration: none;
 	background: #f5f5f5;
 }
-#header .basic-open-close .opener:before {
+#header .basic-open-close .opener:before,#select-language li a.selected:before{
 	font-family: 'fontello';
 	font-size: 8px;
 	line-height: 19px;
@@ -803,11 +803,6 @@ p.style1 {
 	right: -10px;
 	content: '\e812';
 }
-#select-language label{display:inline-block;padding:5px 10px;font-size:12px;text-transform:uppercase;vertical-align: top;margin:0;
-text-align:center;background-color:#000;color:#fff;text-decoration: none;cursor:pointer;}
-#select-language label:hover,#select-language label.selected{background-color:#ef4f61;}
-#select-language label input[type="radio"]{display:none;margin:0;}
-#select-language label.selected{/*display:none;*/}
 
 #header label.lang{margin:0;padding:0;}
 #header .basic-open-close ul {
@@ -823,8 +818,22 @@ text-align:center;background-color:#000;color:#fff;text-decoration: none;cursor:
 	font: 10px/14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 	right:-70%;
 }
-#header .basic-open-close li a {display:block;color: #666;padding:5px 2px;}
+#header .basic-open-close li a{display:block;color: #666;padding:5px 2px;}
 #header .basic-open-close li a:hover {color: #fff;background: #000;text-decoration: none;}
+#header .basic-open-close #select-language ul{position: relative;right:inherit;box-shadow:none;min-width:inherit;}
+#header .basic-open-close #select-language li{display:block;padding:0;font-size:12px;text-transform:uppercase;vertical-align: top;
+margin:0;text-align:center;background-color:#000;color:#fff;text-decoration: none;cursor:pointer;position:relative;
+border-top:1px solid #fff;}
+#select-language li a.selected:before{right:2px;top:2px;}
+#select-language li a.selected,#select-language li a:hover.selected{background-color:#ef4f61;color:#fff;padding:5px 15px 5px 10px;}
+#header .basic-open-close #select-language li ul{position:absolute;display:none;z-index:9999;}
+#header .basic-open-close #select-language li li label,#header .basic-open-close #select-language li li a{color:#fff;margin: 0;
+padding:5px 13px;cursor: pointer;display:block;background:inherit;}
+#header .basic-open-close #select-language li li:hover{background-color:#ef4f61;color:#fff;}
+#header .basic-open-close #select-language li:hover ul{display:block;}
+#select-language label input[type="radio"]{display:none;margin:0;}
+#select-language label.selected{/*display:none;*/}
+
 /* carousel basic styles */
 .carousel-creo.home {
 	position: relative;

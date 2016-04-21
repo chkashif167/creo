@@ -39,20 +39,18 @@ $_attrbiuteCollection = $this->getLoadedAttributeCollection(); ?>
 $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 //echo Mage::helper('functions/data')->getCollectionParentLink($currentUrl);
 ?>
-<span class="search-by">Search By Design</span>
+<span class="search-by"><?php echo $this->__('Search By Design'); ?></span>
 <div class="cate-open-close">
-<a class="opener attribure_labels" data-id="collection-mega-menu"> View All</a>
+<a class="opener attribure_labels" data-id="collection-mega-menu"><?php echo $this->__('View All'); ?></a>
 <ul id="collection-mega-menu" class="slide m-filter-item-list">
     <?php $attr = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories'); ?>
 
 <li>
-   <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html" ?>">View All</a>
+   <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html" ?>"><?php echo $this->__('View All'); ?></a>
 </li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
-
-                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
-                        
+                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $this->__($attr->getSource()->getOptionText($a)); ?></a>
         </li>
     <?php endforeach ?>
 </ul>
@@ -208,7 +206,7 @@ $_helper = $this->helper('catalog/output');
 <div class="row">
 <div class="col-xs-12">
 <div class="design_categories_attributes shipping-methods">
-<h3><span>DESIGN CATEGORIES</span></h3>
+<h3><span><?php echo $this->__('DESIGN CATEGORIES'); ?></span></h3>
 <ul>
  <?php foreach ($_attrbiuteCollection as $a): ?>
             <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a); ?>
