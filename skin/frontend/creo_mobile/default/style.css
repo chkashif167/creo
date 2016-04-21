@@ -882,7 +882,7 @@ p.availability { margin: 0; }
 .faq-area .faq-frame.terms .openeer-holder .question:hover, .faq-area .faq-frame.terms .active .openeer-holder .question { color: #fff; }
 .faq-area p.pink { color: #ef4f61; }
 .faq-area .faq-frame.terms p { margin: 0 0 12px; }
-.faq-area .faq-frame.terms .openeer-holder .question { width: 96%; }
+.faq-area .faq-frame.terms .openeer-holder .question { width: 94%; }
 .faq-area .faq-frame.terms .openeer-holder .arrow { width: 2%; }
 .faq-area .faq-frame.terms .open-close2 h5 { text-transform: uppercase; }
 #header .cart .slide::before { bottom: 100%; content: ""; height: 10px; left: 0; position: absolute; right: 0; }
