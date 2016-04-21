@@ -18,8 +18,8 @@
 <action method="addItem"><type>skin_js</type><script>js/jquery-confirm.min.js</script></action>
 <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
 <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
-<!-- <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action> -->
 <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.js</script></action>
+<!-- <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action> -->
 </reference>
 <reference name="footer">
  <remove name="footer_currency" />
@@ -124,7 +124,7 @@
 
  <catalog_product_view translate="label">
  <reference name="head">
-  <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+  <!-- <action method="addCss"><stylesheet>css/styles.css</stylesheet></action> -->
  </reference>
   </catalog_product_view>
 

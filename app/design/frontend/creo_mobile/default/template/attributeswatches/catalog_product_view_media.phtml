@@ -54,17 +54,17 @@ $_zoom_image_width = (int) $_settings['zoom_image_width'];
 $_zoom_image_height = (int) $_settings['zoom_image_height'];
 ?>
 <script type="text/javascript">
-    
+
     jQuery(document).ready(function() {
 <?php
 /* if fancybox plugin is enabled */
 if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
     ?>
-    
+
         //<![CDATA[
         // Check if fancybox is actually installed
             if (jQuery.fancybox != undefined) {
-                jQuery("#main-image-link, a#fancybox-link, .image_popup").on("click", function() {
+                jQuery("#main-image-link, a#fancybox-link").on("click", function() {
                     //console.debug("sdfsd");
                     /* create array of images */
                     _images = new Array();
@@ -92,7 +92,7 @@ if (Mage::getStoreConfig('attributeswatches/lightbox/enabled')):
                     return false;
                 });
             }
-    
+
 <?php endif; ?>
     <?php
 /* if cloudzoom plugin is enabled */
@@ -102,32 +102,32 @@ if (Mage::getStoreConfig('attributeswatches/cloudzoom/enabled')):
     ?>
     /* Call quick start function. */
         //<![CDATA[
-        
+
             if (jQuery.fn.CloudZoom !== undefined) {
                 jQuery('#main-image-link').CloudZoom();
                 if (jQuery.fn.fancybox !== undefined) { /* show button to display the lightbox */
                     jQuery("#fancybox-link").show();
                 }
             }
-    
+
 <?php endif; ?>
-    
+
 <?php
 /* if cloudzoom & fancybox are disabled */
 if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getStoreConfig('attributeswatches/lightbox/enabled')):?>
     jQuery(document).on('click', '#main-image-link', function(e){
         e.preventDefault();
         return false;
-    });    
+    });
 <?php endif; ?>
     });
         //]]>
 </script>
-    
+
     <div id="product-media-container">
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
-        <p class="product-image image_popup">
-            <a class="fancybox-main cloud-zoom image" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_zoom_image_width, $_zoom_image_height); ?>" rel="<?php echo $_cloudzoom_options; ?>">
+        <p class="product-image" style="display:none;">
+            <a class="fancybox-main cloud-zoom" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_zoom_image_width, $_zoom_image_height); ?>" rel="<?php echo $_cloudzoom_options; ?>"onclick="this.href ='javascript: void(0)'">
         <?php
         $_img = '<img class="cloudzoom" id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
@@ -136,7 +136,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
         <a id="product-image-gallery-next" href="#"><span>&raquo;</span></a>
         </p>
 <?php else: ?>
-        <p class="product-image image_popup">
+        <p class="product-image" style="display:none;">
             <a class="fancybox-main" id="main-image-link" href="<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>" title="<?php echo $this->htmlEscape($this->getImageLabel()); ?>">
         <?php
         $_img = '<img id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
@@ -144,8 +144,8 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
         ?></a><a id='fancybox-link' href='#'><?php echo $this->__("+ Enlarge"); ?></a>
         </p>
 <?php endif; ?>
-<?php if (count($this->getGalleryImages()) > 0): 
-    
+<?php if (count($this->getGalleryImages()) > 0):
+
     /* calculations and classes for vertical carousel - left or right of main image... */
     $_carousel_settings = Mage::getStoreConfig('attributeswatches/carousel');
     $_carousel_enabled = $_carousel_settings['enabled'];
@@ -167,7 +167,7 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     $_container_class = $_carousel_enabled ? ' ' : "more-views-container";
     $_container_class.= ($_carousel_direction == 'vertical') ? ' vertical-carousel-container ' : "";
     $_list_class = $_carousel_enabled ? 'slides' : "";
-    
+
     /* hide gallery when only one image is present and option is enabled... */
     $_hide_gallery = (int)$_settings['hide_gallery'] && $this->getGalleryImages()->count()==1;
     if(!$_hide_gallery):
@@ -177,14 +177,25 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
     <?php endif;?>
         <div class="<?php echo $_container_class; ?>" id="product-gallery-container">
             <ul class="<?php echo $_list_class; ?>">
+            <li><?php
+        $_img = '<img id="image" src="' . $this->helper('catalog/image')->init($_product, 'image')->resize($_large_image_width, $_large_image_height) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+        ?></li>
                 <?php foreach ($this->getGalleryImages() as $_image): ?>
                     <li  class="<?php echo $_image->getAssociatedAttributes(); ?> product-image-thumbs" <?php if ($_image->getDisabled()): ?>style="display:none;"<?php endif; ?>>
-                        <a class="fancybox-gallery" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_large_image_width, $_large_image_height); ?>" rel="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_zoom_image_width, $_zoom_image_height); ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_small_image_width, $_small_image_height); ?>" width="<?php echo $_small_image_width; ?>" height="<?php echo $_small_image_height; ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
+                        <a class="fancybox-gallery" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_large_image_width, $_large_image_height); ?>" rel="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_zoom_image_width, $_zoom_image_height); ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
+                     <?php  /* ?>
+   <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" width="<?php echo $_large_image_width; ?>" height="<?php echo $large_image_height; ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /><?php */ ?>
+                                                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($_large_image_width, $large_image_height); ?>" width="<?php echo $_large_image_width; ?>" height="<?php echo $large_image_height; ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+                        
+                        </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </div>
-    <?php endif; /* if !$hide_gallery */ ?>
+    <?php endif;
+    /* if !$hide_gallery */
+    ?>
     <script type="text/javascript">
         var _ENABLE_PRODUCT_GALLERY_CAROUSEL = <?php echo (int) $_carousel_enabled; ?>;
         var _PRODUCT_GALLERY_CAROUSEL_MIN_ITEMS = <?php echo (int)$_carousel_settings['min_items'];?>;
@@ -193,13 +204,12 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
         var _PRODUCT_CAROUSEL_GALLERY_SETTINGS = {
             mode: '<?php echo $_carousel_direction; ?>',
             infiniteLoop: <?php echo (int)($_carousel_direction === 'horizontal'); ?> ,
-            minSlides: <?php echo (int)$_carousel_settings['min_items'];?>,
+            minSlides: 1<?php //echo (int)$_carousel_settings['min_items'];?>,
             maxSlides: <?php echo (int)$_carousel_settings['max_items'];?>,
             moveSlides: <?php echo (int)$_carousel_settings['move_items'];?>,
             pager: false,
-            slideMargin: 5,
-            slideWidth: <?php echo $_small_image_width;?>
-            
+            slideMargin:0,
+            slideWidth: <?php echo $_large_image_width;?>
         };
     <?php endif; ?>
     </script>
@@ -216,10 +226,10 @@ if (!Mage::getStoreConfig('attributeswatches/cloudzoom/enabled') && !Mage::getSt
                 width: <?php echo $_gallery_container_width; ?>%;
                 float:<?php echo $_gallery_container_float;?>;
             }
-            /*#product-gallery-container.vertical-carousel-container ul.slides > li{
-              /*  margin-bottom: 0px !important;/* has to be equal to the itemMargin setting for flexslider */
-              /*  margin-top:0px !important;
-            }  */
+            #product-gallery-container.vertical-carousel-container ul.slides > li{
+                margin-bottom: 0px !important; /* has to be equal to the itemMargin setting for flexslider */
+                margin-top:0px !important;
+            }
             <?php endif;?>
             /* fix adjust images height */
             #product-media-container #product-gallery-container ul.slides li a img{

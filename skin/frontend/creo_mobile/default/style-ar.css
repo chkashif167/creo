@@ -32,7 +32,7 @@ footer#footer{direction:rtl;}
 .form-holder .checkbox-holder input[type="checkbox"]{margin-left:5px;}
 select{padding-right: 25px;}
 .product-detail .price-area{padding:10px 0;}
-#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links{direction:ltr;}
+#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.bx-wrapper{direction:ltr;}
 .tshirtsize .heading{padding:8px 12px;}
 .cate-open-close{height:auto !important;}
 
@@ -63,6 +63,7 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .faq-area .faq-frame .open-close2{margin:0 0 18px 2%;}
 .three-column h3 span:before{border-width:20px 6px 0 0px;}
 .faq-area .openeer-holder .question span{padding:0 10px;}
+
 /*#footer .column.column1{width:auto;}
 .products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
 .tab-content2 .dark-heading span:before,.three-column h3 span:before{border-width:20px 6px 0 0px;}
