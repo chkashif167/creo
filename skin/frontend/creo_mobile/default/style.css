@@ -962,7 +962,7 @@ font: inherit; outline: none; background: #fff; -webkit-appearance: none; -webki
 appearance: none;width: 97%; position: relative; left: 0 !important;bottom:0 !important; height: 20px !important; font-size: 12px;
 line-height:15px; text-transform: uppercase; color: #949494; border-radius:0;}
 .input-box select { bottom: 2px !important; }
-.bulk-order-form .form-select-col input[type="text"] { border: 1px solid #e4e4e4; padding: 2px 3px 2px 5px; /*width: 176px; height: 18px !important; */color: #949494; font-size: 10px; line-height: 12px; border-radius: 0; background: #fff; }
+.bulk-order-form .form-select-col input[type="text"] { border: 1px solid #e4e4e4; padding: 2px 3px 2px 5px; /*width: 176px; height: 18px !important; */color: #949494; font-size: 10px;border-radius: 0; background: #fff; }
 .option-container .input-box .fake-select:before, .bulk-order-form .fake-select:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; background: url(images/bg-select.jpg) no-repeat; background-size: 100% 100%; height: 18px; width: 22px; pointer-events: none; z-index: 1; }
 .bulk-order-form .form-textarea-col { /*width: 430px; */overflow: hidden; }
 .bulk-order-form textarea { height: 70px; background: #fff; border: 1px solid #ddd; display: block; float: left; line-height: 20px; margin: 0 0 10px; padding: 4px 10px; text-align: left; width: 100%; }
@@ -1018,7 +1018,9 @@ display: none;
 .bulk-order-form.track-shipment-form .form-select-col.second-child { width: 100%; }
 .bulk-order-form.track-shipment-form .form-select-col.third-child { margin: 0; width: 99px; }
 .bulk-order-form.track-shipment-form .form-select-col input[type="text"] { width: 100%; }
-.bulk-order-form.track-shipment-form input[type="button"] { background: #000; border: none; cursor: pointer; float: left; font: 12px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; color: #fff; height: 18px; margin: 19px 0 0; padding: 0; width: 100%; display: block; text-transform: uppercase; }
+.bulk-order-form.track-shipment-form input[type="button"] { background: #000; border: none; cursor: pointer; float: left;
+font: 12px/18px "Roboto Condensed", Helvetica, Arial, sans-serif; color: #fff; height:auto; margin:0; padding:5px; width: 100%;
+display: block;text-transform: uppercase;text-align:center;}
 .bulk-order-form.track-shipment-form input[type="button"]:hover { background: #ef4f61; border: none; color: #fff; }
 #iframdiv iframe { width: 100%; margin: 0; padding: 0; display: block; overflow: auto; }
 .options-area .column li { background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 3px 3px 5px #aaa; color: #333; opacity: 1; overflow: hidden; text-align: center; width: 25px; height: 25px; line-height: 25px; }
