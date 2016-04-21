@@ -30,7 +30,7 @@ footer#footer{direction:rtl;}
 .catalog-product-view .text-area .qty-area,.form-holder .checkbox-holder input[type="checkbox"],
 .form-holder .checkbox-holder label{float:right;}
 .form-holder .checkbox-holder input[type="checkbox"]{margin-left:5px;}
-
+select{padding-right: 25px;}
 .product-detail .price-area{padding:10px 0;}
 #last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links{direction:ltr;}
 .tshirtsize .heading{padding:8px 12px;}
@@ -40,7 +40,7 @@ footer#footer{direction:rtl;}
 .shipping-methods h3, #last_most_view_title > h3,.faq-area h3,.tab-content2 .dark-heading,.three-column h3,
 #savePopup .form-horizontal .form-group p,.modal-holder .login-form label,.attributeItem,.jconfirm .jconfirm-box div.title,
 .jconfirm .jconfirm-box div.content,input,select,textarea,input[type="text"], input[type="password"], input.email,.cart-table-area dl dt,
-.cart-table-area dl dd,#product-options-wrapper,.cs-form textarea{text-align:right;}
+.cart-table-area dl dd,#product-options-wrapper,.cs-form textarea,.bulk-order-form textarea{text-align:right;}
 
 .cartPage_custome_responsive .item-options dt{text-align:left;padding-left:5px;}
 .cartPage_custome_responsive td{text-align:left;}
@@ -54,13 +54,15 @@ footer#footer{direction:rtl;}
 .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory,select{padding-right:30px;}
 .checkout-form .form-group input{padding-right:10px;}
 .cart-table-area dl dt, .cart-table-area dl dd{text-align:center;}
-.catalog-product-view .text-area .qty-area label{display:block;}
+.catalog-product-view .text-area .qty-area label,.cs-form .ps{display:block;}
 .form-holder .form-frame{margin:0;}
 .category--heading span:before,.shipping-methods h3 span:before, #last_most_view_title > h3 span:before,.faq-area h3 span:before,
 .tab-content2 .dark-heading span:before,.three-column h3 span:before{border-color: transparent #000 transparent #000;
 border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .faq-area h3 span:before{border-width: 22px 6px 0 0px;}
-
+.faq-area .faq-frame .open-close2{margin:0 0 18px 2%;}
+.three-column h3 span:before{border-width:20px 6px 0 0px;}
+.faq-area .openeer-holder .question span{padding:0 10px;}
 /*#footer .column.column1{width:auto;}
 .products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
 .tab-content2 .dark-heading span:before,.three-column h3 span:before{border-width:20px 6px 0 0px;}
@@ -70,9 +72,8 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 #savePopup .form-horizontal .form-group p,.modal-holder .login-form label{text-align:right;}
 .order-details-table th:first-child{text-align:center;}
 .catalog-product-view .text-area .qty-area label{display:block;}
-
 .faq-area.return-area .step-col li,.form-holder .form-frame{margin: 0 0% 0 2%;}
-.faq-area .faq-frame .open-close2{margin:0 0 18px 2%;}
+
 .faq-area .openeer-holder .question span{padding:0 7px;}
 .signup-form .row .col:first-child {margin: 0px 0% 0 2%;}
 .product-area .cancel,.product-area .edit{right:inherit;left:10%;}
