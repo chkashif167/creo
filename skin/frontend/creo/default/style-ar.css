@@ -14,8 +14,8 @@ footer#footer{direction:rtl;}
 #header .header-icons{right:inherit;left:112px;}
 #header .cart .slide,.searchautocomplete .searchautocomplete-placeholder,
 .searchautocomplete .searchautocomplete-placeholder:before,
-#header .basic-open-close ul,.tab-content2 .column-content .edit-icon,.owl-theme .owl-controls,.category_top_filters .sort-by{right:inherit;
-left:0;}
+#header .basic-open-close ul,.tab-content2 .column-content .edit-icon,.owl-theme .owl-controls,.category_top_filters .sort-by,
+a.sizeguide_link{right:inherit;left:0;}
 .searchautocomplete .searchautocomplete-placeholder:before{left:30px;}
 #nav ol > li,#nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
