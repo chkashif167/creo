@@ -21,11 +21,13 @@ left:0;}
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
 .checkoutShippingMethod ul li label,.product-detail .price-area .price,#bill_form label, #ship_form label,.tabset.tabset1 li,
 #nav .links-area .sorting-items,.product-swatches-container .has-swatches li,.cart-top-area h2,.tabset.tabset2 li,.options-area .column,
-.options-area .column li,.cs-form .form-col,.bulk-order-form .form-col,.bulk-order-form .form-select-col{float:right;}
+.options-area .column li,.cs-form .form-col,.bulk-order-form .form-col,.bulk-order-form .form-select-col,.carousel-creo.carousel3{float:right;
+}
 #nav .links-area .sorting-items{margin-left:15px;text-align:right;}
 #footer .column.column1{width:auto;}
 .product-detail .btn-holder button:first-child .span1{margin-left:0;margin-right:10px;}
 .products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
+.mostlastview.products-grid .btn-holder a:first-child .span1{margin-left:10px;margin-right:0px;}
 .category--heading span:before,.shipping-methods h3 span:before, #last_most_view_title > h3 span:before,.faq-area h3 span:before,
 .tab-content2 .dark-heading span:before,.three-column h3 span:before{border-color: transparent #000 transparent #000;
 border-width: 30px 6px 0 0px;left:inherit;right:100%;}
@@ -64,13 +66,12 @@ white-space:nowrap;}
 .icon-angle-right:before{content: '\e80f';}
 .design_categories_attributes ul li,.cs-form .form-col,.bulk-order-form .form-col,.bulk-order-form .form-select-col{margin:0 0% 1% 1%;}
 .design_categories_attributes ul li:nth-child(4n){margin-left:0;}
-a.sizeguide_link{top:110px;}
 .sales-order-view .cart-table-area th:before, .cart-table-area td:before{left:inherit;right:12px;border-left:0;border-right:2px solid #f3f3f3;}
 .bx-wrapper .bx-viewport ul.slides{left:0;}
 .product-detail .price-area{font-size:22px;}
 .products-grid .text-area .price{font-size:18px;}
 .product-detail .price-area .price-box{display:inline-block;vertical-align:text-bottom;}
-
+.carousel-creo.carousel3{margin:0 0 0 30px;}
 .featured-items .text-area h3{
     float: right;
     text-align: right;
