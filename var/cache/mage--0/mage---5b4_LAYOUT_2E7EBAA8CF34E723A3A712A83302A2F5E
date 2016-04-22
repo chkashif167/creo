@@ -659,73 +659,66 @@
    <block type="newsletter/subscribe" name="footer.newsletter" as="newsletter" before="footer_store_language" template="newsletter/subscribe.phtml"/>
    <block type="customer/form_login" name="customer_form_login" before="footer_store_language" template="customer/form/loginpopup.phtml"/>
 </reference>
+<label>Catalog Category (Without Subcategories)</label>
+<remove name="right.reports.product.viewed"/>
+<reference name="right">
+   <block type="reports/product_viewed" before="right.permanent.callout" name="left.reports.product.viewed" template="reports/product_viewed.phtml"/>
+</reference>
 <reference name="head">
    <action method="addCss">
       <stylesheet>style-ar.css</stylesheet>
    </action>
 </reference>
-<label>Shopping Cart</label>
-<remove name="right"/>
-<remove name="left"/>
-<reference name="root">
-   <action method="setTemplate">
-      <template>page/1column.phtml</template>
+<reference name="product_list">
+   <action method="addPriceBlockType">
+      <type>bundle</type>
+      <block>bundle/catalog_product_price</block>
+      <template>bundle/catalog/product/price.phtml</template>
    </action>
 </reference>
-<reference name="content">
-   <block type="checkout/cart" name="checkout.cart">
-      <action method="setCartTemplate">
-         <value>checkout/cart.phtml</value>
-      </action>
-      <action method="setEmptyTemplate">
-         <value>checkout/cart/noItems.phtml</value>
-      </action>
-      <action method="chooseTemplate"/>
-      <action method="addItemRender">
-         <type>simple</type>
-         <block>checkout/cart_item_renderer</block>
-         <template>checkout/cart/item/default.phtml</template>
-      </action>
-      <action method="addItemRender">
-         <type>grouped</type>
-         <block>checkout/cart_item_renderer_grouped</block>
-         <template>checkout/cart/item/default.phtml</template>
-      </action>
-      <action method="addItemRender">
-         <type>configurable</type>
-         <block>checkout/cart_item_renderer_configurable</block>
-         <template>checkout/cart/item/default.phtml</template>
-      </action>
-      <block type="core/text_list" name="checkout.cart.empty.widget" as="checkout_cart_empty_widget" translate="label">
-         <label>Empty Shopping Cart Content Before</label>
-      </block>
-      <block type="core/text_list" name="checkout.cart.top_methods" as="top_methods" translate="label">
-         <label>Payment Methods Before Checkout Button</label>
-         <block type="checkout/onepage_link" name="checkout.cart.methods.onepage.top" template="checkout/onepage/link.phtml" after="-"/>
-      </block>
-      <block type="page/html_wrapper" name="checkout.cart.form.before" as="form_before" translate="label">
-         <label>Shopping Cart Items Before</label>
-      </block>
-      <block type="core/text_list" name="checkout.cart.methods" as="methods" translate="label">
-         <label>Payment Methods After Checkout Button</label>
-         <block type="checkout/onepage_link" name="checkout.cart.methods.onepage.bottom" template="checkout/onepage/link.phtml"/>
-         <block type="checkout/multishipping_link" name="checkout.cart.methods.multishipping" template="checkout/multishipping/link.phtml"/>
-      </block>
-      <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>
-      <block type="core/text_list" name="checkout.cart.extra" translate="label">
-         <label>Checkout Forms Extra</label>
-      </block>
-      <block type="checkout/cart_shipping" name="checkout.cart.shipping" as="shipping" template="checkout/cart/shipping.phtml"/>
-      <block type="core/text_list" name="checkout.cart.widget" as="checkout_cart_widget" translate="label">
-         <label>Shopping Cart Items After</label>
-      </block>
-      <block type="checkout/cart_crosssell" name="checkout.cart.crosssell" as="crosssell" template="checkout/cart/crosssell.phtml"/>
-      <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+<label>Catalog Category (Anchor)</label>
+<reference name="left_first">
+   <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml">
+      <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers"/>
    </block>
 </reference>
-<block type="core/text_list" name="additional.product.info" translate="label">
-   <label>Additional Product Info</label>
-</block>
+<reference name="content">
+   <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
+      <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
+         <block type="core/text_list" name="product_list.name.after" as="name.after"/>
+         <block type="core/text_list" name="product_list.after" as="after"/>
+         <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+            <block type="page/html_pager" name="product_list_toolbar_pager"/>
+         </block>
+         <action method="addColumnCountLayoutDepend">
+            <layout>empty</layout>
+            <count>6</count>
+         </action>
+         <action method="addColumnCountLayoutDepend">
+            <layout>one_column</layout>
+            <count>5</count>
+         </action>
+         <action method="addColumnCountLayoutDepend">
+            <layout>two_columns_left</layout>
+            <count>4</count>
+         </action>
+         <action method="addColumnCountLayoutDepend">
+            <layout>two_columns_right</layout>
+            <count>4</count>
+         </action>
+         <action method="addColumnCountLayoutDepend">
+            <layout>three_columns</layout>
+            <count>3</count>
+         </action>
+         <action method="setToolbarBlockName">
+            <name>product_list_toolbar</name>
+         </action>
+         <action method="setColumnCount">
+            <count>4</count>
+         </action>
+      </block>
+   </block>
+</reference>
 <reference name="product.tooltip">
    <block type="page/html_wrapper" name="product.info.addtocart.paypal.wrapper" translate="label">
       <block type="paypal/express_shortcut" name="product.info.addtocart.paypal" template="paypal/express/shortcut.phtml">
@@ -738,41 +731,24 @@
       </block>
    </block>
 </reference>
-<reference name="checkout.cart.top_methods">
-   <block type="paypal/express_shortcut" name="checkout.cart.methods.paypal_express.top" before="checkout.cart.methods.onepage.top" template="paypal/express/shortcut.phtml">
-      <action method="setIsQuoteAllowed">
-         <value>1</value>
-      </action>
-      <action method="setShowOrPosition">
-         <value>after</value>
-      </action>
-   </block>
-</reference>
-<reference name="checkout.cart.methods">
-   <block type="paypal/express_shortcut" name="checkout.cart.methods.paypal_express.bottom" before="checkout.cart.methods.onepage.bottom" template="paypal/express/shortcut.phtml">
-      <action method="setIsQuoteAllowed">
-         <value>1</value>
-      </action>
-      <action method="setShowOrPosition">
-         <value>after</value>
-      </action>
-   </block>
-</reference>
 <update handle="SHORTCUT_popup"/>
+<reference name="right">
+   <block type="paypal/logo" name="paypal.partner.right.logo" template="paypal/partner/logo.phtml"/>
+</reference>
 <reference name="top.container">
    <block type="paypal/bml_banners" name="bml.center.logo" template="paypal/bml.phtml">
       <action method="setSection">
-         <section>checkout</section>
+         <section>categorypage</section>
       </action>
       <action method="setPosition">
          <position>0</position>
       </action>
    </block>
 </reference>
-<reference name="checkout.cart.methods">
-   <block type="paypal/bml_banners" name="bml.right.logo" after="checkout.cart.methods.onepage.bottom" template="paypal/bml.phtml">
+<reference name="right">
+   <block type="paypal/bml_banners" name="bml.right.logo" template="paypal/bml.phtml">
       <action method="setSection">
-         <section>checkout</section>
+         <section>categorypage</section>
       </action>
       <action method="setPosition">
          <position>1</position>
@@ -791,79 +767,612 @@
       </block>
    </block>
 </reference>
-<reference name="checkout.cart.top_methods">
-   <block type="paypaluk/express_shortcut" name="checkout.cart.methods.paypaluk_express.top" before="-" template="paypal/express/shortcut.phtml">
-      <action method="setIsQuoteAllowed">
-         <value>1</value>
-      </action>
-   </block>
-</reference>
-<reference name="checkout.cart.methods">
-   <block type="paypaluk/express_shortcut" name="checkout.cart.methods.paypaluk_express.bottom" before="-" template="paypal/express/shortcut.phtml">
-      <action method="setIsQuoteAllowed">
-         <value>1</value>
-      </action>
-   </block>
-</reference>
 <update handle="SHORTCUT_uk_popup"/>
-<reference name="checkout.cart">
-   <action method="addItemRender">
-      <type>bundle</type>
-      <block>bundle/checkout_cart_item_renderer</block>
-      <template>checkout/cart/item/default.phtml</template>
-   </action>
-</reference>
-<reference name="checkout.cart.crosssell">
+<reference name="product_list">
    <action method="addPriceBlockType">
       <type>bundle</type>
       <block>bundle/catalog_product_price</block>
       <template>bundle/catalog/product/price.phtml</template>
    </action>
 </reference>
-<reference name="checkout.cart">
-   <action method="addItemRender">
-      <type>downloadable</type>
-      <block>downloadable/checkout_cart_item_renderer</block>
-      <template>downloadable/checkout/cart/item/default.phtml</template>
+<reference name="content">
+   <block type="clarion_featuredproduct/list_list" name="featuredproduct.list.page" before="-">
+      <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled">
+         <template>clarion/featuredproduct/list/list.phtml</template>
+      </action>
+      <action method="setFeaturedPrdoctsOnPage">
+         <page>category_page</page>
+      </action>
+      <action method="addColumnCountLayoutDepend">
+         <layout>empty</layout>
+         <count>6</count>
+      </action>
+      <action method="addColumnCountLayoutDepend">
+         <layout>one_column</layout>
+         <count>5</count>
+      </action>
+      <action method="addColumnCountLayoutDepend">
+         <layout>two_columns_left</layout>
+         <count>4</count>
+      </action>
+      <action method="addColumnCountLayoutDepend">
+         <layout>two_columns_right</layout>
+         <count>4</count>
+      </action>
+      <action method="addColumnCountLayoutDepend">
+         <layout>three_columns</layout>
+         <count>3</count>
+      </action>
+      <block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>
+   </block>
+</reference>
+<reference name="left_first">
+   <remove name="catalog.leftnav"/>
+   <remove name="enterprisecatalog.leftnav"/>
+   <block type="mana_filters/view" name="mana.catalog.leftnav" before="-" template="catalog/layer/view.phtml"/>
+</reference>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/mana_filters.css</stylesheet>
+   </action>
+</reference>
+<reference name="mana.catalog.leftnav">
+   <action method="setTemplate" ifconfig="mana_filters/advanced/enabled">
+      <template>manapro/filteradvanced/view.phtml</template>
    </action>
 </reference>
 <reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filteradvanced.css</stylesheet>
+   </action>
+</reference>
+<reference name="root">
+   <block type="manapro_filteradvanced/actions" name="m_filter_actions" template="manapro/filteradvanced/actions.phtml"/>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_ajax/update</type>
+      <name>m_ajax_update</name>
+      <template/>
+      <before>m_js</before>
+   </action>
+</reference>
+<update handle="mana_ajax"/>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/history.adapter.jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/history.js</script>
+   </action>
    <action method="addItem">
-      <type>js</type>
-      <name>varien/weee.js</name>
+      <type>skin_js</type>
+      <name>js/manapro_filterajax.js</name>
+      <params/>
    </action>
 </reference>
-<reference name="checkout.cart.top_methods">
-   <action method="unsetChild" ifconfig="onestepcheckout/general/enabled">
-      <name>checkout.cart.methods.onepage.top</name>
-   </action>
-   <action method="unsetChild" ifconfig="onestepcheckout/general/enabled">
-      <name>checkout.cart.methods.onepage</name>
-   </action>
-</reference>
-<reference name="checkout.cart.methods">
-   <action method="unsetChild" ifconfig="onestepcheckout/general/enabled">
-      <name>checkout.cart.methods.onepage.bottom</name>
-   </action>
-   <action method="unsetChild" ifconfig="onestepcheckout/general/enabled">
-      <name>checkout.cart.methods.onepage</name>
+<reference name="top.menu">
+   <action method="setMClientSideBlock">
+      <params>
+         <type>Mana/Core/Block</type>
+      </params>
    </action>
 </reference>
-<reference name="checkout.cart.top_methods">
-   <block ifconfig="onestepcheckout/general/enabled" type="onestepcheckout/onepage_link" name="checkout.cart.methods.fire" template="onestepcheckout/onepage/link.phtml"/>
+<reference name="content">
+   <action method="setMClientSideBlock">
+      <params>
+         <type>Mana/Core/Block</type>
+      </params>
+   </action>
 </reference>
-<reference name="checkout.cart.methods">
-   <block ifconfig="onestepcheckout/general/enabled" type="onestepcheckout/onepage_link" name="checkout.cart.methods.fire" template="onestepcheckout/onepage/link.phtml"/>
+<reference name="left">
+   <action method="setMClientSideBlock">
+      <params>
+         <type>Mana/Core/Block</type>
+      </params>
+   </action>
 </reference>
-<reference name="additional.product.info">
-   <block type="pdp/additional_product_info" name="pdp_additional_product_info"/>
+<reference name="right">
+   <action method="setMClientSideBlock">
+      <params>
+         <type>Mana/Core/Block</type>
+      </params>
+   </action>
+</reference>
+<reference name="breadcrumbs">
+   <action method="setMClientSideBlock">
+      <params>
+         <type>Mana/Core/Block</type>
+      </params>
+   </action>
+</reference>
+<reference name="category.products">
+   <action method="setMClientSideBlock">
+      <params>
+         <type>Mana/Core/Block</type>
+      </params>
+   </action>
+</reference>
+<reference name="mana.catalog.leftnav">
+   <action method="setMClientSideBlock">
+      <params>
+         <type>Mana/Core/Block</type>
+      </params>
+   </action>
+</reference>
+<reference name="m_ajax_update">
+   <action method="setRenderedButNotSentBlocks">
+      <blocks>m_ajax_update,head</blocks>
+   </action>
+   <action method="setUpdatedBlocksIfPageChanged">
+      <updated_blocks>content,left,right,breadcrumbs,top.menu</updated_blocks>
+   </action>
+   <action method="setUpdatedBlocksIfParameterChanged">
+      <updated_blocks>category.products,mana.catalog.leftnav,mana.catalog.rightnav</updated_blocks>
+   </action>
+   <action method="setInterceptedLinkContainers">
+      <css_selector>.mb-mana-catalog-leftnav,.mb-mana-catalog-rightnav,.block-layered-nav.m-topmenu,.block-layered-nav.m-top,.toolbar</css_selector>
+   </action>
+   <action method="setExceptions">
+      <regular_expr>[\?&amp;]options=|checkout/cart/add|catalog/product_compare/add|wishlist/index/add</regular_expr>
+   </action>
 </reference>
 <reference name="head">
-   <block type="sticsfbtracker/checkout_cart" name="sticsfbtracker_checkout_cart" as="sticsfbtracker.checkout.cart" template="sticsfbtracker/checkout/cart.phtml">
-            </block>
+   <action method="addCss">
+      <stylesheet>css/manapro_filtercheckboxes.css</stylesheet>
+   </action>
 </reference>
-<remove name="checkout.cart.coupon"/>
-<remove name="checkout.cart.shipping"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filterclear.css</stylesheet>
+   </action>
+</reference>
+<reference name="root">
+   <block type="core/template" name="m_filter_clear" template="manapro/filterclear/link.phtml"/>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filtercolors.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filtercolors.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filterexpandcollapse.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filterexpandcollapse.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="root">
+   <block type="core/template" name="m_filter_expandcollapse" template="manapro/filterexpandcollapse/link.phtml"/>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filtergroup.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filtergroup.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="root">
+   <block type="core/template" name="m_filter_group_expandcollapse" template="manapro/filtergroup/expandcollapse.phtml"/>
+</reference>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filterdropdown.css</stylesheet>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filterhelp.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filterhelp.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="root">
+   <block type="core/template" name="m_filter_help" template="manapro/filterhelp/help.phtml"/>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filterpositioning.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filterpositioning.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="mana.catalog.leftnav">
+   <action method="setShowInFilter">
+      <showIn>left</showIn>
+   </action>
+</reference>
+<reference name="right">
+   <block type="mana_filters/view" name="mana.catalog.rightnav" before="-" template="catalog/layer/view.phtml">
+      <action method="setShowInFilter">
+         <showIn>right</showIn>
+      </action>
+      <action method="setMClientSideBlock">
+         <params>
+            <type>Mana/Core/Block</type>
+         </params>
+      </action>
+   </block>
+</reference>
+<reference name="category.products">
+   <block type="mana_core/list" name="catalog.above_products" as="above_products" before="-">
+      <block type="mana_filters/view" name="mana.catalog.above_products.nav" before="-" template="catalog/layer/view.phtml">
+         <action method="setShowInFilter">
+            <showIn>above_products</showIn>
+         </action>
+      </block>
+   </block>
+</reference>
+<reference name="mana.catalog.rightnav">
+   <action method="setTemplate" ifconfig="mana_filters/advanced/enabled">
+      <template>manapro/filteradvanced/view.phtml</template>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filterradios.css</stylesheet>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filtershowmore.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filtershowmore.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filterslider.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/price_slider.js</name>
+      <params/>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filterslider.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filtersuperslider.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filtersuperslider.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>jquery/jquery.js</script>
+   </action>
+   <action method="addJs">
+      <script>jquery/jquery.printf.js</script>
+   </action>
+   <action method="addJs">
+      <script>mana/core.js</script>
+   </action>
+   <action method="addCss">
+      <stylesheet>css/mana_core.css</stylesheet>
+   </action>
+</reference>
+<reference name="m_core_singletons">
+   <action method="addSingletonBlock">
+      <type>mana_core/js</type>
+      <name>m_js</name>
+      <template>mana/core/js.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_wait</name>
+      <template>mana/core/wait.phtml</template>
+   </action>
+   <action method="addSingletonBlock">
+      <type>core/template</type>
+      <name>m_popup</name>
+      <template>mana/core/popup.phtml</template>
+   </action>
+</reference>
+<update handle="jquery_core"/>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/manapro_filtertree.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/manapro_filtertree.js</name>
+      <params/>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addItem" ifconfig="attributeswatches/settings/jquery">
+      <type>skin_js</type>
+      <name>attributeswatches/jquery-1.9.1.js</name>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>attributeswatches/attributeswatches.js</name>
+      <params/>
+   </action>
+   <action method="addItem">
+      <type>skin_css</type>
+      <name>attributeswatches/attributeswatches.css</name>
+      <params/>
+   </action>
+</reference>
+<update handle="attributeswatches_product_list"/>
+<reference name="head">
+            
+
+        </reference>
+<reference name="before_body_end">
+   <block type="infinitescroll/init" name="infinitescroll_init">
+      <action method="setTemplate">
+         <template>strategery/infinitescroll/init.phtml</template>
+      </action>
+   </block>
+</reference>
+<update handle="infinitescroll"/>
+<reference name="root">
+   <action method="setTemplate">
+      <template>page/filters.phtml</template>
+   </action>
+</reference>
+<reference name="left_first">
+   <block type="core/template" name="leftnav" before="catalog.leftnav" template="catalog/navigation/left_nav.phtml"/>
+</reference>
+<reference name="product_list">
+   <action method="setDefaultDirection">
+      <dir>desc</dir>
+   </action>
+</reference>
 <reference name="top.links">
    <action method="addLink" translate="label title" module="customer">
       <label>Log In</label>

@@ -26,7 +26,17 @@ if($labels == 'design_category'){
         echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
     }else{
     ?>
-    <span id="styles_label" class="search-by label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>"><?php echo $this->__('Search by Design'); ?></span>
+    <span id="styles_label" class="search-by label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
+<?php $SbD = $this->__('Search by Design'); ?>
+<?php $storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){
+echo $this->__('ابحث باستخدام التصميم');
+} else {
+echo $SbD;
+}
+?>
+
+    </span>
     <a id="label_<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>" class="opener attribure_labels" data-id="<?php echo str_replace(' ', '_',strtolower($this->getFilterOptions()->name)) ?>">
 <?php $catName= $this->getFilterOptions()->name; ?>
 <?php foreach ($this->getItems() as $_item): ?>
@@ -62,8 +72,8 @@ if($labels == 'design_category'){$catName = 'View All';}
                 <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
             <?php else : ?>
                 <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-                <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
-                <?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>
+                <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+                <?php else: echo $this->__($this->escapeHtml($_item->getLabel())); ?>
                 <?php endif; ?>
             <?php endif; ?>
             <?php // MANA END ?>
@@ -110,10 +120,10 @@ if($labels == 'design_category'){$catName = 'View All';}
         <li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
             <?php // MANA BEGIN ?>
             <?php if ($_item->getMSelected()): ?>
-                <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+                <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
             <?php else : ?>
                 <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-                <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+                <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
                 <?php else: echo $this->__($this->escapeHtml($_item->getLabel())); ?>
                 <?php endif; ?>
             <?php endif; ?>
@@ -159,10 +169,10 @@ if($labels == 'design_category'){
     <li <?php if ($_item->getMShowSelected()): ?>class="m-selected-ln-item"<?php endif; ?>>
         <?php // MANA BEGIN ?>
         <?php if ($_item->getMSelected()): ?>
-            <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+            <a href="<?php echo $this->urlEscape($_item->getRemoveUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
         <?php else : ?>
             <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
-            <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
+            <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->escapeHtml($_item->getLabel()) ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
             <?php else: echo $this->__($this->escapeHtml($_item->getLabel())); ?>
             <?php endif; ?>
         <?php endif; ?>
