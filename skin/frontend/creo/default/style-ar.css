@@ -170,7 +170,7 @@ direction: rtl;
 }
 #fme_filters_list #label_design_category:before {
     left: 5px;
-    right: 0;
+    right: auto;
 }
 #fme_filters_list .search-by {
     padding: 3px 10px;
