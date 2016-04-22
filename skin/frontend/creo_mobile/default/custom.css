@@ -709,7 +709,7 @@ padding: 0;}
 /*.onestepcheckout_block {float: left;width: 100%;}*/
 .shippingmethod_heading, .paymentmethod-heading { margin-top: 14px !important;} 
 .onestepcheckout-index-index .form_fields {float: left;width: 100%;}
-.paymentradiobutton { float: left; margin: 3px 0 0 0 !important;}
+.paymentradiobutton { float: left; margin: 3px 0 0 0;}
 .paymentradiobuttonlabel { margin: 3px 0 0 6px;}
 .paymenntForm { margin: 14px 0 0 0;}
 .op_block_title { margin:0 !important;}

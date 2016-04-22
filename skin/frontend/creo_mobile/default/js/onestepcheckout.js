@@ -234,32 +234,32 @@ COGOPC.prototype = {
 var BillingAddress = Class.create();
 BillingAddress.prototype = {
     initialize: function () {
-		$('billing:postcode').hide();
-		$('billing:postcodelabel').hide();
-		$('billing:statediv').hide();
-		$('billing:statelabel').hide();
-		$('billing:ziprequired').hide();
-		$('billing:staterequired').hide();		
+		jQuery('billing:postcode').hide();
+		jQuery('billing:postcodelabel').hide();
+		jQuery('billing:statediv').hide();
+		jQuery('billing:statelabel').hide();
+		jQuery('billing:ziprequired').hide();
+		jQuery('billing:staterequired').hide();		
 
         $('billing:country_id') && $('billing:country_id').observe('change', function () {
             if ($('billing:region_id')) {function resetRegionId() {
 					var country = $('billing:country_id').value;
 					if( country !== 'US' ){
-						$('billing:postcode').hide();
-						$('billing:postcodelabel').hide();
-						$('billing:statediv').hide();
-						$('billing:statelabel').hide();						
-						$('shipping:postcode').hide();
-						$('billing:ziprequired').hide();
-						$('billing:staterequired').hide();		
+						jQuery('billing:postcode').hide();
+						jQuery('billing:postcodelabel').hide();
+						jQuery('billing:statediv').hide();
+						jQuery('billing:statelabel').hide();						
+						jQuery('shipping:postcode').hide();
+						jQuery('billing:ziprequired').hide();
+						jQuery('billing:staterequired').hide();		
 					}else if(country == 'US'){
-						$('billing:postcode').show();
-						$('billing:postcode').addClassName('required-entry');
-						$('billing:postcodelabel').show();
-						$('billing:statediv').show();
-						$('billing:statelabel').show();
-						$('billing:ziprequired').show();
-						$('billing:staterequired').show();		
+						jQuery('billing:postcode').show();
+						jQuery('billing:postcode').addClassName('required-entry');
+						jQuery('billing:postcodelabel').show();
+						jQuery('billing:statediv').show();
+						jQuery('billing:statelabel').show();
+						jQuery('billing:ziprequired').show();
+						jQuery('billing:staterequired').show();		
 					}
                     $('billing:region_id').value = '';
                     $('billing:region_id')[0].selected = true
@@ -334,13 +334,13 @@ var ShippingAddress = Class.create();
 ShippingAddress.prototype = {
     initialize: function (form) {
         this.form = form;
-		$('shipping:postcode').hide();
-		$('shipping:postcodelabel').hide();
-		$('shipping:statediv').hide();
-		$('shipping:statelabel').hide();
-		$('shipping:staterequired').hide();		
-		$('shipping:ziprequired').hide();		
-        $('shipping:country_id') && $('shipping:country_id').observe('change', function () {
+		jQuery('shipping:postcode').hide();
+		jQuery('shipping:postcodelabel').hide();
+		jQuery('shipping:statediv').hide();
+		jQuery('shipping:statelabel').hide();
+		jQuery('shipping:staterequired').hide();		
+		jQuery('shipping:ziprequired').hide();		
+        jQuery('shipping:country_id') && $('shipping:country_id').observe('change', function () {
 			var country = $('shipping:country_id').value;
 			if( country !== 'US' ){
 				$('shipping:postcode').hide();
@@ -355,8 +355,8 @@ ShippingAddress.prototype = {
 				$('shipping:postcodelabel').show();
 				$('shipping:statediv').show();
 				$('shipping:statelabel').show();						
-				$('shipping:staterequired').show();		
 				$('shipping:ziprequired').show();		
+				$('shipping:staterequired').show();		
 			}
             if ($('shipping:region_id')) {
                 $('shipping:region_id').value = '';
