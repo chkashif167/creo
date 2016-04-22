@@ -163,7 +163,7 @@ if($labels == 'design_category'){
         <?php else : ?>
             <?php if (!$this->getFilterOptions()->getDisableNoResultOptions() || $_item->getCount() > 0 || $_item->getMSelected()): ?>
             <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>" title="<?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>"><?php echo $this->__($this->escapeHtml($_item->getLabel())); ?></a>
-            <?php echo $this->__($this->escapeHtml($_item->getLabel())); ?>
+            <?php else: echo $this->__($this->escapeHtml($_item->getLabel())); ?>
             <?php endif; ?>
         <?php endif; ?>
         <?php // MANA END ?>
