@@ -100,7 +100,7 @@ $currentCat = $_productCollection->getFirstItem()->cat_name;
                             success: function (data) {
                                 jQuery('.fme_loading_filters').hide();
                                 if (jQuery('#header-cart')) {
-                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span><?php echo $this->__("My Cart"); ?></a>' + data.minicart);
+                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span></a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({

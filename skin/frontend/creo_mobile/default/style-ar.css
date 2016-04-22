@@ -28,7 +28,8 @@ footer#footer{direction:rtl;}
 
 #bill_form label, #ship_form label,#bill_form sup, #ship_form sup,.onestepcheckout-index-index .discount-form .leftSide,
 .catalog-product-view .text-area .qty-area,.form-holder .checkbox-holder input[type="checkbox"],
-.form-holder .checkbox-holder label,.tabset.tabset1 li,#checkout-payment-method-load input[type="radio"].paymentradiobutton{float:right;}
+.form-holder .checkbox-holder label,.tabset.tabset1 li,#checkout-payment-method-load input[type="radio"].paymentradiobutton,
+.onestepcheckout-index-index .discount-form .leftSide label{float:right;}
 .form-holder .checkbox-holder input[type="checkbox"]{margin-left:5px;}
 select{padding-right: 25px;}
 .product-detail .price-area{padding:10px 0;}
@@ -40,7 +41,8 @@ select{padding-right: 25px;}
 .shipping-methods h3, #last_most_view_title > h3,.faq-area h3,.tab-content2 .dark-heading,.three-column h3,
 #savePopup .form-horizontal .form-group p,.modal-holder .login-form label,.attributeItem,.jconfirm .jconfirm-box div.title,
 .jconfirm .jconfirm-box div.content,input,select,textarea,input[type="text"], input[type="password"], input.email,.cart-table-area dl dt,
-.cart-table-area dl dd,#product-options-wrapper,.cs-form textarea,.bulk-order-form textarea{text-align:right;}
+.cart-table-area dl dd,#product-options-wrapper,.cs-form textarea,.bulk-order-form textarea,
+.onestepcheckout-index-index .discount-form .leftSide label{text-align:right;}
 
 .cartPage_custome_responsive .item-options dt{text-align:left;padding-left:5px;}
 .cartPage_custome_responsive td{text-align:left;}
@@ -90,6 +92,7 @@ white-space:nowrap;}
 .design_categories_attributes ul li{margin:0 0% 1% 1%;}
 .design_categories_attributes ul li:nth-child(4n){margin-left:0;}
 */
+.checkoutcreatNewAccount{float:none;}
 .icon-angle-left:before{content: '\e810';}
 .icon-angle-right:before{content: '\e80f';}
 .cart-btn-area .btn-holder .button2 .span2, .cart-btn-area .btn-holder .button2:first-child .span2{padding-left:25px;}
