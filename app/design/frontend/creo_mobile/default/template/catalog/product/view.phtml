@@ -287,7 +287,7 @@ if($_product->stock_item->is_in_stock == 0){
                                         //alert(data.status + ": " + data.message);
                                        if (jQuery('#header-cart')) {
             if(data.status != "ERROR"){
-            jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+            jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span></a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -313,7 +313,7 @@ if($_product->stock_item->is_in_stock == 0){
                 data: data,
                 success: function(data){
         if(data.status != "ERROR"){
-        jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+        jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span></a>' + data.minicart);
         }
                 if (jQuery('#header-cart')) {
                 /*initialize the minicart dropdown again*/
