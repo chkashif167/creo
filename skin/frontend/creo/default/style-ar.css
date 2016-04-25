@@ -196,6 +196,78 @@ direction: rtl;
 .checkout-cart-index .cart-table-area dl {
     float: right !important;
 }
+.cart-table-area h3 {
+    text-align: right;
+}
+#checkout-review-table tr {
+    display: table-row;
+}
+.cart-table-area h3 {
+    text-align: right;
+}
+.cart-table-area img {
+    float: right !important;
+    margin: 0 0px 0 14px !important;
+}
+#checkout-review-table tr td.last:after {
+    right: auto;
+    left: 0;
+}
+.onestepcheckout-index-index .discount-form .leftSide label{
+	    text-align: right;
+}
+.onestepcheckout-index-index .discount-form .leftSide {
+    float: right;
+}
+.onestepcheckout-index-index .discount-form .buttons-set {
+    float: left;
+}
+.credit-card span.fake-select, .checkout-form .form-group span {
+    right: auto;
+    left: 0;
+}
+.checkout-form .form-group select{
+    padding-right: 10px;
+    padding-left: 30px;
+}
+.showShippingAddressCheckboxDiv img {
+    float: right !important;
+}
+.showShippingAddressCheckboxDiv input {
+    float: right;
+    margin-left: 0;
+    margin-top: 4px !important;
+}
+.category-products .toolbar .sort-by {
+    float: left;
+}
+#bill_form sup, #ship_form sup {
+    margin: 22px 6px 0 0;
+    float: right;
+    color: rgb(255, 0, 0);
+}
+.showShippingAddressCheckboxDiv {
+    padding: 10px 30px 10px 0 !important;
+}
+.checkoutcreatNewAccount input {
+    float: right;
+    margin: 0 0px 0 10px;
+}
+.checkoutShippingMethod {
+    padding: 0 32px;
+}
+.checkoutShippingMethod ul li input {
+    margin: 6px 0px 0 8px !important;
+}
+div#checkout-payment-method-load {
+    padding: 0 32px;
+}
+div#checkout-review-load {
+    padding: 0 32px;
+}
+#review-buttons-container {
+    padding: 0 32px 0 0;
+}
 @media only screen and (max-width: 1199px){
 
 }
