@@ -268,6 +268,33 @@ div#checkout-review-load {
 #review-buttons-container {
     padding: 0 32px 0 0;
 }
+h1.category--heading:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+h1.category--heading .sort-by {
+    float: left;
+}
+h1.category--heading .sort-by label {
+    background: rgb(239, 79, 97);
+    color: rgb(255, 255, 255);
+    padding: 3px 10px;
+    margin-right: 5px;
+    font-weight: 100;
+    font-size: 12px;
+}
+h1.category--heading .sort-by select {
+    width: auto;
+    height: auto;
+    line-height: 1.5;
+    font-size: 13px;
+    color: rgb(34, 34, 34);
+    text-transform: uppercase;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 2px 5px;
+}
+#fme_filters_list .cate-open-close #label_phone_model.opener{margin-right:110px;}
 @media only screen and (max-width: 1199px){
 
 }
