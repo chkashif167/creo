@@ -1,5 +1,25 @@
 Release Notes
 -----------------
+===3.2.2===
+- Layered navigation extension added
+- Attribute urls modified
+- Product detail page modification
+- Data layers added
+- Category page sorting
+- Product sort by
+- Sorting options on mobile and desktop site
+- Arabic validations and other messages
+- New collection product sorting
+- COD charged added for ksa
+- Translation extension added
+- Creo Desktop in Arabic
+- Creo Mobile in Arabic
+- Creo Layout changes for Desktop
+- Creo Layout changes for mobile
+- Language Switch added
+- Creo patch with 2 security bulitins
+- Related Products slider on product detail page
+
 ===3.2.1===
 - Resolved checkout page issues
 - Product tags and search by tags
