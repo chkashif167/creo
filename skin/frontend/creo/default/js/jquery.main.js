@@ -3868,7 +3868,7 @@ jQuery(document).ready(function($) {
           jQuery(".toolbar .sort-by").appendTo('.category_top_filters');
           jQuery(".sort-by").addClass('sort-right')
      }
-     var brd = jQuery('category--heading');
+     var brd = jQuery('.category--heading');
      if (brd.length) {
           jQuery(".toolbar .sort-by").appendTo(brd);
      }

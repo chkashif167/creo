@@ -295,6 +295,7 @@ h1.category--heading .sort-by select {
     padding: 2px 5px;
 }
 #fme_filters_list .cate-open-close #label_phone_model.opener{margin-right:110px;}
+#fme_filters_list .cate-open-close #label_notebook_material.opener{margin-right:110px;}
 @media only screen and (max-width: 1199px){
 
 }
