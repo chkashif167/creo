@@ -10,7 +10,7 @@
 <input class="paymentradiobutton" id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" class="radio" />
 </span>
 <?php endif; ?>
-<label class="paymentradiobuttonlabel" for="p_method_<?php echo $_code ?>"><?php echo $this->htmlEscape($_method->getTitle()) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
+<label class="paymentradiobuttonlabel" for="p_method_<?php echo $_code ?>"><?php echo $this->__($this->htmlEscape($_method->getTitle())); ?> <?php echo $this->__($this->getMethodLabelAfterHtml($_method)); ?></label>
 <div class="clearfix"> </div>
 <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
 <?php echo $html; ?>
