@@ -279,10 +279,11 @@ h1.category--heading .sort-by {
 h1.category--heading .sort-by label {
     background: rgb(239, 79, 97);
     color: rgb(255, 255, 255);
-    padding: 3px 10px;
+    padding: 5px 10px;
     margin-right: 5px;
     font-weight: 100;
     font-size: 12px;
+    display: inline;
 }
 h1.category--heading .sort-by select {
     width: auto;
