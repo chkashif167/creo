@@ -129,9 +129,9 @@ $childProduct = Mage::getModel('catalog/product_type_configurable')->getProductB
 ////////
 
                     //$response['productId'] = $params['product'];
-                    $response['productId'] = $childProduct->getId();
-                    $response['productSku'] = $childProduct->getSku();
-                    $response['productName'] = $childProduct->getName();
+                    // $response['productId'] = $childProduct->getId();
+                    // $response['productSku'] = $childProduct->getSku();
+                    // $response['productName'] = $childProduct->getName();
                     $response['productQty'] = $params['qty'];
                     $response['productPrice'] = $_product->getPrice();
                     $response['currentCurrency'] = Mage::app()->getStore()->getCurrentCurrencyCode();
