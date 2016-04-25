@@ -184,6 +184,18 @@ direction: rtl;
 .cloud-zoom-big {
     left: -375px !important;
 }
+
+.cart-table-area .alignleft {
+    float: right;
+    margin: 0 0px 0 10px;
+}
+.checkout-cart-index #shopping-cart-table .text-area a.edititem,
+.checkout-cart-index #shopping-cart-table .text-area a.btn-remove {
+    float: left;
+}
+.checkout-cart-index .cart-table-area dl {
+    float: right !important;
+}
 @media only screen and (max-width: 1199px){
 
 }
