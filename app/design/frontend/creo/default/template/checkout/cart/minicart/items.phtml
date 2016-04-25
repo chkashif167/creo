@@ -31,12 +31,48 @@
  */
 ?>
 <?php
+/*
+/////////////////////
+This function has been created by Abdulfattah alhazmi
+Roles:
+To convert Arabic/Farsi Numbers (٠‎ - ١‎ - ٢‎ - ٣‎ - ٤‎ - ٥‎ - ٦‎ - ٧‎ - ٨‎ - ٩‎) 
+TO the corrosponding English numbers (0-1-2-3-4-5-6-7-8-9)
+http://hazmi.co.cc
+/////////////////////
+*/
+function convertArabicNumbersMinicart($arabic) {
+    $trans = array(
+      "0" => "&#1632;",
+      "1" =>"&#1633;",
+      "2" => "&#1634;",
+       "3" => "&#1635;",
+       "4" => "&#1636;",
+       "5" => "&#1637;",
+       "6" => "&#1638;",
+       "7" => "&#1639;",
+       "8" => "&#1640;",
+       "9" => "&#1641;",
+
+      // "0" => "0",
+      // "1" =>"1",
+      // "2" => "2",
+      //  "3" => "3",
+      //  "4" => "4",
+      //  "5" => "5",
+      //  "6" => "6",
+      //  "7" => "7",
+      //  "8" => "8",
+      //  "9" => "9",
+    );
+    return strtr($arabic,$trans);
+}
+?>
+<?php
 $_cartQty = $this->getSummaryCount();
 if(empty($_cartQty)) {
     $_cartQty = 0;
 }
 ?>
-
 <div id="minicart-error-message" class="minicart-message"></div>
 <div id="minicart-success-message" class="minicart-message"></div>
 <div class="minicart-wrapper">
@@ -71,7 +107,17 @@ if(empty($_cartQty)) {
       <?php if ($this->canApplyMsrp()): ?>
       <?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?>
       <?php else: ?>
-     <?php echo $this->__('Total:') ?> <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+     <?php echo $this->__('Total') ?>: <?php
+$theDigit = Mage::helper('checkout')->formatPrice($this->getSubtotal());
+$storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){
+$convertedDigit = strip_tags(htmlspecialchars_decode($theDigit));
+$convertedDigit = convertArabicNumbersMinicart($convertedDigit);
+echo $convertedDigit;
+} else {
+echo $theDigit;
+}
+     ?>
       <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
       <br />
       (<?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>)

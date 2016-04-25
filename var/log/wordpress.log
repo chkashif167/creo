@@ -1,0 +1,17 @@
+2016-03-11T11:52:00+00:00 DEBUG (7): exception 'Zend_Exception' with message 'dbModel read resource does not implement Zend_Db_Adapter_Abstract' in /var/www/creo/lib/Varien/Data/Collection/Db.php:187
+Stack trace:
+#0 /var/www/creo/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php(134): Varien_Data_Collection_Db->setConnection(false)
+#1 /var/www/creo/app/code/core/Mage/Core/Model/Config.php(1348): Mage_Core_Model_Resource_Db_Collection_Abstract->__construct(Array)
+#2 /var/www/creo/app/code/core/Mage/Core/Model/Config.php(1380): Mage_Core_Model_Config->getModelInstance('wordpress_resou...', Array)
+#3 /var/www/creo/app/Mage.php(491): Mage_Core_Model_Config->getResourceModelInstance('wordpress/user_...', Array)
+#4 /var/www/creo/app/code/local/Fishpig/Wordpress/Model/Resource/User.php(75): Mage::getResourceModel('wordpress/user_...')
+#5 /var/www/creo/app/code/community/Fishpig/Wordpress/sql/wordpress_setup/mysql4-upgrade-3.2.0.0-3.2.0.1.php(22): Fishpig_Wordpress_Model_Resource_User->cleanDuplicates()
+#6 /var/www/creo/app/code/core/Mage/Core/Model/Resource/Setup.php(624): include('/var/www/creo/a...')
+#7 /var/www/creo/app/code/core/Mage/Core/Model/Resource/Setup.php(422): Mage_Core_Model_Resource_Setup->_modifyResourceDb('upgrade', '0.1.0', '4.1.2.9')
+#8 /var/www/creo/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('4.1.2.9')
+#9 /var/www/creo/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#10 /var/www/creo/app/code/core/Mage/Core/Model/App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#11 /var/www/creo/app/code/core/Mage/Core/Model/App.php(343): Mage_Core_Model_App->_initModules()
+#12 /var/www/creo/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 /var/www/creo/index.php(93): Mage::run('', 'store')
+#14 {main}

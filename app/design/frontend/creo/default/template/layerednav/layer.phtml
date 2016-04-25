@@ -16,11 +16,11 @@ if ($this->getRequest()->getControllerName() != 'result') {
 
 if ('front' != Mage::app()->getRequest()->getControllerName()) {
     ?>
-    <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/FME/fme_layered_nav.js'); ?>"></script> 
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/FME/fme_layered_nav.js'); ?>"></script>
     <?php
 }
 ?>
-<div class="skewbtn1"><button id="goback" onclick="goback()" title="Back">< Back</button></div>
+<div class="skewbtn1"><button id="goback" onclick="goback()" title="Back">< <?php echo $this->__('Back'); ?></button></div>
 
 <?php if ($this->canShowBlock()): $state = $this->getStateInfo() ?>
     <div class="block block-layered-nav">
@@ -71,8 +71,8 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                 ?>
                 <div class="fme-filter">
                     <input type="hidden" id="fme_layered_url" value="<?php echo $this->htmlEscape($state[0]) ?>"/>
-                    <input type="hidden" id="fme_layered_params" value="<?php echo $this->htmlEscape($state[1]) ?>"/> 
-                    <input type="hidden" id="fme_layered_ajax" value="<?php echo $this->htmlEscape($state[2]) ?>"/> 
+                    <input type="hidden" id="fme_layered_params" value="<?php echo $this->htmlEscape($state[1]) ?>"/>
+                    <input type="hidden" id="fme_layered_ajax" value="<?php echo $this->htmlEscape($state[2]) ?>"/>
                     <input type="hidden" id="tmp_current_val" value="View All" />
 
                     <dl id="fme_filters_list">
@@ -87,17 +87,17 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                     if(getlastdash != '-1'){
                                         var onlyid = changeid.substr(getlastdash + 1);
                                     }
-                                    //cat_attrs[k] = onlyid;									
+                                    //cat_attrs[k] = onlyid;
                                     cat_attrs[k] = v.text;
                                     //console.log("+++"+v.text.toLowerCase());
                                     jQuery(v).attr('href', 'javascript:void(0);');
                                     var changeTo = jQuery(this).text().toLowerCase();
                                     var changeidss = jQuery(this).attr('id');
                                     if( changeidss ){
-                                            var getlastdash2 = changeidss.lastIndexOf('-');									
+                                            var getlastdash2 = changeidss.lastIndexOf('-');
                                             if(getlastdash2 != '-1'){
                                                     abc = changeidss.substr(getlastdash2 + 1);
-                                            }		
+                                            }
                                             changeTo = abc;
                                     }
 
@@ -112,14 +112,14 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 										}else{
 											custom = '';
 										}
-										
+
                                         jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + custom + '\', \'?universal_categories=' + changeTo + custom + '\');jQuery(\'#tmp_current_val\').val(\''+text+'\');');
                                     }
 
                                     if (changeTo.indexOf("view all") >= 0) {                    //do not trigger onclick on the passed param and not on view all as well
                                         //jQuery(v).attr('onclick', 'changeUrl(\'?universal_categories=' + changeFrom + '\', \'\')');
                                         //$this->helper('core/url')->getCurrentUrl();
-                                        <?php 
+                                        <?php
                                         $currentUrl = Mage::helper('core/url')->getCurrentUrl();
                                         $currentUrl = preg_replace("/(&)?universal_categories=\d+(&)?/i", "", $currentUrl);
                                         $splitUrlArray = explode("?", $currentUrl);
@@ -142,20 +142,20 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 												var length = '';
 												var id = '';
 												var equalsto = '';
-												equalsto = pathname.search("=");	
+												equalsto = pathname.search("=");
 												if (pathname.indexOf("&") > 0){
-													and = pathname.search("&");	
+													and = pathname.search("&");
 													length = and - equalsto;
 													id = pathname.substr(equalsto + 1, length - 1);
 												}else{
-													id = pathname.substring(equalsto + 1);												
+													id = pathname.substring(equalsto + 1);
 												}
 												jQuery("#universal_categories-"+id).addClass("dont_click_it");
 												if (pathname.indexOf("custom") > 0){
 													jQuery('#current_url').val('custom');
 												}
 											}
-											
+
 										}
 										else
 										{
@@ -164,7 +164,7 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
 												jQuery(".fme_layered_clearall").addClass("_selected_");
 												jQuery(".fme_layered_clearall").addClass("dont_click_it");
 											}
-											
+
 										}
                                     }
                                 });
@@ -197,13 +197,13 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                 if ($current_category_p_id == '57' || $current_category_p_id == '58' || $current_category_p_id == '3') {
                                     if ($_filter->getVar() == 'styles') {
                                         ?>
-                                        <label style="float:left !important;right:0px !important;" class="styles-lable" id="styles_label">Styles: </label>
-                                        <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $_filter->getHtml() ?></dd>
+                                        <label style="float:left !important;right:0px !important;" class="styles-lable" id="styles_label"><?php echo $this->__('Styles'); ?>: </label>
+                                        <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $this->__($_filter->getHtml()); ?></dd>
                                     <?php } else if ($_filter->getVar() == 'tshirt_color') {
                                         ?>
                                         <div class="tshirt-colors-area">
-                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
-                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label"><?php echo $this->__('Tshirt Color(s)'); ?>: </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $this->__($_filter->getHtml()); ?></dd></div>
                                     <?php } else if ($_filter->getVar() == 'universal_categories') { ?>
 			<div style="display:<?php echo $block?>">
                                         <?php
@@ -211,15 +211,14 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                         ?>
                                         </div>
 
-                                        <span style="display:<?php echo $custom ?>">Search By Design: </span>
+                                        <span style="display:<?php echo $custom ?>"><?php echo $this->__('Search By Design'); ?>: </span>
                                         <div class="cate-open-close" style="display:<?php echo $custom ?>">
 
-                                            <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
-                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
+                                            <a id="currentvalue" class="opener" href="javascript:;"> <?php echo $this->__('View All'); ?></a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label"><?php echo $this->__('Categories'); ?>: </label> -->
                                           <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">
                                                 <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
-                                                <?php echo $_filter->getHtml() ?>
-
+                                                <?php echo $this->__($_filter->getHtml()); ?>
                                             </ul></div>
                                     <?php
 			}
@@ -227,53 +226,53 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                                     if ($_filter->getVar() == 'gender') {
                                         ?>
                                         <div class="gender-filter-area">
-                                            <label class="styles-lable" id="styles_label">Gender: </label>
-                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $_filter->getHtml() ?></dd></div>
+                                            <label class="styles-lable" id="styles_label"><?php echo $this->__('Gender'); ?>: </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $this->__($_filter->getHtml()); ?></dd></div>
                                         <?php
                                     } else if ($_filter->getVar() == 'styles') {
                                         ?>
-                                        <label class="styles-lable" id="styles_label">Styles: </label>
-                                        <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $_filter->getHtml() ?></dd>
+                                        <label class="styles-lable" id="styles_label"><?php echo $this->__('Styles'); ?>: </label>
+                                        <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><?php echo $this->__($_filter->getHtml()); ?></dd>
                                     <?php } else if ($_filter->getVar() == 'acc_phone_model') {
                                         ?>
                                         <div class="cate-open-close">
-                                            <a class="opener" href="javascript:void(0)">Phone Models</a>
-                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Phone Model(s): </label> -->
-                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+                                            <a class="opener" href="javascript:void(0)"><?php echo $this->__('Phone Models'); ?></a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label"><?php echo $this->__('Phone Model(s)'); ?>: </label> -->
+                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $this->__($_filter->getHtml()); ?></ul></div>
                                     <?php } else if ($_filter->getVar() == 'acc_notebook_color') {
                                         ?>
                                         <div class="tshirt-colors-area">
-                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Color(s): </label>
-                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label"><?php echo $this->__('Color(s)'); ?>: </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $this->__($_filter->getHtml()); ?></dd></div>
                                     <?php } else if ($_filter->getVar() == 'tshirt_color') {
                                         ?>
                                         <div class="tshirt-colors-area">
-                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Tshirt Color(s): </label>
-                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></dd></div>
+                                            <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label"><?php echo $this->__('Tshirt Color(s)'); ?>: </label>
+                                            <dd <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $this->__($_filter->getHtml()); ?></dd></div>
                                     <?php
                                     } else if ($_filter->getVar() == 'acc_notebook_material') {
                                         ?>
                                         <div class="cate-open-close">
-                                            <a class="opener" href="javascript:void(0)">Material</a>
-                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Material: </label> -->
-                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $_filter->getHtml() ?></ul></div>
+                                            <a class="opener" href="javascript:void(0)"><?php echo $this->__('Material'); ?></a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label"><?php echo $this->__('Material'); ?>: </label> -->
+                                            <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>"><?php echo $this->__($_filter->getHtml()); ?></ul></div>
 
                                     <?php } else if ($_filter->getVar() == 'universal_categories') {
 ?>
-										<div style="display:<?php echo $block?>">
-                                        <?php
-											 echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
-                                        ?>
+<div style="display:<?php echo $block?>">
+<?php
+ echo $this->getLayout()->createBlock('cms/block')->setBlockId('thecrazyones')->toHtml();
+?>
                                         </div>
 
-                                        <span style="display:<?php echo $custom ?>">Search By Design: </span>
+                                        <span style="display:<?php echo $custom ?>"><?php echo $this->__('Search By Design'); ?>: </span>
                                         <div class="cate-open-close" style="display:<?php echo $custom ?>">
 
-                                            <a id="currentvalue" class="opener" href="javascript:;"> View All</a>
-                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label">Categories: </label> -->
+                                            <a id="currentvalue" class="opener" href="javascript:;"> <?php echo $this->__('View All'); ?></a>
+                                            <!-- <label style="float:left !important;right:0px !important" class="styles-lable" id="styles_label"><?php echo $this->__('Categories'); ?>: </label> -->
                                          <ul class="slide" <?php echo $this->getHeightStyle() ?> id="fme_layered_<?php echo $_filter->getVar() ?>">
                                                 <li><a class="fme_layered_clearall" style="" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('View All') ?></a></li>
-                                                <?php echo $_filter->getHtml() ?>
+                                                <?php echo $this->__($_filter->getHtml()); ?>
                                             </ul></div>
                                     <?php
                                     }
@@ -282,10 +281,10 @@ if ('front' != Mage::app()->getRequest()->getControllerName()) {
                             ?>
                         <?php endforeach; ?>
                         <?php
-                        //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option 
+                        //if ($state[1] AND $this->bNeedClearAll())://disabled clear all option
                         //if(!($current_category_p_id == '5')){
                         ?>
-                        <div class="actions fme_layered_clear_all" id="fme_layered_clear_all_btn" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><a class="fme_layered_clearall" style="font-size:14px" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>            
+                        <div class="actions fme_layered_clear_all" id="fme_layered_clear_all_btn" <?php if (($current_category_id != '17') && ($current_category_id != '59')) { ?> style=""<?php } ?>><a class="fme_layered_clearall" style="font-size:14px" href="<?php echo $this->htmlEscape($this->getClearAllUrl()) ?>"><?php echo $this->__('Clear All') ?></a></div>
         <?php //} //endif  ?>
 
                     </dl>

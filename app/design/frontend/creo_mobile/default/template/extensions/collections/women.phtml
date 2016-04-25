@@ -39,20 +39,18 @@ $_attrbiuteCollection = $this->getLoadedAttributeCollection(); ?>
 $currentUrl = Mage::helper('core/url')->getCurrentUrl();
 //echo Mage::helper('functions/data')->getCollectionParentLink($currentUrl);
 ?>
-<span class="search-by">Search By Design</span>
+<span class="search-by"><?php echo $this->__('Search By Design'); ?></span>
 <div class="cate-open-close">
-<a class="opener attribure_labels" data-id="collection-mega-menu"> View All</a>
+<a class="opener attribure_labels" data-id="collection-mega-menu"><?php echo $this->__('View All'); ?></a>
 <ul id="collection-mega-menu" class="slide m-filter-item-list">
     <?php $attr = Mage::getModel('eav/config')->getAttribute('catalog_product', 'universal_categories'); ?>
 
 <li>
-   <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html" ?>">View All</a>
+   <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html" ?>"><?php echo $this->__('View All'); ?></a>
 </li>
     <?php foreach ($_attrbiuteCollection as $a): ?>
         <li>
-
-                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $attr->getSource()->getOptionText($a); ?></a>
-                        
+                <a href="<?php echo Mage::getBaseUrl() . "clothing/women.html?universal_categories=".$a."" ?>"><?php echo $this->__($attr->getSource()->getOptionText($a)); ?></a>
         </li>
     <?php endforeach ?>
 </ul>
@@ -113,7 +111,7 @@ $_helper = $this->helper('catalog/output');
                             success: function (data) {
                                 jQuery('.fme_loading_filters').hide();
                                 if (jQuery('#header-cart')) {
-                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span></a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -159,14 +157,14 @@ $_helper = $this->helper('catalog/output');
                                     <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
                                 <?php endif; ?>
                                 <?php //if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped())) { ?>
-                                    <!--<a href="javascript:;" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>', '<?php echo $_product->getId() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>-->
+                                    <!--<a href="javascript:;" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>', '<?php echo $_product->getId() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a>-->
                                 <?php //} else { ?>
                                 <?php if($_product->isConfigurable()){ ?> 
-                                <a href="javascript:;" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>
+                                <a href="javascript:;" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a>
                                 <?php
 								}else{
 								?>
-                                    <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__(' Add to Cart') ?> </a>
+                                    <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a>
                                     <?php
 								}
 									?>
@@ -208,7 +206,7 @@ $_helper = $this->helper('catalog/output');
 <div class="row">
 <div class="col-xs-12">
 <div class="design_categories_attributes shipping-methods">
-<h3><span>DESIGN CATEGORIES</span></h3>
+<h3><span><?php echo $this->__('DESIGN CATEGORIES'); ?></span></h3>
 <ul>
  <?php foreach ($_attrbiuteCollection as $a): ?>
             <?php $_img = $this->helper('bubble_aop')->getAttributeOptionImage($a); ?>

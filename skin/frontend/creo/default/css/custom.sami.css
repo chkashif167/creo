@@ -16,14 +16,9 @@
     transform: skewX(-18deg);
     display: inline-block;
     min-width: 214px;
-    padding: 4px 17px;	
+    padding: 4px 17px;
 }
-
-.checkout-form-headings h1 .re-skewed {
-    transform: skewX(18deg);
-    display: inline-block;
-}
-
+.checkout-form-headings h1 .re-skewed {transform: skewX(18deg);display:block;}
 .checkout-form .form-group label {
     display: block;
     font-weight: normal;
@@ -271,13 +266,13 @@ a.alignleft.checkout-items {
 }
 
 .validation-advice { color: red; font-size: 10px; /*float: left;*/}
-.onestepcheckout-index-success .button {
+.onestepcheckout-index-success .main .button {
     background: black none repeat scroll 0 0;
     border: medium none;
     color: #fff;
     padding: 10px 20px;
 }
-
+.search_mini_form .button{background:rgba(0, 0, 0, 0) url("images/productpage/search.png") no-repeat center;padding:0;}
 /*....... Integration-Starts.........*/
 
 .form-header {
@@ -632,3 +627,6 @@ div.fme-filter a.fme_layered_attribute {
 	margin: 0;
 }
 .footer_newsletter .validation-advice { float: left;}
+@media only screen and (max-width: 1199px) {
+.breadcrumb1{margin-top: 0;}
+}

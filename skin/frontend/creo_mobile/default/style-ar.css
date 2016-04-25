@@ -25,29 +25,54 @@ footer#footer{direction:rtl;}
 #nav .featured-items .featured-products li,#footer .column,#footer .social li,.price-area .price-info,
 .faq-area.return-area .step-col li,.signup-form .row .col,.form-holder .form-frame,.nav li, form li,.checkoutShippingMethod ul li input,
 .checkoutShippingMethod ul li label,.product-detail .price-area .price,.product-swatches-container .has-swatches li,
-#bill_form label, #ship_form label,#bill_form sup, #ship_form sup,.onestepcheckout-index-index .discount-form .leftSide{float:right;}
+#bill_form label, #ship_form label,#bill_form sup, #ship_form sup,.onestepcheckout-index-index .discount-form .leftSide,
+.catalog-product-view .text-area .qty-area,.form-holder .checkbox-holder input[type="checkbox"],
+.form-holder .checkbox-holder label,.tabset.tabset1 li,#checkout-payment-method-load input[type="radio"].paymentradiobutton,
+.onestepcheckout-index-index .discount-form .leftSide label,.cart-bottom-area .title{float:right;}
+.form-holder .checkbox-holder input[type="checkbox"]{margin-left:5px;}
+select{padding-right: 25px;}
 .product-detail .price-area{padding:10px 0;}
-#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links{direction:ltr;}
+.cart-btn-area .btn-holder .button2:first-child .span1{margin-left:0;}
+#last_most_view_box_sub,.tshirtsize,.form-holder .btn-holder button:first-child,.tab-links,.bx-wrapper{direction:ltr;}
 .tshirtsize .heading{padding:8px 12px;}
 .cate-open-close{height:auto !important;}
-.cartPage_custome_responsive .item-options dd{text-align:right;}
-.cartPage_custome_responsive .item-options dt{text-align:left;}
-.cartPage_custome_responsive td{text-align:left;}
-.cartPage_custome_responsive td:before{left:15%;}
+
+.cartPage_custome_responsive .item-options dd,#nav .links-area .links,.faq-area .faq-frame.terms .openeer-holder .question,
+.shipping-methods h3, #last_most_view_title > h3,.faq-area h3,.tab-content2 .dark-heading,.three-column h3,
+#savePopup .form-horizontal .form-group p,.modal-holder .login-form label,.attributeItem,.jconfirm .jconfirm-box div.title,
+.jconfirm .jconfirm-box div.content,input,select,textarea,input[type="text"], input[type="password"], input.email,.cart-table-area dl dt,
+.cart-table-area dl dd,#product-options-wrapper,.cs-form textarea,.bulk-order-form textarea,
+.onestepcheckout-index-index .discount-form .leftSide label{text-align:right;}
+
+.cartPage_custome_responsive .item-options dt{text-align:left;padding-left:5px;}
+.cartPage_custome_responsive td{text-align:left;padding-left:30%;}
+.cartPage_custome_responsive td:before{left:inherit;right:0;text-align:right;}
+
 .cartPage_custome_responsive td:nth-of-type(1):before { content: "";  }
 .cartPage_custome_responsive td:nth-of-type(2):before { content: "توحيد السعر";}
 .cartPage_custome_responsive td:nth-of-type(3):before { content: " حجم";}
 .cartPage_custome_responsive td:nth-of-type(4):before { content: "كمية";}
 .cartPage_custome_responsive td:nth-of-type(5):before { content: "حاصل الجمع ";}
-.checkout-form .form-group input, .checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory{
-padding-right:30px;}
+
+.checkout-form .inner-form select, .checkout-form .form-group select,.selectPhotoCategory,select{padding-right:30px;}
+.checkout-form .form-group input{padding-right:10px;}
 .cart-table-area dl dt, .cart-table-area dl dd{text-align:center;}
-/*#footer .column.column1{width:auto;}
-.products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
+.catalog-product-view .text-area .qty-area label,.cs-form .ps{display:block;}
+.form-holder .form-frame,.cart-btn-area .btn-holder .button2 .span1{margin:0;}
+#payment_form_msp_cashondelivery{padding:0;}
 .category--heading span:before,.shipping-methods h3 span:before, #last_most_view_title > h3 span:before,.faq-area h3 span:before,
 .tab-content2 .dark-heading span:before,.three-column h3 span:before{border-color: transparent #000 transparent #000;
 border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 .faq-area h3 span:before{border-width: 22px 6px 0 0px;}
+.faq-area .faq-frame .open-close2{margin:0 0 18px 2%;}
+.three-column h3 span:before{border-width:20px 6px 0 0px;}
+.faq-area .openeer-holder .question span{padding:0 10px;}
+#checkout-payment-method-load input[type="radio"].paymentradiobutton{margin-right:0;margin-top:2px;}
+.paymentradiobuttonlabel{margin: 0px 5px 0 0px;}
+.jconfirm.white .jconfirm-box .buttons button{margin:0 2px;}
+.cart-btn-area .btn-holder{margin:10px -10px;}
+/*#footer .column.column1{width:auto;}
+.products-grid .btn-holder a:first-child .span1{margin-left:0;margin-right:-10px;}
 .tab-content2 .dark-heading span:before,.three-column h3 span:before{border-width:20px 6px 0 0px;}
 .toolbar .sort-by select, .category_top_filters .sort-by select{font-size:12px;}
 #nav .links-area .links,.faq-area .faq-frame.terms .openeer-holder .question,
@@ -55,9 +80,8 @@ border-width: 30px 6px 0 0px;left:inherit;right:100%;}
 #savePopup .form-horizontal .form-group p,.modal-holder .login-form label{text-align:right;}
 .order-details-table th:first-child{text-align:center;}
 .catalog-product-view .text-area .qty-area label{display:block;}
-
 .faq-area.return-area .step-col li,.form-holder .form-frame{margin: 0 0% 0 2%;}
-.faq-area .faq-frame .open-close2{margin:0 0 18px 2%;}
+
 .faq-area .openeer-holder .question span{padding:0 7px;}
 .signup-form .row .col:first-child {margin: 0px 0% 0 2%;}
 .product-area .cancel,.product-area .edit{right:inherit;left:10%;}
@@ -67,15 +91,24 @@ white-space:nowrap;}
 .pdc-design-view .edit-tools{left:0;}
 .layer-final label{float:right !important;white-space:nowrap;}
 #product-options-wrapper{width:84%;}
-.icon-angle-left:before{content: '\e810';}
-.icon-angle-right:before{content: '\e80f';}
+
 .design_categories_attributes ul li{margin:0 0% 1% 1%;}
 .design_categories_attributes ul li:nth-child(4n){margin-left:0;}
 */
+.checkoutcreatNewAccount{float:none;}
+.icon-angle-left:before{content: '\e810';}
+.icon-angle-right:before{content: '\e80f';}
 .cart-btn-area .btn-holder .button2 .span2, .cart-btn-area .btn-holder .button2:first-child .span2{padding-left:25px;}
-.cart-bottom-area .btn-holder a:first-child .span1,.cart-bottom-area .btn-holder a:first-child .span2{-webkit-transform: skewX(0deg);
--moz-transform: skewX(0deg);-ms-transform: skewX(0deg);-o-transform: skewX(0deg);transform: skewX(0deg);}
-#header .login-area .opener,.options-area label,h3.item-title,.breadcrumb1 li{white-space:nowrap;}
+.cart-bottom-area .btn-holder a:first-child .span1,.cart-bottom-area .btn-holder a:first-child .span2,
+.cart-btn-area .btn-holder .button2 .span2,.cart-btn-area .btn-holder .button2 .span1,.cart-btn-area .btn-holder .button2 .span1,
+.cart-btn-area .btn-holder .button2:first-child .span1,.cart-btn-area .btn-holder .button2 .span2,
+.cart-btn-area .btn-holder .button2:first-child .span2{-webkit-transform: skewX(0deg);-moz-transform: skewX(0deg);
+-ms-transform: skewX(0deg);-o-transform: skewX(0deg);transform: skewX(0deg);}
+#header .login-area .opener,.options-area label,h3.item-title,.breadcrumb1 li,.onestepcheckout-index-index label{white-space:nowrap;}
 .breadcrumb1 li{float: right;margin: 0 0 0 45px;}
 .footer_navigation .panel-heading .panel-title, .footer_navigation .panel-heading .panel-title a,
 .footer_navigation .panel-group .panel .panel-collapse ul{padding-right:10px;}
+
+@media only screen and (max-width: 480px){
+#header .cart .slide{left:-30px;}
+}

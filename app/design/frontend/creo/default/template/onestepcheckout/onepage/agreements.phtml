@@ -8,13 +8,13 @@
         >
             <?php if ('minimal' === Mage::getStoreConfig('onestepcheckout/agreements/output')) : ?>
                 <div class="page-title">
-                    <span><?php echo $this->htmlEscape($_a->getName()) ?></span>
+                    <span><?php echo $this->__($this->htmlEscape($_a->getName())); ?></span>
                 </div>
             <?php endif; ?>
             <?php if ($_a->getIsHtml()):?>
                 <?php echo $_a->getContent() ?>
             <?php else:?>
-                <?php echo nl2br($this->htmlEscape($_a->getContent())) ?>
+                <?php echo $this->__(nl2br($this->htmlEscape($_a->getContent()))); ?>
             <?php endif; ?>
         </div>
         <p class="agree">
@@ -22,12 +22,12 @@
             <?php if ('minimal' === Mage::getStoreConfig('onestepcheckout/agreements/output')) : ?>
                 <label for="agreement-<?php echo $_a->getId()?>">
                     <a href="javascript:void(0)" class="onestepcheckout-agreement-<?php echo $_a->getId() ?>">
-                        <?php echo $this->htmlEscape($_a->getCheckboxText()) ?>
+                        <?php echo $this->__($this->htmlEscape($_a->getCheckboxText())); ?>
                     </a>
                 </label>
             <?php else: ?>
                 <label for="agreement-<?php echo $_a->getId()?>">
-                    <?php echo $this->htmlEscape($_a->getCheckboxText()) ?>
+                    <?php echo $this->__($this->htmlEscape($_a->getCheckboxText())); ?>
                 </label>
             <?php endif; ?>
         </p>

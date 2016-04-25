@@ -51,14 +51,14 @@ $_helper = $this->helper('catalog/output');
                             <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image image-area"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" /></a>
                         </div>
                         <div class="text-area">
-                           <a class="product_name" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a>
+                           <a class="product_name" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->__($_helper->productAttribute($_product, $_product->getName(), 'name')); ?></a>
                             <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
 
                             <div class="btn-holder">
             <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                    <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 
+                                    <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a>
                                 <?php endif; ?>
-                                <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a> 
+                                <a href="javascript:;" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>')" class="btn-cart"><i class="icon-basket"></i><?php echo $this->__('Add to Cart') ?> </a>
                             </div>
 
                             <div class="description">
@@ -85,7 +85,7 @@ $_helper = $this->helper('catalog/output');
                             success: function (data) {
                                 jQuery('.fme_loading_filters').hide();
                                 if (jQuery('#header-cart')) {
-                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span>My Cart</a>' + data.minicart);
+                                    jQuery('#open-close-minicart').html('<a href="javascript:void(0)" class="opener"><span class="count">' + data.qty + '</span><?php echo $this->__('My Cart'); ?></a>' + data.minicart);
                                 }
                                 /*initialize the minicart dropdown again*/
                                 jQuery('#open-close-minicart').openClose({
@@ -163,14 +163,16 @@ if ($_product->type_id == 'configurable' && $_GET['styles']==22) {
                         <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(480, 650); ?>" width="414" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), true, true) ?>" />
                         </a>
                         <?php }?>
-                        <a  rel="nofollow" href="<?php echo Mage::getBaseUrl() . 'quickview/index/view?pid=' . $_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId() ?>"> <span class="quick-view"><i class="icon-search"></i> quick view</span></a>
+                        <a  rel="nofollow" href="<?php echo Mage::getBaseUrl() . 'quickview/index/view?pid=' . $_product->getId(); ?>" data-fancybox-type="iframe" class="mp_quickview_icon" id="mp_quickview_<?php echo $_product->getId() ?>"> <span class="quick-view"><i class="icon-search"></i> <?php echo $this->__('quick view'); ?></span></a>
                         <div class="text-area">
                         <?php if($smallimg){?>
-                           <a class="product_name" href="<?php echo $_product->getProductUrl() ?>?styles=22" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a>
+                           <a class="product_name" href="<?php echo $_product->getProductUrl() ?>?styles=22" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->__($_helper->productAttribute($_product, $_product->getName(), 'name')); ?></a>
                         <?php }else{ ?>
-                           <a class="product_name" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a>
+                           <a class="product_name" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->__($_helper->productAttribute($_product, $_product->getName(), 'name')); ?></a>
                          <?php } ?>
-                            <span class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?></span>
+                            <span class="price"><?php 
+                            echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false);
+                             ?></span>
                             <div class="btn-holder">
                                 <?php if ($this->helper('wishlist')->isAllow()) : ?>
                                     <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><span class="span1"><span class="span2"><i class="icon-heart-empty"></i></span></span></a> 

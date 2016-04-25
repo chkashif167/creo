@@ -274,11 +274,7 @@ opacity: 1;
 font: bold 14px/28px "Roboto Condensed", Helvetica, Arial, sans-serif;
 text-transform: uppercase;
 }
-.product-detail .btn-holder .span2:before {
-content: '\e80d';
-font-family: fontello;
-padding:0 5px;
-}
+.product-detail .btn-holder .span2:before {content: '\e80d';font-family: fontello;padding:0 5px;}
 /*cart button ends*/
 /*cart button stars on fancy box*/
 .quickview-index-view .btn-holder button::before {
@@ -718,7 +714,7 @@ text-decoration: none;
 .checkout-heading { border: none !important;}
 .onestepcheckout-index-index form select { position: static;}
 #checkout-payment-method-load .paymentradiobutton, #checkout-payment-method-load .paymentradiobuttonlabel{
-float: left; margin:0 5px 0 0;}
+float: left; /*margin:0 5px 0 0;*/}
 .option-alternate:nth-last-child(2) {display: none;}
 .checkout-cart-index .checkout_applyCoupon { display: none;}
 #coupon-discount { float: left; width:100%;}

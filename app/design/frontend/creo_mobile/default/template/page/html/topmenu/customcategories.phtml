@@ -9,6 +9,64 @@
       </div>
   
     </div> -->
+
+
+
+
+<?php /* ?>
+<li <?php if (in_array("clothing",$parent_cat_array) || $_GET['id']==3) {
+    echo'class="active"';
+} ?>> <a href="javascript:void(0)"><?php echo $this->__('CLOTHING'); ?></a>
+    <div class="drop">
+    <div class="links-area">
+      <div class="links-frame">
+          <ul class="sorting-items">
+          <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=3" ?>"><?php echo $this->__('Trending'); ?></a></li>
+          <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=3" ?>"><?php echo $this->__('Best Seller'); ?></a></li>
+          <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=3" ?>"><?php echo $this->__('NEW'); ?></a></li>
+      </ul>
+
+
+ <ul class="links">
+ <li> <strong><?php echo $this->__('Men'); ?> </strong> </li>
+<?php
+
+$children_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
+
+$m=0;
+foreach ($children_category as $category):
+    $_category = Mage::getModel('catalog/category')->load($category->getId());
+    echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
+    if($m==0){
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/men/tshirt.html?styles=22">'.$this->__("Tank Top").'</a></li>';
+    }
+    $m++;
+endforeach;
+?>
+                </ul>
+   <ul class="links">
+   <li> <strong><?php echo $this->__('Women'); ?> </strong> </li>
+<?php
+$children_category = Mage::getModel('catalog/category')->load('58')->getChildrenCategories();
+$w=0;
+foreach ($children_category as $category):
+    $_category = Mage::getModel('catalog/category')->load($category->getId());
+    echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
+    if($w==0){
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/women/tshirt.html?styles=22">'.$this->__("Tank Top").'</a></li>';
+    }
+    $w++;
+endforeach;
+?>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</li>
+
+<?php */ ?>
+
 <?php
         $_helper = Mage::helper('catalog/category');
         $_categories = $_helper->getStoreCategories();
@@ -25,28 +83,23 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" 
-          href="#collapse<?php echo $i; ?>">
-		  <?php echo $_category->getName(); ?>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>">
+		  <?php echo $this->__($_category->getName()); ?>
           </a>
         </h4>
       </div>
-      
       <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse">
-      <?php $_category->getId();
-	   $_category = Mage::getModel('catalog/category')->load($_category->getId());
-        $_subcategories = $_category->getChildrenCategories();
+<?php $_category->getId();
+	$_category = Mage::getModel('catalog/category')->load($_category->getId());
+      $_subcategories = $_category->getChildrenCategories();
         if (count($_subcategories) > 0){
-       foreach($_subcategories as $_subcategory){
-		 ?>
-        <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a>
+       foreach($_subcategories as $_subcategory){ ?>
+        <a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $this->__($_subcategory->getName()); ?></a>
          <?php $_subcategory->getId();
        }
-		}
-	    ?>
-      </div>
-      
-     
+	}
+  ?>
+</div>
     </div>
     <?php
 	if( $_category->getName() == 'Caps' ){
@@ -55,9 +108,7 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse7" data-parent="#accordion" 
-          href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=255&custom=1"?>">
-		  The Crazy Ones
-          </a>
+          href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=255&custom=1"?>"><?php echo $this->__('The Crazy Ones'); ?></a>
         </h4>
       </div>
     </div>
@@ -65,14 +116,12 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" 
-          href="#collapse5">
-		  Collections
-          </a>
+          href="#collapse5"><?php echo $this->__('Collections'); ?></a>
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
-        <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>">men</a>
-        <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>">women</a>
+        <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>"><?php echo $this->__('Men'); ?></a>
+        <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>"><?php echo $this->__('Women'); ?></a>
       </div>
     </div>
     <?php

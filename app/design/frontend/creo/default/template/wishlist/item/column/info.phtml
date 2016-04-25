@@ -41,7 +41,7 @@ $simple_product_attr = Mage::getModel('catalog/product')->load($simple_product_i
 
 <div class="product-details">
 
-    <h3>PRODUCT DETAILS</h3>
+    <h3><?php echo $this->__('PRODUCT DETAILS'); ?></h3>
  <strong class="title">
     <a href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a>
  </strong>
@@ -95,7 +95,7 @@ if(!($item_s)){
 
 
 
-    <h3>PRODUCT DETAILS</h3>
+    <h3><?php echo $this->__('PRODUCT DETAILS'); ?></h3>
  <strong class="title">
     <a href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a>
  </strong>

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <h2>Track your shipments </h2>
+    <h2><?php echo $this->__('Track your shipments'); ?> </h2>
   </div>
 </div>
 <div class="row">
@@ -8,19 +8,19 @@
     <form id="shipment_track_frm" class="bulk-order-form track-shipment-form" action="" method="get" name="shipment_track_frm">
       <div class="form-row">
         <div class="form-select-col">
-          <label for="country">*Shipment</label>
+          <label for="country">*<?php echo $this->__('Shipment'); ?></label>
           <span class="fake-select">
           <select id="shipment" name="shipment">
-            <option title="Speedex" value="speedex">Speedex</option>
-            <option title="Fedex" value="fedex">Fedex</option>
+            <option title="Speedex" value="speedex"><?php echo $this->__('Speedex'); ?></option>
+            <option title="Fedex" value="fedex"><?php echo $this->__('Fedex'); ?></option>
           </select>
           </span></div>
         <div class="form-select-col second-child">
-          <label for="city">*Tracking number</label>
-          <input id="tracking_number" class="required-entry" type="text" placeholder="Please enter tracking number" name="tracking_number" />
+          <label for="city">*<?php echo $this->__('Tracking number'); ?></label>
+          <input id="tracking_number" class="required-entry" type="text" placeholder="<?php echo $this->__('Please enter tracking number'); ?>" name="tracking_number" />
         </div>
         <div class="form-select-col third-child">
-          <input type="button" value="SUBMIT" onclick="return loadIframe('ifrm');" />
+          <input type="button" value="<?php echo $this->__('SUBMIT'); ?>" onclick="return loadIframe('ifrm');" />
         </div>
       </div>
       <!-- <div class="form-row">
@@ -37,7 +37,8 @@
 <script type="text/javascript">// <![CDATA[
 //< ![CDATA[
   var myForm= new VarienForm('shipment_track_frm', true);
-// ]]></script> 
+// ]]>
+</script>
 <script type="text/javascript">
 function loadIframe(iframeName) {
 	var ship_val = jQuery('#shipment').val();
@@ -50,7 +51,7 @@ function loadIframe(iframeName) {
 	}
     var $iframe = jQuery('#' + iframeName);
     if ( $iframe.length ) {
-        $iframe.attr('src',url);   
+        $iframe.attr('src',url);
         return false;
     }
     return true;

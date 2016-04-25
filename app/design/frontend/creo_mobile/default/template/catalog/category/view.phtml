@@ -78,7 +78,7 @@
     <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
         <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
     <?php endif; ?>
-    <h2><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h2>
+    <h2><?php echo $this->__($_helper->categoryAttribute($_category, $_category->getName(), 'name')); ?></h2>
 <span class="results-description">Showing 1–12 of 100 results</span>
 </div>
 </div>

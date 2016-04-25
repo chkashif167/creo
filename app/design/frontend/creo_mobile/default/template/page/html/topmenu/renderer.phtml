@@ -96,7 +96,7 @@
   </ul>
   </div>
   </li>
-  <li class="drop-parent"> <a href="#">ACCESSORIES</a>
+  <li class="drop-parent"> <a href="#"><?php echo $this->__('ACCESSORIES'); ?></a>
 
   <div class="drop">
   <ul class="product-list">
@@ -124,7 +124,7 @@
   $total_count = 0;
   $count = 0;?>
 
-  <li class="drop-parent"> <a href="#">CATEGORIES</a>
+  <li class="drop-parent"> <a href="#"><?php echo $this->__('CATEGORIES'); ?></a>
   <div class="drop">
   <div class="links-holder">
 
@@ -163,7 +163,7 @@
   <li><a href="<?php echo  Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">CREATE</a></li><?php */ ?>
  <?php 
  //$customId = '255';
-  $customId = '259';
+$customId = '259';
  $parent_cat_array = array();
  if(Mage::app()->getFrontController()->getRequest()->getControllerName() == "category"){
  $parentId = Mage::registry('current_category')->getParentId();
@@ -179,29 +179,27 @@
  <?php if (Mage::getSingleton('cms/page')->getIdentifier() == 'home' && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
 ) {
     ?>
-<li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<li class="active"><a href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
 <?php }else{?>
-<li><a href="<?php echo Mage::getBaseUrl(); ?>">Home</a></li>
+<li><a href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a></li>
 <?php
 }
 ?>
 <li <?php if (in_array("clothing",$parent_cat_array) || $_GET['id']==3) {
     echo'class="active"';
-} ?>> <a href="javascript:void(0)">CLOTHING</a>
+} ?>> <a href="javascript:void(0)"><?php echo $this->__('CLOTHING'); ?></a>
     <div class="drop">
-        <div class="links-area">
-           
-            <div class="links-frame">
-                <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=3" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=3" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=3" ?>">NEW</a></li>
-
-                </ul>
+    <div class="links-area">
+      <div class="links-frame">
+          <ul class="sorting-items">
+          <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=3" ?>"><?php echo $this->__('Trending'); ?></a></li>
+          <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=3" ?>"><?php echo $this->__('Best Seller'); ?></a></li>
+          <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=3" ?>"><?php echo $this->__('NEW'); ?></a></li>
+      </ul>
 
 
  <ul class="links">
- <li> <strong> Men </strong> </li>
+ <li> <strong><?php echo $this->__('Men'); ?> </strong> </li>
 <?php
 
 $children_category = Mage::getModel('catalog/category')->load('57')->getChildrenCategories();
@@ -209,24 +207,24 @@ $children_category = Mage::getModel('catalog/category')->load('57')->getChildren
 $m=0;
 foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
-    echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+    echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
     if($m==0){
-      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/men/tshirt.html?styles=22">Tank Top</a></li>';
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/men/tshirt.html?styles=22">'.$this->__("Tank Top").'</a></li>';
     }
     $m++;
 endforeach;
 ?>
                 </ul>
    <ul class="links">
-   <li> <strong> Women </strong> </li>
+   <li> <strong><?php echo $this->__('Women'); ?> </strong> </li>
 <?php
 $children_category = Mage::getModel('catalog/category')->load('58')->getChildrenCategories();
 $w=0;
 foreach ($children_category as $category):
     $_category = Mage::getModel('catalog/category')->load($category->getId());
-    echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+    echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
     if($w==0){
-      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/women/tshirt.html?styles=22">Tank Top</a></li>';
+      echo '<li><a href="' . Mage::getBaseUrl() . 'clothing/women/tshirt.html?styles=22">'.$this->__("Tank Top").'</a></li>';
     }
     $w++;
 endforeach;
@@ -239,15 +237,15 @@ endforeach;
 </li>
 <li <?php if (in_array("accessories",$parent_cat_array) || $_GET['id']==5) {
                     echo'class="active"';
-                } ?>> <a href="javascript:void(0)">ACCESSORIES</a>
+                } ?>> <a href="javascript:void(0)"><?php echo $this->__('ACCESSORIES'); ?></a>
     <div class="drop"> 
         <div class="links-area">
            
             <div class="links-frame">
                 <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=5" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=5" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=5" ?>">NEW</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=5" ?>"><?php echo $this->__('Trending'); ?></a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=5" ?>"><?php echo $this->__('Best Seller'); ?></a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=5" ?>"><?php echo $this->__('NEW'); ?></a></li>
 
                 </ul>
                 <ul class="links">
@@ -259,7 +257,7 @@ endforeach;
                     $children_category = Mage::getModel('catalog/category')->load('5')->getChildrenCategories();
                     foreach ($children_category as $category):
                         $_category = Mage::getModel('catalog/category')->load($category->getId());
-                        echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+                        echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
                     endforeach;
                     ?>
                 </ul>
@@ -271,15 +269,15 @@ endforeach;
 </li>
 <li <?php if(in_array("caps",$parent_cat_array) || $_GET['id']==54) {
                     echo'class="active"';
-                } ?>><a href="javascript:void(0)">CAPS</a>
+                } ?>><a href="javascript:void(0)"><?php echo $this->__('CAPS'); ?></a>
     <div class="drop">
         <div class="links-area">
            
             <div class="links-frame">
                 <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=54" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=54" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=54" ?>">NEW</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/trending?id=54" ?>"><?php echo $this->__('Trending'); ?></a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/bestseller?id=54" ?>"><?php echo $this->__('Best Seller'); ?></a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "sellers/index/newcollection?id=54" ?>"><?php echo $this->__('NEW'); ?></a></li>
 
                 </ul>
                 <ul class="links">
@@ -291,7 +289,7 @@ endforeach;
                     $children_category = Mage::getModel('catalog/category')->load('54')->getChildrenCategories();
                     foreach ($children_category as $category):
                         $_category = Mage::getModel('catalog/category')->load($category->getId());
-                        echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+                        echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
                     endforeach;
                     ?>
                 </ul>
@@ -302,29 +300,31 @@ endforeach;
 </li>
 <li <?php if(strstr($ccurrentUrl,"custom")) {
                     echo'class="active"';
-                } ?>> <a href="<?php echo Mage::getBaseUrl(). "clothing.html?universal_categories=".$customId."&custom=1" ?>">Brands</a>
+
+                } ?>> <a href="<?php echo Mage::getBaseUrl(). "clothing.html?universal_categories=".$customId."&custom=1" ?>"><?php echo $this->__('Brands'); ?></a>
+
 </li>
 <li <?php if(in_array("collections",$parent_cat_array)) {
                     echo'class="active"';
                 } ?>>
-                <!-- <a href="<?php //echo Mage::getBaseUrl() . "collections/index/categories" ?>">COLLECTIONS</a> -->
-                <a>COLLECTIONS</a>
+                <!-- <a href="<?php //echo Mage::getBaseUrl() . "collections/index/categories" ?>"><?php echo $this->__('COLLECTIONS'); ?></a> -->
+                <a><?php echo $this->__('COLLECTIONS'); ?></a>
     <div class="drop">
         <div class="links-area">
             <div class="links-frame">
- 				<ul class="links">
- <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>"><strong> Men </strong> </a></li>
-                </ul>
-			    <ul class="links">
-   <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>"><strong> Women </strong> </a></li>
-                </ul>
+              <ul class="links">
+              <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/men" ?>"><strong><?php echo $this->__('Men'); ?> </strong> </a></li>
+              </ul>
+              <ul class="links">
+              <li> <a href="<?php echo Mage::getBaseUrl() . "collections/index/women" ?>"><strong><?php echo $this->__('Women'); ?> </strong> </a></li>
+              </ul>
             </div>
         </div>
     </div>
 </li>
 <!--<li <?php if (in_array("categories",$parent_cat_array)) {
                     echo'class="active"';
-                } ?>> <a href="javascript:void(0)">CATEGORIES</a>
+                } ?>> <a href="javascript:void(0)"><?php echo $this->__('CATEGORIES'); ?></a>
 
 
     <div class="drop">
@@ -332,9 +332,9 @@ endforeach;
            
             <div class="links-frame">
                 <ul class="sorting-items">
-                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/trending?id=6" ?>">Trending</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/seller?id=6" ?>">Best Seller</a></li>
-                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/new?id=6" ?>">NEW</a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/trending?id=6" ?>"><?php echo $this->__('Trending'); ?></a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/seller?id=6" ?>"><?php echo $this->__('Best Seller'); ?></a></li>
+                    <li><a href="<?php echo Mage::getBaseUrl() . "extension/index/new?id=6" ?>"><?php echo $this->__('NEW'); ?></a></li>
 
                 </ul>
                 <ul class="links">
@@ -348,7 +348,7 @@ endforeach;
                         }
                         $i++;
                         $_category = Mage::getModel('catalog/category')->load($category->getId());
-                        echo '<li><a href="' . $_category->getUrl() . '"> ' . $_category->getName() . '</a></li>';
+                        echo '<li><a href="' . $_category->getUrl() . '"> ' . $this->__($_category->getName()) . '</a></li>';
                     endforeach;
                     ?>
                 </ul>
@@ -356,7 +356,7 @@ endforeach;
         </div>
         <div class="featured-items">
             <div class="heading-holder">
-                <h2>Featured</h2>
+                <h2><?php echo $this->__('Featured'); ?></h2>
             </div>
             <ul class="featured-products">
                 <?php
@@ -364,7 +364,7 @@ endforeach;
                 foreach ($Featured_category as $category):
                     $_category = Mage::getModel('catalog/category')->load($category->getId());
                     if ($_category->featured_category == 1) {
-                        echo '<li><a href="' . $category->getUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+                        echo '<li><a href="' . $category->getUrl() . '"> <strong class="title">' . $this->__($category->getName()) . '</strong></a></li>';
                     }
                 endforeach;
                 ?>
@@ -379,19 +379,19 @@ endforeach;
 <?php /* ?>
 <li class="create_li" <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), 'create.html') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/create/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/account/') == false) {
                     echo'class="active"';
-                } ?>><a href="<?php echo Mage::getModel('catalog/category')->load(47)->getUrl(); ?>">DESIGN YOUR OWN</a></li>
+                } ?>><a href="<?php echo Mage::getModel('catalog/category')->load(47)->getUrl(); ?>"><?php echo $this->__('DESIGN YOUR OWN'); ?></a></li>
 <?php */ ?>
 	<?php
 		$sessionCustomer = Mage::getSingleton("customer/session");
         if($sessionCustomer->isLoggedIn()) {
         ?>
-        <li class="slide_nav_my_account"> <a href="<?php echo Mage::getUrl('customer/account'); ?>"> My Dashboard </a> </li>
-         <li class="slide_nav_logout"><a href="<?php echo Mage::getUrl('customer/account/logout'); ?>"> Logout</a></li>
+        <li class="slide_nav_my_account"> <a href="<?php echo Mage::getUrl('customer/account'); ?>"> <?php echo $this->__('My Dashboard'); ?> </a> </li>
+         <li class="slide_nav_logout"><a href="<?php echo Mage::getUrl('customer/account/logout'); ?>"> <?php echo $this->__('Logout'); ?></a></li>
         <?php
         }else{
 		?>
-        <li class="slide_nav_login"><a href="<?php echo Mage::getUrl('customer/account/login'); ?>"> Login</a></li>
-        <li class="slide_nav_register"><a href="<?php echo Mage::getUrl('customer/account/create'); ?>"> Register</a></li>
+        <li class="slide_nav_login"><a href="<?php echo Mage::getUrl('customer/account/login'); ?>"> <?php echo $this->__('Login'); ?></a></li>
+        <li class="slide_nav_register"><a href="<?php echo Mage::getUrl('customer/account/create'); ?>"> <?php echo $this->__('Register'); ?></a></li>
         <?php	
 		}
         ?>

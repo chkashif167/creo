@@ -26,21 +26,21 @@
 ?>
 
 	<div class="column large">
-											<h4><?php echo $this->__('ADDRESS BOOK') ?></h4>
-											<div class="column-content">
-												<div class="address-area">
-													<span class="address-title"><?php echo $this->__('Default Billing Address') ?></span>
-													<span class="address"><?php echo $this->getPrimaryBillingAddressHtml() ?></span>
-													<a class="edit" href="<?php echo $this->getPrimaryBillingAddressEditUrl() ?>">Edit Address</a>
-												</div>
-												<div class="address-area">
-													<span class="address-title"><?php echo $this->__('Default Shipping Address') ?></span>
-													<span class="address"><?php echo $this->getPrimaryShippingAddressHtml() ?></span>
-													<a class="edit" href="<?php echo $this->getPrimaryShippingAddressEditUrl() ?>">Edit Address</a>
-												</div>
-												<a href="<?php echo $this->getAddressBookUrl() ?>" class="edit-icon"><i class="icon-pencil"></i> Edit </a>
-											</div>
-										</div>
+	<h4><?php echo $this->__('ADDRESS BOOK') ?></h4>
+	<div class="column-content">
+		<div class="address-area">
+			<span class="address-title"><?php echo $this->__('Default Billing Address') ?></span>
+			<span class="address"><?php echo $this->getPrimaryBillingAddressHtml() ?></span>
+			<a class="edit" href="<?php echo $this->getPrimaryBillingAddressEditUrl() ?>"><?php echo $this->__('Edit Address'); ?></a>
+		</div>
+		<div class="address-area">
+			<span class="address-title"><?php echo $this->__('Default Shipping Address') ?></span>
+			<span class="address"><?php echo $this->getPrimaryShippingAddressHtml() ?></span>
+			<a class="edit" href="<?php echo $this->getPrimaryShippingAddressEditUrl() ?>"><?php echo $this->__('Edit Address'); ?></a>
+		</div>
+		<a href="<?php echo $this->getAddressBookUrl() ?>" class="edit-icon"><i class="icon-pencil"></i> <?php echo $this->__('Edit'); ?> </a>
+	</div>
+</div>
 
 <?php /*?><div class="box-account box-info">
     <div class="box-head">

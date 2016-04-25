@@ -117,10 +117,25 @@ if($_product->stock_item->is_in_stock == 0){
 <i class="old-price"><?php echo Mage::helper('core')->currency($_product->getSpecialPrice(), true, false); ?></i> 
 <?php endif;?>
 <?php echo $_formattedSpecialPrice = Mage::helper('core')->currency($_product->getFinalPrice(), true, false); ?><?php */?>
+<?php  $minipriceDigit = $this->getPriceHtml($_product); ?>
 
-<?php echo $this->getPriceHtml($_product); ?>
+<?php $storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){
+$miniconvertedDigit = strip_tags(htmlspecialchars_decode($minipriceDigit));
+$miniconvertedDigit = convertArabicNumbers($miniconvertedDigit);
+echo $miniconvertedDigit;
+} else {
+echo $minipriceDigit;
+}
+?>
 <?php echo $this->getChildHtml('bundle_prices') ?>
 <?php echo $this->getTierPriceHtml() ?>
+
+<?php $storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){
+echo Mage::app()->getStore()->getCurrentCurrencyCode();
+}
+?>
 
  </div>
 <span class="availability"><?php echo $this->__('Availability'); ?>: <?php echo $this->__($this->getChildHtml('product_type_availability')); ?></span>
@@ -140,7 +155,20 @@ if($_product->stock_item->is_in_stock == 0){
         <p><?php print $this->__($_product->getDesign()); ?> </p>
     </div>
 </div>
-<a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span><?php echo $this->__('SIZE GUIDE'); ?>
+<?php
+            $gender = $_product->getGender();
+            if ($gender == 24) { ?>
+            <a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span><?php echo $this->__('SIZE GUIDE'); ?>
+            <?php
+            } elseif ($gender == 25) {
+                //echo "Women";
+                ?>
+        <a href="#" class="sizeguide_link" data-toggle="modal" data-target="#sizeGuide"><span><?php echo $this->__('SIZE GUIDE'); ?>
+            <?php
+            } else {
+                echo " ";
+            }
+            ?>
 <?php //echo $attribute = $_product->getResource()->getAttribute('short_description')->getFrontendLabel(); ?></span></a>
 <!-- Modal -->
 <div class="modal fade" id="sizeGuide" tabindex="-1" role="dialog">
@@ -173,7 +201,7 @@ if($_product->stock_item->is_in_stock == 0){
                         <?php endif; ?>
                     </div>
                     <?php  if(!$_product->isSaleable()): ?>
-                        <?php echo $this->__($this->getChildHtml('addto')); ?>
+                        <?php echo $this->getChildHtml('addto'); ?>
                       <?php endif; ?>
 
                     <?php // jawwad.nissar work starts  ?>
@@ -269,6 +297,11 @@ if($_product->stock_item->is_in_stock == 0){
                                 type : 'post',
                                 data: data,
                                 success: function(data){
+                                  var dataLayer=[];
+                                    //adding data to data layers start
+                                    dataLayer.push({ 'event': 'addToCart','name':data.productName, 'id':data.productId, 'price':data.productPrice, 'currency':data.currentCurrency, 'quantity':data.productQty, 'sku':data.productSku });
+                                    //adding data to data layers end
+
                                 jQuery('.fme_loading_filters').hide();
                                         //alert(data.status + ": " + data.message);
                                         if (jQuery('#header-cart')) {
@@ -438,12 +471,9 @@ if($_product->stock_item->is_in_stock == 0){
             top: 45%;
             z-index: 900;
         }
-    </style>
-    
-    
-    
-<script type="application/javascript">    
-    //Get associated product price
+</style>
+<script type="application/javascript">
+//Get associated product price
 <?php if($_product->isConfigurable()):?>
 function isValidPrice(price)
 {
@@ -514,12 +544,12 @@ function hasDefaultSelection()
 
 jQuery(document).ready(function(){
     jQuery("[name*='super_attribute'], [name*='options']").on('change', function(){
-        loadPriceWithAjax();
+      //  loadPriceWithAjax();
     });
     
     //if any of the default attribute or option is selected do send the ajax request
     if(hasDefaultSelection()) {
-        loadPriceWithAjax();
+        //loadPriceWithAjax();
     }
 });
 <?php endif;?>

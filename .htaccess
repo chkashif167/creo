@@ -9,7 +9,7 @@
 ############################################
 ## GoDaddy specific options
 
-   Options -MultiViews
+#   Options -MultiViews
 
 ## you might also need to add this line to php.ini
 ##     cgi.fix_pathinfo = 1
@@ -32,9 +32,8 @@
 ## adjust memory limit
 
 #    php_value memory_limit 64M
-    php_value memory_limit 512M
-    php_value max_file_uploads 25
-    php_value max_execution_time 6000000
+    php_value memory_limit 256M
+    php_value max_execution_time 18000
 
 ############################################
 ## disable magic quotes for php request vars
@@ -121,7 +120,7 @@
 ## you can put here your magento root folder
 ## path relative to web root
 
-    RewriteBase /creo
+    #RewriteBase /magento/
 
 ############################################
 ## uncomment next line to enable light API calls processing
@@ -168,6 +167,7 @@
 ## rewrite everything else to index.php
 
     RewriteRule .* index.php [L]
+
 </IfModule>
 
 
@@ -207,15 +207,28 @@
 ## http://developer.yahoo.com/performance/rules.html#etags
 
     #FileETag none
- 
+
+###########################################
+## Deny access to cron.php
+    <Files cron.php>
+
 ############################################
-# Allow cross domain services access   
-<IfModule mod_headers.c>
-    #Header set Access-Control-Allow-Origin "*"
-    #Access-Control-Allow-Headers : SOAPAction
-    #Access-Control-Allow-Methods : POST,GET,OPTIONS
-    	Header add Access-Control-Allow-Headers "SOAPAction"
-    	Header add Access-Control-Allow-Origin "*"
-	Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type, Authorization"
-	Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
-</IfModule>
+## uncomment next lines to enable cron access with base HTTP authorization
+## http://httpd.apache.org/docs/2.2/howto/auth.html
+##
+## Warning: .htpasswd file should be placed somewhere not accessible from the web.
+## This is so that folks cannot download the password file.
+## For example, if your documents are served out of /usr/local/apache/htdocs
+## you might want to put the password file(s) in /usr/local/apache/.
+
+        #AuthName "Cron auth"
+        #AuthUserFile ../.htpasswd
+        #AuthType basic
+        #Require valid-user
+
+############################################
+
+        Order allow,deny
+        Deny from all
+
+    </Files>

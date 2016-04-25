@@ -31,7 +31,7 @@ Release Notes
 - Lightbox product detail
 - Creo Mobile email templates
 - Search on creo mobile
-- Restricting to only those attributes which are assigned to products in menu or men and women 
+- Restricting to only those attributes which are assigned to products in menu or men and women
 - Sorting Images in collection page for men and women
 - Customer who view this also viewed plugin installation and customization
 - Fetchr extension added

@@ -35,11 +35,10 @@
                 </div>
                 <a href="<?php echo Mage::getUrl('customer/account/forgotpassword') ?>" class="f-left ajaxlogin-forgot"><?php echo $this->__('Forgot Your Password?') ?></a>
                 <div class="row">
-          	<div class="col-xs-12 text-center">
-				<a class="text-center" href="<?php echo Mage::getUrl('customer/account/create'); ?>">Create account</a>
-                <div class="login-fb col-xs-12" style="margin-bottom:20px;">
+          	<div class="col-xs-12 text-center"><a class="text-center" href="<?php echo Mage::getUrl('customer/account/create'); ?>"><?php echo $this->__('Create account'); ?></a>
+            <div class="login-fb col-xs-12" style="margin-bottom:20px;">
                     <?php echo $this->getLayout()->createBlock('fblogin/fblogin')->setTemplate('fblogin/bt_fblogin.phtml')->toHtml() ; ?>
-    			</div>
+    	</div>
             </div>
           </div>
             </div>
@@ -79,11 +78,11 @@
             </div>
             <div class="buttons-set">
                 <button type="submit" title="<?php echo $this->__('Submit') ?>" id="btn-forgot" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
-				<div class="progress-indicator">
+	<div class="progress-indicator">
                     <span class="please-wait" id="forgot-please-wait" style="display:none;">
                         <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" class="v-middle" alt=""/>
                     </span>
-                </div>
+            </div>
                 <p class="back-link"><a href="<?php echo $this->helper('customer')->getLoginUrl() ?>" class="ajaxlogin-login"><?php echo $this->__('Back to Login') ?></a></p>
             </div>
         </form>

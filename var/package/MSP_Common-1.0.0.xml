@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>MSP_Common</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>MageSpecialist Common</summary>
+    <description>MageSpecialist Common</description>
+    <notes>Enjoy it ;)</notes>
+    <authors><author><name>Riccardo Tempesta</name><user>idealiagroup</user><email>tempesta@idealiagroup.com</email></author><author><name>Paolo Vecchiocattivi</name><user>idealiagroup</user><email>vecchiocattivi@idealiagroup.com</email></author></authors>
+    <date>2013-05-28</date>
+    <time>14:08:11</time>
+    <contents><target name="magecommunity"><dir name="MSP"><dir name="Common"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Fieldset"><dir name="Hint"><file name="Credits.php" hash="3aa25d99826275914c0bb972b22896e8"/></dir></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="004877c2e42303fa8a500ae619afcd1c"/></dir><dir name="Model"><file name="Feed.php" hash="8a871add9b17fb15be9becb599bec57a"/><file name="Observer.php" hash="7471ec46bf3b42f8d9fb37bbd6dfeffe"/></dir><dir name="etc"><file name="config.xml" hash="81439370ed19e6a471d9bf9dcb96625d"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="MSP_Common.xml" hash="9fa6d856b26f5ee821e985e059a73759"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="msp_common.xml" hash="7b8fce867ae0870a682e127b53fa3181"/></dir><dir name="template"><dir name="msp_common"><dir name="system"><dir name="config"><dir name="fieldset"><dir name="hint"><file name="credits.phtml" hash="e217f0ca6cf05e2e64ef51aae12e3096"/></dir></dir></dir></dir></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="msp_common"><file name="common.css" hash="f07d7d26fdbfc6418152aaaa29bf95bb"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

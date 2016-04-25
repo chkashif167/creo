@@ -223,24 +223,6 @@ endforeach;
 <span class="featured"><?php echo $this->__('Featured'); ?></span>
 </div>
 <ul class="featured-products">
-<!--    <li>
-<a href="#">
-  <img alt="" src="images/img18.jpg">
-  <span class="title">CLasSIC POLO</span>
-</a>
-</li>
-<li>
-<a href="#">
-  <img alt="" src="images/img19.jpg">
-  <span class="title">VINTAGE/COOL</span>
-</a>
-</li>
-<li>
-<a href="#">
-  <img alt="" src="images/img20.jpg">
-  <span class="title">TANK TOPS</span>
-</a>
-</li>-->
 <?php $clothingStatic = $this->getLayout()->createBlock('cms/block')->setBlockId('clothing-featured-static')->toHtml();
 if($clothingStatic){
   echo $clothingStatic;
@@ -250,7 +232,7 @@ $Featured_category = Mage::getModel('catalog/category')->load('57')->getChildren
 foreach ($Featured_category as $category):
 $_category = Mage::getModel('catalog/category')->load($category->getId());
 if ($_category->featured_category == 1) {
-echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $category->getName() . '</strong></a></li>';
+echo '<li><a href="' . $category->getUrl() . '"><img alt="" src=" ' . Mage::getModel('catalog/category')->load($category->getId())->getImageUrl() . '"> <strong class="title">' . $this->__($category->getName()) . '</strong></a></li>';
 }
 endforeach;
 ?>
@@ -349,9 +331,8 @@ endforeach;
 </div>
 </li>
 <li <?php if(strstr($ccurrentUrl,"custom")) {
-
-                    echo'class="active"';
-                } ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=".$customId."&custom=1" ?>">Brands</a>
+echo'class="active"';
+} ?>> <a href="<?php echo Mage::getBaseUrl() . "clothing.html?universal_categories=".$customId."&custom=1" ?>"><?php echo $this->__('Brands'); ?></a>
 
 </li>
 <!-- Menu active class added-->

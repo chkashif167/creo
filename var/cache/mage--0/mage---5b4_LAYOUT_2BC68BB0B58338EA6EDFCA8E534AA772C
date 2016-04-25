@@ -1,0 +1,36 @@
+<remove name="right"/>
+<remove name="left"/>
+<block type="checkout/onepage_payment_methods" name="checkout.payment.method" template="onestepcheckout/onepage/payment/methods.phtml">
+   <action method="setMethodFormTemplate">
+      <method>purchaseorder</method>
+      <template>payment/form/purchaseorder.phtml</template>
+   </action>
+</block>
+<block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="onestepcheckout/onepage/coupon.phtml"/>
+<block type="checkout/onepage_shipping_method_available" name="checkout.shipping.method" template="checkout/onepage/shipping_method/available.phtml"/>
+<block type="checkout/onepage_review_info" name="checkout.review" template="onestepcheckout/onepage/review/info.phtml">
+   <action method="addItemRender">
+      <type>default</type>
+      <block>checkout/cart_item_renderer</block>
+      <template>onestepcheckout/onepage/review/item.phtml</template>
+   </action>
+   <action method="addItemRender">
+      <type>grouped</type>
+      <block>checkout/cart_item_renderer_grouped</block>
+      <template>onestepcheckout/onepage/review/item.phtml</template>
+   </action>
+   <action method="addItemRender">
+      <type>configurable</type>
+      <block>checkout/cart_item_renderer_configurable</block>
+      <template>onestepcheckout/onepage/review/item.phtml</template>
+   </action>
+   <block type="checkout/cart_totals" name="checkout.onepage.review.info.totals" as="totals" template="onestepcheckout/onepage/review/totals.phtml"/>
+   <block type="core/text_list" name="checkout.onepage.review.info.items.before" as="items_before"/>
+</block>
+<reference name="checkout.onepage.review.info.items.before">
+   <block name="checkoutapi.jsinit" type="checkoutapi_chargePayment/checkoutjs">
+      <action method="setTemplate" ifconfig="payment/creditcard/active">
+         <template>chargepayment/jsinit.phtml</template>
+      </action>
+   </block>
+</reference>

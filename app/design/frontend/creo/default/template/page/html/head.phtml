@@ -32,9 +32,9 @@ if(Mage::helper('mobiledetect')->isMobile() && !Mage::helper('mobiledetect')->is
     echo '<meta name="viewport" content="initial-scale=1.0, width=device-width" />';
 }
 ?>
-<title><?php echo $this->getTitle() ?></title>
-<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
-<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<title><?php echo $this->__($this->getTitle()); ?></title>
+<meta name="description" content="<?php echo $this->__(htmlspecialchars($this->getDescription())); ?>" />
+<meta name="keywords" content="<?php echo $this->__(htmlspecialchars($this->getKeywords())); ?>" />
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
@@ -46,10 +46,74 @@ if(Mage::helper('mobiledetect')->isMobile() && !Mage::helper('mobiledetect')->is
 //]]>
 </script>
 <![endif]-->
+<script>
+window.errors_arr = [];
+errors_arr['validate-emailAdress'] = "<?php echo $this->__('Email Adress is a required field.'); ?>";
+errors_arr['validate-passwordlogin'] = "<?php echo $this->__('Password is a required field.'); ?>";
+errors_arr['validate-tshirt-required'] = "<?php echo $this->__('Please make sure to select tshirt color'); ?>";
+errors_arr['validate-tshirt-size'] = "<?php echo $this->__('Please make sure to select size'); ?>";
+errors_arr['validate-tshirt-style'] = "<?php echo $this->__('Please make sure to select style'); ?>";
+errors_arr['validate-alert'] = "<?php echo $this->__('Alert!'); ?>";
+errors_arr['validate-tshirt-polo-color'] = "<?php echo $this->__('Please make sure to select polo color'); ?>";
+errors_arr['validate-tshirt-print-color'] = "<?php echo $this->__('Please make sure to select print color'); ?>";
+errors_arr['validate-phone-model'] = "<?php echo $this->__('Please make sure to select phone model'); ?>";
+errors_arr['validate-case-color'] = "<?php echo $this->__('Please make sure to select case color'); ?>";
+errors_arr['validate-cap-theme'] = "<?php echo $this->__('Please select cap theme'); ?>";
+errors_arr['validate-cap-font-color'] = "<?php echo $this->__('Please select a cap font color'); ?>";
+errors_arr['validate-cap-font-style']= "<?php echo $this->__('Please select font style'); ?>";
+errors_arr['validate-cap-text-box1'] = "<?php echo $this->__('Please enter text to box 1'); ?>";
+errors_arr['validate-cap-character-box1'] = "<?php echo $this->__('Please enter only one character to box 1'); ?>";
+errors_arr['validate-cap-text-box2'] = "<?php echo $this->__('Please enter text to box 2'); ?>";
+errors_arr['validate-cap-character-box2'] = "<?php echo $this->__('Please enter only one character to box 2'); ?>";
+errors_arr['validate-okay'] = "<?php echo $this->__('okay'); ?>";
+errors_arr['validate-cancel'] = "<?php echo $this->__('cancel'); ?>";
+errors_arr['validate-confirm'] = "<?php echo $this->__('Confirm'); ?>";
+errors_arr['validate-confirm-remove-from-cart-message'] = "<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?'); ?>";
+
+
+</script>
+<?php
+/*
+/////////////////////
+This function has been created by Abdulfattah alhazmi
+Roles:
+To convert Arabic/Farsi Numbers (٠‎ - ١‎ - ٢‎ - ٣‎ - ٤‎ - ٥‎ - ٦‎ - ٧‎ - ٨‎ - ٩‎) 
+TO the corrosponding English numbers (0-1-2-3-4-5-6-7-8-9)
+http://hazmi.co.cc
+/////////////////////
+*/
+function convertArabicNumbers($arabic) {
+    $trans = array(
+      "0" => "&#1632;",
+      "1" =>"&#1633;",
+      "2" => "&#1634;",
+       "3" => "&#1635;",
+       "4" => "&#1636;",
+       "5" => "&#1637;",
+       "6" => "&#1638;",
+       "7" => "&#1639;",
+       "8" => "&#1640;",
+       "9" => "&#1641;",
+
+      // "0" => "0",
+      // "1" =>"1",
+      // "2" => "2",
+      //  "3" => "3",
+      //  "4" => "4",
+      //  "5" => "5",
+      //  "6" => "6",
+      //  "7" => "7",
+      //  "8" => "8",
+      //  "9" => "9",
+    );
+    return strtr($arabic,$trans);
+}
+?>
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
+
 
 <script>
 function getQueryVar(variable)
@@ -72,4 +136,88 @@ function changeUrl(page, url) {
   }
 }
 var cat_attrs = [];
+var datalayer=[];
 </script>
+
+<?php
+if($_Crrentproduct = Mage::registry('current_product')) {
+    ?>
+    <script type="text/javascript">
+      datalayer[{
+            "sku":"<?php echo $_Crrentproduct->getSku();?>",
+            "name":"<?php echo $_Crrentproduct->getName();?>",
+            "category":"<?php echo Mage::getModel('catalog/category')->load($_Crrentproduct->getCategoryId())->getName();?>",
+            "categoryId":"<?php echo $_Crrentproduct->getCategoryId();?>",
+            "price":"<?php echo $_Crrentproduct->getFinalPrice();?>",
+            "currency":"<?php echo Mage::app()->getStore()->getCurrentCurrencyCode();?>"
+        }];
+    
+    </script>
+<?php
+}
+
+
+$request = $this->getRequest();
+$module = $request->getModuleName();
+$controller = $request->getControllerName();
+$action = $request->getActionName();
+if($module == 'ajax' && $controller == 'index' && $action == 'index')
+{
+  $cart='';
+  $cart = Mage::getModel('checkout/cart')->getQuote();
+  echo "<script type='text/javascript'>
+  datalayer[ \n";
+  $dl=0;
+  foreach ($cart->getAllVisibleItems() as $item) {
+    $product = $item->getProduct();
+
+    $productName = $item->getProduct()->getName();
+    $productPrice = $item->getProduct()->getPrice();
+    $productCurrency = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+    echo "{\n";
+    echo "sku:'".$item->getProduct()->getSku()."',\n";
+    echo "name:".$productName.",\n";
+    echo "quantity:".$item->getQty().",\n";
+    echo "price:".$productPrice.",\n";
+    echo "currerncy:".$productCurrency;
+
+    echo "\n}";
+    if($dl<count($cart->getAllVisibleItems())-1){
+      echo ",";
+    }
+    $dl++;
+  }
+  echo '];</script>';
+}
+
+if(Mage::app()->getFrontController()->getAction()->getFullActionName()=='onestepcheckout_index_success'){
+
+  $order = Mage::getSingleton('sales/order'); 
+  $order->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId());
+  $_items = $order->getAllVisibleItems();
+
+  echo "<script type='text/javascript'>
+  datalayer[ \n";
+  $dl=0;
+  foreach ($_items as $item) { 
+    $product = $item->getProduct();
+    $productName = $item->getProduct()->getName();
+    $productPrice = $item->getProduct()->getPrice();
+    $productCurrency = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+    echo "{\n";
+    echo "sku:'".$item->getProduct()->getSku()."',\n";
+    echo "name:".$productName.",\n";
+    echo "quantity:".$item->getProduct()->getQty().",\n";
+    echo "price:".$productPrice.",\n";
+    echo "currerncy:".$productCurrency;
+    echo "\n}";
+    if($dl<count($_items)-1){
+        echo ",";
+    }
+    $dl++;
+  }
+  echo '];</script>';
+}
+?>

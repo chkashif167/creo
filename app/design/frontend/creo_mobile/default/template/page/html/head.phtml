@@ -26,7 +26,7 @@
 ?>
 <meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-<title><?php echo $this->getTitle() ?></title>
+<title><?php echo $this->__($this->getTitle()); ?></title>
 <meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
 <meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
@@ -40,10 +40,36 @@
 //]]>
 </script>
 <![endif]-->
+<script>
+window.errors_arr = [];
+errors_arr['validate-emailAdress'] = "<?php echo $this->__('Email Adress is a required field.'); ?>";
+errors_arr['validate-passwordlogin'] = "<?php echo $this->__('Password is a required field.'); ?>";
+errors_arr['validate-tshirt-required'] = "<?php echo $this->__('Please make sure to select tshirt color'); ?>";
+errors_arr['validate-tshirt-size'] = "<?php echo $this->__('Please make sure to select size'); ?>";
+errors_arr['validate-tshirt-style'] = "<?php echo $this->__('Please make sure to select style'); ?>";
+errors_arr['validate-alert'] = "<?php echo $this->__('Alert!'); ?>";
+errors_arr['validate-tshirt-polo-color'] = "<?php echo $this->__('Please make sure to select polo color'); ?>";
+errors_arr['validate-tshirt-print-color'] = "<?php echo $this->__('Please make sure to select print color'); ?>";
+errors_arr['validate-phone-model'] = "<?php echo $this->__('Please make sure to select phone model'); ?>";
+errors_arr['validate-case-color'] = "<?php echo $this->__('Please make sure to select case color'); ?>";
+errors_arr['validate-cap-theme'] = "<?php echo $this->__('Please select cap theme'); ?>";
+errors_arr['validate-cap-font-color'] = "<?php echo $this->__('Please select a cap font color'); ?>";
+errors_arr['validate-cap-font-style']= "<?php echo $this->__('Please select font style'); ?>";
+errors_arr['validate-cap-text-box1'] = "<?php echo $this->__('Please enter text to box 1'); ?>";
+errors_arr['validate-cap-character-box1'] = "<?php echo $this->__('Please enter only one character to box 1'); ?>";
+errors_arr['validate-cap-text-box2'] = "<?php echo $this->__('Please enter text to box 2'); ?>";
+errors_arr['validate-cap-character-box2'] = "<?php echo $this->__('Please enter only one character to box 2'); ?>";
+errors_arr['validate-okay'] = "<?php echo $this->__('okay'); ?>";
+errors_arr['validate-cancel'] = "<?php echo $this->__('cancel'); ?>";
+errors_arr['validate-confirm'] = "<?php echo $this->__('Confirm'); ?>";
+errors_arr['validate-confirm-remove-from-cart-message'] = "<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?'); ?>";
+
+</script>
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
+
 
 <script>
 function getQueryVar(variable)

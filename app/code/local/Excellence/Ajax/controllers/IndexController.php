@@ -56,7 +56,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                 if (!$product) {
 
-                    $response['status'] = 'ERROR';
+                    $response['status'] = $this->__('ERROR');
 
                     $response['message'] = $this->__('Unable to find Product ID');
 
@@ -100,26 +100,44 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                     $checkoutUrl = Mage::helper('checkout/cart')->getCartUrl();
 
-					$buttons = '<div class="checkout-cart-index"><div class="cart-top-area"><div class="btn-holder" style="float:none;"><a href="javascript:;" onclick="jQuery(\'.ajaxAddToCartModal\').modal(\'hide\');"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a><button onclick="window.location=\''.$checkoutUrl.'\';" class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>';
-
-					$message = $this->__('%s has been added to your shopping cart.'.$buttons, Mage::helper('core')->escapeHtml($product->getName()));
-
-                    $response['status'] = 'SUCCESS';
+if(Mage::app()->getLocale()->getLocaleCode()=='ar_SA'){
+$buttons = '<div class="checkout-cart-index"><div class="cart-top-area"><div class="btn-holder" style="float:none;"><a href="javascript:;" onclick="jQuery(\'.ajaxAddToCartModal\').modal(\'hide\');"><span class="span1"><span class="span2">متابعة التسوق</span></span></a><button onclick="window.location=\''.$checkoutUrl.'\';" class="button btn-proceed-checkout btn-checkout" title="باشرالخروج من الفندق" type="button"><span><span>باشرالخروج من الفندق</span></span></button>';
+    $message = $this->__(' %s قد أضيفت إلى سلة التسوق الخاصة بك.'.$buttons, Mage::helper('core')->escapeHtml($product->getName()));
+    $response['status'] = 'نجاح';
+}else{
+$buttons = '<div class="checkout-cart-index"><div class="cart-top-area"><div class="btn-holder" style="float:none;"><a href="javascript:;" onclick="jQuery(\'.ajaxAddToCartModal\').modal(\'hide\');"><span class="span1"><span class="span2">CONTINUE SHOPPING</span></span></a><button onclick="window.location=\''.$checkoutUrl.'\';" class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>';
+$message = $this->__('%s has been added to your shopping cart.'.$buttons, Mage::helper('core')->escapeHtml($product->getName()));
+$response['status'] = $this->__('SUCCESS');
+}
 
                     $response['message'] = $message;
-
                     //New Code Here
-
-					$_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
-
+                    $_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
                     $response['qty'] = $_cartQty;
-
                     $this->loadLayout();
-
                     $minicart = $this->getLayout()->getBlock('minicart_head')->toHtml(); // <-- here's the block
+                    $response['minicart'] = $minicart;
 
-        			$response['minicart'] = $minicart;
 
+                     // getting product info for data layer start.
+                   // echo "<pre>";print_r($params);exit;
+                    $obj = Mage::getModel('catalog/product');
+                    $_product = $obj->load($params['product']);
+//getting child product
+$childProduct = Mage::getModel('catalog/product_type_configurable')->getProductByAttributes($params['super_attribute'], $_product);
+
+////////
+
+                    //$response['productId'] = $params['product'];
+                    // $response['productId'] = $childProduct->getId();
+                    // $response['productSku'] = $childProduct->getSku();
+                    // $response['productName'] = $childProduct->getName();
+                    $response['productQty'] = $params['qty'];
+                    $response['productPrice'] = $_product->getPrice();
+                    $response['currentCurrency'] = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+
+                    // getting product info for data layer end.
                 }
 
             } catch (Mage_Core_Exception $e) {
@@ -144,13 +162,13 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
  
 
-                $response['status'] = 'ERROR';
+                $response['status'] = $this->__('ERROR');
 
                 $response['message'] = $msg;
 
             } catch (Exception $e) {
 
-                $response['status'] = 'ERROR';
+                $response['status'] = $this->__('ERROR');
 
                 $response['message'] = $this->__('Cannot add the item to shopping cart.');
 
@@ -165,7 +183,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
         
 		}elseif($params['isRefresh'] == 1){
             $response = array();
-			$response['status'] = 'SUCCESS';
+			$response['status'] = $this->__('SUCCESS');
 			$_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
             $response['qty'] = $_cartQty;
 			$this->loadLayout();
@@ -322,7 +340,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
         if (!Mage::getStoreConfigFlag('wishlist/general/active')) {
 
-            $response['status'] = 'ERROR';
+            $response['status'] = $this->__('ERROR');
 
             $response['message'] = $this->__('Wishlist Has Been Disabled By Admin');
 
@@ -330,7 +348,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
         if(!Mage::getSingleton('customer/session')->isLoggedIn()){
 
-            $response['status'] = 'ERROR';
+            $response['status'] = $this->__('ERROR');
 
             $response['message'] = $this->__('Please Login First');
 
@@ -346,7 +364,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
             if (!$wishlist) {
 
-                $response['status'] = 'ERROR';
+                $response['status'] = $this->__('ERROR');
 
                 $response['message'] = $this->__('Unable to Create Wishlist');
 
@@ -358,7 +376,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                 if (!$productId) {
 
-                    $response['status'] = 'ERROR';
+                    $response['status'] = $this->__('ERROR');
 
                     $response['message'] = $this->__('Product Not Found');
 
@@ -370,7 +388,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                     if (!$product->getId() || !$product->isVisibleInCatalog()) {
 
-                        $response['status'] = 'ERROR';
+                        $response['status'] = $this->__('ERROR');
 
                         $response['message'] = $this->__('Cannot specify product.');
 
@@ -452,7 +470,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                             
 
-                            $response['status'] = 'SUCCESS';
+                            $response['status'] = $this->__('SUCCESS');
 
                             $response['message'] = $message;
 
@@ -478,7 +496,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                         catch (Mage_Core_Exception $e) {
 
-                            $response['status'] = 'ERROR';
+                            $response['status'] = $this->__('ERROR');
 
                             $response['message'] = $this->__('An error occurred while adding item to wishlist: %s', $e->getMessage());
 
@@ -488,7 +506,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                             mage::log($e->getMessage());
 
-                            $response['status'] = 'ERROR';
+                            $response['status'] = $this->__('ERROR');
 
                             $response['message'] = $this->__('An error occurred while adding item to wishlist.');
 
@@ -534,7 +552,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
 
                 Mage::getSingleton('catalog/product_compare_list')->addProduct($product);
 
-                $response['status'] = 'SUCCESS';
+                $response['status'] = $this->__('SUCCESS');
 
                 $response['message'] = $this->__('The product %s has been added to comparison list.', Mage::helper('core')->escapeHtml($product->getName()));
 

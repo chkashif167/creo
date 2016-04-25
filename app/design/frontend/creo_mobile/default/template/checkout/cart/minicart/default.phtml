@@ -186,7 +186,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <?php if ($this->hasProductUrl()): ?>
                 <a href="<?php echo $this->getProductUrl() ?>">
                 <?php endif; ?>
-                <?php echo $this->escapeHtml($this->getProductName()) ?>
+               <?php echo $this->__($this->escapeHtml($this->getProductName())); ?>
                 <?php if ($this->hasProductUrl()): ?>
                 </a>
             <?php endif; ?>
@@ -195,7 +195,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <?php if ($_options = $this->getOptionList()): ?>
                 <?php foreach ($_options as $_option) : ?>
                     <li>
-                        <label> <?php echo $this->escapeHtml($_option['label']) ?> </label>
+                        <label> <?php echo $this->__($this->escapeHtml($_option['label'])); ?> </label>
                         <span>
                             <?php if (is_array($_option['value'])): ?>
                                 <?php echo nl2br(implode("\n", $_option['value'])) ?>
@@ -207,11 +207,11 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
                 <?php endforeach; ?>
             <?php endif; ?>
             <li>
-                <label> Qty </label>
+                <label> <?php echo $this->__('Qty'); ?> </label>
                 <span> <?php echo $this->getQty() ?> </span>
             </li>
         </ul>
-        <span class="price"><label>Price</label>
+        <span class="price"><label><?php echo $this->__('Price'); ?></label>
             <?php if ($canApplyMsrp): ?>
                 <span class="map-cart-sidebar-item"><?php echo $this->__('See price before order confirmation.'); ?></span>
             <?php else: ?>
@@ -291,9 +291,9 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
             <?php if (!$this->isOnCheckoutPage()): ?>
                 <?php if ((strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/') == true || strpos(Mage::helper('core/url')->getCurrentUrl(), '/onestepcheckout/') == true) && strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/ajaxDelete/') == false && strpos(Mage::helper('core/url')->getCurrentUrl(), '/checkout/cart/add/') == false){
-					?><!--<a href="javascript:;" title="<?php echo $this->__('Remove This Item') ?>" class="cancel"> <?php echo $this->__('') ?> 
+					?><a href="javascript:;" title="<?php echo $this->__('Remove This Item') ?>" class="cancel"> <?php echo $this->__('') ?> 
                     <i class="icon-cancel"></i>
-                </a>--><?php
+                </a><?php
 				}else{?>
                 <a href="<?php echo str_replace('http:','',$this->getAjaxDeleteUrl()); ?>" title="<?php echo $this->__('Remove This Item') ?>"
                    data-confirm="<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>"

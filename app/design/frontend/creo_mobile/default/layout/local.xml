@@ -18,8 +18,8 @@
 <action method="addItem"><type>skin_js</type><script>js/jquery-confirm.min.js</script></action>
 <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
 <!--<action method="addCss"><stylesheet>css/rwd.css</stylesheet></action>-->
-<action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action>
 <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.js</script></action>
+<!-- <action method="addItem"><type>skin_js</type><script>js/simulate/jquery.simulate.ext.js</script></action> -->
 </reference>
 <reference name="footer">
  <remove name="footer_currency" />
@@ -43,7 +43,11 @@
 		<block type="customer/form_login" name="customer_form_login"  before="footer_store_language" template="customer/form/loginpopup.phtml" />
 	 </reference>
 </default>
-
+<STORE_creo_ar>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>style-ar.css</stylesheet></action>
+        </reference>
+</STORE_creo_ar>
 
 <cms_index_index>
 	<reference name="head">
@@ -99,10 +103,9 @@
 <!--<block type="clarion_featuredproduct/list_pager" before="featuredproduct.list.page" name="featured-product.list.pager"/>-->
 </block>
 <block type="cms/block" name="mobilewebsite_bottom_categories">
-		<action method="setBlockId"><block_id>mobilewebsite_bottom_categories</block_id></action>
+<action method="setBlockId"><block_id>mobilewebsite_bottom_categories</block_id></action>
 </block>
-	</reference>
-		
+</reference>
 </cms_index_index>
  <catalog_category_default>
   <reference name="root">
@@ -121,7 +124,7 @@
 
  <catalog_product_view translate="label">
  <reference name="head">
-  <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+  <!-- <action method="addCss"><stylesheet>css/styles.css</stylesheet></action> -->
  </reference>
   </catalog_product_view>
 
