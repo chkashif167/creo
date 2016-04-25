@@ -181,6 +181,9 @@ direction: rtl;
 .category_top_filters .sort-by label {
     margin: 0 0 0 5px;
 }
+.cloud-zoom-big {
+    left: -375px !important;
+}
 @media only screen and (max-width: 1199px){
 
 }
