@@ -456,10 +456,148 @@
       <name>fancybox/source/jquery.fancybox.css</name>
    </action>
 </reference>
+<reference name="top.links">
+   <action method="addLink" translate="label title" module="trackorder" ifconfig="trackorder/trackorder_general/enabled">
+      <label>Trackorder</label>
+      <url helper="trackorder/getTrackorderUrl"/>
+      <title>Trackorder</title>
+      <prepare/>
+      <urlParams/>
+      <position>20</position>
+   </action>
+</reference>
+<reference name="head">
+   <action method="addCss" ifconfig="featuredproduct/featuredproduct/enabled">
+      <stylesheet>css/clarion_featuredproduct.css</stylesheet>
+   </action>
+   <action method="addJs" ifconfig="featuredproduct/featuredproduct/enabled">
+      <script>clarion_featuredproduct/jquery-1.11.1.min.js</script>
+   </action>
+   <action method="addJs" ifconfig="featuredproduct/featuredproduct/enabled">
+      <script>clarion_featuredproduct/jquery_noconflict.js</script>
+   </action>
+   <action method="addItem" ifconfig="featuredproduct/featuredproduct/enabled">
+      <type>skin_js</type>
+      <name>js/clarion_featuredproduct/featuredproduct.js</name>
+   </action>
+</reference>
+<reference name="left">
+   <block type="clarion_featuredproduct/sidebar_left_sidebar" name="featured.product.left.sidebar" before="-">
+      <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled">
+         <template>clarion/featuredproduct/sidebar/left/sidebar.phtml</template>
+      </action>
+      <action method="setFeaturedPrdoctsOnPage">
+         <page>left_sidebar</page>
+      </action>
+      <block type="clarion_featuredproduct/sidebar_left_pager" name="featured.product.left.sidebar.pager" before="-"/>
+   </block>
+</reference>
+<reference name="right">
+   <block type="clarion_featuredproduct/sidebar_right_sidebar" name="featured.product.right.sidebar" before="-">
+      <action method="setTemplate" ifconfig="featuredproduct/featuredproduct/enabled">
+         <template>clarion/featuredproduct/sidebar/right/sidebar.phtml</template>
+      </action>
+      <action method="setFeaturedPrdoctsOnPage">
+         <page>right_sidebar</page>
+      </action>
+      <block type="clarion_featuredproduct/sidebar_right_pager" name="featured.product.right.sidebar.pager" before="-"/>
+   </block>
+</reference>
+<reference name="head">
+   <action method="addItem">
+      <type>skin_css</type>
+      <name>css/digitalpianism/ajaxlogin/styles.css</name>
+      <params/>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/digitalpianism/ajaxlogin/script.js</name>
+   </action>
+</reference>
+<reference name="before_body_end">
+   <block type="core/template" name="ajaxlogin"/>
+</reference>
+<reference name="ajaxlogin">
+   <action method="setTemplate" ifconfig="ajaxlogin/options/enable">
+      <template>digitalpianism/ajaxlogin/index.phtml</template>
+   </action>
+</reference>
+<reference name="after_body_start">
+   <block type="fenomics_gtm/gtmcode" name="google_tag_manager" as="google_tag_manager" template="fenomics/gtm/default.phtml"/>
+</reference>
+<reference name="top.links">
+   <action method="addLink" translate="label title" module="wordpress" ifconfig="wordpress/toplink/enabled">
+      <label helper="wordpress/getTopLinkLabel"/>
+      <url helper="wordpress/getTopLinkUrl"/>
+      <title>Blog</title>
+      <prepare>0</prepare>
+      <urlParams/>
+      <position helper="wordpress/getTopLinkPosition"/>
+      <li_params/>
+      <a_params>class=&quot;top-link-blog&quot;</a_params>
+   </action>
+</reference>
 <reference name="head">
    <action method="addCss">
       <stylesheet>css/magebuzz/featuredcategory.css</stylesheet>
    </action>
+</reference>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/magestore/fblogin.css</stylesheet>
+   </action>
+</reference>
+<reference name="before_body_end">
+   <block type="mana_core/singleton" name="m_core_singletons"/>
+</reference>
+<reference name="head">
+   <action method="addJs">
+      <script>mirasvit/code/email/capture.js</script>
+   </action>
+</reference>
+<reference name="before_body_end">
+   <block type="feedexport/js" name="feedexport_js"/>
+</reference>
+<reference name="head">
+   <action method="addJs" ifconfig="searchautocomplete/general/enabled">
+      <script>mirasvit/core/jquery.min.js</script>
+   </action>
+   <action method="addJs" ifconfig="searchautocomplete/general/enabled">
+      <script>mirasvit/core/underscore.js</script>
+   </action>
+   <action method="addJs" ifconfig="searchautocomplete/general/enabled">
+      <script>mirasvit/core/backbone.js</script>
+   </action>
+   <action method="addJs" ifconfig="searchautocomplete/general/enabled">
+      <script>mirasvit/code/searchautocomplete/form.js</script>
+   </action>
+   <action method="addJs" ifconfig="searchautocomplete/general/enabled">
+      <script>mirasvit/code/searchautocomplete/autocomplete.js</script>
+   </action>
+   <action method="addItem" ifconfig="sales/msrp/enabled">
+      <type>skin_js</type>
+      <name>js/msrp.js</name>
+   </action>
+</reference>
+<block type="searchautocomplete/layout" name="search.block">
+   <action method="addSearchAutocomplete" ifconfig="searchautocomplete/general/enabled"/>
+</block>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/mirasvit_searchindex.css</stylesheet>
+   </action>
+</reference>
+<reference name="head">
+   <block type="sticsfbtracker/retargeting" name="sticsfbtracker_retargeting" as="sticsfbtracker.retargeting" template="sticsfbtracker/retargeting.phtml">
+            </block>
+   <block type="sticsfbtracker/keypage" name="sticsfbtracker_keypage" as="sticsfbtracker.keypage" template="sticsfbtracker/keypage.phtml">
+            </block>
+   <block type="sticsfbtracker/other" name="sticsfbtracker_other" as="sticsfbtracker.other" template="sticsfbtracker/other.phtml">
+            </block>
+</reference>
+<reference name="left">
+   <block type="ngroups/ngroups" name="ngroups" template="ngroups/ngroups.phtml"/>
+   <remove name="left.newsletter"/>
 </reference>
 <reference name="head">
    <action method="addCss">
@@ -554,4 +692,21 @@
 <remove name="reorder"/>
 <reference name="right">
    <block type="sales/reorder_sidebar" name="sale.reorder.sidebar" as="reorder" template="sales/reorder/sidebar.phtml"/>
+</reference>
+<reference name="top.links">
+   <action method="removeLinkByUrl" ifconfig="ajaxlogin/options/enable">
+      <url helper="customer/getLoginUrl"/>
+   </action>
+   <action method="addLink" translate="label title" module="customer" ifconfig="ajaxlogin/options/enable">
+      <label>Log In</label>
+      <url helper="customer/getLoginUrl"/>
+      <title>Log In</title>
+      <prepare/>
+      <urlParams/>
+      <position>100</position>
+      <liParams/>
+      <aParams>
+         <class>ajaxlogin-login</class>
+      </aParams>
+   </action>
 </reference>
