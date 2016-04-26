@@ -38,7 +38,13 @@ is_product_details_page = true;
 ?>
 </script>
 <header id="header" class="row">
-	<img src="<?php echo $this->getSkinUrl('images/header-icons.png', array('_secure'=>true)); ?>" alt="" class="header-icons">
+<?php $storeCode = Mage::app()->getStore()->getCode();
+if ($storeCode == "creo_ar"){ ?>
+<img src="<?php echo $this->getSkinUrl('images/header-icons-ar.png', array('_secure'=>true)); ?>" alt="" class="header-icons">
+<?php }
+else{ ?>
+<img src="<?php echo $this->getSkinUrl('images/header-icons.png', array('_secure'=>true)); ?>" alt="" class="header-icons">
+<?php } ?>
 	<div class="col col-static col-lg-7 col-md-8 col-sm-9 col-xs-9">
 		<div class="sticky-holder">
 			<strong class="logo">
