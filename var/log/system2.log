@@ -1,0 +1,190 @@
+2016-05-02T11:40:39+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-05-02T11:40:39+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-05-02T11:40:39+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-05-02T11:40:39+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-05-02T11:40:39+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-05-02T11:40:39+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-05-02T11:40:39+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:40:39+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:40:41+00:00 DEBUG (7): 
+2016-05-02T11:40:41+00:00 DEBUG (7): 
+2016-05-02T11:40:42+00:00 DEBUG (7): 
+2016-05-02T11:40:42+00:00 DEBUG (7): 
+2016-05-02T11:40:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:40:42+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:40:42+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:40:43+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-05-02T11:40:44+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-05-02T11:40:44+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-05-02T11:40:44+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:40:44+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:40:44+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 29
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 30
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 32
+2016-05-02T11:40:45+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 36
+2016-05-02T11:42:59+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-05-02T11:42:59+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-05-02T11:42:59+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-05-02T11:42:59+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-05-02T11:42:59+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-05-02T11:42:59+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-05-02T11:42:59+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:42:59+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:43:01+00:00 DEBUG (7): 
+2016-05-02T11:43:01+00:00 DEBUG (7): 
+2016-05-02T11:43:01+00:00 DEBUG (7): 
+2016-05-02T11:43:01+00:00 DEBUG (7): 
+2016-05-02T11:43:01+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:43:01+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:43:01+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:43:02+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-05-02T11:43:02+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 29
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 30
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 32
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 36
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 45
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 47
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 50
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 75
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 77
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 82
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: giftwrap  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\totals.phtml on line 2
+2016-05-02T11:43:03+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:43:03+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: siteVisits  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 28
+2016-05-02T11:43:03+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-05-02T11:43:03+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:43:03+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:43:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-05-02T11:43:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-05-02T11:43:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-05-02T11:43:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-05-02T11:43:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-05-02T11:43:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-05-02T11:43:08+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:43:08+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:43:10+00:00 ERR (3): Notice: Undefined index: postcode  in E:\xampp\htdocs\creo\app\code\local\FacileCheckout\OnestepCheckout\controllers\IndexController.php on line 698
+2016-05-02T11:43:10+00:00 DEBUG (7): 
+2016-05-02T11:43:10+00:00 DEBUG (7): 
+2016-05-02T11:43:10+00:00 DEBUG (7): 
+2016-05-02T11:43:10+00:00 DEBUG (7): 
+2016-05-02T11:43:12+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:43:12+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:43:12+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:43:12+00:00 ERR (3): Notice: Undefined index: postcode  in E:\xampp\htdocs\creo\app\code\local\FacileCheckout\OnestepCheckout\controllers\IndexController.php on line 698
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:43:13+00:00 ERR (3): Notice: Undefined index: giftwrap  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\totals.phtml on line 2
+2016-05-02T11:44:15+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-05-02T11:44:15+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-05-02T11:44:15+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-05-02T11:44:15+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-05-02T11:44:15+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-05-02T11:44:15+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-05-02T11:44:15+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:44:15+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:44:17+00:00 DEBUG (7): 
+2016-05-02T11:44:17+00:00 DEBUG (7): 
+2016-05-02T11:44:17+00:00 DEBUG (7): 
+2016-05-02T11:44:17+00:00 DEBUG (7): 
+2016-05-02T11:44:18+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:44:18+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:44:18+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:44:18+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 183
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\checkout\cart\minicart\default.phtml on line 188
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 29
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 30
+2016-05-02T11:44:19+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\billing.phtml on line 32
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 45
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 47
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 50
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 75
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: phone_r  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\shipping.phtml on line 77
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:44:20+00:00 ERR (3): Notice: Undefined index: giftwrap  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\totals.phtml on line 2
+2016-05-02T11:44:20+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:44:20+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:44:20+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:44:20+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-02T11:44:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-05-02T11:44:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-05-02T11:44:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-05-02T11:44:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-05-02T11:44:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-05-02T11:44:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-05-02T11:44:25+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:44:25+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-02T11:44:28+00:00 ERR (3): Notice: Undefined index: postcode  in E:\xampp\htdocs\creo\app\code\local\FacileCheckout\OnestepCheckout\controllers\IndexController.php on line 698
+2016-05-02T11:44:29+00:00 DEBUG (7): 
+2016-05-02T11:44:29+00:00 DEBUG (7): 
+2016-05-02T11:44:29+00:00 DEBUG (7): 
+2016-05-02T11:44:29+00:00 DEBUG (7): 
+2016-05-02T11:44:30+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:44:30+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:44:30+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: postcode  in E:\xampp\htdocs\creo\app\code\local\FacileCheckout\OnestepCheckout\controllers\IndexController.php on line 698
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: json  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 7
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined variable: jsonFilename  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\item.phtml on line 12
+2016-05-02T11:44:30+00:00 ERR (3): Notice: Undefined index: giftwrap  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\onestepcheckout\onepage\review\totals.phtml on line 2

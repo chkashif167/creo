@@ -77,8 +77,17 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
         <?php if($phone_r === 'required') { echo ' <sup>*</sup> ';}?>
 
 		<sup>*</sup>
+    <?php if(Mage::app()->getStore()->getId()==1){?>
+
         <input type="text" name="shipping[telephone]" id="shipping:telephone" value="<?php echo $this->htmlEscape($this->getShipAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1<?php if($phone_r === 'required') { echo ' required-entry validate-number ';}?> required-entry validate-number" maxlength="20" onchange="shipping.setSameAsBilling(false);" />
 
+        <?php
+    }else{
+        ?>
+ <input type="text" name="shipping[telephone]" id="shipping:telephone" value="<?php echo $this->htmlEscape($this->getShipAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1 required-entry" maxlength="20" onchange="shipping.setSameAsBilling(false);" />
+ <?php
+}
+ ?>
        
         <?php endif; ?>
       </div>
@@ -92,7 +101,18 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
         <?php if ($city_r !== 'hidden') : ?>
         <label> <?php echo $this->__('City') ?> </label>
         <?php if ($city_r === 'required'){ echo ' <sup>*</sup> ';}?>
+
+         <?php if(Mage::app()->getStore()->getId()==1){?>
+
         <input type="text" name="shipping[city]" id="shipping:city" title="<?php echo $this->__('City') ?>" value="<?php echo $this->htmlEscape($this->getShipAddress()->getCity()) ?>" class="validate-alpha t1<?php if ($city_r === 'required'){ echo ' required-entry ';}?>" onChange="shipping.setSameAsBilling(false);" maxlength="20" />
+        <?php
+      }else{
+        ?>
+         <input type="text" name="shipping[city]" id="shipping:city" title="<?php echo $this->__('City') ?>" value="<?php echo $this->htmlEscape($this->getShipAddress()->getCity()) ?>" class="required-entry t1" onChange="shipping.setSameAsBilling(false);" maxlength="20" />
+
+         <?php
+       }
+         ?>
         <?php endif; ?>
         <?php ?>        <div class="short"<?php if($state_r === 'hidden'){ echo ' style="display:none" ';}?>>
 <?php ?>
@@ -109,8 +129,17 @@ if (!$this->getQuote()->isVirtual() && Mage::helper('onestepcheckout')->isShippi
 							$('shipping:region_id').setAttribute('defaultValue',  "<?php echo $this->getShipAddress()->getRegionId() ?>");
 						//]]>
 						</script>
+
+            <?php if(Mage::app()->getStore()->getId()==1){?>
         <input type="text" id="shipping:region" name="shipping[region]" value="<?php echo $this->htmlEscape($this->getShipAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="validate-alpha t1<?php if($state_r === 'required'){ echo ' required-entry';}?>" style="display:none;" maxlength="20" />
-        
+        <?php
+      }else{
+        ?>
+       
+        <input type="text" id="shipping:region" name="shipping[region]" value="<?php echo $this->htmlEscape($this->getShipAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="validate-alpha t1<?php if($state_r === 'required'){ echo ' required-entry';}?>" style="display:none;" maxlength="20" />
+        <?php
+        }
+        ?>
         </div> 
       </div></div>
       <div class=" form-group col-lg-2 col-sm-4">
