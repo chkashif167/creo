@@ -30,7 +30,19 @@ $has_addr = $this->customerHasAddresses();
         <label for="billing:telephone" class="<?php if($phone_r === 'required') { echo 'required';}?> required" > <?php echo $this->__('Telephone') ?> </label>
         <sup>*</sup>
         <?php if($phone_r === 'required') { echo ' <sup>*</sup> ';}?>
+
+        <?php if(Mage::app()->getStore()->getId()==1){?>
+
         <input type="text" name="billing[telephone]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1<?php if($phone_r === 'required') { echo ' required-entry validate-number';}?> required-entry validate-number" id="billing:telephone" maxlength="20" />
+
+        <?php
+        }else{?>
+
+        <input type="text" name="billing[telephone]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="t1 required-entry" id="billing:telephone" maxlength="20" />
+
+        <?php
+        }
+        ?>
         <?php endif; ?>
         <?php
         $cr = Mage::getStoreConfig('onestepcheckout/address_form/company');
@@ -67,7 +79,19 @@ $has_addr = $this->customerHasAddresses();
           <?php if ($city_r !== 'hidden') : ?>
           <label for="billing:city"<?php if ($city_r === 'required'){ echo ' class="required" ';}?>> <?php echo $this->__('City') ?> </label>
           <?php if ($city_r === 'required'){ echo ' <sup>*</sup> ';}?>
+
+          <?php if(Mage::app()->getStore()->getId()==1){?>
+
           <input type="text" name="billing[city]" id="billing:city" title="<?php echo $this->__('City') ?>" value="<?php echo $this->htmlEscape($this->getBillAddress()->getCity()) ?>" class="validate-alpha t1<?php if ($city_r === 'required'){ echo ' required-entry ';}?>" maxlength="20"  />
+
+          <?php
+          }else{?>
+
+          <input type="text" name="billing[city]" id="billing:city" title="<?php echo $this->__('City') ?>" value="<?php echo $this->htmlEscape($this->getBillAddress()->getCity()) ?>" class="required-entry t1" maxlength="20"  />
+
+          <?php
+          }
+          ?>
           <?php endif; ?>
           <div class="short"<?php if($state_r === 'hidden'){ echo ' style="display:none" ';}?>>
             <label id="billing:statelabel" for="billing:region_id"<?php if($state_r === 'required'){ echo ' class="required" ';}?>> <?php echo $this->__('State / Province') ?> </label><sup id="billing:staterequired">*</sup>
@@ -82,7 +106,14 @@ $has_addr = $this->customerHasAddresses();
               $('billing:region_id').setAttribute('defaultValue',  "<?php echo $this->getBillAddress()->getRegionId() ?>");
               //]]>
               </script>
+
+              <?php if(Mage::app()->getStore()->getId()==1){?>
               <input type="text" id="billing:region" name="billing[region]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="validate-alpha t1<?php if($state_r === 'required'){ echo ' required-entry';}?>" maxlength="20" style="display:none;" />
+              <?}else{?>
+                <input type="text" id="billing:region" name="billing[region]" value="<?php echo $this->htmlEscape($this->getBillAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="required-entry t1" maxlength="20" style="display:none;" />
+              <?php
+              }
+              ?>
               <!-- </div> faulty div-->
             </div>
           </div>
