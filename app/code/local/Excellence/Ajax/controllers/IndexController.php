@@ -101,7 +101,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController {
                     $checkoutUrl = Mage::helper('checkout/cart')->getCartUrl();
 
 if(Mage::app()->getLocale()->getLocaleCode()=='ar_SA'){
-$buttons = '<div class="checkout-cart-index"><div class="cart-top-area"><div class="btn-holder" style="float:none;"><a href="javascript:;" onclick="jQuery(\'.ajaxAddToCartModal\').modal(\'hide\');"><span class="span1"><span class="span2">متابعة التسوق</span></span></a><button onclick="window.location=\''.$checkoutUrl.'\';" class="button btn-proceed-checkout btn-checkout" title="باشرالخروج من الفندق" type="button"><span><span>باشرالخروج من الفندق</span></span></button>';
+$buttons = '<div class="checkout-cart-index"><div class="cart-top-area"><div class="btn-holder" style="float:none;"><a href="javascript:;" onclick="jQuery(\'.ajaxAddToCartModal\').modal(\'hide\');"><span class="span1"><span class="span2">استمر بالتسوق</span></span></a><button onclick="window.location=\''.$checkoutUrl.'\';" class="button btn-proceed-checkout btn-checkout" title="تابع للدفع الآمن" type="button"><span><span>تابع للدفع الآمن</span></span></button>';
     $message = $this->__(' %s قد أضيفت إلى سلة التسوق الخاصة بك.'.$buttons, Mage::helper('core')->escapeHtml($product->getName()));
     $response['status'] = 'نجاح';
 }else{
