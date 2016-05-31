@@ -4391,3 +4391,24 @@
 2016-05-19T10:20:14+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
 2016-05-19T10:20:14+00:00 ERR (3): Notice: Undefined index: postcode  in E:\xampp\htdocs\creo\app\code\local\FacileCheckout\OnestepCheckout\controllers\IndexController.php on line 698
 2016-05-19T10:20:15+00:00 ERR (3): Notice: Undefined index: giftwrap  in E:\xampp\htdocs\creo\app\design\frontend\creo_mobile\default\template\onestepcheckout\onepage\review\totals.phtml on line 2
+2016-05-31T11:09:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-05-31T11:09:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-05-31T11:09:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-05-31T11:09:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-05-31T11:09:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-05-31T11:09:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-05-31T11:09:53+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-31T11:09:53+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-05-31T11:09:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-31T11:09:53+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-31T11:09:53+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-05-31T11:09:54+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-05-31T11:09:54+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-05-31T11:09:55+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-05-31T11:09:55+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-05-31T11:09:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-31T11:09:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-31T11:09:59+00:00 ERR (3): Notice: Undefined index: siteVisits  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 28
+2016-05-31T11:09:59+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-05-31T11:09:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-05-31T11:09:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
