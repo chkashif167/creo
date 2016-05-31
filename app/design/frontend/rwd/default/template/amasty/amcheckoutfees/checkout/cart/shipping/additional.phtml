@@ -1,0 +1,73 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+?>
+<?php /** @var $this Amasty_Checkoutfees_Block_Checkout_Cart_Shipping_Additional */ ?>
+
+
+<?php if ($fees = $this->getFees('cart')) { ?>
+    <div class="shipping">
+        <div class="checkout-onepage-shipping-additional-checkoutfees-shipping" id="checkoutfees_shipping">
+            <h2><?php echo Mage::helper('amcheckoutfees')->__('Checkout Fees'); ?></h2>
+
+            <div class="discount-form" id="amcheckoutfees_shipping_form_block">
+                <form id="amcheckoutfees_shipping_form" method="post" action="<?php echo Mage::getUrl('amcheckoutfees/index/saveFormData'); ?>">
+                    <ul>
+                        <?php foreach ($fees as $feeId => $feeData) { ?>
+                            <?php
+                            $fee     = $feeData['fee'];
+                            $options = $feeData['options'];
+                            if ($fee->getAutoapply()) {
+                                continue;
+                            }
+                            ?>
+                            <li>
+                                <label for="<?php echo $fee->getFeesId(); ?>"><?php echo $fee->getTitleForStore(); ?></label>
+                                <?php if ($fee->getDescription()) { ?>
+                                    <a href="#" class="amcheckoutfees-tooltip link-store-scope"
+                                       data-tooltip="<?php echo htmlspecialchars($fee->getDescription()); ?>"></a>
+                                <?php } ?>
+                                <br/>
+                                <?php if ($options && is_array($options)) { ?>
+                                    <?php echo Mage::helper('amcheckoutfees')->renderFeeOptions($fee, $options); ?>
+                                <?php } ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                    <br/>
+                    <?php if (Mage::app()->getRequest()->getModuleName() == 'checkout' && Mage::app()->getRequest()->getControllerName() == 'cart') { ?>
+                        <div class="checkout-types bottom">
+                            <button type="submit" title="<?php echo Mage::helper('amcheckoutfees')->__('Apply'); ?>" id="amcheckoutfees_apply_changes"
+                                    class="button"><span><span><?php echo Mage::helper('amcheckoutfees')->__('Apply'); ?></span></span>
+                            </button>
+                        </div>
+                    <?php } ?>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        try {
+            clickCheckoutFeesInput = function () {
+                //ShippingMethod.save();
+                updateCheckout('shipping');
+            };
+            $('amcheckoutfees_shipping_form_block').on('change', 'input', function (event) {
+                clickCheckoutFeesInput();
+            });
+            $('amcheckoutfees_shipping_form_block').on('change', 'select', function (event) {
+                clickCheckoutFeesInput();
+            });
+        } catch (e) {
+            // no action required
+            var x = 1;
+        }
+        //]]>
+    </script>
+<?php } ?>
