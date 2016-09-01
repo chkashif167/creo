@@ -1481,3 +1481,282 @@
 2016-05-31T11:56:27+00:00 ERR (3): Warning: SimpleXMLElement::__construct():               ^  in E:\xampp\htdocs\creo\app\code\core\Mage\AdminNotification\Model\Feed.php on line 173
 2016-05-31T11:56:29+00:00 ERR (3): Warning: fopen(E:\xampp\htdocs\creo\var/raveinfosys/exporter/order_exception_log.htm): failed to open stream: No such file or directory  in E:\xampp\htdocs\creo\app\code\community\Raveinfosys\Exporter\Helper\Data.php on line 10
 2016-05-31T11:56:29+00:00 ERR (3): Warning: chmod(): No such file or directory  in E:\xampp\htdocs\creo\app\code\community\Raveinfosys\Exporter\Helper\Data.php on line 11
+2016-09-01T06:41:48+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-09-01T06:41:48+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-09-01T06:41:48+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-09-01T06:41:48+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-09-01T06:41:48+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-09-01T06:41:48+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-09-01T06:41:48+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:41:48+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:41:50+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:41:50+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:41:50+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:41:53+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-09-01T06:41:54+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-09-01T06:41:54+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-09-01T06:41:54+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-09-01T06:41:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:41:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:41:59+00:00 ERR (3): Notice: Undefined index: siteVisits  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 28
+2016-09-01T06:41:59+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-09-01T06:41:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:41:59+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:42:11+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-09-01T06:42:11+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-09-01T06:42:11+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-09-01T06:42:11+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-09-01T06:42:11+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-09-01T06:42:11+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-09-01T06:42:11+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:42:11+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:42:11+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:42:11+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:42:11+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:42:14+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-09-01T06:42:14+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-09-01T06:42:14+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-09-01T06:42:16+00:00 ERR (3): Notice: Undefined variable: selectedItem  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\manapro\filterradios\items.phtml on line 153
+2016-09-01T06:42:16+00:00 ERR (3): Notice: Undefined variable: _imgUrl  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\category\view.phtml on line 109
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: order  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list\toolbar.phtml on line 76
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:42:18+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:42:18+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:42:18+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:42:18+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:42:18+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:02+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-09-01T06:50:02+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-09-01T06:50:02+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-09-01T06:50:02+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-09-01T06:50:02+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-09-01T06:50:02+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-09-01T06:50:02+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:50:02+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:50:04+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\app\code\local\Zealousweb\WhoAlsoView\Model\Observer.php on line 2
+2016-09-01T06:50:04+00:00 ERR (3): Notice: Undefined index: MosViewUser  in E:\xampp\htdocs\creo\app\code\local\Zealousweb\WhoAlsoView\Model\Observer.php on line 8
+2016-09-01T06:50:05+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:05+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:05+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:06+00:00 DEBUG (7): 
+2016-09-01T06:50:06+00:00 DEBUG (7): 
+2016-09-01T06:50:07+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-09-01T06:50:07+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-09-01T06:50:07+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-09-01T06:50:07+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-09-01T06:50:10+00:00 ERR (3): Notice: Use of undefined constant styles - assumed 'styles'  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\attributeswatches\catalog_product_view_type_options_configurable.phtml on line 146
+2016-09-01T06:50:10+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\attributeswatches\catalog_product_view_type_options_configurable.phtml on line 146
+2016-09-01T06:50:11+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:11+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:11+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:11+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:16+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-09-01T06:50:16+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-09-01T06:50:16+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-09-01T06:50:16+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-09-01T06:50:16+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-09-01T06:50:16+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-09-01T06:50:16+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:50:16+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:50:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:17+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:17+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:19+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-09-01T06:50:19+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-09-01T06:50:19+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-09-01T06:50:20+00:00 ERR (3): Notice: Undefined variable: selectedItem  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\manapro\filterradios\items.phtml on line 153
+2016-09-01T06:50:20+00:00 ERR (3): Notice: Undefined variable: _imgUrl  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\category\view.phtml on line 109
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: order  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list\toolbar.phtml on line 76
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 132
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 157
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined variable: smallimg  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\catalog\product\list.phtml on line 168
+2016-09-01T06:50:22+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:22+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: siteVisits  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 28
+2016-09-01T06:50:22+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-09-01T06:50:22+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:22+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:30+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-09-01T06:50:30+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-09-01T06:50:30+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-09-01T06:50:30+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-09-01T06:50:30+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-09-01T06:50:30+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-09-01T06:50:30+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:50:30+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:50:31+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\app\code\local\Zealousweb\WhoAlsoView\Model\Observer.php on line 2
+2016-09-01T06:50:31+00:00 ERR (3): Notice: Undefined index: MosViewUser  in E:\xampp\htdocs\creo\app\code\local\Zealousweb\WhoAlsoView\Model\Observer.php on line 8
+2016-09-01T06:50:32+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:32+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:32+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:50:33+00:00 DEBUG (7): 
+2016-09-01T06:50:33+00:00 DEBUG (7): 
+2016-09-01T06:50:34+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-09-01T06:50:34+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-09-01T06:50:34+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-09-01T06:50:35+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-09-01T06:50:37+00:00 ERR (3): Notice: Use of undefined constant styles - assumed 'styles'  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\attributeswatches\catalog_product_view_type_options_configurable.phtml on line 146
+2016-09-01T06:50:37+00:00 ERR (3): Notice: Undefined index: styles  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\attributeswatches\catalog_product_view_type_options_configurable.phtml on line 146
+2016-09-01T06:50:37+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:37+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:37+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:50:37+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:58:07+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 104
+2016-09-01T06:58:07+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 105
+2016-09-01T06:58:07+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 106
+2016-09-01T06:58:07+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 107
+2016-09-01T06:58:07+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 108
+2016-09-01T06:58:07+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 109
+2016-09-01T06:58:07+00:00 ERR (3): Notice: Undefined variable: cookieParams  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:58:07+00:00 ERR (3): Warning: call_user_func_array() expects parameter 2 to be array, null given  in E:\xampp\htdocs\creo\app\code\local\Mage\Core\Model\Session\Abstract\Varien.php on line 118
+2016-09-01T06:58:07+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 67: parser error : Start tag expected, '&lt;' not found  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:58:07+00:00 ERR (3): Warning: simplexml_load_string():   in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:58:07+00:00 ERR (3): Warning: simplexml_load_string(): ^  in E:\xampp\htdocs\creo\app\code\core\Mage\Core\Model\Layout\Update.php on line 450
+2016-09-01T06:58:08+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 178
+2016-09-01T06:58:08+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 243
+2016-09-01T06:58:09+00:00 ERR (3): Notice: Undefined index: id  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\page\html\topmenu\renderer.phtml on line 286
+2016-09-01T06:58:09+00:00 ERR (3): Notice: Undefined variable: otheroptions  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\directory\currency.phtml on line 41
+2016-09-01T06:58:09+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:58:09+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:58:09+00:00 ERR (3): Notice: Undefined index: HTTP_REFERER  in E:\xampp\htdocs\creo\app\design\frontend\creo\default\template\newsletter\subscribe.phtml on line 42
+2016-09-01T06:58:09+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
+2016-09-01T06:58:09+00:00 ERR (3): Notice: A session had already been started - ignoring session_start()  in E:\xampp\htdocs\creo\lib\Facebook\facebook.php on line 37
