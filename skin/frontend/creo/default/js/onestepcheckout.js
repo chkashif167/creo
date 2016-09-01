@@ -210,7 +210,7 @@ COGOPC.prototype = {
                     }).update(response.update_section[i]).setOpacity(1).removeClassName('loading');
                     if (i === 'shipping-method') {
 						
-						  // show/hide cod text for iraq  start    
+						  // show/hide cod text for iraq  start:    
 							var shippingCountry = $j('#shipping\\:country_id').val();
 									console.log('shippingCountry '+shippingCountry);
 									if (shippingCountry=='IQ') { 
@@ -218,7 +218,7 @@ COGOPC.prototype = {
 									} else {
 										$j('div#checkout-payment-method-load li.codFlag').hide();
 									}
-							// show/hide cod text for iraq  end
+							// show/hide cod text for iraq  end:
 
                         shippingMethod.addObservers()
                     }
