@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+-->
+<layout version="1.0.0">
+
+    <checkout_cart_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/amasty/amcheckoutfees/amcheckoutfees.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>amasty/amcheckoutfees/amcheckoutfees.js</name>
+                <params/>
+            </action>
+        </reference>
+        <reference name="checkout.cart.shipping">
+            <action method="setTemplate">
+                <template>amasty/amcheckoutfees/checkout/cart/shipping.phtml</template>
+            </action>
+            <block type="amcheckoutfees/checkout_cart_shipping_additional"
+                   template="amasty/amcheckoutfees/checkout/cart/shipping/additional.phtml" name="amcheckoutfees_shipping"
+                   as="amcheckoutfees_shipping"/>
+        </reference>
+    </checkout_cart_index>
+
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/amasty/amcheckoutfees/amcheckoutfees.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>amasty/amcheckoutfees/amcheckoutfees.js</name>
+                <params/>
+            </action>
+        </reference>
+
+        <!--<reference name="checkout.onepage.payment.methods_additional">-->
+        <!--<action method="setTemplate">-->
+        <!--<template>amasty/amcheckoutfees/checkout/onepage/payment/info.phtml</template>-->
+        <!--</action>-->
+        <!--<block type="amcheckoutfees/checkout_onepage_payment_additional"-->
+        <!--template="amasty/amcheckoutfees/checkout/onepage/payment/additional.phtml" name="amcheckoutfees_payment"/>-->
+        <!--</reference>-->
+
+        <reference name="checkout.onepage.shipping_method.additional">
+            <action method="setTemplate">
+                <template>amasty/amcheckoutfees/checkout/onepage/shipping/additional.phtml</template>
+            </action>
+            <block type="amcheckoutfees/checkout_onepage_shipping_additional_info"
+                   template="amasty/amcheckoutfees/checkout/onepage/shipping/additional/info.phtml" name="amcheckoutfees_shipping"
+                   as="amcheckoutfees_shipping"/>
+        </reference>
+    </checkout_onepage_index>
+
+    <checkout_onepage_additional>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>amasty/amcheckoutfees/checkout/onepage/shipping/additional.phtml</template>
+            </action>
+            <block type="amcheckoutfees/checkout_onepage_shipping_additional_info"
+                   template="amasty/amcheckoutfees/checkout/onepage/shipping/additional/info.phtml" name="amcheckoutfees_shipping"
+                   as="amcheckoutfees_shipping"/>
+        </reference>
+    </checkout_onepage_additional>
+
+    <checkout_onestep_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/amasty/amcheckoutfees/amcheckoutfees.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>amasty/amcheckoutfees/amcheckoutfees.js</name>
+                <params/>
+            </action>
+        </reference>
+    </checkout_onestep_index>
+
+    <checkout_onepage_paymentmethod>
+        <reference name="root">
+            <block type="core/template" as="additional" name="additional">
+                <block template="amasty/amcheckoutfees/checkout/onepage/payment/additional.phtml"
+                       type="amcheckoutfees/checkout_onepage_payment_additional" name="amcheckoutfees_methods"/>
+            </block>
+        </reference>
+    </checkout_onepage_paymentmethod>
+
+    <!--<checkout_multishipping_shipping>-->
+    <!--<reference name="shipping_methods_before">-->
+    <!--<block type="amstcred/checkout_onepage_shipping_additional" template="amasty/amcheckoutfees/multishipping/shipping.phtml"-->
+    <!--name="amcheckoutfees_shipping_fees"/>-->
+    <!--</reference>-->
+    <!--</checkout_multishipping_shipping>-->
+
+    <!--<checkout_multishipping_billing>-->
+    <!--<reference name="payment_methods_before">-->
+    <!--<block type="amstcred/checkout_onepage_payment_additional" template="amasty/amcheckoutfees/multishipping/payment.phtml"-->
+    <!--name="amcheckoutfees_payment_fees"/>-->
+    <!--</reference>-->
+    <!--</checkout_multishipping_billing>-->
+
+    <paypal_express_review>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/amasty/amcheckoutfees/amcheckoutfees.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>amasty/amcheckoutfees/amcheckoutfees.js</name>
+                <params/>
+            </action>
+        </reference>
+    </paypal_express_review>
+
+    <paypal_express_review_details>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/amasty/amcheckoutfees/amcheckoutfees.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>amasty/amcheckoutfees/amcheckoutfees.js</name>
+                <params/>
+            </action>
+        </reference>
+    </paypal_express_review_details>
+</layout>

@@ -1,0 +1,24 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+?>
+<?php if ($this->getSource() instanceof Mage_Sales_Model_Order) { ?>
+    <?php if ((float)$this->getSource()->getAmcheckoutfeesAmountRefunded()): ?>
+        <tr>
+            <td class="label"><strong><?php echo Mage::helper('amcheckoutfees')->__('Checkout Fees Refunded') ?></strong></td>
+            <td><strong><?php echo Mage::helper('core')->currency($this->getSource()->getAmcheckoutfeesAmountRefunded(), true, false); ?></strong>
+            </td>
+        </tr>
+    <?php endif; ?>
+<?php } else { ?>
+    <?php if ((float)$this->getSource()->getAmcheckoutfeesAmount()): ?>
+        <tr>
+            <td class="label"><strong><?php echo Mage::helper('amcheckoutfees')->__('Checkout Fees Refunded') ?></strong></td>
+            <td><strong><?php echo Mage::helper('core')->currency($this->getSource()->getAmcheckoutfeesAmount(), true, false); ?></strong></td>
+        </tr>
+    <?php endif;
+} ?>
+

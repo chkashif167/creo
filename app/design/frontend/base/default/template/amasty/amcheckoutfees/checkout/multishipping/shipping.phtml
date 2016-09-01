@@ -1,0 +1,87 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+?>
+<?php /** @var $this Amasty_Checkoutfees_Block_Checkout_Onepage_Payment_Additional */ ?>
+
+<?php if ($this->canShowBlock()): ?>
+    <div class="checkout-multishipping-payment-amstcred-customer-balance" id="amstcred-customer-balance">
+        <input type="hidden" name="payment[amstcred_use_customer_balance]" value="0"/>
+        <input type="checkbox" class="checkbox" name="payment[amstcred_use_customer_balance]" value="1"
+               id="amstcred_use_customer_balance" <?php echo($this->isCustomerBalanceUsed() ? 'checked' : '') ?>/>
+
+        <?php $balance = Mage::helper('core')->currency($this->getBalance()); ?>
+        <label for="amstcred_use_customer_balance"><strong>
+                <?php echo Mage::helper('amstcred')->__('Use Store Credit'); ?>
+                (<?php echo $balance; ?> <?php echo Mage::helper('amstcred')->__('available'); ?>)
+            </strong></label>
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        var amstcredBalanceUsed = <?php if ($this->isCustomerBalanceUsed()): ?>true<?php else: ?>false<?php endif; ?>;
+        if (amstcredBalanceUsed) {
+            quoteBaseGrandTotal += <?php echo (float)$this->getQuote()->getBaseAmstcredAmountUsed(); ?>;
+            amstcredBalanceUsed = false;
+        }
+        function clickAmstcredBalanceCheckbox() {
+            if (!amstcredBalanceUsed && $('amstcred_use_customer_balance').checked) {
+                quoteBaseGrandTotal -= <?php echo (float)$this->getBalanceForUse(); ?>;
+                amstcredBalanceUsed = true;
+            }
+            if (amstcredBalanceUsed && !$('amstcred_use_customer_balance').checked) {
+                quoteBaseGrandTotal += <?php echo (float)$this->getBalanceForUse(); ?>;
+                amstcredBalanceUsed = false;
+            }
+            if (quoteBaseGrandTotal < 0.0001) {
+                var elements = Form.getElements('multishipping-billing-form');
+                for (var i = 0; i < elements.length; i++) {
+                    if ($('amstcred_use_customer_balance').checked) {
+                        if (elements[i].name == 'payment[method]') {
+                            elements[i].disabled = true;
+                            if (elements[i].value == 'free' && elements[i].type == 'radio') {
+                                elements[i].disabled = true;
+                                $(elements[i].parentNode).hide();
+                            }
+                        }
+                    } else {
+                        if (elements[i].name == 'payment[method]' && elements[i].value != 'free') {
+                            elements[i].disabled = false;
+                        }
+                    }
+                }
+                if ($('amstcred_use_customer_balance').checked) {
+                    $('payment-methods').hide();
+                    hidden = document.createElement('input');
+                    hidden.type = 'hidden';
+                    hidden.name = 'payment[method]';
+                    hidden.value = 'free';
+                    hidden.id = 'amstcred_hidden_payment';
+                    $('amstcred-customer-balance').appendChild(hidden);
+                } else {
+                    if ($('amstcred_hidden_payment')) {
+                        $('amstcred-customer-balance').removeChild($('amstcred_hidden_payment'));
+                    }
+                    $('payment-methods').show();
+                }
+            } else {
+                var elements = Form.getElements('multishipping-billing-form');
+                for (var i = 0; i < elements.length; i++) {
+                    if (elements[i].name == 'payment[method]' && elements[i].value != 'free') {
+                        elements[i].disabled = false;
+                    }
+                }
+                $('payment-methods').show();
+            }
+        }
+        Event.observe($('amstcred_use_customer_balance'), 'click', clickAmstcredBalanceCheckbox);
+        Event.observe(window, 'load', clickAmstcredBalanceCheckbox);
+        function amstcredUseCustomerBalanceInit() {
+            $('amstcred_use_customer_balance').disabled = false;
+        }
+        Event.observe(window, 'load', amstcredUseCustomerBalanceInit);
+        //]]>
+    </script>
+<?php endif; ?>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+-->
+<config>
+    <menu>
+        <sales>
+            <children>
+                <amcheckoutfees translate="title" module="amcheckoutfees">
+                    <title>Extra Fee</title>
+                    <action>adminhtml/amcheckoutfees_checkoutFees</action>
+                    <sort_order>900</sort_order>
+                </amcheckoutfees>
+            </children>
+        </sales>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <amcheckoutfees translate="title" module="amcheckoutfees">
+                                <title>Extra Fee</title>
+                                <sort_order>400</sort_order>
+                            </amcheckoutfees>
+                        </children>
+                    </sales>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <amcheckoutfees translate="title" module="amcheckoutfees">
+                                        <title>Extra Fee</title>
+                                    </amcheckoutfees>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+    <translate>
+        <modules>
+            <Amasty_Orderarchive>
+                <files>
+                    <default>Amasty_Checkoutfees.csv</default>
+                </files>
+            </Amasty_Orderarchive>
+        </modules>
+    </translate>
+</config>
