@@ -67,8 +67,8 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
 <?php */ ?>
 
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content block-subscribe normal-modal">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content block-subscribe normal-modal" style="padding:0;">
       <div class="modal-body">
 <?php /* ?>
         <img src="<?php echo $this->getSkinUrl('/images/get-hooked-up-text.png') ?>" title="<?php echo $this->__('Get Hooked Up'); ?>" alt="<?php echo $this->__('Get Hooked Up'); ?>" style="max-width:100%;">
@@ -106,7 +106,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('offer-popup')->toHtml(); ?>
     </div>
     <style type="text/css" media="screen">
-    .offer-popup{padding:15px 15px 40px;}
+    .offer-popup{padding:0px;}
     .offer-popup img{max-width:100%;}
     </style>
     </div>
