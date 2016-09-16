@@ -1,0 +1,21 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+?>
+<select name='amcheckoutfees_<?php echo $this->getData("feeId"); ?>'>
+    <?php foreach ($this->getData('options') as $option) { ?>
+        <option value='<?php echo $option->getFeesDataId(); ?>' <?php echo($option->getChecked() ? " selected='selected' " : "") ?> >
+            <?php echo $option->getTitleForStore() ?>
+            (
+            <?php if ($option->getPriceType()) { ?>
+                <?php echo (int)$option->getPrice(); ?>%
+            <?php } else { ?>
+                <?php echo Mage::helper('core')->currency($option->getPrice(), true, false) ?>
+            <?php } ?>
+            )
+        </option>
+    <?php } ?>
+</select>

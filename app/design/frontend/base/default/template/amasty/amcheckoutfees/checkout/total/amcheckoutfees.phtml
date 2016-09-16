@@ -1,0 +1,182 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+?>
+<?php if (Mage::getStoreConfig('amcheckoutfees/general/enabled')) { ?>
+    <?php if (Mage::registry('amcheckoutfees_template_style') != 'onepage' && $this->getFeesData()) { ?>
+        <?php $currency = $this->getCurrency(); ?>
+        <?php foreach ($this->getFeesData() as $feeData) { ?>
+            <?php
+            $fee    = $feeData['fee'];
+            $amount = 0;
+            if (isset($feeData['options']) && $feeData['options']) {
+                foreach ($feeData['options'] as $option) {
+                    $amount += $option->getFullPrice(false, $currency);
+                }
+            }
+            ?>
+
+            <tr class="summary-details-amcheckoutfees summary-details title" style="display: none;">
+                <td colspan="<?php echo $this->getColspan(); ?>" class="a-right">
+                    <strong><?php echo $this->escapeHtml($fee->getTitleForStore()); ?></strong>
+                </td>
+                <td style="" class="a-right"> <?php echo $this->helper('checkout')->formatPrice($amount); ?> </td>
+            </tr>
+
+            <?php if (isset($feeData['options']) && $feeData['options']) { ?>
+                <?php foreach ($feeData['options'] as $option) { ?>
+                    <tr class="summary-details-amcheckoutfees summary-details" style="display: none;">
+                        <td colspan="<?php echo $this->getColspan(); ?>" class="a-right">
+                            <?php echo $this->escapeHtml($option->getTitleForStore()); ?><br/>
+                        </td>
+                        <td class="a-right">
+                            <?php echo $this->helper('checkout')->formatPrice($option->getFullPrice(false, $currency)); ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            <?php } ?>
+        <?php } ?>
+    <?php } ?>
+
+    <tr class="summary-total" onclick="expandDetails(this, '.summary-details-amcheckoutfees')">
+        <td colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
+            <div class="summary-collapse">
+                <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()){ ?><strong><?php } ?>
+                    <?php echo $this->escapeHtml($this->getTotal()->getTitle()); ?><br/>
+                    <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()){ ?></strong><?php } ?>
+            </div>
+        </td>
+        <td style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
+                <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()){ ?><strong><?php } ?>
+                <?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?>
+                    <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()){ ?></strong><?php } ?>
+        </td>
+    </tr>
+
+    <?php $version = Mage::getVersionInfo(); ?>
+    <?php if ($version['major'] == 1 && $version['minor'] > 8) { ?>
+        <style>
+            /* collapse button here: */
+            .summary-details-amcheckoutfees .summary-collapse,
+            .info-set #details-table .summary-collapse,
+            #checkout-review-table .summary-collapse,
+            #shopping-cart-totals-table .summary-collapse,
+            body.customer-account .data-table .summary-collapse {
+                position: relative;
+                cursor: pointer;
+            }
+
+            .summary-details-amcheckoutfees .summary-collapse:before,
+            .info-set #details-table .summary-collapse:before,
+            #checkout-review-table .summary-collapse:before,
+            #shopping-cart-totals-table .summary-collapse:before,
+            body.customer-account .data-table .summary-collapse:before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                display: block;
+                border-right: 7px solid transparent;
+                border-left: 7px solid transparent;
+                border-top: 7px solid #3399cc;
+                border-bottom: none;
+                position: static;
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            .summary-details-amcheckoutfees .summary-collapse:hover:before,
+            .info-set #details-table .summary-collapse:hover:before,
+            #checkout-review-table .summary-collapse:hover:before,
+            #shopping-cart-totals-table .summary-collapse:hover:before,
+            body.customer-account .data-table .summary-collapse:hover:before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                display: block;
+                border-right: 7px solid transparent;
+                border-left: 7px solid transparent;
+                border-top: 7px solid #246b8f;
+                border-bottom: none;
+                position: static;
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            .summary-details-amcheckoutfees .show-details .summary-collapse:before,
+            .info-set #details-table .show-details .summary-collapse:before,
+            #shopping-cart-totals-table .show-details .summary-collapse:before,
+            body.customer-account .data-table .show-details .summary-collapse:before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                display: block;
+                border-right: 7px solid transparent;
+                border-left: 7px solid transparent;
+                border-bottom: 7px solid #3399cc;
+                border-top: none;
+                position: static;
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            .summary-details-amcheckoutfees .show-details .summary-collapse:hover:before,
+            .info-set #details-table .show-details .summary-collapse:hover:before,
+            #checkout-review-table .show-details .summary-collapse:hover:before,
+            #shopping-cart-totals-table .show-details .summary-collapse:hover:before,
+            body.customer-account .data-table .show-details .summary-collapse:hover:before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                display: block;
+                border-right: 7px solid transparent;
+                border-left: 7px solid transparent;
+                border-bottom: 7px solid #246b8f;
+                border-top: none;
+                position: static;
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            #shopping-cart-totals-table tfoot td .summary-collapse:before,
+            #shopping-cart-totals-table tfoot td .summary-collapse:hover:before {
+                margin-bottom: 5px;
+            }
+
+            .summary-details-amcheckoutfees .show-details .summary-collapse.grandtotal:hover:before,
+            .summary-details-amcheckoutfees .show-details .summary-collapse.grandtotal:before,
+            .info-set #details-table .show-details .summary-collapse.grandtotal:hover:before,
+            .info-set #details-table .show-details .summary-collapse.grandtotal:before,
+            .checkout-review-table .show-details .summary-collapse.grandtotal:hover:before,
+            .checkout-review-table .show-details .summary-collapse.grandtotal:before,
+            .checkout-review-table .summary-collapse.grandtotal:hover:before,
+            .checkout-review-table .summary-collapse.grandtotal:hover:before,
+            .checkout-review-table .summary-collapse.grandtotal:before {
+                border: none;
+            }
+
+            /* collapse button ended */
+
+            .summary-details-amcheckoutfees.summary-details {
+                font-style: italic;
+            }
+
+            .summary-details-amcheckoutfees.summary-details.title {
+                font-style: normal;
+            }
+        </style>
+    <?php } else { ?>
+        <style>
+            .summary-details-amcheckoutfees.summary-details.title strong {
+                font-size: inherit;
+            }
+        </style>
+    <?php } ?>
+
+<?php } ?>

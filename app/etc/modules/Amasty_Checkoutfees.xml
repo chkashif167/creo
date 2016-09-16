@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+-->
+<config>
+    <modules>
+        <Amasty_Checkoutfees>
+            <active>true</active>
+            <codePool>local</codePool>
+            <edition>community</edition>
+            <depends>
+                <Amasty_Base/>
+            </depends>
+        </Amasty_Checkoutfees>
+    </modules>
+</config>

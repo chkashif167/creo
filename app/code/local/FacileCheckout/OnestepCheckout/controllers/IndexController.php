@@ -139,6 +139,52 @@ class FacileCheckout_OnestepCheckout_IndexController extends Mage_Checkout_Contr
        	$lastQuoteId = $session->getLastQuoteId();
         $lastOrderId = $session->getLastOrderId();
 		$lastRecurringProfiles = $session->getLastRecurringProfileIds();
+		//Send extra email if shipping country is iraq
+
+		$orderId = Mage::getSingleton('checkout/session')->getLastOrderId();        
+
+		// If an order actually exists
+		if($orderId){
+
+    		//Get the order details based on the order id ($orderId)
+    		$order = Mage::getModel('sales/order')->load($orderId);
+
+    		// Get the id of the orders shipping address
+    		$shippingId = $order->getShippingAddress()->getId();
+			
+			// Get the id of the orders billing address
+    		$billingId = $order->getBillingAddress()->getId();
+			
+			// Get billing address data using the id
+    		$baddress = Mage::getModel('sales/order_address')->load($billingId);
+			$billingEmail = $baddress->getEmail();
+			$custName = $baddress->getName();
+    		// Get shipping address data using the id
+    		$address = Mage::getModel('sales/order_address')->load($shippingId);
+   			// $shippingId is the id you get from order object.
+   			
+   			//$custAddr = $address->getStreetFull();
+   			//$region = $address->getRegion();
+   			$country = $address->getCountry();
+			// If country is Iraq send extra email
+   			if($country=='IQ'){
+			 	// Load email template from admin
+				$emailTemplate = Mage::getModel('core/email_template')->loadByCode('order_extra_email_for_iraq');
+				$toEmail = $billingEmail;
+				$fromEmail = Mage::getStoreConfig('trans_email/ident_general/email');
+				$toName = $custName;
+				$mail = Mage::getModel('core/email')
+					 					->setToName($toName)
+					 					->setToEmail($toEmail)
+					 					->setBody($emailTemplate)
+					 					->setSubject('CREO : Payment Instructions')
+					 					->setFromEmail($fromEmail)
+					 					->setFromName('CREO')
+					 					->setType('html');
+             	$mail->send();
+
+   			}//if($country=='IQ')
+	}//if($orderId)
 
         /*if ($_SESSION['git_wrap'] == 'Yes') // Gift Wrap Condition
 		{

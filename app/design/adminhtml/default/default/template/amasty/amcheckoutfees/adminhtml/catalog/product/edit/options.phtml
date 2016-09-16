@@ -1,0 +1,117 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+?>
+<div class="box">
+    <div class="hor-scroll">
+        <table class="dynamic-grid" cellspacing="0" cellpadding="0" id="amcheckoutfees_edit_options">
+            <tbody id="amcheckoutfees_edit_options_body">
+            <tr id="fee-options-table">
+                <th>Title - Default<span class="required">*</span></th>
+                <?php foreach ($this->getStores() as $store) { ?>
+                    <th>Title - <?php echo $store->getName(); ?></th>
+                <?php } ?>
+                <th>Price <span class="required">*</span></th>
+                <th>Price Type</th>
+                <th>Position</th>
+                <th class="nobr a-center">Is Default</th>
+                <th style="width:220px !important;">
+                    <button id="amcheckoutfees_add_new_option_button" title="Add Option" type="button" class="scalable add" onclick="" style=""><span><span><span>Add Option</span></span></span>
+                    </button>
+                </th>
+            </tr>
+            <?php if ($this->getFeesOptions()) { ?>
+                <?php foreach ($this->getFeesOptions() as $option) { ?>
+                    <?php $titles = $option->getTitle() ? unserialize($option->getTitle()) : array(); // unpack array with titles?>
+                    <tr class="option-row" id="option-row-new_op_<?php echo $option->getFeesDataId(); ?>">
+                        <td><input name="options[op_<?php echo $option->getFeesDataId(); ?>][title][0]"
+                                   value="<?php echo isset($titles[0]) ? $titles[0] : '' ?>"
+                                   class="input-text required-option" type="text"></td>
+                        <?php foreach ($this->getStores() as $store) { ?>
+                            <td><input name="options[op_<?php echo $option->getFeesDataId(); ?>][title][<?php echo $store->getStoreId(); ?>]"
+                                       value="<?php echo isset($titles[$store->getStoreId()]) ? $titles[$store->getStoreId()] : '' ?>"
+                                       class="input-text required-option" type="text">
+                            </td>
+                        <?php } ?>
+                        <td><input name="options[op_<?php echo $option->getFeesDataId(); ?>][price]"
+                                   class="input-text required-option validate-zero-or-greater" type="text" value="<?php echo $option->getPrice(); ?>">
+                        </td>
+                        <td class="a-center">
+                            <select name="options[op_<?php echo $option->getFeesDataId(); ?>][price_type]"
+                                    id="option_price_type_new_op_<?php echo $option->getFeesDataId(); ?>" class="multifees-input-full" title="">
+                                <option value="0" <?php echo $option->getPriceType() ? '' : 'selected="selected"'; ?> >Fixed</option>
+                                <option value="1" <?php echo $option->getPriceType() ? 'selected="selected"' : ''; ?>>Percent</option>
+                            </select>
+                        </td>
+                        <td><input class="input-text" type="text" name="options[op_<?php echo $option->getFeesDataId(); ?>][sort]"
+                                   value="<?php echo $option->getSort(); ?>"></td>
+                        <td class="a-center"><input class="input-radio-checkbox" type="radio"
+                                                    name="options[default_<?php echo $this->getFeesId(); ?>][is_default]"
+                                                    value="op_<?php echo $option->getFeesDataId(); ?>" <?php echo $option->getIsDefault() ? 'checked="checked"' : '' ?> >
+                        </td>
+                        <td>
+                            <input class="value-delete-button" type="hidden" name="options[op_<?php echo $option->getFeesDataId(); ?>][delete]"
+                                   value="0">
+                            <button title="Delete" type="button" class="amcheckoutfees-delete-value-button scalable delete delete-option" onclick=""
+                                    style="">
+                                <span><span><span>Delete</span></span></span>
+                            </button>
+                        </td>
+                    </tr>
+                <?php } ?>
+            <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style="display:none">
+    <table>
+        <tbody id="option-row-new_op_template">
+        <tr class="option-row">
+            <td><input name="options[new_x][title][0]" value="" class="input-text required-option" type="text"></td>
+            <?php foreach ($this->getStores() as $store) { ?>
+                <td><input name="options[new_x][title][<?php echo $store->getStoreId(); ?>]"
+                           value="<?php echo isset($titles[$store->getStoreId()]) ? $titles[$store->getStoreId()] : '' ?>"
+                           class="input-text required-option" type="text">
+                </td>
+            <?php } ?>
+            <td><input class="input-text required-option validate-zero-or-greater" type="text" name="options[new_x][price]" value=""></td>
+            <td class="a-center">
+                <select name="options[new_x][price_type]" id="option_price_type_new_x" class="multifees-input-full" title="">
+                    <option value="0">Fixed</option>
+                    <option value="1">Percent</option>
+                </select>
+            </td>
+            <td><input class="input-text" type="text" name="options[new_x][sort]" value=""></td>
+            <td class="a-center"><input class="input-radio-checkbox" type="radio"
+                                        name="options[default_<?php echo $this->getFeesId(); ?>][is_default]" value="new_x"></td>
+            <td>
+                <button title="Delete" type="button" class="amcheckoutfees-delete-button scalable delete delete-option" onclick="" style="">
+                    <span><span><span>Delete</span></span></span></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    Event.observe('amcheckoutfees_add_new_option_button', 'click', function () {
+        var elements_cnt = $$('#amcheckoutfees_edit_options_body tr').length - 1;
+        var insert_html = $('option-row-new_op_template').innerHTML.replace(/new_x/gi, 'new_' + elements_cnt);
+        $('amcheckoutfees_edit_options_body').insert({
+            bottom: insert_html
+        });
+        $$('.amcheckoutfees-delete-button').invoke('observe', 'click', function (element) {
+            element.target.up("tr").remove()
+        });
+    });
+
+    $$('.amcheckoutfees-delete-value-button').invoke('observe', 'click', function (element) {
+        element.target.up("tr").hide();
+        element.target.up("tr").down('input.value-delete-button').value = "1";
+    });
+</script>

@@ -1,0 +1,184 @@
+.amcheckoutfees-collapse-subtotal td {
+    font-size: 90%;
+    font-style: italic;
+}
+
+.amcheckoutfees-collapse-total.title td {
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.amcheckoutfees-collapse-total.grandtotal > td {
+    cursor: pointer;
+}
+
+.amcheckoutfees-collapse-total.grandtotal > td:first-child {
+    float: right;
+    padding-left: 20px;
+    text-align: right;
+}
+
+.amcheckoutfees.block {
+    padding-top: 20px;
+}
+
+.link-store-scope {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1px;
+    width: 16px;
+    height: 16px;
+    background: url(../../../images/amasty/amcheckoutfees/fam_help.gif) 0 0 no-repeat;
+}
+
+/* collapse button here: */
+.summary-details-amcheckoutfees .summary-collapse,
+#checkout-review-table .summary-collapse,
+#shopping-cart-totals-table .summary-collapse,
+body.customer-account .data-table .summary-collapse {
+    position: relative;
+    cursor: pointer;
+}
+
+.summary-details-amcheckoutfees .summary-collapse:before,
+#checkout-review-table .summary-collapse:before,
+#shopping-cart-totals-table .summary-collapse:before,
+body.customer-account .data-table .summary-collapse:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 7px solid #3399cc;
+    border-bottom: none;
+    position: static;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.summary-details-amcheckoutfees .summary-collapse:hover:before,
+#checkout-review-table .summary-collapse:hover:before,
+#shopping-cart-totals-table .summary-collapse:hover:before,
+body.customer-account .data-table .summary-collapse:hover:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 7px solid #246b8f;
+    border-bottom: none;
+    position: static;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.summary-details-amcheckoutfees .show-details .summary-collapse:before,
+#checkout-review-table .show-details .summary-collapse:before,
+#shopping-cart-totals-table .show-details .summary-collapse:before,
+body.customer-account .data-table .show-details .summary-collapse:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 7px solid #3399cc;
+    border-bottom: none;
+    position: static;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.summary-details-amcheckoutfees .show-details .summary-collapse:hover:before,
+#checkout-review-table .show-details .summary-collapse:hover:before,
+#shopping-cart-totals-table .show-details .summary-collapse:hover:before,
+body.customer-account .data-table .show-details .summary-collapse:hover:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 7px solid #246b8f;
+    border-bottom: none;
+    position: static;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#shopping-cart-totals-table tfoot td .summary-collapse:before,
+#shopping-cart-totals-table tfoot td .summary-collapse:hover:before {
+    margin-bottom: 5px;
+}
+
+.summary-details-amcheckoutfees .show-details .summary-collapse.grandtotal:hover:before,
+.summary-details-amcheckoutfees .show-details .summary-collapse.grandtotal:before,
+.checkout-review-table .show-details .summary-collapse.grandtotal:hover:before,
+.checkout-review-table .show-details .summary-collapse.grandtotal:before,
+.checkout-review-table .summary-collapse.grandtotal:hover:before,
+.checkout-review-table .summary-collapse.grandtotal:hover:before,
+.checkout-review-table .summary-collapse.grandtotal:before {
+    border: none;
+}
+/* collapse button ended */
+
+.summary-details-amcheckoutfees.summary-details {
+    font-style: italic;
+}
+
+.summary-details-amcheckoutfees.summary-details.title {
+    font-style: normal;
+}
+
+/* remove collapse button frmo <1.9 versions*/
+.cart-collaterals .summary-details-amcheckoutfees .summary-collapse,
+.cart-collaterals #checkout-review-table .summary-collapse,
+.cart-collaterals #shopping-cart-totals-table .summary-collapse,
+.cart-collaterals body.customer-account .data-table .summary-collapse {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-collaterals .summary-details-amcheckoutfees .summary-collapse:before,
+.cart-collaterals #checkout-review-table .summary-collapse:before,
+.cart-collaterals #shopping-cart-totals-table .summary-collapse:before,
+.cart-collaterals body.customer-account .data-table .summary-collapse:before {
+    border: none;
+}
+
+.cart-collaterals .summary-details-amcheckoutfees .summary-collapse:hover:before,
+.cart-collaterals #checkout-review-table .summary-collapse:hover:before,
+.cart-collaterals #shopping-cart-totals-table .summary-collapse:hover:before,
+.cart-collaterals body.customer-account .data-table .summary-collapse:hover:before {
+    border: none;
+}
+
+.cart-collaterals .summary-details-amcheckoutfees .show-details .summary-collapse:before,
+.cart-collaterals #checkout-review-table .show-details .summary-collapse:before,
+.cart-collaterals #shopping-cart-totals-table .show-details .summary-collapse:before,
+.cart-collaterals body.customer-account .data-table .show-details .summary-collapse:before {
+    border: none;
+}
+
+.cart-collaterals .summary-details-amcheckoutfees .show-details .summary-collapse:hover:before,
+.cart-collaterals #checkout-review-table .show-details .summary-collapse:hover:before,
+.cart-collaterals #shopping-cart-totals-table .show-details .summary-collapse:hover:before,
+.cart-collaterals body.customer-account .data-table .show-details .summary-collapse:hover:before {
+    border: none;
+}
+
+div.amcheckoutfees-tooltip {
+    padding: 2px 5px;
+    background: #FEC;
+    border: 1px solid #FAA819;
+    color: #1F5070;
+    text-align: left;
+    width: 200px;
+    position: absolute;
+}

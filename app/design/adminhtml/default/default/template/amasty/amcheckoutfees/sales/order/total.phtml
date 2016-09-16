@@ -1,0 +1,64 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkoutfees
+ */
+?>
+<?php
+$this->setPriceDataObject($this->getSource());
+$source = $this->getSource();
+if ((float)$source->getBaseAmcheckoutfeesAmount()) {
+
+    if ($source instanceof Mage_Sales_Model_Order_Invoice ||
+        $source instanceof Mage_Sales_Model_Order_Creditmemo
+    ) {
+        $fees = $source->getOrder()->getAmcheckoutfeesFees();
+        $currency = $source->getOrder()->getOrderCurrencyCode();
+    } else {
+        $fees = $source->getAmcheckoutfeesFees();
+        $currency = $source->getQuoteCurrencyCode() ? $source->getQuoteCurrencyCode() : $source->getOrderCurrencyCode();
+    }
+
+    try {
+        $fees = $fees ? unserialize($fees) : array();
+    } catch (Exception $e) {
+        $fees = array();
+    }
+
+    foreach ($fees as $feeId => $options) {
+        $fee = Mage::getModel('amcheckoutfees/fees')->load($feeId);
+        if (is_string($options) && strpos($options, ',') !== false) {
+            $options = explode(',', $options);
+        }
+        $feeOpt = Mage::getModel('amcheckoutfees/feesData')
+                      ->getCollection()
+                      ->addFieldToFilter('fees_id', array('eq' => $fee->getFeesId()))
+                      ->addFieldToFilter('fees_data_id', array('in' => $options))
+                      ->setOrder('sort', 'ASC')
+                      ->getItems();
+        foreach ($feeOpt as $option) {
+            ?>
+            <tr>
+                <td class="label">
+                    <small><i><?php echo $fee->getTitleForStore(); ?> (<?php echo $option->getTitleForStore(); ?>)</i></small>
+                </td>
+                <td>
+                    <small><i>
+                            <?php
+                            $price     = $option->getFullPrice($this->getSource(), $currency);
+                            $priceBase = $option->getFullPrice($this->getSource());
+                            echo $this->displayPrices($priceBase, $price);
+                            ?>
+                        </i></small>
+                </td>
+            </tr>
+        <?php } ?>
+    <?php } ?>
+    <tr>
+        <td class="label"><?php echo Mage::helper('amcheckoutfees')->__('Checkout Fees') ?></td>
+        <td>
+            <?php echo $this->displayPrices($this->getSource()->getBaseAmcheckoutfeesAmount(), $this->getSource()->getAmcheckoutfeesAmount()); ?>
+        </td>
+    </tr>
+<?php } ?>
