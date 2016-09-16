@@ -70,6 +70,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
   <div class="modal-dialog modal-lg">
     <div class="modal-content block-subscribe normal-modal">
       <div class="modal-body">
+<?php /* ?>
         <img src="<?php echo $this->getSkinUrl('/images/get-hooked-up-text.png') ?>" title="<?php echo $this->__('Get Hooked Up'); ?>" alt="<?php echo $this->__('Get Hooked Up'); ?>" style="max-width:100%;">
         <p class="big"><?php echo $this->__('Subscribe and get <big>20%</big> OFF on your first purchase'); ?></p>
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
@@ -91,7 +92,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
     //]]>
     </script>
-<?php /* ?>
+
     <div class="christmas">
     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('christmas')->toHtml(); ?>
     </div>
@@ -100,7 +101,15 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     .christmas img{max-width:100%;}
     </style>
     <?php */ ?>
-      </div>
+
+    <div class="offer-popup">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('offer-popup')->toHtml(); ?>
+    </div>
+    <style type="text/css" media="screen">
+    .offer-popup{padding:15px 15px 40px;}
+    .offer-popup img{max-width:100%;}
+    </style>
+    </div>
     <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><?php echo $this->__('SKIP'); ?></span></button>
     </div>
   </div>
