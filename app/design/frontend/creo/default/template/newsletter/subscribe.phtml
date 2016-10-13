@@ -65,7 +65,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
           </div>
         </form>
 <?php */ ?>
-
+<?php /* ?>
 <div class="modal fade bs-example-modal-md modal_newsletter " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
     <div class="modal-content block-subscribe normal-modal" style="padding:0;">
@@ -100,7 +100,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     .christmas{padding:15px 15px 40px;}
     .christmas img{max-width:100%;}
     </style>
-    
+<?php */ ?>
 <?php /* ?>
     <div class="offer-popup">
     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('offer-popup')->toHtml(); ?>
@@ -108,17 +108,17 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     <style type="text/css" media="screen">
     .offer-popup{padding:0px;}
     .offer-popup img{max-width:100%;}
-    </style><?php */ ?>
+    </style>
     </div>
     <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><?php echo $this->__('SKIP'); ?></span></button>
     </div>
-    
+
   </div>
 </div>
-
+<?php */ ?>
 <?php //} ?>
 
-
+<?php /* ?>
 <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail1" class="subscribe-form footer-form">
       <!--<span class="title">Join us for 20% off your first order</span>-->
           <div class="form-row">
@@ -149,4 +149,5 @@ if($visitCount>2){
 <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', 1 * 365 * 24 * 60 * 60 , '/'); ?>
 <?php
 }
-    ?>
+?>
+<?php */ ?>
