@@ -70,7 +70,7 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
   <div class="modal-dialog modal-md">
     <div class="modal-content block-subscribe normal-modal" style="padding:0;">
       <div class="modal-body">
-<?php /* ?>
+
         <img src="<?php echo $this->getSkinUrl('/images/get-hooked-up-text.png') ?>" title="<?php echo $this->__('Get Hooked Up'); ?>" alt="<?php echo $this->__('Get Hooked Up'); ?>" style="max-width:100%;">
         <p class="big"><?php echo $this->__('Subscribe and get <big>20%</big> OFF on your first purchase'); ?></p>
         <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="subscribe-form">
@@ -100,18 +100,19 @@ $visitAttempt = $_SERVER['HTTP_REFERER'];
     .christmas{padding:15px 15px 40px;}
     .christmas img{max-width:100%;}
     </style>
-    <?php */ ?>
-
+    
+<?php /* ?>
     <div class="offer-popup">
     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('offer-popup')->toHtml(); ?>
     </div>
     <style type="text/css" media="screen">
     .offer-popup{padding:0px;}
     .offer-popup img{max-width:100%;}
-    </style>
+    </style><?php */ ?>
     </div>
     <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><?php echo $this->__('SKIP'); ?></span></button>
     </div>
+    
   </div>
 </div>
 
