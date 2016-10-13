@@ -275,6 +275,8 @@ h1.category--heading:after {
 }
 h1.category--heading .sort-by {
     float: left;
+    right: inherit;
+    left: 0;
 }
 h1.category--heading .sort-by label {
     background: rgb(239, 79, 97);
